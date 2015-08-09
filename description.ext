@@ -1,0 +1,36 @@
+respawn = 3;
+respawndelay = 15;
+disabledAI = true;
+
+enableDebugConsole = 1;
+
+onLoadMission = "Liberation 0.84";
+author = "[GREUH] Zbug";
+onLoadName = "Liberation 0.84";
+
+class Header
+{
+	gameType = CTI;
+	minPlayers = 1;
+	maxPlayers = 41;
+};
+
+#include "GREUH\UI\GREUH_interface.hpp"
+#include "ui\liberation_interface.hpp"
+#include "ui\liberation_notifications.hpp"
+
+class Params
+{
+	class WipeSave1{
+		title = $STR_WIPE_TITLE;
+		values[] = {0,1};
+		texts[] =  {$STR_WIPE_NO,$STR_WIPE_YES};
+		default = 0;
+	};
+	class WipeSave2{
+		title = $STR_WIPE_TITLE_2;
+		values[] = {0,1};
+		texts[] = {$STR_WIPE_NO,$STR_WIPE_YES};
+		default = 0;
+	};
+};

@@ -1,0 +1,1 @@
+param_equipement_opfor = ("EquipementOPFOR" call bis_fnc_getParamValue);

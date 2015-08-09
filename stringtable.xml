@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<Project name="Liberation">
+		<Package name="Liberation">
+		<Key ID="STR_Deploy_OnPoint">
+			<Original>Deploy</Original>
+			<French>Déploiement</French>
+		</Key>
+		<Key ID="STR_Deploy_InProgress">
+			<Original>Deployment in progress ...</Original>
+			<French>Déploiement en cours ...</French>
+		</Key>
+		<Key ID="STR_CLOSE">
+			<Original>Close</Original>
+			<French>Fermer</French>
+		</Key>
+		<Key ID="STR_FAR_Need_Medic1">
+			<Original>I need a medic!</Original>
+			<French>J'ai besoin d'un medic!</French>
+		</Key>
+		<Key ID="STR_FAR_Need_Medic2">
+			<Original>I'm hit! Medic!</Original>
+			<French>Je suis touché! Medic!</French>
+		</Key>
+		<Key ID="STR_FAR_Need_Medic3">
+			<Original>I'm down! Medic!</Original>
+			<French>Je suis à terre! Medic!</French>
+		</Key>
+		<Key ID="STR_REVIVE_LABEL">
+			<Original>YOU ARE WOUNDED</Original>
+			<French>VOUS ETES BLESSE</French>
+		</Key>
+		<Key ID="STR_BUILD_ACTION">
+			<Original>-- BUILD --</Original>
+			<French>-- CONSTRUIRE --</French>
+		</Key>
+		<Key ID="STR_BUILD_TITLE">
+			<Original>BUILD MENU</Original>
+			<French>CONSTRUCTION</French>
+		</Key>
+		<Key ID="STR_BUILD_BUTTON">
+			<Original>Build</Original>
+			<French>Construire</French>
+		</Key>
+		<Key ID="STR_MANPOWER">
+			<Original>Manpower</Original>
+			<French>Effectifs</French>
+		</Key>
+		<Key ID="STR_AMMO">
+			<Original>Ammunition</Original>
+			<French>Munitions</French>
+		</Key>
+		<Key ID="STR_FUEL">
+			<Original>Fuel</Original>
+			<French>Carburant</French>
+		</Key>
+		<Key ID="STR_BLEEDOUT_MESSAGE">
+			<Original>Bleedout in %1 seconds</Original>
+			<French>Mort dans %1 secondes</French>
+		</Key>
+		<Key ID="STR_BLEEDOUT_STABILIZED">
+			<Original>Stabilized</Original>
+			<French>Stabilisé</French>
+		</Key>
+		<Key ID="STR_ROTATION">
+			<Original>-- Rotation</Original>
+			<French>-- Rotation</French>
+		</Key>
+		<Key ID="STR_PLACEMENT">
+			<Original>-- Build</Original>
+			<French>-- Construire</French>
+		</Key>
+		<Key ID="STR_PLACEMENT_BIS">
+			<Original>-- Build and Repeat</Original>
+			<French>-- Construire et Répéter</French>
+		</Key>
+		<Key ID="STR_CANCEL">
+			<Original>-- Cancel</Original>
+			<French>-- Annuler</French>
+		</Key>
+		<Key ID="STR_CANCEL_HINT">
+			<Original>Building canceled.</Original>
+			<French>Construction annulée.</French>
+		</Key>
+		<Key ID="STR_CONFIRM_HINT">
+			<Original>Building confirmed.</Original>
+			<French>Construction confirmée.</French>
+		</Key>
+		<Key ID="STR_PLACEMENT_IMPOSSIBLE">
+			<Original>Can't place here: there are %1 object(s) within %2 meters of the object position.</Original>
+			<French>Impossible de placer ici : il y a %1 objet(s) dans les %2 mètres de la position voulue.</French>
+		</Key>
+		<Key ID="STR_PLACEMENT_POSSIBLE">
+			<Original>This position is valid.</Original>
+			<French>Cette position est valide.</French>
+		</Key>
+		<Key ID="STR_ARSENAL_ACTION">
+			<Original>-- ARSENAL --</Original>
+			<French>-- ARSENAL --</French>
+		</Key>
+		<Key ID="STR_FOB_ACTION">
+			<Original>-- DEPLOY FOB --</Original>
+			<French>-- DEPLOYER FOB --</French>
+		</Key>
+		<Key ID="STR_FOB_BUILDING_IMPOSSIBLE">
+			<Original>Can't deploy a new FOB here, you must be at least %1 meters away from every other FOB. Nearest FOB is %2 meters away.</Original>
+			<French>Impossible de déployer une nouvelle FOB ici, vous devez être à au moins %1 mètres de toutes les autres FOB. La FOB la plus proche est à %2 mètres d'ici.</French>
+		</Key>
+		<Key ID="STR_FOB_BUILDING_IMPOSSIBLE_SECTOR">
+			<Original>Can't deploy a new FOB here, you must be at least %1 meters away from every capturable zone. Nearest zone is %2 meters away.</Original>
+			<French>Impossible de déployer une nouvelle FOB ici, vous devez être à au moins %1 mètres de toutes les zones capturables. La zone la plus proche est à %2 mètres d'ici.</French>
+		</Key>
+		<Key ID="STR_BUILD_ERROR_WATER">
+			<Original>Can't build on water.</Original>
+			<French>Impossible de construire sur l'eau.</French>
+		</Key>
+		<Key ID="STR_BUILD_ERROR_DISTANCE">
+			<Original>Can't build further than %1 meters away from the FOB.</Original>
+			<French>Impossible de construire à plus de %1 mètres de la FOB.</French>
+		</Key>
+		<Key ID="STR_FOBBOX">
+			<Original>FOB Container</Original>
+			<French>Container FOB</French>
+		</Key>
+		<Key ID="STR_FOBTRUCK">
+			<Original>FOB Truck</Original>
+			<French>Camion FOB</French>
+		</Key>
+		<Key ID="STR_RESPAWN_TRUCK">
+			<Original>Mobile respawn</Original>
+			<French>Respawn mobile</French>
+		</Key>
+		<Key ID="STR_ARSENAL_BOX">
+			<Original>Arsenal box</Original>
+			<French>Caisse à arsenal</French>
+		</Key>
+		<Key ID="STR_DEPLOY_TITLE">
+			<Original>DEPLOYMENT</Original>
+			<French>DEPLOIEMENT</French>
+		</Key>
+		<Key ID="STR_DEPLOY_BUTTON">
+			<Original>Deploy</Original>
+			<French>Déploiment</French>
+		</Key>
+		<Key ID="STR_DEPLOY_ACTION">
+			<Original>-- REDEPLOY --</Original>
+			<French>-- REDEPLOIEMENT --</French>
+		</Key>
+		<Key ID="STR_BUILD_CREW">
+			<Original>Build (Crew)</Original>
+			<French>Construire (Equipage)</French>
+		</Key>
+		<Key ID="STR_LIGHT_RIFLE_SQUAD">
+			<Original>Light Rifle Squad</Original>
+			<French>Escouade Fusiliers Légère</French>
+		</Key>
+		<Key ID="STR_RIFLE_SQUAD">
+			<Original>Heavy Rifle Squad</Original>
+			<French>Escouade Fusiliers Lourde</French>
+		</Key>
+		<Key ID="STR_AT_SQUAD">
+			<Original>AT Squad</Original>
+			<French>Escouade AT</French>
+		</Key>
+		<Key ID="STR_AA_SQUAD">
+			<Original>AA Squad</Original>
+			<French>Escouade AA</French>
+		</Key>
+		<Key ID="STR_RECON_SQUAD">
+			<Original>Recon Squad</Original>
+			<French>Escouade Recon</French>
+		</Key>
+		<Key ID="STR_PARA_SQUAD">
+			<Original>Paratroopers Squad</Original>
+			<French>Escouade Parachutistes</French>
+		</Key>
+		<Key ID="STR_UNITCAP">
+			<Original>Unit cap</Original>
+			<French>Limite</French>
+		</Key>
+		<Key ID="STR_WIPE_TITLE">
+			<Original>Wipe savegame</Original>
+			<French>Effacer la sauvegarde</French>
+		</Key>
+		<Key ID="STR_WIPE_TITLE_2">
+			<Original>Confirm : wipe savegame</Original>
+			<French>Confirmer : effacer la sauvegarde</French>
+		</Key>
+		<Key ID="STR_WIPE_NO">
+			<Original>No</Original>
+			<French>Non</French>
+		</Key>
+		<Key ID="STR_WIPE_YES">
+			<Original>!! THE SAVEGAME WILL BE WIPED, NO RECOVERY POSSIBLE !!</Original>
+			<French>!! LA SAUVEGARDE SERA EFFACEE SANS RECUPERATION POSSIBLE !!</French>
+		</Key>
+		<Key ID="STR_UNFLIP">
+			<Original>-- UNFLIP</Original>
+			<French>-- UNFLIP</French>
+		</Key>
+		<Key ID="STR_GRID">
+			<Original>-- Grid mode</Original>
+			<French>-- Mode grille</French>
+		</Key>
+		<Key ID="STR_SECONDARY_INTERROGATE">
+			<Original>-- INTERROGATE</Original>
+			<French>-- INTERROGER</French>
+		</Key>
+		<Key ID="STR_SQUAD_MEMBER">
+			<Original>Squad member</Original>
+			<French>Membre d'escouade</French>
+		</Key>
+		<Key ID="STR_SPAWN_NEAR">
+			<Original>Near</Original>
+			<French>Près de</French>
+		</Key>
+		<Key ID="STR_RECYCLE">
+			<Original>-- RECYCLE</Original>
+			<French>-- RECYCLER</French>
+		</Key>
+		<Key ID="STR_RECYCLING">
+			<Original>Recycling</Original>
+			<French>Recyclage</French>
+		</Key>
+		<Key ID="STR_RECYCLING_YIELD">
+			<Original>Recycling this %1 will yield:</Original>
+			<French>Le recyclage de %1 rapportera :</French>
+		</Key>
+		<Key ID="STR_RECYCLING_PROCEED">
+			<Original>Recycle</Original>
+			<French>Recycler</French>
+		</Key>
+		<Key ID="STR_RECYCLING_CANCEL">
+			<Original>Cancel</Original>
+			<French>Annuler</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORCAPTURED_TITLE">
+			<Original>SECTOR CAPTURED</Original>
+			<French>SECTEUR CAPTURE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORCAPTURED_TEXT">
+			<Original>Our forces have captured %1.</Original>
+			<French>Nos forces ont capturé %1.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORATTACKED_TITLE">
+			<Original>SECTOR ATTACKED</Original>
+			<French>SECTEUR ATTAQUE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORATTACKED_TEXT">
+			<Original>Hostiles forces are attacking %1!</Original>
+			<French>Des forces hostiles attaquent %1!</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORLOST_TITLE">
+			<Original>SECTOR LOST</Original>
+			<French>SECTEUR LOST</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORLOST_TEXT">
+			<Original>We have lost control over %1!</Original>
+			<French>Nous avons perdu le contrôle de %1!</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORSAFE_TITLE">
+			<Original>SECTOR SAFE</Original>
+			<French>SECTEUR SECURISE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECTORSAFE_TEXT">
+			<Original>%1 is no longer under threat.</Original>
+			<French>%1 n'est plus menacé(e).</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBBUILT_TITLE">
+			<Original>NEW FOB BUILT</Original>
+			<French>NOUVELLE FOB</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBBUILT_TEXT">
+			<Original>FOB %1 is now operational.</Original>
+			<French>La FOB %1 est opérationnelle.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBSAFE_TITLE">
+			<Original>FOB SAFE</Original>
+			<French>FOB SECURISEE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBSAFE_TEXT">
+			<Original>FOB %1 is no longer under threat.</Original>
+			<French>La FOB %1 n'est plus menacée.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBATTACKED_TITLE">
+			<Original>FOB ATTACKED</Original>
+			<French>FOB ATTAQUEE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBATTACKED_TEXT">
+			<Original>FOB %1 is under attack!</Original>
+			<French>La FOB %1 est attaquée !</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBLOST_TITLE">
+			<Original>FOB DESTROYED</Original>
+			<French>FOB DETRUITE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_FOBLOST_TEXT">
+			<Original>FOB %1 has been destroyed!</Original>
+			<French>La FOB %1 a été détruite !</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_BATTLEGROUP_TITLE">
+			<Original>HOSTILE FORCES INCOMING</Original>
+			<French>FORCES HOSTILES EN APPROCHE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_BATTLEGROUP_TEXT">
+			<Original>Hostile forces spotted near %1.</Original>
+			<French>Forces hostiles repérées près de %1.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_INTEL_TITLE">
+			<Original>NEW INTELLIGENCE</Original>
+			<French>NOUVEAUX RENSEIGNEMENTS</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_INTEL_TEXT">
+			<Original>Hostile FOB near %1.</Original>
+			<French>FOB hostile près de %1.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECONDARY_TITLE">
+			<Original>SECONDARY OBJECTIVE</Original>
+			<French>OBJECTIF SECONDAIRE</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_SECONDARY_TEXT">
+			<Original>Hostile FOB destroyed</Original>
+			<French>FOB hostile détruite.</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_REINFORCEMENTS_TITLE">
+			<Original>HOSTILE REINFORCEMENTS</Original>
+			<French>RENFORTS HOSTILES</French>
+		</Key>
+		<Key ID="STR_NOTIFICATION_REINFORCEMENTS_TEXT">
+			<Original>Hostile forces reinforcing %1.</Original>
+			<French>Forces hostiles en renfort à %1.</French>
+		</Key>
+		<Key ID="STR_VICTORY_TITLE">
+			<Original>BLUFOR VICTORY</Original>
+			<French>VICTOIRE BLUFOR</French>
+		</Key>
+		<Key ID="STR_VICTORY_TEXT">
+			<Original>You have liberated Altis from the CSAT oppression.</Original>
+			<French>Vous avez libéré Altis de l'oppression du CSAT.</French>
+		</Key>
+		<Key ID="STR_STATS_DAY">
+			<Original>days</Original>
+			<French>jours</French>
+		</Key>
+		<Key ID="STR_STATS_HOURS">
+			<Original>hours</Original>
+			<French>heures</French>
+		</Key>
+		<Key ID="STR_STATS_MINUTES">
+			<Original>minutes</Original>
+			<French>minutes</French>
+		</Key>
+		<Key ID="STR_STATS_SECONDS">
+			<Original>seconds</Original>
+			<French>secondes</French>
+		</Key>
+		<Key ID="STR_STATS_PLAYTIME">
+			<Original>Playtime:</Original>
+			<French>Temps de jeu :</French>
+		</Key>
+		<Key ID="STR_STATS_1">
+			<Original>OPFOR infantry killed:</Original>
+			<French>Infanterie OPFOR tuée :</French>
+		</Key>
+		<Key ID="STR_STATS_2">
+			<Original>OPFOR infantry killed by players:</Original>
+			<French>Infanterie OPFOR tuée par les joueurs :</French>
+		</Key>
+		<Key ID="STR_STATS_3">
+			<Original>BLUFOR infantry killed:</Original>
+			<French>Infanterie BLUFOR tuée :</French>
+		</Key>
+		<Key ID="STR_STATS_4">
+			<Original>Civilians killed:</Original>
+			<French>Civils tués :</French>
+		</Key>
+		<Key ID="STR_STATS_5">
+			<Original>Civilians killed by players:</Original>
+			<French>Civils tués par les joueurs :</French>
+		</Key>
+		<Key ID="STR_STATS_6">
+			<Original>BLUFOR friendly fire incidents:</Original>
+			<French>Tirs fratricides BLUFOR :</French>
+		</Key>
+		<Key ID="STR_STATS_7">
+			<Original>OPFOR vehicles destroyed:</Original>
+			<French>Vehicules OPFOR détruits :</French>
+		</Key>
+		<Key ID="STR_STATS_8">
+			<Original>OPFOR vehicles destroyed by players:</Original>
+			<French>Vehicules OPFOR détruits par les joueurs :</French>
+		</Key>
+		<Key ID="STR_STATS_9">
+			<Original>BLUFOR vehicles destroyed:</Original>
+			<French>Vehicules BLUFOR détruits :</French>
+		</Key>
+		<Key ID="STR_STATS_10">
+			<Original>BLUFOR vehicles built:</Original>
+			<French>Vehicules BLUFOR construits :</French>
+		</Key>
+		<Key ID="STR_STATS_11">
+			<Original>Vehicles recycled:</Original>
+			<French>Vehicules recyclés :</French>
+		</Key>
+		<Key ID="STR_STATS_12">
+			<Original>Ammunition units spent:</Original>
+			<French>Unités de munitions dépensées :</French>
+		</Key>
+		<Key ID="STR_STATS_13">
+			<Original>Sectors liberated:</Original>
+			<French>Secteurs libérés, delivrés :</French>
+		</Key>
+		<Key ID="STR_STATS_14">
+			<Original>Sectors lost:</Original>
+			<French>Secteurs perdus :</French>
+		</Key>
+		<Key ID="STR_STATS_15">
+			<Original>FOBs built:</Original>
+			<French>FOBs construites :</French>
+		</Key>
+		<Key ID="STR_STATS_16">
+			<Original>FOBs lost:</Original>
+			<French>FOBs perdues :</French>
+		</Key>
+		<Key ID="STR_STATS_17">
+			<Original>Secondary objectives accomplished:</Original>
+			<French>Objectifs secondaires accomplis :</French>
+		</Key>
+		<Key ID="STR_STATS_18">
+			<Original>Prisonners captured:</Original>
+			<French>Prisonniers capturés :</French>
+		</Key>
+		<Key ID="STR_STATS_19">
+			<Original>Hostile battlegroups called:</Original>
+			<French>Battlegroups hostiles appelés :</French>
+		</Key>
+		<Key ID="STR_STATS_20">
+			<Original>Hostile reinforcements called:</Original>
+			<French>Renforts hostiles appelés :</French>
+		</Key>
+		<Key ID="STR_STATS_21">
+			<Original>Total combat readiness raised:</Original>
+			<French>Augmentation totale du niveau d'alerte :</French>
+		</Key>
+		<Key ID="STR_STATS_22">
+			<Original>IEDs detonated:</Original>
+			<French>Explosions d'IED :</French>
+		</Key>
+		<Key ID="STR_STATS_23">
+			<Original>Number of Spartan 01 losses:</Original>
+			<French>Pertes de Spartan 01 :</French>
+		</Key>
+		<Key ID="STR_STATS_24">
+			<Original>Player deaths:</Original>
+			<French>Joueurs morts :</French>
+		</Key>
+		<Key ID="STR_STATS_25">
+			<Original>Rabbits killed:</Original>
+			<French>Lapins tués :</French>
+		</Key>
+		<Key ID="STR_STATS_26">
+			<Original>Many thanks for playing LIBERATION!</Original>
+			<French>Merci beaucoup d'avoir joué à LIBERATION!</French>
+		</Key>
+		<Key ID="STR_STATS_27">
+			<Original>BLUFOR soldiers recruited:</Original>
+			<French>Soldats BLUFOR recrutés :</French>
+		</Key>
+		<Key ID="STR_STATS_28">
+			<Original>We hope you enjoyed playing it, as much as we enjoyed making it.</Original>
+			<French>Nous espérons que vous avez pris autant de plaisir à y jouer, que nous à la créer.</French>
+		</Key>
+		<Key ID="STR_STATS_29">
+			<Original>(Press ESC to exit)</Original>
+			<French>(Appuyez sur Echap pour quitter)</French>
+		</Key>
+	</Package>
+</Project>
