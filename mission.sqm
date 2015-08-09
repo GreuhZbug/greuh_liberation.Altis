@@ -13,8 +13,7 @@ class Mission
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Structures_F_EPC_Civ_InfoBoards",
-		"A3_Structures_F_Civ_Camping",
-		"kh_lowgrass"
+		"A3_Structures_F_Civ_Camping"
 	};
 	addOnsAuto[]=
 	{
@@ -28,7 +27,7 @@ class Mission
 		"A3_Structures_F_EPA_Mil_Scrapyard",
 		"A3_Structures_F_EPC_Civ_InfoBoards",
 		"A3_Structures_F_Civ_Camping",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	randomSeed=7571389;
 	class Intel
@@ -197,18 +196,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14495.876,10.405807,5881.0454};
-					azimut=310;
+					position[]={16032.098,0.079740502,2232.4841};
+					azimut=279.12186;
 					id=10;
 					side="WEST";
-					vehicle="B_officer_F";
-					player="PLAYER COMMANDER";
+					vehicle="B_Soldier_lite_F";
 					leader=1;
-					rank="COLONEL";
 					skill=0.60000002;
-					text="commandant";
-					init="removeallWeapons this; removebackpack this; toto switchCamera ""internal"";";
-					description="Commander";
+					init="this setUnitPos ""UP""; this setposasl [getpos this select 0, getpos this select 1, 16.5   + (getposasl lhd select 2)]; this allowdamage false; this disableAI ""MOVE"";";
 				};
 			};
 		};
@@ -1140,14 +1135,18 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={16032.098,0.079740502,2232.4841};
-					azimut=279.12186;
+					position[]={14495.876,10.405807,5881.0454};
+					azimut=310;
 					id=54;
 					side="WEST";
-					vehicle="B_Soldier_lite_F";
+					vehicle="B_officer_F";
+					player="PLAYER COMMANDER";
 					leader=1;
+					rank="COLONEL";
 					skill=0.60000002;
-					init="this setUnitPos ""UP""; this setposasl [getpos this select 0, getpos this select 1, 16.5   + (getposasl lhd select 2)]; this allowdamage false; this disableAI ""MOVE"";";
+					text="commandant";
+					init="removeallWeapons this; removebackpack this; toto switchCamera ""internal"";";
+					description="Commander";
 				};
 			};
 		};
@@ -3664,12 +3663,11 @@ class Intro
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	randomSeed=12610520;
 	class Intel
@@ -3695,12 +3693,11 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	randomSeed=11161141;
 	class Intel
@@ -3726,12 +3723,11 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	randomSeed=7391389;
 	class Intel

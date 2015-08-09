@@ -4,6 +4,7 @@ disabledAI = true;
 
 enableDebugConsole = 1;
 
+loadScreen="res\liberation.jpg";
 onLoadMission = "Liberation 0.84";
 author = "[GREUH] Zbug";
 onLoadName = "Liberation 0.84";
