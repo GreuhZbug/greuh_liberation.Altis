@@ -15,6 +15,8 @@ _vehtospawn = [];
 _side = EAST;
 _managed_units = [];
 
+_minimum_building_positions = 20;
+
 active_sectors pushback _sector; publicVariable "active_sectors";
 sleep 10;
 _count_west = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
@@ -47,7 +49,7 @@ if ( _count_west > 2 ) then {
 		if((random 100) > 33) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		_spawncivs = true;
 		_side = RESISTANCE;
-		_combat_readiness_increase = (floor (random 4));
+		_combat_readiness_increase = (floor (random 6));
 		_building_ai_max = floor (15 + (round (combat_readiness / 10 )) + (random 10));
 		_building_range = 100;
 		_iedcount = (floor (random 5));
@@ -59,25 +61,28 @@ if ( _count_west > 2 ) then {
 		if((random 100) > 33) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		_side = EAST;
 		_spawncivs = false;
-		_combat_readiness_increase = (floor (random 7));
+		_combat_readiness_increase = 5 + (floor (random 16));
 		_building_ai_max = floor (20 + (round (combat_readiness / 5 )) + (random 10));
 		_building_range = 150;
+		_minimum_building_positions = 5;
 	};
 	if ( _sector in sectors_factory ) then {
 		_vehtospawn = [];
-		_infsquad = "csat";
+		_infsquad = "militia";
 		if((random 100) > 50) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
+		if((random 100) > 50) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		if((random 100) > 33) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		_side = EAST;
 		_spawncivs = false;
-		_combat_readiness_increase = (floor (random 5));
+		_combat_readiness_increase = 3 + (floor (random 8));
 		_building_ai_max = floor (15 + (round (combat_readiness / 10 )) + (random 10));
-		_building_range = 125;
+		_building_range = 100;
 		_iedcount = (floor (random 3));
+		_minimum_building_positions = 5;
 	};
 	if ( _sector in sectors_tower ) then {
 		_spawncivs = false;
-		_combat_readiness_increase = (floor (random 2));
+		_combat_readiness_increase = (floor (random 4));
 		_building_ai_max = 0;
 	};
 
@@ -100,7 +105,7 @@ if ( _count_west > 2 ) then {
 			_buildingpositions append ( [_x] call BIS_fnc_buildingPositions );
 		} foreach _allbuildings;
 
-		if ( count _buildingpositions > 25 ) then {
+		if ( count _buildingpositions > _minimum_building_positions ) then {
 		
 			_infsquad_classnames = [];
 			if ( _infsquad == "militia" ) then {
@@ -109,7 +114,7 @@ if ( _count_west > 2 ) then {
 				_infsquad_classnames = ([] call F_getAdaptiveSquadComp);
 			};
 			
-			if ( _building_ai_max > ((count _buildingpositions) * 0.5)) then { _building_ai_max = floor ((count _buildingpositions) * 0.5)};
+			if ( _building_ai_max > floor ((count _buildingpositions) * 0.65)) then { _building_ai_max = floor ((count _buildingpositions) * 0.65)};
 			_squadtospawnnn = [];
 			while { (count _squadtospawnnn) < _building_ai_max } do { _squadtospawnnn pushback ( _infsquad_classnames call BIS_fnc_selectRandom ); };
 			

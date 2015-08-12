@@ -4,7 +4,7 @@ _move_is_disabled = true;
 
 while { _move_is_disabled && alive _unit && !(captive _unit) } do {
 	_unit = _this select 0;
-	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man","AllVehicles"], 30] );
+	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man"], 25 ] );
 	
 	if ( _hostilecount > 0 || ( damage _unit > 0.25 ) ) then {
 		if ( _move_is_disabled ) then {

@@ -8,7 +8,7 @@ _savedhuron = objNull;
 
 if ( count all_fobs == 0 ) then {
 	_fobbox = FOB_box_typename createVehicle [0,0,50];
-	_fobbox setposasl [(getpos lhd select 0) + 10, (getpos lhd select 1) + 62, (17.2   + (getposasl lhd select 2))];
+	_fobbox setposasl [(getpos lhd select 0) + 10, (getpos lhd select 1) + 62, (17.5   + (getposasl lhd select 2))];
 	clearItemCargoGlobal _fobbox;
 	_fobbox setDir 130;
 };
@@ -24,7 +24,7 @@ while { true } do {
 	if ( firstloop && !isNull _savedhuron ) then {
 		huron = _savedhuron;
 	} else {
-		huron = huron_typename createVehicle [0,0,50];
+		huron = huron_typename createVehicle [ 0,0,50 ];
 		huron allowdamage false;
 		huron setDir 0;
 		huron setposasl [(getpos lhd select 0) -9, (getpos lhd select 1) + 62, (17.5   + (getposasl lhd select 2))];
@@ -38,7 +38,10 @@ while { true } do {
 	clearMagazineCargoGlobal huron;
 	clearItemCargoGlobal huron;
 	clearBackpackCargoGlobal huron;
-	sleep 5;
+	huron setDamage 0;
+	sleep 1;
+	huron setDamage 0;
+	sleep 4;
 	huron setDamage 0;
 	huron allowdamage true;
 	waitUntil { 

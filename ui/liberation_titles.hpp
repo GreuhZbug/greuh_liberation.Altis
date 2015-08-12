@@ -67,7 +67,7 @@ class RscTitles
 		w = 0.3 * safezoneW;
 		y = 0.65 * safezoneH + safezoneY;
 		h = 0.1 * safezoneH;
-		text = "v0.84";
+		text = "v0.85";
 	  };
 	  class VersionLabelShadow : VersionLabel {
 		shadow = 2;

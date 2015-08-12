@@ -1,3 +1,4 @@
+
 if ( isNil "cinematic_camera_started" ) then { cinematic_camera_started = false };
 sleep 0.5;
 waitUntil { time > 0 };
@@ -13,6 +14,7 @@ sleep 5.5;
 cutRsc ["intro2","PLAIN",1,true];
 
 sleep 10;
+
 
 showcaminfo = true;
 

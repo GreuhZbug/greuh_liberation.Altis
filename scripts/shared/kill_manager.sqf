@@ -12,6 +12,13 @@ if ( isServer ) then {
 	if ( isNil "air_weight" ) then { air_weight = 33 };
 
 	if ( side _killer == WEST ) then {
+	
+		_nearby_bigtown = [ sectors_bigtown, { _unit distance (markerpos _x) < 400 } ] call BIS_fnc_conditionalSelect;
+		if ( count _nearby_bigtown > 0 ) then {
+			combat_readiness = combat_readiness + 0.65;
+			stats_readiness_earned = stats_readiness_earned + 0.65;
+		};		
+	
 		if ( _killer isKindOf "Man" ) then {
 			infantry_weight = infantry_weight + 1;
 			armor_weight = armor_weight - 0.5;

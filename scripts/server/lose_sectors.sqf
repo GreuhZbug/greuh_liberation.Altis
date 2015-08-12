@@ -6,7 +6,8 @@ attack_in_progress = false;
 while { true } do {
 
 	{
-		if (  [ markerpos _x ] call F_sectorOwnership == EAST ) then {
+		_ownership = [ markerpos _x ] call F_sectorOwnership;
+		if ( _ownership == EAST || _ownership == RESISTANCE ) then {
 			[ [ _x, 1 ] , "remote_call_sector" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_sector;
 		};	
@@ -14,7 +15,8 @@ while { true } do {
 	} foreach blufor_sectors;
 	
 	{
-		if (  [_x] call F_sectorOwnership == EAST) then {
+		_ownership = [ _x ] call F_sectorOwnership;
+		if ( _ownership == EAST || _ownership == RESISTANCE ) then {
 			[ [ _x , 1 ] , "remote_call_fob" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_fob;
 		};	
