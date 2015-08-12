@@ -181,36 +181,30 @@ class liberation_build {
 		moving = false;
 	};
 	class ManpowerImage : IconImage {
-		idc = 1085;
 		x = (0.5475 * safezoneW + safezoneX);
 		text = "res\ui_manpo.paa";
 	};
 	class AmmoImage : IconImage {
-		idc = 1085;
 		x = (0.5775 * safezoneW + safezoneX);
 		text = "res\ui_ammo.paa";
 	};
 	class FuelImage : IconImage {
-		idc = 1085;
 		x = (0.6075 * safezoneW + safezoneX);
 		text = "res\ui_fuel.paa";
 	};
 	class ManpowerImageShadow : IconImage {
-		idc = 1085;
 		x = (0.5475 * safezoneW + safezoneX)  + 0.003;
 		text = "res\ui_manpo.paa";
 		colorText[] = {0, 0, 0, 1}; 
 		y = (0.32 * safezoneH + safezoneY) + 0.005;
 	};
 	class AmmoImageShadow : IconImage {
-		idc = 1085;
 		x = (0.5775 * safezoneW + safezoneX) + 0.003;
 		text = "res\ui_ammo.paa";
 		colorText[] = {0, 0, 0, 1}; 
 		y = (0.32 * safezoneH + safezoneY) + 0.005;
 	};
 	class FuelImageShadow : IconImage {
-		idc = 1085;
 		x = (0.6075 * safezoneW + safezoneX)  + 0.003;
 		text = "res\ui_fuel.paa";
 		colorText[] = {0, 0, 0, 1}; 

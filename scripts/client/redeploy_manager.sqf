@@ -8,6 +8,8 @@ _spawn_str = "";
 
 waitUntil { !isNil "introDone" };
 waitUntil { introDone };
+waitUntil { !isNil "cinematic_camera_stop" };
+waitUntil { cinematic_camera_stop };
 
 while { true } do {
 	waitUntil { 
@@ -96,13 +98,18 @@ while { true } do {
 		} else {
 			if (count (choiceslist select _idxchoice) == 3) then {
 				_truck = (choiceslist select _idxchoice) select 2;
-				player setpos ([_truck, 5 + (random 5), random 360] call BIS_fnc_relPos)
+				player setpos ([_truck, 5 + (random 3), random 360] call BIS_fnc_relPos)
 			} else {
 				if (count (choiceslist select _idxchoice) == 4) then {
 					_squad_member = (choiceslist select _idxchoice) select 2;
 					_gotopos = getpos _squad_member;
+					_gotodir = getdir _squad_member;
+					if ( primaryWeapon player == "" ) then {
+						[ _squad_member, player ] call F_swapInventory;
+					};
 					deleteVehicle _squad_member;
 					player setpos _gotopos;
+					player setdir _gotodir;
 				} else {
 					_destpos = ((choiceslist select _idxchoice) select 1);
 					player setpos [((_destpos select 0) + 5) - (random 10),((_destpos select 1) + 5) - (random 10),0];

@@ -5,7 +5,7 @@ _idact_redeploy = -1;
 _distfob = 100;
 _distarsenal = 5;
 _distbuildfob = 10;
-_disthuron = 10;
+_distspawn = 10;
 _distredeploy = 30;
 
 removefobboxes = false;
@@ -29,10 +29,8 @@ while { true } do {
 	};
 	
 	_neararsenal = ((getpos player) nearobjects [Arsenal_typename,_distarsenal]);
-	_nearfobbox = ((getpos player) nearobjects [FOB_box_typename,_distbuildfob]) + ((getpos player) nearobjects [FOB_truck_typename,_distbuildfob]);
-	_neartruck = ((getpos player) nearobjects [Respawn_truck_typename,_disthuron]);
-	_neararsenal = _neararsenal + ((getpos player) nearobjects [huron_typename,_disthuron]);
-	_neararsenal = _neararsenal + ((getpos player) nearobjects [Respawn_truck_typename,_disthuron]);
+	_nearfobbox = ((getpos player) nearEntities [ [ FOB_box_typename, FOB_truck_typename ] , _distbuildfob]);
+	_nearspawn = ((getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] ,_distspawn]);
 	
 	if ( removefobboxes ) then {
 		removefobboxes = false;
@@ -41,7 +39,7 @@ while { true } do {
 		};
 	};
 
-	if ( (_fobdistance < _distredeploy || count _neartruck != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
+	if ( (_fobdistance < _distredeploy || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
 		if ( _idact_redeploy == -1 ) then {
 			_idact_redeploy = player addAction ["<t color='#80FF80'>" + localize "STR_DEPLOY_ACTION" + "</t> <img size='2' image='res\ui_redeploy.paa'/>","scripts\client\redeploy.sqf","",-750,false,true,"","build_confirmed == 0"];
 		};
@@ -52,7 +50,7 @@ while { true } do {
 		};
 	};
 	
-	if ( (count _neararsenal != 0 || count _neartruck != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
+	if ( (count _neararsenal != 0 || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
 		if (_idact_arsenal == -1) then {
 			_idact_arsenal = player addAction ["<t color='#FFFF00'>" + localize "STR_ARSENAL_ACTION" + "</t> <img size='2' image='res\ui_arsenal.paa'/>","scripts\client\open_arsenal.sqf","",-980,true,true,"","build_confirmed == 0"];
 		};

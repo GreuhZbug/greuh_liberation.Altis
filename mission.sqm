@@ -32,7 +32,7 @@ class Mission
 	randomSeed=7571389;
 	class Intel
 	{
-		briefingName="Liberation 0.84";
+		briefingName="Liberation 0.85";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=28800;
@@ -94,9 +94,9 @@ class Mission
 					special="NONE";
 					id=2;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_engineer_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
+					rank="SERGEANT";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -107,8 +107,9 @@ class Mission
 					special="NONE";
 					id=3;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -119,9 +120,9 @@ class Mission
 					special="NONE";
 					id=4;
 					side="WEST";
-					vehicle="B_engineer_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -132,9 +133,8 @@ class Mission
 					special="NONE";
 					id=5;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -765,9 +765,9 @@ class Mission
 					special="NONE";
 					id=26;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_engineer_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
+					rank="SERGEANT";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -778,8 +778,9 @@ class Mission
 					special="NONE";
 					id=27;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -790,9 +791,9 @@ class Mission
 					special="NONE";
 					id=28;
 					side="WEST";
-					vehicle="B_engineer_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -803,9 +804,8 @@ class Mission
 					special="NONE";
 					id=29;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -899,9 +899,9 @@ class Mission
 					special="NONE";
 					id=36;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_engineer_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
+					rank="SERGEANT";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -912,8 +912,9 @@ class Mission
 					special="NONE";
 					id=37;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -924,9 +925,9 @@ class Mission
 					special="NONE";
 					id=38;
 					side="WEST";
-					vehicle="B_engineer_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -937,9 +938,8 @@ class Mission
 					special="NONE";
 					id=39;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -1033,9 +1033,9 @@ class Mission
 					special="NONE";
 					id=46;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_engineer_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
+					rank="SERGEANT";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -1046,8 +1046,9 @@ class Mission
 					special="NONE";
 					id=47;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -1058,9 +1059,9 @@ class Mission
 					special="NONE";
 					id=48;
 					side="WEST";
-					vehicle="B_engineer_F";
+					vehicle="B_medic_F";
 					player="PLAY CDG";
-					rank="SERGEANT";
+					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -1071,9 +1072,8 @@ class Mission
 					special="NONE";
 					id=49;
 					side="WEST";
-					vehicle="B_medic_F";
+					vehicle="B_Soldier_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
 					skill=0.5;
 					init="removeallWeapons this; removebackpack this;";
 				};
@@ -1174,7 +1174,7 @@ class Mission
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; _nil = [this] execVM ""scripts\server\littlebird_protection.sqf"";";
 		};
 		class Item2
 		{
@@ -1186,7 +1186,7 @@ class Mission
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; _nil = [this] execVM ""scripts\server\littlebird_protection.sqf"";";
 		};
 		class Item3
 		{
@@ -1198,7 +1198,7 @@ class Mission
 			leader=1;
 			lock="LOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17   + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; this allowdamage false;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18   + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; this allowdamage false;";
 		};
 		class Item4
 		{
@@ -1378,7 +1378,7 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={16038.734,-0.30573136,2306.8042};
+			position[]={16038.734,-0.075784221,2306.8042};
 			azimut=272.396;
 			id=75;
 			side="EMPTY";
@@ -1386,7 +1386,7 @@ class Mission
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; _nil = [this] execVM ""scripts\server\littlebird_protection.sqf"";";
 		};
 		class Item21
 		{
@@ -1431,7 +1431,7 @@ class Mission
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; _nil = [this] execVM ""scripts\server\littlebird_protection.sqf"";";
 		};
 		class Item25
 		{
@@ -1443,7 +1443,7 @@ class Mission
 			leader=1;
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="this setpos [getpos this select 0, getpos this select 1, 17  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this;";
+			init="this setpos [getpos this select 0, getpos this select 1, 18  + (getposasl lhd select 2)]; clearWeaponCargoGlobal this;   clearMagazineCargoGlobal this;   clearItemCargoGlobal this;   clearBackpackCargoGlobal this; _nil = [this] execVM ""scripts\server\littlebird_protection.sqf"";";
 		};
 	};
 	class Markers
@@ -1451,7 +1451,7 @@ class Mission
 		items=313;
 		class Item0
 		{
-			position[]={3576.5537,5.4055243,13185.477};
+			position[]={3538.5476,8.427618,13119.706};
 			name="bigtown9";
 			text="Kavala";
 			type="n_service";
@@ -2707,7 +2707,7 @@ class Mission
 		};
 		class Item173
 		{
-			position[]={21451.594,14.04332,8035.0854};
+			position[]={21366.674,15.383508,7988.104};
 			name="opfor_point_30_51";
 			type="Empty";
 		};
@@ -3459,7 +3459,7 @@ class Mission
 		};
 		class Item295
 		{
-			position[]={9102.998,20.043301,11990.348};
+			position[]={9051.5527,22.247513,11980.104};
 			name="bigtown8";
 			text="Zaros";
 			type="n_service";
@@ -3470,7 +3470,7 @@ class Mission
 		};
 		class Item296
 		{
-			position[]={9332.2686,119.23419,15895.837};
+			position[]={9384.4053,119.36852,15893.108};
 			name="bigtown7";
 			text="Agios Dionysios";
 			type="n_service";
@@ -3481,7 +3481,7 @@ class Mission
 		};
 		class Item297
 		{
-			position[]={16793.793,23.696562,12660.273};
+			position[]={16819.328,22.640102,12710.389};
 			name="bigtown4";
 			text="Pyrgos";
 			type="n_service";
@@ -3492,7 +3492,7 @@ class Mission
 		};
 		class Item298
 		{
-			position[]={20972.92,41.134743,16976.709};
+			position[]={20959.895,42.043812,16969.631};
 			name="bigtown3";
 			text="Paros";
 			type="n_service";
@@ -3503,7 +3503,7 @@ class Mission
 		};
 		class Item299
 		{
-			position[]={27034.318,21.165508,23245.275};
+			position[]={27045.754,21.570675,23253.51};
 			name="bigtown1";
 			text="Molos";
 			type="n_service";
@@ -3514,7 +3514,7 @@ class Mission
 		};
 		class Item300
 		{
-			position[]={14036.392,26.353689,18731.801};
+			position[]={14037.987,26.440138,18729.564};
 			name="bigtown6";
 			text="Athira";
 			type="n_service";

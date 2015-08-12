@@ -2,6 +2,8 @@ if ( isNil "active_sectors" ) then { active_sectors = [] };
 if ( isNil "all_fobs" ) then { all_fobs = [] };
 
 cinematic_camera_started = true;
+_last_transition = -1;
+_last_position = [ -1, -1, -1 ];
 
 showCinemaBorder true;
 _cinematic_camera = "camera" camCreate [0,0,0];
@@ -21,19 +23,30 @@ while { cinematic_camera_started } do {
 		
 		_positions = [ getpos lhd ];
 		if ( !first_camera_round ) then {
-			_positions append all_fobs;
-			{ _positions pushback (getmarkerpos _x) } foreach active_sectors;
+			if ( count all_fobs > 0 ) then {
+				_positions pushback (all_fobs call bis_fnc_selectRandom);
+				_positions pushback (all_fobs call bis_fnc_selectRandom);
+				_positions pushback (all_fobs call bis_fnc_selectRandom);
+			};
+			if ( count active_sectors > 0 ) then {
+				_positions pushback (getmarkerpos (active_sectors call bis_fnc_selectRandom));
+				_positions pushback (getmarkerpos (active_sectors call bis_fnc_selectRandom));
+				_positions pushback (getmarkerpos (active_sectors call bis_fnc_selectRandom));
+			};
 			if ( endgame == 0 ) then {
 				 _activeplayers = ( [ allPlayers , { alive _x && ( _x distance ( getmarkerpos "respawn_west" ) ) > 100 } ] call BIS_fnc_conditionalSelect ); 
-				 while { ( count _positions < count _activeplayers ) && ( count _positions < 5 ) } do {
+				 if ( count _activeplayers > 0 ) then {
+					_positions pushback (getpos ( _activeplayers call bis_fnc_selectRandom ));
+					_positions pushback (getpos ( _activeplayers call bis_fnc_selectRandom ));
 					_positions pushback (getpos ( _activeplayers call bis_fnc_selectRandom ));
 				};
 			};
-			while { count _positions < 8 } do {
-				_positions pushback (getmarkerpos ( sectors_allSectors call bis_fnc_selectRandom ));
-			};
+			_positions pushback (getmarkerpos (sectors_allSectors call bis_fnc_selectRandom ));
+			_positions pushback (getmarkerpos (sectors_allSectors call bis_fnc_selectRandom ));
+			_positions pushback (getmarkerpos (sectors_allSectors call bis_fnc_selectRandom ));
 		};
-		_position = _positions call bis_fnc_selectRandom;
+		_position = ( _positions - [ _last_position ] ) call bis_fnc_selectRandom;
+		_last_position = _position;
 		_cinematic_pointer setpos [ _position select 0, _position select 1, (_position select 2) + 7 ];
 		_nearentities = _position nearEntities [ "Man", 100 ];
 		_camtarget = _cinematic_pointer;
@@ -57,7 +70,10 @@ while { cinematic_camera_started } do {
 		if ( !first_camera_round ) then {
 			_startfov = 0.8;
 			_endfov = 0.8;
-			switch ( [ 0, 1, 2, 3, 4, 5, 6, 7 ,8 ,9 ,10, 11 ,12 ,13 ,14, 15 ] call bis_fnc_selectRandom ) do {
+			
+			_next_transition = ( [ 0, 1, 2, 3, 4, 5, 6, 7 ,8 ,9 ,10, 11 ,12 ,13 ,14, 15 ] - [ _last_transition ] ) call bis_fnc_selectRandom;
+			_last_transition = _next_transition;
+			switch ( _next_transition ) do {
 				case 0: { 
 					_startpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) - 50, 15 ];
 					_endpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) + 50, 15 ];
@@ -208,9 +224,9 @@ while { cinematic_camera_started } do {
 		_cinematic_camera camSetPos _endpos;
 		_cinematic_camera camSetFov _endfov;
 		if ( first_camera_round ) then {
-			_cinematic_camera camcommit 20;
+			_cinematic_camera camcommit 18;
 		} else {
-			_cinematic_camera camcommit (10 + (random 5));
+			_cinematic_camera camcommit 10;
 		};
 		first_camera_round = false;
 		
@@ -219,8 +235,20 @@ while { cinematic_camera_started } do {
 				_unitname = "";
 				if ( isPlayer _camtarget ) then { _unitname = name _camtarget };
 				_nearest_sector = "";
-				_nearest_sector = [300, _position] call F_getNearestSector;
-				if ( _nearest_sector != "" ) then { _nearest_sector = markertext _nearest_sector };
+				if ( _position distance lhd < 300 ) then {
+					_nearest_sector = "BLUFOR LHD";
+				} else {
+					_nearest_sector = [300, _position ] call F_getNearestSector;
+					if ( _nearest_sector != "" ) then { 
+						_nearest_sector = markertext _nearest_sector;
+					} else {
+						_nearfobs = [ all_fobs, { _x distance _position < 300 } ] call BIS_fnc_conditionalSelect;
+						if ( count _nearfobs > 0 ) then {
+							_nearest_sector = format [ "FOB %1", military_alphabet select ( all_fobs find ( _nearfobs select 0 ) ) ];
+						};
+					};
+				};
+
 				[ format [ "<t size='0.7' align='left'>%1<br/>%2</t>", _unitname, _nearest_sector ],1,0.8,6,1 ] spawn BIS_fnc_dynamictext;
 			};
 		};
@@ -230,3 +258,4 @@ while { cinematic_camera_started } do {
 _cinematic_camera cameraEffect ["Terminate", "BACK"];
 camDestroy _cinematic_camera;
 camUseNVG false;
+cinematic_camera_stop = true;

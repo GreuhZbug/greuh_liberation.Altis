@@ -1,14 +1,20 @@
 _thispos = _this select 0;
+_attacktime = 600;
+_ownership = EAST;
 
-_attacktime = time;
+while { _attacktime > 0 && ( _ownership == EAST || _ownership == RESISTANCE ) } do {
+	_ownership = [ _thispos ] call F_sectorOwnership;
+	_attacktime = _attacktime - 1;
+	sleep 1;
+};
+
 waitUntil { 
 	sleep 1;
-	(time > (_attacktime  + 600 )) || [_thispos] call F_sectorOwnership != EAST;
+	[ _thispos ] call F_sectorOwnership != RESISTANCE;
 };
-waitUntil { [_thispos] call F_sectorOwnership != RESISTANCE };
 
 if ( endgame == 0 ) then {
-	if ( [_thispos] call F_sectorOwnership == EAST ) then {
+	if ( _attacktime <= 1 && ( [ _thispos ] call F_sectorOwnership == EAST ) ) then {
 		[ [ _thispos , 2 ] , "remote_call_fob" ] call BIS_fnc_MP;
 		sleep 3;
 		all_fobs = all_fobs - [_thispos];

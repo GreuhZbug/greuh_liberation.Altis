@@ -9,7 +9,9 @@ F_getNearestFob = {
 };
 
 F_getMobileRespawns = {
-	_respawn_trucks_unsorted = [ vehicles, { typeof _x == Respawn_truck_typename && alive _x && speed _x < 5 } ] call BIS_fnc_conditionalSelect;
+	_respawn_trucks_unsorted = [ vehicles, { 	( typeof _x == Respawn_truck_typename || typeof _x == huron_typename ) && _x distance lhd > 500 && 
+											!surfaceIsWater (getpos _x) && ((getpos _x) select 2) < 5 && alive _x && speed _x < 5 } 
+											] call BIS_fnc_conditionalSelect;
     _respawn_trucks_sorted = [ _respawn_trucks_unsorted , [] , { (getpos _x) select 0 } , "ASCEND" ] call BIS_fnc_sortBy;
 	
 	_respawn_trucks_sorted 
@@ -605,4 +607,38 @@ F_checkClass = {
 
 F_filterMods = {
 	[ (_this select 0) , { [ ( _x select 0 ) ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+};
+
+F_swapInventory = {
+	_unit1 = _this select 0;
+	_unit2 = _this select 1;
+	
+	removeAllWeapons _unit2;
+	
+	if ( backpack _unit2 == "" && backpack _unit1 != "" ) then { 
+		_unit2 addBackpack (backpack unit1); 
+	};
+	
+	{ _unit2 addMagazine _x } foreach ( magazines _unit1 );
+	
+	if ( primaryWeapon _unit1 != "" ) then { 
+		_unit2 addWeapon ( primaryWeapon _unit1 );
+		if ( count (primaryWeaponItems _unit1) > 0 ) then {
+			{ _unit2 addPrimaryWeaponitem _x } foreach (primaryWeaponItems _unit1);
+		};
+	};
+
+	if ( secondaryWeapon _unit1 != "" ) then { 
+		_unit2 addWeapon ( secondaryWeapon _unit1 );
+		if ( count (secondaryWeaponItems _unit1) > 0 ) then {
+			{ _unit2 addSecondaryWeaponItem _x } foreach (secondaryWeaponItems _unit1);
+		};
+	};
+	
+	if ( handgunWeapon _unit1 != "" ) then { 
+		_unit2 addWeapon ( handgunWeapon _unit1 );
+		if ( count (handgunItems _unit1) > 0 ) then {
+			{ _unit2 addHandgunItem _x } foreach (handgunItems _unit1);
+		};
+	};
 };
