@@ -1,8 +1,9 @@
 ![Liberation](http://i.imgur.com/bcWRxMT.png)
 
-# Liberation for Arma3
+# Liberation for Arma 3
 
 ## Current version : 0.85
+[Download from GitHub](https://github.com/GreuhZbug/greuh_liberation.Altis/releases/tag/v0.85)
 [Download from Dropbox](https://www.dropbox.com/s/php0ts8gpb7wq7a/greuh_liberation.Altis.pbo?dl=0)
 
 ## Required Mods
