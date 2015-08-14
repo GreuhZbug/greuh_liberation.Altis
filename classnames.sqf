@@ -39,19 +39,19 @@ light_vehicles = [
 light_vehicles = [ light_vehicles ] call F_filterMods;
 
 heavy_vehicles = [
-["B_APC_Wheeled_01_cannon_F",0,30,7],
-["greuh_pandur_wdld",0,50,8],
-["greuh_fv510_wdld",0,40,10],
-["greuh_fv510_dsrt",0,40,10],
-["B_APC_Tracked_01_rcws_F",0,30,10],
-["B_APC_Tracked_01_AA_F",0,40,10],
-["RHS_M2A3_BUSKIII_wd",0,55,10],
-["B_MBT_01_cannon_F",0,60,15],
-["Steve_MBT_Kuma",0,75,20],
-["B_MBT_01_TUSK_F",0,100,20],
-["Burnes_FV4034_01",0,150,30],
-["B_MBT_01_arty_F",0,300,25],
-["B_MBT_01_mlrs_F",0,500,30]
+["B_APC_Wheeled_01_cannon_F",0,30,8],
+["greuh_pandur_wdld",0,50,10],
+["greuh_fv510_wdld",0,40,15],
+["greuh_fv510_dsrt",0,40,15],
+["B_APC_Tracked_01_rcws_F",0,30,15],
+["B_APC_Tracked_01_AA_F",0,40,15],
+["RHS_M2A3_BUSKIII_wd",0,55,15],
+["B_MBT_01_cannon_F",0,75,20],
+["Steve_MBT_Kuma",0,100,25],
+["B_MBT_01_TUSK_F",0,100,25],
+["Burnes_FV4034_01",0,200,40],
+["B_MBT_01_arty_F",0,500,30],
+["B_MBT_01_mlrs_F",0,1000,50]
 ];
 heavy_vehicles = [ heavy_vehicles ] call F_filterMods;
 
@@ -61,21 +61,20 @@ air_vehicles = [
 ["greuh_aw159_a",0,50,12],
 ["B_Heli_Transport_01_F",0,20,12],
 ["B_Heli_Transport_03_F",0,20,15],
-["greuh_eh101_gr",0,0,20],
+["greuh_eh101_gr",0,0,25],
 ["MV22",0,0,25],
-["B_Heli_Attack_01_F",0,100,20],
-["H_RAH66",0,150,25],
-["LLW_Apache_RNLAF",0,300,30],
-["RHS_AH64D_wd",0,300,30],
-["B_Plane_CAS_01_F",0,400,50],
+["B_Heli_Attack_01_F",0,150,30],
+["H_RAH66",0,200,30],
+["RHS_AH64D_wd",0,400,50],
+["B_Plane_CAS_01_F",0,500,50],
 ["FIR_F16C",0,100,20],
-["JS_JC_FA18E",0,300,40],
-["JS_JC_FA18F",0,300,40],
+["JS_JC_FA18E",0,350,40],
+["JS_JC_FA18F",0,350,40],
 ["sab_C130_CSP",0,0,30],
 ["sab_C130_J",0,0,30],
 ["B_UAV_01_F",0,0,5],
-["B_UAV_02_F",0,200,20],
-["B_UAV_02_CAS_F",0,200,20]
+["B_UAV_02_F",0,250,20],
+["B_UAV_02_CAS_F",0,250,20]
 ];
 air_vehicles = [ air_vehicles ] call F_filterMods;
 

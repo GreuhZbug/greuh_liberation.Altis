@@ -17,6 +17,6 @@ while { dialog && (alive player) && dorecycle == 0 } do {
 
 if ( dialog ) then { closeDialog 0 };
 
-if ( dorecycle == 1 ) then {
+if ( dorecycle == 1 && !(isnull _vehtorecycle) && alive _vehtorecycle) then {
 	[ [ _vehtorecycle ] , "recycle_remote_call" ] call BIS_fnc_MP;
 };

@@ -19,7 +19,7 @@ while { cinematic_camera_started } do {
 	waitUntil { !cinematic_camera_started || camCommitted _cinematic_camera };
 	
 	if ( cinematic_camera_started ) then {
-		if ( (date select 3) < 5 || (date select 3) >= 19 ) then { camUseNVG true; } else { camUseNVG false; };
+		camUseNVG false;
 		
 		_positions = [ getpos lhd ];
 		if ( !first_camera_round ) then {

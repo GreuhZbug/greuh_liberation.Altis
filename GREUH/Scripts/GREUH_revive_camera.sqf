@@ -1,5 +1,9 @@
 revive_ui = compile preprocessFileLineNumbers "GREUH\scripts\GREUH_revive_ui.sqf";
 
+closeDialog 0;
+closeDialog 0;
+closeDialog 0;
+
 sleep 1;
 
 while { true } do {
@@ -12,17 +16,16 @@ while { true } do {
 	_cam cameraEffect ["internal", "BACK"];
 	_cam camSetFOV 1.0;
 	showCinemaBorder false;
-	if ( (date select 3) < 5 || (date select 3) >= 19 ) then { camUseNVG true; } else { camUseNVG false; };
+	if ( (date select 3) < 4 || (date select 3) >= 20 ) then { camUseNVG true; } else { camUseNVG false; };
 	_cam camSetTarget _camobj;
 	
-
-	titleText  ["", "BLACK FADED"];
+	_dialog = createDialog "blackscreen";
 	0 fadesound 0;
 	
 	[] spawn {
-		sleep 4;
-		1 fadesound 2;
-		titleText  [ "" ,"BLACK IN",2];
+		sleep 3.9;
+		3 fadesound 1;
+		titleText  [ "" ,"BLACK IN",3];
 	};
 
 	"filmGrain" ppEffectAdjust [0.3, 2, 4, 0.5, 0.5, true]; 
@@ -46,6 +49,7 @@ while { true } do {
 	_cam camCommit 900;
 
 	waitUntil { ((player getVariable "GREUH_isUnconscious") == 0) || ((player getVariable "FAR_isUnconscious") == 1) };
+	closeDialog 0;
 	if ((player getVariable "GREUH_isUnconscious") != 0) then {
 		_dialog = createDialog "GREUH_respawn";
 		[] spawn revive_ui;

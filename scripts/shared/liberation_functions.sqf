@@ -22,8 +22,8 @@ F_getUnitsCount = {
 	_distance = _this select 1;
 	_side = _this select 2;
 	
-	_infantrycount = _side countSide ( [ _position nearEntities [ "Man", _distance] , { !(captive _x) && alive _x && (getpos _x) select 2 < 500 } ] call BIS_fnc_conditionalSelect );
-	_countedvehicles =  [ ( _position nearEntities [ "AllVehicles", _distance] ), { alive _x && (getpos _x) select 2 < 500 && count (crew _x) > 0 } ] call BIS_fnc_conditionalSelect;
+	_infantrycount = _side countSide ( [ _position nearEntities [ "Man", _distance] , { !(captive _x) && alive _x && (getpos _x) select 2 < 750 } ] call BIS_fnc_conditionalSelect );
+	_countedvehicles =  [ ( _position nearEntities [ "AllVehicles", _distance] ), { alive _x && (getpos _x) select 2 < 750 && count (crew _x) > 0 } ] call BIS_fnc_conditionalSelect;
 	_vehiclecrewcount = 0;
 	{ _vehiclecrewcount = _vehiclecrewcount + (_side countSide (crew _x)) } foreach _countedvehicles;
 	

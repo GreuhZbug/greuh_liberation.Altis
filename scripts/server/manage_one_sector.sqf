@@ -17,11 +17,15 @@ _managed_units = [];
 
 _minimum_building_positions = 20;
 
-active_sectors pushback _sector; publicVariable "active_sectors";
-sleep 10;
-_count_west = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( isNil "active_sectors" ) then { active_sectors = [] };
 
-if ( _count_west > 2 ) then {
+sleep 5;
+
+if ( _sector in active_sectors ) exitWith {};
+
+if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 ) then {
+
+	active_sectors pushback _sector; publicVariable "active_sectors";
 
 	if ( _sector in sectors_bigtown ) then {
 		_vehtospawn = 
@@ -146,18 +150,10 @@ if ( _count_west > 2 ) then {
 					_remainingposits = _remainingposits - 1;
 				};
 			} foreach (units _grp);
-			
-			sleep 5;
-			{
-				if ( ( getmarkerpos "spawn_stuff" ) distance _x < 200 ) then { 
-					deleteVehicle _x;
-				}; 
-			} foreach (units _grp);
-			
 		};
 	};
 		
-	_managed_units = _managed_units + ( [ _sectorpos, _side ] call F_spawnMilitaryPostSquad );
+	_managed_units append ( [ _sectorpos, _side ] call F_spawnMilitaryPostSquad );
 		
 	if ( _spawncivs ) then {
 		_idx = 0;
@@ -181,7 +177,7 @@ if ( _count_west > 2 ) then {
 	
 	[ _sector, _building_range, _iedcount ] spawn ied_manager;
 
-	sleep 15;
+	sleep 10;
 	
 	if ( ( _sector in sectors_factory ) || (_sector in sectors_capture ) || (_sector in sectors_bigtown ) || (_sector in sectors_military ) ) then {
 		[_sector] spawn reinforcements_manager;
@@ -236,7 +232,7 @@ if ( _count_west > 2 ) then {
 			{ deleteVehicle _x } foreach _managed_units;
 			
 		} else {
-			if ( ( [_sectorpos, (sector_size + 100), WEST ] call F_getUnitsCount ) == 0 ) then {
+			if ( ( [_sectorpos, (sector_size + 250), WEST ] call F_getUnitsCount ) == 0 ) then {
 				{ 
 					if ( side (driver _x ) == WEST ) then { _managed_units = _managed_units - [_x] };
 				} foreach _managed_units;

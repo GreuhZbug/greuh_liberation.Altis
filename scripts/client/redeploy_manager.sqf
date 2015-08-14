@@ -21,7 +21,7 @@ while { true } do {
 	_oldsel = -999;
 	
 	showCinemaBorder false;
-	if ( (date select 3) < 5 || (date select 3) >= 19 ) then { camUseNVG true; } else { camUseNVG false; };
+	camUseNVG false;
 	respawn_camera = "camera" camCreate [0,0,0];
 	respawn_object = "Sign_Arrow_Blue_F" createVehicleLocal [0,0,0];
 	respawn_object hideObject true; 

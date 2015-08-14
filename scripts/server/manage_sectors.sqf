@@ -15,11 +15,11 @@ while { endgame == 0 } do {
 			[_x] spawn sector_initial_spawn;
 		};
 		
-		if ( ( _count_west > 2 ) && ( _west_on_flag == 0 ) && !( _x in active_sectors ) && ( [] call F_opforCap < 150 ) ) then {
+		if ( ( _count_west > 1 ) && ( _west_on_flag == 0 ) && !( _x in active_sectors ) && ( [] call F_opforCap < 150 ) ) then {
 			[_x] spawn manage_one_sector;
 		};
 		
-		sleep 0.2;
+		sleep 0.1;
 		
 	} foreach ( sectors_allSectors - blufor_sectors );
 
