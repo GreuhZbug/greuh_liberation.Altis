@@ -39,17 +39,18 @@ stats_fobs_lost = 0;
 stats_readiness_earned = 0;
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
-classnames_to_save = [FOB_typename, huron_typename];
+_classnames_to_save = [FOB_typename, huron_typename];
+_classnames_to_save_blu = [];
 {
 	no_kill_handler_classnames pushback (_x select 0);
-	classnames_to_save pushback (_x select 0);
+	_classnames_to_save pushback (_x select 0);
 } foreach buildings;
 
 {
-	classnames_to_save pushback (_x select 0);
+	_classnames_to_save_blu pushback (_x select 0);
 } foreach (static_vehicles + air_vehicles + heavy_vehicles + light_vehicles + support_vehicles);
 
-classnames_to_save = classnames_to_save + militia_vehicles + opfor_vehicles + opfor_troup_transports + opfor_air + opfor_choppers;
+_classnames_to_save = _classnames_to_save + _classnames_to_save_blu + militia_vehicles + opfor_vehicles + opfor_troup_transports + opfor_air + opfor_choppers;
 
 trigger_server_save = false;
 greuh_liberation_savegame = profileNamespace getVariable "GREUH_LIBERATION_SAVEGAME";
@@ -106,9 +107,13 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 	{
 		_nextclass = _x select 0;
 		
-		if ( _nextclass in classnames_to_save ) then {
+		if ( _nextclass in _classnames_to_save ) then {
 			_nextpos = _x select 1;
 			_nextdir = _x select 2;
+			_hascrew = false;
+			if ( count _x > 3 ) then {
+				_hascrew = _x select 3;
+			};
 			_nextbuilding = _nextclass createVehicle _nextpos;
 			_nextbuilding setVectorUp [0,0,1];
 			_nextbuilding setpos _nextpos;
@@ -117,6 +122,9 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			_nextbuilding setpos _nextpos;
 			_nextbuilding setdir _nextdir;
 			_nextbuilding setdamage 0;
+			if ( _hascrew ) then {
+				createVehicleCrew _nextbuilding;
+			};
 			
 			if ( !(_nextclass in no_kill_handler_classnames ) ) then {
 				_nextbuilding addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
@@ -153,7 +161,7 @@ while { true } do {
 			_fobpos = _x;
 			_nextbuildings = _fobpos nearobjects 200;
 			{
-				if ( (typeof _x) in classnames_to_save ) then {
+				if ( (typeof _x) in _classnames_to_save ) then {
 					if ( alive _x && ( speed _x < 1 ) && (((getpos _x) select 2) < 10 )) then {
 						_all_buildings pushback _x;
 					}
@@ -165,7 +173,13 @@ while { true } do {
 			_nextclass = typeof _x;
 			_nextpos = [(getpos _x) select 0, (getpos _x) select 1, 0];
 			_nextdir = getdir _x;
-			buildings_to_save pushback [ _nextclass,_nextpos,_nextdir ];
+			_hascrew = false;
+			if ( _nextclass in _classnames_to_save_blu ) then {
+				if ( count (crew _x) > 0 ) then {
+					_hascrew = true;
+				};
+			};
+			buildings_to_save pushback [ _nextclass,_nextpos,_nextdir,_hascrew ];
 		} foreach _all_buildings;
 		
 		time_of_day = date select 3;

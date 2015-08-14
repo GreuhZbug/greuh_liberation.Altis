@@ -14,20 +14,20 @@ if ( _wounded ) then {
 	_unit setSkill ["reloadSpeed", 0.1];
 } else {
 	if ( _side == WEST || _side == EAST ) then {
-		_unit setSkill ["aimingspeed", 0.25];
-		_unit setSkill ["aimingaccuracy", 0.25];
-		_unit setSkill ["aimingshake", 0.3];
+		_unit setSkill ["aimingspeed", 0.28];
+		_unit setSkill ["aimingaccuracy", 0.28];
+		_unit setSkill ["aimingshake", 0.32];
 		_unit setSkill ["spottime", 1.0];
 		_unit setSkill ["spotdistance", 0.75];
 		_unit setSkill ["commanding", 1.0];
-		_unit setSkill ["reloadSpeed", 0.5];
+		_unit setSkill ["reloadSpeed", 0.7];
 	} else {
-		_unit setSkill ["aimingspeed", 0.2];
-		_unit setSkill ["aimingaccuracy", 0.2];
-		_unit setSkill ["aimingshake", 0.2];
+		_unit setSkill ["aimingspeed", 0.23];
+		_unit setSkill ["aimingaccuracy", 0.23];
+		_unit setSkill ["aimingshake", 0.27];
 		_unit setSkill ["spottime", 1.0];
 		_unit setSkill ["spotdistance", 0.5];
 		_unit setSkill ["commanding", 1.0];
-		_unit setSkill ["reloadSpeed", 0.25];
+		_unit setSkill ["reloadSpeed", 0.5];
 	};
 };

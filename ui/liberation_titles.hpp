@@ -67,37 +67,11 @@ class RscTitles
 		w = 0.3 * safezoneW;
 		y = 0.65 * safezoneH + safezoneY;
 		h = 0.1 * safezoneH;
-		text = "v0.85";
+		text = "v0.86";
 	  };
 	  class VersionLabelShadow : VersionLabel {
 		shadow = 2;
 		font = FontM;  
-	  };
-   };
-   
-
-   class blackscreen
-   {
-      name = "blackscreen";
-      duration = 4;
-      idd = -1;
-      movingEnable = true;
-
-      controls[]=
-      {
-         OuterBackground
-      };
-	  class OuterBackground {
-		idc = -1;
-		type =  CT_STATIC; 
-		style = ST_LEFT;
-		colorText[] = COLOR_BLACK;
-		colorBackground[] = COLOR_BLACK;
-		font = FontM; 
-		sizeEx = 0.023;
-		x = -3; y = -3;
-		w = 9;  h = 9;
-		text = "";
 	  };
    };
    
@@ -120,7 +94,7 @@ class RscTitles
 	  onLoad = "uiNamespace setVariable ['GUI_OVERLAY', _this select 0];";
       controls[]= { BGPicture,LabelManpower,LabelAmmo,LabelFuel,LabelCap,PictureManpowerShadow,PictureAmmoShadow,
 	  PictureFuelShadow,PictureCapShadow,PictureManpower,PictureAmmo,PictureFuel,PictureCap,PictureCombatReadinessShadow,PictureCombatReadiness,
-	  BGPictureSector,CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame, LabelPoint,LabelCombatReadiness };
+	  BGPictureSector,CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame, LabelPoint, LabelCombatReadiness, CentralShadow, CentralLabel };
 	  class BGPicture {
 	  	idc = -1;
 		type =  CT_STATIC; 
@@ -155,6 +129,22 @@ class RscTitles
 		h = 0.04 * safezoneH;
 		text = "";
 		shadow = 1;
+	  };
+	  class CentralLabel : GenericLabel69 {
+		idc = 266;
+		type = CT_STATIC; 
+		style = ST_CENTER;  
+		colorText[] = {1,1,0,1};
+		sizeEx = 0.03 * safezoneH;
+		x = 0 * safezoneW + safezoneX;
+		w = 1 * safezoneW;
+		y = 0.2 * safezoneH + safezoneY;
+		h = 0.05 * safezoneH;
+		text = "";
+	  };
+	  class CentralShadow : CentralLabel {
+		idc = 267;
+		shadow = 2;
 	  };
 	  class GenericPicture69 {
 	  	idc = -1;

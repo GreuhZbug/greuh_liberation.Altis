@@ -2,6 +2,13 @@ build_confirmed = 0;
 _maxdist = 125;
 _truepos = [];
 
+GRLIB_preview_spheres = [];
+while { count GRLIB_preview_spheres < 36 } do {
+	GRLIB_preview_spheres pushback ( "Sign_Sphere100cm_F" createVehicleLocal [ 0, 0, 0 ] );
+};
+
+{ _x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"]; } foreach GRLIB_preview_spheres;
+
 if (isNil "manned") then { manned = false };
 if (isNil "gridmode" ) then { gridmode = 0 };
 if (isNil "repeatbuild" ) then { repeatbuild = false };
@@ -73,8 +80,8 @@ while { true } do {
 			_vehicle enableSimulationGlobal false;
 			
 			_dist = 0.6 * (sizeOf _classname);
-			if (_dist < 2.5) then { _dist = 2.5 };
-			_dist = _dist + 1.5;
+			if (_dist < 3.5) then { _dist = 3.5 };
+			_dist = _dist + 0.5;
 
 			for [{_i=0}, {_i<5}, {_i=_i+1}] do {
 				_vehicle setObjectTextureGlobal [_i, '#(rgb,8,8,3)color(0,1,0,0.8)'];
@@ -100,6 +107,12 @@ while { true } do {
 					if ( _actualdir <= 22.5 || _actualdir >= 337.5 ) then { _actualdir = 0 };
 				};
 				
+				_sphere_idx = 0;
+				{
+					_x setpos ( [ _truepos, _dist, _sphere_idx * 10 ] call BIS_fnc_relPos );
+					_sphere_idx = _sphere_idx + 1;
+				} foreach GRLIB_preview_spheres;
+				
 				_vehicle setdir _actualdir;
 				
 				_near_objects = (_truepos nearobjects ["AllVehicles", _dist]) ;
@@ -115,18 +128,28 @@ while { true } do {
 					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 25]);
 				};
 				
-				_remove_objects = (_truepos nearobjects ["Animal", 25]) + (_truepos nearobjects ["land_runway_edgelight", 25]) + (_truepos nearobjects ["land_runway_edgelight_blue_f", 25]) + (_truepos nearobjects ["Land_HelipadSquare_F", 25]) +  [player, _vehicle];
+				_remove_objects = (_truepos nearobjects ["Animal", 25]) + (_truepos nearobjects ["land_runway_edgelight", 25]) + 
+								(_truepos nearobjects ["land_runway_edgelight_blue_f", 25]) + (_truepos nearobjects ["Land_HelipadSquare_F", 25]) +  [player, _vehicle]
+								+ (_truepos nearobjects ["Sign_Sphere100cm_F", 25]) + (_truepos nearobjects ["TMR_Autorest_Georef", 25]);
 				
 				_near_objects = _near_objects - _remove_objects;
 				_near_objects_25 = _near_objects_25 - _remove_objects;
 				
 				if ( count _near_objects == 0 ) then {
 					{
-						_dist22 = 0.55 * (sizeOf (typeof _x));
+						_dist22 = 0.6 * (sizeOf (typeof _x));
 						if (_truepos distance _x < _dist22) then {
-							_near_objects = _near_objects + [_x];
+							_near_objects pushback _x;
 						};
 					} foreach _near_objects_25;
+					
+					
+				};
+				
+				if ( count _near_objects != 0 ) then {
+					GRLIB_conflicting_objects = _near_objects;
+				} else {
+					GRLIB_conflicting_objects = [];
 				};
 				
 				if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) then {
@@ -142,24 +165,32 @@ while { true } do {
 						_vehicle setVectorUp surfaceNormal position _vehicle;
 					};
 					if(build_invalid == 1) then {
-						hint localize "STR_PLACEMENT_POSSIBLE";
+						GRLIB_ui_notif = "";
+						{ _x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"]; } foreach GRLIB_preview_spheres;
 					};
 					build_invalid = 0;
+					
 				} else {
+					if ( build_invalid == 0 ) then {
+						{ _x setObjectTexture [0, "#(rgb,8,8,3)color(1,0,0,1)"]; } foreach GRLIB_preview_spheres;
+					};
 					_vehicle setpos _ghost_spot;
 					build_invalid = 1;
 					if(count _near_objects > 0) then {
-						hint format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
+						GRLIB_ui_notif = format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
 					};
 					if((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) then {
-						hint localize "STR_BUILD_ERROR_WATER";
+						GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";
 					};
 					if((_truepos distance _posfob) > _maxdist) then {
-						hint format [localize "STR_BUILD_ERROR_DISTANCE",_maxdist];
+						GRLIB_ui_notif = format [localize "STR_BUILD_ERROR_DISTANCE",_maxdist];
 					};
+
 				};
 				sleep 0.05;
 			};
+			
+			{ _x setpos [ 0,0,0 ] } foreach GRLIB_preview_spheres;
 			
 			if ( !alive player || build_confirmed == 3 ) then {
 				deleteVehicle _vehicle;

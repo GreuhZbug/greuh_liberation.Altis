@@ -21,6 +21,7 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\write
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\empty_vehicles_marker.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\unflip_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\recycle_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\build_overlay.sqf";
 
 if ( typeof player == "B_officer_F" ) then {	
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\delete_groups.sqf";	

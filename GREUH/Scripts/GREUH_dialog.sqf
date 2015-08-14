@@ -56,6 +56,12 @@ if ( GREUH_allow_mapmarkers ) then {
 	{ ctrlShow [_x, false] } foreach _markerscontrols;
 };
 
+if ( true ) then {
+	sliderSetSpeed [ 1102, 5, 5];
+	sliderSetRange [ 1102, 0, 100];
+	sliderSetPosition [ 1102, desired_vehvolume ];
+};
+
 while { dialog && alive player } do {
 
 	if ( renaming ) then {
@@ -92,11 +98,13 @@ while { dialog && alive player } do {
 		ctrlSetText [733, format [ '%1m' ,round ((desiredviewdistance_obj / 100.0) * desiredviewdistance_inf) ]];
 	};
 	
+	ctrlSetText [ 1103, format [ "%1%2", round (desired_vehvolume), "%" ] ];
+	
 	uiSleep 0.1;
 };
 
 if (!alive player) then { closeDialog 0 };
 
-greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj,show_teammates,show_platoon ];
+greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj, show_teammates, show_platoon, desired_vehvolume ];
 profileNamespace setVariable [ "GREUH_OPTIONS_PROFILE",greuh_options_profile ];
 saveProfileNamespace;
