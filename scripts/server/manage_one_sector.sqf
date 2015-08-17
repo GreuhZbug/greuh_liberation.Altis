@@ -12,20 +12,54 @@ _iedcount = 0;
 
 _combat_readiness_increase = 0;
 _vehtospawn = [];
-_side = EAST;
+_sidespawn = EAST;
 _managed_units = [];
+_squadies_to_spawn = [];
 
 _minimum_building_positions = 20;
 
 if ( isNil "active_sectors" ) then { active_sectors = [] };
-
-sleep 5;
-
 if ( _sector in active_sectors ) exitWith {};
+active_sectors pushback _sector; publicVariable "active_sectors";
 
-if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 ) then {
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount > 0 && _unitscount <= 10 ) then {
+	sleep 5;
+};
 
-	active_sectors pushback _sector; publicVariable "active_sectors";
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount > 0 && _unitscount <= 6 ) then {
+	sleep 10;
+};
+
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount > 0 && _unitscount <= 4 ) then {
+	sleep 10;
+};
+
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount > 0 && _unitscount <= 3 ) then {
+	sleep 10;
+};
+
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount > 0 && _unitscount <= 2 ) then {
+	sleep 10;
+};
+
+sleep 0.1;
+_unitscount = [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount;
+if ( _unitscount == 1 ) then {
+	sleep 10;
+};
+
+
+if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 0 ) then {
 
 	if ( _sector in sectors_bigtown ) then {
 		_vehtospawn = 
@@ -36,10 +70,11 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 		(militia_vehicles call BIS_fnc_selectRandom),
 		(militia_vehicles call BIS_fnc_selectRandom)];
 		_infsquad = "militia";
+		_squadies_to_spawn = ([] call F_getAdaptiveSquadComp) + ([] call F_getAdaptiveSquadComp);
 		if((random 100) > 50) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		if((random 100) > 33) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		_spawncivs = true;
-		_side = EAST;
+		_sidespawn = EAST;
 		_combat_readiness_increase = 0;
 		_building_ai_max = 70;
 		_building_range = 300;
@@ -49,10 +84,11 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 	if ( _sector in sectors_capture ) then {
 		_vehtospawn = [];
 		_infsquad = "militia";
+		while { count _squadies_to_spawn < 10 } do { _squadies_to_spawn pushback ( militia_squad call BIS_fnc_selectRandom ) };
 		if((random 100) > 50) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		if((random 100) > 33) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		_spawncivs = true;
-		_side = RESISTANCE;
+		_sidespawn = RESISTANCE;
 		_combat_readiness_increase = (floor (random 6));
 		_building_ai_max = floor (15 + (round (combat_readiness / 10 )) + (random 10));
 		_building_range = 100;
@@ -60,10 +96,11 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 	};
 	if ( _sector in sectors_military ) then {
 		_infsquad = "csat";
+		_squadies_to_spawn = ([] call F_getAdaptiveSquadComp) + ([] call F_getAdaptiveSquadComp);
 		_vehtospawn = [( [] call F_getAdaptiveVehicle ),( [] call F_getAdaptiveVehicle )];
 		if((random 100) > 50) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		if((random 100) > 33) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
-		_side = EAST;
+		_sidespawn = EAST;
 		_spawncivs = false;
 		_combat_readiness_increase = 5 + (floor (random 16));
 		_building_ai_max = floor (20 + (round (combat_readiness / 5 )) + (random 10));
@@ -73,10 +110,11 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 	if ( _sector in sectors_factory ) then {
 		_vehtospawn = [];
 		_infsquad = "militia";
+		_squadies_to_spawn = ([] call F_getAdaptiveSquadComp);
 		if((random 100) > 50) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		if((random 100) > 50) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		if((random 100) > 33) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
-		_side = EAST;
+		_sidespawn = EAST;
 		_spawncivs = false;
 		_combat_readiness_increase = 3 + (floor (random 8));
 		_building_ai_max = floor (15 + (round (combat_readiness / 10 )) + (random 10));
@@ -86,9 +124,33 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 	};
 	if ( _sector in sectors_tower ) then {
 		_spawncivs = false;
+		_sidespawn = EAST;
+		_squadies_to_spawn = ([] call F_getAdaptiveSquadComp);
 		_combat_readiness_increase = (floor (random 4));
 		_building_ai_max = 0;
 	};
+	
+	if ( count _squadies_to_spawn > 0 ) then {
+		_spawnpos = [0,0,0];
+		while { surfaceIsWater _spawnpos } do {
+			_spawnpos = [(((_sectorpos select 0) + 25) - (random 50)),(((_sectorpos select 1) + 25) - random 50),0];
+			_spawnpos = _spawnpos findEmptyPosition [0, 100, "B_Heli_Light_01_F"];
+		};
+		
+		_grp = createGroup _sidespawn;
+		{ _x createUnit [_spawnpos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach _squadies_to_spawn;
+		
+		if ( _sector in sectors_capture ) then {
+			_unitidx = 0;
+			{
+				[ _x ] call ( militia_standard_squad select _unitidx );
+				_unitidx = _unitidx + 1;	
+			} foreach (units _grp);
+		};
+		
+		[_grp,_sectorpos] spawn add_defense_waypoints;
+		_managed_units append (units _grp);
+	};	
 
 	{
 		_vehicle = [_sectorpos, _x] call F_libSpawnVehicle;
@@ -97,7 +159,6 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 		{ _managed_units pushback _x; } foreach (crew _vehicle);
 		sleep 0.1;
 	} foreach _vehtospawn;
-
 
 	if ( _building_ai_max > 0 ) then {
 
@@ -122,7 +183,7 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 			_squadtospawnnn = [];
 			while { (count _squadtospawnnn) < _building_ai_max } do { _squadtospawnnn pushback ( _infsquad_classnames call BIS_fnc_selectRandom ); };
 			
-			_grp = createGroup _side;
+			_grp = createGroup _sidespawn;
 			{ _x createUnit [ _sectorpos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach _squadtospawnnn;
 			
 			if ( _infsquad == "militia" ) then { 
@@ -153,7 +214,7 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 1 
 		};
 	};
 		
-	_managed_units append ( [ _sectorpos, _side ] call F_spawnMilitaryPostSquad );
+	_managed_units append ( [ _sectorpos, _sidespawn ] call F_spawnMilitaryPostSquad );
 		
 	if ( _spawncivs ) then {
 		_idx = 0;

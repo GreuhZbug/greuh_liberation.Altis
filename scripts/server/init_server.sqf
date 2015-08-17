@@ -16,7 +16,6 @@ troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\troup_t
 reinforcements_manager = compileFinal preprocessFileLineNumbers "scripts\server\reinforcements_manager.sqf";
 spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\spawn_air.sqf";
 manage_one_patrol = compileFinal preprocessFileLineNumbers "scripts\server\manage_one_patrol.sqf";
-sector_initial_spawn = compileFinal preprocessFileLineNumbers "scripts\server\sector_initial_spawn.sqf";
 patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\patrol_ai.sqf";
 ied_manager = compileFinal preprocessFileLineNumbers "scripts\server\ied_manager.sqf";
 csat_abandon_vehicle = compileFinal preprocessFileLineNumbers "scripts\server\csat_abandon_vehicle.sqf";
