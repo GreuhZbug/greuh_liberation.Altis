@@ -22,8 +22,8 @@ F_getUnitsCount = {
 	_distance = _this select 1;
 	_side = _this select 2;
 	
-	_infantrycount = _side countSide ( [ _position nearEntities [ "Man", _distance] , { !(captive _x) && alive _x && (getpos _x) select 2 < 750 } ] call BIS_fnc_conditionalSelect );
-	_countedvehicles =  [ ( _position nearEntities [ "AllVehicles", _distance] ), { alive _x && (getpos _x) select 2 < 750 && count (crew _x) > 0 } ] call BIS_fnc_conditionalSelect;
+	_infantrycount = _side countSide ( [ _position nearEntities [ "Man", _distance] , { !(captive _x) && alive _x && (getpos _x) select 2 < 350 } ] call BIS_fnc_conditionalSelect );
+	_countedvehicles =  [ ( _position nearEntities [ "AllVehicles", _distance] ), { alive _x && (getpos _x) select 2 < 350 && count (crew _x) > 0 } ] call BIS_fnc_conditionalSelect;
 	_vehiclecrewcount = 0;
 	{ _vehiclecrewcount = _vehiclecrewcount + (_side countSide (crew _x)) } foreach _countedvehicles;
 	
@@ -281,10 +281,13 @@ F_sectorOwnership = {
 		_blufor_ratio = _countwest_ownership / ( _countwest_ownership + _counteast_ownership);
 	};
 	
-	if ( _countwest_ownership <= _cap_thresold_count && _counteast_ownership <= _cap_thresold_count ) then { _sectorside = CIVILIAN; };
-	if ( _countwest_ownership > _cap_thresold_count && (_counteast_ownership <= _cap_thresold_count || _blufor_ratio > _cap_thresold_ratio) ) then { _sectorside = WEST; };
-	if ( _countwest_ownership <= _cap_thresold_count && _counteast_ownership > _cap_thresold_count ) then { _sectorside = EAST; };
-	if ( _countwest_ownership > _cap_thresold_count && (_counteast_ownership > _cap_thresold_count && _blufor_ratio < _cap_thresold_ratio ) ) then { _sectorside = RESISTANCE; };
+	if ( _countwest_ownership == 0 && _counteast_ownership <= _cap_thresold_count ) then { _sectorside = CIVILIAN; };
+	
+	if ( _countwest_ownership > 0 && (_counteast_ownership <= _cap_thresold_count || _blufor_ratio > _cap_thresold_ratio) ) then { _sectorside = WEST; };
+	
+	if ( _countwest_ownership == 0 && _counteast_ownership > _cap_thresold_count ) then { _sectorside = EAST; };
+	
+	if ( _countwest_ownership > 0 && (_counteast_ownership > _cap_thresold_count && _blufor_ratio <= _cap_thresold_ratio ) ) then { _sectorside = RESISTANCE; };
 	
 	_sectorside
 };	

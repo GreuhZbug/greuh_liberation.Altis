@@ -51,7 +51,7 @@ heavy_vehicles = [
 ["B_MBT_01_TUSK_F",0,100,25],
 ["Burnes_FV4034_01",0,200,40],
 ["B_MBT_01_arty_F",0,500,30],
-["B_MBT_01_mlrs_F",0,1000,50]
+["B_MBT_01_mlrs_F",0,2000,100]
 ];
 heavy_vehicles = [ heavy_vehicles ] call F_filterMods;
 
@@ -193,7 +193,7 @@ air_vehicles_classnames = opfor_choppers;
 	air_vehicles_classnames pushback (_x select 0);
 } foreach air_vehicles;
 
-sector_size = 1000;
+sector_size = 1250;
 capture_size = 250;
 radiotower_size = 2500;
 recycling_percentage = 0.65;

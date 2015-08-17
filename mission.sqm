@@ -32,7 +32,7 @@ class Mission
 	randomSeed=7571389;
 	class Intel
 	{
-		briefingName="Liberation 0.86";
+		briefingName="Liberation 0.87";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=28800;
@@ -1135,7 +1135,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14495.802,10.323127,5881.3779};
+					position[]={14495.979,10.331208,5881.3428};
 					azimut=310;
 					id=54;
 					side="WEST";

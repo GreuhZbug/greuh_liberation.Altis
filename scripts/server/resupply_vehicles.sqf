@@ -10,7 +10,7 @@ while { true } do {
 			_x setRepairCargo 1;
 			_x setFuelCargo 1;
 		};
-		sleep 5;
+		sleep 1;
 	} foreach vehicles;
-	sleep 5;
+	sleep 15;
 };

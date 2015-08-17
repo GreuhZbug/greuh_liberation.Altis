@@ -39,7 +39,7 @@ while { true } do {
 		((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (135)) ctrlSetTextColor _color_readiness;
 
 		
-		_nearest_active_sector = [1000] call F_getNearestSector;
+		_nearest_active_sector = [ sector_size ] call F_getNearestSector;
 		if ( _nearest_active_sector != "" ) then {
 			_zone_size = capture_size;
 			if ( _nearest_active_sector in sectors_bigtown ) then {

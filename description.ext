@@ -5,9 +5,9 @@ disabledAI = true;
 enableDebugConsole = 1;
 
 loadScreen="res\liberation.jpg";
-onLoadMission = "Liberation 0.86";
+onLoadMission = "Liberation 0.87";
 author = "[GREUH] Zbug";
-onLoadName = "Liberation 0.86";
+onLoadName = "Liberation 0.87";
 
 class Header
 {
