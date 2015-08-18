@@ -32,7 +32,7 @@ class Mission
 	randomSeed=7571389;
 	class Intel
 	{
-		briefingName="Liberation 0.87";
+		briefingName="Liberation 0.87a";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=28800;

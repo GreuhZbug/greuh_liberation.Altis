@@ -304,5 +304,6 @@ if ( ( [ getmarkerpos _sector , sector_size , WEST ] call F_getUnitsCount ) > 0 
 		};
 		sleep 5;
 	};
+} else {
+	active_sectors = active_sectors - [ _sector ]; publicVariable "active_sectors";
 };
-
