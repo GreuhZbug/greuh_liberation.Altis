@@ -1,30 +1,31 @@
 ["Preload"] call BIS_fnc_arsenal;
-respawn_lhd = compileFinal preprocessFileLineNumbers "scripts\client\respawn_lhd.sqf";
-spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn_camera.sqf";
-cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\cinematic_camera.sqf";
-write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\write_credit_line.sqf";
+respawn_lhd = compileFinal preprocessFileLineNumbers "scripts\client\spawn\respawn_lhd.sqf";
+spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn\spawn_camera.sqf";
+cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\ui\cinematic_camera.sqf";
+write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\write_credit_line.sqf";
 
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\action_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\do_build.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\synchronise_vars.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\fob_markers.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\redeploy_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\huron_marker.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\sector_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\manage_weather.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\group_icons.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\spot_timer.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\secondary_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\intel_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\hostile_groups.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\empty_vehicles_marker.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\unflip_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\recycle_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\build_overlay.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\action_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\intel_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\recycle_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\unflip_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\build_overlay.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\do_build.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\empty_vehicles_marker.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\fob_markers.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\group_icons.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\hostile_groups.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\huron_marker.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\secondary_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\manage_weather.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\synchronise_vars.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\spawn\redeploy_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\ui_manager.sqf";
 
-if ( typeof player == "B_officer_F" ) then {	
-	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\delete_groups.sqf";	
+
+if ( typeof player == "B_officer_F" ) then {
+	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\delete_groups.sqf";
 };
 
 player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
@@ -33,4 +34,4 @@ player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 	[_x] call BIS_fnc_drawCuratorLocations;
 } foreach allCurators;
 
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\intro.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\intro.sqf";

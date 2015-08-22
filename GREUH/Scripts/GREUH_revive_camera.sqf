@@ -23,7 +23,7 @@ while { true } do {
 	0 fadesound 0;
 	
 	[] spawn {
-		sleep 3.9;
+		sleep 3.5;
 		3 fadesound 1;
 		titleText  [ "" ,"BLACK IN",3];
 	};
