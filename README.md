@@ -5,8 +5,6 @@
 ## Current version : 0.88
 [Download from GitHub](https://github.com/GreuhZbug/greuh_liberation.Altis/releases/)
 
-[Download from Dropbox](https://www.dropbox.com/s/php0ts8gpb7wq7a/greuh_liberation.Altis.pbo?dl=0)
-
 ## Overview
  
 Altis has fallen to the CSAT forces, and it is up to you to take it back. Embark with your teammates on a persistent campaign that will span several weeks of real time to liberate all the major cities of the island.
