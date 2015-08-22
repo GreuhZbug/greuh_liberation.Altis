@@ -2,13 +2,10 @@
 
 # Liberation for Arma 3
 
-## Current version : 0.87a
-[Download from GitHub](https://github.com/GreuhZbug/greuh_liberation.Altis/releases/tag/v0.86)
+## Current version : 0.88
+[Download from GitHub](https://github.com/GreuhZbug/greuh_liberation.Altis/releases/)
 
 [Download from Dropbox](https://www.dropbox.com/s/php0ts8gpb7wq7a/greuh_liberation.Altis.pbo?dl=0)
-
-## Required Mods
-[Atlas Mod: LHD Plus (from ArmaHolic)](http://www.armaholic.com/page.php?id=27648)
 
 ## Overview
  

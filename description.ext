@@ -5,9 +5,9 @@ disabledAI = true;
 enableDebugConsole = 1;
 
 loadScreen="res\liberation.jpg";
-onLoadMission = "Liberation 0.87a";
-author = "[GREUH] Zbug";
-onLoadName = "Liberation 0.87a";
+onLoadMission = $STR_MISSION_TITLE;
+author = "[GREUH] Zbug, [GREUH] McKeewa";
+onLoadName = $STR_MISSION_TITLE;
 
 class Header
 {
@@ -19,19 +19,4 @@ class Header
 #include "GREUH\UI\GREUH_interface.hpp"
 #include "ui\liberation_interface.hpp"
 #include "ui\liberation_notifications.hpp"
-
-class Params
-{
-	class WipeSave1{
-		title = $STR_WIPE_TITLE;
-		values[] = {0,1};
-		texts[] =  {$STR_WIPE_NO,$STR_WIPE_YES};
-		default = 0;
-	};
-	class WipeSave2{
-		title = $STR_WIPE_TITLE_2;
-		values[] = {0,1};
-		texts[] = {$STR_WIPE_NO,$STR_WIPE_YES};
-		default = 0;
-	};
-};
+#include "ui\mission_params.hpp"

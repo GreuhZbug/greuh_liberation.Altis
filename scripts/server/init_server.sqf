@@ -1,43 +1,57 @@
-[] execVM "scripts\server\fetch_params.sqf";
 [] call compileFinal preprocessFileLineNumbers "scripts\loadouts\init_loadouts.sqf";
 
-manage_one_sector = compileFinal preprocessFileLineNumbers "scripts\server\manage_one_sector.sqf";
-add_defense_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\add_defense_waypoints.sqf";
-add_civ_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\add_civ_waypoints.sqf";
-recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\recalculate_caps.sqf";
-prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\prisonner_ai.sqf";
-building_defence_ai = compileFinal preprocessFileLineNumbers "scripts\server\building_defence_ai.sqf";
-spawn_battlegroup = compileFinal preprocessFileLineNumbers "scripts\server\spawn_battlegroup.sqf";
-battlegroup_ai = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup_ai.sqf";
-destroy_fob = compileFinal preprocessFileLineNumbers "scripts\server\destroy_fob.sqf";
-attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\attack_in_progress_fob.sqf";
-attack_in_progress_sector = compileFinal preprocessFileLineNumbers "scripts\server\attack_in_progress_sector.sqf";
-troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\troup_transport.sqf";
-reinforcements_manager = compileFinal preprocessFileLineNumbers "scripts\server\reinforcements_manager.sqf";
-spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\spawn_air.sqf";
-manage_one_patrol = compileFinal preprocessFileLineNumbers "scripts\server\manage_one_patrol.sqf";
-patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\patrol_ai.sqf";
-ied_manager = compileFinal preprocessFileLineNumbers "scripts\server\ied_manager.sqf";
-csat_abandon_vehicle = compileFinal preprocessFileLineNumbers "scripts\server\csat_abandon_vehicle.sqf";
-check_victory_conditions = compileFinal preprocessFileLineNumbers "scripts\server\check_victory_conditions.sqf";
+// AI
+add_civ_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\ai\add_civ_waypoints.sqf";
+add_defense_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\ai\add_defense_waypoints.sqf";
+battlegroup_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\battlegroup_ai.sqf";
+building_defence_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\building_defence_ai.sqf";
+csat_abandon_vehicle = compileFinal preprocessFileLineNumbers "scripts\server\ai\csat_abandon_vehicle.sqf";
+patrol_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\patrol_ai.sqf";
+prisonner_ai = compileFinal preprocessFileLineNumbers "scripts\server\ai\prisonner_ai.sqf";
+troup_transport = compileFinal preprocessFileLineNumbers "scripts\server\ai\troup_transport.sqf";
 
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\save_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\synchronise_vars.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\manage_resources.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\unit_cap.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\spawn_radio_towers.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\huron_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\zeus_synchro.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\manage_sectors.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\manage_weather.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\periodic_save.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\lose_sectors.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\secondary_objectives_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\manage_patrols.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\readiness_increase.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resupply_vehicles.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\reinforcements_resetter.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\recalculate_resources.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\recalculate_timer.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\fucking_set_fog.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\playtime.sqf";
+// Battlegroup
+spawn_air = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_air.sqf";
+spawn_battlegroup = compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\spawn_battlegroup.sqf";
+
+// Game
+check_victory_conditions = compileFinal preprocessFileLineNumbers "scripts\server\game\check_victory_conditions.sqf";
+
+// Patrol
+manage_one_civilian_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_civilian_patrol.sqf";
+manage_one_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_patrol.sqf";
+reinforcements_manager = compileFinal preprocessFileLineNumbers "scripts\server\patrols\reinforcements_manager.sqf";
+
+// Resources
+recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_caps.sqf";
+
+// Sector
+attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
+attack_in_progress_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_sector.sqf";
+destroy_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\destroy_fob.sqf";
+ied_manager = compileFinal preprocessFileLineNumbers "scripts\server\sector\ied_manager.sqf";
+manage_one_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_one_sector.sqf";
+wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\sector\wait_to_spawn_sector.sqf";
+
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\base\startgame.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\base\huron_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\readiness_increase.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\fucking_set_fog.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\manage_weather.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\periodic_save.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\playtime.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\save_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\secondary_objectives_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\spawn_radio_towers.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\synchronise_vars.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_synchro.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\civilian_patrols.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_patrols.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\reinforcements_resetter.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\manage_resources.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_resources.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_timer.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\resupply_vehicles.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\unit_cap.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\lose_sectors.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_sectors.sqf";
