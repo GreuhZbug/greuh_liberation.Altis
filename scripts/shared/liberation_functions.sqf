@@ -25,3 +25,4 @@ F_swapInventory = compileFinal preprocessFileLineNumbers "scripts\shared\functio
 F_spawnRegularSquad = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_spawnRegularSquad.sqf";
 F_spawnCivilians = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_spawnCivilians.sqf";
 F_limitSkill = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_limitSkill.sqf";
+F_getNearbyPlayers = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getNearbyPlayers.sqf";

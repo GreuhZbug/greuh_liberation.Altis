@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.88</Original>
+        		<Original>Liberation 0.88a</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.88</Original>
+                        <Original>v0.88a</Original>
                 </Key>
                 <Key ID="STR_Deploy_OnPoint">
                         <Original>Deploy</Original>
