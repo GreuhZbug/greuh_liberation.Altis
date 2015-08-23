@@ -2,7 +2,7 @@
 
 # Liberation for Arma 3
 
-## Current version : 0.88
+## Current version : 0.88a
 [Download from GitHub](https://github.com/GreuhZbug/greuh_liberation.Altis/releases/)
 
 ## Overview
