@@ -20,6 +20,8 @@ while { endgame == 0 } do {
 		};
 	} foreach blufor_sectors;
 
-	resources_ammo = resources_ammo + ( ammo_sector_value * _nbsectorsmil * GRLIB_resources_multiplier);
+	if ( count allPlayers > 0 ) then {
+		resources_ammo = resources_ammo + ( ammo_sector_value * _nbsectorsmil * GRLIB_resources_multiplier);
+	};
 	sleep tick_period;
 };

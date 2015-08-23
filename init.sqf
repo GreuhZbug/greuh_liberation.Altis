@@ -1,3 +1,5 @@
+enableSaving [ false, false ];
+
 if ( isNil "endgame" ) then { endgame = 0 };
 
 [] call compileFinal preprocessFileLineNumbers "scripts\shared\atlas_manager.sqf";
