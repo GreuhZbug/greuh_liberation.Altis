@@ -1,5 +1,5 @@
 _sector = _this select 0;
-_attacktime = 900;
+_attacktime = GRLIB_vulnerability_timer;
 _ownership = EAST;
 
 while { _attacktime > 0 && ( _ownership == EAST || _ownership == RESISTANCE ) } do {
@@ -13,7 +13,7 @@ waitUntil {
 	[markerpos _sector] call F_sectorOwnership != RESISTANCE;
 };
 
-if ( endgame == 0 ) then {
+if ( GRLIB_endgame == 0 ) then {
 	if ( _attacktime <= 1 && ( [markerpos _sector] call F_sectorOwnership == EAST ) ) then {
 		blufor_sectors = blufor_sectors - [ _sector ];
 		publicVariable "blufor_sectors";

@@ -6,6 +6,8 @@ if ( isMultiplayer ) then {
 	GRLIB_revive = ["Revive",1] call bis_fnc_getParamValue;
 	GRLIB_introduction = ["Introduction",1] call bis_fnc_getParamValue;
 	GRLIB_deployment_cinematic = ["DeploymentCinematic",1] call bis_fnc_getParamValue;
+	GRLIB_unitcap = ["Unitcap",1] call bis_fnc_getParamValue;
+	GRLIB_civilian_activity = ["Civilians",1] call bis_fnc_getParamValue;
 	GRLIB_build_first_fob = ["FirstFob",0] call bis_fnc_getParamValue;
 	GRLIB_param_wipe_savegame_1 = ["WipeSave1",0] call bis_fnc_getParamValue;
 	GRLIB_param_wipe_savegame_2 = ["WipeSave2",0] call bis_fnc_getParamValue;
@@ -17,6 +19,8 @@ if ( isMultiplayer ) then {
 	GRLIB_revive = 1;
 	GRLIB_introduction = 0;
 	GRLIB_deployment_cinematic = 0;
+	GRLIB_unitcap = 1;
+	GRLIB_civilian_activity = 1;
 	GRLIB_build_first_fob = 0;
 	GRLIB_param_wipe_savegame_1 = 0;
 	GRLIB_param_wipe_savegame_2 = 0;

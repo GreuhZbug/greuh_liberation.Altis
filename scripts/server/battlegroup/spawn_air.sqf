@@ -3,7 +3,7 @@ _first_objective = _this select 0;
 if ( combat_readiness >= 50 ) then { _planes_number = (floor (random 2)) };
 if ( combat_readiness >= 75 ) then { _planes_number = (floor (random 3)) };
 
-_plane_type = opfor_air select (floor (random (count opfor_air)));
+_plane_type = opfor_air call BIS_fnc_selectRandom;
 _air_spawnpoint = ( [ [ "opfor_airspawn1","opfor_airspawn2","opfor_airspawn3","opfor_airspawn4","opfor_airspawn5","opfor_airspawn6","opfor_airspawn7" ]
 				, [ _first_objective ] , { (markerpos _x) distance _input0 }, "ASCEND"] call BIS_fnc_sortBy ) select 0;
 _air_grp = createGroup EAST;
@@ -13,12 +13,12 @@ for [ {_idx=0},{_idx < _planes_number},{_idx=_idx+1}] do {
 	_air_spawnpos = markerpos _air_spawnpoint;
 	_air_spawnpos = [(((_air_spawnpos select 0) + 500) - random 1000),(((_air_spawnpos select 1) + 500) - random 1000),0];
 
-	_newvehicle = createVehicle [_plane_type, _air_spawnpos, [], 0, "FLY"]; 
+	_newvehicle = createVehicle [_plane_type, _air_spawnpos, [], 0, "FLY"];
 	_newvehicle flyInHeight (120 + (random 180));
 	createVehicleCrew _newvehicle;
 	_newvehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 	{ _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } foreach (crew _newvehicle);
-	
+
 	(crew _newvehicle) joinSilent _air_grp;
 };
 
@@ -31,12 +31,12 @@ _waypoint = _air_grp addWaypoint [ _first_objective, 500];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "AWARE";
-_waypoint setWaypointCombatMode "RED"; 
+_waypoint setWaypointCombatMode "RED";
 _waypoint = _air_grp addWaypoint [ _first_objective, 500];
 _waypoint setWaypointType "MOVE";
 _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "AWARE";
-_waypoint setWaypointCombatMode "RED"; 
+_waypoint setWaypointCombatMode "RED";
 _waypoint = _air_grp addWaypoint [ _first_objective, 500];
 _waypoint setWaypointType "SAD";
 _waypoint = _air_grp addWaypoint [ _first_objective, 1000];

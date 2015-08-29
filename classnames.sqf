@@ -1,4 +1,9 @@
 
+// For this entire file: classnames that come from mods you don't have
+// will be filtered out and won't cause any issues. You just won't see them ingame.
+
+// Each array below represents one page of the build menu
+// Format : [ "classname", manpower, ammo, fuel ]
 
 infantry_units = [
 ["B_soldier_F",2,0,0],
@@ -21,7 +26,6 @@ infantry_units = [
 ["B_crew_F",1,0,0],
 ["B_helipilot_F",1,0,0]
 ];
-infantry_units = [ infantry_units ] call F_filterMods;
 
 light_vehicles = [
 ["B_Quadbike_01_F",0,0,1],
@@ -39,7 +43,6 @@ light_vehicles = [
 ["B_UGV_01_F",0,0,5],
 ["B_UGV_01_rcws_F",0,50,5]
 ];
-light_vehicles = [ light_vehicles ] call F_filterMods;
 
 heavy_vehicles = [
 ["B_APC_Wheeled_01_cannon_F",0,30,8],
@@ -56,7 +59,6 @@ heavy_vehicles = [
 ["B_MBT_01_arty_F",0,500,30],
 ["B_MBT_01_mlrs_F",0,2000,100]
 ];
-heavy_vehicles = [ heavy_vehicles ] call F_filterMods;
 
 air_vehicles = [
 ["B_Heli_Light_01_F",0,0,10],
@@ -79,7 +81,6 @@ air_vehicles = [
 ["B_UAV_02_F",0,250,20],
 ["B_UAV_02_CAS_F",0,250,20]
 ];
-air_vehicles = [ air_vehicles ] call F_filterMods;
 
 static_vehicles = [
 ["B_HMG_01_F",0,10,0],
@@ -89,7 +90,6 @@ static_vehicles = [
 ["B_static_AA_F",0,25,0],
 ["B_static_AT_F",0,30,0]
 ];
-static_vehicles = [ static_vehicles ] call F_filterMods;
 
 buildings = [
 ["Land_CncBarrierMedium4_F",0,0,0],
@@ -110,7 +110,6 @@ buildings = [
 ["Flag_NATO_F",0,0,0],
 ["Land_HelipadSquare_F",0,0,0]
 ];
-buildings = [ buildings ] call F_filterMods;
 
 support_vehicles = [
 ["B_supplyCrate_F",2,0,0],
@@ -126,8 +125,8 @@ support_vehicles = [
 ["C_Offroad_01_repair_F",5,0,2],
 ["B_APC_Tracked_01_CRV_F",0,30,10]
 ];
-support_vehicles = [ support_vehicles ] call F_filterMods;
 
+// Pre-made squads for the commander build menu
 blufor_squad_inf_light = [ "B_Soldier_SL_F","B_Soldier_TL_F","B_Soldier_GL_F","B_soldier_AR_F","B_Soldier_GL_F","B_medic_F","B_Soldier_LAT_F","B_Soldier_F","B_Soldier_F"];
 blufor_squad_inf = [ "B_Soldier_SL_F","B_Soldier_TL_F","B_Soldier_AR_F","B_HeavyGunner_F","B_medic_F","B_Soldier_GL_F","B_Soldier_LAT_F","B_Soldier_LAT_F","B_soldier_M_F","B_Sharpshooter_F" ];
 blufor_squad_at = [ "B_Soldier_SL_F","B_soldier_AT_F","B_soldier_AT_F","B_soldier_AT_F","B_medic_F","B_soldier_F" ];
@@ -135,6 +134,9 @@ blufor_squad_aa = [ "B_Soldier_SL_F","B_soldier_AA_F","B_soldier_AA_F","B_soldie
 blufor_squad_recon = [ "B_recon_TL_F","B_recon_F","B_recon_exp_F","B_recon_medic_F","B_recon_LAT_F","B_recon_LAT_F","B_recon_M_F","B_Recon_Sharpshooter_F","B_recon_F"];
 blufor_squad_para = [ "B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F" ];
 
+// [ squad, manpower, ammo, fuel ]
+// The game doesn't calculate the actual cost of the squads when they're being bought and instead use the costs below (especially ammo),
+// but once they're spawned the cost of each individual unit will be used to calculate caps (especially manpower and fuel)
 squads = [
 [blufor_squad_inf_light,20,0,0],
 [blufor_squad_inf,30,0,0],
@@ -143,12 +145,11 @@ squads = [
 [blufor_squad_recon,25,0,0],
 [blufor_squad_para,20,0,0]
 ];
-squads_names = [ localize "STR_LIGHT_RIFLE_SQUAD", localize "STR_RIFLE_SQUAD", localize "STR_AT_SQUAD", localize "STR_AA_SQUAD",  localize "STR_RECON_SQUAD", localize "STR_PARA_SQUAD" ];
 
+// All the UAVs you'll use must be declared here for technical purposes, otherwise there will be buggy issues
 uavs = [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
 
-build_lists = [[],infantry_units,light_vehicles,heavy_vehicles,air_vehicles,static_vehicles,buildings,support_vehicles,squads];
-
+// Each of these should be unique, the same classnames for different purposes may cause various issues with actions
 FOB_typename = "Land_Cargo_HQ_V1_F";
 FOB_box_typename = "B_Slingload_01_Cargo_F";
 FOB_truck_typename = "B_Truck_01_box_F";
@@ -156,49 +157,72 @@ Arsenal_typename = "B_supplyCrate_F";
 Respawn_truck_typename = "B_Truck_01_medical_F";
 huron_typename = "B_Heli_Transport_03_unarmed_F";
 
-opfor_basic_soldier = "O_Soldier_F";
-opfor_sentry = "O_Soldier_lite_F";
-
+// Guerillas. It's only classnames the game will pick from, not the actual squad that will spawn, unlike the CSAT pre-made squads below
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
+// Same principle, only an array with everything for the game to randomly choose into
+militia_vehicles = [ "rhs_btr70_chdkz","rhs_zsu234_chdkz","I_MU_mercs_Offroad_01_armed_F","I_MU_mercs_Offroad_01_armed_F","B_G_Offroad_01_armed_F","B_G_Offroad_01_armed_F","LOP_AFR_BTR60","LOP_AFR_M113_W","LOP_AFR_T72BA","I_MU_mercs_Offroad_01_armed_F"];
 
+// All the CSAT pre-made squads
 opfor_squad_low_intensity = ["O_Soldier_TL_F","O_Soldier_AR_F","O_medic_F","O_Soldier_LAT_F","O_Soldier_F","O_Soldier_F","O_Soldier_lite_F","O_Soldier_lite_F"];
 opfor_squad_8_standard = ["O_Soldier_SL_F","O_Soldier_TL_F","O_Soldier_AR_F","O_HeavyGunner_F","O_medic_F","O_soldier_M_F","O_Soldier_GL_F","O_Soldier_LAT_F"];
 opfor_squad_8_infkillers = ["O_Soldier_SL_F","O_Soldier_AR_F","O_Soldier_AR_F","O_HeavyGunner_F","O_medic_F","O_soldier_M_F","O_Sharpshooter_F","O_sniper_F"];
 opfor_squad_8_tankkillers = ["O_Soldier_SL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_LAT_F","O_Soldier_LAT_F","O_Soldier_AT_F","O_Soldier_AT_F","O_Soldier_AT_F"];
 opfor_squad_8_airkillers = ["O_Soldier_SL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_LAT_F","O_Soldier_LAT_F","O_Soldier_AA_F","O_Soldier_AA_F","O_Soldier_AA_F"];
 
-militia_vehicles = [ "rhs_btr70_chdkz","rhs_zsu234_chdkz","I_MU_mercs_Offroad_01_armed_F","I_MU_mercs_Offroad_01_armed_F","B_G_Offroad_01_armed_F","B_G_Offroad_01_armed_F","LOP_AFR_BTR60","LOP_AFR_M113_W","LOP_AFR_T72BA","I_MU_mercs_Offroad_01_armed_F"];
-militia_vehicles = [ militia_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+// Single units that will be used for secondary objectives and cargo posts garrisons
+opfor_sentry = "O_Soldier_lite_F";
+opfor_lookout_1 = "O_soldier_M_F";
+opfor_lookout_2 = "O_Soldier_AR_F";
 
+// All the vehicles that can spawn as sector defenders and patrols, the game will pick randomly
 opfor_vehicles = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F","O_MRAP_02_gmg_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F"];
+// Same, with lighter choices to be used  when the alert level is low
 opfor_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"];
+
+// All the vehicles that can spawn as battlegroup members, again the game will pick randomly
+opfor_battlegroup_vehicles = ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F","O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_covered_F"];
+// All the vehicles that can spawn as battlegroup members (see above) and hold 8 soldiers as passengers.
+// If something can't hold all 8 soldiers then buggy behaviours may occur
+opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_covered_F"];
+// Battlegroup members that will need to spawn in flight. Should be only helos but, who knows
+opfor_choppers = ["O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_covered_F"];
+
+// Opfor attack aircrafts to choose from
+opfor_air = ["O_Plane_CAS_02_F"];
+
+// Civilians to randomly choose from
 civilians = ["C_man_1","C_man_polo_6_F","C_man_polo_3_F","C_man_polo_2_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_1_F","C_man_p_beggar_F","C_man_1_2_F","C_man_p_fugitive_F","C_man_hunter_1_F","C_journalist_F","C_man_shorts_2_F","C_man_w_worker_F"];
 civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F" ];
 
-opfor_battlegroup_infantry = [["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"],["O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_cannon_F"],["O_APC_Wheeled_02_rcws_F","O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F"],["O_Heli_Light_02_F"]];
-opfor_battlegroup_armor = [["O_MRAP_02_hmg_F"],["O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F"],["O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_cannon_F"]];
-opfor_battlegroup_air = [["O_Heli_Attack_02_F","O_Heli_Attack_02_F"],["O_Heli_Light_02_F"],["O_Heli_Transport_04_covered_F","O_Heli_Transport_04_covered_F"]];
-opfor_battlegroup_mixed = [["O_Heli_Attack_02_F","O_Heli_Light_02_F"],["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F"],["O_Heli_Transport_04_covered_F","O_APC_Wheeled_02_rcws_F"],["O_MBT_02_cannon_F","O_APC_Tracked_02_cannon_F","O_APC_Tracked_02_AA_F"]];
 
-opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_covered_F"];
-opfor_air = ["O_Plane_CAS_02_F"];
-opfor_choppers = ["O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_covered_F"];
 
+
+
+
+// !!
+// Do not edit below this point!!
+// Only boring technical stuff
+// !!
+
+
+
+
+
+
+infantry_units = [ infantry_units ] call F_filterMods;
+light_vehicles = [ light_vehicles ] call F_filterMods;
+heavy_vehicles = [ heavy_vehicles ] call F_filterMods;
+air_vehicles = [ air_vehicles ] call F_filterMods;
+support_vehicles = [ support_vehicles ] call F_filterMods;
+static_vehicles = [ static_vehicles ] call F_filterMods;
+buildings = [ buildings ] call F_filterMods;
+build_lists = [[],infantry_units,light_vehicles,heavy_vehicles,air_vehicles,static_vehicles,buildings,support_vehicles,squads];
+militia_vehicles = [ militia_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 military_alphabet = ["Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-Ray","Yankee","Zulu"];
-
 land_vehicles_classnames = (opfor_vehicles + militia_vehicles);
 all_hostile_classnames = (land_vehicles_classnames + opfor_air + opfor_choppers + opfor_troup_transports + opfor_vehicles_low_intensity);
-{
-	land_vehicles_classnames pushback (_x select 0);
-} foreach (heavy_vehicles + light_vehicles);
-
+{ land_vehicles_classnames pushback (_x select 0); } foreach (heavy_vehicles + light_vehicles);
 air_vehicles_classnames = opfor_choppers;
-{
-	air_vehicles_classnames pushback (_x select 0);
-} foreach air_vehicles;
-
-sector_size = 1250;
-capture_size = 250;
-radiotower_size = 2500;
-recycling_percentage = 0.65;
+{ air_vehicles_classnames pushback (_x select 0); } foreach air_vehicles;
 markers_reset = [99999,99999,0];
+squads_names = [ localize "STR_LIGHT_RIFLE_SQUAD", localize "STR_RIFLE_SQUAD", localize "STR_AT_SQUAD", localize "STR_AA_SQUAD",  localize "STR_RECON_SQUAD", localize "STR_PARA_SQUAD" ];

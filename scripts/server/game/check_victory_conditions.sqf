@@ -2,11 +2,11 @@ sleep 15;
 
 _blufor_bigtowns = [ blufor_sectors, { _x in sectors_bigtown } ] call BIS_fnc_conditionalSelect;
 
-if ( count _blufor_bigtowns == count sectors_bigtown ) then { 
-	endgame = 1;
-	publicVariable "endgame";
+if ( count _blufor_bigtowns == count sectors_bigtown ) then {
+	GRLIB_endgame = 1;
+	publicVariable "GRLIB_endgame";
 	{ _x allowDamage false; (vehicle _x) allowDamage false; } foreach allPlayers;
-	
+
 	publicstats = [];
 	publicstats pushback stats_opfor_soldiers_killed;
 	publicstats pushback stats_opfor_killed_by_players;
@@ -36,6 +36,6 @@ if ( count _blufor_bigtowns == count sectors_bigtown ) then {
 	publicstats pushback stats_fobs_built;
 	publicstats pushback stats_fobs_lost;
 	publicstats pushback stats_readiness_earned;
-	
+
 	[ [ publicstats ] , "remote_call_endgame" ] call BIS_fnc_MP;
 };

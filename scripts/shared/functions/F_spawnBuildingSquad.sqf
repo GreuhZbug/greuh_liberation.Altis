@@ -1,5 +1,7 @@
-params [ "_infsquad", "_building_ai_max", "_buildingpositions" ];
-private [ "_squadtospawnnn", "_infsquad_classnames", "_usedposits", "_nextposit", "_remainingposits", "_grp" ];
+params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos", "_sidespawn" ];
+private [ "_squadtospawnnn", "_infsquad_classnames", "_usedposits", "_nextposit", "_remainingposits", "_grp", "_everythingspawned", "_nextunit", "_position_indexes", "_position_count", "_idxposit", "_groupunitscount" ];
+
+_everythingspawned = [];
 
 _infsquad_classnames = [];
 if ( _infsquad == "militia" ) then {
@@ -8,37 +10,43 @@ if ( _infsquad == "militia" ) then {
 	_infsquad_classnames = ([] call F_getAdaptiveSquadComp);
 };
 
-if ( _building_ai_max > floor ((count _buildingpositions) * 0.65)) then { _building_ai_max = floor ((count _buildingpositions) * 0.65)};
+if ( _building_ai_max > floor ((count _buildingpositions) * GRLIB_defended_buildingpos_part)) then { _building_ai_max = floor ((count _buildingpositions) * GRLIB_defended_buildingpos_part)};
 _squadtospawnnn = [];
 while { (count _squadtospawnnn) < _building_ai_max } do { _squadtospawnnn pushback ( _infsquad_classnames call BIS_fnc_selectRandom ); };
 
-_grp = createGroup _sidespawn;
-{ _x createUnit [ _sectorpos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach _squadtospawnnn;
-
-if ( _infsquad == "militia" ) then {
-	{ [ _x ] call ( militia_standard_squad call BIS_fnc_selectRandom ) } foreach (units _grp);
+_position_indexes = [];
+_position_count = count _buildingpositions;
+while { count _position_indexes < count _squadtospawnnn } do {
+	_nextposit = floor (random _position_count);
+	if ( !(_nextposit in _position_indexes) ) then {
+		_position_indexes pushback _nextposit;
+	}
 };
 
-
-_usedposits = [];
-_nextposit = -1;
-_remainingposits = count _buildingpositions;
-
-sleep 5;
-
+_grp = createGroup _sidespawn;
+_idxposit = 0;
 {
-	if ( _remainingposits > 2 ) then {
-		_nextposit = (floor (random (count _buildingpositions)));
-		while { _nextposit in _usedposits } do {
-			_nextposit = (floor (random (count _buildingpositions)));
-		};
-		_usedposits pushback _nextposit;
-		_x setdir (random 360);
-		_x setpos (_buildingpositions select _nextposit);
-		[_x] spawn building_defence_ai;
-		_x setUnitPos "UP";
-		_remainingposits = _remainingposits - 1;
+	[ _x, _sectorpos, _grp ] spawn { params [ "_classname", "_sectorpos", "_grp" ]; _classname createUnit [ _sectorpos, _grp ]; };
+	_groupunitscount = (count units _grp);
+	waitUntil { count units _grp != _groupunitscount };
+	_nextunit = (units _grp) select ((count (units _grp)) -1);
+	_nextunit addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
+	_nextunit setpos (_buildingpositions select (_position_indexes select _idxposit));
+	[ _nextunit ] spawn building_defence_ai;
+	if ( _infsquad == "militia" ) then {
+		[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );
 	};
-} foreach (units _grp);
 
-_grp;
+	_idxposit = _idxposit + 1;
+
+	if ( count units _grp > 10 ) then {
+		_everythingspawned = _everythingspawned + (units _grp);
+		_grp = createGroup _sidespawn;
+	};
+} foreach _squadtospawnnn;
+
+if ( !(isNull _grp)) then {
+	_everythingspawned = _everythingspawned + (units _grp);
+};
+
+_everythingspawned

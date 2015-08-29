@@ -1,15 +1,16 @@
 params [ "_minimum_readiness", "_is_infantry" ];
+private [ "_headless_client" ];
 
 waitUntil { !isNil "blufor_sectors" };
 waitUntil { !isNil "combat_readiness" };
 
-while { endgame == 0 } do {
-	waitUntil { sleep 0.3; combat_readiness >= _minimum_readiness; };
-	waitUntil { sleep 0.3; count blufor_sectors > 3; };
+while { GRLIB_endgame == 0 } do {
+	waitUntil { sleep 0.3; count blufor_sectors >= 3; };
+	waitUntil { sleep 0.3; combat_readiness >= (_minimum_readiness / GRLIB_difficulty_modifier); };
 
 	sleep (random 30);
 
-	while {  [] call F_opforCap > 150 } do {
+	while {  [] call F_opforCap > GRLIB_patrol_cap } do {
 			sleep (random 30);
 	};
 
@@ -44,6 +45,13 @@ while { endgame == 0 } do {
 
 	_started_time = time;
 	_patrol_continue = true;
+
+	if ( local _grp ) then {
+		_headless_client = [] call F_lessLoadedHC;
+		if ( !isNull _headless_client ) then {
+			_grp setGroupOwner ( owner _headless_client );
+		};
+	};
 
 	while { _patrol_continue } do {
 		sleep 60;

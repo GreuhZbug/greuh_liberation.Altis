@@ -9,6 +9,8 @@ onLoadMission = $STR_MISSION_TITLE;
 author = "[GREUH] Zbug, [GREUH] McKeewa";
 onLoadName = $STR_MISSION_TITLE;
 
+joinUnassigned = 0;
+
 class Header
 {
 	gameType = CTI;

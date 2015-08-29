@@ -8,7 +8,7 @@ _last_position = [ -1, -1, -1 ];
 showCinemaBorder true;
 _cinematic_camera = "camera" camCreate [0,0,0];
 _cinematic_pointer = "Sign_Arrow_Blue_F" createVehicleLocal [0,0,0];
-_cinematic_pointer hideObject true; 
+_cinematic_pointer hideObject true;
 _cinematic_camera camSetTarget _cinematic_pointer;
 _cinematic_camera cameraEffect ["internal","back"];
 _cinematic_camera camcommit 0;
@@ -17,10 +17,10 @@ if ( isNil "first_camera_round" ) then { first_camera_round = true; };
 while { cinematic_camera_started } do {
 
 	waitUntil { !cinematic_camera_started || camCommitted _cinematic_camera };
-	
+
 	if ( cinematic_camera_started ) then {
 		camUseNVG false;
-		
+
 		_positions = [ getpos lhd ];
 		if ( !first_camera_round ) then {
 			if ( count all_fobs > 0 ) then {
@@ -33,8 +33,8 @@ while { cinematic_camera_started } do {
 				_positions pushback (getmarkerpos (active_sectors call bis_fnc_selectRandom));
 				_positions pushback (getmarkerpos (active_sectors call bis_fnc_selectRandom));
 			};
-			if ( endgame == 0 ) then {
-				 _activeplayers = ( [ allPlayers , { alive _x && ( _x distance ( getmarkerpos "respawn_west" ) ) > 100 } ] call BIS_fnc_conditionalSelect ); 
+			if ( GRLIB_endgame == 0 ) then {
+				 _activeplayers = ( [ allPlayers , { alive _x && ( _x distance ( getmarkerpos "respawn_west" ) ) > 100 } ] call BIS_fnc_conditionalSelect );
 				 if ( count _activeplayers > 0 ) then {
 					_positions pushback (getpos ( _activeplayers call bis_fnc_selectRandom ));
 					_positions pushback (getpos ( _activeplayers call bis_fnc_selectRandom ));
@@ -65,7 +65,7 @@ while { cinematic_camera_started } do {
 				};
 			};
 		};
-		
+
 		_cinematic_camera camSetTarget _camtarget;
 		_startpos = [ ((getpos _camtarget) select 0) - 60, ((getpos _camtarget) select 1) + 350, 5 ];
 		_endpos = [ ((getpos _camtarget) select 0) - 60, ((getpos _camtarget) select 1) - 230, 5 ];
@@ -74,77 +74,77 @@ while { cinematic_camera_started } do {
 		if ( !first_camera_round ) then {
 			_startfov = 0.8;
 			_endfov = 0.8;
-			
+
 			_next_transition = ( [ 0, 1, 2, 3, 4, 5, 6, 7 ,8 ,9 ,10, 11 ,12 ,13 ,14, 15 ] - [ _last_transition ] ) call bis_fnc_selectRandom;
 			_last_transition = _next_transition;
 			switch ( _next_transition ) do {
-				case 0: { 
+				case 0: {
 					_startpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) - 50, 15 ];
 					_endpos = [ ((getpos _camtarget) select 0) - 30, ((getpos _camtarget) select 1) + 50, 15 ];
 					_endfov = 0.8;
 				};
-				
-				case 1: { 
+
+				case 1: {
 					_startpos = [ ((getpos _camtarget) select 0) + 5, ((getpos _camtarget) select 1) - 100, 1 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 5, ((getpos _camtarget) select 1) + 100, 40 ];
 					_endfov = 0.55;
 				};
-				
-				case 2: { 
+
+				case 2: {
 					_startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 50, 100 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) + 50, 100 ];
 					_startfov = 0.5;
 					_endfov = 0.3;
 				};
-				
-				case 3: { 
+
+				case 3: {
 					_startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 80, 2 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) + 80, 20 ];
 				};
-				
-				case 4: { 
+
+				case 4: {
 					_startpos = [ ((getpos _camtarget) select 0) - 400, ((getpos _camtarget) select 1) + 400, 50 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 400, ((getpos _camtarget) select 1) + 400, 50 ];
 					_startfov = 0.25;
 					_endfov = 0.25;
 				};
-				
-				case 5: { 
+
+				case 5: {
 					_startpos = [ ((getpos _camtarget) select 0) + 300, ((getpos _camtarget) select 1) - 100, 15 ];
 					_endpos = [ ((getpos _camtarget) select 0) -300, ((getpos _camtarget) select 1) - 120, 15 ];
 				};
-				
-				case 6: { 
+
+				case 6: {
 					_startpos = [ ((getpos _camtarget) select 0) + 100, ((getpos _camtarget) select 1) - 100, 1 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 100, ((getpos _camtarget) select 1) - 100, 50 ];
 				};
-				
-				case 7: { 
+
+				case 7: {
 					_startpos = [ ((getpos _camtarget) select 0) + 50, ((getpos _camtarget) select 1) - 50, 150 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 20, ((getpos _camtarget) select 1) - 20, 5 ];
 					_startfov = 0.6;
 					_endfov = 0.9;
 				};
-				
-				case 8: { 
+
+				case 8: {
 					_startpos = [ ((getpos _camtarget) select 0) - 300, ((getpos _camtarget) select 1) - 80, 20 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 300, ((getpos _camtarget) select 1) + 120, 20 ];
 					_startfov = 0.55;
 					_endfov = 0.55;
 				};
-				
-				case 9: { 
+
+				case 9: {
 					_startpos = [ ((getpos _camtarget) select 0) - 80, ((getpos _camtarget) select 1) - 300, 30 ];
 					_endpos = [ ((getpos _camtarget) select 0) + 120, ((getpos _camtarget) select 1) + 300, 30 ];
 					_startfov = 0.65;
 					_endfov = 0.65;
 				};
-				
-				case 10: { 
+
+				case 10: {
 					_startpos = [ ((getpos _camtarget) select 0) - 5, ((getpos _camtarget) select 1) + 30, 5 ];
 					_endpos = [ ((getpos _camtarget) select 0) - 25, ((getpos _camtarget) select 1) -30, 150 ];
 				};
-				
+
 				case 11 : {
 					_cinematic_camera cameraEffect ["Terminate", "BACK"];
 					camDestroy _cinematic_camera;
@@ -156,7 +156,7 @@ while { cinematic_camera_started } do {
 					_cinematic_camera setDir 0;
 					[ _cinematic_camera, -30, 0 ] call BIS_fnc_setPitchBank;
 				};
-				
+
 				case 12 : {
 					_cinematic_camera cameraEffect ["Terminate", "BACK"];
 					camDestroy _cinematic_camera;
@@ -168,7 +168,7 @@ while { cinematic_camera_started } do {
 					_cinematic_camera setDir 225;
 					[ _cinematic_camera, -25, 0 ] call BIS_fnc_setPitchBank;
 				};
-				
+
 				case 13 : {
 					_cinematic_camera cameraEffect ["Terminate", "BACK"];
 					camDestroy _cinematic_camera;
@@ -180,7 +180,7 @@ while { cinematic_camera_started } do {
 					_cinematic_camera setDir 90;
 					[ _cinematic_camera, -15, 0 ] call BIS_fnc_setPitchBank;
 				};
-				
+
 				case 14 : {
 					_cinematic_camera cameraEffect ["Terminate", "BACK"];
 					camDestroy _cinematic_camera;
@@ -194,7 +194,7 @@ while { cinematic_camera_started } do {
 					_startfov = 0.55;
 					_endfov = 0.55;
 				};
-				
+
 				case 15 : {
 					_cinematic_camera cameraEffect ["Terminate", "BACK"];
 					camDestroy _cinematic_camera;
@@ -211,17 +211,17 @@ while { cinematic_camera_started } do {
 			};
 		};
 
-		
+
 		if ( surfaceIsWater _position ) then {
 			_startpos = [ _startpos select 0, _startpos select 1, (_startpos select 2) + 25 ];
 			_endpos = [ _endpos select 0, _endpos select 1, (_endpos select 2) + 25 ];
 		};
-		
+
 		while { terrainIntersect [ _startpos, _endpos ] } do {
 			_startpos = [ _startpos select 0, _startpos select 1, (_startpos select 2) + 30 ];
 			_endpos = [ _endpos select 0, _endpos select 1, (_endpos select 2) + 30 ];
 		};
-		
+
 		_cinematic_camera camSetPos _startpos;
 		_cinematic_camera camSetFov _startfov;
 		_cinematic_camera camCommit 0;
@@ -233,7 +233,7 @@ while { cinematic_camera_started } do {
 			_cinematic_camera camcommit 10;
 		};
 		first_camera_round = false;
-		
+
 		if ( !isNil "showcaminfo" ) then {
 			if ( showcaminfo ) then {
 				_unitname = "";
@@ -247,7 +247,7 @@ while { cinematic_camera_started } do {
 					};
 				} else {
 					_nearest_sector = [300, _position ] call F_getNearestSector;
-					if ( _nearest_sector != "" ) then { 
+					if ( _nearest_sector != "" ) then {
 						_nearest_sector = markertext _nearest_sector;
 					} else {
 						_nearfobs = [ all_fobs, { _x distance _position < 300 } ] call BIS_fnc_conditionalSelect;

@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.88b</Original>
+        		<Original>Liberation 0.89</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.88b</Original>
+                        <Original>v0.89</Original>
                 </Key>
                 <Key ID="STR_Deploy_OnPoint">
                         <Original>Deploy</Original>
@@ -683,6 +683,54 @@
                 <Key ID="STR_NO">
                         <Original>No</Original>
                         <French>Non</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP">
+                        <Original>Maximum amount AI units</Original>
+                        <French>Quantité maximum d'unités IA</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP1">
+                        <Original>50% - Recommended for local hosting</Original>
+                        <French>50% - Recommandé pour un hébergement local</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP2">
+                        <Original>75% - Dedicated server recommended</Original>
+                        <French>75% - Serveur dédié recommandé</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP3">
+                        <Original>100% - Dedicated server recommended</Original>
+                        <French>100% - Serveur dédié recommandé</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP4">
+                        <Original>125% - Dedicated server with 1 headless client recommended</Original>
+                        <French>125% - Serveur dédié avec 1 headless client recommandé</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP5">
+                        <Original>150% - Dedicated server with 2 headless clients recommended</Original>
+                        <French>150% - Serveur dédié avec 2 headless clients recommandé</French>
+                </Key>
+                <Key ID="STR_PARAMS_UNITCAP6">
+                        <Original>200% - Dedicated server with 3 headless clients recommended</Original>
+                        <French>200% - Serveur dédié avec 3 headless clients recommandés</French>
+                </Key>
+                <Key ID="STR_PARAMS_CIVILIANS">
+                        <Original>Civilian activity</Original>
+                        <French>Activité civile</French>
+                </Key>
+                <Key ID="STR_PARAMS_CIVILIANS1">
+                        <Original>None</Original>
+                        <French>Aucune</French>
+                </Key>
+                <Key ID="STR_PARAMS_CIVILIANS2">
+                        <Original>Reduced</Original>
+                        <French>Réduite</French>
+                </Key>
+                <Key ID="STR_PARAMS_CIVILIANS3">
+                        <Original>Normal</Original>
+                        <French>Normale</French>
+                </Key>
+                 <Key ID="STR_PARAMS_CIVILIANS4">
+                        <Original>Increased</Original>
+                        <French>Augmentée</French>
                 </Key>
         </Package>
 </Project>

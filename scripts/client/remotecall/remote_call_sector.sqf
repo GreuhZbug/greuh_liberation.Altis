@@ -12,7 +12,7 @@ if ( _status == 0 ) then {
 if ( _status == 1 ) then {
 	[ "lib_sector_attacked", [ markerText _sector ] ] call BIS_fnc_showNotification;
 	"opfor_capture_marker" setMarkerPosLocal ( markerpos _sector );
-	sector_timer = 900;
+	sector_timer = GRLIB_vulnerability_timer;
 };
 
 if ( _status == 2 ) then {

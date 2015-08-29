@@ -8,7 +8,7 @@ tick_period = 60;
 ammo_sector_value = 0.5;
 resources_ammo = saved_ammo_res;
 
-while { endgame == 0 } do {
+while { GRLIB_endgame == 0 } do {
 
 	[] call recalculate_caps;
 

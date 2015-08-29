@@ -1,6 +1,7 @@
 if ( !(isNil "GRLIB_param_wipe_savegame_1") && !(isNil "GRLIB_param_wipe_savegame_2") ) then {
 	if ( GRLIB_param_wipe_savegame_1 == 1 && GRLIB_param_wipe_savegame_2 == 1 ) then {
 		profileNamespace setVariable ["GREUH_LIBERATION_SAVEGAME",nil];
+		saveProfileNamespace;
 	};
 };
 
@@ -153,10 +154,10 @@ save_is_loaded = true; publicVariable "save_is_loaded";
 while { true } do {
 	waitUntil {
 		sleep 0.3;
-		trigger_server_save || endgame == 1;
+		trigger_server_save || GRLIB_endgame == 1;
 	};
 
-	if ( endgame == 1 ) then {
+	if ( GRLIB_endgame == 1 ) then {
 		profileNamespace setVariable [ "GREUH_LIBERATION_SAVEGAME", nil ];
 		saveProfileNamespace;
 		while { true } do { sleep 300; };
@@ -168,7 +169,7 @@ while { true } do {
 		_all_buildings = [];
 		{
 			_fobpos = _x;
-			_nextbuildings = _fobpos nearobjects 200;
+			_nextbuildings = _fobpos nearobjects 250;
 			{
 				if ( (typeof _x) in _classnames_to_save ) then {
 					if ( alive _x && ( speed _x < 1 ) && (((getpos _x) select 2) < 10 )) then {
@@ -184,7 +185,7 @@ while { true } do {
 			_nextdir = getdir _x;
 			_hascrew = false;
 			if ( _nextclass in _classnames_to_save_blu ) then {
-				if ( count (crew _x) > 0 ) then {
+				if ( ( { !isPlayer _x } count (crew _x) ) > 0 ) then {
 					_hascrew = true;
 				};
 			};

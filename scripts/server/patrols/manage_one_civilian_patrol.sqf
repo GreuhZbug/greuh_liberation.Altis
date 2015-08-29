@@ -8,7 +8,7 @@ _spawnsector = "";
 
 if ( isNil "active_sectors" ) then { active_sectors = [] };
 
-while { endgame == 0 } do {
+while { GRLIB_endgame == 0 } do {
 
 	_spawnsector = "";
 	_usable_sectors = [];
