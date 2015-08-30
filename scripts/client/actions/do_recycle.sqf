@@ -8,7 +8,7 @@ waitUntil { dialog };
 
 ctrlSetText [ 134, format [ localize "STR_RECYCLING_YIELD", getText (_cfg >> (_objectinfo select 0) >> "displayName" ) ] ];
 ctrlSetText [ 131, format [ "%1", round (_objectinfo select 1) ] ];
-GRLIB_civilians_amount = 12;ctrlSetText [ 132, format [ "%1", round ((_objectinfo select 2) * GRLIB_recycling_percentage) ] ];
+ctrlSetText [ 132, format [ "%1", round ((_objectinfo select 2) * GRLIB_recycling_percentage) ] ];
 ctrlSetText [ 133, format [ "%1", round ( _objectinfo select 3) ] ];
 
 while { dialog && (alive player) && dorecycle == 0 } do {

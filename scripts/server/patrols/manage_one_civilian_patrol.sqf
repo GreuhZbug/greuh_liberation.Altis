@@ -89,6 +89,13 @@ while { GRLIB_endgame == 0 } do {
 		_waypoint = _grp addWaypoint [_patrol_startpos , 100];
 		_waypoint setWaypointType "CYCLE";
 
+		if ( local _grp ) then {
+			_headless_client = [] call F_lessLoadedHC;
+			if ( !isNull _headless_client ) then {
+				_grp setGroupOwner ( owner _headless_client );
+			};
+		};
+
 		waitUntil {
 			sleep (30 + (random 30));
 			( ( ( { alive _x } count ( units _grp ) ) == 0 ) || ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) )

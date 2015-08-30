@@ -29,7 +29,7 @@ stats_playtime = 0;
 stats_spartan_respawns = 0;
 stats_secondary_objectives = 0;
 stats_hostile_battlegroups = 0;
-stats_ieds_detonated = 0;
+stats_ieds_detonated = 0; publicVariable "stats_ieds_detonated";
 stats_saves_performed = 0;
 stats_saves_loaded = 0;
 stats_reinforcements_called = 0;
@@ -91,7 +91,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		stats_spartan_respawns = _stats select 13;
 		stats_secondary_objectives = _stats select 14;
 		stats_hostile_battlegroups = _stats select 15;
-		stats_ieds_detonated = _stats select 16;
+		stats_ieds_detonated = _stats select 16; publicVariable "stats_ieds_detonated";
 		stats_saves_performed = _stats select 17;
 		stats_saves_loaded = _stats select 18;
 		stats_reinforcements_called = _stats select 19;

@@ -49,17 +49,17 @@ _objects_to_build = [
 [ "Land_HBarrierBig_F", [22.45, 15.67, 0], 88.84 ],
 [ "Land_HBarrierBig_F", [22.23, -18.72, 0], 277.09 ],
 [ "Land_HBarrierBig_F", [-22.89, 18.81, 0], 270.43 ],
-[ "Land_HBarrierBig_F", [-18.23, 24.37, 0], 0.12 ]
+[ "Land_HBarrierBig_F", [-18.23, 24.37, 0], 0.12 ],
+[ "Land_Pallet_MilBoxes_F", [12.11, 6.54, 0], 235.35 ],
+[ "Land_Pallet_MilBoxes_F", [8.96, 2.73, 0], 127.39 ],
+[ "Land_Pallet_MilBoxes_F", [11.85, 1.74, 0], 347.11 ],
+[ "Land_Pallet_MilBoxes_F", [13.39, 8.21, 0], 25.62 ]
 ];
 
 _objectives_to_build = [
 [ "Land_Pod_Heli_Transport_04_ammo_F", [-3.32, 3.11, 0], 270.02 ],
 [ "Land_Pod_Heli_Transport_04_ammo_F", [6.28, 6, 0], 270.25 ],
 [ "Land_Pod_Heli_Transport_04_ammo_F", [6.23, 10, 0], 270.25 ],
-[ "Land_Pallet_MilBoxes_F", [12.11, 6.54, 0], 235.35 ],
-[ "Land_Pallet_MilBoxes_F", [8.96, 2.73, 0], 127.39 ],
-[ "Land_Pallet_MilBoxes_F", [11.85, 1.74, 0], 347.11 ],
-[ "Land_Pallet_MilBoxes_F", [13.39, 8.21, 0], 25.62 ]
 ];
 
 _defenders_to_build = [

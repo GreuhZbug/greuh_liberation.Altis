@@ -169,7 +169,7 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 	sleep 10;
 
 	if ( ( _sector in sectors_factory ) || (_sector in sectors_capture ) || (_sector in sectors_bigtown ) || (_sector in sectors_military ) ) then {
-		[_sector] spawn reinforcements_manager;
+		[ [ _sector ] , "reinforcements_remote_call" ] call BIS_fnc_MP;
 	};
 
 	while { !_stopit } do {

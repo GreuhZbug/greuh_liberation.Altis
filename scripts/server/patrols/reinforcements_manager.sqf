@@ -1,6 +1,6 @@
 if ( combat_readiness > 15 ) then {
 
-	_targetsector = _this select 0;
+	params [ "_targetsector" ];
 	_init_units_count = ( ([ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount) + ([ getmarkerpos _targetsector , GRLIB_capture_size , RESISTANCE ] call F_getUnitsCount ) );
 
 	if ( !(_targetsector in sectors_bigtown)) then {

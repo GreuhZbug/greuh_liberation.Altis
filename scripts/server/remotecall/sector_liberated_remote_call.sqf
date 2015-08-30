@@ -49,7 +49,7 @@ if (isServer) then {
 
 	sleep 45;
 
-	if ( ( ( (random (100.0 / GRLIB_difficulty_modifier)) < (combat_readiness - 50) ) || ( _liberated_sector in sectors_bigtown ) ) && ( [] call F_opforCap < GRLIB_battlegroup_cap ) ) then {
+	if ( (!( _liberated_sector in sectors_tower )) && (((random (100.0 / GRLIB_difficulty_modifier)) < (combat_readiness - 50)) || ( _liberated_sector in sectors_bigtown )) && ([] call F_opforCap < GRLIB_battlegroup_cap) ) then {
 		[ _liberated_sector ] spawn spawn_battlegroup;
 	};
 

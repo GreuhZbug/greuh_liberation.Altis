@@ -732,5 +732,13 @@
                         <Original>Increased</Original>
                         <French>Augmentée</French>
                 </Key>
+                <Key ID="STR_FRIENDLY_FIRE">
+                        <Original>Warning: friendly fire</Original>
+                        <French>Attention: tirs alliés</French>
+                </Key>
+                <Key ID="STR_PARAM_TEAMKILL_PENALTY">
+                        <Original>Teamkill penalty</Original>
+                        <French>Pénalité pour tirs alliés</French>
+                </Key>
         </Package>
 </Project>

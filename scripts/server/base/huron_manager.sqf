@@ -1,4 +1,3 @@
-waitUntil { time > 1 };
 waitUntil { !isNil "all_fobs" };
 waitUntil { !isNil "save_is_loaded" };
 
