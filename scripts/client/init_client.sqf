@@ -19,10 +19,11 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\manage_weather.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\offload_diag.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stop_renegade.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\synchronise_vars.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\spawn\redeploy_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\ui_manager.sqf";
-
 
 if ( typeof player == "B_officer_F" ) then {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\delete_groups.sqf";
@@ -35,3 +36,5 @@ player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 } foreach allCurators;
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\intro.sqf";
+
+[] execVM "onPlayerRespawn.sqf";

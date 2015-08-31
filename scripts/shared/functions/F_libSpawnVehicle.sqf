@@ -10,14 +10,19 @@ while { surfaceIsWater _spawnpos } do {
 };
 
 _newvehicle = objNull;
-if ( _classname in opfor_choppers ) then { 	
-	_newvehicle = createVehicle [_classname, _spawnpos, [], 0, 'FLY']; 
+if ( _classname in opfor_choppers ) then {
+	_newvehicle = createVehicle [_classname, _spawnpos, [], 0, 'FLY'];
 	_newvehicle flyInHeight (100 + (random 200));
 } else {
 	_newvehicle = _classname createVehicle _spawnpos;
 	_newvehicle setpos _spawnpos;
 };
 _newvehicle allowdamage false;
+
+clearWeaponCargoGlobal _newvehicle;
+clearMagazineCargoGlobal _newvehicle;
+clearItemCargoGlobal _newvehicle;
+clearBackpackCargoGlobal _newvehicle;
 
 if ( _classname in militia_vehicles ) then {
 	[ _newvehicle ] call F_libSpawnMilitiaCrew;

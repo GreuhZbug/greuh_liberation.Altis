@@ -10,19 +10,19 @@ while { true } do {
 		if ( _ownership == EAST || _ownership == RESISTANCE ) then {
 			[ [ _x, 1 ] , "remote_call_sector" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_sector;
-		};	
-		sleep 0.5;
+		};
+		sleep 1;
 	} foreach blufor_sectors;
-	
+
 	{
 		_ownership = [ _x ] call F_sectorOwnership;
 		if ( _ownership == EAST || _ownership == RESISTANCE ) then {
 			[ [ _x , 1 ] , "remote_call_fob" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_fob;
-		};	
-		sleep 0.5;
+		};
+		sleep 1;
 	} foreach all_fobs;
-	
-	sleep 0.5;
+
+	sleep 1;
 
 };

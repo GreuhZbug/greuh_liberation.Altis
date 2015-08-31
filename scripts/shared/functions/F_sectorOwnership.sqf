@@ -2,7 +2,7 @@
 _cap_thresold_count = 2;
 _cap_thresold_ratio = 0.85;
 _thatpos = _this select 0;
-_localsize = capture_size;
+_localsize = GRLIB_capture_size;
 
 if (count _this == 2) then {
 	_localsize = _this select 1;

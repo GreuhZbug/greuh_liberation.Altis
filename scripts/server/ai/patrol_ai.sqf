@@ -55,5 +55,5 @@ while { count (units _grp) > 0 } do {
 		_waypoint setWaypointType "CYCLE";
 	};
 
-	waitUntil { sleep 0.3;(count (units _grp) == 0) || (reinforcements_sector_under_attack != "") };
+	waitUntil { sleep 5;(count (units _grp) == 0) || (reinforcements_sector_under_attack != "") };
 };

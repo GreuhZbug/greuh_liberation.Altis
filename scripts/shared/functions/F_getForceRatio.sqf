@@ -1,13 +1,13 @@
 
 _sector = _this select 0;
 
-_actual_capture_size = capture_size;
+_actual_capture_size = GRLIB_capture_size;
 if ( _sector in sectors_bigtown ) then {
-	_actual_capture_size = capture_size * 2;
+	_actual_capture_size = GRLIB_capture_size * 2;
 };
 
-_red_forces = ( [ (markerpos _sector), capture_size, RESISTANCE ] call F_getUnitsCount ) + ( [ (markerpos _sector), capture_size, EAST ] call F_getUnitsCount );
-_blue_forces = [ (markerpos _sector), capture_size, WEST ] call F_getUnitsCount;
+_red_forces = ( [ (markerpos _sector), _actual_capture_size, RESISTANCE ] call F_getUnitsCount ) + ( [ (markerpos _sector), _actual_capture_size, EAST ] call F_getUnitsCount );
+_blue_forces = [ (markerpos _sector), _actual_capture_size, WEST ] call F_getUnitsCount;
 _ratio = -1;
 
 if (_red_forces > 0) then {

@@ -48,6 +48,18 @@ class Params
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
 		default = 1;
 	};
+	class Civilians{
+		title = $STR_PARAMS_CIVILIANS;
+		values[] = {0,0.5,1,2};
+		texts[] = {$STR_PARAMS_CIVILIANS1,$STR_PARAMS_CIVILIANS2,$STR_PARAMS_CIVILIANS3,$STR_PARAMS_CIVILIANS4};
+		default = 1;
+	};
+	class TeamkillPenalty{
+		title = $STR_PARAM_TEAMKILL_PENALTY;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
 	class Spacer {
 		title = "";
 		values[] = { "" };
@@ -59,6 +71,12 @@ class Params
 		values[] = { "" };
 		texts[] = { "" };
 		default = "";
+	};
+	class Unitcap{
+		title = $STR_PARAMS_UNITCAP;
+		values[] = {0.5,0.75,1,1.25,1.5,2};
+		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
+		default = 1;
 	};
 	class FirstFob {
 		title = $STR_PARAMS_FIRSTFOB;

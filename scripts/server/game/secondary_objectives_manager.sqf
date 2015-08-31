@@ -1,6 +1,6 @@
-_combat_readiness_impact = 0.6;
 used_positions = [];
-_defenders_amount = 15;
+_defenders_amount = 15 * ( sqrt ( GRLIB_unitcap ) );
+if ( _defenders_amount > 15 ) then { _defenders_amount = 15 };
 _cant_spawn_anymore = false;
 _fob_templates = [
 "scripts\fob_templates\template1.sqf",
@@ -15,7 +15,7 @@ waitUntil { count all_fobs > 0 };
 
 sleep 30;
 
-while { endgame == 0 } do {
+while { GRLIB_endgame == 0 } do {
 
 	_spawn_marker = "";
 	while { _spawn_marker == "" } do {
@@ -99,7 +99,7 @@ while { endgame == 0 } do {
 		[nextdefender] spawn building_defence_ai;
 	} foreach _idxselected;
 
-	_sentry = 3 + (floor (random 4));
+	_sentry = ceil ((3 + (floor (random 4))) * ( sqrt ( GRLIB_unitcap ) ) );
 
 	_grpsentry = createGroup EAST;
 	_base_sentry_pos = [(_base_position select 0) + ((_base_corners select 0) select 0), (_base_position select 1) + ((_base_corners select 0) select 1),0];
@@ -131,7 +131,7 @@ while { endgame == 0 } do {
 		sleep 5;
 		 ( { alive _x } count _base_objectives ) <= 1
 	};
-	combat_readiness = round (combat_readiness * _combat_readiness_impact);
+	combat_readiness = round (combat_readiness * GRLIB_secondary_objective_impact);
 	trigger_server_save = true;
 	secondary_objective_destroyed = true; publicVariable "secondary_objective_destroyed";
 	stats_secondary_objectives = stats_secondary_objectives + 1;

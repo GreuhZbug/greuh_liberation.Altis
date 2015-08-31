@@ -30,7 +30,7 @@ stats_fobs_lost = publicstats select 26;
 stats_readiness_earned = publicstats select 27;
 
 { _x allowDamage false; (vehicle _x) allowDamage false; } foreach allPlayers;
-endgame = 1;
+GRLIB_endgame = 1;
 sleep 20;
 
 [] call compileFinal preprocessFileLineNumbers "scripts\client\end_screen.sqf";

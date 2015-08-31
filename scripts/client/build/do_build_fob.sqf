@@ -1,5 +1,5 @@
 _minfobdist = 2000;
-_minsectordist = capture_size;
+_minsectordist = GRLIB_capture_size;
 _distfob = 1;
 _clearedtobuildfob = true;
 _distsector = 1;

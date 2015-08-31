@@ -5,16 +5,16 @@ _squadpos = _this select 0;
 _squadside = _this select 1;
 _spawned_units_local = [];
 
-_allposts = [ nearestObjects [ _squadpos, [ 'Land_Cargo_Patrol_V1_F','Land_Cargo_Patrol_V2_F','Land_Cargo_Patrol_V3_F' ], capture_size ] , { alive _x } ] call BIS_fnc_conditionalSelect;
+_allposts = [ nearestObjects [ _squadpos, [ 'Land_Cargo_Patrol_V1_F','Land_Cargo_Patrol_V2_F','Land_Cargo_Patrol_V3_F' ], GRLIB_capture_size ] , { alive _x } ] call BIS_fnc_conditionalSelect;
 if ( count _allposts > 0 ) then {
 	_grp2 = createGroup _squadside;
 
 	{
 		_building_positions = 	[_x] call BIS_fnc_buildingPositions;
-		_unitclasspost = 'O_soldier_M_F';
+		_unitclasspost = opfor_lookout_1;
 		nextunit_post = objNull;
 		if ( random 100 > 60 ) then {
-			_unitclasspost = 'O_Soldier_AR_F';
+			_unitclasspost = opfor_lookout_2;
 		};
 		_unitclasspost createUnit [ _squadpos, _grp2, 'nextunit_post = this; this addMPEventHandler [''MPKilled'', {_this spawn kill_manager}]', 0.5, 'private'];
 		nextunit_post setpos (_building_positions select 1);

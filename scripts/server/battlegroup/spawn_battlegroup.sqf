@@ -1,4 +1,7 @@
-if ( endgame == 1 ) exitWith {};
+if ( GRLIB_endgame == 1 ) exitWith {};
+
+private [ "_bg_groups" ];
+_bg_groups = [];
 
 last_battlegroup_size = 0;
 _spawn_marker = "";
@@ -10,34 +13,45 @@ if ( count _this == 1 ) then {
 
 if ( _spawn_marker != "" ) then {
 
-	_battlegroups = [opfor_battlegroup_infantry,opfor_battlegroup_armor,opfor_battlegroup_air,opfor_battlegroup_mixed];
-	_selected_opfor_battlegroup = _battlegroups call BIS_fnc_selectRandom;
+	_selected_opfor_battlegroup = [];
+	while { count _selected_opfor_battlegroup <= GRLIB_battlegroup_size } do {
+		_selected_opfor_battlegroup pushback (opfor_battlegroup_vehicles call BIS_fnc_selectRandom);
+	};
 
 	[ [ _spawn_marker ] , "remote_call_battlegroup" ] call BIS_fnc_MP;
 
 	{
-		_compo = _x;
-		{
-			_nextgrp = createGroup EAST;
-			_vehicle = [markerpos _spawn_marker, _x] call F_libSpawnVehicle;
-			sleep 0.5;
-			(crew _vehicle) joinSilent _nextgrp;
-			[_nextgrp] spawn battlegroup_ai;
-			if ( _x in opfor_troup_transports ) then {
-				[_vehicle] spawn troup_transport;
-			};
-			last_battlegroup_size = last_battlegroup_size + 1;
-		} foreach _compo;
+		_nextgrp = createGroup EAST;
+		_vehicle = [markerpos _spawn_marker, _x] call F_libSpawnVehicle;
+		sleep 0.5;
+		(crew _vehicle) joinSilent _nextgrp;
+		[_nextgrp] spawn battlegroup_ai;
+		_bg_groups pushback _nextgrp;
+		if ( ( _x in opfor_troup_transports ) &&  ( [] call F_opforCap < GRLIB_battlegroup_cap ) ) then {
+			[_vehicle] spawn troup_transport;
+		};
+		last_battlegroup_size = last_battlegroup_size + 1;
 	} foreach _selected_opfor_battlegroup;
 
 	[([markerpos _spawn_marker] call F_getNearestBluforObjective) select 0] spawn spawn_air;
 
 	sleep 5;
 
-	combat_readiness = combat_readiness - (round (last_battlegroup_size + (random last_battlegroup_size)));
+	combat_readiness = combat_readiness - (round ((last_battlegroup_size / 2) + (random (last_battlegroup_size / 2))));
 	if ( combat_readiness < 0 ) then { combat_readiness = 0 };
-	
+
 	stats_hostile_battlegroups = stats_hostile_battlegroups + 1;
+
+	{
+		if ( local _x ) then {
+			_headless_client = [] call F_lessLoadedHC;
+			if ( !isNull _headless_client ) then {
+				_x setGroupOwner ( owner _headless_client );
+			};
+		};
+		sleep 3;
+
+	} foreach _bg_groups;
 };
 
 

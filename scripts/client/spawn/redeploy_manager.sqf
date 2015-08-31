@@ -20,6 +20,7 @@ if ( GRLIB_isAtlasPresent ) then {
 
 while { true } do {
 	waitUntil {
+		sleep 0.1;
 		(player distance (getmarkerpos "respawn_west") < 50) && vehicle player == player && alive player && !dialog;
 	};
 

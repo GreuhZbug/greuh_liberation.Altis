@@ -5,14 +5,14 @@ please_recalculate = true;
 while { true } do {
 	waitUntil { please_recalculate };
 	please_recalculate = false;
-	
+
 	[] call recalculate_caps;
-	
+
 	_new_manpower_used = 0;
 	_new_fuel_used = 0;
-	
+
 	{
-		if ( ( side _x == WEST ) && ( !isPlayer _x ) ) then {
+		if ( ( side group _x == WEST ) && ( !isPlayer _x ) ) then {
 			if ( ( _x distance lhd > 500 ) && ( _x distance ( getmarkerpos "respawn_west") > 100 ) && ( alive _x ) ) then {
 				_unit = _x;
 				{
@@ -24,7 +24,7 @@ while { true } do {
 			};
 		};
 	} foreach allUnits;
-	
+
 	{
 		if ( ( _x distance lhd > 500 ) && ( alive _x ) ) then {
 			_unit = _x;
@@ -37,7 +37,7 @@ while { true } do {
 
 		};
 	} foreach vehicles;
-	
+
 	resources_infantry = _new_manpower_used;
 	resources_fuel = _new_fuel_used;
 };

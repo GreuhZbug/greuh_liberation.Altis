@@ -39,7 +39,7 @@ if ( !(isnull _roadobj) ) then {
 			} else {
 				_ied_obj setDamage 1;
 			};
-			stats_ieds_detonated = stats_ieds_detonated + 1;
+			stats_ieds_detonated = stats_ieds_detonated + 1; publicVariable "stats_ieds_detonated";
 			_goes_boom = true;
 		};
 		sleep 1;
