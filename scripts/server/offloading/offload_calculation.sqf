@@ -34,6 +34,6 @@ while { true } do {
 
 	publicVariable "group_owners";
 
-	sleep 3;
+	sleep 5;
 };
 

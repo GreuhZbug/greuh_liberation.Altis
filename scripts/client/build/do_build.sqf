@@ -190,6 +190,8 @@ while { true } do {
 				sleep 0.05;
 			};
 
+			GRLIB_ui_notif = "";
+
 			{ _x setpos [ 0,0,0 ] } foreach GRLIB_preview_spheres;
 
 			if ( !alive player || build_confirmed == 3 ) then {
@@ -205,6 +207,10 @@ while { true } do {
 				_vehicle allowDamage false;
 				_vehicle setdir _vehdir;
 				_vehicle setpos _truepos;
+				clearWeaponCargoGlobal _vehicle;
+				clearMagazineCargoGlobal _vehicle;
+				clearItemCargoGlobal _vehicle;
+				clearBackpackCargoGlobal _vehicle;
 				if ( buildtype == 6 || buildtype == 99 ) then {
 					_vehicle setVectorUp [0,0,1];
 				} else {
@@ -220,6 +226,7 @@ while { true } do {
 				sleep 0.3;
 				_vehicle allowDamage true;
 				_vehicle setDamage 0;
+
 				if(buildtype != 6) then {
 					_vehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 					{ _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } foreach (crew _vehicle);

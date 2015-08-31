@@ -4,8 +4,8 @@ waitUntil { !isNil "sync_vars" };
 
 while { true } do {
 
-	waitUntil { 
-		sleep 0.1;
+	waitUntil {
+		sleep 0.2;
 		count sync_vars > 0;
 	};
 	resources_infantry = sync_vars select 0;

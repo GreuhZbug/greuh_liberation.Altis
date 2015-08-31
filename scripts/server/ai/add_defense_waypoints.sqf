@@ -40,7 +40,7 @@ _grp setCurrentWaypoint [_grp, 0];
 
 waitUntil {
 	sleep 10;
-	!(isNull ((leader _grp) findNearestEnemy (leader _grp)))
+	( { alive _x } count (units _grp) == 0 ) || !(isNull ((leader _grp) findNearestEnemy (leader _grp)))
 };
 
 if ( { alive _x } count (units _grp) > 0 ) then {

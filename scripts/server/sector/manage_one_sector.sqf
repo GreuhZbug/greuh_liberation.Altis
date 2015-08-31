@@ -36,25 +36,24 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_vehtospawn =
 		[ ( [] call F_getAdaptiveVehicle ) ,
 		( [] call F_getAdaptiveVehicle ),
-		( [] call F_getAdaptiveVehicle ),
-		( [] call F_getAdaptiveVehicle ),
 		(militia_vehicles call BIS_fnc_selectRandom),
 		(militia_vehicles call BIS_fnc_selectRandom)];
 		_infsquad = "militia";
 		_squad1 = ([] call F_getAdaptiveSquadComp);
-		if ( GRLIB_unitcap >= 1) then {
-			_squad2 = ([] call F_getAdaptiveSquadComp);
-		};
+		_squad2 = ([] call F_getAdaptiveSquadComp);
 		if ( GRLIB_unitcap >= 1.5) then {
 			_squad3 = ([] call F_getAdaptiveSquadComp);
+		};
+		if ( GRLIB_unitcap >= 2) then {
+			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
 		if((random 100) > (50 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		if((random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback (militia_vehicles call BIS_fnc_selectRandom); };
 		_spawncivs = true;
 		_sidespawn = EAST;
 
-		_building_ai_max = round ((40 + (round (combat_readiness / 5 ))) * _popfactor) ;
-		_building_range = 300;
+		_building_ai_max = round ((30 + (round (combat_readiness / 5 ))) * _popfactor) ;
+		_building_range = 250;
 		_local_capture_size = _local_capture_size * 2;
 		_iedcount = (3 + (floor (random 6))) * GRLIB_difficulty_modifier;
 		if ( _iedcount > 12 ) then { _iedcount = 12 };
@@ -76,18 +75,19 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_infsquad = "csat";
 		_squadies_to_spawn = ([] call F_getAdaptiveSquadComp);
 		_squad1 = ([] call F_getAdaptiveSquadComp);
-		if ( GRLIB_unitcap >= 1) then {
-			_squad2 = ([] call F_getAdaptiveSquadComp);
-		};
+		_squad2 = ([] call F_getAdaptiveSquadComp);
 		if ( GRLIB_unitcap >= 1.5) then {
 			_squad3 = ([] call F_getAdaptiveSquadComp);
+		};
+		if ( GRLIB_unitcap >= 2) then {
+			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
 		_vehtospawn = [( [] call F_getAdaptiveVehicle ),( [] call F_getAdaptiveVehicle )];
 		if((random 100) > (50 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		if((random 100) > (33 / GRLIB_difficulty_modifier)) then { _vehtospawn pushback ( [] call F_getAdaptiveVehicle ); };
 		_sidespawn = EAST;
 		_spawncivs = false;
-		_building_ai_max = round ((floor (20 + (round (combat_readiness / 5 )) + (random 6))) * _popfactor);
+		_building_ai_max = round ((floor (15 + (round (combat_readiness / 5 )) + (random 6))) * _popfactor);
 		_building_range = 150;
 	};
 	if ( _sector in sectors_factory ) then {
@@ -122,7 +122,7 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		[group ((crew _vehicle) select 0 ),_sectorpos] spawn add_defense_waypoints;
 		_managed_units pushback _vehicle;
 		{ _managed_units pushback _x; } foreach (crew _vehicle);
-		sleep 0.1;
+		sleep 0.25;
 	} foreach _vehtospawn;
 
 	if ( _building_ai_max > 0 ) then {

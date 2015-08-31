@@ -7,7 +7,7 @@ while { true } do {
 				{deleteVehicle _x; } foreach units _currentgroupdelete;
 			};
 		};
-		sleep 0.1;
+		sleep 0.3;
 	} foreach allGroups;
-	sleep 0.1;
+	sleep 0.3;
 }

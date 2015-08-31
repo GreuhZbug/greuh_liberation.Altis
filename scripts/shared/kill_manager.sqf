@@ -1,4 +1,4 @@
-_cleanup_delay = 1200;
+_cleanup_delay = 600;
 
 _unit = _this select 0;
 _killer = _this select 1;

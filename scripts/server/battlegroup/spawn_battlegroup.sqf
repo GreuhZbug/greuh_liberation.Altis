@@ -1,5 +1,8 @@
 if ( GRLIB_endgame == 1 ) exitWith {};
 
+private [ "_bg_groups" ];
+_bg_groups = [];
+
 last_battlegroup_size = 0;
 _spawn_marker = "";
 if ( count _this == 1 ) then {
@@ -11,7 +14,7 @@ if ( count _this == 1 ) then {
 if ( _spawn_marker != "" ) then {
 
 	_selected_opfor_battlegroup = [];
-	while { count _selected_opfor_battlegroup < GRLIB_battlegroup_size } do {
+	while { count _selected_opfor_battlegroup <= GRLIB_battlegroup_size } do {
 		_selected_opfor_battlegroup pushback (opfor_battlegroup_vehicles call BIS_fnc_selectRandom);
 	};
 
@@ -23,6 +26,7 @@ if ( _spawn_marker != "" ) then {
 		sleep 0.5;
 		(crew _vehicle) joinSilent _nextgrp;
 		[_nextgrp] spawn battlegroup_ai;
+		_bg_groups pushback _nextgrp;
 		if ( ( _x in opfor_troup_transports ) &&  ( [] call F_opforCap < GRLIB_battlegroup_cap ) ) then {
 			[_vehicle] spawn troup_transport;
 		};
@@ -37,6 +41,17 @@ if ( _spawn_marker != "" ) then {
 	if ( combat_readiness < 0 ) then { combat_readiness = 0 };
 
 	stats_hostile_battlegroups = stats_hostile_battlegroups + 1;
+
+	{
+		if ( local _x ) then {
+			_headless_client = [] call F_lessLoadedHC;
+			if ( !isNull _headless_client ) then {
+				_x setGroupOwner ( owner _headless_client );
+			};
+		};
+		sleep 3;
+
+	} foreach _bg_groups;
 };
 
 

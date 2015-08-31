@@ -25,6 +25,6 @@ while { _move_is_disabled && local _unit && alive _unit && !(captive _unit) } do
 		};
 	};
 
-	sleep 1;
+	sleep 3;
 
 };

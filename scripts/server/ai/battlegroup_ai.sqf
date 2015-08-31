@@ -59,8 +59,8 @@ while { ( count units _grp != 0 ) && ( GRLIB_endgame == 0 ) } do {
 
 
 	waitUntil {
-		sleep 1;
-		reset_battlegroups_ai;
+		sleep 5;
+		( { alive _x } count (units _grp) == 0) || reset_battlegroups_ai;
 	};
 	sleep (5 + (random 5));
 	reset_battlegroups_ai = false;

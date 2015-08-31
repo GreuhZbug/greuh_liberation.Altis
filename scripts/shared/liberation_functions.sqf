@@ -27,3 +27,4 @@ F_spawnCivilians = compileFinal preprocessFileLineNumbers "scripts\shared\functi
 F_limitSkill = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_limitSkill.sqf";
 F_getNearbyPlayers = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getNearbyPlayers.sqf";
 F_lessLoadedHC = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_lessLoadedHC.sqf";
+F_setMass = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_setMass.sqf";

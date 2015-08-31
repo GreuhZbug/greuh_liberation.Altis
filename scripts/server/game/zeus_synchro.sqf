@@ -49,5 +49,5 @@ while { true } do {
 
 	} foreach allCurators;
 
-	sleep 15;
+	sleep 10;
 };

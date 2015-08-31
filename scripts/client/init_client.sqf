@@ -36,3 +36,5 @@ player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 } foreach allCurators;
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\intro.sqf";
+
+[] execVM "onPlayerRespawn.sqf";
