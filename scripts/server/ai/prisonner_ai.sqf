@@ -11,6 +11,7 @@ if ( (_unit isKindOf "Man") && ( alive _unit ) && ((side _unit == EAST) || (side
 		removeAllWeapons _unit;
 		removeHeadgear _unit;
 		removeBackpack _unit;
+		removeVest _unit;
 		_unit unassignItem "NVGoggles_OPFOR";
 		_unit removeItem "NVGoggles_OPFOR";
 		_unit unassignItem "NVGoggles_INDEP";

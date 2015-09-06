@@ -1,6 +1,8 @@
 params [ "_unit" ];
 private [ "_nearestfob", "_is_near_fob", "_is_near_blufor", "_grp", "_waypoint" ];
 
+waitUntil { local _unit };
+
 _is_near_fob = false;
 _is_near_blufor = true;
 
@@ -9,18 +11,17 @@ _unit playmove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
 sleep 2;
 _unit enableAI "ANIM";
 _unit enableAI "MOVE";
-_unit setCaptive false;
 
 waitUntil { sleep 2;
 
 	_nearestfob = [ getpos _unit ] call F_getNearestFob;
 	if ( count _nearestfob == 3) then {
-		if ( ( _unit distance _nearestfob ) < 20 ) then {
+		if ( ( _unit distance _nearestfob ) < 30 ) then {
 			_is_near_fob = true;
 		};
 	};
 
-	if ( [ getpos _unit, 150 , WEST ] call F_getUnitsCount == { ( typeof _x ) in ( all_ofpor_troops + all_resistance_troops ) } count (units group _unit) ) then {
+	if ( [ getpos _unit, 150 , WEST ] call F_getUnitsCount == 0 ) then {
 		_is_near_blufor = false;
 	};
 
@@ -37,7 +38,6 @@ if (alive _unit) then {
 		_unit disableAI "MOVE";
 		sleep 5;
 		_unit switchmove "AidlPsitMstpSnonWnonDnon_ground00";
-		removeVest _unit;
 
 		[ [_unit] , "prisonner_remote_call" ] call BIS_fnc_MP;
 		sleep 600;
@@ -48,6 +48,7 @@ if (alive _unit) then {
 		_unit setUnitPos "AUTO";
 		[_unit] joinSilent (createGroup EAST);
 		_grp = group _unit;
+		_unit setCaptive false;
 
 		while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
 		{_x doFollow leader _grp} foreach units _grp;
