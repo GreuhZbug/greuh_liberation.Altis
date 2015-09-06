@@ -124,8 +124,8 @@ support_vehicles = [
 ["B_Slingload_01_Ammo_F",5,0,0],
 ["C_Offroad_01_repair_F",5,0,2],
 ["B_APC_Tracked_01_CRV_F",0,30,10],
-["Box_NATO_AmmoVeh_F",0,115,10],
-["Box_East_AmmoVeh_F",0,115,10]
+["Box_NATO_AmmoVeh_F",0,115,0],
+["Box_East_AmmoVeh_F",0,115,0]
 ];
 
 // Pre-made squads for the commander build menu
@@ -160,6 +160,7 @@ Respawn_truck_typename = "B_Truck_01_medical_F";
 huron_typename = "B_Heli_Transport_03_unarmed_F";
 ammobox_b_typename = "Box_NATO_AmmoVeh_F";
 ammobox_o_typename = "Box_East_AmmoVeh_F";
+ammobox_transports_typenames = [ "B_Truck_01_transport_F" ];
 
 // Guerillas. It's only classnames the game will pick from, not the actual squad that will spawn, unlike the CSAT pre-made squads below
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
