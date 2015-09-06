@@ -1,6 +1,6 @@
 if ( GRLIB_endgame == 1 ) exitWith {};
 
-private [ "_bg_groups" ];
+private [ "_bg_groups", "_target_size", "_vehicle_pool" ];
 _bg_groups = [];
 
 last_battlegroup_size = 0;
@@ -11,11 +11,19 @@ if ( count _this == 1 ) then {
 	_spawn_marker = [ 2000, 10000, false ] call F_findOpforSpawnPoint;
 };
 
+
+_vehicle_pool = opfor_battlegroup_vehicles;
+if ( combat_readiness < 50 ) then {
+	_vehicle_pool = opfor_battlegroup_vehicles_low_intensity;
+};
+
 if ( _spawn_marker != "" ) then {
 
 	_selected_opfor_battlegroup = [];
-	while { count _selected_opfor_battlegroup <= GRLIB_battlegroup_size } do {
-		_selected_opfor_battlegroup pushback (opfor_battlegroup_vehicles call BIS_fnc_selectRandom);
+	_target_size = ( GRLIB_battlegroup_size * ([] call F_adaptiveOpforFactor) );
+	if ( combat_readiness < 50 ) then { _target_size = round (_target_size * 0.65) };
+	while { count _selected_opfor_battlegroup < _target_size } do {
+		_selected_opfor_battlegroup pushback (_vehicle_pool call BIS_fnc_selectRandom);
 	};
 
 	[ [ _spawn_marker ] , "remote_call_battlegroup" ] call BIS_fnc_MP;

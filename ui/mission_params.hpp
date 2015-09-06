@@ -26,8 +26,8 @@ class Params
 	};
 	class Fatigue {
 		title = $STR_PARAMS_FATIGUE;
-		values[] = { 1, 0 };
-		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		values[] = { 0, 0.5, 1, 1.5, 2 };
+		texts[] = { $STR_PARAMS_DISABLED, $STR_PARAMS_FATIGUE1, $STR_PARAMS_FATIGUE2, $STR_PARAMS_FATIGUE3, $STR_PARAMS_ENABLED };
 		default = 1;
 	};
 	class Revive {
@@ -46,6 +46,18 @@ class Params
 		title = $STR_PARAMS_DEPLOYMENTCAMERA;
 		values[] = { 1, 0 };
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
+	};
+	class Unitcap{
+		title = $STR_PARAMS_UNITCAP;
+		values[] = {0.5,0.75,1,1.25,1.5,2};
+		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
+		default = 1;
+	};
+	class AdaptToPlayercount{
+		title = $STR_PARAM_ADAPT_TO_PLAYERCOUNT;
+		values[] = {1,0};
+		texts[] = {$STR_PARAMS_ENABLED,$STR_PARAMS_DISABLED};
 		default = 1;
 	};
 	class Civilians{
@@ -71,12 +83,6 @@ class Params
 		values[] = { "" };
 		texts[] = { "" };
 		default = "";
-	};
-	class Unitcap{
-		title = $STR_PARAMS_UNITCAP;
-		values[] = {0.5,0.75,1,1.25,1.5,2};
-		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
-		default = 1;
 	};
 	class FirstFob {
 		title = $STR_PARAMS_FIRSTFOB;

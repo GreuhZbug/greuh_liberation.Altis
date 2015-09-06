@@ -1,5 +1,5 @@
+params [ "_vehicle" ];
 
-_vehicle = _this select 0;
 _grp = createGroup RESISTANCE;
 _vehcrew = [];
 while { count units _grp < 3 } do {
@@ -8,9 +8,9 @@ while { count units _grp < 3 } do {
 ((units _grp) select 0) moveInDriver _vehicle;
 ((units _grp) select 1) moveInGunner _vehicle;
 ((units _grp) select 2) moveInCommander _vehicle;
-{ 
-	if ( vehicle _x == _x ) then { 
-		deleteVehicle _x; 
+{
+	if ( vehicle _x == _x ) then {
+		deleteVehicle _x;
 	} else {
 		[ _x ] call loadout_crewman;
 	};

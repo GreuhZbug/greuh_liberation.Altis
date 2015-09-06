@@ -53,6 +53,7 @@ class Mission
 	class Intel
 	{
 		briefingName="@STR_MISSION_TITLE";
+		overviewText="@STR_MISSION_DESCRIPTION";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=28800;
@@ -1163,8 +1164,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14495.979,10.331208,5881.3428};
-					azimut=310;
+					position[]={14495.848,10.351591,5881.2632};
+					azimut=306.7749;
 					id=54;
 					side="WEST";
 					vehicle="B_officer_F";
@@ -2209,10 +2210,10 @@ class Mission
 	};
 	class Markers
 	{
-		items=323;
+		items=335;
 		class Item0
 		{
-			position[]={3538.5476,8.427618,13119.706};
+			position[]={3564.2346,9.0562792,13082.407};
 			name="bigtown9";
 			text="Kavala";
 			type="n_service";
@@ -2223,7 +2224,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={4141.1226,51.656296,11730.42};
+			position[]={4152.4712,52.597343,11747.025};
 			name="capture_1";
 			text="Neri";
 			type="n_art";
@@ -2311,7 +2312,7 @@ class Mission
 		};
 		class Item12
 		{
-			position[]={12940.042,29.11828,15048.942};
+			position[]={12945.729,28.660496,15048.942};
 			name="capture_5";
 			text="Stavros";
 			type="n_art";
@@ -2351,7 +2352,7 @@ class Mission
 		};
 		class Item17
 		{
-			position[]={10651.074,16.193577,12212.732};
+			position[]={10656.118,16.54797,12244.003};
 			name="capture_10";
 			text="Therisa";
 			type="n_art";
@@ -2591,7 +2592,7 @@ class Mission
 		};
 		class Item47
 		{
-			position[]={20524.771,35.474064,8888.0176};
+			position[]={20546.98,34.970959,8889.1074};
 			name="capture_13_1_2_26_8";
 			text="Panagia";
 			type="n_art";
@@ -2607,7 +2608,7 @@ class Mission
 		};
 		class Item49
 		{
-			position[]={21695.396,15.031733,7578.1001};
+			position[]={21701.904,15.05183,7570.5635};
 			name="capture_13_1_2_26_10";
 			text="Feres";
 			type="n_art";
@@ -2671,7 +2672,7 @@ class Mission
 		};
 		class Item57
 		{
-			position[]={21982.611,28.294302,21042.859};
+			position[]={21905.475,22.88711,21017.424};
 			name="capture_13_1_2_26_19";
 			text="Iraklia";
 			type="n_art";
@@ -2688,9 +2689,9 @@ class Mission
 		class Item59
 		{
 			position[]={26733.477,20.279934,24626.213};
-			name="capture_13_1_2_26_25";
+			name="factory666";
 			text="Molos Airfield";
-			type="n_art";
+			type="loc_Fuelstation";
 			colorName="ColorEAST";
 		};
 		class Item60
@@ -3005,7 +3006,7 @@ class Mission
 		};
 		class Item99
 		{
-			position[]={20257.084,40.76474,8809.3965};
+			position[]={20238.832,42.299866,8827.6436};
 			name="factory12_1_1";
 			text="Panagia Factory";
 			type="loc_Fuelstation";
@@ -4220,7 +4221,7 @@ class Mission
 		};
 		class Item295
 		{
-			position[]={9051.5527,22.247513,11980.104};
+			position[]={9088.2842,20.640671,12022.316};
 			name="bigtown8";
 			text="Zaros";
 			type="n_service";
@@ -4242,7 +4243,7 @@ class Mission
 		};
 		class Item297
 		{
-			position[]={16819.328,22.640102,12710.389};
+			position[]={16822.17,22.477585,12713.802};
 			name="bigtown4";
 			text="Pyrgos";
 			type="n_service";
@@ -4430,6 +4431,102 @@ class Mission
 			position[]={18674.031,112.58955,11872.689};
 			name="opfor_point_17_53_1_43_9";
 			type="Empty";
+		};
+		class Item323
+		{
+			position[]={5473.8931,27.299999,14997.713};
+			name="capture_2_1";
+			text="Kavala Stadium";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item324
+		{
+			position[]={7878.4229,275.89847,14627.7};
+			name="capture_62";
+			text="Agia Stemma";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item325
+		{
+			position[]={9232.7207,41.584743,8056.8794};
+			name="capture_13_1_2_13_1_1";
+			text="Sfaka";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item326
+		{
+			position[]={7217.0161,37.607929,12141.911};
+			name="capture_61";
+			text="Kavirida";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item327
+		{
+			position[]={7527.2427,135.75253,18342.145};
+			name="capture_63";
+			text="Agios Minas";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item328
+		{
+			position[]={6570.5488,167.71411,20034.492};
+			name="capture_64";
+			text="Pyrsos";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item329
+		{
+			position[]={6565.6523,91.008423,22680.146};
+			name="capture_65";
+			text="Faros";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item330
+		{
+			position[]={22442.707,17.149284,20017.912};
+			name="capture_66";
+			text="Pefkas";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item331
+		{
+			position[]={20821.777,34.420273,13313.604};
+			name="capture_68";
+			text="Kategidis";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item332
+		{
+			position[]={22190.148,17.174107,18352.705};
+			name="capture_67";
+			text="Almyra";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item333
+		{
+			position[]={3889.8574,26.222746,13805.04};
+			name="capture_69";
+			text="Aggelochori";
+			type="n_art";
+			colorName="ColorEAST";
+		};
+		class Item334
+		{
+			position[]={12473.78,74.354355,15197.416};
+			name="military25";
+			text="Stavros Base";
+			type="o_support";
+			colorName="ColorEAST";
 		};
 	};
 	class Sensors

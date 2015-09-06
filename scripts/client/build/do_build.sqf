@@ -62,8 +62,10 @@ while { true } do {
 			_idactcancel = -1;
 			_idactsnap = -1;
 			_idactplacebis = -1;
-			if (buildtype == 6 ) then {
+			if (buildtype != 99 ) then {
 				_idactcancel = player addAction ["<t color='#B0FF00'>" + localize "STR_CANCEL" + "</t> <img size='2' image='res\ui_cancel.paa'/>","scripts\client\build\build_cancel.sqf","",-725,false,true,"","build_confirmed == 1"];
+			};
+			if (buildtype == 6 ) then {
 				_idactplacebis = player addAction ["<t color='#B0FF00'>" + localize "STR_PLACEMENT_BIS" + "</t> <img size='2' image='res\ui_confirm.paa'/>","scripts\client\build\build_place_bis.sqf","",-785,false,false,"","build_invalid == 0 && build_confirmed == 1"];
 			};
 			if (buildtype == 6 || buildtype == 99) then {
@@ -196,6 +198,7 @@ while { true } do {
 
 			if ( !alive player || build_confirmed == 3 ) then {
 				deleteVehicle _vehicle;
+				[ [ ((build_lists select buildtype) select buildindex) select 2 ] , "cancel_build_remote_call" ] call BIS_fnc_MP;
 			};
 
 			if ( build_confirmed == 2 ) then {
@@ -216,10 +219,6 @@ while { true } do {
 				} else {
 					_vehicle setVectorUp surfaceNormal position _vehicle;
 				};
-				clearWeaponCargoGlobal _vehicle;
-				clearMagazineCargoGlobal _vehicle;
-				clearItemCargoGlobal _vehicle;
-				clearBackpackCargoGlobal _vehicle;
 				if ( (_classname in uavs) || manned ) then {
 					createVehicleCrew _vehicle;
 				};

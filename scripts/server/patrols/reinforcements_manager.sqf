@@ -4,7 +4,7 @@ if ( combat_readiness > 15 ) then {
 	_init_units_count = ( ([ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount) + ([ getmarkerpos _targetsector , GRLIB_capture_size , RESISTANCE ] call F_getUnitsCount ) );
 
 	if ( !(_targetsector in sectors_bigtown)) then {
-		while { (_init_units_count * 0.85) <= ( ([ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount) + ([ getmarkerpos _targetsector , GRLIB_capture_size , RESISTANCE ] call F_getUnitsCount ) ) } do {
+		while { (_init_units_count * 0.75) <= ( ([ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount) + ([ getmarkerpos _targetsector , GRLIB_capture_size , RESISTANCE ] call F_getUnitsCount ) ) } do {
 			sleep 5;
 		};
 	};

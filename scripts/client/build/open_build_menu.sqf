@@ -20,16 +20,27 @@ ctrlShow [ 1085, _iscommandant ];
 ctrlShow [ 121, _iscommandant ];
 
 _squadname = "";
+_buildpages = [
+localize "STR_BUILD1",
+localize "STR_BUILD2",
+localize "STR_BUILD3",
+localize "STR_BUILD4",
+localize "STR_BUILD5",
+localize "STR_BUILD6",
+localize "STR_BUILD7",
+localize "STR_BUILD8"
+];
 
 while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	_build_list = build_lists select buildtype;
-	
+
 	if (_oldbuildtype != buildtype || synchro_done ) then {
 		synchro_done = false;
 		_oldbuildtype = buildtype;
-		
+
 		lbClear 110;
-		{	
+		{
+			ctrlSetText [ 151, _buildpages select ( buildtype - 1) ];
 			if ( buildtype != 8 ) then {
 				_classnamevar = (_x select 0);
 				_entrytext = getText (_cfg >> _classnamevar >> "displayName");
@@ -60,16 +71,16 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 				};
 				((findDisplay 5501) displayCtrl (110)) lnbAddRow  [_squadname, format [ "%1" ,_x select 1], format [ "%1" ,_x select 2], format [ "%1" ,_x select 3]];
 			};
-			
+
 			_affordable = true;
-			if( 
-				((_x select 1) > (infantry_cap - resources_infantry)) || 
-				((_x select 2) > resources_ammo) || 
-				((_x select 3) > (fuel_cap - resources_fuel))
+			if(
+				((_x select 1 > 0) && ((_x select 1) > (infantry_cap - resources_infantry))) ||
+				((_x select 2 > 0) && ((_x select 2) > resources_ammo)) ||
+				((_x select 3 > 0) && ((_x select 3) > (fuel_cap - resources_fuel)))
 				) then {
 				_affordable = false;
 			};
-			
+
 			if ( _affordable ) then {
 				((findDisplay 5501) displayCtrl (110)) lnbSetColor  [[((lnbSize 110) select 0) - 1, 0], [1,1,1,1]];
 				((findDisplay 5501) displayCtrl (110)) lnbSetColor  [[((lnbSize 110) select 0) - 1, 1], [1,1,1,1]];
@@ -81,28 +92,28 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 				((findDisplay 5501) displayCtrl (110)) lnbSetColor  [[((lnbSize 110) select 0) - 1, 2], [0.4,0.4,0.4,1]];
 				((findDisplay 5501) displayCtrl (110)) lnbSetColor  [[((lnbSize 110) select 0) - 1, 3], [0.4,0.4,0.4,1]];
 			};
-			
+
 		} foreach _build_list;
 	};
-	
+
 	if(_initindex != -1) then {
 		lbSetCurSel [110, _initindex];
 		_initindex = -1;
 	};
-	
+
 	_selected_item = lbCurSel 110;
 	_affordable = false;
 	if (dobuild == 0 && _selected_item != -1 && (_selected_item < (count _build_list)) && !(buildtype == 1 && (count (units group player)) >= 10 )) then {
 		_build_item = _build_list select _selected_item;
 		if (
-				((_build_item select 1) <= (infantry_cap - resources_infantry)) &&
-				((_build_item select 2) <= resources_ammo) &&
-				((_build_item select 3) <= (fuel_cap - resources_fuel))
+				((_build_item select 1 == 0 ) || ((_build_item select 1) <= (infantry_cap - resources_infantry))) &&
+				((_build_item select 2 == 0 ) || ((_build_item select 2) <= resources_ammo)) &&
+				((_build_item select 3 == 0 ) || ((_build_item select 3) <= (fuel_cap - resources_fuel)))
 		) then {
 			_affordable = true;
 		};
 	};
-	
+
 	_affordable_crew = _affordable;
 	if ( unitcap >= ([] call F_localCap)) then {
 		_affordable_crew = false;
@@ -110,7 +121,7 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 			_affordable = false;
 		};
 	};
-	
+
 	ctrlEnable [120, _affordable];
 	ctrlEnable [121, _affordable_crew];
 
@@ -118,15 +129,17 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	ctrlSetText [132, format [ "%1 : %2" , localize "STR_AMMO" , (floor resources_ammo)] ];
 	ctrlSetText [133, format [ "%1 : %2/%3" , localize "STR_FUEL" , (floor resources_fuel), fuel_cap] ];
 	ctrlSetText [134, format [ "%1 : %2/%3" , localize "STR_UNITCAP" , unitcap, ([] call F_localCap)] ];
-	
+
 	buildindex = _selected_item;
-	
+
 	if(buildtype == 1 && dobuild != 0) then {
 		ctrlEnable [120, false];
 		ctrlEnable [121, false];
 		sleep 1;
 		dobuild = 0;
 	};
+
+	sleep 0.1;
 };
 
 if (!alive player || dobuild != 0) then { closeDialog 0 };

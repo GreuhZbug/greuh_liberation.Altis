@@ -73,6 +73,11 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 	date_day = greuh_liberation_savegame select 7;
 	saved_ammo_res = greuh_liberation_savegame select 8;
 
+	if ( "capture_13_1_2_26_25" in blufor_sectors ) then { // Patching Molos Airfield which was a town instead of a factory
+		blufor_sectors = blufor_sectors - [ "capture_13_1_2_26_25" ];
+		blufor_sectors = blufor_sectors + [ "factory666" ];
+	};
+
 	if ( count greuh_liberation_savegame > 9 ) then {
 		_stats = greuh_liberation_savegame select 9;
 		stats_opfor_soldiers_killed = _stats select 0;

@@ -2,10 +2,14 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.89</Original>
+        		<Original>Liberation 0.90</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.89</Original>
+                        <Original>v0.90</Original>
+                </Key>
+                <Key ID="STR_MISSION_DESCRIPTION">
+                        <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
+                        <French>Avec le pouvoir de la Liberté et de la Démocratie votre mission est de libérer Altis de l'oppression du CSAT.</French>
                 </Key>
                 <Key ID="STR_Deploy_OnPoint">
                         <Original>Deploy</Original>
@@ -257,10 +261,9 @@
                         <French>-- Mode grille</French>
                         <German>-- Rastermodus</German>
                 </Key>
-                <Key ID="STR_SECONDARY_INTERROGATE">
-                        <Original>-- INTERROGATE</Original>
-                        <French>-- INTERROGER</French>
-                        <German>-- VERHOEREN</German>
+                <Key ID="STR_SECONDARY_CAPTURE">
+                        <Original>-- CAPTURE</Original>
+                        <French>-- CAPTURER</French>
                 </Key>
                 <Key ID="STR_SQUAD_MEMBER">
                         <Original>Squad member</Original>
@@ -653,6 +656,18 @@
                         <Original>Fatigue effects</Original>
                         <French>Effets de fatigue</French>
                 </Key>
+                <Key ID="STR_PARAMS_FATIGUE1">
+                        <Original>Reduced - Players tire 75% slower</Original>
+                        <French>Réduits - Les joueurs se fatiguent 75% plus lentement</French>
+                </Key>
+                <Key ID="STR_PARAMS_FATIGUE2">
+                        <Original>Reduced - Players tire 50% slower</Original>
+                        <French>Réduits - Les joueurs se fatiguent 50% plus lentement</French>
+                </Key>
+                <Key ID="STR_PARAMS_FATIGUE3">
+                        <Original>Reduced - Players tire 25% slower</Original>
+                        <French>Réduits - Les joueurs se fatiguent 25% plus lentement</French>
+                </Key>
                 <Key ID="STR_PARAMS_REVIVE">
                         <Original>FAR Revive</Original>
                 </Key>
@@ -701,16 +716,16 @@
                         <French>100% - Serveur dédié recommandé</French>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP4">
-                        <Original>125% - Dedicated server with 1 headless client recommended</Original>
-                        <French>125% - Serveur dédié avec 1 headless client recommandé</French>
+                        <Original>125% - Dedicated server with headless client recommended</Original>
+                        <French>125% - Serveur dédié avec headless client recommandé</French>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP5">
-                        <Original>150% - Dedicated server with 2 headless clients recommended</Original>
-                        <French>150% - Serveur dédié avec 2 headless clients recommandé</French>
+                        <Original>150% - Dedicated server with multiple headless clients recommended</Original>
+                        <French>150% - Serveur dédié avec clients headless multiples recommandé</French>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP6">
-                        <Original>200% - Dedicated server with 3 headless clients recommended</Original>
-                        <French>200% - Serveur dédié avec 3 headless clients recommandés</French>
+                        <Original>200% - Dedicated server with multiple headless clients recommended</Original>
+                        <French>200% - Serveur dédié avec clients headless multiples recommandés</French>
                 </Key>
                 <Key ID="STR_PARAMS_CIVILIANS">
                         <Original>Civilian activity</Original>
@@ -739,6 +754,233 @@
                 <Key ID="STR_PARAM_TEAMKILL_PENALTY">
                         <Original>Teamkill penalty</Original>
                         <French>Pénalité pour tirs alliés</French>
+                </Key>
+                <Key ID="STR_PARAM_ADAPT_TO_PLAYERCOUNT">
+                        <Original>Hostile presence adapts to player count</Original>
+                        <French>La présence hostile s'adapte au nombre de joueurs</French>
+                </Key>
+                <Key ID="STR_BUILD1">
+                        <Original>Infantry units</Original>
+                        <French>Unités d'infanterie</French>
+                </Key>
+                <Key ID="STR_BUILD2">
+                        <Original>Light vehicles</Original>
+                        <French>Véhicules légers</French>
+                </Key>
+                <Key ID="STR_BUILD3">
+                        <Original>Armored vehicles</Original>
+                        <French>Vehicules blindés</French>
+                </Key>
+                <Key ID="STR_BUILD4">
+                        <Original>Air vehicles</Original>
+                        <French>Véhicules aériens</French>
+                </Key>
+                <Key ID="STR_BUILD5">
+                        <Original>Static defenses</Original>
+                        <French>Defenses statiques</French>
+                </Key>
+                <Key ID="STR_BUILD6">
+                        <Original>Buildings</Original>
+                        <French>Batiments</French>
+                </Key>
+                <Key ID="STR_BUILD7">
+                        <Original>Logistics</Original>
+                        <French>Logistique</French>
+                </Key>
+                <Key ID="STR_BUILD8">
+                        <Original>Infantry squads</Original>
+                        <French>Escouades d'infanterie</French>
+                </Key>
+                <Key ID="STR_TUTO_GOTIT">
+                        <Original>Got it!</Original>
+                        <French>J'ai pigé !</French>
+                </Key>
+                <Key ID="STR_TUTO_ACTION">
+                        <Original>-- TUTORIAL</Original>
+                        <French>-- TUTORIAL</French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE">
+                        <Original>TUTORIAL</Original>
+                        <French>TUTORIAL</French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE1">
+                        <Original>1. Introduction</Original>
+                        <French>1. Introduction</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT1">
+                        <Original>&lt;br/&gt;
+Hello gentlemen, and welcome to Altis.
+The CSAT forces have surprised us with a brutal and overwhelming offensive. They now control the entire island, but thanks to your efforts, it won't last long.&lt;br/&gt; &lt;br/&gt;
+Our objective is simple: liberate Altis.&lt;br/&gt; &lt;br/&gt;
+The road to victory will be long and dangerous. You will have to conquer multiple sectors and acquire the necessary resources to improve the quantity and quality of the BLUFOR forces engaged in this campaign.&lt;br/&gt; &lt;br/&gt;
+Moreover, CSAT forces will most certainly react to our advance. You will have to engage into secondary operations to weaken a foe that fights with higher numbers and better equipment than you do.&lt;br/&gt; &lt;br/&gt;
+In your efforts you will need the support of the local population, so always make sure to double-check what you're shooting at.&lt;br/&gt; &lt;br/&gt;
+Questions?&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Bonjour messieurs, et bienvenue sur Altis.&lt;br/&gt; &lt;br/&gt;
+Les forces du CSAT nous ont pris de court avec une offensive aussi brutale que surprenante. L’île est maintenant sous leur emprise, mais grâce à vous, cela ne va pas durer.&lt;br/gt; &lt;br/&gt;
+L’objectif est simple : libérer Altis.&lt;br/&gt; &lt;br/&gt;
+La route vers la victoire sera longue et semée d’embûches. Il vous faudra conquérir de multiples secteurs pour acquérir les ressources nécessaires au développement en nombre et en qualité des forces de l’OTAN engagées dans cette opération.&lt;br/&gt; &lt;br/&gt;
+De plus, les forces du CSAT ne manqueront pas de réagir à notre avancée. Il faudra veiller à effectuer des opérations annexes pour affaiblir un ennemi bien plus nombreux et mieux équipé que nous.&lt;br/&gt; &lt;br/&gt;
+Dans vos efforts, le soutien de la population locale sera primordial, alors soyez toujours sûrs de toujours savoir sur quoi vous tirez.&lt;br/&gt; &lt;br/&gt;
+Des questions ?&lt;br/&gt; &lt;br/&gt;
+</French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE2">
+                        <Original>2. Starting the campaign</Original>
+                        <French>2. Débuter la campagne</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT2">
+<Original>&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+You begin the campaign in a safe zone that CSAT won't dare to attack. Your first choice is to choose where you want to deploy. At the beginning you can only deploy at the starting base, but as you progress, more options will become available such as forward operation bases (FOBs) and mobile respawns.&lt;br/&gt; &lt;br/&gt;
+At your starting location you can choose your equipment from a complete Arsenal. You will also find your first FOB packaged inside a container, the Spartan-01 Huron and a few other transport choppers.&lt;br/&gt; &lt;br/&gt;
+You will have to ferry that container with either the Huron or Ghosthawk (unless you have chosen to start with the first FOB already built). You can deploy this first FOB wherever you want, so it's up to you to choose the right place to start your campaign.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+<French>&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+Vous démarrez cette campagne dans un lieu sûr que le CSAT n’osera pas attaquer. Votre premier choix sera de savoir où vous voulez vous déployer. Au premier lancement, vous n’aurez que la base de départ. A mesure que vous progresserez, davantage d’options seront disponibles : bases avancées, respawn mobile, etc.&lt;br/&gt; &lt;br/&gt;
+A votre point de départ vous avez la possibilité de choisir vos armes avec un Arsenal complet. Vous trouverez également à proximité une FOB empaquetée, le Huron SPARTAN-01 quelques hélicoptères de transport.&lt;br/&gt; &lt;br/&gt;
+Vous devrez emmener le container en utilisant le Huron ou le Ghosthawk à votre disposition (sauf si vous avez fait le choix de démarrer avec une première FOB). Vous pouvez déployer cette première FOB où bon vous semble, alors à vous de choisir le bon endroit pour débuter la campagne.&lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE3">
+                        <Original>3. Objective</Original>
+                        <French>3. Objectif</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT3">
+                        <Original>&lt;br/&gt;
+The main objective of the campaign is to kick CSAT out of Altis. To achieve this, you will have to liberate the 7 major towns on the island: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros and Molos. This is the only victory condition for the campaign.&lt;br/&gt; &lt;br/&gt;
+But those cities are tough nuts to crack with only limited resources and a well established CSAT. &lt;br/&gt; &lt;br/&gt;
+To succeed, you will have to capture large number of different sectors, each with their own use.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+L’objectif premier de la campagne est de bouter le CSAT hors d'Altis. Pour cela, vous devez libérer les 7 villes principales : Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros et Molos. C’est l’unique condition de victoire de cette campagne.&lt;br/&gt; &lt;br/&gt;
+Mais ces villes sont bien difficile à attaquer avec des ressources limitées et un CSAT bien établi. Pour arriver à vos fins, vous devrez donc capturer un grand nombre de secteurs, avec chacun leur propre utilité.&lt;br/&gt; &lt;br/&gt;
+</French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE4">
+                        <Original>4. Sectors</Original>
+                        <French>4. Secteurs</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT4">
+                        <Original>&lt;br/&gt;
+Sectors are split into 5 different types:&lt;br/&gt; &lt;br/&gt;
+- Points of interest: generally small to medium towns, each point of interest you control will raise your troop recruitment capacity.&lt;br/&gt; &lt;br/&gt;
+- Military bases: full of CSAT personnel, the bases will also yield large quantities of ammunition that will be useful to upgrade your firepower. However these installations are heavily defended and will require large and well coordinated assaults.&lt;br/&gt; &lt;br/&gt;
+- Factories: factories will give you the fuel you need to deploy more vehicles.&lt;br/&gt; &lt;br/&gt;
+- Radio towers: when under CSAT control, radio towers will be used to call in reinforcements when a nearby sector is attacked. The reaction time will depend on the distance between the tower and the sector. When under - NATO control, the towers will give useful information on hostile troop movements in the vicinity by using their radio communications.&lt;br/&gt; &lt;br/&gt;
+- Major cities: there is  seven of them: Kevala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros and Molos. When all of the cities are under NATO control, you win.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Les secteurs se répartissent en 5 types différents :&lt;br/&gt; &lt;br/&gt;
+- Les points d’interêts : généralement des villes de taille petite à moyenne, chaque point d'intérêt contrôlé augmentera votre capacité à recruter des troupes.&lt;br/&gt; &lt;br/&gt;
+- Les bases militaires : habitées exclusivement par du personnel militaire du CSAT, les  bases sont riches en munitions qui vous permettront de déployer des véhicules puissants. Ces installations sont cependant lourdement  défendues et nécessiteront des offensives conséquences et bien  préparées.&lt;br/&gt; &lt;br/&gt;
+- Les usines : les usines vous fourniront le carburant nécessaire pour déployer davantage de véhicules.&lt;br/&gt; &lt;br/&gt;
+- Les tours radio : contrôlées par le CSAT, les tours radio permettent de donner  l'alerte et d'appeler des renforts si un secteur a proximité est attaqué. La vitesse de réaction des renforts dépendra de la distance entre la tour de radio et le secteur en question. Contrôlées par l'OTAN, les tours de radio permettront d'avoir des informations sur les mouvements hostiles à proximité en utilisant leurs communications radio.&lt;br/&gt; &lt;br/&gt;
+- Les villes majeures : il y en a 7 à capturer, Kevala, Athira, Pyrgos, Agios Dionysios,  Zaros, Paros et Molos. Une fois toutes ces villes sous le contrôle de l'OTAN, vous gagnez la partie.&lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE5">
+                        <Original>5. Resources</Original>
+                        <French>5. Ressources</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT5">
+<Original>&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\tuto\ress.jpg'/&gt;&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+In this campaign you have to manage three types of resources:&lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#00ff00'&gt;MANPOWER:&lt;/t&gt; manpower is linked to the number of points of interest you control. A bigger manpower allows you to raise the quality and quantity of your ground troops. &lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#ff0000'&gt;AMMO:&lt;/t&gt; ammunition is used to deploy armed vehicles, tanks and elite soldiers. It can be stocked forever and used only when necessary. Ammunition is contained in boxes that can be retrieved from military bases. Those crates have to be moved back to a FOB by truck or sling load, then recycled to increase your ammunition stockpile.&lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#ffff00'&gt;FUEL:&lt;/t&gt; fuel is used by every vehicle, some being more thirsty than others. The fuel levels depends on how many factories are controlled by NATO forces.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+<French>&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\tuto\ress.jpg'/&gt;&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+Dans cette mission vous aurez à gérer trois types de ressources : &lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#00ff00'&gt;MANPOWER&lt;/t&gt; : La réquisition permet de déployer des unités d'infanterie en plus grand nombre et de meilleure qualité. Elle évolue en fonction du nombre de points d'intérêt que vous contrôlez. &lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#ff0000'&gt;AMMO&lt;/t&gt; : Les munitions servent à armer véhicules, tanks et soldats d'élite. Elle peut être stockée sans limite et consommée quand c'est nécessaire. Les munitions sont contenues dans des caisses qui peuvent être -récupérées dans l'enceinte des bases militaires. Ces caisses doivent être amenées à une FOB par la voie terrestre ou aérienne pour augmenter votre stock de munitions. &lt;br/&gt; &lt;br/&gt;
+- &lt;t color='#ffff00'&gt;FUEL&lt;/t&gt; : Le carburant sert à motoriser tous les véhicules, certains étant plus gourmands que d'autre. Le niveau de carburant dépend du nombre d'usines sous le contrôle de l'OTAN. &lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE6">
+                        <Original>6. Alert level</Original>
+                        <French>6. Niveau d'alerte</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT6">
+                        <Original>&lt;br/&gt;
+The CSAT won't let you liberate all of its brand new territory without reacting. When you begin the campaign, hostile forces will only be composed of the garrisons inside military bases. However as you become more threatening by liberating more and more sectors, the CSAT will start calling in more reinforcements, men and equipment to counter you.&lt;br/&gt; &lt;br/&gt;
+To limit the CSAT's operational capabilities, you will have to fulfill secondary objectives that will consist of destroying their logistics bases. This is not required to win the campaign, but if you ignore the alert level for too long, you're in for quite a lot of trouble.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Le CSAT ne vous laissera pas reprendre son tout nouveau territoire sans réagir. En début de campagne les forces hostiles se limiteront aux garnisons des différentes bases militaires, mais plus vous deviendrez menaçants en libérant de nouveaux secteurs, et plus le CSAT fera venir de renforts en hommes et en matériel pour vous contrer. &lt;br/&gt; &lt;br/&gt;
+Pour limiter la capacité de réaction du CSAT, vous devrez veiller à effectuer des opérations annexes qui constitueront par exemple à détruire leurs bases de ravitaillement. Ce n'est pas une obligation pour réussir cette campagne, mais si vous ignorez le niveau d'alerte trop longtemps, attendez vous à des ennuis. &lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE7">
+                        <Original>7. Construction</Original>
+                        <French>7. Construction</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT7">
+                        <Original>&lt;br/&gt;
+To help you succeed in your endeavors, you have a construction capability that allow you to deploy units, vehicles, defenses, fortifications and so on. Depending on your resources of course.&lt;br/&gt; &lt;br/&gt;
+The construction system will be available when you are within 100 meters of a FOB headquarters. A contextual option will appear then.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Pour mener à bien vos objectifs vous disposez d'une capacité de construction qui vous permet de déployer des unités, des véhicules, des défenses pour vos FOB, des fortifications et autres. En fonction de vos ressources, bien sur. &lt;br/&gt; &lt;br/&gt;
+Pour utilisez le système de construction de la mission, vous devez vous trouver dans les 100 mètres du QG d'une FOB. Une option de construction apparaîtra alors. &lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE8">
+                        <Original>8. Deploying another FOB</Original>
+                        <French>8. Déployer une autre FOB</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT8">
+                        <Original>&lt;br/&gt;
+To build a brand new FOB, go to the construction menu, in the logistics tab, and build a FOB container or a FOB truck (the same thing, only with wheels).&lt;br/&gt; &lt;br/&gt;
+Then you can move the FOB container where you want to deploy your shiny new FOB. However be aware that you can't build a FOB inside a control sector, or within 2km of any other FOB.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Pour déployer une nouvelle FOB, rendez vous dans le menu de construction, onglet logistique, et choisissez de construire un container de FOB ou un camion FOB (la même chose, avec des roues).&lt;br/&gt; &lt;br/&gt;
+Vous pourrez ensuite déplacer le container où vous voudrez déployer la nouvelle FOB. Attention, vous ne pourrez pas construire votre FOB à l'intérieur d'un secteur contrôlable, ou à moins de 2 kilomètres d'une autre FOB.&lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE9">
+                        <Original>9. Secondary objectives</Original>
+                        <French>9. Missions secondaires</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT9">
+                        <Original>&lt;br/&gt;
+When you capture sectors, sometimes the few hostiles forces left will surrender. You can then capture prisoners that have to be taken to a nearby FOB to be interrogated.&lt;br/&gt; &lt;br/&gt;
+That interrogatory, executed in the utmost respect of the Geneva conventions, will allow you to obtain more or less precise information about the position of a CSAT logistics base.&lt;br/&gt; &lt;br/&gt;
+After going there you will need to find the exact position of your target, then use any means at your disposal to destroy every vehicle or container that could be useful to refill CSAT forces. Succeeding at this task will reduce the alert level consequently, and with it the efficiency of all hostile forces.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Lors de la capture d'un secteur, les dernières forces hostile sur place se rendront. Vous pourrez alors capturer des prisonniers qui devront être emmenés à une FOB pour y être interrogés.&lt;br/&gt; &lt;br/&gt;
+Cet interrogatoire mené dans le plus grand respect des conventions de Geneviève vous permettra d'obtenir des informations plus ou moins précises sur l'emplacement d'une base de ravitaillement du CSAT.&lt;br/&gt; &lt;br/&gt;
+En vous rendant sur place vous devrez trouver l'emplacement exact de votre cible et y détruire tout véhicule ou container utile au ravitaillement des forces CSAT. Remplir cet objectif provoquera une réduction importante du niveau d'alerte, et donc de l'efficacité des forces hostiles.&lt;br/&gt; &lt;br/&gt;
+                        </French>
+                </Key>
+                <Key ID="STR_TUTO_TITLE10">
+                        <Original>10. Commanding</Original>
+                        <French>10. Commandement</French>
+                </Key>
+                <Key ID="STR_TUTO_TEXT10">
+                        <Original>&lt;br/&gt;
+When a player uses the commander slot (the last slot of the list), they get access to a Zeus interface by pressing the corresponding key (U by default).&lt;br/&gt; &lt;br/&gt;
+This interface allows to command NATO forces in 3d view or map view.&lt;br/&gt; &lt;br/&gt;
+Moreover the commander gets additional build options that will allow them to obtain crewed vehicles or entire pre-made squads.&lt;br/&gt; &lt;br/&gt;
+This role is not mandatory, but strongly recommended for smaller groups of players.&lt;br/&gt; &lt;br/&gt;
+                        </Original>
+                        <French>&lt;br/&gt;
+Lorsqu'un joueur prend le rôle de commandant (en dernière position de la liste des rôles), il a accès à une interface Zeus en appuyant sur la touche correspondante (par défaut U).&lt;br/&gt; &lt;br/&gt;
+Cette interface permet de commander les troupes de l'OTAN en vue 3d ou en vue carte.&lt;br/&gt; &lt;br/&gt;
+Le commandant dispose par ailleurs d'options de construction supplémentaires pour obtenir des véhicules avec équipage ou des escouades entières pré-définies.&lt;br/&gt; &lt;br/&gt;
+Ce rôle n'est pas obligatoire, mais fortement recommandé pour les petits groupes de joueurs.&lt;br/&gt; &lt;br/&gt;
+                        </French>
                 </Key>
         </Package>
 </Project>
