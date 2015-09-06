@@ -39,20 +39,28 @@ while { true } do {
 	clearItemCargoGlobal huron;
 	clearBackpackCargoGlobal huron;
 	huron setDamage 0;
-	sleep 1;
+	sleep 0.25;
 	huron enableSimulationGlobal true;
 	huron setDamage 0;
-	sleep 4;
+	sleep 0.25;
+
 	huron setDamage 0;
 	huron allowdamage true;
-	waitUntil {
-		sleep 1;
-		!alive huron;
+
+	if ( alive huron ) then {
+
+		waitUntil {
+			sleep 1;
+			!alive huron;
+		};
+		stats_spartan_respawns = stats_spartan_respawns + 1;
+		sleep 15;
+
 	};
-	stats_spartan_respawns = stats_spartan_respawns + 1;
-	sleep 9;
+
 	if (huron distance lhd < 500) then {
 		deletevehicle huron;
 	};
-	sleep 1;
+	sleep 0.25;
+
 };

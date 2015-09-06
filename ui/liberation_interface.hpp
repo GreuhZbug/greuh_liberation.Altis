@@ -5,5 +5,6 @@
 #include "liberation_build.hpp"
 #include "liberation_deploy.hpp"
 #include "liberation_menu.hpp"
+#include "liberation_tutorial.hpp"
 #include "liberation_endscreen.hpp"
 #include "liberation_deathscreen.hpp"

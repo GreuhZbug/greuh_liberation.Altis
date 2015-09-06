@@ -2,15 +2,15 @@ class liberation_menu {
 	idd = 5651;
 	movingEnable = false;
 	controls[] = { "Splash", "Start", "Help" };
-	objects[] = {};	
-	
+	objects[] = {};
+
 	class Splash {
 		idc = -1;
-		type =  CT_STATIC ; 
-		style = ST_PICTURE;  
+		type =  CT_STATIC ;
+		style = ST_PICTURE;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM;  
+		font = FontM;
 		sizeEx = 0.1 * safezoneH;
 		x = 0.08 * safezoneW + safezoneX;
 		w = 0.25 * safezoneW;
@@ -24,8 +24,8 @@ class liberation_menu {
 		style = ST_CENTER;
 		x = (0.137 * safezoneW + safezoneX) - (BORDERSIZE);
 		y = (0.53 * safezoneH + safezoneY);
-		w = (0.15 * safezoneW) - (BORDERSIZE);  
-		h = (0.07 * safezoneH);		
+		w = (0.15 * safezoneW) - (BORDERSIZE);
+		h = (0.07 * safezoneH);
 		sizeEx = 0.025 * safezoneH;
 		size = 0.025 * safezoneH;
 		text = "";
@@ -71,19 +71,18 @@ class liberation_menu {
 	};
 	class Help : Start {
 		idc = 322;
-		y = (0.62 * safezoneH + safezoneY);	
-		action = "";
+		y = (0.62 * safezoneH + safezoneY);
 		animTextureNormal = "res\btn_htp_spl_idl3.paa";
 		animTextureDisabled = "res\btn_htp_spl_idl3.paa";
 		animTextureOver = "res\btn_htp_spl_hov3.paa";
 		animTextureFocused = "res\btn_htp_spl_idl3.paa";
 		animTexturePressed = "res\btn_htp_spl_hov3.paa";
 		animTextureDefault = "res\btn_htp_spl_idl3.paa";
-		tooltip = "Coming Soon!";
 		tooltipColorShade[] = COLOR_BROWN;
 		tooltipColorText[] = COLOR_WHITE;
 		tooltipColorBox[] = COLOR_GREEN;
+		action = "howtoplay=1;";
 	};
-	
-	
+
+
 };

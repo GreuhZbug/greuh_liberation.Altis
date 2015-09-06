@@ -53,10 +53,16 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_sidespawn = EAST;
 
 		_building_ai_max = round ((30 + (round (combat_readiness / 5 ))) * _popfactor) ;
-		_building_range = 250;
+		_building_range = 325;
 		_local_capture_size = _local_capture_size * 2;
 		_iedcount = (3 + (floor (random 6))) * GRLIB_difficulty_modifier;
 		if ( _iedcount > 12 ) then { _iedcount = 12 };
+
+		if ( _sector == "bigtown9" || _sector == "bigtown4" ) then { // Special treatment for Kavala and Pyrgos
+			_building_range = 450;
+			_building_ai_max = _building_ai_max + 20;
+			_squad4 = ([] call F_getAdaptiveSquadComp);
+		};
 	};
 	if ( _sector in sectors_capture ) then {
 		_vehtospawn = [];
@@ -115,6 +121,10 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 			_squad2 = ([] call F_getAdaptiveSquadComp);
 		};
 		_building_ai_max = 0;
+	};
+
+	if ( _building_ai_max > 0 && GRLIB_adaptive_opfor ) then {
+		_building_ai_max = round ( _building_ai_max * ([] call F_adaptiveOpforFactor));
 	};
 
 	{
@@ -206,7 +216,11 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 			sleep 100;
 			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 
-			{ deleteVehicle _x } foreach _managed_units;
+			{
+				if ( side group _x != WEST ) then {
+					deleteVehicle _x;
+				};
+			} foreach _managed_units;
 
 		} else {
 			if ( ( [_sectorpos, (GRLIB_sector_size + 250), WEST ] call F_getUnitsCount ) == 0 ) then {

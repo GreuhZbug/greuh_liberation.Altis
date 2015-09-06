@@ -1,5 +1,10 @@
 _hostile_markers = [];
 
+waitUntil {
+	sleep 1;
+	!isNil "blufor_sectors"
+};
+
 while { true } do {
 
 	{ deleteMarkerLocal _x } foreach _hostile_markers;
@@ -7,10 +12,12 @@ while { true } do {
 	_hostile_groups = [];
 
 	{
-		if ( ((side _x == EAST) || (side _x == RESISTANCE)) && ((count units _x) > 0)) then {
-			if ( [(getpos leader _x), WEST, GRLIB_radiotower_size] call F_getNearestTower != "" ) then {
+		private [ "_nextgroup" ];
+		_nextgroup = _x;
+		if ( ((side _nextgroup == EAST) || (side _nextgroup == RESISTANCE)) && (({ !captive _x } count ( units _nextgroup ) ) > 0)) then {
+			if ( [(getpos leader _nextgroup), WEST, GRLIB_radiotower_size] call F_getNearestTower != "" ) then {
 
-				_hostile_groups pushback _x;
+				_hostile_groups pushback _nextgroup;
 			};
 		};
 	} foreach allGroups;
@@ -24,5 +31,5 @@ while { true } do {
 		_hostile_markers pushback _marker;
 	} foreach _hostile_groups;
 
-	sleep (30 + (random 30));
+	sleep (60 + (random 60));
 };

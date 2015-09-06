@@ -1,6 +1,6 @@
 
-_sectorpos = _this select 0;
-_classname = _this select 1;
+params [ "_sectorpos", "_classname"];
+
 _newvehicle = objNull;
 
 _spawnpos = [0,0,0];

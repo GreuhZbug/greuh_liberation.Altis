@@ -2,30 +2,30 @@ class liberation_build {
 	idd = 5501;
 	movingEnable = false;
 	controlsBackground[] = {};
-	
+
 	controls[] = {"OuterBG", "RecycleBG", "OuterBG_F", "InnerBG", "InnerBG_F", "Header",
 	"ButtonClose","BuildInfantryButton","BuildTransportVehicleButton",
 	"BuildCombatVehicleButton","BuildAerialButton","BuildDefenceButton",
 	"BuildSupportButton","BuildSquadButton","BuildBuildingButton","BuildInfantryImage",
 	"BuildTransportVehicleImage","BuildCombatVehicleImage","BuildAerialImage","ManpowerImageShadow","AmmoImageShadow","FuelImageShadow",
 	"BuildDefenceImage","BuildSupportImage","BuildSquadImage","BuildBuildingImage","ListBG","ManpowerImage","AmmoImage","FuelImage",
-	"BuildList","BuildButton","LabelManpower","LabelAmmo","LabelFuel","LabelCap","BuildMannedButton"
-	
+	"BuildList","BuildButton","LabelManpower","LabelAmmo","LabelFuel","LabelCap","BuildMannedButton","PageLabel"
+
 	};
-	
-	objects[] = {};	
-	
+
+	objects[] = {};
+
 	class RecycleBG : BgPicture {
-		x = (0.35 * safezoneW + safezoneX) - ( 2 * BORDERSIZE); 
+		x = (0.35 * safezoneW + safezoneX) - ( 2 * BORDERSIZE);
 		y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-		w = (0.3 * safezoneW) + (4 * BORDERSIZE);  
+		w = (0.3 * safezoneW) + (4 * BORDERSIZE);
 		h = (0.6 * safezoneH) + (6 * BORDERSIZE);
 	};
 	class OuterBG : StdBG{
 		colorBackground[] = COLOR_BROWN;
-		x = (0.35 * safezoneW + safezoneX) - ( 2 * BORDERSIZE); 
+		x = (0.35 * safezoneW + safezoneX) - ( 2 * BORDERSIZE);
 		y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-		w = (0.3 * safezoneW) + (4 * BORDERSIZE);  
+		w = (0.3 * safezoneW) + (4 * BORDERSIZE);
 		h = (0.6 * safezoneH) + (6 * BORDERSIZE);
 	};
 	class OuterBG_F : OuterBG {
@@ -33,25 +33,25 @@ class liberation_build {
 	};
 	class InnerBG : OuterBG {
 		colorBackground[] = COLOR_GREEN;
-		x = (0.35 * safezoneW + safezoneX)  - ( BORDERSIZE); 
+		x = (0.35 * safezoneW + safezoneX)  - ( BORDERSIZE);
 		y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-		w = (0.3 * safezoneW) +  (2 * BORDERSIZE);  
+		w = (0.3 * safezoneW) +  (2 * BORDERSIZE);
 		h = 0.55 * safezoneH  + (3 * BORDERSIZE);
 	};
 	class InnerBG_F : InnerBG {
 		style = ST_FRAME;
 	};
 	class Header : StdHeader{
-		x = 0.35 * safezoneW + safezoneX - (BORDERSIZE); 
+		x = 0.35 * safezoneW + safezoneX - (BORDERSIZE);
 		y = 0.19 * safezoneH + safezoneY;
-		w = 0.3 * safezoneW + ( 2 * BORDERSIZE);  
+		w = 0.3 * safezoneW + ( 2 * BORDERSIZE);
 		h = 0.05 * safezoneH - (BORDERSIZE);
 		text = $STR_BUILD_TITLE;
 	};
 	class ButtonClose : StdButton{
 		idc = 101;
 		x = 0.635 * safezoneW + safezoneX;
-		w = 0.015 * safezoneW; 
+		w = 0.015 * safezoneW;
 		h = 0.02 * safezoneH;
 		y = 0.195 * safezoneH + safezoneY;
 		text = "X";
@@ -61,55 +61,55 @@ class liberation_build {
 		idc = -1;
 		type = CT_STATIC;
 		style = ST_PICTURE;
-		colorText[] = {0, 0, 0, 1}; 
-        colorBackground[] = {0, 0, 0, 1}; 
+		colorText[] = {0, 0, 0, 1};
+        colorBackground[] = {0, 0, 0, 1};
 		font = FontM;
 		sizeEx = 0.023;
 		y = (0.2525 * safezoneH + safezoneY);
-		w = (0.02 * safezoneW);  
+		w = (0.02 * safezoneW);
 		h = (0.035 * safezoneH);
 		moving = false;
 	};
 	class BuildTypeButton : StdButton{
 		colorBackgroundActive[] = { 0,1,0,0.5 };
-		colorFocused[] = { 0, 1, 0, 0.5 };  
+		colorFocused[] = { 0, 1, 0, 0.5 };
 		y = (0.25 * safezoneH + safezoneY);
-		w = (0.023 * safezoneW);  
-		h = (0.04 * safezoneH);		
+		w = (0.023 * safezoneW);
+		h = (0.04 * safezoneH);
 		text = "";
 	};
 	class BuildInfantryImage : BuildTypeImage {
 		idc = 1025;
-		x = (0.402 * safezoneW + safezoneX); 
+		x = (0.402 * safezoneW + safezoneX);
 		text = "\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeUnits_ca.paa";
 	};
 	class BuildInfantryButton : BuildTypeButton{
 		idc = 102;
 		text = "";
 		action = "buildtype=1";
-		x = (0.4 * safezoneW + safezoneX); 
+		x = (0.4 * safezoneW + safezoneX);
 	};
 	class BuildTransportVehicleImage : BuildTypeImage {
 		idc = 1035;
-		x = (0.427 * safezoneW + safezoneX); 
+		x = (0.427 * safezoneW + safezoneX);
 		text = "\A3\ui_f\data\map\vehicleicons\iconCar_ca.paa";
 	};
 	class BuildTransportVehicleButton : BuildTypeButton{
 		idc = 103;
 		text = "";
 		action = "buildtype=2";
-		x = (0.425 * safezoneW + safezoneX); 
+		x = (0.425 * safezoneW + safezoneX);
 	};
 	class BuildCombatVehicleImage : BuildTypeImage {
 		idc = 1045;
-		x = (0.452 * safezoneW + safezoneX); 
+		x = (0.452 * safezoneW + safezoneX);
 		text = "\A3\ui_f\data\map\vehicleicons\iconTank_ca.paa";
 	};
 	class BuildCombatVehicleButton : BuildTypeButton{
 		idc = 104;
 		text = "";
 		action = "buildtype=3";
-		x = (0.45 * safezoneW + safezoneX); 
+		x = (0.45 * safezoneW + safezoneX);
 	};
 	class BuildAerialImage : BuildTypeImage {
 		idc = 1055;
@@ -166,17 +166,17 @@ class liberation_build {
 		action = "buildtype=8";
 		x = (0.575 * safezoneW + safezoneX);
 	};
-	
+
 	class IconImage {
 		idc = -1;
 		type = CT_STATIC;
 		style = ST_PICTURE;
-		colorText[] = {1, 1, 1, 1}; 
-        colorBackground[] = {0, 0, 0, 1}; 
+		colorText[] = {1, 1, 1, 1};
+        colorBackground[] = {0, 0, 0, 1};
 		font = FontM;
 		sizeEx = 0.023;
 		y = (0.32 * safezoneH + safezoneY);
-		w = (0.015 * safezoneW);  
+		w = (0.015 * safezoneW);
 		h = (0.025 * safezoneH);
 		moving = false;
 	};
@@ -195,22 +195,22 @@ class liberation_build {
 	class ManpowerImageShadow : IconImage {
 		x = (0.5475 * safezoneW + safezoneX)  + 0.003;
 		text = "res\ui_manpo.paa";
-		colorText[] = {0, 0, 0, 1}; 
+		colorText[] = {0, 0, 0, 1};
 		y = (0.32 * safezoneH + safezoneY) + 0.005;
 	};
 	class AmmoImageShadow : IconImage {
 		x = (0.5775 * safezoneW + safezoneX) + 0.003;
 		text = "res\ui_ammo.paa";
-		colorText[] = {0, 0, 0, 1}; 
+		colorText[] = {0, 0, 0, 1};
 		y = (0.32 * safezoneH + safezoneY) + 0.005;
 	};
 	class FuelImageShadow : IconImage {
 		x = (0.6075 * safezoneW + safezoneX)  + 0.003;
 		text = "res\ui_fuel.paa";
-		colorText[] = {0, 0, 0, 1}; 
+		colorText[] = {0, 0, 0, 1};
 		y = (0.32 * safezoneH + safezoneY) + 0.005;
 	};
-	
+
 	class BuildList : StdListNBox {
 		idc = 110;
 		x = 0.35 * safezoneW + safezoneX;
@@ -228,7 +228,7 @@ class liberation_build {
 		rowHeight = 1.25 * 0.018 * safezoneH;
 		colorPicture[] = {1,1,1,1};
 		colorPictureSelected[] = {0,1,0,1};
-		colorPictureDisabled[] = {0.4,0.4,0.4,1};  
+		colorPictureDisabled[] = {0.4,0.4,0.4,1};
 	};
 	class ListBG : OuterBG {
 		colorBackground[] = COLOR_GREEN;
@@ -239,8 +239,8 @@ class liberation_build {
 	};
 	class LabelResource : StdText{
 		x = (0.35 * safezoneW + safezoneX);
-		w = (0.15 * safezoneW);  
-		h = (0.03 * safezoneH);	
+		w = (0.15 * safezoneW);
+		h = (0.03 * safezoneH);
 	};
 	class LabelManpower : LabelResource{
 		idc = 131;
@@ -262,13 +262,21 @@ class liberation_build {
 		y = (0.76 * safezoneH + safezoneY);
 		colorText[] = {0.8, 0.8, 0.8, 1};
 	};
-	
+	class PageLabel : StdText{
+		idc = 151;
+		x = (0.35 * safezoneW + safezoneX);
+		y = (0.3 * safezoneH + safezoneY);
+		w = (0.2 * safezoneW);
+		h = (0.05 * safezoneH);
+		sizeEx = 0.03 * safezoneH;
+	};
+
 	class BuildButton : StdButton{
 		idc = 120;
 		x = (0.55 * safezoneW + safezoneX);
 		y = (0.75 * safezoneH + safezoneY);
-		w = (0.1 * safezoneW);  
-		h = (0.045 * safezoneH);		
+		w = (0.1 * safezoneW);
+		h = (0.045 * safezoneH);
 		sizeEx = 0.03 * safezoneH;
 		text = $STR_BUILD_BUTTON;
 		action = "dobuild = 1;";
@@ -277,8 +285,8 @@ class liberation_build {
 		idc = 121;
 		x = (0.55 * safezoneW + safezoneX);
 		y = (0.7 * safezoneH + safezoneY);
-		w = (0.1 * safezoneW);  
-		h = (0.045 * safezoneH);		
+		w = (0.1 * safezoneW);
+		h = (0.045 * safezoneH);
 		sizeEx = 0.02 * safezoneH;
 		text = $STR_BUILD_CREW;
 		action = "dobuild = 1; manned = true;";

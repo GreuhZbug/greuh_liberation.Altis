@@ -28,3 +28,4 @@ F_limitSkill = compileFinal preprocessFileLineNumbers "scripts\shared\functions\
 F_getNearbyPlayers = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getNearbyPlayers.sqf";
 F_lessLoadedHC = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_lessLoadedHC.sqf";
 F_setMass = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_setMass.sqf";
+F_adaptiveOpforFactor = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_adaptiveOpforFactor.sqf";

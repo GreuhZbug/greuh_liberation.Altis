@@ -21,11 +21,11 @@ if ( GRLIB_isAtlasPresent ) then {
 while { true } do {
 	waitUntil {
 		sleep 0.1;
-		(player distance (getmarkerpos "respawn_west") < 50) && vehicle player == player && alive player && !dialog;
+		(player distance (getmarkerpos "respawn_west") < 50) && vehicle player == player && alive player && !dialog && howtoplay == 0;
 	};
 
 	player setFatigue 0;
-	if ( !GRLIB_fatigue ) then {
+	if ( GRLIB_fatigue == 0 ) then {
 		player enableFatigue false;
 	};
 

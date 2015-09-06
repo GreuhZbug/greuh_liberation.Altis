@@ -5,7 +5,7 @@ _unit disableAI "MOVE";
 _move_is_disabled = true;
 
 while { _move_is_disabled && local _unit && alive _unit && !(captive _unit) } do {
-	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man"], 15 ] );
+	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man"], 20 ] );
 
 	if ( _hostilecount > 0 || ( damage _unit > 0.25 ) ) then {
 		if ( _move_is_disabled ) then {
