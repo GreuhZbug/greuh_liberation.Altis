@@ -174,14 +174,15 @@ while { true } do {
 		_all_buildings = [];
 		{
 			_fobpos = _x;
-			_nextbuildings = _fobpos nearobjects 250;
-			{
-				if ( (typeof _x) in _classnames_to_save ) then {
-					if ( alive _x && ( speed _x < 1 ) && (((getpos _x) select 2) < 10 )) then {
-						_all_buildings pushback _x;
-					}
-				};
-			} foreach _nextbuildings;
+			_nextbuildings = [ _fobpos nearobjects 250, {
+				((typeof _x) in _classnames_to_save ) &&
+				( alive _x) &&
+				( speed _x < 5 ) &&
+				( isNull  attachedTo _x ) &&
+				(((getpos _x) select 2) < 10 )
+ 				} ] call BIS_fnc_conditionalSelect;
+
+			_all_buildings = _all_buildings + _nextbuildings;
 		} foreach all_fobs;
 
 		{

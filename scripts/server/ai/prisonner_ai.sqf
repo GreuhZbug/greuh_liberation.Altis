@@ -29,6 +29,9 @@ if ( (_unit isKindOf "Man") && ( alive _unit ) && ((side _unit == EAST) || (side
 		};
 
 		if ( alive _unit ) then {
+			_unit enableAI "ANIM";
+			_unit enableAI "MOVE";
+			sleep 1;
 			[ [ _unit ], "remote_call_prisonner", _unit ] call bis_fnc_mp;
 		};
 	};

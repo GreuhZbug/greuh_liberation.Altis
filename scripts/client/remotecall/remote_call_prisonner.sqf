@@ -11,6 +11,8 @@ _unit playmove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
 sleep 2;
 _unit enableAI "ANIM";
 _unit enableAI "MOVE";
+sleep 2;
+[ [ _unit ], "remote_call_switchmove" ] call bis_fnc_mp;
 
 waitUntil { sleep 2;
 
@@ -36,9 +38,9 @@ if (alive _unit) then {
 		_unit playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
 		_unit disableAI "ANIM";
 		_unit disableAI "MOVE";
+		_unit setCaptive false;
 		sleep 5;
-		_unit switchmove "AidlPsitMstpSnonWnonDnon_ground00";
-
+		[ [ _unit, "AidlPsitMstpSnonWnonDnon_ground00" ], "remote_call_switchmove" ] call bis_fnc_mp;
 		[ [_unit] , "prisonner_remote_call" ] call BIS_fnc_MP;
 		sleep 600;
 		deleteVehicle _unit;

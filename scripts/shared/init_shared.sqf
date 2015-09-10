@@ -13,5 +13,6 @@ remote_call_fob = compileFinal preprocessFileLineNumbers "scripts\client\remotec
 remote_call_battlegroup = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_battlegroup.sqf";
 remote_call_endgame = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_endgame.sqf";
 remote_call_prisonner = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_prisonner.sqf";
+remote_call_switchmove = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_switchmove.sqf";
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\scan_skill.sqf";
