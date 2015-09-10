@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.90</Original>
+        		<Original>Liberation 0.901</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.90</Original>
+                        <Original>v0.901</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -130,6 +130,26 @@
                         <Original>-- ARSENAL --</Original>
                         <French>-- ARSENAL --</French>
                         <German>-- ARSENAL --</German>
+                </Key>
+                <Key ID="STR_ACTION_LOAD_BOX">
+                        <Original>-- LOAD AMMO BOX</Original>
+                        <French>-- CHARGER MUNITIONS</French>
+                </Key>
+                <Key ID="STR_ACTION_UNLOAD_BOX">
+                        <Original>-- UNLOAD AMMO BOXES</Original>
+                        <French>-- DECHARGER MUNITIONS</French>
+                </Key>
+                <Key ID="STR_BOX_LOADED">
+                        <Original>Ammo box successfully loaded on the transport truck.</Original>
+                        <French>La caisse de munitions a été chargée sur le camion de transport.</French>
+                </Key>
+                <Key ID="STR_BOX_UNLOADED">
+                        <Original>Ammo box successfully unloaded from the transport truck.</Original>
+                        <French>La caisse de munitions a été déchargée du camion de transport.</French>
+                </Key>
+                <Key ID="STR_BOX_CANTLOAD">
+                        <Original>There is no nearby vehicle capable of carrying the ammo box.</Original>
+                        <French>Aucun véhicule à proximité capable de charger la caisse de munitions.</French>
                 </Key>
                 <Key ID="STR_FOB_ACTION">
                         <Original>-- DEPLOY FOB --</Original>
