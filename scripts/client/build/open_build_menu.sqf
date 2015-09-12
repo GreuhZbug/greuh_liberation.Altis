@@ -34,6 +34,13 @@ localize "STR_BUILD8"
 while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	_build_list = build_lists select buildtype;
 
+	if ( buildtype == 7 ) then {
+		_build_list = [];
+		while { count _build_list < (count (build_lists select buildtype)) - 2 } do {
+			_build_list pushback ((build_lists select buildtype) select (count _build_list));
+		};
+	};
+
 	if (_oldbuildtype != buildtype || synchro_done ) then {
 		synchro_done = false;
 		_oldbuildtype = buildtype;

@@ -1,6 +1,5 @@
 _recycleable_vehicles = [];
 veh_action_distance = 10;
-_fob_distance = 100;
 
 _recycleable_classnames = [];
 {
@@ -21,7 +20,7 @@ while { true } do {
 
 	_detected_vehicles = 	[ (getpos player) nearObjects veh_action_distance ,
 						{ (((typeof _x in _recycleable_classnames ) && ((count crew _x) == 0 || (typeof _x) in uavs)  && ((locked _x == 0 || locked _x == 1))) || ( typeof _x in _building_classnames )) &&
-						(alive _x) && (_x distance lhd > 1000) && (_x distance (call F_getNearestFob) < _fob_distance ) } ]
+						(alive _x) && (_x distance lhd > 1000) && (_x distance (call F_getNearestFob) < GRLIB_fob_range ) } ]
 						call BIS_fnc_conditionalSelect;
 
 	{
@@ -35,7 +34,7 @@ while { true } do {
 
 		if ( !_next_vehicle_already_in_list ) then {
 			_idact_next = _next_vehicle addAction [ "<t color='#FFFF00'>" + localize "STR_RECYCLE" + "</t> <img size='2' image='res\ui_recycle.paa'/>", "scripts\client\actions\do_recycle.sqf", "", -900, true, true, "", "build_confirmed == 0 && (  _this distance _target < veh_action_distance ) && (vehicle player == player)"];
-			_recycleable_vehicles = _recycleable_vehicles +  [ [ _next_vehicle, _idact_next ] ];
+			_recycleable_vehicles pushback [ _next_vehicle, _idact_next ] ;
 		};
 	} foreach _detected_vehicles;
 

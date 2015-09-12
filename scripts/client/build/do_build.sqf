@@ -1,5 +1,5 @@
 build_confirmed = 0;
-_maxdist = 125;
+_maxdist = GRLIB_fob_range;
 _truepos = [];
 
 GRLIB_preview_spheres = [];
@@ -154,7 +154,7 @@ while { true } do {
 					GRLIB_conflicting_objects = [];
 				};
 
-				if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) then {
+				if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (  ((!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) || (_classname in boats_names) ) ) then {
 
 					if ( ((buildtype == 6) || (buildtype == 99)) && ((gridmode % 2) == 1) ) then {
 						_vehicle setpos [round (_truepos select 0),round (_truepos select 1), _truepos select 2];
@@ -181,7 +181,7 @@ while { true } do {
 					if(count _near_objects > 0) then {
 						GRLIB_ui_notif = format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
 					};
-					if((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) then {
+					if( ((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(_classname in boats_names)) then {
 						GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";
 					};
 					if((_truepos distance _posfob) > _maxdist) then {
@@ -222,6 +222,11 @@ while { true } do {
 				if ( (_classname in uavs) || manned ) then {
 					createVehicleCrew _vehicle;
 				};
+
+				if ( _classname == FOB_box_typename ) then {
+					[ [_vehicle, 3000 ] , "F_setMass" ] call BIS_fnc_MP;
+				};
+
 				sleep 0.3;
 				_vehicle allowDamage true;
 				_vehicle setDamage 0;

@@ -11,7 +11,7 @@ while { true } do {
 			[ [ _x, 1 ] , "remote_call_sector" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_sector;
 		};
-		sleep 1;
+		sleep 0.5;
 	} foreach blufor_sectors;
 
 	{
@@ -20,7 +20,7 @@ while { true } do {
 			[ [ _x , 1 ] , "remote_call_fob" ] call BIS_fnc_MP;
 			[ _x ] call attack_in_progress_fob;
 		};
-		sleep 1;
+		sleep 0.5;
 	} foreach all_fobs;
 
 	sleep 1;

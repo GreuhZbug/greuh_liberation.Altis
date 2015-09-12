@@ -16,15 +16,17 @@ _supporttomark = [
 ];
 
 {
-	_vehtomark = _vehtomark + [_x select 0];
+	_vehtomark pushback (_x select 0);
 } foreach light_vehicles + heavy_vehicles + air_vehicles + _supporttomark;
+
+_vehtomark = _vehtomark - [ ammobox_o_typename ];
 
 while { true } do {
 
 	_markedveh = [];
 	{
 		if ( (alive _x) && ((typeof _x) in _vehtomark) && (count (crew _x) == 0) && (_x distance lhd > 500) ) then {
-			_markedveh = _markedveh + [_x];
+			_markedveh pushback _x;
 		};
 	} foreach vehicles;
 
@@ -37,7 +39,7 @@ while { true } do {
 			_marker setMarkerColorLocal "ColorKhaki";
 			_marker setMarkerTypeLocal "mil_dot";
 			_marker setMarkerSizeLocal [ 0.75, 0.75 ];
-			_vehmarkers = _vehmarkers + [_marker];
+			_vehmarkers pushback _marker;
 		} foreach _markedveh;
 	};
 

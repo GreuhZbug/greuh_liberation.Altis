@@ -1,6 +1,6 @@
 if ( !(isNil "GRLIB_param_wipe_savegame_1") && !(isNil "GRLIB_param_wipe_savegame_2") ) then {
 	if ( GRLIB_param_wipe_savegame_1 == 1 && GRLIB_param_wipe_savegame_2 == 1 ) then {
-		profileNamespace setVariable ["GREUH_LIBERATION_SAVEGAME",nil];
+		profileNamespace setVariable [ GRLIB_save_key,nil ];
 		saveProfileNamespace;
 	};
 };
@@ -60,7 +60,7 @@ _classnames_to_save_blu = [];
 _classnames_to_save = _classnames_to_save + _classnames_to_save_blu + militia_vehicles + opfor_vehicles + opfor_troup_transports + opfor_air + opfor_choppers;
 
 trigger_server_save = false;
-greuh_liberation_savegame = profileNamespace getVariable "GREUH_LIBERATION_SAVEGAME";
+greuh_liberation_savegame = profileNamespace getVariable GRLIB_save_key;
 
 if ( !isNil "greuh_liberation_savegame" ) then {
 	blufor_sectors = greuh_liberation_savegame select 0;
@@ -163,7 +163,7 @@ while { true } do {
 	};
 
 	if ( GRLIB_endgame == 1 ) then {
-		profileNamespace setVariable [ "GREUH_LIBERATION_SAVEGAME", nil ];
+		profileNamespace setVariable [ GRLIB_save_key, nil ];
 		saveProfileNamespace;
 		while { true } do { sleep 300; };
 	} else {
@@ -174,7 +174,7 @@ while { true } do {
 		_all_buildings = [];
 		{
 			_fobpos = _x;
-			_nextbuildings = [ _fobpos nearobjects 250, {
+			_nextbuildings = [ _fobpos nearobjects (GRLIB_fob_range * 2), {
 				((typeof _x) in _classnames_to_save ) &&
 				( alive _x) &&
 				( speed _x < 5 ) &&
@@ -235,7 +235,7 @@ while { true } do {
 		greuh_liberation_savegame = [ blufor_sectors, all_fobs, buildings_to_save, time_of_day,combat_readiness, date select 0, date select 1, date select 2, resources_ammo, _stats,
 		[ infantry_weight, armor_weight, air_weight ] ];
 
-		profileNamespace setVariable ["GREUH_LIBERATION_SAVEGAME",greuh_liberation_savegame];
+		profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
 		saveProfileNamespace;
 	};
 };

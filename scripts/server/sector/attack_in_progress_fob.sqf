@@ -1,6 +1,13 @@
-_thispos = _this select 0;
+params [ "_thispos" ];
+private [ "_attacktime", "_ownership", "_grp" ];
+
 _attacktime = GRLIB_vulnerability_timer;
 _ownership = EAST;
+
+_grp = creategroup WEST;
+{
+	_x createUnit [ _thispos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];
+} foreach blufor_squad_inf;
 
 while { _attacktime > 0 && ( _ownership == EAST || _ownership == RESISTANCE ) } do {
 	_ownership = [ _thispos ] call F_sectorOwnership;
@@ -26,7 +33,12 @@ if ( GRLIB_endgame == 0 ) then {
 		stats_fobs_lost = stats_fobs_lost + 1;
 	} else {
 		[ [ _thispos , 3 ] , "remote_call_fob" ] call BIS_fnc_MP;
+		{ [_x] spawn prisonner_ai; } foreach ( [ _thispos nearEntities [ "Man", 300], { side group _x == EAST || side group _x == RESISTANCE } ] call BIS_fnc_conditionalSelect );
 	};
 };
 
-sleep 15;
+sleep 20;
+
+{
+	if ( alive _x ) then { deleteVehicle _x };
+} foreach units _grp;

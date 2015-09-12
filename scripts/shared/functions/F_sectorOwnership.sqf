@@ -1,6 +1,7 @@
 
-_cap_thresold_count = 2;
-_cap_thresold_ratio = 0.85;
+_cap_thresold_count = 3;
+_cap_thresold_ratio = 0.82;
+_cap_min_ratio = 0.65;
 _thatpos = _this select 0;
 _localsize = GRLIB_capture_size;
 
@@ -19,10 +20,8 @@ if ( _countwest_ownership + _counteast_ownership != 0 ) then {
 
 if ( _countwest_ownership == 0 && _counteast_ownership <= _cap_thresold_count ) then { _sectorside = CIVILIAN; };
 
-if ( _countwest_ownership > 0 && (_counteast_ownership <= _cap_thresold_count || _blufor_ratio > _cap_thresold_ratio) ) then { _sectorside = WEST; };
+if ( _countwest_ownership > 0 && ( ( _counteast_ownership <= _cap_thresold_count && _blufor_ratio > _cap_min_ratio ) || _blufor_ratio > _cap_thresold_ratio) ) then { _sectorside = WEST; };
 
 if ( _countwest_ownership == 0 && _counteast_ownership > _cap_thresold_count ) then { _sectorside = EAST; };
-
-if ( _countwest_ownership > 0 && (_counteast_ownership > _cap_thresold_count && _blufor_ratio <= _cap_thresold_ratio ) ) then { _sectorside = RESISTANCE; };
 
 _sectorside

@@ -1,8 +1,8 @@
 params [ "_unit" ];
 private [ "_yield" ];
 
-_resistance_prisonner_ammo_yield = 10;
-_csat_prisonner_ammo_yield = 20;
+_resistance_prisonner_ammo_yield = 5;
+_csat_prisonner_ammo_yield = 10;
 
 if ( isServer ) then {
 	intel_obtained = true;

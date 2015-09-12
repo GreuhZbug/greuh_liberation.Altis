@@ -12,11 +12,11 @@ class RscTitles
       };
 	  class GenericLabel2 {
 		idc = -1;
-		type =  CT_STATIC ; 
-		style = ST_CENTER;  
+		type =  CT_STATIC ;
+		style = ST_CENTER;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM;  
+		font = FontM;
 		sizeEx = 0.035 * safezoneH;
 		x = 0.3 * safezoneW + safezoneX;
 		w = 0.4 * safezoneW;
@@ -42,11 +42,11 @@ class RscTitles
       };
 	  	class Splash {
 		idc = -1;
-		type =  CT_STATIC ; 
-		style = ST_PICTURE;  
+		type =  CT_STATIC ;
+		style = ST_PICTURE;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM;  
+		font = FontM;
 		sizeEx = 0.1 * safezoneH;
 		x = 0.325 * safezoneW + safezoneX;
 		w = 0.35 * safezoneW;
@@ -56,12 +56,12 @@ class RscTitles
 	  };
 	  class VersionLabel {
 		idc = -1;
-		type =  CT_STATIC ; 
-		style = ST_CENTER;  
+		type =  CT_STATIC ;
+		style = ST_CENTER;
 		shadow = 1;
 		colorText[] = COLOR_WHITE;
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM;  
+		font = FontM;
 		sizeEx = 0.035 * safezoneH;
 		x = 0.45 * safezoneW + safezoneX;
 		w = 0.3 * safezoneW;
@@ -71,10 +71,10 @@ class RscTitles
 	  };
 	  class VersionLabelShadow : VersionLabel {
 		shadow = 2;
-		font = FontM;  
+		font = FontM;
 	  };
    };
-   
+
    class blank
    {
       name = "blank";
@@ -84,7 +84,7 @@ class RscTitles
 	  onLoad = "";
       controls[]={};
    };
-   
+
    class statusoverlay
    {
       name = "statusoverlay";
@@ -92,16 +92,17 @@ class RscTitles
       idd = 6666;
       movingEnable = true;
 	  onLoad = "uiNamespace setVariable ['GUI_OVERLAY', _this select 0];";
-      controls[]= { BGPicture,LabelManpower,LabelAmmo,LabelFuel,LabelCap,PictureManpowerShadow,PictureAmmoShadow,
+      controls[]= { BGPicture,LabelManpower,LabelAmmo,LabelFuel,LabelCap,PictureManpowerShadow,PictureAmmoShadow, BGPictureActiveSectors,
 	  PictureFuelShadow,PictureCapShadow,PictureManpower,PictureAmmo,PictureFuel,PictureCap,PictureCombatReadinessShadow,PictureCombatReadiness,
-	  BGPictureSector,CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame, LabelPoint, LabelCombatReadiness, CentralShadow, CentralLabel };
+	  BGPictureSector,CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame, LabelPoint, LabelCombatReadiness, CentralShadow, CentralLabel, ActiveSectors,
+	  AlertBGPicture, AlertLabel, AlertTimer };
 	  class BGPicture {
 	  	idc = -1;
-		type =  CT_STATIC; 
+		type =  CT_STATIC;
 		style = ST_PICTURE;
 		colorText[] = {0.8,0.8,0.8,0.8};
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM; 
+		font = FontM;
 		sizeEx = 0.5;
 		x = 0.95 * safezoneW + safezoneX;
 		w = 0.075 * safezoneW;
@@ -113,27 +114,27 @@ class RscTitles
 	  	idc = 201;
 		x = 0.9 * safezoneW + safezoneX;
 		w = 0.15 * safezoneW;
-		y = 0.325 * safezoneH + safezoneY;
+		y = 0.33 * safezoneH + safezoneY;
 		h = 0.05 * safezoneH;
 	  };
 	  class GenericLabel69 {
 		idc = -1;
-		type =  CT_STATIC; 
-		style = ST_RIGHT;  
+		type =  CT_STATIC;
+		style = ST_RIGHT;
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM;  
+		font = FontM;
 		sizeEx = 0.022 * safezoneH;
 		x = 0.905 * safezoneW + safezoneX;
 		w = 0.08 * safezoneW;
 		y = 0.5225 * safezoneH + safezoneY;
 		h = 0.04 * safezoneH;
 		text = "";
-		shadow = 1;
+		shadow = 2;
 	  };
 	  class CentralLabel : GenericLabel69 {
 		idc = 266;
-		type = CT_STATIC; 
-		style = ST_CENTER;  
+		type = CT_STATIC;
+		style = ST_CENTER;
 		colorText[] = {1,1,0,1};
 		sizeEx = 0.03 * safezoneH;
 		x = 0 * safezoneW + safezoneX;
@@ -144,15 +145,15 @@ class RscTitles
 	  };
 	  class CentralShadow : CentralLabel {
 		idc = 267;
-		shadow = 2;
+		shadow = 1;
 	  };
 	  class GenericPicture69 {
 	  	idc = -1;
-		type =  CT_STATIC; 
+		type =  CT_STATIC;
 		style = ST_PICTURE;
 		colorText[] = {0.9,0.9,0.9,1};
 		colorBackground[] = COLOR_NOALPHA;
-		font = FontM; 
+		font = FontM;
 		sizeEx = 0.5;
 		x = 0.985 * safezoneW + safezoneX;
 		w = 0.012 * safezoneW;
@@ -236,8 +237,8 @@ class RscTitles
 		colorText[] = {0.8, 0.8, 0.8, 1};
 	  };
 	  class CaptureFrameStandard {
-		type =  CT_STATIC; 
-		font = FontM; 
+		type =  CT_STATIC;
+		font = FontM;
 		sizeEx = 0.023;
 		text = "";
 	};
@@ -274,14 +275,73 @@ class RscTitles
 	};
 	class LabelPoint : GenericLabel69 {
 	  	idc = 205;
-		text = "Radio Tower 123456";
+		text = "";
 		style = ST_RIGHT;
 		sizeEx = 0.024 * safezoneH;
 		x = 0.8 * safezoneW + safezoneX;
 		w = 0.2 * safezoneW;
-		y = 0.325 * safezoneH + safezoneY;
+		y = 0.33 * safezoneH + safezoneY;
 		h = 0.03 * safezoneH;
 		colorText[] = {0.7, 0, 0, 1};
 	  };
+	  class ActiveSectors
+ 		{
+ 			idc = 516;
+ 			type = CT_STRUCTURED_TEXT;
+ 			colorBackground[] = COLOR_NOALPHA;
+ 			style = ST_RIGHT;
+			x = 0.7 * safezoneW + safezoneX;
+			w = 0.295 * safezoneW;
+			y = 0.8 * safezoneH + safezoneY;
+			h = 0.2 * safezoneH;
+ 			text= "";
+ 			size = 0.02 * safezoneH;
+ 			sizeEx = 0.02 * safezoneH;
+ 			shadow = 2;
+				font = FontM;
+				color = "#e0e000";
+				align = "right";
+				valign = "top";
+ 		};
+ 	class BGPictureActiveSectors : BGPicture {
+	  	idc = 517;
+		x = 0.93 * safezoneW + safezoneX;
+		w = 0.1 * safezoneW;
+		y = 0.8 * safezoneH + safezoneY;
+		h = 0.2 * safezoneH;
+	  };
+
+
+	  class AlertBGPicture : BGPicture {
+	  	idc = 401;
+		x = 0.9 * safezoneW + safezoneX;
+		w = 0.15 * safezoneW;
+		y = 0.27 * safezoneH + safezoneY;
+		h = 0.05 * safezoneH;
+	  };
+
+	  class AlertLabel : GenericLabel69 {
+	  	idc = 402;
+		text = "";
+		style = ST_CENTER;
+		sizeEx = 0.022 * safezoneH;
+		x = 0.9 * safezoneW + safezoneX;
+		w = 0.1 * safezoneW;
+		y = 0.2675 * safezoneH + safezoneY;
+		h = 0.03 * safezoneH;
+		colorText[] = {0.85, 0, 0, 1};
+	  };
+	  class AlertTimer : GenericLabel69 {
+	  	idc = 403;
+		text = "";
+		style = ST_CENTER;
+		sizeEx = 0.026 * safezoneH;
+		x = 0.9 * safezoneW + safezoneX;
+		w = 0.1 * safezoneW;
+		y = 0.29 * safezoneH + safezoneY;
+		h = 0.03 * safezoneH;
+		colorText[] = {0.85, 0, 0, 1};
+	  };
 	};
+
 };

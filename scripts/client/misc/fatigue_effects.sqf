@@ -12,9 +12,8 @@ if ( GRLIB_fatigue > 0.1 && GRLIB_fatigue < 0.9 ) then {
 		if ( _newfatigue > _oldfatigue ) then {
 			_fatigueincrease = GRLIB_fatigue * (_newfatigue - _oldfatigue);
 			player setFatigue (_oldfatigue + _fatigueincrease);
-			_oldfatigue = getFatigue player;
 		};
-
+		_oldfatigue = getFatigue player;
 		sleep 1;
 	};
 };

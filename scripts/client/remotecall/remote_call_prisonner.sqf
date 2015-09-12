@@ -1,5 +1,5 @@
 params [ "_unit" ];
-private [ "_nearestfob", "_is_near_fob", "_is_near_blufor", "_grp", "_waypoint" ];
+private [ "_nearestfob", "_is_near_fob", "_is_near_blufor", "_grp", "_waypoint", "_nearblufor" ];
 
 waitUntil { local _unit };
 
@@ -14,7 +14,7 @@ _unit enableAI "MOVE";
 sleep 2;
 [ [ _unit ], "remote_call_switchmove" ] call bis_fnc_mp;
 
-waitUntil { sleep 2;
+waitUntil { sleep 5;
 
 	_nearestfob = [ getpos _unit ] call F_getNearestFob;
 	if ( count _nearestfob == 3) then {
@@ -23,9 +23,11 @@ waitUntil { sleep 2;
 		};
 	};
 
-	if ( [ getpos _unit, 150 , WEST ] call F_getUnitsCount == 0 ) then {
-		_is_near_blufor = false;
-	};
+	_is_near_blufor = false;
+	{
+		if ( _is_near_blufor ) exitWith {};
+		if ( _x distance _unit < 150 && _x != _unit ) then { _is_near_blufor = true };
+	} foreach (  [ allUnits, { side group _x == WEST } ] call BIS_fnc_conditionalSelect );
 
 	!alive _unit || !(_is_near_blufor) || (_is_near_fob && (vehicle _unit == _unit))
 };
@@ -34,7 +36,8 @@ if (alive _unit) then {
 
 	if ( _is_near_fob ) then {
 
-		[_unit] joinSilent (createGroup WEST);
+		_grp = createGroup WEST;
+		[_unit] joinSilent _grp;
 		_unit playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
 		_unit disableAI "ANIM";
 		_unit disableAI "MOVE";
@@ -47,9 +50,9 @@ if (alive _unit) then {
 
 	} else {
 
+		_grp = createGroup EAST;
+		[_unit] joinSilent _grp;
 		_unit setUnitPos "AUTO";
-		[_unit] joinSilent (createGroup EAST);
-		_grp = group _unit;
 		_unit setCaptive false;
 
 		while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
