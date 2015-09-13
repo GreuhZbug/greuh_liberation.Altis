@@ -33,4 +33,4 @@ stats_readiness_earned = publicstats select 27;
 GRLIB_endgame = 1;
 sleep 20;
 
-[] call compileFinal preprocessFileLineNumbers "scripts\client\end_screen.sqf";
+[] call compileFinal preprocessFileLineNumbers "scripts\client\ui\end_screen.sqf";

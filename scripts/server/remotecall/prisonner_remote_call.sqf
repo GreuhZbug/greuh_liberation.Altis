@@ -12,4 +12,5 @@ if ( isServer ) then {
 		_yield = _resistance_prisonner_ammo_yield;
 	};
 	resources_ammo = resources_ammo + ( _yield + (round (random _yield)));
+	stats_prisonners_captured = stats_prisonners_captured + 1;
 };

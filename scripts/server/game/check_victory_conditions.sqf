@@ -1,4 +1,4 @@
-sleep 15;
+sleep 5;
 
 _blufor_bigtowns = [ blufor_sectors, { _x in sectors_bigtown } ] call BIS_fnc_conditionalSelect;
 
@@ -35,7 +35,12 @@ if ( count _blufor_bigtowns == count sectors_bigtown ) then {
 	publicstats pushback stats_sectors_lost;
 	publicstats pushback stats_fobs_built;
 	publicstats pushback stats_fobs_lost;
-	publicstats pushback stats_readiness_earned;
+	publicstats pushback (round stats_readiness_earned);
 
 	[ [ publicstats ] , "remote_call_endgame" ] call BIS_fnc_MP;
+
+	sleep 20;
+
+	{ if ( !(isPlayer _x)) then { deleteVehicle _x } } foreach allUnits;
+
 };
