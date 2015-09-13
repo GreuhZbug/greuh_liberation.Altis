@@ -1,3 +1,5 @@
+private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str" ];
+
 if ( isNil "buildtype" ) then { buildtype = 1 };
 if ( isNil "buildindex" ) then { buildindex = -1 };
 dobuild = 0;
@@ -33,6 +35,13 @@ localize "STR_BUILD8"
 
 while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	_build_list = build_lists select buildtype;
+
+	if ( buildtype == 7 ) then {
+		_build_list = [];
+		while { count _build_list < (count (build_lists select buildtype)) - 2 } do {
+			_build_list pushback ((build_lists select buildtype) select (count _build_list));
+		};
+	};
 
 	if (_oldbuildtype != buildtype || synchro_done ) then {
 		synchro_done = false;
@@ -103,6 +112,9 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 
 	_selected_item = lbCurSel 110;
 	_affordable = false;
+	_linked = false;
+	_linked_unlocked = true;
+	_base_link = "";
 	if (dobuild == 0 && _selected_item != -1 && (_selected_item < (count _build_list)) && !(buildtype == 1 && (count (units group player)) >= 10 )) then {
 		_build_item = _build_list select _selected_item;
 		if (
@@ -111,6 +123,13 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 				((_build_item select 3 == 0 ) || ((_build_item select 3) <= (fuel_cap - resources_fuel)))
 		) then {
 			_affordable = true;
+		};
+
+
+		{ if ( ( _build_item select 0 ) == ( _x select 0 ) ) exitWith { _base_link = _x select 1; _linked = true; } } foreach GRLIB_vehicle_to_military_base_links;
+
+		if ( _linked ) then {
+			if ( !(_base_link in blufor_sectors) ) then { _linked_unlocked = false };
 		};
 	};
 
@@ -122,13 +141,22 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 		};
 	};
 
-	ctrlEnable [120, _affordable];
-	ctrlEnable [121, _affordable_crew];
+	ctrlEnable [ 120, _affordable && _linked_unlocked ];
+	ctrlEnable [ 121, _affordable_crew && _linked_unlocked];
 
 	ctrlSetText [131, format [ "%1 : %2/%3" , localize "STR_MANPOWER" , (floor resources_infantry), infantry_cap]] ;
 	ctrlSetText [132, format [ "%1 : %2" , localize "STR_AMMO" , (floor resources_ammo)] ];
 	ctrlSetText [133, format [ "%1 : %2/%3" , localize "STR_FUEL" , (floor resources_fuel), fuel_cap] ];
 	ctrlSetText [134, format [ "%1 : %2/%3" , localize "STR_UNITCAP" , unitcap, ([] call F_localCap)] ];
+
+	_link_color = "#0040e0";
+	_link_str = localize "STR_VEHICLE_UNLOCKED";
+	if (!_linked_unlocked) then { _link_color = "#e00000"; _link_str = localize "STR_VEHICLE_LOCKED"; };
+	if ( _linked ) then {
+		((findDisplay 5501) displayCtrl (161)) ctrlSetStructuredText parseText ( "<t color='" + _link_color + "' align='center'>" + _link_str +  "<br/>" + ( markerText _base_link ) + "</t>" );
+	} else {
+		((findDisplay 5501) displayCtrl (161)) ctrlSetStructuredText parseText "";
+	};
 
 	buildindex = _selected_item;
 

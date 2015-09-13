@@ -1,7 +1,5 @@
-_cleanup_delay = 600;
-
-_unit = _this select 0;
-_killer = _this select 1;
+params [ "_unit", "_killer" ];
+private [ "_nearby_bigtown" ];
 
 if ( isServer ) then {
 
@@ -84,7 +82,7 @@ if ( isServer ) then {
 };
 
 if( isServer && !isplayer _unit) then {
-	sleep _cleanup_delay;
+	sleep GRLIB_cleanup_delay;
 	hidebody _unit;
 	sleep 10;
 	deleteVehicle _unit;

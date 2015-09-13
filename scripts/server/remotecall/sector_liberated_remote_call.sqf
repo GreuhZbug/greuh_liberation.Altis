@@ -35,11 +35,6 @@ if (isServer) then {
 	blufor_sectors pushback _liberated_sector; publicVariable "blufor_sectors";
 	stats_sectors_liberated = stats_sectors_liberated + 1;
 
-	if ( _liberated_sector in sectors_military ) then {
-		_sector_ammo_reward = GRLIB_resources_multiplier * (round ( GRLIB_sector_military_value + (random GRLIB_sector_military_value )));
-		resources_ammo = resources_ammo + _sector_ammo_reward;
-	};
-
 	[] call recalculate_caps;
 	[] spawn check_victory_conditions;
 

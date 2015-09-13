@@ -41,7 +41,9 @@ light_vehicles = [
 ["B_Truck_01_transport_F",0,0,5],
 ["B_Truck_01_covered_F",0,0,5],
 ["B_UGV_01_F",0,0,5],
-["B_UGV_01_rcws_F",0,50,5]
+["B_UGV_01_rcws_F",0,50,5],
+["B_Boat_Transport_01_F",0,0,2],
+["B_Boat_Armed_01_minigun_F",0,30,10]
 ];
 
 heavy_vehicles = [
@@ -55,20 +57,23 @@ heavy_vehicles = [
 ["B_MBT_01_cannon_F",0,75,20],
 ["Steve_MBT_Kuma",0,100,25],
 ["B_MBT_01_TUSK_F",0,100,25],
-["Burnes_FV4034_01",0,200,40],
-["B_MBT_01_arty_F",0,500,30],
-["B_MBT_01_mlrs_F",0,2000,100]
+["Burnes_FV4034_01",0,250,40],
+["B_MBT_01_arty_F",0,750,30],
+["B_MBT_01_mlrs_F",0,2500,100]
 ];
 
 air_vehicles = [
 ["B_Heli_Light_01_F",0,0,10],
 ["B_Heli_Light_01_armed_F",0,30,10],
+["greuh_aw159_t",0,0,12],
 ["greuh_aw159_a",0,50,12],
 ["B_Heli_Transport_01_F",0,20,12],
 ["B_Heli_Transport_03_F",0,20,15],
+["RHS_CH_47F",0,20,20],
 ["greuh_eh101_gr",0,0,25],
 ["MV22",0,0,25],
 ["B_Heli_Attack_01_F",0,150,30],
+["RHS_AH1Z_wd_GS",0,175,30],
 ["H_RAH66",0,200,30],
 ["RHS_AH64D_wd",0,400,50],
 ["B_Plane_CAS_01_F",0,500,50],
@@ -125,7 +130,11 @@ support_vehicles = [
 ["C_Offroad_01_repair_F",5,0,2],
 ["B_APC_Tracked_01_CRV_F",0,30,10],
 ["Box_NATO_AmmoVeh_F",0,115,0],
-["Box_East_AmmoVeh_F",0,115,0]
+["Box_East_AmmoVeh_F",0,77,0]
+];
+
+// Vehicles unlocked by military base control
+elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd"
 ];
 
 // Pre-made squads for the commander build menu
@@ -160,7 +169,7 @@ Respawn_truck_typename = "B_Truck_01_medical_F";
 huron_typename = "B_Heli_Transport_03_unarmed_F";
 ammobox_b_typename = "Box_NATO_AmmoVeh_F";
 ammobox_o_typename = "Box_East_AmmoVeh_F";
-ammobox_transports_typenames = [ "B_Truck_01_transport_F" ];
+opfor_ammobox_transport = "O_Truck_03_transport_F";
 
 // Guerillas. It's only classnames the game will pick from, not the actual squad that will spawn, unlike the CSAT pre-made squads below
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
@@ -189,7 +198,7 @@ opfor_battlegroup_vehicles = ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Tracked
 opfor_battlegroup_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F"];
 // All the vehicles that can spawn as battlegroup members (see above) and hold 8 soldiers as passengers.
 // If something can't hold all 8 soldiers then buggy behaviours may occur
-opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F"];
+opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F", "O_Truck_03_transport_F"];
 // Battlegroup members that will need to spawn in flight. Should be only helos but, who knows
 opfor_choppers = ["O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_bench_F"];
 
@@ -234,3 +243,19 @@ air_vehicles_classnames = opfor_choppers;
 { air_vehicles_classnames pushback (_x select 0); } foreach air_vehicles;
 markers_reset = [99999,99999,0];
 squads_names = [ localize "STR_LIGHT_RIFLE_SQUAD", localize "STR_RIFLE_SQUAD", localize "STR_AT_SQUAD", localize "STR_AA_SQUAD",  localize "STR_RECON_SQUAD", localize "STR_PARA_SQUAD" ];
+boats_names = [ "B_Boat_Transport_01_F", "B_Boat_Armed_01_minigun_F" ];
+
+box_transport_config = [
+	[ "B_Truck_01_transport_F", -6.5, [0,	-0.4,	0.4], [0,	-2.1,	0.4], [0,	-3.8,	0.4] ],
+	[ "O_Truck_03_transport_F", -6.5, [0,	-0.8,	0.4], [0,	-2.4,	0.4], [0,	-4.0,	0.4] ],
+	[ "B_Heli_Transport_03_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],
+	[ "B_Heli_Transport_03_unarmed_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],
+	[ "greuh_eh101_gr", -6.5, [0,	4.2,	-1.45], [0,	2.5,	-1.45], [0,	0.8, -1.45], [0,	-0.9, -1.45] ]
+];
+
+ammobox_transports_typenames = [];
+{ ammobox_transports_typenames pushback (_x select 0) } foreach box_transport_config;
+ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+
+elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+

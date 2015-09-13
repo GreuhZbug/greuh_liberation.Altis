@@ -15,7 +15,11 @@ while { GRLIB_endgame == 0 } do {
 					[ _nextsector ] spawn manage_one_sector;
 				} else {
 					[ [ _nextsector ] , "manage_one_sector", _hc ] call BIS_fnc_MP;
-				}
+				};
+
+				if ( _nextsector in sectors_military ) then {
+					[ _nextsector ] call manage_ammoboxes;
+				};
 			};
 		};
 		sleep 0.25;

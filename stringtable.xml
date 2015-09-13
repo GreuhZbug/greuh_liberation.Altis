@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.901</Original>
+        		<Original>Liberation 0.902</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.901</Original>
+                        <Original>v0.902</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -140,12 +140,12 @@
                         <French>-- DECHARGER MUNITIONS</French>
                 </Key>
                 <Key ID="STR_BOX_LOADED">
-                        <Original>Ammo box successfully loaded on the transport truck.</Original>
-                        <French>La caisse de munitions a été chargée sur le camion de transport.</French>
+                        <Original>Ammo box successfully loaded on the transport vehicle.</Original>
+                        <French>La caisse de munitions a été chargée sur le véhicule de transport.</French>
                 </Key>
                 <Key ID="STR_BOX_UNLOADED">
-                        <Original>Ammo box successfully unloaded from the transport truck.</Original>
-                        <French>La caisse de munitions a été déchargée du camion de transport.</French>
+                        <Original>Ammo box successfully unloaded from the transport vehicle.</Original>
+                        <French>La caisse de munitions a été déchargée du véhicule de transport.</French>
                 </Key>
                 <Key ID="STR_BOX_CANTLOAD">
                         <Original>There is no nearby vehicle capable of carrying the ammo box.</Original>
@@ -677,16 +677,20 @@
                         <French>Effets de fatigue</French>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE1">
-                        <Original>Reduced - Players tire 75% slower</Original>
-                        <French>Réduits - Les joueurs se fatiguent 75% plus lentement</French>
+                        <Original>Reduced - 4 times more stamina</Original>
+                        <French>Réduits - 4 fois plus de stamina</French>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE2">
-                        <Original>Reduced - Players tire 50% slower</Original>
-                        <French>Réduits - Les joueurs se fatiguent 50% plus lentement</French>
+                        <Original>Reduced - 3 times more stamina</Original>
+                        <French>Réduits - 3 fois plus de stamina</French>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE3">
-                        <Original>Reduced - Players tire 25% slower</Original>
-                        <French>Réduits - Les joueurs se fatiguent 25% plus lentement</French>
+                        <Original>Reduced - 2 times more stamina</Original>
+                        <French>Réduits - 2 fois plus de stamina</French>
+                </Key>
+                <Key ID="STR_PARAMS_FATIGUE4">
+                        <Original>Reduced - 1.5 times more stamina</Original>
+                        <French>Réduits - 1,5 fois plus de stamina</French>
                 </Key>
                 <Key ID="STR_PARAMS_REVIVE">
                         <Original>FAR Revive</Original>
@@ -810,6 +814,22 @@
                 <Key ID="STR_BUILD8">
                         <Original>Infantry squads</Original>
                         <French>Escouades d'infanterie</French>
+                </Key>
+                <Key ID="STR_ACTIVE_SECTORS">
+                        <Original>Active Sectors:</Original>
+                        <French>Secteurs Actifs :</French>
+                </Key>
+                <Key ID="STR_OVERLOAD_HINT">
+                        <Original>The unitcap setting has been exceeded and further sector activation is temporarily halted. You can now see the list of currently active sectors where you shall concentrate your efforts.</Original>
+                        <French>La limite d'unités actives a été dépassée et l'activation de nouveaux secteurs est temporairement stoppée. Vous pouvez maintenant voir la liste des sectors déjà actifs sur lesquels vous pouvez concentrer vos efforts.</French>
+                </Key>
+                <Key ID="STR_VEHICLE_LOCKED">
+                        <Original>LOCKED BY</Original>
+                        <French>VEROUILLE PAR</French>
+                </Key>
+                <Key ID="STR_VEHICLE_UNLOCKED">
+                        <Original>UNLOCKED BY</Original>
+                        <French>DEVEROUILLE PAR</French>
                 </Key>
                 <Key ID="STR_TUTO_GOTIT">
                         <Original>Got it!</Original>

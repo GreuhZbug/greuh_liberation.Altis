@@ -1,6 +1,6 @@
 if ( !(isNil "GRLIB_param_wipe_savegame_1") && !(isNil "GRLIB_param_wipe_savegame_2") ) then {
 	if ( GRLIB_param_wipe_savegame_1 == 1 && GRLIB_param_wipe_savegame_2 == 1 ) then {
-		profileNamespace setVariable ["GREUH_LIBERATION_SAVEGAME",nil];
+		profileNamespace setVariable [ GRLIB_save_key,nil ];
 		saveProfileNamespace;
 	};
 };
@@ -44,6 +44,7 @@ stats_readiness_earned = 0;
 infantry_weight = 33;
 armor_weight = 33;
 air_weight = 33;
+GRLIB_vehicle_to_military_base_links = [];
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
@@ -60,7 +61,7 @@ _classnames_to_save_blu = [];
 _classnames_to_save = _classnames_to_save + _classnames_to_save_blu + militia_vehicles + opfor_vehicles + opfor_troup_transports + opfor_air + opfor_choppers;
 
 trigger_server_save = false;
-greuh_liberation_savegame = profileNamespace getVariable "GREUH_LIBERATION_SAVEGAME";
+greuh_liberation_savegame = profileNamespace getVariable GRLIB_save_key;
 
 if ( !isNil "greuh_liberation_savegame" ) then {
 	blufor_sectors = greuh_liberation_savegame select 0;
@@ -117,6 +118,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		air_weight = _weights select 2;
 	};
 
+	if ( count greuh_liberation_savegame > 11 ) then {
+		GRLIB_vehicle_to_military_base_links = greuh_liberation_savegame select 11;
+	};
+
 	stats_saves_loaded = stats_saves_loaded + 1;
 
 	{
@@ -153,7 +158,23 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 publicVariable "blufor_sectors";
 publicVariable "all_fobs";
-uiSleep 0.1;
+
+if ( count GRLIB_vehicle_to_military_base_links == 0 ) then {
+	private [ "_assigned_bases", "_assigned_vehicles", "_nextbase", "_nextvehicle" ];
+	_assigned_bases = [];
+	_assigned_vehicles = [];
+
+	while { count _assigned_bases < count sectors_military && count _assigned_vehicles < count elite_vehicles } do {
+		_nextbase =  ( [ sectors_military, { !(_x in _assigned_bases) } ] call BIS_fnc_conditionalSelect ) call BIS_fnc_selectRandom;
+		_nextvehicle =  ( [ elite_vehicles, { !(_x in _assigned_vehicles) } ] call BIS_fnc_conditionalSelect ) call BIS_fnc_selectRandom;
+		_assigned_bases pushback _nextbase;
+		_assigned_vehicles pushback _nextvehicle;
+		GRLIB_vehicle_to_military_base_links pushback [_nextvehicle, _nextbase];
+	};
+};
+publicVariable "GRLIB_vehicle_to_military_base_links";
+
+uiSleep 0.5;
 save_is_loaded = true; publicVariable "save_is_loaded";
 
 while { true } do {
@@ -163,7 +184,7 @@ while { true } do {
 	};
 
 	if ( GRLIB_endgame == 1 ) then {
-		profileNamespace setVariable [ "GREUH_LIBERATION_SAVEGAME", nil ];
+		profileNamespace setVariable [ GRLIB_save_key, nil ];
 		saveProfileNamespace;
 		while { true } do { sleep 300; };
 	} else {
@@ -174,7 +195,7 @@ while { true } do {
 		_all_buildings = [];
 		{
 			_fobpos = _x;
-			_nextbuildings = [ _fobpos nearobjects 250, {
+			_nextbuildings = [ _fobpos nearobjects (GRLIB_fob_range * 2), {
 				((typeof _x) in _classnames_to_save ) &&
 				( alive _x) &&
 				( speed _x < 5 ) &&
@@ -233,9 +254,9 @@ while { true } do {
 		_stats pushback stats_readiness_earned;
 
 		greuh_liberation_savegame = [ blufor_sectors, all_fobs, buildings_to_save, time_of_day,combat_readiness, date select 0, date select 1, date select 2, resources_ammo, _stats,
-		[ infantry_weight, armor_weight, air_weight ] ];
+		[ infantry_weight, armor_weight, air_weight ], GRLIB_vehicle_to_military_base_links ];
 
-		profileNamespace setVariable ["GREUH_LIBERATION_SAVEGAME",greuh_liberation_savegame];
+		profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
 		saveProfileNamespace;
 	};
 };

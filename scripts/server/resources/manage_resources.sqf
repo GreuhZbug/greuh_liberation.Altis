@@ -5,7 +5,7 @@ resources_ammo = saved_ammo_res;
 
 while { GRLIB_endgame == 0 } do {
 
-	_base_tick_period = 3600;
+	_base_tick_period = 4800;
 
 	if ( count allPlayers > 0 ) then {
 
@@ -13,13 +13,13 @@ while { GRLIB_endgame == 0 } do {
 		{
 			if ( _x in sectors_military ) then {
 				_blufor_mil_sectors pushback _x;
-				_base_tick_period = _base_tick_period * 0.9;
+				_base_tick_period = _base_tick_period * 0.85;
 			};
 		} foreach blufor_sectors;
 
 		_base_tick_period = _base_tick_period / GRLIB_resources_multiplier;
 
-		if ( _base_tick_period < 900 ) then { _base_tick_period = 900 };
+		if ( _base_tick_period < 600 ) then { _base_tick_period = 600 };
 
 		sleep _base_tick_period;
 
@@ -27,7 +27,7 @@ while { GRLIB_endgame == 0 } do {
 			_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
 			_spawnpos = [0,0,0];
 			while { surfaceIsWater _spawnpos } do {
-				_spawnpos =  ( markerpos _spawnsector) findEmptyPosition [5, 100, 'Land_PaperBox_open_empty_F'];
+				_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'Land_PaperBox_open_empty_F'];
 				if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
 			};
 

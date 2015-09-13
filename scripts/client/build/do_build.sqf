@@ -1,5 +1,7 @@
+private [ "_maxdist", "_truepos", "_built_object_remote", "_pos", "_grp", "_classname", "_idx", "_unitrank", "_posfob", "_ghost_spot", "_vehicle", "_dist", "_actualdir", "_near_objects", "_near_objects_25" ];
+
 build_confirmed = 0;
-_maxdist = 125;
+_maxdist = GRLIB_fob_range;
 _truepos = [];
 
 GRLIB_preview_spheres = [];
@@ -14,15 +16,15 @@ if (isNil "gridmode" ) then { gridmode = 0 };
 if (isNil "repeatbuild" ) then { repeatbuild = false };
 if (isNil "build_rotation" ) then { build_rotation = 0 };
 
-waitUntil { !isNil "dobuild" };
+waitUntil { sleep 0.2; !isNil "dobuild" };
 
 while { true } do {
-	waitUntil { dobuild != 0 };
+	waitUntil { sleep 0.2; dobuild != 0 };
 	build_confirmed = 1;
 	build_invalid = 0;
 	_classname = "";
 	if ( buildtype == 99 ) then {
-		removefobboxes = true;
+		GRLIB_removefobboxes = true;
 		_classname = FOB_typename;
 	} else {
 		_classname = (((build_lists select buildtype) select buildindex) select 0);
@@ -56,7 +58,7 @@ while { true } do {
 		} else {
 			_posfob = getpos player;
 			if (buildtype != 99) then {
-				_posfob = call F_getNearestFob;
+				_posfob = [] call F_getNearestFob;
 			};
 
 			_idactcancel = -1;
@@ -154,7 +156,7 @@ while { true } do {
 					GRLIB_conflicting_objects = [];
 				};
 
-				if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) then {
+				if (count _near_objects == 0 && ((_truepos distance _posfob) < _maxdist) && (  ((!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) || (_classname in boats_names) ) ) then {
 
 					if ( ((buildtype == 6) || (buildtype == 99)) && ((gridmode % 2) == 1) ) then {
 						_vehicle setpos [round (_truepos select 0),round (_truepos select 1), _truepos select 2];
@@ -181,7 +183,7 @@ while { true } do {
 					if(count _near_objects > 0) then {
 						GRLIB_ui_notif = format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
 					};
-					if((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) then {
+					if( ((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(_classname in boats_names)) then {
 						GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";
 					};
 					if((_truepos distance _posfob) > _maxdist) then {
@@ -222,6 +224,11 @@ while { true } do {
 				if ( (_classname in uavs) || manned ) then {
 					createVehicleCrew _vehicle;
 				};
+
+				if ( _classname == FOB_box_typename ) then {
+					[ [_vehicle, 3000 ] , "F_setMass" ] call BIS_fnc_MP;
+				};
+
 				sleep 0.3;
 				_vehicle allowDamage true;
 				_vehicle setDamage 0;

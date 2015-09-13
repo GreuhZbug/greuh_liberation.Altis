@@ -1,3 +1,5 @@
+private [ "_control", "_caretPosition", "_linearray", "_currentline", "_caretcharacter" ];
+
 _control = _this select 0;
 _linearray = toArray (_this select 1);
 _caretPosition = 0;

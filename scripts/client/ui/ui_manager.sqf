@@ -1,7 +1,10 @@
 disableSerialization;
 
+private [ "_overlayshown", "_sectorcontrols", "_active_sectors_hint", "_uiticks", "_attacked_string", "_active_sectors_string", "_color_readiness", "_nearest_active_sector", "_zone_size", "_colorzone", "_bar", "_barwidth" ];
+
 _overlayshown = false;
 _sectorcontrols = [201,202,203,244,205];
+_active_sectors_hint = false;
 GRLIB_ui_notif = "";
 
 _uiticks = 0;
@@ -28,7 +31,28 @@ while { true } do {
 		((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (266)) ctrlSetText format [ "%1", GRLIB_ui_notif ];
 		((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (267)) ctrlSetText format [ "%1", GRLIB_ui_notif ];
 
-		if ( _uiticks % 12 == 0 ) then {
+		if ( _uiticks % 4 == 0 ) then {
+			if ((getmarkerpos "opfor_capture_marker") distance markers_reset > 100 ) then {
+
+				private [ "_attacked_string" ];
+				_attacked_string = [ markerpos "opfor_capture_marker" ] call F_getFobName;
+				if ( _attacked_string == "" ) then {
+					_attacked_string = markerText  ( [50, markerpos "opfor_capture_marker" ] call F_getNearestSector );
+				} else {
+					_attacked_string = format [ "FOB %1", _attacked_string ];
+				};
+
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow true;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText _attacked_string;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText (markerText "opfor_capture_marker");
+			} else {
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow false;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText "";
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText "";
+			};
+		};
+
+		if ( _uiticks % 16 == 0 ) then {
 
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (101)) ctrlSetText format [ "%1/%2",(floor resources_infantry),infantry_cap ];
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (102)) ctrlSetText format [ "%1",(floor resources_ammo) ];
@@ -36,6 +60,26 @@ while { true } do {
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (104)) ctrlSetText format [ "%1/%2",unitcap,([] call F_localCap) ];
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (105)) ctrlSetText format [ "%1%2",round(combat_readiness),"%" ];
 
+			if (!isNil "active_sectors" && ( [] call F_opforCap >= GRLIB_sector_cap)) then {
+
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (517)) ctrlShow true;
+
+				if ( !_active_sectors_hint ) then {
+					hint localize "STR_OVERLOAD_HINT";
+					_active_sectors_hint = true;
+				};
+
+				_active_sectors_string = "<t align='right' color='#e0e000'>" + (localize "STR_ACTIVE_SECTORS") + "<br/>";
+				{
+					_active_sectors_string = _active_sectors_string + (markertext _x) + "<br/>";
+				} foreach active_sectors;
+				_active_sectors_string = _active_sectors_string + "</t>";
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (516)) ctrlSetStructuredText parseText _active_sectors_string;
+
+			} else {
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (516)) ctrlSetStructuredText parseText " ";
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (517)) ctrlShow false;
+			};
 
 			_color_readiness = [0.8,0.8,0.8,1];
 			if ( combat_readiness >= 25 ) then { _color_readiness = [0.8,0.8,0,1] };
@@ -68,9 +112,9 @@ while { true } do {
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetText (markerText _nearest_active_sector);
 				{ ((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (_x)) ctrlShow true; } foreach  _sectorcontrols;
 				if ( _nearest_active_sector in blufor_sectors ) then {
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetTextColor [0,0.2,0.7,1];
+					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetTextColor [0,0.3,1.0,1];
 				} else {
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetTextColor [0.7,0,0,1];
+					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetTextColor [0.85,0,0,1];
 				};
 
 				"zone_capture" setMarkerSizeLocal [ _zone_size,_zone_size ];

@@ -1,3 +1,5 @@
+private [ "_currentgroupdelete" ];
+
 while { true } do {
 	{
 		if ( side _x == WEST ) then {
@@ -7,7 +9,7 @@ while { true } do {
 				{deleteVehicle _x; } foreach units _currentgroupdelete;
 			};
 		};
-		sleep 0.3;
+		sleep 0.1;
 	} foreach allGroups;
-	sleep 0.3;
+	sleep 5;
 }

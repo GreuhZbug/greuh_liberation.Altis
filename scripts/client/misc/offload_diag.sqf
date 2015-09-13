@@ -1,3 +1,5 @@
+private [ "_hint_string" ];
+
 if ( isNil "group_owners" ) then { group_owners = []; };
 
 while { true } do {

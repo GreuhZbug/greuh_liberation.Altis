@@ -1,8 +1,5 @@
-private [ "_source_position" ];
-_source_position = getpos player;
-if ( count _this == 1) then {
-	_source_position = _this select 0;
-};
+params [ [ "_source_position", (getpos player) ] ];
+private [ "_mindir", "_retvalue" ];
 
 _mindir = 9999;
 _retvalue = [];

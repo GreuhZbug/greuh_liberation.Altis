@@ -1,3 +1,5 @@
+private [ "_huronlocal" ];
+
 while { true } do {
 	_huronlocal = [] call F_spartanScan;
 	if ( !( isNull _huronlocal) ) then {
@@ -5,5 +7,5 @@ while { true } do {
 	} else {
 		"huronmarker" setmarkerposlocal markers_reset;
 	};
-	sleep 0.98;
+	sleep 4.9;
 };

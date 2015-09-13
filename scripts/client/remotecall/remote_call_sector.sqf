@@ -2,8 +2,7 @@ if ( isDedicated ) exitWith {};
 
 if ( isNil "sector_timer" ) then { sector_timer = 0 };
 
-_sector = _this select 0;
-_status = _this select 1;
+params [ "_sector", "_status" ];
 
 if ( _status == 0 ) then {
 	[ "lib_sector_captured", [ markerText _sector ] ] call BIS_fnc_showNotification;
