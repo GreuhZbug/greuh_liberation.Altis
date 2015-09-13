@@ -9,7 +9,7 @@ class liberation_build {
 	"BuildSupportButton","BuildSquadButton","BuildBuildingButton","BuildInfantryImage",
 	"BuildTransportVehicleImage","BuildCombatVehicleImage","BuildAerialImage","ManpowerImageShadow","AmmoImageShadow","FuelImageShadow",
 	"BuildDefenceImage","BuildSupportImage","BuildSquadImage","BuildBuildingImage","ListBG","ManpowerImage","AmmoImage","FuelImage",
-	"BuildList","BuildButton","LabelManpower","LabelAmmo","LabelFuel","LabelCap","BuildMannedButton","PageLabel"
+	"BuildList","BuildButton","LabelManpower","LabelAmmo","LabelFuel","LabelCap","BuildMannedButton","PageLabel", "LinkedSector"
 
 	};
 
@@ -290,5 +290,23 @@ class liberation_build {
 		sizeEx = 0.02 * safezoneH;
 		text = $STR_BUILD_CREW;
 		action = "dobuild = 1; manned = true;";
+	};
+	class LinkedSector{
+		idc = 161;
+		type = CT_STRUCTURED_TEXT;
+		colorBackground[] = COLOR_NOALPHA;
+		style = ST_LEFT;
+		x = 0.45 * safezoneW + safezoneX;
+		w = 0.1 * safezoneW;
+		y = 0.725 * safezoneH + safezoneY;
+		h = 0.05 * safezoneH;
+		text= "";
+		size = 0.02 * safezoneH;
+		sizeEx = 0.02 * safezoneH;
+		shadow = 2;
+		font = FontM;
+		color = "#e0e000";
+		align = "right";
+		valign = "top";
 	};
 };

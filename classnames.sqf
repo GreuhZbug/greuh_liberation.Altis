@@ -57,9 +57,9 @@ heavy_vehicles = [
 ["B_MBT_01_cannon_F",0,75,20],
 ["Steve_MBT_Kuma",0,100,25],
 ["B_MBT_01_TUSK_F",0,100,25],
-["Burnes_FV4034_01",0,200,40],
-["B_MBT_01_arty_F",0,500,30],
-["B_MBT_01_mlrs_F",0,2000,100]
+["Burnes_FV4034_01",0,250,40],
+["B_MBT_01_arty_F",0,750,30],
+["B_MBT_01_mlrs_F",0,2500,100]
 ];
 
 air_vehicles = [
@@ -131,6 +131,10 @@ support_vehicles = [
 ["B_APC_Tracked_01_CRV_F",0,30,10],
 ["Box_NATO_AmmoVeh_F",0,115,0],
 ["Box_East_AmmoVeh_F",0,77,0]
+];
+
+// Vehicles unlocked by military base control
+elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd"
 ];
 
 // Pre-made squads for the commander build menu
@@ -252,4 +256,6 @@ box_transport_config = [
 ammobox_transports_typenames = [];
 { ammobox_transports_typenames pushback (_x select 0) } foreach box_transport_config;
 ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+
+elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 

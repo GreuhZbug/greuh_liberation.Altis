@@ -823,6 +823,14 @@
                         <Original>The unitcap setting has been exceeded and further sector activation is temporarily halted. You can now see the list of currently active sectors where you shall concentrate your efforts.</Original>
                         <French>La limite d'unités actives a été dépassée et l'activation de nouveaux secteurs est temporairement stoppée. Vous pouvez maintenant voir la liste des sectors déjà actifs sur lesquels vous pouvez concentrer vos efforts.</French>
                 </Key>
+                <Key ID="STR_VEHICLE_LOCKED">
+                        <Original>LOCKED BY</Original>
+                        <French>VEROUILLE PAR</French>
+                </Key>
+                <Key ID="STR_VEHICLE_UNLOCKED">
+                        <Original>UNLOCKED BY</Original>
+                        <French>DEVEROUILLE PAR</French>
+                </Key>
                 <Key ID="STR_TUTO_GOTIT">
                         <Original>Got it!</Original>
                         <French>J'ai pigé !</French>

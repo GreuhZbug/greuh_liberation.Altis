@@ -44,6 +44,7 @@ stats_readiness_earned = 0;
 infantry_weight = 33;
 armor_weight = 33;
 air_weight = 33;
+GRLIB_vehicle_to_military_base_links = [];
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
@@ -117,6 +118,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		air_weight = _weights select 2;
 	};
 
+	if ( count greuh_liberation_savegame > 11 ) then {
+		GRLIB_vehicle_to_military_base_links = greuh_liberation_savegame select 11;
+	};
+
 	stats_saves_loaded = stats_saves_loaded + 1;
 
 	{
@@ -153,7 +158,23 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 publicVariable "blufor_sectors";
 publicVariable "all_fobs";
-uiSleep 0.1;
+
+if ( count GRLIB_vehicle_to_military_base_links == 0 ) then {
+	private [ "_assigned_bases", "_assigned_vehicles", "_nextbase", "_nextvehicle" ];
+	_assigned_bases = [];
+	_assigned_vehicles = [];
+
+	while { count _assigned_bases < count sectors_military && count _assigned_vehicles < count elite_vehicles } do {
+		_nextbase =  ( [ sectors_military, { !(_x in _assigned_bases) } ] call BIS_fnc_conditionalSelect ) call BIS_fnc_selectRandom;
+		_nextvehicle =  ( [ elite_vehicles, { !(_x in _assigned_vehicles) } ] call BIS_fnc_conditionalSelect ) call BIS_fnc_selectRandom;
+		_assigned_bases pushback _nextbase;
+		_assigned_vehicles pushback _nextvehicle;
+		GRLIB_vehicle_to_military_base_links pushback [_nextvehicle, _nextbase];
+	};
+};
+publicVariable "GRLIB_vehicle_to_military_base_links";
+
+uiSleep 0.5;
 save_is_loaded = true; publicVariable "save_is_loaded";
 
 while { true } do {
@@ -233,7 +254,7 @@ while { true } do {
 		_stats pushback stats_readiness_earned;
 
 		greuh_liberation_savegame = [ blufor_sectors, all_fobs, buildings_to_save, time_of_day,combat_readiness, date select 0, date select 1, date select 2, resources_ammo, _stats,
-		[ infantry_weight, armor_weight, air_weight ] ];
+		[ infantry_weight, armor_weight, air_weight ], GRLIB_vehicle_to_military_base_links ];
 
 		profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
 		saveProfileNamespace;
