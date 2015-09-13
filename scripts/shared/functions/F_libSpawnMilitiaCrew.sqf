@@ -1,4 +1,5 @@
 params [ "_vehicle" ];
+private [ "_grp", "_vehcrew" ];
 
 _grp = createGroup RESISTANCE;
 _vehcrew = [];

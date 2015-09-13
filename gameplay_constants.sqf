@@ -16,6 +16,7 @@ GRLIB_patrol_cap = 130								* GRLIB_unitcap;
 GRLIB_battlegroup_size = 8							* GRLIB_unitcap;
 GRLIB_civilians_amount = 10 						* GRLIB_civilian_activity;
 GRLIB_fob_range = 125;
+GRLIB_cleanup_delay = 600;
 
 if ( GRLIB_blufor_cap > 100 ) then { GRLIB_blufor_cap = 100 }; // Don't forget that the human commander manages those, not the server
 

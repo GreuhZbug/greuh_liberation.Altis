@@ -1,3 +1,5 @@
+private [ "_vehmarkers", "_markedveh", "_cfg", "_vehtomark", "_supporttomark", "_marker" ];
+
 _vehmarkers = [];
 _markedveh = [];
 _cfg = configFile >> "cfgVehicles";

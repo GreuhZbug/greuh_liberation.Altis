@@ -1,13 +1,9 @@
+params [ "_thatpos", [ "_localsize", GRLIB_capture_size ] ];
+private [ "_cap_thresold_count", "_cap_thresold_ratio", "_cap_min_ratio", "_sectorside", "_countwest_ownership", "_counteast_ownership", "_blufor_ratio" ];
 
 _cap_thresold_count = 3;
 _cap_thresold_ratio = 0.82;
 _cap_min_ratio = 0.65;
-_thatpos = _this select 0;
-_localsize = GRLIB_capture_size;
-
-if (count _this == 2) then {
-	_localsize = _this select 1;
-};
 
 _sectorside = RESISTANCE;
 _countwest_ownership = [_thatpos, _localsize, WEST ] call F_getUnitsCount;

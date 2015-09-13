@@ -1,4 +1,6 @@
-_vehtorecycle = _this select 0;
+params [ "_vehtorecycle" ];
+private [ "_objectinfo", "_cfg", "_dialog" ];
+
 _objectinfo = ( [ (light_vehicles + heavy_vehicles + air_vehicles + static_vehicles + support_vehicles + buildings ), { typeof _vehtorecycle == _x select 0 } ] call BIS_fnc_conditionalSelect ) select 0;
 dorecycle = 0;
 
@@ -12,7 +14,7 @@ ctrlSetText [ 132, format [ "%1", round ((_objectinfo select 2) * GRLIB_recyclin
 ctrlSetText [ 133, format [ "%1", round ( _objectinfo select 3) ] ];
 
 while { dialog && (alive player) && dorecycle == 0 } do {
-	sleep 0.05;
+	sleep 0.1;
 };
 
 if ( dialog ) then { closeDialog 0 };

@@ -1,9 +1,6 @@
-_mindist = _this select 0;
-_maxdist = _this select 1;
-_try_nearest = _this select 2;
-_spawn_target = '';
+params [ "_mindist", "_maxdist", "_try_nearest", ["_spawn_target", ""] ];
+private [ "_increment", "_opfor_spawn_point", "_all_possible_sectors", "_filtered_possible_sectors", "_current_sector", "_accept_current_sector", "_current_sector_distance", "_nearest_possible_sectors" ];
 
-if ( count _this > 3 ) then { _spawn_target = _this select 3; };
 _increment = 500;
 _opfor_spawn_point = '';
 _all_possible_sectors = sectors_opfor;

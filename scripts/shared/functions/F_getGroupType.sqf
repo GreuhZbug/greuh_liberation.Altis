@@ -1,5 +1,6 @@
+params [ "_grp" ];
+private [ "_grouptype", "_vehicletype" ];
 
-_grp = _this select 0;
 _grouptype = 'infantry';
 _vehicletype = '';
 {
@@ -17,7 +18,7 @@ if ((_grouptype == 'infantry') && (_vehicletype != '')) then {
 			_grouptype = 'heavy';
 		};
 	} foreach heavy_vehicles;
-	
+
 	if ( _grouptype == 'infantry' ) then {
 	{
 		if  ( _vehicletype == (_x select 0)) then {
@@ -41,8 +42,8 @@ if ((_grouptype == 'infantry') && (_vehicletype != '')) then {
 		};
 	} foreach light_vehicles;
 	};
-	
-	
+
+
 	if ( _grouptype == 'infantry' ) then {
 	{
 		if  ( _vehicletype == (_x select 0)) then {
@@ -50,7 +51,7 @@ if ((_grouptype == 'infantry') && (_vehicletype != '')) then {
 		};
 	} foreach support_vehicles;
 	};
-	
+
 	if ( _grouptype == 'infantry' ) then {
 	{
 		if  ( _vehicletype == (_x select 0)) then {
@@ -60,5 +61,5 @@ if ((_grouptype == 'infantry') && (_vehicletype != '')) then {
 	};
 
 };
-	
+
 _grouptype

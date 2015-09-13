@@ -1,5 +1,5 @@
-
-_timer = _this select 0;
+params [ "_timer" ];
+private [ "_minutes", "_seconds", "_minutes_zero", "_seconds_zero", "_retstr" ];
 
 _minutes = floor (_timer / 60);
 _seconds = _timer % 60;

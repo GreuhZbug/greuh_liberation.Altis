@@ -1,3 +1,5 @@
+private [ "_line_delay", "_page_delay", "_dialog", "_playtime_days", "_playtime_hours", "_playtime_minutes", "_playtime_seconds", "_comma", "_playtime_str" ];
+
 if ( isNil "cinematic_camera_started" ) then { cinematic_camera_started = false };
 _line_delay = 0.75;
 _page_delay = 5;
@@ -9,12 +11,12 @@ _dialog = createDialog "liberation_endscreen";
 waitUntil { dialog };
 
 if ( dialog ) then { sleep 3 };
-if ( dialog ) then { 
+if ( dialog ) then {
 	_playtime_days = floor (stats_playtime / 86400);
 	_playtime_hours = floor ((stats_playtime % 86400) / 3600);
 	_playtime_minutes = floor ((stats_playtime % 3600) / 60);
 	_playtime_seconds = stats_playtime % 60;
-	
+
 	_playtime_str = "";
 	_comma = "";
 	if ( _playtime_days > 0 ) then { _playtime_str = format [ "%1 %2" , _playtime_days, localize "STR_STATS_DAY" ]; _comma = ","; };
@@ -38,12 +40,12 @@ if ( dialog ) then {  [ 695, format [ "%1 %2", localize "STR_STATS_4", stats_civ
 if ( dialog ) then { sleep _line_delay };
 if ( dialog ) then {  [ 696, format [ "%1 %2", localize "STR_STATS_5", stats_civilians_killed_by_players ] ] call write_credit_line; };
 if ( dialog ) then { sleep _page_delay };
-if ( dialog ) then { 
-	ctrlSetText [ 691, "" ]; 
-	ctrlSetText [ 692, "" ]; 
-	ctrlSetText [ 693, "" ]; 
-	ctrlSetText [ 694, "" ]; 
-	ctrlSetText [ 695, "" ]; 
+if ( dialog ) then {
+	ctrlSetText [ 691, "" ];
+	ctrlSetText [ 692, "" ];
+	ctrlSetText [ 693, "" ];
+	ctrlSetText [ 694, "" ];
+	ctrlSetText [ 695, "" ];
 	ctrlSetText [ 696, "" ];
 };
 
@@ -62,13 +64,13 @@ if ( dialog ) then {  [ 695, format [ "%1 %2", localize "STR_STATS_11", stats_ve
 if ( dialog ) then { sleep _line_delay };
 if ( dialog ) then {  [ 696, format [ "%1 %2", localize "STR_STATS_12", stats_ammo_spent ] ] call write_credit_line; };
 if ( dialog ) then { sleep _page_delay };
-if ( dialog ) then { 
-	ctrlSetText [ 691, "" ]; 
-	ctrlSetText [ 692, "" ]; 
-	ctrlSetText [ 693, "" ]; 
-	ctrlSetText [ 694, "" ]; 
-	ctrlSetText [ 695, "" ]; 
-	ctrlSetText [ 696, "" ]; 
+if ( dialog ) then {
+	ctrlSetText [ 691, "" ];
+	ctrlSetText [ 692, "" ];
+	ctrlSetText [ 693, "" ];
+	ctrlSetText [ 694, "" ];
+	ctrlSetText [ 695, "" ];
+	ctrlSetText [ 696, "" ];
 };
 
 if ( dialog ) then { sleep _line_delay };
@@ -84,12 +86,12 @@ if ( dialog ) then {  [ 695, format [ "%1 %2", localize "STR_STATS_17", stats_se
 if ( dialog ) then { sleep _line_delay };
 if ( dialog ) then {  [ 696, format [ "%1 %2", localize "STR_STATS_18", stats_prisonners_captured ] ] call write_credit_line; };
 if ( dialog ) then { sleep _page_delay };
-if ( dialog ) then { 
-	ctrlSetText [ 691, "" ]; 
-	ctrlSetText [ 692, "" ]; 
-	ctrlSetText [ 693, "" ]; 
-	ctrlSetText [ 694, "" ]; 
-	ctrlSetText [ 695, "" ]; 
+if ( dialog ) then {
+	ctrlSetText [ 691, "" ];
+	ctrlSetText [ 692, "" ];
+	ctrlSetText [ 693, "" ];
+	ctrlSetText [ 694, "" ];
+	ctrlSetText [ 695, "" ];
 	ctrlSetText [ 696, "" ];
 };
 
@@ -104,12 +106,12 @@ if ( dialog ) then {  [ 694, format [ "%1 %2", localize "STR_STATS_22", stats_ie
 if ( dialog ) then { sleep _line_delay };
 if ( dialog ) then {  [ 695, format [ "%1 %2", localize "STR_STATS_23", stats_spartan_respawns ] ] call write_credit_line; };
 if ( dialog ) then { sleep _page_delay };
-if ( dialog ) then { 
-	ctrlSetText [ 691, "" ]; 
-	ctrlSetText [ 692, "" ]; 
-	ctrlSetText [ 693, "" ]; 
-	ctrlSetText [ 694, "" ]; 
-	ctrlSetText [ 695, "" ]; 
+if ( dialog ) then {
+	ctrlSetText [ 691, "" ];
+	ctrlSetText [ 692, "" ];
+	ctrlSetText [ 693, "" ];
+	ctrlSetText [ 694, "" ];
+	ctrlSetText [ 695, "" ];
 };
 
 if ( dialog ) then { sleep _line_delay };
@@ -119,10 +121,10 @@ if ( dialog ) then {  [ 692, format [ "%1 %2", localize "STR_STATS_6", stats_blu
 if ( dialog ) then { sleep 2 };
 if ( dialog ) then {  [ 693, format [ "%1 %2", localize "STR_STATS_25", round (random 69) ] ] call write_credit_line; };
 if ( dialog ) then { sleep _page_delay };
-if ( dialog ) then { 
-	ctrlSetText [ 691, "" ]; 
-	ctrlSetText [ 692, "" ]; 
-	ctrlSetText [ 693, "" ]; 
+if ( dialog ) then {
+	ctrlSetText [ 691, "" ];
+	ctrlSetText [ 692, "" ];
+	ctrlSetText [ 693, "" ];
 };
 
 if ( dialog ) then { sleep _line_delay };

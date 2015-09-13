@@ -1,3 +1,6 @@
+
+private [ "_idact_build",  "_idact_arsenal", "_idact_buildfob", "_idact_redeploy", "_idact_tutorial", "_distfob", "_distarsenal",  "_distbuildfob", "_distspawn", "_distredeploy" ];
+
 _idact_build = -1;
 _idact_arsenal = -1;
 _idact_buildfob = -1;
@@ -9,7 +12,7 @@ _distbuildfob = 10;
 _distspawn = 10;
 _distredeploy = 30;
 
-removefobboxes = false;
+GRLIB_removefobboxes = false;
 
 waitUntil { !isNil "build_confirmed" };
 waitUntil { !isNil "one_synchro_done" };
@@ -23,18 +26,18 @@ while { true } do {
 
 	waitUntil { alive player };
 
-	_nearfob = call F_getNearestFob;
+	_nearfob = [] call F_getNearestFob;
 	_fobdistance = 9999;
 	if ( count _nearfob == 3 ) then {
 		_fobdistance = player distance _nearfob;
 	};
 
-	_neararsenal = ((getpos player) nearobjects [Arsenal_typename,_distarsenal]);
-	_nearfobbox = ((getpos player) nearEntities [ [ FOB_box_typename, FOB_truck_typename ] , _distbuildfob]);
-	_nearspawn = ((getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] ,_distspawn]);
+	_neararsenal = ( (getpos player) nearobjects [ Arsenal_typename, _distarsenal ]);
+	_nearfobbox = ( (getpos player) nearEntities [ [ FOB_box_typename, FOB_truck_typename ] , _distbuildfob ] );
+	_nearspawn = ( (getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] , _distspawn ] );
 
-	if ( removefobboxes ) then {
-		removefobboxes = false;
+	if ( GRLIB_removefobboxes ) then {
+		GRLIB_removefobboxes = false;
 		if ( count _nearfobbox > 0 ) then {
 			deletevehicle (_nearfobbox select 0);
 		};

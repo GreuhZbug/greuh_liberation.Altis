@@ -1,3 +1,5 @@
+private [ "_secondary_marker", "_secondary_marker_zone" ];
+
 waitUntil {
 	sleep 0.3;
 	!isNil "secondary_objective_position_marker";

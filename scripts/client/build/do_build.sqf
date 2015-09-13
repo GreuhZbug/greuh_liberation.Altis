@@ -1,3 +1,5 @@
+private [ "_maxdist", "_truepos", "_built_object_remote", "_pos", "_grp", "_classname", "_idx", "_unitrank", "_posfob", "_ghost_spot", "_vehicle", "_dist", "_actualdir", "_near_objects", "_near_objects_25" ];
+
 build_confirmed = 0;
 _maxdist = GRLIB_fob_range;
 _truepos = [];
@@ -14,15 +16,15 @@ if (isNil "gridmode" ) then { gridmode = 0 };
 if (isNil "repeatbuild" ) then { repeatbuild = false };
 if (isNil "build_rotation" ) then { build_rotation = 0 };
 
-waitUntil { !isNil "dobuild" };
+waitUntil { sleep 0.2; !isNil "dobuild" };
 
 while { true } do {
-	waitUntil { dobuild != 0 };
+	waitUntil { sleep 0.2; dobuild != 0 };
 	build_confirmed = 1;
 	build_invalid = 0;
 	_classname = "";
 	if ( buildtype == 99 ) then {
-		removefobboxes = true;
+		GRLIB_removefobboxes = true;
 		_classname = FOB_typename;
 	} else {
 		_classname = (((build_lists select buildtype) select buildindex) select 0);
@@ -56,7 +58,7 @@ while { true } do {
 		} else {
 			_posfob = getpos player;
 			if (buildtype != 99) then {
-				_posfob = call F_getNearestFob;
+				_posfob = [] call F_getNearestFob;
 			};
 
 			_idactcancel = -1;

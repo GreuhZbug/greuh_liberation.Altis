@@ -16,3 +16,4 @@ remote_call_prisonner = compileFinal preprocessFileLineNumbers "scripts\client\r
 remote_call_switchmove = compileFinal preprocessFileLineNumbers "scripts\client\remotecall\remote_call_switchmove.sqf";
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\shared\scan_skill.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\shared\diagnostics.sqf";

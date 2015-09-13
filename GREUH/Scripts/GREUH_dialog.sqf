@@ -25,7 +25,7 @@ if ( GREUH_allow_platoonview ) then {
 	ctrlShow [601, true];
 	{ ctrlShow [_x, false] } foreach _platooncontrols;
 };
-	
+
 if ( GREUH_allow_viewdistance ) then {
 	ctrlShow [701, false];
 	sliderSetRange [712, 1000, 10000];
@@ -80,27 +80,27 @@ while { dialog && alive player } do {
 			ctrlEnable [514,(leader (group player) == player)];
 		};
 	};
-	
+
 	if ( GREUH_allow_platoonview ) then { ctrlShow [612, show_platoon]; };
 	if ( GREUH_allow_mapmarkers ) then { ctrlShow [912, show_teammates]; };
 	if ( GREUH_allow_customsquads ) then {
 		lbClear 515;
-		{ 
+		{
 			_brakets = "";
 			if ( _x == group player ) then { _brakets = ">> "; };
-			lbAdd [515, format [ "%4%1 - %2 (%3)",groupId _x, name leader _x, count units _x,_brakets ]]; 
+			lbAdd [515, format [ "%4%1 - %2 (%3)",groupId _x, name leader _x, count units _x,_brakets ]];
 		} foreach groups_list;
 	};
-	
+
 	if ( GREUH_allow_viewdistance ) then {
 		ctrlSetText [713, format [ '%1m' ,round desiredviewdistance_inf]];
 		ctrlSetText [723, format [ '%1m' ,round desiredviewdistance_veh]];
 		ctrlSetText [733, format [ '%1m' ,round ((desiredviewdistance_obj / 100.0) * desiredviewdistance_inf) ]];
 	};
-	
+
 	ctrlSetText [ 1103, format [ "%1%2", round (desired_vehvolume), "%" ] ];
-	
-	uiSleep 0.1;
+
+	uiSleep 0.2;
 };
 
 if (!alive player) then { closeDialog 0 };

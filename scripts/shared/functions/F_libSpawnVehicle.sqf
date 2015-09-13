@@ -1,5 +1,5 @@
-
 params [ "_sectorpos", "_classname"];
+private  [ "_newvehicle", "_spawnpos" ];
 
 _newvehicle = objNull;
 

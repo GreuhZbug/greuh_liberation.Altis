@@ -1,9 +1,7 @@
+params [ "_postosearch", "_side", "_limit" ];
+private [ "_sector_to_return", "_sectors_to_search", "_sectors_to_search_sorted"];
 
-_postosearch = _this select 0;
-_side = _this select 1;
-_limit = _this select 2;
 _sector_to_return = '';
-
 _sectors_to_search = [];
 if ( _side == EAST ) then {
 	_sectors_to_search = (sectors_tower - blufor_sectors);

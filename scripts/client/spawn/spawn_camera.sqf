@@ -1,4 +1,6 @@
-_spawn_str = _this select 0;
+private [ "_nearest_sector", "_leadingzero_hour", "_leadingzero_minute", "_startpos0", "_startpos1", "_endpos1", "_startpos2", "_endpos2", "_startpos3", "_endpos3", "_spawn_camera", "_datestring" ];
+params [ "_spawn_str" ];
+
 _nearest_sector = [2000] call F_getNearestSector;
 if ( _nearest_sector != "" ) then { _nearest_sector = format ["%1 %2",localize "STR_SPAWN_NEAR", markertext _nearest_sector]; };
 _leadingzero_hour = "";

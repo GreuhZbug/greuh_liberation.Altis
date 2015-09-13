@@ -1,3 +1,5 @@
+private [ "_last_transition", "_last_position", "_cinematic_camera", "_cinematic_pointer", "_positions", "_last_position", "_nearentities", "_camtarget", "_startpos", "_endpos", "_startfov", "_endfov", "_nearest_sector", "_unitname", "_position" ];
+
 if ( isNil "active_sectors" ) then { active_sectors = [] };
 if ( isNil "all_fobs" ) then { all_fobs = [] };
 

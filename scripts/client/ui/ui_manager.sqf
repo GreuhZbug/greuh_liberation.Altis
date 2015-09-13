@@ -1,5 +1,7 @@
 disableSerialization;
 
+private [ "_overlayshown", "_sectorcontrols", "_active_sectors_hint", "_uiticks", "_attacked_string", "_active_sectors_string", "_color_readiness", "_nearest_active_sector", "_zone_size", "_colorzone", "_bar", "_barwidth" ];
+
 _overlayshown = false;
 _sectorcontrols = [201,202,203,244,205];
 _active_sectors_hint = false;
