@@ -9,7 +9,7 @@ _currentidx = 0;
 		_fobindex = _currentidx;
 	};
 	_currentidx = _currentidx + 1;
-} foreach all_fobs;
+} foreach GRLIB_all_fobs;
 
 _fobname = "";
 if ( _fobindex != -1 ) then {

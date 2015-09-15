@@ -1,6 +1,6 @@
 choiceslist = [];
 
-waitUntil { !isNil "all_fobs" };
+waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "save_is_loaded" };
 waitUntil { !isNil "blufor_sectors" };
 
@@ -47,8 +47,8 @@ while { true } do {
 	while { dialog && alive player && (player distance (getmarkerpos "respawn_west") < 20) && deploy == 0} do {
 		choiceslist = [ [ _basenamestr, getpos lhd ] ];
 
-		for [{_idx=0},{_idx < count all_fobs},{_idx=_idx+1}] do {
-			choiceslist = choiceslist + [[format [ "FOB %1 - %2", (military_alphabet select _idx),mapGridPosition (all_fobs select _idx) ],all_fobs select _idx]];
+		for [{_idx=0},{_idx < count GRLIB_all_fobs},{_idx=_idx+1}] do {
+			choiceslist = choiceslist + [[format [ "FOB %1 - %2", (military_alphabet select _idx),mapGridPosition (GRLIB_all_fobs select _idx) ],GRLIB_all_fobs select _idx]];
 		};
 
 		_respawn_trucks = call F_getMobileRespawns;

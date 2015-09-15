@@ -1,4 +1,4 @@
-waitUntil { !isNil "all_fobs" };
+waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "blufor_sectors" };
 
 attack_in_progress = false;
@@ -21,7 +21,7 @@ while { true } do {
 			[ _x ] call attack_in_progress_fob;
 		};
 		sleep 0.5;
-	} foreach all_fobs;
+	} foreach GRLIB_all_fobs;
 
 	sleep 1;
 

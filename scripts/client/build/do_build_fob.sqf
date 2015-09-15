@@ -8,10 +8,10 @@ _distsector = 1;
 _clearedtobuildsector = true;
 
 _idx = 0;
-while { (_idx < (count all_fobs)) && _clearedtobuildfob } do {
-	if ( player distance (all_fobs select _idx) < _minfobdist ) then {
+while { (_idx < (count GRLIB_all_fobs)) && _clearedtobuildfob } do {
+	if ( player distance (GRLIB_all_fobs select _idx) < _minfobdist ) then {
 		_clearedtobuildfob = false;
-		_distfob = player distance (all_fobs select _idx);
+		_distfob = player distance (GRLIB_all_fobs select _idx);
 	};
 	_idx = _idx + 1;
 };

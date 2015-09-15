@@ -10,8 +10,8 @@ _fob_templates = [
 "scripts\fob_templates\template5.sqf"
 ];
 
-waitUntil { !isNil "all_fobs" };
-waitUntil { count all_fobs > 0 };
+waitUntil { !isNil "GRLIB_all_fobs" };
+waitUntil { count GRLIB_all_fobs > 0 };
 
 sleep 30;
 
