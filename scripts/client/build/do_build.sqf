@@ -123,18 +123,18 @@ while { true } do {
 				_near_objects = _near_objects + (_truepos nearobjects [FOB_box_typename, _dist]);
 				_near_objects = _near_objects + (_truepos nearobjects [Arsenal_typename, _dist]);
 
-				_near_objects_25 = (_truepos nearobjects ["AllVehicles", 25]) ;
-				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [FOB_box_typename, 25]);
-				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [Arsenal_typename, 25]);
+				_near_objects_25 = (_truepos nearobjects ["AllVehicles", 30]) ;
+				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [FOB_box_typename, 30]);
+				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [Arsenal_typename, 30]);
 
 				if(	buildtype != 6 ) then {
 					_near_objects = _near_objects + (_truepos nearobjects ["Static", _dist]);
-					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 25]);
+					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 30]);
 				};
 
-				_remove_objects = (_truepos nearobjects ["Animal", 25]) + (_truepos nearobjects ["land_runway_edgelight", 25]) +
-								(_truepos nearobjects ["land_runway_edgelight_blue_f", 25]) + (_truepos nearobjects ["Land_HelipadSquare_F", 25]) +  [player, _vehicle]
-								+ (_truepos nearobjects ["Sign_Sphere100cm_F", 25]) + (_truepos nearobjects ["TMR_Autorest_Georef", 25]);
+				_remove_objects = (_truepos nearobjects ["Animal", 30]) + (_truepos nearobjects ["land_runway_edgelight", 30]) +
+								(_truepos nearobjects ["land_runway_edgelight_blue_f", 30]) + (_truepos nearobjects ["Land_HelipadSquare_F", 30]) +  [player, _vehicle]
+								+ (_truepos nearobjects ["Sign_Sphere100cm_F", 30]) + (_truepos nearobjects ["TMR_Autorest_Georef", 30]);
 
 				_near_objects = _near_objects - _remove_objects;
 				_near_objects_25 = _near_objects_25 - _remove_objects;
@@ -142,6 +142,7 @@ while { true } do {
 				if ( count _near_objects == 0 ) then {
 					{
 						_dist22 = 0.6 * (sizeOf (typeof _x));
+						if ( _dist22 < 1 ) then { _dist22 = 1 };
 						if (_truepos distance _x < _dist22) then {
 							_near_objects pushback _x;
 						};

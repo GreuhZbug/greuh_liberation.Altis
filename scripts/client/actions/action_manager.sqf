@@ -87,7 +87,7 @@ while { true } do {
 		};
 	};
 
-	if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player)) then {
+	if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player) && ((player distance lhd) > 1000)) then {
 		if ( _idact_buildfob == -1 ) then {
 			_idact_buildfob = player addAction ["<t color='#FFFF00'>" + localize "STR_FOB_ACTION" + "</t> <img size='2' image='res\ui_deployfob.paa'/>","scripts\client\build\do_build_fob.sqf","",-990,false,true,"","build_confirmed == 0"];
 		};

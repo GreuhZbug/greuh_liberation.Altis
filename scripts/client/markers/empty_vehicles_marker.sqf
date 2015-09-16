@@ -6,15 +6,15 @@ _cfg = configFile >> "cfgVehicles";
 _vehtomark = [];
 
 _supporttomark = [
+(support_vehicles select 0),
 (support_vehicles select 1),
 (support_vehicles select 2),
+(support_vehicles select 3),
 (support_vehicles select 4),
 (support_vehicles select 5),
 (support_vehicles select 6),
-(support_vehicles select 10),
-(support_vehicles select 11),
-(support_vehicles select 12),
-(support_vehicles select 13)
+(support_vehicles select 7),
+(support_vehicles select 8)
 ];
 
 {

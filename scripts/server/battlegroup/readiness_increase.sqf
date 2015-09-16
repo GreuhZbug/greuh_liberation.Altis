@@ -17,5 +17,5 @@ while { true } do {
 
 	if ( combat_readiness > 100.0 && GRLIB_difficulty_modifier < 2 ) then { combat_readiness = 100.0 };
 
-	sleep (30 + random (60));
+	sleep (90 + random (90));
 };

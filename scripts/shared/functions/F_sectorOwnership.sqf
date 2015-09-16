@@ -2,7 +2,7 @@ params [ "_thatpos", [ "_localsize", GRLIB_capture_size ] ];
 private [ "_cap_thresold_count", "_cap_thresold_ratio", "_cap_min_ratio", "_sectorside", "_countwest_ownership", "_counteast_ownership", "_blufor_ratio" ];
 
 _cap_thresold_count = 3;
-_cap_thresold_ratio = 0.8;
+_cap_thresold_ratio = 0.85;
 _cap_min_ratio = 0.51;
 
 _sectorside = RESISTANCE;

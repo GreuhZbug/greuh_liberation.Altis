@@ -5,8 +5,8 @@ _currentnearest = [];
 _refdistance = 99999;
 _tpositions = [];
 
-if ( count all_fobs != 0 || count blufor_sectors != 0 ) then {
-	_tpositions = all_fobs;
+if ( count GRLIB_all_fobs != 0 || count blufor_sectors != 0 ) then {
+	_tpositions = GRLIB_all_fobs;
 	{
 		_tpositions pushback (markerpos _x);
 	} foreach blufor_sectors;

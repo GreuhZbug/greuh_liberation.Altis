@@ -14,11 +14,11 @@ _building_classnames = [];
 } foreach (buildings);
 _building_classnames = _building_classnames + [ "B_supplyCrate_F", "B_Slingload_01_Cargo_F", "B_Slingload_01_Repair_F", "B_Slingload_01_Fuel_F", "B_Slingload_01_Ammo_F", ammobox_b_typename, ammobox_o_typename ];
 
-waitUntil { sleep 1; !isNil "all_fobs" };
+waitUntil { sleep 1; !isNil "GRLIB_all_fobs" };
 
 while { true } do {
 
-	waitUntil { sleep 1; count all_fobs > 0 };
+	waitUntil { sleep 1; count GRLIB_all_fobs > 0 };
 	waitUntil { sleep 1; ( player distance ( [] call F_getNearestFob)) < (2 * GRLIB_fob_range) };
 
 	_detected_vehicles = 	[ (getpos player) nearObjects veh_action_distance ,

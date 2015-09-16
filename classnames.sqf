@@ -69,6 +69,7 @@ air_vehicles = [
 ["greuh_aw159_a",0,50,12],
 ["B_Heli_Transport_01_F",0,20,12],
 ["B_Heli_Transport_03_F",0,20,15],
+["JNS_Skycrane_BLU_Black",0,0,18],
 ["RHS_CH_47F",0,20,20],
 ["greuh_eh101_gr",0,0,25],
 ["MV22",0,0,25],
@@ -84,7 +85,9 @@ air_vehicles = [
 ["sab_C130_J",0,0,30],
 ["B_UAV_01_F",0,0,5],
 ["B_UAV_02_F",0,250,20],
-["B_UAV_02_CAS_F",0,250,20]
+["B_UAV_02_CAS_F",0,250,20],
+["usaf_f22",0,500,75],
+["USAF_F35A",0,600,75]
 ];
 
 static_vehicles = [
@@ -118,23 +121,28 @@ buildings = [
 
 support_vehicles = [
 ["B_supplyCrate_F",2,0,0],
+["B_Truck_01_medical_F",20,0,5],
 ["B_Slingload_01_Cargo_F",30,50,0],
 ["B_Truck_01_box_F",30,50,5],
-["B_Truck_01_medical_F",20,0,5],
+["B_APC_Tracked_01_CRV_F",0,30,10],
+["C_Offroad_01_repair_F",5,0,2],
 ["B_Truck_01_Repair_F",10,0,5],
 ["B_Truck_01_fuel_F",10,0,5],
 ["B_Truck_01_ammo_F",10,0,5],
 ["B_Slingload_01_Repair_F",5,0,0],
 ["B_Slingload_01_Fuel_F",5,0,0],
 ["B_Slingload_01_Ammo_F",5,0,0],
-["C_Offroad_01_repair_F",5,0,2],
-["B_APC_Tracked_01_CRV_F",0,30,10],
+["JNS_Skycrane_Pod_Bench_BLU_Black",5,0,0],
+["JNS_Skycrane_Pod_Ammo_BLU_Black",5,0,0],
+["JNS_Skycrane_Pod_Medical_BLU_Black",5,0,0],
+["JNS_Skycrane_Pod_Repair_BLU_Black",5,0,0],
+["JNS_Skycrane_Pod_Transport_BLU_Black",5,0,0],
 ["Box_NATO_AmmoVeh_F",0,115,0],
 ["Box_East_AmmoVeh_F",0,77,0]
 ];
 
 // Vehicles unlocked by military base control
-elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd"
+elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd","usaf_f22","USAF_F35A"
 ];
 
 // Pre-made squads for the commander build menu
@@ -213,7 +221,6 @@ civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_0
 
 
 
-
 // !!
 // Do not edit below this point!!
 // Only boring technical stuff
@@ -232,7 +239,24 @@ support_vehicles = [ support_vehicles ] call F_filterMods;
 static_vehicles = [ static_vehicles ] call F_filterMods;
 buildings = [ buildings ] call F_filterMods;
 build_lists = [[],infantry_units,light_vehicles,heavy_vehicles,air_vehicles,static_vehicles,buildings,support_vehicles,squads];
+
+militia_squad = [ militia_squad , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 militia_vehicles = [ militia_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_squad_low_intensity = [ opfor_squad_low_intensity , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_squad_8_standard = [ opfor_squad_8_standard , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_squad_8_infkillers = [ opfor_squad_8_infkillers , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_squad_8_tankkillers = [ opfor_squad_8_tankkillers , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_squad_8_airkillers = [ opfor_squad_8_airkillers , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_vehicles = [ opfor_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_vehicles_low_intensity = [ opfor_vehicles_low_intensity , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_battlegroup_vehicles = [ opfor_battlegroup_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_battlegroup_vehicles_low_intensity = [ opfor_battlegroup_vehicles_low_intensity , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_troup_transports = [ opfor_troup_transports , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_choppers = [ opfor_choppers , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+opfor_air = [ opfor_air , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+civilians = [ civilians , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+civilian_vehicles = [ civilian_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
+
 military_alphabet = ["Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-Ray","Yankee","Zulu"];
 land_vehicles_classnames = (opfor_vehicles + militia_vehicles);
 all_ofpor_troops = opfor_squad_low_intensity + opfor_squad_8_standard + opfor_squad_8_infkillers + opfor_squad_8_tankkillers + opfor_squad_8_airkillers + [opfor_sentry, opfor_lookout_1, opfor_lookout_2 ];
@@ -258,4 +282,3 @@ ammobox_transports_typenames = [];
 ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 
 elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
-

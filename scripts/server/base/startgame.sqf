@@ -1,10 +1,10 @@
 waitUntil { time > 1 };
-waitUntil { !isNil "all_fobs" };
+waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "save_is_loaded" };
 
 private [ "_fobbox" ];
 
-if ( count all_fobs == 0 ) then {
+if ( count GRLIB_all_fobs == 0 ) then {
 
 	if ( GRLIB_build_first_fob ) then {
 		_potentialplaces = [];
@@ -26,7 +26,7 @@ if ( count all_fobs == 0 ) then {
 		[ [ markerPos _spawnplace, true ] , "build_fob_remote_call" ] call BIS_fnc_MP;
 
 	} else {
-		while { count all_fobs == 0 } do {
+		while { count GRLIB_all_fobs == 0 } do {
 
 			if ( GRLIB_isAtlasPresent ) then {
 				_fobbox = FOB_box_typename createVehicle [0,0,50];
@@ -50,7 +50,7 @@ if ( count all_fobs == 0 ) then {
 
 			waitUntil {
 				sleep 1;
-				!(alive _fobbox) || count all_fobs > 0
+				!(alive _fobbox) || count GRLIB_all_fobs > 0
 			};
 
 			sleep 15;

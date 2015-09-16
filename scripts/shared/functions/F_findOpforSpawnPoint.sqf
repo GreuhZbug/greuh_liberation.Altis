@@ -33,7 +33,7 @@ _filtered_possible_sectors = [];
 				_current_sector_distance = (( markerpos _current_sector ) distance (_x));
 			};
 		};
-	} foreach all_fobs;
+	} foreach GRLIB_all_fobs;
 
 	{
 		if ( (( markerpos _current_sector ) distance (markerpos _x)) < _mindist ) then {
