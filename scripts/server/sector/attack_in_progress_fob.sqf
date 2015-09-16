@@ -1,9 +1,13 @@
 params [ "_thispos" ];
 private [ "_attacktime", "_ownership", "_grp" ];
 
-_attacktime = GRLIB_vulnerability_timer;
-_ownership = EAST;
+sleep 15;
 
+_ownership =  [ _thispos ] call F_sectorOwnership;
+if ( _ownership != EAST ) exitWith {};
+
+[ [ _thispos , 1 ] , "remote_call_fob" ] call BIS_fnc_MP;
+_attacktime = GRLIB_vulnerability_timer;
 _grp = creategroup WEST;
 {
 	_x createUnit [ _thispos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];

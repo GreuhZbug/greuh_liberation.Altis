@@ -1,13 +1,23 @@
 params [ "_sector" ];
-private [ "_attacktime", "_ownership", "_grp" ];
+private [ "_attacktime", "_ownership", "_grp", "_squad_type" ];
 
+sleep 15;
+
+_ownership = [ markerpos _sector ] call F_sectorOwnership;
+if ( _ownership != EAST ) exitWith {};
+
+[ [ _sector, 1 ] , "remote_call_sector" ] call BIS_fnc_MP;
 _attacktime = GRLIB_vulnerability_timer;
-_ownership = EAST;
+
+_squad_type = blufor_squad_inf_light;
+if ( _sector in sectors_military ) then {
+	_squad_type = blufor_squad_inf;
+};
 
 _grp = creategroup WEST;
 {
 	_x createUnit [ markerpos _sector, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];
-} foreach blufor_squad_inf;
+} foreach _squad_type;
 
 while { _attacktime > 0 && ( _ownership == EAST || _ownership == RESISTANCE ) } do {
 	_ownership = [markerpos _sector] call F_sectorOwnership;
