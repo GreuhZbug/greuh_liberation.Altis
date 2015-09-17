@@ -30,3 +30,4 @@ F_lessLoadedHC = compileFinal preprocessFileLineNumbers "scripts\shared\function
 F_setMass = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_setMass.sqf";
 F_adaptiveOpforFactor = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_adaptiveOpforFactor.sqf";
 F_getFobName = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getFobName.sqf";
+F_objectProtection = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_objectProtection.sqf";
