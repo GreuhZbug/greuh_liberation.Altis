@@ -5,23 +5,19 @@ _markedveh = [];
 _cfg = configFile >> "cfgVehicles";
 _vehtomark = [];
 
-_supporttomark = [
-(support_vehicles select 0),
-(support_vehicles select 1),
-(support_vehicles select 2),
-(support_vehicles select 3),
-(support_vehicles select 4),
-(support_vehicles select 5),
-(support_vehicles select 6),
-(support_vehicles select 7),
-(support_vehicles select 8)
+_support_to_skip = [
+	ammobox_o_typename,
+	"B_supplyCrate_F",
+	"B_Slingload_01_Repair_F",
+	"B_Slingload_01_Fuel_F",
+	"B_Slingload_01_Ammo_F"
 ];
 
 {
 	_vehtomark pushback (_x select 0);
-} foreach light_vehicles + heavy_vehicles + air_vehicles + _supporttomark;
+} foreach light_vehicles + heavy_vehicles + air_vehicles + support_vehicles;
 
-_vehtomark = _vehtomark - [ ammobox_o_typename ];
+_vehtomark = _vehtomark - _support_to_skip;
 
 while { true } do {
 

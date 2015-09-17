@@ -3,7 +3,7 @@ params [ "_unit1", "_unit2" ];
 removeAllWeapons _unit2;
 
 if ( backpack _unit2 == '' && backpack _unit1 != '' ) then {
-	_unit2 addBackpack (backpack unit1);
+	_unit2 addBackpack (backpack _unit1);
 };
 
 { _unit2 addMagazine _x } foreach ( magazines _unit1 );

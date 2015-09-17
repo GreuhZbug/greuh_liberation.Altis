@@ -36,12 +36,12 @@ if (alive _unit) then {
 
 	if ( _is_near_fob ) then {
 
+		sleep 5;
 		_grp = createGroup WEST;
 		[_unit] joinSilent _grp;
 		_unit playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
 		_unit disableAI "ANIM";
 		_unit disableAI "MOVE";
-		_unit setCaptive false;
 		sleep 5;
 		[ [ _unit, "AidlPsitMstpSnonWnonDnon_ground00" ], "remote_call_switchmove" ] call bis_fnc_mp;
 		[ [_unit] , "prisonner_remote_call" ] call BIS_fnc_MP;
