@@ -1,6 +1,8 @@
 waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "blufor_sectors" };
 
+sleep 5;
+
 attack_in_progress = false;
 
 while { true } do {

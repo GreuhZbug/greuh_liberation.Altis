@@ -64,6 +64,7 @@ trigger_server_save = false;
 greuh_liberation_savegame = profileNamespace getVariable GRLIB_save_key;
 
 if ( !isNil "greuh_liberation_savegame" ) then {
+
 	blufor_sectors = greuh_liberation_savegame select 0;
 	GRLIB_all_fobs = greuh_liberation_savegame select 1;
 	buildings_to_save = greuh_liberation_savegame select 2;
@@ -121,6 +122,17 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 	if ( count greuh_liberation_savegame > 11 ) then {
 		GRLIB_vehicle_to_military_base_links = greuh_liberation_savegame select 11;
 	};
+
+	_correct_fobs = [];
+	{
+		_next_fob = _x;
+		_keep_fob = true;
+		{
+			if ( _next_fob distance (markerpos _x) < 50 ) exitWith { _keep_fob = false };
+		} foreach sectors_allSectors;
+		if ( _keep_fob ) then { _correct_fobs pushback _next_fob };
+	} foreach GRLIB_all_fobs;
+	GRLIB_all_fobs = _correct_fobs;
 
 	stats_saves_loaded = stats_saves_loaded + 1;
 
@@ -230,7 +242,7 @@ while { true } do {
 
 		stats_saves_performed = stats_saves_performed + 1;
 
-		if ( count GRLIB_all_fobs < 26 ) then { // Tentative protection for a very rare bug (one occurence all time, non reproductible) that can destroy savegames
+		if ( count GRLIB_all_fobs <= 26 ) then {
 
 			_stats = [];
 			_stats pushback stats_opfor_soldiers_killed;

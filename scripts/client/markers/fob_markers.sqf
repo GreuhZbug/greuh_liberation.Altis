@@ -5,6 +5,8 @@ _markers_mobilespawns = [];
 
 waitUntil { !isNil "GRLIB_all_fobs" };
 
+uiSleep 3;
+
 while { true } do {
 	if ( count _markers != count GRLIB_all_fobs ) then {
 		{ deleteMarkerLocal _x } foreach _markers;
