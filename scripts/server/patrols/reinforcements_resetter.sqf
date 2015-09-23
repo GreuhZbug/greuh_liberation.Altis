@@ -8,9 +8,9 @@ while { true } do {
 	reinforcements_set = false;
 
 	_localtime = time;
-	
+
 	waitUntil { sleep 0.3; ( time > ( _localtime + _reset_time ) ) || reinforcements_set };
-	
-	if ( !reinforcements_set ) then { reinforcements_sector_under_attack = ""; }
+
+	if ( !reinforcements_set && !([] call F_isBigtownActive) ) then { reinforcements_sector_under_attack = ""; }
 
 };

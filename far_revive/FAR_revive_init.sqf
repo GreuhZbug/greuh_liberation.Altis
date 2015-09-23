@@ -7,7 +7,7 @@
 //------------------------------------------//
 
 // Seconds until unconscious unit bleeds out and dies. Set to 0 to disable.
-FAR_BleedOut = 300;	
+FAR_BleedOut = 300;
 
 // Enable teamkill notifications
 FAR_EnableDeathMessages = true;
@@ -20,7 +20,7 @@ FAR_MuteACRE = false;
 	1 = All units can revive
 	2 = Same as 1 but a medikit is required to revive
 */
-FAR_ReviveMode = 2;
+FAR_ReviveMode = ( GRLIB_revive - 1 );
 
 //------------------------------------------//
 
@@ -45,19 +45,19 @@ if (isDedicated) exitWith {};
 	// Public event handlers
 	"FAR_isDragging_EH" addPublicVariableEventHandler FAR_public_EH;
 	"FAR_deathMessage" addPublicVariableEventHandler FAR_public_EH;
-	
+
 	[] spawn FAR_Player_Init;
 
 	if (FAR_MuteACRE) then
 	{
-		[] spawn FAR_Mute_ACRE;	
+		[] spawn FAR_Mute_ACRE;
 	};
 
 	// Event Handlers
-	player addEventHandler 
+	player addEventHandler
 	[
-		"Respawn", 
-		{ 
+		"Respawn",
+		{
 			[] spawn FAR_Player_Init;
 		}
 	];
@@ -72,23 +72,23 @@ FAR_Player_Init =
 	player removeAllEventHandlers "HandleDamage";
 
 	player addEventHandler ["HandleDamage", FAR_HandleDamage_EH];
-	player addEventHandler 
+	player addEventHandler
 	[
 		"Killed",
 		{
 			// Remove dead body of player (for missions with respawn enabled)
 			_body = _this select 0;
-			
-			[_body] spawn 
+
+			[_body] spawn
 			{
-			
+
 				waitUntil { alive player };
 				_body = _this select 0;
 				deleteVehicle _body;
 			}
 		}
 	];
-	
+
 	player setVariable ["GREUH_isUnconscious", 0, true];
 	player setVariable ["FAR_isUnconscious", 0, true];
 	player setVariable ["FAR_isStabilized", 0, true];
@@ -97,7 +97,7 @@ FAR_Player_Init =
 	player setCaptive false;
 
 	FAR_isDragging = false;
-	
+
 	[] spawn FAR_Player_Actions;
 };
 
@@ -117,7 +117,7 @@ FAR_Player_Init =
 				player switchMove "amovpknlmstpsraswrfldnon";
 			};
 		};
-			
+
 		sleep 3;
 	}
 };
@@ -126,24 +126,24 @@ FAR_Mute_ACRE =
 {
 	waitUntil { time > 0 };
 
-	waitUntil 
+	waitUntil
 	{
-		if (alive player) then 
+		if (alive player) then
 		{
 			// player getVariable ["ace_sys_wounds_uncon", true/false];
-			if ((player getVariable["ace_sys_wounds_uncon", false])) then 
+			if ((player getVariable["ace_sys_wounds_uncon", false])) then
 			{
 				private["_saveVolume"];
 
 				_saveVolume = acre_sys_core_globalVolume;
 
 				player setVariable ["acre_sys_core_isDisabled", true, true];
-				
-				waitUntil 
+
+				waitUntil
 				{
 					acre_sys_core_globalVolume = 0;
 
-					if (!(player getVariable["acre_sys_core_isDisabled", false])) then 
+					if (!(player getVariable["acre_sys_core_isDisabled", false])) then
 					{
 						player setVariable ["acre_sys_core_isDisabled", true, true];
 						[true] call acre_api_fnc_setSpectator;
@@ -152,7 +152,7 @@ FAR_Mute_ACRE =
 					!(player getVariable["ace_sys_wounds_uncon", false]);
 				};
 
-				if ((player getVariable["acre_sys_core_isDisabled", false])) then 
+				if ((player getVariable["acre_sys_core_isDisabled", false])) then
 				{
 					player setVariable ["acre_sys_core_isDisabled", false, true];
 					[false] call acre_api_fnc_setSpectator;
@@ -160,8 +160,8 @@ FAR_Mute_ACRE =
 
 				acre_sys_core_globalVolume = _saveVolume;
 			};
-		} 
-		else 
+		}
+		else
 		{
 			waitUntil { alive player };
 		};
@@ -178,7 +178,7 @@ FAR_Mute_ACRE =
 if (!FAR_Debugging || isMultiplayer) exitWith {};
 
 {
-	if (!isPlayer _x) then 
+	if (!isPlayer _x) then
 	{
 		_x addEventHandler ["HandleDamage", FAR_HandleDamage_EH];
 		_x setVariable ["FAR_isUnconscious", 0, true];

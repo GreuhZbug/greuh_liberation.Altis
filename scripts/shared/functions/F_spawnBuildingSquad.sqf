@@ -26,8 +26,8 @@ while { count _position_indexes < count _squadtospawnnn } do {
 _grp = createGroup _sidespawn;
 _idxposit = 0;
 {
-	[ _x, _sectorpos, _grp ] spawn { params [ "_classname", "_sectorpos", "_grp" ]; _classname createUnit [ _sectorpos, _grp ]; };
 	_groupunitscount = (count units _grp);
+	[ _x, _sectorpos, _grp ] spawn { params [ "_classname", "_sectorpos", "_grp" ]; _classname createUnit [ _sectorpos, _grp ]; };
 	waitUntil { count units _grp != _groupunitscount };
 	_nextunit = (units _grp) select ((count (units _grp)) -1);
 	_nextunit addMPEventHandler ["MPKilled", {_this spawn kill_manager}];

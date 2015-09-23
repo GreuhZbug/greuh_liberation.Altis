@@ -31,3 +31,4 @@ F_setMass = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_s
 F_adaptiveOpforFactor = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_adaptiveOpforFactor.sqf";
 F_getFobName = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getFobName.sqf";
 F_objectProtection = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_objectProtection.sqf";
+F_isBigtownActive = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_isBigtownActive.sqf";

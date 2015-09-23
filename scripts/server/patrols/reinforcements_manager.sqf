@@ -21,7 +21,7 @@ if ( combat_readiness > 15 ) then {
 
 			sleep 15;
 
-			if ( (_targetsector in active_sectors) && !(_targetsector in blufor_sectors) && !(_nearestower in blufor_sectors) ) then {
+			if ( (_targetsector in active_sectors) && !(_targetsector in blufor_sectors) && !(_nearestower in blufor_sectors) && (!([] call F_isBigtownActive) || _targetsector in sectors_bigtown)  ) then {
 				reinforcements_sector_under_attack = _targetsector;
 				reinforcements_set = true;
 				[ [ "lib_reinforcements" , [ markertext  _targetsector ] ] , "bis_fnc_shownotification" ] call BIS_fnc_MP;

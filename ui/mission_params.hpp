@@ -32,9 +32,9 @@ class Params
 	};
 	class Revive {
 		title = $STR_PARAMS_REVIVE;
-		values[] = { 1, 0 };
-		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 1;
+		values[] = { 3, 2, 1, 0 };
+		texts[] = { $STR_PARAMS_REVIVE3, $STR_PARAMS_REVIVE2, $STR_PARAMS_REVIVE1, $STR_PARAMS_DISABLED };
+		default = 3;
 	};
 	class Introduction {
 		title = $STR_PARAMS_INTRO;
@@ -70,6 +70,12 @@ class Params
 		title = $STR_PARAM_TEAMKILL_PENALTY;
 		values[] = {1,0};
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
+	class PassiveIncome{
+		title = $STR_PARAM_PASSIVE_INCOME;
+		values[] = {1,0};
+		texts[] = { $STR_YES, $STR_NO };
 		default = 0;
 	};
 	class Spacer {
