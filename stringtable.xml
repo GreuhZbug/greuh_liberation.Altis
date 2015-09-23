@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.903b</Original>
+        		<Original>Liberation 0.904</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.903b</Original>
+                        <Original>v0.904</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -695,6 +695,18 @@
                 <Key ID="STR_PARAMS_REVIVE">
                         <Original>FAR Revive</Original>
                 </Key>
+                <Key ID="STR_PARAMS_REVIVE1">
+                        <Original>Enabled - Only medics can revive</Original>
+                        <French>Activé - Seuls les medics peuvent revive</French>
+                </Key>
+                <Key ID="STR_PARAMS_REVIVE2">
+                        <Original>Enabled - Everyone can revive using a FAK</Original>
+                        <French>Activé - Tout le monde peut revive avec un kit premiers soins</French>
+                </Key>
+                <Key ID="STR_PARAMS_REVIVE3">
+                        <Original>Enabled - Everyone can revive using a MedKit</Original>
+                        <French>Activé - Tout le monde peut revive avec un kit médical</French>
+                </Key>
                 <Key ID="STR_PARAMS_INTRO">
                         <Original>Introduction</Original>
                         <French>Introduction</French>
@@ -782,6 +794,10 @@
                 <Key ID="STR_PARAM_ADAPT_TO_PLAYERCOUNT">
                         <Original>Hostile presence adapts to player count</Original>
                         <French>La présence hostile s'adapte au nombre de joueurs</French>
+                </Key>
+                <Key ID="STR_PARAM_PASSIVE_INCOME">
+                        <Original>Replace ammo boxes spawns with passive income</Original>
+                        <French>Remplacer les caisses de munitions par un revenu passif</French>
                 </Key>
                 <Key ID="STR_BUILD1">
                         <Original>Infantry units</Original>

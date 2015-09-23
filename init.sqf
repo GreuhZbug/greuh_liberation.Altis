@@ -7,7 +7,7 @@ enableSaving [ false, false ];
 [] call compileFinal preprocessFileLineNUmbers "gameplay_constants.sqf";
 [] call compileFinal preprocessFileLineNUmbers "classnames.sqf";
 
-if ( GRLIB_revive ) then {
+if ( GRLIB_revive > 0 ) then {
 	[] execVM "FAR_revive\FAR_revive_init.sqf";
 };
 [] execVM "GREUH\scripts\GREUH_activate.sqf";

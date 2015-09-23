@@ -38,6 +38,11 @@ _waypoint setWaypointSpeed "FULL";
 _waypoint setWaypointBehaviour "AWARE";
 _waypoint setWaypointCombatMode "RED";
 _waypoint = _air_grp addWaypoint [ _first_objective, 500];
+_waypoint setWaypointType "MOVE";
+_waypoint setWaypointSpeed "FULL";
+_waypoint setWaypointBehaviour "AWARE";
+_waypoint setWaypointCombatMode "RED";
+_waypoint = _air_grp addWaypoint [ _first_objective, 500];
 _waypoint setWaypointType "SAD";
 _waypoint = _air_grp addWaypoint [ _first_objective, 1000];
 _waypoint setWaypointType "SAD";
@@ -52,6 +57,6 @@ _waypoint setWaypointType "SAD";
 _waypoint = _air_grp addWaypoint [ _first_objective, 500];
 _waypoint setWaypointType "CYCLE";
 
-_air_grp setCurrentWaypoint [ _air_grp, 1];
+_air_grp setCurrentWaypoint [ _air_grp, 2];
 
 

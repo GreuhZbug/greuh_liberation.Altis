@@ -19,6 +19,8 @@ if ( combat_readiness < 50 ) then {
 
 if ( _spawn_marker != "" ) then {
 
+	GRLIB_last_battlegroup_time = time;
+
 	_selected_opfor_battlegroup = [];
 	_target_size = ( GRLIB_battlegroup_size * ([] call F_adaptiveOpforFactor) );
 	if ( combat_readiness < 50 ) then { _target_size = round (_target_size * 0.65) };

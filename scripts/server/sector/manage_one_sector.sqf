@@ -1,5 +1,5 @@
 params [ "_sector" ];
-private [ "_sectorpos", "_stopit", "_spawncivs", "_building_ai_max", "_infsquad", "_building_range", "_local_capture_size", "_iedcount","_combat_readiness_increase","_vehtospawn","_sidespawn","_managed_units","_squad1", "_squad2", "_squad3", "_squad4", "_minimum_building_positions", "_popfactor" ];
+private [ "_sectorpos", "_stopit", "_spawncivs", "_building_ai_max", "_infsquad", "_building_range", "_local_capture_size", "_iedcount","_combat_readiness_increase","_vehtospawn","_sidespawn","_managed_units","_squad1", "_squad2", "_squad3", "_squad4", "_minimum_building_positions", "_popfactor", "_sector_despawn_tickets" ];
 
 waitUntil { !isNil "combat_readiness" };
 
@@ -19,6 +19,7 @@ _squad2 = [];
 _squad3 = [];
 _squad4 = [];
 _minimum_building_positions = 5;
+_sector_despawn_tickets = 12;
 
 _popfactor = 1;
 if ( GRLIB_unitcap < 1 ) then { _popfactor = GRLIB_unitcap; };
@@ -196,24 +197,20 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 			{ [_x] spawn prisonner_ai; } foreach ( (getmarkerpos _sector) nearEntities [["Man"], _local_capture_size] );
 
 			sleep 30;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 
 			active_sectors = active_sectors - [ _sector ]; publicVariable "active_sectors";
 
 			sleep 100;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
-
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 			sleep 100;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
-
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 			sleep 100;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
-
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 			sleep 100;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
-
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 			sleep 100;
-			{ if ( side (driver _x ) == WEST || side (gunner _x) == WEST || side (commander _x) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
+			{ if ( count (crew _x) != 0 ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 
 			{
 				if ( side group _x != WEST ) then {
@@ -223,9 +220,13 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 
 		} else {
 			if ( ( [_sectorpos, (GRLIB_sector_size + 250), WEST ] call F_getUnitsCount ) == 0 ) then {
-				{
-					if ( side (driver _x ) == WEST ) then { _managed_units = _managed_units - [_x] };
-				} foreach _managed_units;
+				_sector_despawn_tickets = _sector_despawn_tickets - 1;
+			} else {
+				_sector_despawn_tickets = 12;
+			};
+
+			if ( _sector_despawn_tickets <= 0 ) then {
+				{ if ( side (driver _x ) == WEST ) then { _managed_units = _managed_units - [_x] }; } foreach _managed_units;
 				{ deleteVehicle _x } foreach _managed_units;
 				_stopit = true;
 				active_sectors = active_sectors - [ _sector ]; publicVariable "active_sectors";

@@ -2,7 +2,7 @@
 
 # Liberation for Arma 3
 
-## Current version : 0.903b
+## Current version : 0.904
 
 ## Overview
 
@@ -18,7 +18,7 @@ Altis has fallen to the CSAT forces, and it is up to you to take it back. Embark
 
 ## Media
 
-[Gameplay footage](https://www.youtube.com/watch?v=QJomuxfrnjg)
+[Gameplay footage](https://www.youtube.com/watch?v=1nigtUpZqcA)
 
 [Quick start tutorial](https://www.youtube.com/watch?v=jC9sk7AzHAY)
 

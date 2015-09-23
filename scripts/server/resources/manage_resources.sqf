@@ -13,7 +13,7 @@ while { GRLIB_endgame == 0 } do {
 		{
 			if ( _x in sectors_military ) then {
 				_blufor_mil_sectors pushback _x;
-				_base_tick_period = _base_tick_period * 0.85;
+				_base_tick_period = _base_tick_period * 0.82;
 			};
 		} foreach blufor_sectors;
 
@@ -24,28 +24,33 @@ while { GRLIB_endgame == 0 } do {
 		sleep _base_tick_period;
 
 		if ( count _blufor_mil_sectors > 0 ) then {
-			_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
-			_spawnpos = [0,0,0];
-			while { surfaceIsWater _spawnpos } do {
-				_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'Land_PaperBox_open_empty_F'];
-				if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+
+			if ( GRLIB_passive_income ) then {
+
+				_ammo_increase = round ( 35 + (random 35));
+				resources_ammo = resources_ammo + _ammo_increase;
+
+			} else {
+
+				_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
+				_spawnpos = [0,0,0];
+				while { surfaceIsWater _spawnpos } do {
+					_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'Land_PaperBox_open_empty_F'];
+					if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+				};
+
+				_newbox = ammobox_b_typename createVehicle _spawnpos;
+				_newbox setpos _spawnpos;
+				_newbox setdir (random 360);
+				clearWeaponCargoGlobal _newbox;
+				clearMagazineCargoGlobal _newbox;
+				clearItemCargoGlobal _newbox;
+				clearBackpackCargoGlobal _newbox;
+
+				[ [_newbox, 500 ] , "F_setMass" ] call BIS_fnc_MP;
 			};
-
-			_newbox = ammobox_b_typename createVehicle _spawnpos;
-			_newbox setpos _spawnpos;
-			_newbox setdir (random 360);
-			clearWeaponCargoGlobal _newbox;
-			clearMagazineCargoGlobal _newbox;
-			clearItemCargoGlobal _newbox;
-			clearBackpackCargoGlobal _newbox;
-
-			[ [_newbox, 500 ] , "F_setMass" ] call BIS_fnc_MP;
-
 		};
-
-
 	};
 
 	sleep 300;
-
 };

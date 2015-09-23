@@ -137,8 +137,8 @@ support_vehicles = [
 ["JNS_Skycrane_Pod_Medical_BLU_Black",5,0,0],
 ["JNS_Skycrane_Pod_Repair_BLU_Black",5,0,0],
 ["JNS_Skycrane_Pod_Transport_BLU_Black",5,0,0],
-["Box_NATO_AmmoVeh_F",0,115,0],
-["Box_East_AmmoVeh_F",0,77,0]
+["Box_NATO_AmmoVeh_F",0,154,0],
+["Box_East_AmmoVeh_F",0,115,0]
 ];
 
 // Vehicles unlocked by military base control
