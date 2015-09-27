@@ -141,7 +141,9 @@ while { dialog && alive player } do {
 		ctrlEnable [ 214, false ];
 		if ( !(isPlayer _selectedmember) && (vehicle _selectedmember == _selectedmember) ) then {
 			ctrlEnable [ 210, true ];
-			ctrlEnable [ 211, true ];
+			if ( leader group player == player ) then {
+				ctrlEnable [ 211, true ];
+			};
 			ctrlEnable [ 212, true ];
 		} else {
 			ctrlEnable [ 210, false ];

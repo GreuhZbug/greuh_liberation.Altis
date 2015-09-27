@@ -29,4 +29,4 @@ while { GRLIB_endgame == 0 } do {
 
 		sleep 1;
 	};
-];
+};

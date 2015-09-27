@@ -25,7 +25,7 @@ FAR_HandleDamage_EH =
 	_killer = _this select 3;
 	_isUnconscious = _unit getVariable "FAR_isUnconscious";
 
-	if (alive _unit && _amountOfDamage >= 0.9 && _isUnconscious == 0 && _bodyPart in ["","head_hit","body"]) then
+	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0) then
 	{
 		_unit setDamage 0.6;
 		_unit allowDamage false;

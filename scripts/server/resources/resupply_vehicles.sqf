@@ -13,4 +13,4 @@ while { true } do {
 		} foreach vehicles;
 		sleep 60;
 	};
-];
+};

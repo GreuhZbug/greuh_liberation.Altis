@@ -101,7 +101,7 @@ while { true } do {
 			};
 		};
 
-		if (( _fobdistance < _distredeploy || count _nearsquad != 0 ) && alive player && vehicle player == player && ((player distance lhd) > 1000) && (leader group player == player) && { !(isPlayer _x) } count (units group player) > 0 ) then {
+		if (( _fobdistance < _distredeploy || count _nearsquad != 0 ) && alive player && vehicle player == player && ((player distance lhd) > 1000) && { !(isPlayer _x) } count (units group player) > 0 ) then {
 			if ( _idact_squad == -1 ) then {
 				_idact_squad = player addAction ["<t color='#80FF80'>" + localize "STR_SQUAD_MANAGEMENT_ACTION" + "</t> <img size='2' image='\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeGroups_ca.paa'/>","scripts\client\ui\squad_management.sqf","",-760,false,true,"","build_confirmed == 0"];
 			};
