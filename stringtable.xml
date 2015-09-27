@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.904</Original>
+        		<Original>Liberation 0.905</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.904</Original>
+                        <Original>v0.905</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -846,6 +846,94 @@
                 <Key ID="STR_VEHICLE_UNLOCKED">
                         <Original>UNLOCKED BY</Original>
                         <French>DEVEROUILLE PAR</French>
+                </Key>
+                <Key ID="STR_SQUAD_MANAGEMENT">
+                        <Original>SQUAD MANAGEMENT</Original>
+                        <French>GESTION D'ESCOUADE</French>
+                </Key>
+                <Key ID="STR_SQUAD_MANAGEMENT_ACTION">
+                        <Original>-- SQUAD MANAGEMENT</Original>
+                        <French>-- GESTION D'ESCOUADE</French>
+                </Key>
+                <Key ID="STR_DEPLOY_ON_MEMBER">
+                        <Original>Replace</Original>
+                        <French>Remplacer</French>
+                </Key>
+                <Key ID="STR_DEPLOY_ON_MEMBER_TOOLTIP">
+                        <Original>You will deploy on the selected squad member and replace them while keeping your current loadout.</Original>
+                        <French>Vous allez vous déployer à la place du member d'escouade selectionné tout en conservant votre équipement actuel.</French>
+                </Key>
+                <Key ID="STR_REMOVE_MEMBER">
+                        <Original>Remove</Original>
+                        <French>Supprimer</French>
+                </Key>
+                <Key ID="STR_REMOVE_MEMBER_TOOLTIP">
+                        <Original>The selected squad member will be deleted.</Original>
+                        <French>Le membre d'escouade sélectionné sera supprimé.</French>
+                </Key>
+                <Key ID="STR_RESUPPLY">
+                        <Original>Resupply</Original>
+                        <French>Réapprovisionner</French>
+                </Key>
+                <Key ID="STR_RESUPPLY_TOOLTIP">
+                        <Original>If the selected squad member is close enough from a resupply point (mobile spawn or FOB) they will get a brand new, full loadout.</Original>
+                        <French>Si le membre d'escouade sélectionné est assez près d'un point d'approvisionnement (spawn mobile ou FOB) il recevra un nouvel équipement complet.</French>
+                </Key>
+                <Key ID="STR_CONFIRM">
+                        <Original>Confirm</Original>
+                        <French>Confirmer</French>
+                </Key>
+                 <Key ID="STR_HEALTH">
+                        <Original>Health:</Original>
+                        <French>Santé :</French>
+                </Key>
+                <Key ID="STR_DISTANCE">
+                        <Original>Distance:</Original>
+                        <French>Distance :</French>
+                </Key>
+                <Key ID="STR_PRIMARY_WEAPON">
+                        <Original>Primary</Original>
+                        <French>Principale</French>
+                </Key>
+                <Key ID="STR_SECONDARY_WEAPON">
+                        <Original>Secondary</Original>
+                        <French>Secondaire</French>
+                </Key>
+                <Key ID="STR_NONE">
+                        <Original>None</Original>
+                        <French>Aucune</French>
+                </Key>
+                <Key ID="STR_DRIVER">
+                        <Original>Driver</Original>
+                        <French>Conducteur</French>
+                </Key>
+                <Key ID="STR_GUNNER">
+                        <Original>Gunner</Original>
+                        <French>Tireur</French>
+                </Key>
+                <Key ID="STR_COMMANDER">
+                        <Original>Commander</Original>
+                        <French>Commandant</French>
+                </Key>
+                <Key ID="STR_PASSENGER">
+                        <Original>Passenger</Original>
+                        <French>Passager</French>
+                </Key>
+                <Key ID="STR_SQUAD_DEPLOY">
+                        <Original>Squad deploy</Original>
+                        <French>Déploiement d'escouade</French>
+                </Key>
+                <Key ID="STR_REMOVE_OK">
+                        <Original>You have deleted the selected squad member.</Original>
+                        <French>Vous avez supprimé le membre de l'escouade sélectionné.</French>
+                </Key>
+                <Key ID="STR_RESUPPLY_OK">
+                        <Original>The selected squad member has been resupplied.</Original>
+                        <French>Le membre de l'escouade sélectionné a été réapprovisionné.</French>
+                </Key>
+                <Key ID="STR_RESUPPLY_KO">
+                        <Original>The selected squad member isn't close enough from a FOB or mobile spawn.</Original>
+                        <French>Le membre de l'escouade sélectionné n'est pas assez proche d'une FOB ou d'un spawn mobile.</French>
                 </Key>
                 <Key ID="STR_TUTO_GOTIT">
                         <Original>Got it!</Original>

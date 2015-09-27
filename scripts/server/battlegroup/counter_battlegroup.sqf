@@ -27,11 +27,11 @@ while { GRLIB_endgame == 0 } do {
 	 {
 	 	if (!(isNull _target_player)) exitWith {};
 
-	 	if (( armor_weight >= 80 ) && ((vehicle _x) isKindOf "Tank")) then {
+	 	if (( armor_weight >= 75 ) && ((vehicle _x) isKindOf "Tank")) then {
 	 		_target_player = _x;
 	 	};
 
-	 	if (( air_weight >= 80 ) && ((vehicle _x) isKindOf "Air")) then {
+	 	if (( air_weight >= 75 ) && ((vehicle _x) isKindOf "Air")) then {
 	 		_target_player = _x;
 	 	};
 
