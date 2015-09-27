@@ -9,7 +9,7 @@ while { true } do {
 			combat_readiness = combat_readiness - 0.25;
 		};
 	} else {
-		if ( combat_readiness < ((count blufor_sectors) * 0.66) && combat_readiness < ( 70 * GRLIB_difficulty_modifier ) ) then {
+		if ( combat_readiness < ((count blufor_sectors) * 0.66) && combat_readiness < ( 80 * GRLIB_difficulty_modifier ) ) then {
 			combat_readiness = combat_readiness + 0.25;
 			stats_readiness_earned = stats_readiness_earned + 0.25;
 		};

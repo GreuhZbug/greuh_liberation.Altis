@@ -54,13 +54,14 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_sidespawn = EAST;
 
 		_building_ai_max = round ((25 + (round (combat_readiness / 5 ))) * _popfactor) ;
-		_building_range = 300;
+		_building_range = 200;
 		_local_capture_size = _local_capture_size * 2;
 		_iedcount = (3 + (floor (random 6))) * GRLIB_difficulty_modifier;
 		if ( _iedcount > 12 ) then { _iedcount = 12 };
 
 		if ( _sector == "bigtown9" || _sector == "bigtown4" ) then { // Special treatment for Kavala and Pyrgos
 			_building_ai_max = _building_ai_max + 15;
+			_building_range = 250;
 			_squad4 = ([] call F_getAdaptiveSquadComp);
 		};
 	};
@@ -73,7 +74,7 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_spawncivs = true;
 		_sidespawn = RESISTANCE;
 		_building_ai_max = round ((floor (12 + (round (combat_readiness / 10 )) + (random 6))) * _popfactor);
-		_building_range = 100;
+		_building_range = 80;
 		_iedcount = (floor (random 5)) * GRLIB_difficulty_modifier;
 		if ( _iedcount > 10 ) then { _iedcount = 10 };
 	};
@@ -94,7 +95,7 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_sidespawn = EAST;
 		_spawncivs = false;
 		_building_ai_max = round ((floor (12 + (round (combat_readiness / 5 )) + (random 6))) * _popfactor);
-		_building_range = 150;
+		_building_range = 125;
 	};
 	if ( _sector in sectors_factory ) then {
 		_vehtospawn = [];

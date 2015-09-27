@@ -101,9 +101,11 @@ while { GRLIB_endgame == 0 } do {
 			( ( ( { alive _x } count ( units _grp ) ) == 0 ) || ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) )
 		};
 
-		if ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) then {
-			if ( !(isNull _civveh) ) then { deleteVehicle _civveh };
-			{ deletevehicle _x } foreach units _grp;
+		if ( count (units _grp) > 0 ) then {
+			if ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) then {
+				if ( !(isNull _civveh) ) then { deleteVehicle _civveh };
+				{ deletevehicle _x } foreach units _grp;
+			};
 		};
 	};
 
