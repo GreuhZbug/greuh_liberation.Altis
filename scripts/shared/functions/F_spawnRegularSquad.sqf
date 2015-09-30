@@ -1,3 +1,5 @@
+diag_log format [ "Spawning regular squad at %1", time ];
+
 params [ "_sector", "_sidespawn", "_squadies_to_spawn" ];
 private [ "_sectorpos", "_spawnpos", "_grp", "_unitidx", "_corrected_amount" ];
 
@@ -25,5 +27,7 @@ if ( _sector in sectors_capture ) then {
 		if ( _unitidx > 9 ) then { _unitidx = 0 };
 	} foreach (units _grp);
 };
+
+diag_log format [ "Done Spawning regular squad at %1", time ];
 
 _grp;

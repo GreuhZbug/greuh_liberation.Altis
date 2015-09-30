@@ -32,3 +32,4 @@ F_adaptiveOpforFactor = compileFinal preprocessFileLineNumbers "scripts\shared\f
 F_getFobName = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getFobName.sqf";
 F_objectProtection = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_objectProtection.sqf";
 F_isBigtownActive = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_isBigtownActive.sqf";
+F_getUnitPositionId = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getUnitPositionId.sqf";

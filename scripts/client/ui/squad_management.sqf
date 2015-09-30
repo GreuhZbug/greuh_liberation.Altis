@@ -1,4 +1,4 @@
-private [ "_dialog", "_membercount", "_memberselection", "_unitname", "_selectedmember", "_cfgVehicles", "_cfgWeapons", "_primary_mags", "_secondary_mags", "_vehstring", "_nearfob", "_fobdistance", "_nearsquad", "_tempgmp", "_destpos", "_destdir", "_resupplied","_firstloop", "_squad_camera", "_targetobject" ];
+private [ "_dialog", "_membercount", "_memberselection", "_unitname", "_selectedmember", "_cfgVehicles", "_cfgWeapons", "_primary_mags", "_secondary_mags", "_vehstring", "_nearfob", "_fobdistance", "_nearsquad", "_tempgmp", "_destpos", "_destdir", "_resupplied","_firstloop", "_squad_camera", "_targetobject", "_isvehicle" ];
 
 GRLIB_squadaction = -1;
 GRLIB_squadconfirm = -1;
@@ -10,6 +10,7 @@ _dialog = createDialog "liberation_squad";
 _cfgVehicles = configFile >> "cfgVehicles";
 _cfgWeapons = configFile >> "cfgWeapons";
 _firstloop = true;
+_isvehicle = false;
 
 waitUntil { dialog };
 
@@ -32,17 +33,15 @@ while { dialog && alive player } do {
 		lbClear 101;
 		{
 			if ( alive _x ) then {
-				_unitname = "";
+				_unitname =  format ["%1. ", [ _x ] call F_getUnitPositionId];
 				if(isPlayer _x) then {
 					if ( count (squadParams _x ) != 0) then {
 						_unitname = "[" + ((squadParams _x select 0) select 0) + "] ";
 					};
 				};
-
 				_unitname = _unitname + ( name _x );
+				lbAdd [ 101, _unitname ];
 			};
-
-			lbAdd [ 101, _unitname ];
 		} foreach (units group player);
 
 		if ( _firstloop ) then {
@@ -57,20 +56,29 @@ while { dialog && alive player } do {
 	};
 
 	if ( !(isNull _selectedmember) ) then {
-		if ( _memberselection != lbCurSel 101 || _resupplied ) then {
+		if ( _memberselection != lbCurSel 101 || _resupplied || ( ( vehicle _selectedmember == _selectedmember && _isvehicle ) || ( vehicle _selectedmember != _selectedmember && !_isvehicle ) ) ) then {
 			_memberselection = lbCurSel 101;
 			_resupplied = false;
 
-			_targetobject attachTo [ _selectedmember, [0, 10, 0.12], "neck" ];
-			_squad_camera attachTo [ _selectedmember, [0, 0.2, 0.12], "neck" ];
+			if (vehicle _selectedmember == _selectedmember) then {
+				_targetobject attachTo [ _selectedmember, [0, 10, 0.05], "neck" ];
+				_squad_camera attachTo [ _selectedmember, [0, 0.2, 0.05], "neck" ];
+				_isvehicle = false;
+			} else {
+				_targetobject attachTo [ vehicle _selectedmember, [0, 20, 2]];
+				_squad_camera attachTo [ vehicle _selectedmember, [0, 0, 2]];
+				_isvehicle = true;
+			};
 			_squad_camera camcommit 0;
+
 
 			"spawn_marker" setMarkerPosLocal (getpos _selectedmember);
 			ctrlMapAnimClear ((findDisplay 5155) displayCtrl 100);
 			((findDisplay 5155) displayCtrl 100) ctrlMapAnimAdd [0, 0.3, getpos _selectedmember];
 			ctrlMapAnimCommit ((findDisplay 5155) displayCtrl 100);
 
-			_unitname = "";
+
+			_unitname = format ["%1. ", [ _selectedmember ] call F_getUnitPositionId];
 			if(isPlayer _selectedmember) then {
 				if ( count (squadParams _selectedmember ) != 0) then {
 					_unitname = "[" + ((squadParams _selectedmember select 0) select 0) + "] ";
@@ -193,6 +201,7 @@ while { dialog && alive player } do {
 
 		if (GRLIB_squadaction == 2) then {
 			deleteVehicle _selectedmember;
+			_resupplied = true;
 			hint localize 'STR_REMOVE_OK';
 		};
 

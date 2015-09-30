@@ -18,23 +18,19 @@ FAR_Player_Actions =
 ////////////////////////////////////////////////
 FAR_HandleDamage_EH =
 {
-	private ["_unit", "_killer", "_amountOfDamage", "_isUnconscious"];
 
-	_unit = _this select 0;
-	_amountOfDamage = _this select 2;
-	_killer = _this select 3;
+	params [ "_unit", "_selectionName", "_amountOfDamage", "_killer", "_projectile", "_hitPartIndex" ];
+	private [ "_isUnconscious" ];
+
 	_isUnconscious = _unit getVariable "FAR_isUnconscious";
 
-	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0) then
+	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0 && !(_selectionName in [ "hands", "legs", "spine1", "spine2", "spine3", "pelvis" ])) then
 	{
 		_unit setDamage 0.6;
 		_unit allowDamage false;
 		_amountOfDamage = 0;
-
-		public_killspam = [_unit, _killer];
-		publicVariable "public_killspam";
-
 		[_unit, _killer] spawn FAR_Player_Unconscious;
+
 	};
 
 	_amountOfDamage
@@ -45,9 +41,7 @@ FAR_HandleDamage_EH =
 ////////////////////////////////////////////////
 FAR_Player_Unconscious =
 {
-	private["_unit", "_killer"];
-	_unit = _this select 0;
-	_killer = _this select 1;
+	params [ "_unit", "_killer" ];
 
 	// Death message
 	if (FAR_EnableDeathMessages && !isNil "_killer" && isPlayer _killer && _killer != _unit) then

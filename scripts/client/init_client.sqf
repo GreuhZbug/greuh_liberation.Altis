@@ -22,6 +22,7 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\fatigue_effects.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\manage_weather.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\offload_diag.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stay_leader.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stop_renegade.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\synchronise_vars.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\spawn\redeploy_manager.sqf";

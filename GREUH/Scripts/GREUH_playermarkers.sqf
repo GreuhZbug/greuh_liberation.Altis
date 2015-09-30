@@ -92,7 +92,7 @@ while { true } do {
 		{
 			_squadai = _squadais select ( _squadai_markers find _x );
 
-			_name = ((units (group player)) find _squadai) + 1;
+			_name = [ _squadai ] call F_getUnitPositionId;
 
 			_x setMarkerTypeLocal "mil_triangle";
 			_x setMarkerSizeLocal [0.6,0.6];
@@ -120,7 +120,7 @@ while { true } do {
 				if (isPlayer _x) then {
 					_name = _name + name _x;
 				} else {
-					_name = _name +  format  [ "%1", ((units (group _x)) find _x) + 1 ];
+					_name = _name +  format [ "%1", [ _x ] call F_getUnitPositionId ];
 				};
 
 				if( (_datcrew find _x) != ((count _datcrew) - 1) ) then {
