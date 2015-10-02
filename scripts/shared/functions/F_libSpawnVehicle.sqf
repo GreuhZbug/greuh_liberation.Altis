@@ -1,6 +1,8 @@
 params [ "_sectorpos", "_classname"];
 private  [ "_newvehicle", "_spawnpos" ];
 
+diag_log format [ "Spawning vehicle %1 at %2", _classname , time ];
+
 _newvehicle = objNull;
 
 _spawnpos = [0,0,0];
@@ -42,4 +44,7 @@ _newvehicle setdamage 0;
 
 [ _newvehicle ] spawn csat_abandon_vehicle;
 
+diag_log format [ "Done Spawning vehicle %1 at %2", _classname , time ];
+
 _newvehicle
+

@@ -1,3 +1,5 @@
+diag_log format [ "Spawning building squad at %1", time ];
+
 params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos", "_sidespawn" ];
 private [ "_squadtospawnnn", "_infsquad_classnames", "_usedposits", "_nextposit", "_remainingposits", "_grp", "_everythingspawned", "_nextunit", "_position_indexes", "_position_count", "_idxposit", "_groupunitscount" ];
 
@@ -49,5 +51,7 @@ _idxposit = 0;
 if ( !(isNull _grp)) then {
 	_everythingspawned = _everythingspawned + (units _grp);
 };
+
+diag_log format [ "Done Spawning building squad at %1", time ];
 
 _everythingspawned

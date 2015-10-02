@@ -27,6 +27,10 @@ while { GRLIB_endgame == 0 } do {
 
 		} foreach ( sectors_allSectors - blufor_sectors );
 
+		diag_log format [ "Full sector scan at %1, active sectors: %2", time, active_sectors ];
+
 		sleep 1;
 	};
+
+	diag_log format [ "WHOOPS YOU REALLY SHOULDN'T BE HERE at %1", time ];
 };

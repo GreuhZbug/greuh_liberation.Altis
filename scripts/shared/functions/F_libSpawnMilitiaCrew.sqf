@@ -1,6 +1,8 @@
 params [ "_vehicle" ];
 private [ "_grp", "_vehcrew" ];
 
+diag_log format [ "Spawning militia crew at %1", time ];
+
 _grp = createGroup RESISTANCE;
 _vehcrew = [];
 while { count units _grp < 3 } do {
@@ -16,3 +18,5 @@ while { count units _grp < 3 } do {
 		[ _x ] call loadout_crewman;
 	};
 } foreach (units _grp);
+
+diag_log format [ "Done Spawning militia crew at %1", time ];
