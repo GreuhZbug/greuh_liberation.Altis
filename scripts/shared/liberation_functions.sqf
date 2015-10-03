@@ -33,3 +33,5 @@ F_getFobName = compileFinal preprocessFileLineNumbers "scripts\shared\functions\
 F_objectProtection = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_objectProtection.sqf";
 F_isBigtownActive = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_isBigtownActive.sqf";
 F_getUnitPositionId = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getUnitPositionId.sqf";
+F_getCommander = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getCommander.sqf";
+F_fetchPermission = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_fetchPermission.sqf";

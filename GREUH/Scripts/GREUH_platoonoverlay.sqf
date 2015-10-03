@@ -1,5 +1,12 @@
 platoon_icon1 = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
 platoon_icon2 = "\A3\ui_f\data\igui\cfg\cursors\board_ca.paa";
+soldier_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa";
+formation_leader_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa";
+commander_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa";
+group_leader_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
+nametags_distance = 40.0;
+
+private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha", "_textalpha", "_size", "_screenpos", "_grouppos", "_distlabel", "_dist", "_nextunit", "_color", "_drawicon", "_displayname", "_iconpos" ];
 
 ["platoon_overlay", "onEachFrame", {
 
@@ -7,43 +14,43 @@ platoon_icon2 = "\A3\ui_f\data\igui\cfg\cursors\board_ca.paa";
 		_groups = [];
 		{
 			if (
-			(!(_x in _groups)) && 
-			(side _x == side player) && 
+			(!(_x in _groups)) &&
+			(side _x == side player) &&
 			((count units _x > 1) || ((count units _x == 1) && (leader _x != player))) &&
 			(isplayer (leader _x))
-			) then { _groups = _groups + [_x]; }; 
+			) then { _groups pushback _x; };
 		} foreach allGroups;
 
 		{
 			if (count (units _x) != 0) then {
-				totalx = 0; 
-				totaly = 0;
-				totalz = 0;
+				_totalx = 0;
+				_totaly = 0;
+				_totalz = 0;
 				_grouppos = [];
-				unitstocount = [];
-				{ 
+				_unitstocount = [];
+				{
 					if ( _x distance (leader group _x) < 300) then {
-						unitstocount = unitstocount + [_x];
-						totalx = totalx + (getpos _x select 0); 
-						totaly = totaly + (getpos _x select 1); 
-						totalz = totalz + (getpos _x select 2); 
+						_unitstocount pushback _x;
+						_totalx = _totalx + (getpos _x select 0);
+						_totaly = _totaly + (getpos _x select 1);
+						_totalz = _totalz + (getpos _x select 2);
 					};
 				} foreach units _x;
-				totalx = totalx / (count unitstocount);
-				totaly = totaly / (count unitstocount);
-				totalz = totalz / (count unitstocount);
-				
-				if ( totalz > 2.1 ) then { 
-					_grouppos = [totalx, totaly, totalz + 10]; 
-				} else { 
-					_grouppos = [totalx, totaly, 2.1]; 
+				_totalx = _totalx / (count _unitstocount);
+				_totaly = _totaly / (count _unitstocount);
+				_totalz = _totalz / (count _unitstocount);
+
+				if ( _totalz > 2.1 ) then {
+					_grouppos = [_totalx, _totaly, _totalz + 10];
+				} else {
+					_grouppos = [_totalx, _totaly, 2.1];
 				};
 				_alpha = 0.5;
 				_textalpha = 0;
 				_size = 0.8;
-				
+
 				_screenpos = worldToScreen _grouppos;
-				
+
 				if (count _screenpos != 0) then {
 					if ( (abs (((worldToScreen _grouppos) select 0) - 0.5) < 0.06) && (abs (((worldToScreen _grouppos) select 1) - 0.5) < 0.08)) then {
 						_alpha = 1;
@@ -51,7 +58,7 @@ platoon_icon2 = "\A3\ui_f\data\igui\cfg\cursors\board_ca.paa";
 						_size = 1;
 					};
 				};
-				
+
 				_dist = player distance _grouppos;
 				_distlabel = "";
 				if ( _dist > 200 ) then {
@@ -61,14 +68,67 @@ platoon_icon2 = "\A3\ui_f\data\igui\cfg\cursors\board_ca.paa";
 						_distlabel = format [" (%1m)", (floor (_dist / 100)) * 100];
 					};
 				};
-				
+
 				_color = [0.8,1,0.2,_alpha];
 				if ( _x == group player) then { _color = [1,0.9,0.3,_alpha] };
 				drawIcon3D [platoon_icon1, _color, _grouppos, _size / 2, _size / 2,0, format ["%1 - %2%3",groupID _x, name (leader _x),_distlabel], 2, 0.03 * _textalpha, "puristaMedium"];
 				drawIcon3D [platoon_icon2, _color, _grouppos, _size, _size,0, "", 2, 0.04, "puristaMedium"];
 			};
 		} foreach _groups;
-	
+
 	};
-	
+
+	if ( show_nametags ) then {
+		{
+			_nextunit = _x;
+			if ( _nextunit distance player < nametags_distance && alive _nextunit && _nextunit != player && (vehicle player) != (vehicle _nextunit) && (side group _nextunit == WEST) ) then {
+
+				_alpha = 1;
+				if ( _nextunit distance player > (nametags_distance / 2) ) then {
+					_alpha = 1 - ((((_nextunit distance player) - (nametags_distance / 2)) * 2) / nametags_distance);
+				};
+
+				_color = [];
+				if ( _nextunit in (units group player)) then {
+
+					switch ( assignedTeam _nextunit ) do {
+						case "BLUE" : { _color = [0.15,0.35,1.0,_alpha] };
+						case "RED" : { _color = [0.8,0,0,_alpha] };
+						case "YELLOW" : { _color = [0.85,0.85,0,_alpha] };
+						case "GREEN" : { _color = [0,0.75,0,_alpha] };
+						default { _color = [0.9,0.9,0.9,_alpha] };
+					};
+
+				} else {
+					_color = [0.92,0.7,0.25,_alpha];
+				};
+
+				_drawicon = soldier_icon;
+				if ( _nextunit == [] call F_getCommander ) then {
+					_drawicon = commander_icon;
+				} else {
+					if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {
+						_drawicon = group_leader_icon;
+					} else {
+						if ( ( isFormationLeader _nextunit ) && ( count formationMembers _nextunit > 1 ) ) then {
+							_drawicon = formation_leader_icon;
+						};
+					};
+				};
+
+				_displayname = "";
+				if(count (squadParams _nextunit) != 0) then {
+					_displayname = "[" + ((squadParams _nextunit select 0) select 0) + "] ";
+				};
+				_displayname = _displayname + ( name _nextunit );
+
+				_height = 2 + ((player distance _nextunit) / (0.75 * nametags_distance));
+
+				_iconpos = [  getPosATL _nextunit select 0,  getPosATL _nextunit select 1,  (getPosATL _nextunit select 2) + _height ];
+
+				drawIcon3D [ _drawicon, _color, _iconpos , 0.75, 0.75,0, format [ "%1", _displayname] , 2, 0.032, "puristaMedium"];
+			};
+		} foreach allUnits;
+	};
+
 }] call BIS_fnc_addStackedEventHandler;

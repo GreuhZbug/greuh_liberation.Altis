@@ -1,6 +1,28 @@
 
-// For this entire file: classnames that come from mods you don't have
-// will be filtered out and won't cause any issues. You just won't see them ingame.
+// For this entire file: classnames that come from mods you don't have will be filtered out and won't cause any issues. You just won't see them ingame.
+
+
+
+
+
+// *** SUPPORT STUFF ***
+
+// Each of these should be unique, the same classnames for different purposes may cause various unpredictable issues with player actions. Or not. Just don't try.
+FOB_typename = "Land_Cargo_HQ_V1_F";
+FOB_box_typename = "B_Slingload_01_Cargo_F";
+FOB_truck_typename = "B_Truck_01_box_F";
+Arsenal_typename = "B_supplyCrate_F";
+Respawn_truck_typename = "B_Truck_01_medical_F";
+huron_typename = "B_Heli_Transport_03_unarmed_F";
+ammobox_b_typename = "Box_NATO_AmmoVeh_F";
+ammobox_o_typename = "Box_East_AmmoVeh_F";
+opfor_ammobox_transport = "O_Truck_03_transport_F";
+
+
+
+
+
+// *** FRIENDLIES ***
 
 // Each array below represents one page of the build menu
 // Format : [ "classname", manpower, ammo, fuel ]
@@ -120,10 +142,10 @@ buildings = [
 ];
 
 support_vehicles = [
-["B_supplyCrate_F",2,0,0],
-["B_Truck_01_medical_F",20,0,5],
-["B_Slingload_01_Cargo_F",30,50,0],
-["B_Truck_01_box_F",30,50,5],
+[Arsenal_typename,2,0,0],
+[Respawn_truck_typename,20,0,5],
+[FOB_box_typename,30,50,0],
+[FOB_truck_typename,30,50,5],
 ["B_APC_Tracked_01_CRV_F",0,30,10],
 ["C_Offroad_01_repair_F",5,0,2],
 ["B_Truck_01_Repair_F",10,0,5],
@@ -141,10 +163,6 @@ support_vehicles = [
 ["Box_East_AmmoVeh_F",0,115,0]
 ];
 
-// Vehicles unlocked by military base control
-elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd","usaf_f22","USAF_F35A"
-];
-
 // Pre-made squads for the commander build menu
 blufor_squad_inf_light = [ "B_Soldier_SL_F","B_Soldier_TL_F","B_Soldier_GL_F","B_soldier_AR_F","B_Soldier_GL_F","B_medic_F","B_Soldier_LAT_F","B_Soldier_F","B_Soldier_F"];
 blufor_squad_inf = [ "B_Soldier_SL_F","B_Soldier_TL_F","B_Soldier_AR_F","B_HeavyGunner_F","B_medic_F","B_Soldier_GL_F","B_Soldier_LAT_F","B_Soldier_LAT_F","B_soldier_M_F","B_Sharpshooter_F" ];
@@ -154,7 +172,7 @@ blufor_squad_recon = [ "B_recon_TL_F","B_recon_F","B_recon_exp_F","B_recon_medic
 blufor_squad_para = [ "B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F","B_soldier_PG_F" ];
 
 // [ squad, manpower, ammo, fuel ]
-// The game doesn't calculate the actual cost of the squads when they're being bought and instead use the costs below (especially ammo),
+// The game doesn't calculate the actual cost of the squads when they're being bought and instead uses the costs below (especially ammo),
 // but once they're spawned the cost of each individual unit will be used to calculate caps (especially manpower and fuel)
 squads = [
 [blufor_squad_inf_light,20,0,0],
@@ -165,33 +183,35 @@ squads = [
 [blufor_squad_para,20,0,0]
 ];
 
-// All the UAVs you'll use must be declared here for technical purposes, otherwise there will be buggy issues
+// All the UAVs must be declared here, otherwise there shall be UAV controlling issues. Namely: you won't be able to control them.
 uavs = [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
 
-// Each of these should be unique, the same classnames for different purposes may cause various issues with actions
-FOB_typename = "Land_Cargo_HQ_V1_F";
-FOB_box_typename = "B_Slingload_01_Cargo_F";
-FOB_truck_typename = "B_Truck_01_box_F";
-Arsenal_typename = "B_supplyCrate_F";
-Respawn_truck_typename = "B_Truck_01_medical_F";
-huron_typename = "B_Heli_Transport_03_unarmed_F";
-ammobox_b_typename = "Box_NATO_AmmoVeh_F";
-ammobox_o_typename = "Box_East_AmmoVeh_F";
-opfor_ammobox_transport = "O_Truck_03_transport_F";
+// Vehicles unlocked through military base control. The game will pick which base unlocks which at the start of each new campaign.
+elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd","usaf_f22","USAF_F35A"];
 
-// Guerillas. It's only classnames the game will pick from, not the actual squad that will spawn, unlike the CSAT pre-made squads below
+// Everything the AI troups should be able to resupply from
+ai_resupply_sources = [ Respawn_truck_typename, huron_typename, Arsenal_typename, "B_Slingload_01_Ammo_F", "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
+
+
+
+
+
+// *** BADDIES ***
+
+// Guerillas. It's only classnames the game will pick from, not the actual squad that will spawn, unlike the CSAT pre-made squads further below
 militia_squad = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
-// Same principle, only an array with everything for the game to randomly choose into
+
+// Same principle, only an array with everything for the game to randomly choose from
 militia_vehicles = [ "rhs_btr70_chdkz","rhs_zsu234_chdkz","I_MU_mercs_Offroad_01_armed_F","I_MU_mercs_Offroad_01_armed_F","B_G_Offroad_01_armed_F","B_G_Offroad_01_armed_F","LOP_AFR_BTR60","LOP_AFR_M113_W","LOP_AFR_T72BA","I_MU_mercs_Offroad_01_armed_F"];
 
-// All the CSAT pre-made squads
+// All the CSAT pre-made squads. This is exactly what will spawn so take care with the number of units you put in each.
 opfor_squad_low_intensity = ["O_Soldier_TL_F","O_Soldier_AR_F","O_medic_F","O_Soldier_LAT_F","O_Soldier_F","O_Soldier_F","O_Soldier_lite_F","O_Soldier_lite_F"];
 opfor_squad_8_standard = ["O_Soldier_SL_F","O_Soldier_TL_F","O_Soldier_AR_F","O_HeavyGunner_F","O_medic_F","O_soldier_M_F","O_Soldier_GL_F","O_Soldier_LAT_F"];
 opfor_squad_8_infkillers = ["O_Soldier_SL_F","O_Soldier_AR_F","O_Soldier_AR_F","O_HeavyGunner_F","O_medic_F","O_soldier_M_F","O_Sharpshooter_F","O_sniper_F"];
 opfor_squad_8_tankkillers = ["O_Soldier_SL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_LAT_F","O_Soldier_LAT_F","O_Soldier_AT_F","O_Soldier_AT_F","O_Soldier_AT_F"];
 opfor_squad_8_airkillers = ["O_Soldier_SL_F","O_medic_F","O_Soldier_AR_F","O_Soldier_LAT_F","O_Soldier_LAT_F","O_Soldier_AA_F","O_Soldier_AA_F","O_Soldier_AA_F"];
 
-// Single units that will be used for secondary objectives and cargo posts garrisons
+// Single units that are used for secondary objectives and cargo posts garrisons
 opfor_sentry = "O_Soldier_lite_F";
 opfor_lookout_1 = "O_Sharpshooter_F";
 opfor_lookout_2 = "O_HeavyGunner_F";
@@ -203,10 +223,13 @@ opfor_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rc
 
 // All the vehicles that can spawn as battlegroup members, again the game will pick randomly
 opfor_battlegroup_vehicles = ["O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_MBT_02_cannon_F","O_MBT_02_cannon_F","O_APC_Tracked_02_AA_F","O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_bench_F"];
+// Same, with lighter choices to be used  when the alert level is low
 opfor_battlegroup_vehicles_low_intensity = ["O_APC_Tracked_02_cannon_F","O_APC_Wheeled_02_rcws_F","O_MRAP_02_hmg_F","O_MRAP_02_hmg_F","O_MRAP_02_gmg_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F"];
+
 // All the vehicles that can spawn as battlegroup members (see above) and hold 8 soldiers as passengers.
 // If something can't hold all 8 soldiers then buggy behaviours may occur
 opfor_troup_transports = ["O_APC_Wheeled_02_rcws_F","O_Truck_03_covered_F","O_Heli_Transport_04_bench_F", "O_Truck_03_transport_F"];
+
 // Battlegroup members that will need to spawn in flight. Should be only helos but, who knows
 opfor_choppers = ["O_Heli_Attack_02_F","O_Heli_Light_02_F","O_Heli_Transport_04_bench_F"];
 
@@ -216,6 +239,7 @@ opfor_air = ["O_Plane_CAS_02_F"];
 // Civilians to randomly choose from
 civilians = ["C_man_1","C_man_polo_6_F","C_man_polo_3_F","C_man_polo_2_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_1_F","C_man_p_beggar_F","C_man_1_2_F","C_man_p_fugitive_F","C_man_hunter_1_F","C_journalist_F","C_man_shorts_2_F","C_man_w_worker_F"];
 civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F" ];
+
 
 
 

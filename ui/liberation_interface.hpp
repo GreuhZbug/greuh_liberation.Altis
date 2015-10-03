@@ -9,3 +9,4 @@
 #include "liberation_endscreen.hpp"
 #include "liberation_deathscreen.hpp"
 #include "liberation_squad.hpp"
+#include "liberation_permissions.hpp"

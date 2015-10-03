@@ -62,7 +62,7 @@ while { dialog && alive player } do {
 
 			if (vehicle _selectedmember == _selectedmember) then {
 				_targetobject attachTo [ _selectedmember, [0, 10, 0.05], "neck" ];
-				_squad_camera attachTo [ _selectedmember, [0, 0.2, 0.05], "neck" ];
+				_squad_camera attachTo [ _selectedmember, [0, 0.25, 0.05], "neck" ];
 				_isvehicle = false;
 			} else {
 				_targetobject attachTo [ vehicle _selectedmember, [0, 20, 2]];
@@ -182,7 +182,7 @@ while { dialog && alive player } do {
 				_fobdistance = _selectedmember distance _nearfob;
 			};
 
-			_nearsquad = ( (getpos _selectedmember) nearEntities [ [ Respawn_truck_typename, huron_typename ] , 30 ] );
+			_nearsquad = ( (getpos _selectedmember) nearEntities [ ai_resupply_sources , 30 ] );
 
 			if ( _fobdistance < 100 || count _nearsquad > 0 ) then {
 
