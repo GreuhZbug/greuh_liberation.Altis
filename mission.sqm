@@ -3071,7 +3071,7 @@ class Mission
 		};
 		class Item107
 		{
-			position[]={13422.516,49.023979,6625.2192};
+			position[]={14564.989,11.9961,6255.0591};
 			name="ghost_spot";
 			type="Empty";
 		};

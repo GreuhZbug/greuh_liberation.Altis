@@ -6,6 +6,7 @@ desiredviewdistance_inf = viewDistance;
 desiredviewdistance_veh = viewDistance;
 desiredviewdistance_obj = 75;
 show_teammates = false;
+show_nametags = false;
 show_platoon = false;
 desired_vehvolume = 100;
 
@@ -20,6 +21,12 @@ if ( !isNil "greuh_options_profile" ) then {
 		desired_vehvolume = greuh_options_profile select 5;
 		if ( isNil "desired_vehvolume" ) then {
 			desired_vehvolume = 100;
+		};
+	};
+	if ( count greuh_options_profile > 6 ) then {
+		show_nametags = greuh_options_profile select 6;
+		if ( isNil "show_nametags" ) then {
+			show_nametags = false;
 		};
 	};
 };

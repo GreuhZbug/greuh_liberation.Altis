@@ -83,6 +83,8 @@ while { dialog && alive player } do {
 
 	if ( GREUH_allow_platoonview ) then { ctrlShow [612, show_platoon]; };
 	if ( GREUH_allow_mapmarkers ) then { ctrlShow [912, show_teammates]; };
+	ctrlShow [ 962, show_nametags ];
+
 	if ( GREUH_allow_customsquads ) then {
 		lbClear 515;
 		{
@@ -105,6 +107,6 @@ while { dialog && alive player } do {
 
 if (!alive player) then { closeDialog 0 };
 
-greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj, show_teammates, show_platoon, desired_vehvolume ];
+greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj, show_teammates, show_platoon, desired_vehvolume, show_nametags ];
 profileNamespace setVariable [ "GREUH_OPTIONS_PROFILE",greuh_options_profile ];
 saveProfileNamespace;
