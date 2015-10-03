@@ -935,6 +935,133 @@
                         <Original>The selected squad member isn't close enough from a FOB or mobile spawn.</Original>
                         <French>Le membre de l'escouade sélectionné n'est pas assez proche d'une FOB ou d'un spawn mobile.</French>
                 </Key>
+                <Key ID="STR_PERMISSIONS_TITLE">
+                        <Original>PERMISSIONS MANAGEMENT</Original>
+                        <French>GESTION DES PERMISSIONS</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_LIGHT">
+                        <Original>Light vehicles</Original>
+                        <French>Véhicules légers</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_ARMORED">
+                        <Original>Armored vehicles</Original>
+                        <French>Véhicules blindés</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_AIR">
+                        <Original>Air vehicles</Original>
+                        <French>Véhicules aériens</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_CONSTRUCTION">
+                        <Original>Construction</Original>
+                        <French>Construction</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_RECYCLING">
+                        <Original>Recycling</Original>
+                        <French>Recyclage</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_MISC">
+                        <Original>Others</Original>
+                        <French>Autres</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_ALL">
+                        <Original>All</Original>
+                        <French>Toutes</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_NONE">
+                        <Original>None</Original>
+                        <French>Aucune</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_LIGHT">
+                        <Original>Allows the player to operate light vehicles as driver and gunner.</Original>
+                        <French>Autorise le joueur à utiliser les véhicules légers en tant que conducteur ou tireur.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_ARMORED">
+                        <Original>Allows the player to operate armored vehicles as driver, gunner and commander.</Original>
+                        <French>Autorise le joueur à utiliser les véhicules blindés en tant que conducteur, tireur ou commandant.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_AIR">
+                        <Original>Allows the player to operate air vehicles as driver and gunner.</Original>
+                        <French>Autorise le joueur à utiliser les véhicules aériens en tant que conducteur ou tireur.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_CONSTRUCTION">
+                        <Original>Allows the player to use the BUILD menu.</Original>
+                        <French>Autorise le joueur à utiliser le menu CONSTRUCTION.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_RECYCLING">
+                        <Original>Allows the player to use the RECYCLE action.</Original>
+                        <French>Autorise le joueur à utiliser l'action RECYCLER.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_MISC">
+                        <Original>Allows the player to use other actions: unflip, ammo box manipulation, prisoners capture, etc.</Original>
+                        <French>Autorise le joueur à utiliser les autres actions : retournement de véhicule, manipulation des boites de munition, capture de prisoniers, etc.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_ALL">
+                        <Original>Gives all permissions to the player.</Original>
+                        <French>Donne toutes les permissions au joueur.</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_TOOLTIP_NONE">
+                        <Original>Removes all permissions from the player.</Original>
+                        <French>Supprime toutes les permissions du joueur.</French>
+                </Key>
+                <Key ID="STR_COMMANDER_ACTION">
+                        <Original>-- PERMISSIONS</Original>
+                        <French>-- PERMISSIONS</French>
+                </Key>
+                <Key ID="STR_SAVE_CHANGES">
+                        <Original>Save Changes</Original>
+                        <French>Sauvegarder</French>
+                </Key>
+                <Key ID="STR_PERMISSIONS_PARAM">
+                        <Original>Permissions Management</Original>
+                        <French>Gestion des Permissions</French>
+                </Key>
+                <Key ID="STR_PERMISSION_NO_LIGHT">
+                        <Original>You don't have permission from the commander to use light vehicles.</Original>
+                        <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules légers.</French>
+                </Key>
+                <Key ID="STR_PERMISSION_NO_ARMOR">
+                        <Original>You don't have permission from the commander to use armored vehicles.</Original>
+                        <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules blindés.</French>
+                </Key>
+                <Key ID="STR_PERMISSION_NO_AIR">
+                        <Original>You don't have permission from the commander to use air vehicles.</Original>
+                        <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules aériens.</French>
+                </Key>
+                <Key ID="STR_PERMISSION_WARNING">
+                        <Original>No permissions have been set. The commander must setup the permissions to allow player actions and vehicle usage. Alternatively, the permission system can be disabled from the mission options.</Original>
+                        <French>Aucune permission n'a été définie. Le commandant doit configurer les permissions pour permettre aux joueurs d'effectuer des actions et d'utiliser les véhicules. Sinon, le système de permissions peut être désactivé dans les options de mission.</French>
+                </Key>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <Key ID="STR_TUTO_GOTIT">
                         <Original>Got it!</Original>
                         <French>J'ai pigé !</French>

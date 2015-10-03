@@ -11,10 +11,8 @@ _dialog = createDialog "liberation_build";
 waitUntil { dialog };
 
 _iscommandant = false;
-if ( !isNil "commandant" ) then {
-	if ( player == commandant ) then {
-		_iscommandant = true;
-	};
+if ( player == [] call F_getCommander ) then {
+	_iscommandant = true;
 };
 
 ctrlShow [ 108, _iscommandant ];

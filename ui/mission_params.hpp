@@ -12,6 +12,18 @@ class Params
 		texts[] = { $STR_PARAMS_DIFFICULTY1, $STR_PARAMS_DIFFICULTY2, $STR_PARAMS_DIFFICULTY3, $STR_PARAMS_DIFFICULTY4, $STR_PARAMS_DIFFICULTY5, $STR_PARAMS_DIFFICULTY6, $STR_PARAMS_DIFFICULTY7, $STR_PARAMS_DIFFICULTY8 };
 		default = 1;
 	};
+	class Unitcap{
+		title = $STR_PARAMS_UNITCAP;
+		values[] = {0.5,0.75,1,1.25,1.5,2};
+		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
+		default = 1;
+	};
+	class AdaptToPlayercount{
+		title = $STR_PARAM_ADAPT_TO_PLAYERCOUNT;
+		values[] = {1,0};
+		texts[] = {$STR_PARAMS_ENABLED,$STR_PARAMS_DISABLED};
+		default = 1;
+	};
 	class DayDuration {
 		title = $STR_PARAMS_DAYDURATION;
 		values[] = { 48, 24, 16, 12, 9.6, 8, 6.8, 6, 4.8, 4, 3, 2.4, 2, 1.6, 1, 0.66, 0.5, 0.375, 0.25, 0.1875, 0.125, 0.11 };
@@ -23,6 +35,12 @@ class Params
 		values[] = { 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 3, 5, 10, 20, 50 };
 		texts[] = { "x0.25", "x0.5", "x0.75", "x1", "x1.25","x1.5","x2","x3","x5","x10","x20","x50" };
 		default = 1;
+	};
+	class Spacer1 {
+		title = "";
+		values[] = { "" };
+		texts[] = { "" };
+		default = "";
 	};
 	class Fatigue {
 		title = $STR_PARAMS_FATIGUE;
@@ -36,6 +54,42 @@ class Params
 		texts[] = { $STR_PARAMS_REVIVE3, $STR_PARAMS_REVIVE2, $STR_PARAMS_REVIVE1, $STR_PARAMS_DISABLED };
 		default = 3;
 	};
+	class TeamkillPenalty{
+		title = $STR_PARAM_TEAMKILL_PENALTY;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
+	class Civilians{
+		title = $STR_PARAMS_CIVILIANS;
+		values[] = {0,0.5,1,2};
+		texts[] = {$STR_PARAMS_CIVILIANS1,$STR_PARAMS_CIVILIANS2,$STR_PARAMS_CIVILIANS3,$STR_PARAMS_CIVILIANS4};
+		default = 1;
+	};
+	class PassiveIncome{
+		title = $STR_PARAM_PASSIVE_INCOME;
+		values[] = {1,0};
+		texts[] = { $STR_YES, $STR_NO };
+		default = 0;
+	};
+	class Space2 {
+		title = "";
+		values[] = { "" };
+		texts[] = { "" };
+		default = "";
+	};
+	class TechnicalOptions{
+		title = $STR_PARAMS_TECHNICALOPTIONS;
+		values[] = { "" };
+		texts[] = { "" };
+		default = "";
+	};
+	class Permissions{
+		title = $STR_PERMISSIONS_PARAM;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
+	};
 	class Introduction {
 		title = $STR_PARAMS_INTRO;
 		values[] = { 1, 0 };
@@ -47,48 +101,6 @@ class Params
 		values[] = { 1, 0 };
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
 		default = 1;
-	};
-	class Unitcap{
-		title = $STR_PARAMS_UNITCAP;
-		values[] = {0.5,0.75,1,1.25,1.5,2};
-		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
-		default = 1;
-	};
-	class AdaptToPlayercount{
-		title = $STR_PARAM_ADAPT_TO_PLAYERCOUNT;
-		values[] = {1,0};
-		texts[] = {$STR_PARAMS_ENABLED,$STR_PARAMS_DISABLED};
-		default = 1;
-	};
-	class Civilians{
-		title = $STR_PARAMS_CIVILIANS;
-		values[] = {0,0.5,1,2};
-		texts[] = {$STR_PARAMS_CIVILIANS1,$STR_PARAMS_CIVILIANS2,$STR_PARAMS_CIVILIANS3,$STR_PARAMS_CIVILIANS4};
-		default = 1;
-	};
-	class TeamkillPenalty{
-		title = $STR_PARAM_TEAMKILL_PENALTY;
-		values[] = {1,0};
-		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 0;
-	};
-	class PassiveIncome{
-		title = $STR_PARAM_PASSIVE_INCOME;
-		values[] = {1,0};
-		texts[] = { $STR_YES, $STR_NO };
-		default = 0;
-	};
-	class Spacer {
-		title = "";
-		values[] = { "" };
-		texts[] = { "" };
-		default = "";
-	};
-	class TechnicalOptions{
-		title = $STR_PARAMS_TECHNICALOPTIONS;
-		values[] = { "" };
-		texts[] = { "" };
-		default = "";
 	};
 	class FirstFob {
 		title = $STR_PARAMS_FIRSTFOB;

@@ -1,33 +1,33 @@
-private [ "_blufor_ai_groups", "_localgroup", "_is_ai_only" ];
+private [ "_blufor_ai_groups", "_localgroup", "_is_ai_only", "_commander" ];
 
 while { GRLIB_endgame == 0 } do {
 	while { GRLIB_endgame == 0 } do {
 
-		if ( !(isNil "commandant") ) then {
-			if ( !(isNull commandant)) then {
+		_commander = [] call F_getCommander;
 
-				_blufor_ai_groups = [];
+		if ( !(isNull _commander ) ) then {
 
-				{
-					if ( side _x == WEST ) then {
-						_localgroup = _x;
-						_is_ai_only = true;
+			_blufor_ai_groups = [];
 
-						{ if ( isPlayer _x ) then { _is_ai_only = false; }; } foreach units _localgroup;
+			{
+				if ( side _x == WEST ) then {
+					_localgroup = _x;
+					_is_ai_only = true;
 
-						if ( _is_ai_only ) then { _blufor_ai_groups pushback _localgroup };
+					{ if ( isPlayer _x ) then { _is_ai_only = false; }; } foreach units _localgroup;
 
-					};
-				} foreach ( [ allGroups, { groupOwner _x != owner commandant } ] call BIS_fnc_conditionalSelect );
+					if ( _is_ai_only ) then { _blufor_ai_groups pushback _localgroup };
 
-				if ( count _blufor_ai_groups > 0 ) then {
-					{
-						if ( ( ( leader _x ) distance lhd ) > 500 && ( groupOwner _x != owner commandant ) ) then {
-							_x setGroupOwner (owner commandant);
-							sleep 1;
-						};
-					} foreach _blufor_ai_groups;
 				};
+			} foreach ( [ allGroups, { groupOwner _x != owner _commander } ] call BIS_fnc_conditionalSelect );
+
+			if ( count _blufor_ai_groups > 0 ) then {
+				{
+					if ( ( ( leader _x ) distance lhd ) > 500 && ( groupOwner _x != owner _commander ) ) then {
+						_x setGroupOwner (owner _commander);
+						sleep 1;
+					};
+				} foreach _blufor_ai_groups;
 			};
 		};
 

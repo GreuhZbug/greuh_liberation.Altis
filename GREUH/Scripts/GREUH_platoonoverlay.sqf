@@ -104,7 +104,7 @@ private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha",
 				};
 
 				_drawicon = soldier_icon;
-				if ( typeOf _nextunit == "B_officer_F") then {
+				if ( _nextunit == [] call F_getCommander ) then {
 					_drawicon = commander_icon;
 				} else {
 					if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {

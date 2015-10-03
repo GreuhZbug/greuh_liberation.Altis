@@ -45,6 +45,7 @@ infantry_weight = 33;
 armor_weight = 33;
 air_weight = 33;
 GRLIB_vehicle_to_military_base_links = [];
+GRLIB_permissions = [];
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
@@ -123,6 +124,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		GRLIB_vehicle_to_military_base_links = greuh_liberation_savegame select 11;
 	};
 
+	if ( count greuh_liberation_savegame > 12 ) then {
+		GRLIB_permissions = greuh_liberation_savegame select 12;
+	};
+
 	_correct_fobs = [];
 	{
 		_next_fob = _x;
@@ -193,7 +198,9 @@ if ( count GRLIB_vehicle_to_military_base_links == 0 ) then {
 };
 publicVariable "GRLIB_vehicle_to_military_base_links";
 
-uiSleep 0.5;
+publicVariable "GRLIB_permissions";
+
+uiSleep 1;
 save_is_loaded = true; publicVariable "save_is_loaded";
 
 while { true } do {
@@ -275,7 +282,7 @@ while { true } do {
 			_stats pushback stats_readiness_earned;
 
 			greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day,combat_readiness, date select 0, date select 1, date select 2, resources_ammo, _stats,
-			[ infantry_weight, armor_weight, air_weight ], GRLIB_vehicle_to_military_base_links ];
+			[ infantry_weight, armor_weight, air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions ];
 
 			profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
 			saveProfileNamespace;
