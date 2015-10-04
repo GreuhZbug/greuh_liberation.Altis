@@ -118,7 +118,8 @@ static_vehicles = [
 ["B_GMG_01_F",0,20,0],
 ["B_GMG_01_high_F",0,20,0],
 ["B_static_AA_F",0,25,0],
-["B_static_AT_F",0,30,0]
+["B_static_AT_F",0,30,0],
+["B_Mortar_01_F",0,50,0]
 ];
 
 buildings = [
