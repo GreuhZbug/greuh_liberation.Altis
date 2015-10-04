@@ -1,10 +1,14 @@
-waitUntil { !(isNil "GRLIB_permissions") };
+if ( GRLIB_permissions_param ) then {
 
-sleep 5;
+	waitUntil { !(isNil "GRLIB_permissions") };
 
-while { count GRLIB_permissions == 0 } do {
-	hint localize "STR_PERMISSION_WARNING";
 	sleep 5;
-};
 
-hintSilent "";
+	while { count GRLIB_permissions == 0 } do {
+		hint localize "STR_PERMISSION_WARNING";
+		sleep 5;
+	};
+
+	hintSilent "";
+
+};

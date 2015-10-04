@@ -1,5 +1,7 @@
 choiceslist = [];
 
+GRLIB_force_redeploy = false;
+
 waitUntil { !isNil "GRLIB_all_fobs" };
 waitUntil { !isNil "save_is_loaded" };
 waitUntil { !isNil "blufor_sectors" };
@@ -21,9 +23,11 @@ if ( GRLIB_isAtlasPresent ) then {
 while { true } do {
 	while { true } do {
 		waitUntil {
-			sleep 0.2;
-			(player distance (getmarkerpos "respawn_west") < 50) && vehicle player == player && alive player && !dialog && howtoplay == 0;
+			sleep 0.1;
+			( GRLIB_force_redeploy || (player distance (getmarkerpos "respawn_west") < 50) ) && vehicle player == player && alive player && !dialog && howtoplay == 0
 		};
+
+		GRLIB_force_redeploy = false;
 
 		player setFatigue 0;
 		if ( GRLIB_fatigue == 0 ) then {
@@ -36,8 +40,8 @@ while { true } do {
 
 		showCinemaBorder false;
 		camUseNVG false;
-		respawn_camera = "camera" camCreate [0,0,0];
-		respawn_object = "Sign_Arrow_Blue_F" createVehicleLocal [0,0,0];
+		respawn_camera = "camera" camCreate (getposASLW lhd);
+		respawn_object = "Sign_Arrow_Blue_F" createVehicleLocal (getposASLW lhd);
 		respawn_object hideObject true;
 		respawn_camera camSetTarget respawn_object;
 		respawn_camera cameraEffect ["internal","back"];
@@ -45,7 +49,7 @@ while { true } do {
 
 		waitUntil { dialog };
 
-		while { dialog && alive player && (player distance (getmarkerpos "respawn_west") < 20) && deploy == 0} do {
+		while { dialog && alive player && deploy == 0} do {
 			choiceslist = [ [ _basenamestr, getpos lhd ] ];
 
 			for [{_idx=0},{_idx < count GRLIB_all_fobs},{_idx=_idx+1}] do {

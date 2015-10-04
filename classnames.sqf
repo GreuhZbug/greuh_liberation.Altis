@@ -240,6 +240,63 @@ opfor_air = ["O_Plane_CAS_02_F"];
 civilians = ["C_man_1","C_man_polo_6_F","C_man_polo_3_F","C_man_polo_2_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_1_F","C_man_p_beggar_F","C_man_1_2_F","C_man_p_fugitive_F","C_man_hunter_1_F","C_journalist_F","C_man_shorts_2_F","C_man_w_worker_F"];
 civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F" ];
 
+// Blacklisted arsenal items such as deployable weapons  that should be bought instead
+GRLIB_blacklisted_from_arsenal = [
+"B_Respawn_Sleeping_bag_blue_F",
+"B_Respawn_Sleeping_bag_brown_F",
+"B_Respawn_TentDome_F",
+"B_Respawn_Sleeping_bag_F",
+"B_Respawn_TentA_F",
+"I_GMG_01_A_weapon_F",
+"O_GMG_01_A_weapon_F",
+"B_GMG_01_A_weapon_F",
+"I_HMG_01_A_weapon_F",
+"B_HMG_01_A_weapon_F",
+"O_HMG_01_A_weapon_F",
+"O_HMG_01_weapon_F",
+"B_HMG_01_weapon_F",
+"I_HMG_01_weapon_F",
+"I_HMG_01_high_weapon_F",
+"O_HMG_01_high_weapon_F",
+"B_HMG_01_high_weapon_F",
+"O_GMG_01_weapon_F",
+"I_GMG_01_weapon_F",
+"B_GMG_01_weapon_F",
+"B_GMG_01_high_weapon_F",
+"I_GMG_01_high_weapon_F",
+"O_GMG_01_high_weapon_F",
+"I_Mortar_01_support_F",
+"B_Mortar_01_support_F",
+"O_Mortar_01_support_F",
+"B_Mortar_01_weapon_F",
+"O_Mortar_01_weapon_F",
+"I_Mortar_01_weapon_F",
+"B_HMG_01_support_F",
+"O_HMG_01_support_F",
+"I_HMG_01_support_F",
+"B_HMG_01_support_high_F",
+"O_HMG_01_support_high_F",
+"I_HMG_01_support_high_F",
+"RHS_M2_Gun_Bag",
+"RHS_M2_Tripod_Bag",
+"RHS_M2_MiniTripod_Bag",
+"RHS_Mk19_Gun_Bag",
+"RHS_Mk19_Tripod_Bag",
+"RHS_NSV_Gun_Bag",
+"RHS_NSV_Tripod_Bag",
+"B_AA_01_weapon_F",
+"O_AA_01_weapon_F",
+"I_AA_01_weapon_F",
+"B_AT_01_weapon_F",
+"O_AT_01_weapon_F",
+"I_AT_01_weapon_F",
+"I_UAV_01_backpack_F",
+"B_UAV_01_backpack_F",
+"O_UAV_01_backpack_F",
+"O_UavTerminal",
+"I_UavTerminal"
+];
+
 
 
 
@@ -295,6 +352,7 @@ boats_names = [ "B_Boat_Transport_01_F", "B_Boat_Armed_01_minigun_F" ];
 
 box_transport_config = [
 	[ "B_Truck_01_transport_F", -6.5, [0,	-0.4,	0.4], [0,	-2.1,	0.4], [0,	-3.8,	0.4] ],
+	[ "B_Truck_01_covered_F", -6.5, [0,	-0.4,	0.4], [0,	-2.1,	0.4], [0,	-3.8,	0.4] ],
 	[ "O_Truck_03_transport_F", -6.5, [0,	-0.8,	0.4], [0,	-2.4,	0.4], [0,	-4.0,	0.4] ],
 	[ "B_Heli_Transport_03_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],
 	[ "B_Heli_Transport_03_unarmed_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],

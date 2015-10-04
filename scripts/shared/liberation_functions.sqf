@@ -35,3 +35,4 @@ F_isBigtownActive = compileFinal preprocessFileLineNumbers "scripts\shared\funct
 F_getUnitPositionId = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getUnitPositionId.sqf";
 F_getCommander = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getCommander.sqf";
 F_fetchPermission = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_fetchPermission.sqf";
+LARs_fnc_addAllVirtualCargo  = compileFinal preprocessFileLineNumbers "scripts\shared\functions\LARs_fnc_addAllVirtualCargo.sqf";

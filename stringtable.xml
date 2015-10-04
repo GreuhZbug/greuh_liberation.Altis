@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.907</Original>
+        		<Original>Liberation 0.908</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.907</Original>
+                        <Original>v0.908</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1030,6 +1030,18 @@
                 <Key ID="STR_PERMISSION_WARNING">
                         <Original>No permissions have been set. The commander must setup the permissions to allow player actions and vehicle usage. Alternatively, the permission system can be disabled from the mission options.</Original>
                         <French>Aucune permission n'a été définie. Le commandant doit configurer les permissions pour permettre aux joueurs d'effectuer des actions et d'utiliser les véhicules. Sinon, le système de permissions peut être désactivé dans les options de mission.</French>
+                </Key>
+                <Key ID="STR_ARSENAL_TITLE">
+                        <Original>ARSENAL</Original>
+                        <French>ARSENAL</French>
+                </Key>
+                <Key ID="STR_EDIT_LOADOUT">
+                        <Original>Edit loadout</Original>
+                        <French>Modifier équipement</French>
+                </Key>
+                <Key ID="STR_LOAD_LOADOUT">
+                        <Original>Take loadout</Original>
+                        <French>Charger l'équipement</French>
                 </Key>
 
 

@@ -10,3 +10,4 @@
 #include "liberation_deathscreen.hpp"
 #include "liberation_squad.hpp"
 #include "liberation_permissions.hpp"
+#include "liberation_arsenal.hpp"

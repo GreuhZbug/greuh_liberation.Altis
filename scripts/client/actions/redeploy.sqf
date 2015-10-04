@@ -1,1 +1,1 @@
-player setpos getmarkerpos "respawn_west";
+GRLIB_force_redeploy = true;
