@@ -44,5 +44,5 @@ if ( load_loadout > 0 ) then {
 if ( edit_loadout > 0 ) then {
 	closeDialog 0;
 	waitUntil { !dialog };
-	["Open", false ] spawn BIS_fnc_arsenal;
+	[ "Open", false ] spawn BIS_fnc_arsenal;
 };

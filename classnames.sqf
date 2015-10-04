@@ -293,9 +293,7 @@ GRLIB_blacklisted_from_arsenal = [
 "I_AT_01_weapon_F",
 "I_UAV_01_backpack_F",
 "B_UAV_01_backpack_F",
-"O_UAV_01_backpack_F",
-"O_UavTerminal",
-"I_UavTerminal"
+"O_UAV_01_backpack_F"
 ];
 
 

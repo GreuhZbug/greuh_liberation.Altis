@@ -3,6 +3,7 @@ respawndelay = 15;
 disabledAI = true;
 
 enableDebugConsole = 1;
+allowFunctionsLog = 0;
 
 loadScreen="res\liberation.jpg";
 onLoadMission = $STR_MISSION_TITLE;
