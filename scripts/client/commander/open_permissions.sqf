@@ -3,7 +3,6 @@ waitUntil { !isNil "GRLIB_permissions" };
 private [ "_dialog", "_nextplayer", "_players_array", "_displayname", "_idx", "_control", "_player_uid", "_player_idx", "_player_uids", "_player_permissions", "_modify_permissions" ];
 
 _players_array = [];
-_idx = 0;
 _dialog = createDialog "liberation_permissions";
 permission_playerid = -1;
 permission_toset = -1;
@@ -43,18 +42,23 @@ permission_create_activetext = compileFinal '
 
 
 
+_players_array pushback [ "Default", localize "STR_DEFAULT", 0];
+_idx = 2;
+
 {
-	_nextplayer = _x;
+	if ( !( (name _x) in [ "HC1", "HC2", "HC3" ] ) ) then {
+		_nextplayer = _x;
 
-	_displayname = "";
-	if(count (squadParams _nextplayer) != 0) then {
-		_displayname = "[" + ((squadParams _nextplayer select 0) select 0) + "] ";
+		_displayname = "";
+		if(count (squadParams _nextplayer) != 0) then {
+			_displayname = "[" + ((squadParams _nextplayer select 0) select 0) + "] ";
+		};
+		_displayname = _displayname + name _nextplayer;
+
+		_players_array pushback [ getPlayerUID _nextplayer, _displayname, _idx ];
+
+		_idx = _idx + 1;
 	};
-	_displayname = _displayname + name _nextplayer;
-
-	_players_array pushback [ getPlayerUID _nextplayer, _displayname, _idx ];
-
-	_idx = _idx + 1;
 } foreach allPlayers;
 
 

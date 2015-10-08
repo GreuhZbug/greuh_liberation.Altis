@@ -113,7 +113,7 @@ while { true } do {
 			};
 		};
 
-		if ( player == ( [] call F_getCommander ) && alive player && vehicle player == player && GRLIB_permissions_param ) then {
+		if ( ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) && alive player && vehicle player == player && GRLIB_permissions_param ) then {
 			if ( _idact_commander == -1 ) then {
 				_idact_commander = player addAction ["<t color='#FF8000'>" + localize "STR_COMMANDER_ACTION" + "</t> <img size='2' image='\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeGroups_ca.paa'/>","scripts\client\commander\open_permissions.sqf","",-995,false,true,"","build_confirmed == 0"];
 			};

@@ -13,12 +13,12 @@ while { GRLIB_endgame == 0 } do {
 	sleep _sleeptime;
 
 	if ( !isNil "GRLIB_last_battlegroup_time" ) then {
-		waitUntil { sleep 5; time > ( GRLIB_last_battlegroup_time + 900 ) };
+		waitUntil { sleep 5; time > ( GRLIB_last_battlegroup_time + 1200 ) };
 	};
 
-	waitUntil { sleep 5; count allPlayers > 5 };
+	waitUntil { sleep 5; count allPlayers >= 12 };
 
-	if ( combat_readiness > 65 ) then {
+	if ( combat_readiness > 60 ) then {
 		[] spawn spawn_battlegroup;
 	};
 };

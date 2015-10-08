@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.908</Original>
+        		<Original>Liberation 0.909</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.908</Original>
+                        <Original>v0.909</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1043,7 +1043,10 @@
                         <Original>Take loadout</Original>
                         <French>Charger l'équipement</French>
                 </Key>
-
+                        <Key ID="STR_DEFAULT">
+                        <Original>Default</Original>
+                        <French>Par défaut</French>
+                </Key>
 
 
 

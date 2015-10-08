@@ -1175,7 +1175,7 @@ class Mission
 					rank="COLONEL";
 					skill=0.60000002;
 					text="commandant";
-					init="removeallWeapons this; removebackpack this; toto switchCamera ""internal"";";
+					init="removeallWeapons this; removebackpack this;";
 					description="Commander";
 				};
 			};
@@ -2473,7 +2473,7 @@ class Mission
 		};
 		class Item32
 		{
-			position[]={17428.537,13.820803,13174.223};
+			position[]={17422.154,14.614238,13156.348};
 			name="military4";
 			text="Pyrgos Base";
 			type="o_support";
@@ -2721,7 +2721,7 @@ class Mission
 		};
 		class Item63
 		{
-			position[]={23486.023,90.454399,21135.225};
+			position[]={23547.744,91.441803,21115.973};
 			name="military1";
 			text="Delfinaki Base";
 			type="o_support";
@@ -4216,7 +4216,7 @@ class Mission
 		};
 		class Item294
 		{
-			position[]={9088.2842,20.640671,12022.316};
+			position[]={9062.1689,21.83358,12026.835};
 			name="bigtown8";
 			text="Zaros";
 			type="n_service";

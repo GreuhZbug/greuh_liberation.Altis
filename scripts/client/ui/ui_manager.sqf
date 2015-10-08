@@ -95,7 +95,7 @@ while { true } do {
 				if ( _nearest_active_sector != "" ) then {
 					_zone_size = GRLIB_capture_size;
 					if ( _nearest_active_sector in sectors_bigtown ) then {
-						_zone_size = GRLIB_capture_size * 2;
+						_zone_size = GRLIB_capture_size * 1.4;
 					};
 
 					"zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);
