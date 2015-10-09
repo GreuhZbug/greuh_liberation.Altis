@@ -91,7 +91,7 @@ private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha",
 				_color = [];
 				if ( _nextunit in (units group player)) then {
 
-					switch ( assignedTeam _nextunit ) do {
+					switch ( _nextunit getVariable [ "GRLIB_squad_color", "MAIN" ] ) do {
 						case "BLUE" : { _color = [0.15,0.35,1.0,_alpha] };
 						case "RED" : { _color = [0.8,0,0,_alpha] };
 						case "YELLOW" : { _color = [0.85,0.85,0,_alpha] };
