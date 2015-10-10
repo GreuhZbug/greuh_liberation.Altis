@@ -92,6 +92,8 @@ while { true } do {
 					_vehicle setObjectTextureGlobal [_i, '#(rgb,8,8,3)color(0,1,0,0.8)'];
 				};
 
+				{ _x setObjectTexture [0, "#(rgb,8,8,3)color(0,1,0,1)"]; } foreach GRLIB_preview_spheres;
+
 				while { build_confirmed == 1 && alive player } do {
 					_truedir = 90 - (getdir player);
 					_truepos = [((getpos player) select 0) + (_dist * (cos _truedir)), ((getpos player) select 1) + (_dist * (sin _truedir)),0];

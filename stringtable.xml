@@ -1047,6 +1047,39 @@
                         <Original>Default</Original>
                         <French>Par défaut</French>
                 </Key>
+                <Key ID="STR_FOB_REPACKAGE">
+                        <Original>-- REPACKAGE FOB --</Original>
+                        <French>-- REPLIER FOB --</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_TITLE">
+                        <Original>REPACKAGE FOB</Original>
+                        <French>REPLIER FOB</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_CONFIRM">
+                        <Original>Are you sure you want to repackage this FOB?</Original>
+                        <French>Etes-vous sur de vouloir replier cette fob?</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_HINT">
+                        <Original>FOB repackaged.</Original>
+                        <French>FOB repliée.</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM">
+                        <Original>HALO jump</Original>
+                        <French>Saut HALO</French>
+                </Key>
+                <Key ID="STR_HALO_ACTION">
+                        <Original>-- HALO JUMP</Original>
+                        <French>-- SAUT HALO</French>
+                </Key>
+                <Key ID="STR_HALO_TITLE">
+                        <Original>HALO JUMP</Original>
+                        <French>SAUT HALO</French>
+                </Key>
+                <Key ID="STR_DEPLOY_IN_PROGRESS">
+                        <Original>Deployment in progress...</Original>
+                        <French>Déploiement en cours...</French>
+                </Key>
+
 
 
 

@@ -49,6 +49,8 @@ while { true } do {
 
 		waitUntil { dialog };
 
+		((findDisplay 5201) displayCtrl 201) ctrlAddEventHandler [ "mouseButtonDblClick" , { deploy = 1; } ];
+
 		while { dialog && alive player && deploy == 0} do {
 			choiceslist = [ [ _basenamestr, getpos lhd ] ];
 

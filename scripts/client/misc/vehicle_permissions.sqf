@@ -35,7 +35,7 @@ while { true } do {
 	};
 
 	if ( _doeject ) then {
-		player action [	"getout", vehicle player ];
+		moveOut player;
 		_doeject = false;
 	};
 };
