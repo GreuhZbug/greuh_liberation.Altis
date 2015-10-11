@@ -93,7 +93,7 @@ while { true } do {
 			};
 		};
 
-		if ( _fobdistance < _distfob && alive player && vehicle player == player && ( [ player, 3 ] call F_fetchPermission ) ) then {
+		if ( _fobdistance < _distfob && alive player && vehicle player == player && ( (  [ player, 3 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
 			if ( _idact_build == -1 ) then {
 				_idact_build = player addAction ["<t color='#FFFF00'>" + localize "STR_BUILD_ACTION" + "</t> <img size='2' image='res\ui_build.paa'/>","scripts\client\build\open_build_menu.sqf","",-985,false,true,"","build_confirmed == 0"];
 			};
@@ -104,7 +104,7 @@ while { true } do {
 			};
 		};
 
-		if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player) && ((player distance lhd) > 1000) && ( [ player, 3 ] call F_fetchPermission ) ) then {
+		if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player) && ((player distance lhd) > 1000) && ( ( [ player, 3 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
 			if ( _idact_buildfob == -1 ) then {
 				_idact_buildfob = player addAction ["<t color='#FFFF00'>" + localize "STR_FOB_ACTION" + "</t> <img size='2' image='res\ui_deployfob.paa'/>","scripts\client\build\do_build_fob.sqf","",-990,false,true,"","build_confirmed == 0"];
 			};
