@@ -10,7 +10,6 @@ while { true } do {
 					if ( alive _x ) then {
 						if ( side group _x == WEST ) exitWith {
 							_nextveh setVariable [ "GRLIB_captured", 1, true ];
-							[ _nextveh ] call F_applyBluforCamo;
 						};
 					};
 				} foreach (crew _x);

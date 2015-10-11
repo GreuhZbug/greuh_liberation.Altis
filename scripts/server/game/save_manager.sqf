@@ -168,7 +168,6 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			};
 
 			if ( _nextclass in all_hostile_classnames ) then {
-				[ _nextbuilding ] call F_applyBluforCamo;
 				_nextbuilding setVariable [ "GRLIB_captured", 1, true ];
 			};
 		};

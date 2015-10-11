@@ -37,5 +37,4 @@ F_getCommander = compileFinal preprocessFileLineNumbers "scripts\shared\function
 F_fetchPermission = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_fetchPermission.sqf";
 LARs_fnc_addAllVirtualCargo = compileFinal preprocessFileLineNumbers "scripts\shared\functions\LARs_fnc_addAllVirtualCargo.sqf";
 F_isAdmin = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_isAdmin.sqf";
-F_applyBluforCamo = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_applyBluforCamo.sqf";
 F_cleanOpforVehicle = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_cleanOpforVehicle.sqf";
