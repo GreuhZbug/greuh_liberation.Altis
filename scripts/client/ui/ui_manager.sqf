@@ -13,12 +13,13 @@ waitUntil { !isNil "synchro_done" };
 waitUntil { synchro_done };
 
 if ( isNil "cinematic_camera_started" ) then { cinematic_camera_started = false };
+if ( isNil "halojumping" ) then { halojumping = false };
 
 while { true } do {
 	while { true } do {
 
 		if ( isNull ((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (101)) && _overlayshown ) then { _overlayshown = false };
-		if ( alive player && !dialog && !_overlayshown && !cinematic_camera_started ) then {
+		if ( alive player && !dialog && !_overlayshown && !cinematic_camera_started && !halojumping ) then {
 			cutRsc["statusoverlay", "PLAIN", 1];
 			_overlayshown = true;
 			_uiticks = 0;
@@ -95,7 +96,7 @@ while { true } do {
 				if ( _nearest_active_sector != "" ) then {
 					_zone_size = GRLIB_capture_size;
 					if ( _nearest_active_sector in sectors_bigtown ) then {
-						_zone_size = GRLIB_capture_size * 2;
+						_zone_size = GRLIB_capture_size * 1.4;
 					};
 
 					"zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);

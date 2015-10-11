@@ -8,11 +8,13 @@ _idact_redeploy = -1;
 _idact_tutorial = -1;
 _idact_squad = -1;
 _idact_commander = -1;
+_idact_repackage = -1;
+_idact_halo = -1;
 _distfob = 100;
 _distarsenal = 5;
 _distbuildfob = 10;
 _distspawn = 10;
-_distredeploy = 30;
+_distredeploy = 20;
 
 GRLIB_removefobboxes = false;
 
@@ -58,6 +60,17 @@ while { true } do {
 			};
 		};
 
+		if ( (_fobdistance < _distredeploy || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player && GRLIB_halo_param ) then {
+			if ( _idact_halo == -1 ) then {
+				_idact_halo = player addAction ["<t color='#80FF80'>" + localize "STR_HALO_ACTION" + "</t> <img size='2' image='res\ui_redeploy.paa'/>","scripts\client\spawn\do_halo.sqf","",-749,false,true,"","build_confirmed == 0"];
+			};
+		} else {
+			if ( _idact_halo != -1 ) then {
+				player removeAction _idact_halo;
+				_idact_halo = -1;
+			};
+		};
+
 		if ( (_fobdistance < _distredeploy || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
 			if ( _idact_redeploy == -1 ) then {
 				_idact_redeploy = player addAction ["<t color='#80FF80'>" + localize "STR_DEPLOY_ACTION" + "</t> <img size='2' image='res\ui_redeploy.paa'/>","scripts\client\actions\redeploy.sqf","",-750,false,true,"","build_confirmed == 0"];
@@ -69,7 +82,7 @@ while { true } do {
 			};
 		};
 
-		if ( (count _neararsenal != 0 || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
+		if ( (_fobdistance < _distredeploy || count _neararsenal != 0 || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player ) then {
 			if (_idact_arsenal == -1) then {
 				_idact_arsenal = player addAction ["<t color='#FFFF00'>" + localize "STR_ARSENAL_ACTION" + "</t> <img size='2' image='res\ui_arsenal.paa'/>","scripts\client\actions\open_arsenal.sqf","",-980,true,true,"","build_confirmed == 0"];
 			};
@@ -80,7 +93,7 @@ while { true } do {
 			};
 		};
 
-		if ( _fobdistance < _distfob && alive player && vehicle player == player && ( [ player, 3 ] call F_fetchPermission ) ) then {
+		if ( _fobdistance < _distfob && alive player && vehicle player == player && ( (  [ player, 3 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
 			if ( _idact_build == -1 ) then {
 				_idact_build = player addAction ["<t color='#FFFF00'>" + localize "STR_BUILD_ACTION" + "</t> <img size='2' image='res\ui_build.paa'/>","scripts\client\build\open_build_menu.sqf","",-985,false,true,"","build_confirmed == 0"];
 			};
@@ -91,7 +104,7 @@ while { true } do {
 			};
 		};
 
-		if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player) && ((player distance lhd) > 1000) && ( [ player, 3 ] call F_fetchPermission ) ) then {
+		if ( count _nearfobbox != 0 && alive player && vehicle player == player && !(surfaceIsWater getpos player) && ((player distance lhd) > 1000) && ( ( [ player, 3 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
 			if ( _idact_buildfob == -1 ) then {
 				_idact_buildfob = player addAction ["<t color='#FFFF00'>" + localize "STR_FOB_ACTION" + "</t> <img size='2' image='res\ui_deployfob.paa'/>","scripts\client\build\do_build_fob.sqf","",-990,false,true,"","build_confirmed == 0"];
 			};
@@ -113,7 +126,7 @@ while { true } do {
 			};
 		};
 
-		if ( player == ( [] call F_getCommander ) && alive player && vehicle player == player && GRLIB_permissions_param ) then {
+		if ( ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) && alive player && vehicle player == player && GRLIB_permissions_param ) then {
 			if ( _idact_commander == -1 ) then {
 				_idact_commander = player addAction ["<t color='#FF8000'>" + localize "STR_COMMANDER_ACTION" + "</t> <img size='2' image='\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeGroups_ca.paa'/>","scripts\client\commander\open_permissions.sqf","",-995,false,true,"","build_confirmed == 0"];
 			};
@@ -121,6 +134,17 @@ while { true } do {
 			if ( _idact_commander != -1 ) then {
 				player removeAction _idact_commander;
 				_idact_commander = -1;
+			};
+		};
+
+		if (  _fobdistance < _distredeploy  && alive player && vehicle player == player && ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) then {
+			if ( _idact_repackage == -1 ) then {
+				_idact_repackage = player addAction ["<t color='#FFFF00'>" + localize "STR_FOB_REPACKAGE" + "</t> <img size='2' image='res\ui_deployfob.paa'/>","scripts\client\actions\do_repackage_fob.sqf","",-991,false,true,"","build_confirmed == 0"];
+			};
+		} else {
+			if ( _idact_repackage != -1 ) then {
+				player removeAction _idact_repackage;
+				_idact_repackage = -1;
 			};
 		};
 

@@ -56,6 +56,13 @@ while { dialog && alive player } do {
 	};
 
 	if ( !(isNull _selectedmember) ) then {
+			"spawn_marker" setMarkerPosLocal (getpos _selectedmember);
+			ctrlMapAnimClear ((findDisplay 5155) displayCtrl 100);
+			((findDisplay 5155) displayCtrl 100) ctrlMapAnimAdd [0, 0.3, getpos _selectedmember];
+			ctrlMapAnimCommit ((findDisplay 5155) displayCtrl 100);
+	};
+
+	if ( !(isNull _selectedmember) ) then {
 		if ( _memberselection != lbCurSel 101 || _resupplied || ( ( vehicle _selectedmember == _selectedmember && _isvehicle ) || ( vehicle _selectedmember != _selectedmember && !_isvehicle ) ) ) then {
 			_memberselection = lbCurSel 101;
 			_resupplied = false;
@@ -70,13 +77,6 @@ while { dialog && alive player } do {
 				_isvehicle = true;
 			};
 			_squad_camera camcommit 0;
-
-
-			"spawn_marker" setMarkerPosLocal (getpos _selectedmember);
-			ctrlMapAnimClear ((findDisplay 5155) displayCtrl 100);
-			((findDisplay 5155) displayCtrl 100) ctrlMapAnimAdd [0, 0.3, getpos _selectedmember];
-			ctrlMapAnimCommit ((findDisplay 5155) displayCtrl 100);
-
 
 			_unitname = format ["%1. ", [ _selectedmember ] call F_getUnitPositionId];
 			if(isPlayer _selectedmember) then {

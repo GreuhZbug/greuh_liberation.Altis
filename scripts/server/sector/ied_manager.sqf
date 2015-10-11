@@ -48,6 +48,6 @@ if ( !(isnull _roadobj) ) then {
 	};
 };
 
-sleep 300;
+sleep 1800;
 
 if ( !(isNull _ied_obj) ) then { deleteVehicle _ied_obj; };

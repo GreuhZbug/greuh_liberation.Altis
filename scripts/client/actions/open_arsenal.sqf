@@ -24,7 +24,7 @@ if ( count _loadouts_data > 0 ) then {
 
 	if ( lbSize 201 > 0 ) then {
 		ctrlEnable [ 202, true ];
-		lbSetCurSel [ 202, 0 ];
+		lbSetCurSel [ 201, 0 ];
 	} else {
 		ctrlEnable [ 202, false ];
 	};
@@ -32,6 +32,8 @@ if ( count _loadouts_data > 0 ) then {
 } else {
 	ctrlEnable [ 202, false ];
 };
+
+((findDisplay 5251) displayCtrl 201) ctrlAddEventHandler [ "mouseButtonDblClick" , { load_loadout = 1; } ];
 
 waitUntil { !dialog || !(alive player) || load_loadout > 0 || edit_loadout > 0 };
 

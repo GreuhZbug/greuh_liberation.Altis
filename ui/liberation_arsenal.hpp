@@ -3,7 +3,7 @@ class liberation_arsenal {
 	movingEnable = false;
 	controlsBackground[] = {};
 
-	controls[] = {"OuterBG", "RecycleBG","OuterBG_F", "InnerBG", "InnerBG_F", "Header","DeployList","EditButton","LoadButton"};
+	controls[] = {"OuterBG", "RecycleBG","OuterBG_F", "InnerBG", "InnerBG_F", "Header","LoadoutList","EditButton","LoadButton"};
 
 	objects[] = {};
 
@@ -27,9 +27,9 @@ class liberation_arsenal {
 	class InnerBG : OuterBG {
 		colorBackground[] = COLOR_GREEN;
 		x = (0.42 * safezoneW + safezoneX)  - ( BORDERSIZE);
-		y = (0.2 * safezoneH + safezoneY) - (1.5 * BORDERSIZE);
+		y = (0.25 * safezoneH + safezoneY) - (1.5 * BORDERSIZE);
 		w = (0.16 * safezoneW) +  (2 * BORDERSIZE);
-		h = (0.6 * safezoneH)  + (3 * BORDERSIZE);
+		h = (0.55 * safezoneH)  + (3 * BORDERSIZE);
 	};
 	class InnerBG_F : InnerBG {
 		style = ST_FRAME;
@@ -41,7 +41,7 @@ class liberation_arsenal {
 		h = 0.05 * safezoneH - (BORDERSIZE);
 		text = $STR_ARSENAL_TITLE;
 	};
-	class DeployList : StdListBox {
+	class LoadoutList : StdListBox {
 		idc = 201;
 		x = 0.42 * safezoneW + safezoneX;
 		w = 0.16 * safezoneW;

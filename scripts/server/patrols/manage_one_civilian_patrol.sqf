@@ -103,7 +103,13 @@ while { GRLIB_endgame == 0 } do {
 
 		if ( count (units _grp) > 0 ) then {
 			if ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) then {
-				if ( !(isNull _civveh) ) then { deleteVehicle _civveh };
+
+				if ( !(isNull _civveh) ) then {
+					 if ( { ( alive _x ) && (side group _x == WEST ) } count (crew _civveh) == 0 ) then {
+						deleteVehicle _civveh
+					};
+				};
+
 				{ deletevehicle _x } foreach units _grp;
 			};
 		};

@@ -1,3 +1,5 @@
+[] call compileFinal preprocessFileLineNumbers "scripts\client\misc\init_markers.sqf";
+
 ["Preload"] call BIS_fnc_arsenal;
 respawn_lhd = compileFinal preprocessFileLineNumbers "scripts\client\spawn\respawn_lhd.sqf";
 spawn_camera = compileFinal preprocessFileLineNumbers "scripts\client\spawn\spawn_camera.sqf";
@@ -19,6 +21,7 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\secondary_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\broadcast_squad_colors.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\fatigue_effects.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\init_arsenal.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\manage_weather.sqf";

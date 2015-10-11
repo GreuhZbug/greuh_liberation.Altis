@@ -63,7 +63,7 @@ while { GRLIB_endgame == 0 } do {
 					_patrol_continue = false;
 					{
 						if ( vehicle _x != _x ) then {
-							deleteVehicle (vehicle _x);
+							[ (vehicle _x) ] call F_cleanOpforVehicle;
 						};
 						deleteVehicle _x;
 					} foreach (units _grp);

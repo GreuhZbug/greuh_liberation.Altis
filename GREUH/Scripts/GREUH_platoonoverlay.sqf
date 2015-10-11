@@ -4,7 +4,9 @@ soldier_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa";
 formation_leader_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa";
 commander_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa";
 group_leader_icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa";
-nametags_distance = 40.0;
+wounded_icon = "\A3\ui_f\data\map\vehicleicons\pictureHeal_ca.paa";
+
+nametags_distance = 32.0;
 
 private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha", "_textalpha", "_size", "_screenpos", "_grouppos", "_distlabel", "_dist", "_nextunit", "_color", "_drawicon", "_displayname", "_iconpos" ];
 
@@ -91,7 +93,7 @@ private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha",
 				_color = [];
 				if ( _nextunit in (units group player)) then {
 
-					switch ( assignedTeam _nextunit ) do {
+					switch ( _nextunit getVariable [ "GRLIB_squad_color", "MAIN" ] ) do {
 						case "BLUE" : { _color = [0.15,0.35,1.0,_alpha] };
 						case "RED" : { _color = [0.8,0,0,_alpha] };
 						case "YELLOW" : { _color = [0.85,0.85,0,_alpha] };
@@ -104,14 +106,18 @@ private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha",
 				};
 
 				_drawicon = soldier_icon;
-				if ( _nextunit == [] call F_getCommander ) then {
-					_drawicon = commander_icon;
+				if ( _nextunit getVariable [ "FAR_isUnconscious", 0 ] == 1 ) then {
+					_drawicon = wounded_icon;
 				} else {
-					if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {
-						_drawicon = group_leader_icon;
+					if ( _nextunit == [] call F_getCommander ) then {
+						_drawicon = commander_icon;
 					} else {
-						if ( ( isFormationLeader _nextunit ) && ( count formationMembers _nextunit > 1 ) ) then {
-							_drawicon = formation_leader_icon;
+						if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {
+							_drawicon = group_leader_icon;
+						} else {
+							if ( ( isFormationLeader _nextunit ) && ( count formationMembers _nextunit > 1 ) ) then {
+								_drawicon = formation_leader_icon;
+							};
 						};
 					};
 				};

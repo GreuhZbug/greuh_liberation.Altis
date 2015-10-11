@@ -19,7 +19,7 @@ while { GRLIB_endgame == 0 } do {
 
 		_base_tick_period = _base_tick_period / GRLIB_resources_multiplier;
 
-		if ( _base_tick_period < 600 ) then { _base_tick_period = 600 };
+		if ( _base_tick_period < 300 ) then { _base_tick_period = 300 };
 
 		sleep _base_tick_period;
 

@@ -3,7 +3,7 @@ private [ "_actual_capture_size", "_red_forces", "_blue_forces", "_ratio" ];
 
 _actual_capture_size = GRLIB_capture_size;
 if ( _sector in sectors_bigtown ) then {
-	_actual_capture_size = GRLIB_capture_size * 2;
+	_actual_capture_size = GRLIB_capture_size * 1.4;
 };
 
 _red_forces = ( [ (markerpos _sector), _actual_capture_size, RESISTANCE ] call F_getUnitsCount ) + ( [ (markerpos _sector), _actual_capture_size, EAST ] call F_getUnitsCount );

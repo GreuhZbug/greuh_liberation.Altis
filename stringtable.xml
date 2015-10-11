@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.908</Original>
+        		<Original>Liberation 0.909</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.908</Original>
+                        <Original>v0.909</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1042,6 +1042,42 @@
                 <Key ID="STR_LOAD_LOADOUT">
                         <Original>Take loadout</Original>
                         <French>Charger l'équipement</French>
+                </Key>
+                        <Key ID="STR_DEFAULT">
+                        <Original>Default</Original>
+                        <French>Par défaut</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE">
+                        <Original>-- REPACKAGE FOB --</Original>
+                        <French>-- REPLIER FOB --</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_TITLE">
+                        <Original>REPACKAGE FOB</Original>
+                        <French>REPLIER FOB</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_CONFIRM">
+                        <Original>Are you sure you want to repackage this FOB?</Original>
+                        <French>Etes-vous sur de vouloir replier cette fob?</French>
+                </Key>
+                <Key ID="STR_FOB_REPACKAGE_HINT">
+                        <Original>FOB repackaged.</Original>
+                        <French>FOB repliée.</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM">
+                        <Original>HALO jump</Original>
+                        <French>Saut HALO</French>
+                </Key>
+                <Key ID="STR_HALO_ACTION">
+                        <Original>-- HALO JUMP</Original>
+                        <French>-- SAUT HALO</French>
+                </Key>
+                <Key ID="STR_HALO_TITLE">
+                        <Original>HALO JUMP</Original>
+                        <French>SAUT HALO</French>
+                </Key>
+                <Key ID="STR_DEPLOY_IN_PROGRESS">
+                        <Original>Deployment in progress...</Original>
+                        <French>Déploiement en cours...</French>
                 </Key>
 
 

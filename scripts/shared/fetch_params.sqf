@@ -15,6 +15,7 @@ if ( isMultiplayer ) then {
 	GRLIB_param_wipe_savegame_2 = ["WipeSave2",0] call bis_fnc_getParamValue;
 	GRLIB_passive_income = ["PassiveIncome",0] call bis_fnc_getParamValue;
 	GRLIB_permissions_param = ["Permissions",1] call bis_fnc_getParamValue;
+	GRLIB_halo_param = ["HaloJump",1] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -32,6 +33,7 @@ if ( isMultiplayer ) then {
 	GRLIB_param_wipe_savegame_2 = 0;
 	GRLIB_passive_income = 0;
 	GRLIB_permissions_param = 1;
+	GRLIB_halo_param = 1;
 };
 
 GRLIB_fatigue = GRLIB_fatigue / 2.0; // This is stupid but you can't use a decimal value as the default setting
@@ -43,3 +45,4 @@ if ( GRLIB_teamkill_penalty == 1 ) then { GRLIB_teamkill_penalty = true } else {
 if ( GRLIB_adaptive_opfor == 1 ) then { GRLIB_adaptive_opfor = true } else { GRLIB_adaptive_opfor = false };
 if ( GRLIB_passive_income == 1 ) then { GRLIB_passive_income = true } else { GRLIB_passive_income = false };
 if ( GRLIB_permissions_param == 1 ) then { GRLIB_permissions_param = true } else { GRLIB_permissions_param = false };
+if ( GRLIB_halo_param == 1 ) then { GRLIB_halo_param = true } else { GRLIB_halo_param = false };

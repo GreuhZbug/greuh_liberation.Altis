@@ -59,7 +59,7 @@ _classnames_to_save_blu = [];
 	_classnames_to_save_blu pushback (_x select 0);
 } foreach (static_vehicles + air_vehicles + heavy_vehicles + light_vehicles + support_vehicles);
 
-_classnames_to_save = _classnames_to_save + _classnames_to_save_blu + militia_vehicles + opfor_vehicles + opfor_troup_transports + opfor_air + opfor_choppers;
+_classnames_to_save = _classnames_to_save + _classnames_to_save_blu + all_hostile_classnames;
 
 trigger_server_save = false;
 greuh_liberation_savegame = profileNamespace getVariable GRLIB_save_key;
@@ -165,6 +165,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 			if ( !(_nextclass in no_kill_handler_classnames ) ) then {
 				_nextbuilding addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
+			};
+
+			if ( _nextclass in all_hostile_classnames ) then {
+				_nextbuilding setVariable [ "GRLIB_captured", 1, true ];
 			};
 		};
 
