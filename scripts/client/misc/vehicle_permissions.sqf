@@ -11,7 +11,7 @@ while { true } do {
 	};
 
 	waitUntil { sleep 0.2;
-		(vehicle player != player) && ( ( (vehicle player ) getCargoIndex player ) < 0 );
+		(vehicle player != player) &&  ( (vehicle player ) getCargoIndex player ) < 0  && isTouchingGround (vehicle player) && !((vehicle player ) isKindOf "ParachuteBase")
 	};
 
 	if ( (vehicle player ) isKindOf "Tank" ) then {
