@@ -10,6 +10,7 @@
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
                         <French>Avec le pouvoir de la Liberté et de la Démocratie votre mission est de libérer Altis de l'oppression du CSAT.</French>
+                        <German>Befreie Altis von der CSAT-Unterdrückung mit der Kraft von Freiheit und Demokratie</German>
                 </Key>
                 <Key ID="STR_Deploy_OnPoint">
                         <Original>Deploy</Original>
@@ -134,22 +135,27 @@
                 <Key ID="STR_ACTION_LOAD_BOX">
                         <Original>-- LOAD AMMO BOX</Original>
                         <French>-- CHARGER MUNITIONS</French>
+                        <German>-- MUNITIONSKISTE AUFLADEN</German>
                 </Key>
                 <Key ID="STR_ACTION_UNLOAD_BOX">
                         <Original>-- UNLOAD AMMO BOXES</Original>
                         <French>-- DECHARGER MUNITIONS</French>
+                        <German>-- MUNITIONSKISTE ABLADEN</German>
                 </Key>
                 <Key ID="STR_BOX_LOADED">
                         <Original>Ammo box successfully loaded on the transport vehicle.</Original>
                         <French>La caisse de munitions a été chargée sur le véhicule de transport.</French>
+                        <German>Munitionskiste erfolgreich auf das Transportfahrzeug aufgeladen.</German>
                 </Key>
                 <Key ID="STR_BOX_UNLOADED">
                         <Original>Ammo box successfully unloaded from the transport vehicle.</Original>
                         <French>La caisse de munitions a été déchargée du véhicule de transport.</French>
+                        <German>Munitionskiste erfolgreich vom Transportfahrzeug abgeladen.</German>
                 </Key>
                 <Key ID="STR_BOX_CANTLOAD">
                         <Original>There is no nearby vehicle capable of carrying the ammo box.</Original>
                         <French>Aucun véhicule à proximité capable de charger la caisse de munitions.</French>
+                        <German>Kein Fahrzeug in der Nähe, das die Munitionskiste tragen kann.</German>
                 </Key>
                 <Key ID="STR_FOB_ACTION">
                         <Original>-- DEPLOY FOB --</Original>
@@ -284,6 +290,7 @@
                 <Key ID="STR_SECONDARY_CAPTURE">
                         <Original>-- CAPTURE</Original>
                         <French>-- CAPTURER</French>
+                        <German>-- GEFANGENNEHMEN</German>
                 </Key>
                 <Key ID="STR_SQUAD_MEMBER">
                         <Original>Squad member</Original>
@@ -623,209 +630,261 @@
                 <Key ID="STR_PARAMS_MISSIONOPTIONS">
                         <Original>== MISSION OPTIONS ==</Original>
                         <French>== OPTIONS DE MISSION ==</French>
+                        <German>== Missionseinstellungen ==</German>
                 </Key>
                 <Key ID="STR_PARAMS_TECHNICALOPTIONS">
                         <Original>== TECHNICAL OPTIONS ==</Original>
                         <French>== OPTIONS TECHNIQUES ==</French>
+                        <German>== Technische Einstellungen</German>
                 </Key>
                 <Key ID="STR_PARAMS_DAYDURATION">
                         <Original>Day duration (hours)</Original>
                         <French>Durée du jour (heures)</French>
+                        <German>Länge eines Tages (Stunden)</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY">
                         <Original>Difficulty</Original>
                         <French>Difficulté</French>
+                        <German>Schwierigkeit</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY1">
                         <Original>Tourist</Original>
                         <French>Touriste</French>
+                        <German>Tourist</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY2">
                         <Original>Easy</Original>
                         <French>Facile</French>
+                        <German>Einfach</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY3">
                         <Original>Normal</Original>
                         <French>Normal</French>
+                        <German>Normal</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY4">
                         <Original>Moderate</Original>
                         <French>Modérée</French>
+                        <German>Moderat</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY5">
                         <Original>Hard</Original>
                         <French>Difficile</French>
+                        <German>Schwer</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY6">
                         <Original>Extreme</Original>
                         <French>Extrême</French>
+                        <German>Schwer</German>
                 </Key>
                 <Key ID="STR_PARAMS_DIFFICULTY7">
                         <Original>Ludicrous</Original>
                         <French>Affolante</French>
+                        <German>grotesk</German>
                 </Key>
                  <Key ID="STR_PARAMS_DIFFICULTY8">
                         <Original>Oh god oh god we're all gonna die</Original>
                         <French>Oh mon dieu on va tous mourir</French>
+                        <German>Mein Gott, wir werden alle sterben!</German>
                 </Key>
                 <Key ID="STR_PARAMS_RESOURCESMULTIPLIER">
                         <Original>Resources multiplier</Original>
                         <French>Multiplicateur de resources</French>
+                        <German>Ressourcenmultiplikator</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE">
                         <Original>Fatigue effects</Original>
                         <French>Effets de fatigue</French>
+                        <German>Erschöpfungseffekte</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE1">
                         <Original>Reduced - 4 times more stamina</Original>
                         <French>Réduits - 4 fois plus de stamina</French>
+                        <German>Reduziert - 4-mal mehr Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE2">
                         <Original>Reduced - 3 times more stamina</Original>
                         <French>Réduits - 3 fois plus de stamina</French>
+                        <German>Reduziert - 3-mal mehr Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE3">
                         <Original>Reduced - 2 times more stamina</Original>
                         <French>Réduits - 2 fois plus de stamina</French>
+                        <German>Reduziert - 2-mal mehr Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE4">
                         <Original>Reduced - 1.5 times more stamina</Original>
                         <French>Réduits - 1,5 fois plus de stamina</French>
+                        <German>Reduziert - 1,5-mal mehr Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_REVIVE">
                         <Original>FAR Revive</Original>
+                        <German>FAR Revive (Wiederbelebungen)</German>
                 </Key>
                 <Key ID="STR_PARAMS_REVIVE1">
                         <Original>Enabled - Only medics can revive</Original>
                         <French>Activé - Seuls les medics peuvent revive</French>
+                        <German>Aktiv - Nur Sanitäter können wiederbeleben</German>
                 </Key>
                 <Key ID="STR_PARAMS_REVIVE2">
                         <Original>Enabled - Everyone can revive using a FAK</Original>
                         <French>Activé - Tout le monde peut revive avec un kit premiers soins</French>
+                        <German>Aktiv - Jeder  mit einem Erste-Hilfe-Kasten kann wiederbeleben</German>
                 </Key>
                 <Key ID="STR_PARAMS_REVIVE3">
                         <Original>Enabled - Everyone can revive using a MedKit</Original>
                         <French>Activé - Tout le monde peut revive avec un kit médical</French>
+                        <German>Jeder mit einem Verbandskasten kann wiederbeleben</German>
                 </Key>
                 <Key ID="STR_PARAMS_INTRO">
                         <Original>Introduction</Original>
                         <French>Introduction</French>
+                        <German>Einführung</German>
                 </Key>
                 <Key ID="STR_PARAMS_DEPLOYMENTCAMERA">
                         <Original>Deployment cinematic</Original>
                         <French>Cinématique de déploiement</French>
+                        <German>Zwischensequenz bei Einsatz</German>
                 </Key>
                 <Key ID="STR_PARAMS_ENABLED">
                         <Original>Enabled</Original>
                         <French>Activé</French>
+                        <German>Aktiviert</German>
                 </Key>
                 <Key ID="STR_PARAMS_DISABLED">
                         <Original>Disabled</Original>
                         <French>Désactivé</French>
+                        <German>Deaktiviert</German>
                 </Key>
                 <Key ID="STR_PARAMS_FIRSTFOB">
                         <Original>Start the campaign with the first FOB already built</Original>
                         <French>Commencer la campagne avec une première FOB déjà construite</French>
+                        <German>Starte die Kampagne mit einer bereits gebauten FOB</German>
                 </Key>
                 <Key ID="STR_YES">
                         <Original>Yes</Original>
                         <French>Oui</French>
+                        <German>Ja</German>
                 </Key>
                 <Key ID="STR_NO">
                         <Original>No</Original>
                         <French>Non</French>
+                        <German>Nein</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP">
                         <Original>Maximum amount AI units</Original>
                         <French>Quantité maximum d'unités IA</French>
+                        <German>Maximale Anzahl KI-Einheiten</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP1">
                         <Original>50% - Recommended for local hosting</Original>
                         <French>50% - Recommandé pour un hébergement local</French>
+                        <German>50 % - Empfohlen für lokal gehostete Spiele</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP2">
                         <Original>75% - Dedicated server recommended</Original>
                         <French>75% - Serveur dédié recommandé</French>
+                        <German>75 % - Dezidierter Server empfohlen</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP3">
                         <Original>100% - Dedicated server recommended</Original>
                         <French>100% - Serveur dédié recommandé</French>
+                        <German>100 % - Dezidierter Server empfohlen</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP4">
                         <Original>125% - Dedicated server with headless client recommended</Original>
                         <French>125% - Serveur dédié avec headless client recommandé</French>
+                        <German>125 % - Dezidierter Server mit Headless Client empfohlen</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP5">
                         <Original>150% - Dedicated server with multiple headless clients recommended</Original>
                         <French>150% - Serveur dédié avec clients headless multiples recommandé</French>
+                        <German>150 % - Dezidierter Server mit mehreren Headless Clients empfohlen</German>
                 </Key>
                 <Key ID="STR_PARAMS_UNITCAP6">
                         <Original>200% - Dedicated server with multiple headless clients recommended</Original>
                         <French>200% - Serveur dédié avec clients headless multiples recommandés</French>
+                        <German>200 % - Dezidierter Server mit mehreren Headless Clients empfohlen</German>
                 </Key>
                 <Key ID="STR_PARAMS_CIVILIANS">
                         <Original>Civilian activity</Original>
                         <French>Activité civile</French>
+                        <German>Zivile Aktivität</German>
                 </Key>
                 <Key ID="STR_PARAMS_CIVILIANS1">
                         <Original>None</Original>
                         <French>Aucune</French>
+                        <German>Keine</German>
                 </Key>
                 <Key ID="STR_PARAMS_CIVILIANS2">
                         <Original>Reduced</Original>
                         <French>Réduite</French>
+                        <German>Reduziert</German>
                 </Key>
                 <Key ID="STR_PARAMS_CIVILIANS3">
                         <Original>Normal</Original>
                         <French>Normale</French>
+                        <German>Normal</German>
                 </Key>
                  <Key ID="STR_PARAMS_CIVILIANS4">
                         <Original>Increased</Original>
                         <French>Augmentée</French>
+                        <German>Erhöht</German>
                 </Key>
                 <Key ID="STR_FRIENDLY_FIRE">
                         <Original>Warning: friendly fire</Original>
                         <French>Attention: tirs alliés</French>
+                        <German>Achtung: Eigenbeschuss</German>
                 </Key>
                 <Key ID="STR_PARAM_TEAMKILL_PENALTY">
                         <Original>Teamkill penalty</Original>
                         <French>Pénalité pour tirs alliés</French>
+                        <German>Strafe für das Töten von Verbündeten</German>
                 </Key>
                 <Key ID="STR_PARAM_ADAPT_TO_PLAYERCOUNT">
                         <Original>Hostile presence adapts to player count</Original>
                         <French>La présence hostile s'adapte au nombre de joueurs</French>
+                        <German>Feindpräsenz passt sich der Spielerzahl an</German>
                 </Key>
                 <Key ID="STR_PARAM_PASSIVE_INCOME">
                         <Original>Replace ammo boxes spawns with passive income</Original>
                         <French>Remplacer les caisses de munitions par un revenu passif</French>
+                        <German>Ersetzt Munitionskisten durch passives Einkommen</German>
                 </Key>
                 <Key ID="STR_BUILD1">
                         <Original>Infantry units</Original>
                         <French>Unités d'infanterie</French>
+                        <German>Infanterie</German>
                 </Key>
                 <Key ID="STR_BUILD2">
                         <Original>Light vehicles</Original>
                         <French>Véhicules légers</French>
+                        <German>Leichte Fahrzeuge</German>
                 </Key>
                 <Key ID="STR_BUILD3">
                         <Original>Armored vehicles</Original>
                         <French>Vehicules blindés</French>
+                        <German>Gepanzerte Fahrzeuge</German>
                 </Key>
                 <Key ID="STR_BUILD4">
                         <Original>Air vehicles</Original>
                         <French>Véhicules aériens</French>
+                        <German>Luftfahrzeuge</German>
                 </Key>
                 <Key ID="STR_BUILD5">
                         <Original>Static defenses</Original>
                         <French>Defenses statiques</French>
+                        <German>Statische Verteidigung</German>
                 </Key>
                 <Key ID="STR_BUILD6">
                         <Original>Buildings</Original>
                         <French>Batiments</French>
+                        <German>Gebäude</German>
                 </Key>
                 <Key ID="STR_BUILD7">
                         <Original>Logistics</Original>
                         <French>Logistique</French>
+                        <German>Logistik</German>
                 </Key>
                 <Key ID="STR_BUILD8">
                         <Original>Infantry squads</Original>
