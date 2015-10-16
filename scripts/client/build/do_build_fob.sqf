@@ -1,6 +1,6 @@
 private [ "_minfobdist", "_minsectordist", "_distfob", "_clearedtobuildfob", "_distsector", "_clearedtobuildsector", "_idx" ];
 
-_minfobdist = 2000;
+_minfobdist = 1000;
 _minsectordist = GRLIB_capture_size;
 _distfob = 1;
 _clearedtobuildfob = true;
@@ -16,6 +16,7 @@ while { (_idx < (count GRLIB_all_fobs)) && _clearedtobuildfob } do {
 	_idx = _idx + 1;
 };
 
+_idx = 0;
 if(_clearedtobuildfob) then {
 	while { (_idx < (count sectors_allSectors)) && _clearedtobuildsector } do {
 		if ( player distance (getmarkerpos (sectors_allSectors select _idx)) < _minsectordist ) then {
