@@ -143,7 +143,7 @@ buildings = [
 ];
 
 support_vehicles = [
-[Arsenal_typename,2,0,0],
+[Arsenal_typename,10,0,0],
 [Respawn_truck_typename,20,0,5],
 [FOB_box_typename,30,50,0],
 [FOB_truck_typename,30,50,5],
