@@ -22,7 +22,9 @@ _grp = createGroup _sidespawn;
 if ( _sector in sectors_capture ) then {
 	_unitidx = 0;
 	{
-		[ _x ] call ( militia_standard_squad select _unitidx );
+		if ( (typeof _x) in original_resistance ) then {
+			[ _x ] call ( militia_standard_squad select _unitidx );
+		};
 		_unitidx = _unitidx + 1;
 		if ( _unitidx > 9 ) then { _unitidx = 0 };
 	} foreach (units _grp);

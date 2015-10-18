@@ -1,5 +1,5 @@
 respawn = 3;
-respawndelay = 15;
+respawndelay = 5;
 disabledAI = true;
 
 enableDebugConsole = 1;

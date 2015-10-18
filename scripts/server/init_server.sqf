@@ -1,4 +1,5 @@
 [] call compileFinal preprocessFileLineNumbers "scripts\loadouts\init_loadouts.sqf";
+[] call compileFinal preprocessFileLineNumbers "whitelist.sqf";
 
 // AI
 add_civ_waypoints = compileFinal preprocessFileLineNumbers "scripts\server\ai\add_civ_waypoints.sqf";
@@ -41,6 +42,7 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\readiness_increase.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\apply_default_permissions.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\capture_vehicles.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\enforce_whitelist.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\fucking_set_fog.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\manage_weather.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\periodic_save.sqf";
@@ -52,6 +54,7 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_synchro.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\offload_calculation.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\offload_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\offloading\show_fps.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\civilian_patrols.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_patrols.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\patrols\reinforcements_resetter.sqf";

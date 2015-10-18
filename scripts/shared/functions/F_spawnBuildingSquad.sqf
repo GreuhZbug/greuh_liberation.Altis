@@ -37,7 +37,9 @@ _idxposit = 0;
 	_nextunit setdir (random 360);
 	[ _nextunit ] spawn building_defence_ai;
 	if ( _infsquad == "militia" ) then {
-		[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );
+		if ( (typeof _nextunit) in original_resistance ) then {
+			[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );
+		};
 	};
 
 	_idxposit = _idxposit + 1;

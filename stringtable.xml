@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.909a</Original>
+        		<Original>Liberation 0.910</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.909a</Original>
+                        <Original>v0.910</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1078,6 +1078,14 @@
                 <Key ID="STR_DEPLOY_IN_PROGRESS">
                         <Original>Deployment in progress...</Original>
                         <French>Déploiement en cours...</French>
+                </Key>
+                <Key ID="STR_WHITELIST_PARAM">
+                        <Original>Use the commander whitelist</Original>
+                        <French>Utiliser la whitelist pour le commandant</French>
+                </Key>
+                 <Key ID="STR_WHITELIST_ENABLED">
+                        <Original>Enabled - Only use if you have modified your whitelist.sqf!</Original>
+                        <French>Activé - A n'utiliser que si vous avez modifié votre whitelist.sqf !</French>
                 </Key>
 
 

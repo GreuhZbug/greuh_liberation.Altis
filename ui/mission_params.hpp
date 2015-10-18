@@ -114,6 +114,12 @@ class Params
 		texts[] = { $STR_YES, $STR_NO };
 		default = 0;
 	};
+	class Whitelist {
+		title = $STR_WHITELIST_PARAM;
+		values[] = { 1, 0 };
+		texts[] = { $STR_WHITELIST_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
 	class WipeSave1{
 		title = $STR_WIPE_TITLE;
 		values[] = {0,1};

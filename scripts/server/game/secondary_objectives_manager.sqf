@@ -19,7 +19,7 @@ while { GRLIB_endgame == 0 } do {
 
 	_spawn_marker = "";
 	while { _spawn_marker == "" } do {
-		_spawn_marker = [3000,30000,false] call F_findOpforSpawnPoint;
+		_spawn_marker = [2000,30000,false] call F_findOpforSpawnPoint;
 		if ( _spawn_marker == "" ) then {
 			sleep (300 + (random 300));
 		};
