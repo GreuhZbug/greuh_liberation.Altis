@@ -14,7 +14,7 @@ while { true } do {
 
 		{
 			if ( ( side group _x == WEST ) && ( !isPlayer _x ) ) then {
-				if ( ( _x distance lhd > 500 ) && ( _x distance ( getmarkerpos "respawn_west") > 100 ) && ( alive _x ) ) then {
+				if ( ( _x distance lhd > 250 ) && ( _x distance ( getmarkerpos "respawn_west") > 100 ) && ( alive _x ) ) then {
 					_unit = _x;
 					{
 						if ( ( _x select 0 ) == typeof _unit ) then {
@@ -27,7 +27,7 @@ while { true } do {
 		} foreach allUnits;
 
 		{
-			if ( ( _x distance lhd > 500 ) && ( alive _x ) ) then {
+			if ( ( _x distance lhd > 250 ) && ( alive _x ) ) then {
 				_unit = _x;
 				{
 					if ( ( _x select 0 ) == typeof _unit ) then {

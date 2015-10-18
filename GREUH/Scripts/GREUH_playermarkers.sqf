@@ -13,7 +13,7 @@ if ( side player == WEST ) then {
 };
 
 while { true } do {
-	waitUntil { show_teammates };
+	waitUntil { sleep 0.3; show_teammates };
 	while { show_teammates } do {
 
 		// Protection pour le solo et autres cas imprevus

@@ -38,6 +38,8 @@ if ( dojump > 0 ) then {
 	_backpack = backpack player;
 	if ( _backpack != "" && _backpack != "B_Parachute" ) then {
 		_backpackcontents = backpackItems player;
+		removeBackpack player;
+		sleep 0.1;
 	};
 	player addBackpack "B_Parachute";
 
