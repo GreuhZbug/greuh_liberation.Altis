@@ -148,6 +148,6 @@ while { true } do {
 			};
 		};
 
-		sleep 2;
+		sleep 1;
 	};
 };

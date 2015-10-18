@@ -10,21 +10,15 @@ nametags_distance = 32.0;
 
 private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha", "_textalpha", "_size", "_screenpos", "_grouppos", "_distlabel", "_dist", "_nextunit", "_color", "_drawicon", "_displayname", "_iconpos" ];
 
+waitUntil { !isNil "GRLIB_overlay_groups" };
+waitUntil { !isNil "GRLIB_nametag_units" };
+
 ["platoon_overlay", "onEachFrame", {
 
 	if ( show_platoon ) then {
-		_groups = [];
-		{
-			if (
-			(!(_x in _groups)) &&
-			(side _x == side player) &&
-			((count units _x > 1) || ((count units _x == 1) && (leader _x != player))) &&
-			(isplayer (leader _x))
-			) then { _groups pushback _x; };
-		} foreach allGroups;
 
 		{
-			if (count (units _x) != 0) then {
+			if ( count units _x > 0 ) then {
 				_totalx = 0;
 				_totaly = 0;
 				_totalz = 0;
@@ -76,65 +70,63 @@ private [ "_groups", "_unitstocount", "_totalx", "_totaly", "_totalz", "_alpha",
 				drawIcon3D [platoon_icon1, _color, _grouppos, _size / 2, _size / 2,0, format ["%1 - %2%3",groupID _x, name (leader _x),_distlabel], 2, 0.03 * _textalpha, "puristaMedium"];
 				drawIcon3D [platoon_icon2, _color, _grouppos, _size, _size,0, "", 2, 0.04, "puristaMedium"];
 			};
-		} foreach _groups;
-
+		} foreach GRLIB_overlay_groups;
 	};
 
 	if ( show_nametags ) then {
 		{
 			_nextunit = _x;
-			if ( _nextunit distance player < nametags_distance && alive _nextunit && _nextunit != player && (vehicle player) != (vehicle _nextunit) && (side group _nextunit == WEST) ) then {
 
-				_alpha = 1;
-				if ( _nextunit distance player > (nametags_distance / 2) ) then {
-					_alpha = 1 - ((((_nextunit distance player) - (nametags_distance / 2)) * 2) / nametags_distance);
+			_alpha = 1;
+			if ( _nextunit distance player > (nametags_distance / 2) ) then {
+				_alpha = 1 - ((((_nextunit distance player) - (nametags_distance / 2)) * 2) / nametags_distance);
+			};
+
+			_color = [];
+			if ( _nextunit in (units group player)) then {
+
+				switch ( _nextunit getVariable [ "GRLIB_squad_color", "MAIN" ] ) do {
+					case "BLUE" : { _color = [0.15,0.35,1.0,_alpha] };
+					case "RED" : { _color = [0.8,0,0,_alpha] };
+					case "YELLOW" : { _color = [0.85,0.85,0,_alpha] };
+					case "GREEN" : { _color = [0,0.75,0,_alpha] };
+					default { _color = [0.9,0.9,0.9,_alpha] };
 				};
 
-				_color = [];
-				if ( _nextunit in (units group player)) then {
+			} else {
+				_color = [0.92,0.7,0.25,_alpha];
+			};
 
-					switch ( _nextunit getVariable [ "GRLIB_squad_color", "MAIN" ] ) do {
-						case "BLUE" : { _color = [0.15,0.35,1.0,_alpha] };
-						case "RED" : { _color = [0.8,0,0,_alpha] };
-						case "YELLOW" : { _color = [0.85,0.85,0,_alpha] };
-						case "GREEN" : { _color = [0,0.75,0,_alpha] };
-						default { _color = [0.9,0.9,0.9,_alpha] };
-					};
-
+			_drawicon = soldier_icon;
+			if ( _nextunit getVariable [ "FAR_isUnconscious", 0 ] == 1 ) then {
+				_drawicon = wounded_icon;
+			} else {
+				if ( _nextunit == [] call F_getCommander ) then {
+					_drawicon = commander_icon;
 				} else {
-					_color = [0.92,0.7,0.25,_alpha];
-				};
-
-				_drawicon = soldier_icon;
-				if ( _nextunit getVariable [ "FAR_isUnconscious", 0 ] == 1 ) then {
-					_drawicon = wounded_icon;
-				} else {
-					if ( _nextunit == [] call F_getCommander ) then {
-						_drawicon = commander_icon;
+					if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {
+						_drawicon = group_leader_icon;
 					} else {
-						if ( _nextunit == (leader group _nextunit) && (count (units group _nextunit) > 1 ) ) then {
-							_drawicon = group_leader_icon;
-						} else {
-							if ( ( isFormationLeader _nextunit ) && ( count formationMembers _nextunit > 1 ) ) then {
-								_drawicon = formation_leader_icon;
-							};
+						if ( ( isFormationLeader _nextunit ) && ( count formationMembers _nextunit > 1 ) ) then {
+							_drawicon = formation_leader_icon;
 						};
 					};
 				};
-
-				_displayname = "";
-				if(count (squadParams _nextunit) != 0) then {
-					_displayname = "[" + ((squadParams _nextunit select 0) select 0) + "] ";
-				};
-				_displayname = _displayname + ( name _nextunit );
-
-				_height = 2 + ((player distance _nextunit) / (0.75 * nametags_distance));
-
-				_iconpos = [  getPosATL _nextunit select 0,  getPosATL _nextunit select 1,  (getPosATL _nextunit select 2) + _height ];
-
-				drawIcon3D [ _drawicon, _color, _iconpos , 0.75, 0.75,0, format [ "%1", _displayname] , 2, 0.032, "puristaMedium"];
 			};
-		} foreach allUnits;
+
+			_displayname = "";
+			if(count (squadParams _nextunit) != 0) then {
+				_displayname = "[" + ((squadParams _nextunit select 0) select 0) + "] ";
+			};
+			_displayname = _displayname + ( name _nextunit );
+
+			_height = 2 + ((player distance _nextunit) / (0.75 * nametags_distance));
+
+			_iconpos = [  getPosATL _nextunit select 0,  getPosATL _nextunit select 1,  (getPosATL _nextunit select 2) + _height ];
+
+			drawIcon3D [ _drawicon, _color, _iconpos , 0.75, 0.75,0, format [ "%1", _displayname] , 2, 0.032, "puristaMedium"];
+
+		} foreach GRLIB_nametag_units;
 	};
 
 }] call BIS_fnc_addStackedEventHandler;

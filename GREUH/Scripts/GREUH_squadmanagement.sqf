@@ -11,7 +11,7 @@ while { true } do {
 	if ( squadaction != "" ) then {
 		_grp = grpNull;
 		switch (squadaction) do {
-			case "create" : { 
+			case "create" : {
 				_grp = createGroup (side player);
 				[player] join _grp;
 				hint "New squad created";
@@ -48,20 +48,20 @@ while { true } do {
 				if ( leader group player == player ) then {
 					choosingleader = true;
 					choose_squadleader = -10;
-					
+
 					_player_group_filtered = [];
 					{
 						if ( isPlayer _x ) then {
 							_player_group_filtered = _player_group_filtered + [_x];
 						};
 					} foreach (units group player);
-					
+
 					lbClear 567;
 					{
-						
+
 						lbAdd [567, name _x ];
 					} foreach _player_group_filtered;
-					
+
 					_count_units_grp_player = count (units group player);
 					waitUntil { ((squadaction == "") || (choose_squadleader >= 0) || !(dialog) || !(alive player) || (_count_units_grp_player != count (units group player))) };
 					if ( alive player && dialog && ( choose_squadleader >= 0 )) then {
@@ -77,10 +77,10 @@ while { true } do {
 		};
 		squadaction = "";
 	};
-	
+
 	{ if ( (isplayer leader _x) && (side _x == side player) && !(_x in groups_list)) then { groups_list = groups_list + [_x] }; } foreach allGroups;
 	{ if (!(_x in allGroups) || (!isplayer leader _x)) then { groups_list = groups_list - [_x] }; } foreach groups_list;
-	
+
 	{
 		if (count global_groups_renamed != 0) then {
 			if (_x in global_groups_renamed) then {
@@ -90,7 +90,7 @@ while { true } do {
 			};
 		};
 	} foreach groups_list;
-	
+
 	if ( count global_new_leader != 0 ) then {
 		if ( group player == global_new_leader select 0 ) then {
 			(global_new_leader select 0) selectLeader (global_new_leader select 1);
@@ -98,8 +98,8 @@ while { true } do {
 			global_new_leader = [];
 		};
 	};
-	
-	sleep 0.1;
-	
+
+	sleep 0.5;
+
 };
 

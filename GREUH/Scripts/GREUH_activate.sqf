@@ -38,5 +38,6 @@ if ( !isNil "greuh_options_profile" ) then {
 [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_medic_listener.sqf";
 if ( GREUH_allow_mapmarkers ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_playermarkers.sqf"; };
 if ( GREUH_allow_platoonview ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_platoonoverlay.sqf"; };
+if ( GREUH_allow_platoonview ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_cache_units.sqf"; };
 if ( GREUH_allow_customsquads ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_squadmanagement.sqf"; };
 if ( GREUH_allow_viewdistance ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_view_distance_management.sqf"; };
