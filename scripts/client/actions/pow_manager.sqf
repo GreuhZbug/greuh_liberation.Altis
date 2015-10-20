@@ -6,7 +6,7 @@ while { true } do {
 
 		if (  [ player, 5 ] call F_fetchPermission  ) then {
 
-			_near_people = (getpos player) nearEntities [["Man"], 4];
+			_near_people = (getPosATL player) nearEntities [["Man"], 5];
 			{
 				if ( (captive _x) && !(_x in _actionned_captive_units) && !((side group _x) == WEST)  ) then {
 					_x addAction ["<t color='#FFFF00'>" + localize "STR_SECONDARY_CAPTURE" + "</t>","scripts\client\actions\do_capture.sqf","",-850,true,true,"","(vehicle player == player) && (side group _target != WEST) && (captive _target)"];

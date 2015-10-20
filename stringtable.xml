@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.910</Original>
+        		<Original>Liberation 0.911</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.910</Original>
+                        <Original>v0.911</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1086,6 +1086,34 @@
                  <Key ID="STR_WHITELIST_ENABLED">
                         <Original>Enabled - Only use if you have modified your whitelist.sqf!</Original>
                         <French>Activé - A n'utiliser que si vous avez modifié votre whitelist.sqf !</French>
+                </Key>
+                <Key ID="STR_BUILD_ENEMIES_NEARBY">
+                        <Original>Cannot build: hostile forces nearby.</Original>
+                        <French>Impossible de construire: forces hostiles à proximité.</French>
+                </Key>
+                <Key ID="STR_CLEANUP_PARAM">
+                        <Original>Cleanup abandonned vehicles outside FOBs</Original>
+                        <French>Nettoyer les véhicules abandonnés loin d'une FOB</French>
+                </Key>
+                <Key ID="STR_CLEANUP_PARAM1">
+                        <Original>Enabled - 1 hour delay</Original>
+                        <French>Activé - 1 heure de délai</French>
+                </Key>
+                <Key ID="STR_CLEANUP_PARAM2">
+                        <Original>Enabled - 2 hours delay</Original>
+                        <French>Activé - 2 heures de délai</French>
+                </Key>
+                <Key ID="STR_CLEANUP_PARAM3">
+                        <Original>Enabled - 4 hours delay</Original>
+                        <French>Activé - 4 heures de délai</French>
+                </Key>
+                <Key ID="STR_SORRY">
+                        <Original>Sorry!</Original>
+                        <French>Désolé !</French>
+                </Key>
+                <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
+                        <Original>You are not authorized to use the commander slot on this server.</Original>
+                        <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
                 </Key>
 
 

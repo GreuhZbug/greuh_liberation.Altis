@@ -12,9 +12,13 @@ if ( _infsquad == "militia" ) then {
 	_infsquad_classnames = ([] call F_getAdaptiveSquadComp);
 };
 
+diag_log format [ "Spawning building squad Checkpoint A at %1", time ];
+
 if ( _building_ai_max > floor ((count _buildingpositions) * GRLIB_defended_buildingpos_part)) then { _building_ai_max = floor ((count _buildingpositions) * GRLIB_defended_buildingpos_part)};
 _squadtospawnnn = [];
 while { (count _squadtospawnnn) < _building_ai_max } do { _squadtospawnnn pushback ( _infsquad_classnames call BIS_fnc_selectRandom ); };
+
+diag_log format [ "Spawning building squad Checkpoint B at %1", time ];
 
 _position_indexes = [];
 _position_count = count _buildingpositions;
@@ -25,12 +29,12 @@ while { count _position_indexes < count _squadtospawnnn } do {
 	}
 };
 
+diag_log format [ "Spawning building squad Checkpoint C at %1", time ];
+
 _grp = createGroup _sidespawn;
 _idxposit = 0;
 {
-	_groupunitscount = (count units _grp);
-	[ _x, _sectorpos, _grp ] spawn { params [ "_classname", "_sectorpos", "_grp" ]; _classname createUnit [ _sectorpos, _grp ]; };
-	waitUntil { count units _grp != _groupunitscount };
+	_x createUnit [ _sectorpos, _grp ];
 	_nextunit = (units _grp) select ((count (units _grp)) -1);
 	_nextunit addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 	_nextunit setpos (_buildingpositions select (_position_indexes select _idxposit));
@@ -49,6 +53,8 @@ _idxposit = 0;
 		_grp = createGroup _sidespawn;
 	};
 } foreach _squadtospawnnn;
+
+diag_log format [ "Spawning building squad Checkpoint D at %1", time ];
 
 if ( !(isNull _grp)) then {
 	_everythingspawned = _everythingspawned + (units _grp);
