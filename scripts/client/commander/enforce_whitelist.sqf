@@ -2,10 +2,14 @@ if ( !GRLIB_use_whitelist ) exitWith {};
 
 private [ "_commanderobj", "_tagmatch", "_idmatch", "_namematch" ];
 
-while { true } do {
+waitUntil { alive player };
+sleep 1;
 
-	_commanderobj = [] call F_getCommander;
-	if ( !isNull _commanderobj ) then {
+_commanderobj = [] call F_getCommander;
+if ( !isNull _commanderobj ) then {
+	if ( player == _commanderobj ) then {
+
+		[] call compileFinal preprocessFileLineNumbers "whitelist.sqf";
 
 		_tagmatch = false;
 		_idmatch = false;
@@ -33,14 +37,10 @@ while { true } do {
 
 		if ( !( _tagmatch || _idmatch || _namematch ) ) then {
 
-			[ format ["%1 is not authorized to use the commander slot.", name _commanderobj] , "F_globalChat" ] call bis_fnc_mp;
 			sleep 1;
 			if ( alive _commanderobj ) then {
-				_commanderobj setDamage 1;
+				endMission "END1";
 			};
 		};
 	};
-
-	sleep 3;
-
 };

@@ -33,34 +33,46 @@ while { true } do {
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (266)) ctrlSetText format [ "%1", GRLIB_ui_notif ];
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (267)) ctrlSetText format [ "%1", GRLIB_ui_notif ];
 
-			if ( _uiticks % 4 == 0 ) then {
-				if ((getmarkerpos "opfor_capture_marker") distance markers_reset > 100 ) then {
+			if ((getmarkerpos "opfor_capture_marker") distance markers_reset > 100 ) then {
 
-					private [ "_attacked_string" ];
-					_attacked_string = [ markerpos "opfor_capture_marker" ] call F_getFobName;
-					if ( _attacked_string == "" ) then {
-						_attacked_string = markerText  ( [50, markerpos "opfor_capture_marker" ] call F_getNearestSector );
-					} else {
-						_attacked_string = format [ "FOB %1", _attacked_string ];
-					};
-
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow true;
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText _attacked_string;
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText (markerText "opfor_capture_marker");
+				private [ "_attacked_string" ];
+				_attacked_string = [ markerpos "opfor_capture_marker" ] call F_getFobName;
+				if ( _attacked_string == "" ) then {
+					_attacked_string = markerText  ( [50, markerpos "opfor_capture_marker" ] call F_getNearestSector );
 				} else {
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow false;
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText "";
-					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText "";
+					_attacked_string = format [ "FOB %1", _attacked_string ];
 				};
+
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow true;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText _attacked_string;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText (markerText "opfor_capture_marker");
+			} else {
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow false;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText "";
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (403)) ctrlSetText "";
 			};
 
-			if ( _uiticks % 16 == 0 ) then {
+
+			if ( _uiticks % 5 == 0 ) then {
 
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (101)) ctrlSetText format [ "%1/%2",(floor resources_infantry),infantry_cap ];
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (102)) ctrlSetText format [ "%1",(floor resources_ammo) ];
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (103)) ctrlSetText format [ "%1/%2",(floor resources_fuel),fuel_cap ];
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (104)) ctrlSetText format [ "%1/%2",unitcap,([] call F_localCap) ];
 				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (105)) ctrlSetText format [ "%1%2",round(combat_readiness),"%" ];
+
+				_color_readiness = [0.8,0.8,0.8,1];
+				if ( combat_readiness >= 25 ) then { _color_readiness = [0.8,0.8,0,1] };
+				if ( combat_readiness >= 50 ) then { _color_readiness = [0.8,0.6,0,1] };
+				if ( combat_readiness >= 75 ) then { _color_readiness = [0.8,0.3,0,1] };
+				if ( combat_readiness >= 100 ) then { _color_readiness = [0.8,0,0,1] };
+
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (105)) ctrlSetTextColor _color_readiness;
+				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (135)) ctrlSetTextColor _color_readiness;
+
+			};
+
+			if ( _uiticks % 25 == 0 ) then {
 
 				if (!isNil "active_sectors" && ( [] call F_opforCap >= GRLIB_sector_cap)) then {
 
@@ -83,15 +95,6 @@ while { true } do {
 					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (517)) ctrlShow false;
 				};
 
-				_color_readiness = [0.8,0.8,0.8,1];
-				if ( combat_readiness >= 25 ) then { _color_readiness = [0.8,0.8,0,1] };
-				if ( combat_readiness >= 50 ) then { _color_readiness = [0.8,0.6,0,1] };
-				if ( combat_readiness >= 75 ) then { _color_readiness = [0.8,0.3,0,1] };
-				if ( combat_readiness >= 100 ) then { _color_readiness = [0.8,0,0,1] };
-
-				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (105)) ctrlSetTextColor _color_readiness;
-				((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (135)) ctrlSetTextColor _color_readiness;
-
 				_nearest_active_sector = [ GRLIB_sector_size ] call F_getNearestSector;
 				if ( _nearest_active_sector != "" ) then {
 					_zone_size = GRLIB_capture_size;
@@ -110,7 +113,7 @@ while { true } do {
 					_barwidth = 0.084 * safezoneW * _ratio;
 					_bar = (uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (244);
 					_bar ctrlSetPosition [(ctrlPosition _bar) select 0,(ctrlPosition _bar) select 1,_barwidth,(ctrlPosition _bar) select 3];
-					_bar ctrlCommit 0;
+					_bar ctrlCommit 3;
 					((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (205)) ctrlSetText (markerText _nearest_active_sector);
 					{ ((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (_x)) ctrlShow true; } foreach  _sectorcontrols;
 					if ( _nearest_active_sector in blufor_sectors ) then {

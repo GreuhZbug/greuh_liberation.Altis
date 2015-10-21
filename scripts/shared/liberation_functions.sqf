@@ -38,4 +38,3 @@ F_fetchPermission = compileFinal preprocessFileLineNumbers "scripts\shared\funct
 LARs_fnc_addAllVirtualCargo = compileFinal preprocessFileLineNumbers "scripts\shared\functions\LARs_fnc_addAllVirtualCargo.sqf";
 F_isAdmin = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_isAdmin.sqf";
 F_cleanOpforVehicle = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_cleanOpforVehicle.sqf";
-F_globalChat = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_globalChat.sqf";

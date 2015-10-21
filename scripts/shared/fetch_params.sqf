@@ -17,6 +17,7 @@ if ( isMultiplayer ) then {
 	GRLIB_permissions_param = ["Permissions",1] call bis_fnc_getParamValue;
 	GRLIB_halo_param = ["HaloJump",1] call bis_fnc_getParamValue;
 	GRLIB_use_whitelist = ["Whitelist",0] call bis_fnc_getParamValue;
+	GRLIB_cleanup_vehicles = ["CleanupVehicles",2] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -36,6 +37,7 @@ if ( isMultiplayer ) then {
 	GRLIB_permissions_param = 1;
 	GRLIB_halo_param = 1;
 	GRLIB_use_whitelist = 0;
+	GRLIB_cleanup_vehicles = 2;
 };
 
 GRLIB_fatigue = GRLIB_fatigue / 2.0; // This is stupid but you can't use a decimal value as the default setting
