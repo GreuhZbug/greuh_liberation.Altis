@@ -36,8 +36,11 @@ if ( count _loadouts_data > 0 ) then {
 };
 
 _loadplayers = [];
-{ _loadplayers pushback [ name _x, _x ] } foreach ( allPlayers - [ player ] );
-_loadplayers = [ _loadplayers, { !( ( name _x ) in [ "HC1", "HC2", "HC3" ] ) } ] call BIS_fnc_conditionalSelect;
+{
+	if ( !(name _x in [ "HC1", "HC2", "HC3" ]) )  then {
+		_loadplayers pushback [ name _x, _x ];
+	};
+} foreach ( allPlayers - [ player ] );
 
 if ( count _loadplayers > 0 ) then {
 
