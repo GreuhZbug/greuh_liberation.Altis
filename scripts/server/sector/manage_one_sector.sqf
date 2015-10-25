@@ -62,7 +62,7 @@ if ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount 
 		_sidespawn = EAST;
 
 		_building_ai_max = round ((45 + (round (combat_readiness / 5 ))) * _popfactor) ;
-		_building_range = 150;
+		_building_range = 125;
 		_local_capture_size = _local_capture_size * 1.4;
 		_iedcount = (2 + (floor (random 4))) * GRLIB_difficulty_modifier;
 		if ( _iedcount > 10 ) then { _iedcount = 10 };
