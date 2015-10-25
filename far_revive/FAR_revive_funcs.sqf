@@ -22,13 +22,9 @@ FAR_HandleDamage_EH =
 {
 
 	params [ "_unit", "_selectionName", "_amountOfDamage", "_killer", "_projectile", "_hitPartIndex" ];
-	private [ "_isUnconscious", "_olddamage", "_damageincrease", "_vestarmor", "_vest_passthrough", "_vestobject", "_helmetarmor",  "_helmet_passthrough", "_helmetobject", "_cfg" ];
-
-	_cfg = configFile >> "cfgWeapons";
+	private [ "_isUnconscious", "_olddamage", "_damageincrease", "_vestarmor", "_vest_passthrough", "_vestobject", "_helmetarmor",  "_helmet_passthrough", "_helmetobject" ];
 
 	_isUnconscious = _unit getVariable "FAR_isUnconscious";
-
-	diag_log _selectionName;
 
 	_oldDamage = damage _unit;
 	switch ( _selectionName ) do {
