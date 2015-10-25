@@ -20,27 +20,25 @@ _unitcap_old = -1;
 _combat_readiness_old = -1;
 
 while { true } do {
-	while { true } do {
 
-		waitUntil { sleep 0.25;
-			_resources_infantry_old != resources_infantry
-			|| _resources_ammo_old != resources_ammo
-			|| _resources_fuel_old != resources_fuel
-			|| _infantry_cap_old != infantry_cap
-			|| _fuel_cap_old != fuel_cap
-			|| _unitcap_old != unitcap
-			|| _combat_readiness_old != combat_readiness
-		};
-		sleep 0.25;
-		sync_vars = [resources_infantry, resources_ammo, resources_fuel,infantry_cap,fuel_cap, unitcap, combat_readiness];
-		publicVariable "sync_vars";
-
-		_infantry_cap_old = infantry_cap;
-		_fuel_cap_old = fuel_cap;
-		_resources_infantry_old = resources_infantry;
-		_resources_ammo_old = resources_ammo;
-		_resources_fuel_old = resources_fuel;
-		_unitcap_old = unitcap;
-		_combat_readiness_old = combat_readiness;
+	waitUntil { sleep 0.25;
+		_resources_infantry_old != resources_infantry
+		|| _resources_ammo_old != resources_ammo
+		|| _resources_fuel_old != resources_fuel
+		|| _infantry_cap_old != infantry_cap
+		|| _fuel_cap_old != fuel_cap
+		|| _unitcap_old != unitcap
+		|| _combat_readiness_old != combat_readiness
 	};
+	sleep 0.25;
+	sync_vars = [resources_infantry, resources_ammo, resources_fuel,infantry_cap,fuel_cap, unitcap, combat_readiness];
+	publicVariable "sync_vars";
+
+	_infantry_cap_old = infantry_cap;
+	_fuel_cap_old = fuel_cap;
+	_resources_infantry_old = resources_infantry;
+	_resources_ammo_old = resources_ammo;
+	_resources_fuel_old = resources_fuel;
+	_unitcap_old = unitcap;
+	_combat_readiness_old = combat_readiness;
 };
