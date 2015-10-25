@@ -756,13 +756,7 @@ class GREUH_Menu {
   };
 };
 
-class GREUH_respawn {
-  idd = 5566;
-  movingEnable = false;
-  controlsBackground[] = {"GREUH_BleedoutBar_BG"};
-  controls[] = {"GREUH_BleedoutBar","GREUH_BleedoutBar_F","GREUH_Useless","GREUH_Respawn","GREUH_ReviveLabel","GREUH_WoundedLabel"};
-  objects[] = {};
-  class GREUH_Respawn {
+class GreuhButton {
   	idc = -1;
 	type = CT_BUTTON;
 	style = ST_CENTER;
@@ -788,39 +782,38 @@ class GREUH_respawn {
 	soundEscape[] = { "", 0, 1 };  // no sound
 	x = 0.45 * safezoneW + safezoneX; y= 0.8 * safezoneH + safezoneY;
 	w = 0.1 * safezoneW; h = 0.04 * safezoneH;
+	text = "";
+	action = "";
+	shadow = 1;
+};
+
+class GREUH_respawn {
+  idd = 5566;
+  movingEnable = false;
+  controlsBackground[] = {"GREUH_BleedoutBar_BG"};
+  controls[] = {"GREUH_BleedoutBar","GREUH_BleedoutBar_F","GREUH_Useless","GREUH_Respawn","GREUH_ReviveLabel","GREUH_WoundedLabel", "GREUH_ReplaceAI"};
+  objects[] = {};
+  class GREUH_Respawn : GreuhButton{
+  	idc = -1;
+	x = 0.45 * safezoneW + safezoneX; y= 0.75 * safezoneH + safezoneY;
+	w = 0.1 * safezoneW; h = 0.04 * safezoneH;
 	text = "Respawn";
 	action = "player setDamage 1";
-	shadow = 1;
   };
+  class GREUH_ReplaceAI : GreuhButton {
+  	idc = 678;
+  	x = 0.45 * safezoneW + safezoneX; y= 0.8 * safezoneH + safezoneY;
+	w = 0.1 * safezoneW; h = 0.04 * safezoneH;
+	text = "Replace nearest AI";
+	action = "replace_ai = 1";
+
+  }
    class GREUH_Useless : GREUH_Respawn {
   	idc = -1;
-	type = CT_BUTTON;
-	style = ST_CENTER;
-	default = false;
-	font = FontM;
-	sizeEx = 0.018 * safezoneH;
-	colorText[] = { 0, 0, 0, 1 };
-	colorFocused[] = { 1, 1, 1, 1 };
-	colorDisabled[] = { 0.2, 0.2, 0.2, 0.7 };
-	colorBackground[] = { 0.8, 0.8, 0.8, 0.8 };
-	colorBackgroundDisabled[] = { 0.5, 0.5, 0.5, 0.5 };
-	colorBackgroundActive[] = { 1, 1, 1, 1 };
-	offsetX = 0.003;
-	offsetY = 0.003;
-	offsetPressedX = 0.002;
-	offsetPressedY = 0.002;
-	colorShadow[] = { 0, 0, 0, 0.5 };
-	colorBorder[] = { 0, 0, 0, 1 };
-	borderSize = 0;
-	soundEnter[] = { "", 0, 1 };  // no sound
-	soundPush[] = {"", 0, 1};
-	soundClick[] = { "", 0, 1 };  // no sound
-	soundEscape[] = { "", 0, 1 };  // no sound
 	x = -5; y= -5;
 	w = 0.1; h = 0.1;
 	text = "";
 	action = "";
-	shadow = 1;
   };
     class GREUH_ReviveLabel {
     idc = 5567;
@@ -831,7 +824,7 @@ class GREUH_respawn {
 	font = FontM;
 	sizeEx = 0.02 * safezoneH;
     shadow = 1;
-	x = 0.4 * safezoneW + safezoneX; y= 0.75 * safezoneH + safezoneY;
+	x = 0.4 * safezoneW + safezoneX; y= 0.7 * safezoneH + safezoneY;
 	w = 0.2 * safezoneW; h = 0.025 * safezoneH;
 	text = "";
   };
@@ -856,21 +849,21 @@ class GREUH_respawn {
 	colorBackground[] = COLOR_BLEEDOUT;
 	font = FontM;
 	sizeEx = 0.023;
-	x = (0.4 * safezoneW + safezoneX); y= (0.75 * safezoneH + safezoneY);
+	x = (0.4 * safezoneW + safezoneX); y= (0.7 * safezoneH + safezoneY);
 	w = (0.2 * safezoneW); h = (0.03 * safezoneH);
 	text = "";
   };
   class GREUH_BleedoutBar_BG : GREUH_BleedoutBar {
 	idc = -1;
 	colorBackground[] = COLOR_BLACK_ALPHA;
-	x = (0.4 * safezoneW + safezoneX) - 0.005; y= (0.75 * safezoneH + safezoneY) - 0.005;
+	x = (0.4 * safezoneW + safezoneX) - 0.005; y= (0.7 * safezoneH + safezoneY) - 0.005;
 	w = (0.2 * safezoneW) + 0.01; h = (0.03 * safezoneH) + 0.01;
   };
     class GREUH_BleedoutBar_F : GREUH_BleedoutBar {
 	idc = 6698;
 	colorText[] = COLOR_WHITE;
 	style = ST_FRAME;
-	x = (0.4 * safezoneW + safezoneX) - 0.005; y= (0.75 * safezoneH + safezoneY) - 0.005;
+	x = (0.4 * safezoneW + safezoneX) - 0.005; y= (0.7 * safezoneH + safezoneY) - 0.005;
 	w = (0.2 * safezoneW) + 0.01; h = (0.03 * safezoneH) + 0.01;
   };
 

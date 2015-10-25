@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.911</Original>
+        		<Original>Liberation 0.912</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.911</Original>
+                        <Original>v0.912</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -1174,6 +1174,36 @@
                         <Original>You are not authorized to use the commander slot on this server.</Original>
                         <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
                 </Key>
+                <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
+                        <Original>You are not authorized to use the commander slot on this server.</Original>
+                        <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
+                </Key>
+                <Key ID="STR_MAKE_RESPAWN_LOADOUT">
+                        <Original>Save respawn loadout</Original>
+                        <French>Equipement de respawn</French>
+                </Key>
+                <Key ID="STR_MAKE_RESPAWN_LOADOUT_HINT">
+                        <Original>Your current loadout will be restored on every respawn.</Original>
+                        <French>Votre equipement actuel sera restauré à chaque respawn.</French>
+                </Key>
+                <Key ID="STR_LOAD_PLAYER_LOADOUT">
+                        <Original>Load from player</Original>
+                        <French>Charger depuis joueur</French>
+                </Key>
+                <Key ID="STR_LOAD_PLAYER_LOADOUT_HINT">
+                        <Original>Successful loadout transfer from %1.</Original>
+                        <French>Transfer d'équipement réussi depuis %1.</French>
+                </Key>
+                <Key ID="STR_LOADOUT">
+                        <Original>Loadout:</Original>
+                        <French>Equipement :</French>
+                </Key>
+                <Key ID="STR_SPAWN_POINT">
+                        <Original>Deployment location:</Original>
+                        <French>Lieu de déploiement :</French>
+                </Key>
+
+
 
 
 

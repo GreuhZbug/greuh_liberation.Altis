@@ -1,3 +1,5 @@
+GRLIB_replace_ai = false;
+
 ////////////////////////////////////////////////
 // Player Actions
 ////////////////////////////////////////////////
@@ -20,17 +22,61 @@ FAR_HandleDamage_EH =
 {
 
 	params [ "_unit", "_selectionName", "_amountOfDamage", "_killer", "_projectile", "_hitPartIndex" ];
-	private [ "_isUnconscious" ];
+	private [ "_isUnconscious", "_olddamage", "_damageincrease", "_vestarmor", "_vest_passthrough", "_vestobject", "_helmetarmor",  "_helmet_passthrough", "_helmetobject" ];
 
 	_isUnconscious = _unit getVariable "FAR_isUnconscious";
 
-	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0 && !(_selectionName in [ "hands", "legs", "spine1", "spine2", "spine3", "pelvis" ])) then
+	_oldDamage = damage _unit;
+	switch ( _selectionName ) do {
+		case("head")	:{_oldDamage = _unit getHitPointDamage "HitHead";};
+		case("body")	:{_oldDamage = _unit getHitPointDamage "HitBody";};
+		case("hands")	:{_oldDamage = _unit getHitPointDamage "HitHands";};
+		case("legs")	:{_oldDamage = _unit getHitPointDamage "HitLegs";};
+		case("spine3")  :{_oldDamage = _unit getHitPointDamage "HitChest";};
+		case("spine2")  :{_oldDamage = _unit getHitPointDamage "HitDiaphragm";};
+		case("spine1")  :{_oldDamage = _unit getHitPointDamage "HitAbdomen";};
+		case("pelvis")  :{_oldDamage = _unit getHitPointDamage "HitPelvis";};
+		default{};
+	};
+	_damageincrease = _amountOfDamage - _oldDamage;
+
+	_vestarmor = 0;
+	if ( _selectionName in [ "body", "spine1", "spine2", "spine3", "pelvis", "" ] ) then {
+		_vestobject = vest _unit;
+
+		if ( _vestobject != ""  ) then {
+			_vestarmor = ( (configFile >> "CfgWeapons" >> _vestobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) / 75.0;
+			_vest_passthrough = ( (configFile >> "CfgWeapons" >> _vestobject >> "ItemInfo" >> "passThrough" ) call BIS_fnc_GetCfgData );
+			if ( _vest_passthrough < 0.6 ) then { _vestarmor = _vestarmor * _vest_passthrough * 1.6666666 };
+			if ( _vestarmor > 0.75 ) then { _vestarmor = 0.75; };
+		};
+	};
+
+	_helmetarmor = 0;
+	if ( _selectionName in [ "head", "neck", "" ] ) then {
+		_helmetobject = headgear _unit;
+
+		if ( _helmetobject != ""  ) then {
+			_helmetarmor = ( (configFile >> "CfgWeapons" >> _helmetobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) * 0.12;
+			_helmet_passthrough = ( (configFile >> "CfgWeapons" >> _helmetobject >> "ItemInfo" >> "passThrough" ) call BIS_fnc_GetCfgData );
+			if ( _helmet_passthrough < 0.6 ) then { _helmetarmor = _helmetarmor * _helmet_passthrough * 1.6666666 };
+			if ( _helmetarmor > 0.6 ) then { _helmetarmor = 0.6; };
+		};
+	};
+
+	if ( _selectionName == "" ) then {
+		_vestarmor = _vestarmor * 0.7;
+		_helmetarmor = _helmetarmor * 0.5;
+	};
+
+	_amountOfDamage = _oldDamage + ( _damageincrease * ( 1 - _vestarmor ) * ( 1 - _helmetarmor ) );
+
+	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0 && !(_selectionName in [ "hands", "legs", "spine1", "spine2", "spine3", "pelvis", "neck" ])) then
 	{
 		_unit setDamage 0.6;
 		_unit allowDamage false;
 		_amountOfDamage = 0;
 		[_unit, _killer] spawn FAR_Player_Unconscious;
-
 	};
 
 	_amountOfDamage
@@ -153,7 +199,9 @@ FAR_Player_Unconscious =
 			{
 				// Player got revived
 				_unit setVariable ["FAR_isStabilized", 0, true];
-				sleep 6;
+				if ( !GRLIB_replace_ai ) then {
+					sleep 6;
+				};
 
 				// Clear the "medic nearby" hint
 				hintSilent "";
@@ -168,8 +216,18 @@ FAR_Player_Unconscious =
 				_unit allowDamage true;
 				_unit setCaptive false;
 
-				_unit playMove "amovppnemstpsraswrfldnon";
-				_unit playMove "";
+				if ( GRLIB_replace_ai ) then {
+					if ( primaryWeapon player == "" ) then {
+						_unit switchMove "";
+					} else {
+						_unit switchMove "AidlPknlMstpSrasWrflDnon_G02";
+					};
+
+					GRLIB_replace_ai = false;
+				} else {
+					_unit playMove "amovppnemstpsraswrfldnon";
+					_unit playMove "";
+				};
 			};
 		}
 		else

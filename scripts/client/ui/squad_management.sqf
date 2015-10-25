@@ -213,21 +213,21 @@ while { dialog && alive player } do {
 				[ _selectedmember, player ] call F_swapInventory;
 			};
 
-			_destpos = getpos _selectedmember;
+			_destpos = getposATL _selectedmember;
 			_destdir = getdir _selectedmember;
 
 			if ( damage _selectedmember > 0.4 ) then {
-				if ( damage _selectedmember < 0.8 ) then {
+				if ( damage _selectedmember < 0.7 ) then {
 					player setDamage (damage _selectedmember);
 				} else {
-					player setDamage 0.8;
+					player setDamage 0.7;
 				};
 			};
 
 			deleteVehicle _selectedmember;
 			sleep 0.01;
 
-			player setPos _destpos;
+			player setPosATL _destpos;
 			player setDir _destdir;
 
 			sleep 0.01;

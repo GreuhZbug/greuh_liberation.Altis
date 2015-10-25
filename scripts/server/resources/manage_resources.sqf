@@ -32,7 +32,7 @@ while { GRLIB_endgame == 0 } do {
 
 			} else {
 
-				if ( ( { typeof _x == ammobox_b_typename } count vehicles ) <= ( ( count _blufor_mil_sectors ) * 2 ) ) then {
+				if ( ( { typeof _x == ammobox_b_typename } count vehicles ) <= ( ceil ( ( count _blufor_mil_sectors ) * 1.5 ) ) ) then {
 
 					_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
 					_spawnpos = [0,0,0];
