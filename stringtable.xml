@@ -1194,6 +1194,14 @@
                         <Original>Successful loadout transfer from %1.</Original>
                         <French>Transfer d'équipement réussi depuis %1.</French>
                 </Key>
+                <Key ID="STR_LOADOUT">
+                        <Original>Loadout:</Original>
+                        <French>Equipement :</French>
+                </Key>
+                <Key ID="STR_SPAWN_POINT">
+                        <Original>Deployment location:</Original>
+                        <French>Lieu de déploiement :</French>
+                </Key>
 
 
 

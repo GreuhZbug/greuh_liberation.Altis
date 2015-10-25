@@ -84,6 +84,7 @@
 #define COLOR_BROWN { 0.30, 0.25, 0.2, 0.75 }
 #define COLOR_GREEN { 0.2, 0.23, 0.18, 0.75 }
 #define COLOR_GREEN_ALPHA { 0.2, 0.23, 0.18, 0.4 }
+#define COLOR_GREEN_NOALPHA { 0.2, 0.23, 0.18, 1 }
 #define COLOR_LIGHTGREEN { 0.4, 0.55, 0.36, 0.4 }
 #define COLOR_LIGHTGRAY { 0.6, 0.6, 0.6, 0.8 }
 #define COLOR_LIGHTGRAY_ALPHA { 0.6, 0.6, 0.6, 0.55 }
