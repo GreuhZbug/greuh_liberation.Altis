@@ -889,50 +889,63 @@
                 <Key ID="STR_BUILD8">
                         <Original>Infantry squads</Original>
                         <French>Escouades d'infanterie</French>
+                        <German>Infanteriegruppen</German>
                 </Key>
                 <Key ID="STR_ACTIVE_SECTORS">
                         <Original>Active Sectors:</Original>
                         <French>Secteurs Actifs :</French>
+                        <German>Aktive Sektoren:</German>
                 </Key>
                 <Key ID="STR_OVERLOAD_HINT">
                         <Original>The unitcap setting has been exceeded and further sector activation is temporarily halted. You can now see the list of currently active sectors where you shall concentrate your efforts.</Original>
                         <French>La limite d'unités actives a été dépassée et l'activation de nouveaux secteurs est temporairement stoppée. Vous pouvez maintenant voir la liste des sectors déjà actifs sur lesquels vous pouvez concentrer vos efforts.</French>
+                        <German>Maximale Anzahl KI-Einheiten erreicht. Es können keine weitere Zonen aktiviert werden. Du kannst nun die Liste der aktiven Gebiete sehen, auf die du deine Kraft fokussieren solltest.</German>
                 </Key>
                 <Key ID="STR_VEHICLE_LOCKED">
                         <Original>LOCKED BY</Original>
                         <French>VEROUILLE PAR</French>
+                        <German>VERSCHLOSSEN VON</German>
                 </Key>
                 <Key ID="STR_VEHICLE_UNLOCKED">
                         <Original>UNLOCKED BY</Original>
                         <French>DEVEROUILLE PAR</French>
+                        <German>GEÖFFNET VON</German>
                 </Key>
                 <Key ID="STR_SQUAD_MANAGEMENT">
                         <Original>SQUAD MANAGEMENT</Original>
                         <French>GESTION D'ESCOUADE</French>
+                        <German>GRUPPENVERWALTUNG</German>
                 </Key>
                 <Key ID="STR_SQUAD_MANAGEMENT_ACTION">
                         <Original>-- SQUAD MANAGEMENT</Original>
                         <French>-- GESTION D'ESCOUADE</French>
+                        <German>-- GRUPPENVERWALTUNG</German>
                 </Key>
                 <Key ID="STR_DEPLOY_ON_MEMBER">
                         <Original>Replace</Original>
                         <French>Remplacer</French>
+                        <German>Ersetzen</German>
                 </Key>
                 <Key ID="STR_DEPLOY_ON_MEMBER_TOOLTIP">
                         <Original>You will deploy on the selected squad member and replace them while keeping your current loadout.</Original>
                         <French>Vous allez vous déployer à la place du member d'escouade selectionné tout en conservant votre équipement actuel.</French>
+                        <German>Du wirst das ausgewählte Gruppenmitglied ersetzen, während du deine Ausrüstung behältst.</German>
+                        
                 </Key>
                 <Key ID="STR_REMOVE_MEMBER">
                         <Original>Remove</Original>
                         <French>Supprimer</French>
+                        <German>Entfernen</German>
                 </Key>
                 <Key ID="STR_REMOVE_MEMBER_TOOLTIP">
                         <Original>The selected squad member will be deleted.</Original>
                         <French>Le membre d'escouade sélectionné sera supprimé.</French>
+                        <German>Das ausgewählte Gruppenmitglied löschen.</German>
                 </Key>
                 <Key ID="STR_RESUPPLY">
                         <Original>Resupply</Original>
                         <French>Réapprovisionner</French>
+                        <German>Versorgen</German>
                 </Key>
                 <Key ID="STR_RESUPPLY_TOOLTIP">
                         <Original>If the selected squad member is close enough from a resupply point (mobile spawn or FOB) they will get a brand new, full loadout.</Original>
