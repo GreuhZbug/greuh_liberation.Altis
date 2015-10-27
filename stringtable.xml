@@ -1125,71 +1125,87 @@
                 <Key ID="STR_PERMISSION_NO_LIGHT">
                         <Original>You don't have permission from the commander to use light vehicles.</Original>
                         <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules légers.</French>
-                        <German>Du hast keine Rechte des Kommandantens um leichte Fahrzeuge zu benutzen.</German>
+                        <German>Du hast keine Rechte zur Nutzung leichter Fahrzeuge.</German>
                 </Key>
                 <Key ID="STR_PERMISSION_NO_ARMOR">
                         <Original>You don't have permission from the commander to use armored vehicles.</Original>
                         <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules blindés.</French>
+                        <German>Du hast keine Rechte zur Nutzung gepanzerter Fahrzeuge</German>
                 </Key>
                 <Key ID="STR_PERMISSION_NO_AIR">
                         <Original>You don't have permission from the commander to use air vehicles.</Original>
                         <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules aériens.</French>
+                        <German>Du hast keine Rechte zur Nutzung von Luftfahrzeugen</German>
                 </Key>
                 <Key ID="STR_PERMISSION_WARNING">
                         <Original>No permissions have been set. The commander must setup the permissions to allow player actions and vehicle usage. Alternatively, the permission system can be disabled from the mission options.</Original>
                         <French>Aucune permission n'a été définie. Le commandant doit configurer les permissions pour permettre aux joueurs d'effectuer des actions et d'utiliser les véhicules. Sinon, le système de permissions peut être désactivé dans les options de mission.</French>
+                        <German>Keine Rechte wurden vergeben. Der Kommandant muss die Rechte verwalten um Spielern Aktionen und die Nutzung von Fahrzeugen zu erlaubne. Alternativ kann das Rechtesystem in den Missionsoptionen deaktiviert werden.</German>
                 </Key>
                 <Key ID="STR_ARSENAL_TITLE">
                         <Original>ARSENAL</Original>
                         <French>ARSENAL</French>
+                        <German>ARSENAL</German>
                 </Key>
                 <Key ID="STR_EDIT_LOADOUT">
                         <Original>Edit loadout</Original>
                         <French>Modifier équipement</French>
+                        <German>Ausrüstung bearbeiten</German>
                 </Key>
                 <Key ID="STR_LOAD_LOADOUT">
                         <Original>Take loadout</Original>
                         <French>Charger l'équipement</French>
+                        <German>Ausrüstung laden</German>
                 </Key>
                         <Key ID="STR_DEFAULT">
                         <Original>Default</Original>
                         <French>Par défaut</French>
+                        <German>Standart</German>
                 </Key>
                 <Key ID="STR_FOB_REPACKAGE">
                         <Original>-- REPACKAGE FOB --</Original>
                         <French>-- REPLIER FOB --</French>
+                        <German>-- FOB EINPACKEN --</German>
                 </Key>
                 <Key ID="STR_FOB_REPACKAGE_TITLE">
                         <Original>REPACKAGE FOB</Original>
                         <French>REPLIER FOB</French>
+                        <German>FOB EINPACKEN</German>
                 </Key>
                 <Key ID="STR_FOB_REPACKAGE_CONFIRM">
                         <Original>Are you sure you want to repackage this FOB?</Original>
                         <French>Etes-vous sur de vouloir replier cette fob?</French>
+                        <German>Bist du dir sicher dass du deine FOB einpacken willst?</German>
                 </Key>
                 <Key ID="STR_FOB_REPACKAGE_HINT">
                         <Original>FOB repackaged.</Original>
                         <French>FOB repliée.</French>
+                        <German>FOB eingepackt.</German>
                 </Key>
                 <Key ID="STR_HALO_PARAM">
                         <Original>HALO jump</Original>
                         <French>Saut HALO</French>
+                        <German>HALO-Sprung</German>
                 </Key>
                 <Key ID="STR_HALO_ACTION">
                         <Original>-- HALO JUMP</Original>
                         <French>-- SAUT HALO</French>
+                        <German>-- HALO-SPRUNG</German>
                 </Key>
                 <Key ID="STR_HALO_TITLE">
                         <Original>HALO JUMP</Original>
                         <French>SAUT HALO</French>
+                        <German>HALO-SPRUNG</German>
                 </Key>
                 <Key ID="STR_DEPLOY_IN_PROGRESS">
                         <Original>Deployment in progress...</Original>
                         <French>Déploiement en cours...</French>
+                        <German>Verlegung im Gange</German>
                 </Key>
                 <Key ID="STR_WHITELIST_PARAM">
                         <Original>Use the commander whitelist</Original>
                         <French>Utiliser la whitelist pour le commandant</French>
+                        <German>Nutze die Whitelist für den Kommandanten</German>
                 </Key>
                  <Key ID="STR_WHITELIST_ENABLED">
                         <Original>Enabled - Only use if you have modified your whitelist.sqf!</Original>
@@ -1198,58 +1214,72 @@
                 <Key ID="STR_BUILD_ENEMIES_NEARBY">
                         <Original>Cannot build: hostile forces nearby.</Original>
                         <French>Impossible de construire: forces hostiles à proximité.</French>
+                        <German>Kann nicht gebaut werden: Feindkräfte in der Nähe</German>
                 </Key>
                 <Key ID="STR_CLEANUP_PARAM">
                         <Original>Cleanup abandonned vehicles outside FOBs</Original>
                         <French>Nettoyer les véhicules abandonnés loin d'une FOB</French>
+                        <German>Räumt verlassene Fahrzeuge auserhalb von FOBs weg</German>
                 </Key>
                 <Key ID="STR_CLEANUP_PARAM1">
                         <Original>Enabled - 1 hour delay</Original>
                         <French>Activé - 1 heure de délai</French>
+                        <German>Aktiv - 1 Stunde Verzögerung</German>
                 </Key>
                 <Key ID="STR_CLEANUP_PARAM2">
                         <Original>Enabled - 2 hours delay</Original>
                         <French>Activé - 2 heures de délai</French>
+                        <German>Aktiv - 2 Stunde Verzögerung</German>
                 </Key>
                 <Key ID="STR_CLEANUP_PARAM3">
                         <Original>Enabled - 4 hours delay</Original>
                         <French>Activé - 4 heures de délai</French>
+                        <German>Aktiv - 4 Stunden Verzögerung</German>
                 </Key>
                 <Key ID="STR_SORRY">
                         <Original>Sorry!</Original>
                         <French>Désolé !</French>
+                        <German>Entschuldigung!</German>
                 </Key>
                 <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
                         <Original>You are not authorized to use the commander slot on this server.</Original>
                         <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
+                        <German>Du bist auf diesem Server nicht als Kommandant autorisiert.</German>
                 </Key>
                 <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
                         <Original>You are not authorized to use the commander slot on this server.</Original>
                         <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
+                        <German>Du bist auf diesem Server nicht als Kommandant autorisiert.</German>
                 </Key>
                 <Key ID="STR_MAKE_RESPAWN_LOADOUT">
                         <Original>Save respawn loadout</Original>
                         <French>Equipement de respawn</French>
+                        <German>Ausrüstung bei Respawn festlegen</German>
                 </Key>
                 <Key ID="STR_MAKE_RESPAWN_LOADOUT_HINT">
                         <Original>Your current loadout will be restored on every respawn.</Original>
                         <French>Votre equipement actuel sera restauré à chaque respawn.</French>
+                        <German>Deine Ausrüstung wird bei jedem Respwan wiederhergestellt.</German>
                 </Key>
                 <Key ID="STR_LOAD_PLAYER_LOADOUT">
                         <Original>Load from player</Original>
                         <French>Charger depuis joueur</French>
+                        <German>Von Spieler laden</German>
                 </Key>
                 <Key ID="STR_LOAD_PLAYER_LOADOUT_HINT">
                         <Original>Successful loadout transfer from %1.</Original>
                         <French>Transfer d'équipement réussi depuis %1.</French>
+                        <German>Erfolgreich Ausrüstung von %1 übertragen.</German>
                 </Key>
                 <Key ID="STR_LOADOUT">
                         <Original>Loadout:</Original>
                         <French>Equipement :</French>
+                        <German>Ausrüstung:</German>
                 </Key>
                 <Key ID="STR_SPAWN_POINT">
                         <Original>Deployment location:</Original>
                         <French>Lieu de déploiement :</French>
+                        <German>Einsatzposition:</German>
                 </Key>
 
 
