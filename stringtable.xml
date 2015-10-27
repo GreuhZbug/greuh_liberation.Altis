@@ -950,146 +950,182 @@
                 <Key ID="STR_RESUPPLY_TOOLTIP">
                         <Original>If the selected squad member is close enough from a resupply point (mobile spawn or FOB) they will get a brand new, full loadout.</Original>
                         <French>Si le membre d'escouade sélectionné est assez près d'un point d'approvisionnement (spawn mobile ou FOB) il recevra un nouvel équipement complet.</French>
+                        <German>Wenn das gewählte Gruppenmitglied nahe genug bei einem Versorgungspunkt (mobiler Spawn oder FOB), erhalten sie eine brandneue, vollständige Ausrüstung</German>
                 </Key>
                 <Key ID="STR_CONFIRM">
                         <Original>Confirm</Original>
                         <French>Confirmer</French>
+                        <German>Bestätigen</German>
                 </Key>
                  <Key ID="STR_HEALTH">
                         <Original>Health:</Original>
                         <French>Santé :</French>
+                        <German>Leben:</German>
                 </Key>
                 <Key ID="STR_DISTANCE">
                         <Original>Distance:</Original>
                         <French>Distance :</French>
+                        <German>Distanz:</German>
                 </Key>
                 <Key ID="STR_PRIMARY_WEAPON">
                         <Original>Primary</Original>
                         <French>Principale</French>
+                        <German>Primär</German>
                 </Key>
                 <Key ID="STR_SECONDARY_WEAPON">
                         <Original>Secondary</Original>
                         <French>Secondaire</French>
+                        <German>Sekundär</German>
                 </Key>
                 <Key ID="STR_NONE">
                         <Original>None</Original>
                         <French>Aucune</French>
+                        <German>Keine</German>
                 </Key>
                 <Key ID="STR_DRIVER">
                         <Original>Driver</Original>
                         <French>Conducteur</French>
+                        <German>Fahrer</German>
                 </Key>
                 <Key ID="STR_GUNNER">
                         <Original>Gunner</Original>
                         <French>Tireur</French>
+                        <German>Schütze</German>
                 </Key>
                 <Key ID="STR_COMMANDER">
                         <Original>Commander</Original>
                         <French>Commandant</French>
+                        <German>Kommandant</German>
                 </Key>
                 <Key ID="STR_PASSENGER">
                         <Original>Passenger</Original>
                         <French>Passager</French>
+                        <German>Passagier</German>
                 </Key>
                 <Key ID="STR_SQUAD_DEPLOY">
                         <Original>Squad deploy</Original>
                         <French>Déploiement d'escouade</French>
+                        <German>Gruppeneinsatz</German>
                 </Key>
                 <Key ID="STR_REMOVE_OK">
                         <Original>You have deleted the selected squad member.</Original>
                         <French>Vous avez supprimé le membre de l'escouade sélectionné.</French>
+                        <German>Du hast das ausgewählte Gruppenmitglied gelöscht.</German>
                 </Key>
                 <Key ID="STR_RESUPPLY_OK">
                         <Original>The selected squad member has been resupplied.</Original>
                         <French>Le membre de l'escouade sélectionné a été réapprovisionné.</French>
+                        <German>Das ausgewählte Gruppenmitglied wurde versorgt.</German>
                 </Key>
                 <Key ID="STR_RESUPPLY_KO">
                         <Original>The selected squad member isn't close enough from a FOB or mobile spawn.</Original>
                         <French>Le membre de l'escouade sélectionné n'est pas assez proche d'une FOB ou d'un spawn mobile.</French>
+                        <German>Das ausgewählte Gruppenmitglied ist nicht nahe genug an einer FOB oder an einem mobilen Spawn.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TITLE">
                         <Original>PERMISSIONS MANAGEMENT</Original>
                         <French>GESTION DES PERMISSIONS</French>
+                        <German>Rechteverwaltung</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_LIGHT">
                         <Original>Light vehicles</Original>
                         <French>Véhicules légers</French>
+                        <German>Leichte Fahrzeuge</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_ARMORED">
                         <Original>Armored vehicles</Original>
                         <French>Véhicules blindés</French>
+                        <German>Gepanzerte Fahrzeuge</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_AIR">
                         <Original>Air vehicles</Original>
                         <French>Véhicules aériens</French>
+                        <German>Luftfahrzeuge</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_CONSTRUCTION">
                         <Original>Construction</Original>
                         <French>Construction</French>
+                        <German>Konstruktionen</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_RECYCLING">
                         <Original>Recycling</Original>
                         <French>Recyclage</French>
+                        <German>Wiederverwerten</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_MISC">
                         <Original>Others</Original>
                         <French>Autres</French>
+                        <German>Andere</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_ALL">
                         <Original>All</Original>
                         <French>Toutes</French>
+                        <German>Alle</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_NONE">
                         <Original>None</Original>
                         <French>Aucune</French>
+                        <German>Keine</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_LIGHT">
                         <Original>Allows the player to operate light vehicles as driver and gunner.</Original>
                         <French>Autorise le joueur à utiliser les véhicules légers en tant que conducteur ou tireur.</French>
+                        <German>Erlaubt es dem Spieler leichte Fahrzeuge als Fahrer und Schütze zu bedienen.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_ARMORED">
                         <Original>Allows the player to operate armored vehicles as driver, gunner and commander.</Original>
                         <French>Autorise le joueur à utiliser les véhicules blindés en tant que conducteur, tireur ou commandant.</French>
+                        <German>Erlaubt es dem Spieler gepanzerte Fahrzeuge als Fahrer, Schütze und Kommandant zu bedienen.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_AIR">
                         <Original>Allows the player to operate air vehicles as driver and gunner.</Original>
                         <French>Autorise le joueur à utiliser les véhicules aériens en tant que conducteur ou tireur.</French>
+                        <German>Erlaubt es dem Spieler Luftfahrzeuge als Pilot und Schütze zu bedienen.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_CONSTRUCTION">
                         <Original>Allows the player to use the BUILD menu.</Original>
                         <French>Autorise le joueur à utiliser le menu CONSTRUCTION.</French>
+                        <German>Erlaubt es dem Spieler das Baumenü zu benutzen.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_RECYCLING">
                         <Original>Allows the player to use the RECYCLE action.</Original>
                         <French>Autorise le joueur à utiliser l'action RECYCLER.</French>
+                        <German>Erlaubt es dem Spieler die "WIEDERVERWERTEN"-Aktion zu benutzen.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_MISC">
                         <Original>Allows the player to use other actions: unflip, ammo box manipulation, prisoners capture, etc.</Original>
                         <French>Autorise le joueur à utiliser les autres actions : retournement de véhicule, manipulation des boites de munition, capture de prisoniers, etc.</French>
+                        <German>Erlaubt es dem Spieler andere Aktionen durchzuführen: Umdrehen, Interaktion mit Munitionskisten, Gefangennahme, usw.</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_ALL">
                         <Original>Gives all permissions to the player.</Original>
                         <French>Donne toutes les permissions au joueur.</French>
+                        <German>Gibt dem Spieler alle Rechte</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_TOOLTIP_NONE">
                         <Original>Removes all permissions from the player.</Original>
                         <French>Supprime toutes les permissions du joueur.</French>
+                        <German>Nimmt dem Spieler alle Rechte weg.</German>
                 </Key>
                 <Key ID="STR_COMMANDER_ACTION">
                         <Original>-- PERMISSIONS</Original>
                         <French>-- PERMISSIONS</French>
+                        <German>-- RECHTE</German>
                 </Key>
                 <Key ID="STR_SAVE_CHANGES">
                         <Original>Save Changes</Original>
                         <French>Sauvegarder</French>
+                        <German>Änderungen speichern</German>
                 </Key>
                 <Key ID="STR_PERMISSIONS_PARAM">
                         <Original>Permissions Management</Original>
                         <French>Gestion des Permissions</French>
+                        <German>Rechteverwaltung</German>
                 </Key>
                 <Key ID="STR_PERMISSION_NO_LIGHT">
                         <Original>You don't have permission from the commander to use light vehicles.</Original>
                         <French>Vous n'avez pas la permission du commandant pour utiliser les véhicules légers.</French>
+                        <German>Du hast keine Rechte des Kommandantens um leichte Fahrzeuge zu benutzen.</German>
                 </Key>
                 <Key ID="STR_PERMISSION_NO_ARMOR">
                         <Original>You don't have permission from the commander to use armored vehicles.</Original>
