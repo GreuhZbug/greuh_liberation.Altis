@@ -1174,10 +1174,6 @@
                         <Original>You are not authorized to use the commander slot on this server.</Original>
                         <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
                 </Key>
-                <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
-                        <Original>You are not authorized to use the commander slot on this server.</Original>
-                        <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
-                </Key>
                 <Key ID="STR_MAKE_RESPAWN_LOADOUT">
                         <Original>Save respawn loadout</Original>
                         <French>Equipement de respawn</French>

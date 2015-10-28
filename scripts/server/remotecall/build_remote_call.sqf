@@ -1,10 +1,7 @@
 if (!isServer) exitWith {};
 
-_built_object_remote = _this select 0;
-
-_localtype = _built_object_remote select 0;
-_localindex = _built_object_remote select 1;
-_playerbuilder = _built_object_remote select 2;
+params [ "_localtype", "_localindex" ];
+private [ "_price_a", "_typename" ];
 
 _price_a = (((build_lists select _localtype) select _localindex) select 2);
 _typename = (((build_lists select _localtype) select _localindex) select 0);

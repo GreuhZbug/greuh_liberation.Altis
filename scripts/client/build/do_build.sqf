@@ -29,8 +29,7 @@ while { true } do {
 		_classname = FOB_typename;
 	} else {
 		_classname = (((build_lists select buildtype) select buildindex) select 0);
-		_built_object_remote = [buildtype,buildindex,player];
-		[ [_built_object_remote] , "build_remote_call" ] call BIS_fnc_MP;
+		[ [ buildtype, buildindex ] , "build_remote_call" ] call BIS_fnc_MP;
 	};
 
 	if(buildtype == 1) then {
