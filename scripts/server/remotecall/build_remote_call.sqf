@@ -1,10 +1,6 @@
 if (!isServer) exitWith {};
 
-params [ "_localtype", "_localindex" ];
-private [ "_price_a", "_typename" ];
-
-_price_a = (((build_lists select _localtype) select _localindex) select 2);
-_typename = (((build_lists select _localtype) select _localindex) select 0);
+params [ "_price_a", "_typename" ];
 
 if ( _price_a > 0 ) then {
 	resources_ammo = resources_ammo - _price_a;
