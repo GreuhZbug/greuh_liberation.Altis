@@ -143,7 +143,6 @@ buildings = [
 ["Land_HelipadSquare_F",0,0,0],
 ["Land_Razorwire_F",0,0,0],
 ["Land_BagFence_Round_F",0,0,0],
-["Land_Mound02_8m_F",0,0,0],
 ["Land_ToolTrolley_02_F",0,0,0],
 ["Land_WeldingTrolley_01_F",0,0,0],
 ["Land_GasTank_02_F",0,0,0],
