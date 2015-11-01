@@ -14,7 +14,7 @@ if ( combat_readiness > 15 ) then {
 		_nearestower = [markerpos _targetsector, EAST, GRLIB_radiotower_size * 1.4] call F_getNearestTower;
 
 		if ( _nearestower != "" ) then {
-			_reinforcements_time = (((((markerpos _nearestower) distance (markerpos _targetsector)) / 1000) ^ 1.66 ) * 120) / GRLIB_difficulty_modifier;
+			_reinforcements_time = (((((markerpos _nearestower) distance (markerpos _targetsector)) / 1000) ^ 1.66 ) * 120) / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity);
 			_current_timer = time;
 
 			waitUntil { sleep 0.3; (_current_timer + _reinforcements_time < time) || (_targetsector in blufor_sectors) || (_nearestower in blufor_sectors) };

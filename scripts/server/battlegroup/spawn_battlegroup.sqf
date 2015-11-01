@@ -22,8 +22,9 @@ if ( _spawn_marker != "" ) then {
 	GRLIB_last_battlegroup_time = time;
 
 	_selected_opfor_battlegroup = [];
-	_target_size = ( GRLIB_battlegroup_size * ([] call F_adaptiveOpforFactor) );
-	if ( combat_readiness < 50 ) then { _target_size = round (_target_size * 0.65) };
+	_target_size = GRLIB_battlegroup_size * ([] call F_adaptiveOpforFactor) * (sqrt GRLIB_csat_aggressivity);
+	if ( _target_size >= 16 ) then { _target_size = 16; };
+	if ( combat_readiness < 60 ) then { _target_size = round (_target_size * 0.65) };
 	while { count _selected_opfor_battlegroup < _target_size } do {
 		_selected_opfor_battlegroup pushback (_vehicle_pool call BIS_fnc_selectRandom);
 	};
@@ -43,7 +44,9 @@ if ( _spawn_marker != "" ) then {
 		last_battlegroup_size = last_battlegroup_size + 1;
 	} foreach _selected_opfor_battlegroup;
 
-	[([markerpos _spawn_marker] call F_getNearestBluforObjective) select 0] spawn spawn_air;
+	if ( GRLIB_csat_aggressivity > 0.9 ) then {
+		[([markerpos _spawn_marker] call F_getNearestBluforObjective) select 0] spawn spawn_air;
+	};
 
 	sleep 5;
 

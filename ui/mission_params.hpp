@@ -6,16 +6,22 @@ class Params
 		texts[] = { "" };
 		default = "";
 	};
+	class Unitcap{
+		title = $STR_PARAMS_UNITCAP;
+		values[] = {0.5,0.75,1,1.25,1.5,2};
+		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
+		default = 1;
+	};
 	class Difficulty {
 		title = $STR_PARAMS_DIFFICULTY;
 		values[] = { 0.5, 0.75, 1, 1.25, 1.5, 2, 4, 10 };
 		texts[] = { $STR_PARAMS_DIFFICULTY1, $STR_PARAMS_DIFFICULTY2, $STR_PARAMS_DIFFICULTY3, $STR_PARAMS_DIFFICULTY4, $STR_PARAMS_DIFFICULTY5, $STR_PARAMS_DIFFICULTY6, $STR_PARAMS_DIFFICULTY7, $STR_PARAMS_DIFFICULTY8 };
 		default = 1;
 	};
-	class Unitcap{
-		title = $STR_PARAMS_UNITCAP;
-		values[] = {0.5,0.75,1,1.25,1.5,2};
-		texts[] = {$STR_PARAMS_UNITCAP1,$STR_PARAMS_UNITCAP2,$STR_PARAMS_UNITCAP3,$STR_PARAMS_UNITCAP4,$STR_PARAMS_UNITCAP5,$STR_PARAMS_UNITCAP6};
+	class Aggressivity{
+		title = $STR_AGGRESSIVITY_PARAM;
+		values[] = {0.25,0.5,1,2,4};
+		texts[] = {$STR_AGGRESSIVITY_PARAM0, $STR_AGGRESSIVITY_PARAM1,$STR_AGGRESSIVITY_PARAM2,$STR_AGGRESSIVITY_PARAM3,$STR_AGGRESSIVITY_PARAM4};
 		default = 1;
 	};
 	class AdaptToPlayercount{
@@ -29,6 +35,18 @@ class Params
 		values[] = { 48, 24, 16, 12, 9.6, 8, 6.8, 6, 4.8, 4, 3, 2.4, 2, 1.6, 1, 0.66, 0.5, 0.375, 0.25, 0.1875, 0.125, 0.11 };
 		texts[] = { "0.5", "1", "1.5", "2", "2.5", "3","3.5","4","5","6","8","10","12","15","24","36","48","64","96","128","192","240" };
 		default = 12;
+	};
+	class ShorterNights {
+		title = $STR_SHORTER_NIGHTS_PARAM;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
+	class Weather {
+		title = $STR_WEATHER_PARAM;
+		values[] = { 1,2,3 };
+		texts[] = { $STR_WEATHER_PARAM1, $STR_WEATHER_PARAM2, $STR_WEATHER_PARAM3 };
+		default = 3;
 	};
 	class ResourcesMultiplier {
 		title = $STR_PARAMS_RESOURCESMULTIPLIER;
@@ -74,8 +92,8 @@ class Params
 	};
 	class HaloJump{
 		title = $STR_HALO_PARAM;
-		values[] = {1,0};
-		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		values[] = {1,5,10,15,20,30,0};
+		texts[] = { $STR_HALO_PARAM1, $STR_HALO_PARAM2, $STR_HALO_PARAM3, $STR_HALO_PARAM4, $STR_HALO_PARAM5, $STR_HALO_PARAM6, $STR_PARAMS_DISABLED };
 		default = 1;
 	};
 	class Space2 {
