@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.912</Original>
+        		<Original>Liberation 0.913</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.912</Original>
+                        <Original>v0.913</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -930,7 +930,7 @@
                         <Original>You will deploy on the selected squad member and replace them while keeping your current loadout.</Original>
                         <French>Vous allez vous déployer à la place du member d'escouade selectionné tout en conservant votre équipement actuel.</French>
                         <German>Du wirst das ausgewählte Gruppenmitglied ersetzen, während du deine Ausrüstung behältst.</German>
-                        
+
                 </Key>
                 <Key ID="STR_REMOVE_MEMBER">
                         <Original>Remove</Original>
@@ -1187,6 +1187,34 @@
                         <French>Saut HALO</French>
                         <German>HALO-Sprung</German>
                 </Key>
+                <Key ID="STR_HALO_PARAM1">
+                        <Original>Enabled - No cooldown</Original>
+                        <French>Activé - Pas de cooldown</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM2">
+                        <Original>Enabled - 5 minutes cooldown</Original>
+                        <French>Activé - Cooldown de 5 minutes</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM3">
+                        <Original>Enabled - 10 minutes cooldown</Original>
+                        <French>Activé - Cooldown de 10 minutes</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM4">
+                        <Original>Enabled - 15 minutes cooldown</Original>
+                        <French>Activé - Cooldown de 15 minutes</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM5">
+                        <Original>Enabled - 20 minutes cooldown</Original>
+                        <French>Activé - Cooldown de 20 minutes</French>
+                </Key>
+                <Key ID="STR_HALO_PARAM6">
+                        <Original>Enabled - 30 minutes cooldown</Original>
+                        <French>Activé - Cooldown de 30 minutes</French>
+                </Key>
+                <Key ID="STR_HALO_DENIED_COOLDOWN">
+                        <Original>Can't perform HALO jump, you are on cooldown for %1 more minute(s).</Original>
+                        <French>Impossible d'effectuer un suat HALO, vous êtes en cooldown pour encore %1 minute(s).</French>
+                </Key>
                 <Key ID="STR_HALO_ACTION">
                         <Original>-- HALO JUMP</Original>
                         <French>-- SAUT HALO</French>
@@ -1246,11 +1274,6 @@
                         <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
                         <German>Du bist auf diesem Server nicht als Kommandant autorisiert.</German>
                 </Key>
-                <Key ID="STR_COMMANDER_NOT_AUTHORIZED">
-                        <Original>You are not authorized to use the commander slot on this server.</Original>
-                        <French>Vous n'êtes pas authorizé à utiliser la place de commandant sur ce serveur.</French>
-                        <German>Du bist auf diesem Server nicht als Kommandant autorisiert.</German>
-                </Key>
                 <Key ID="STR_MAKE_RESPAWN_LOADOUT">
                         <Original>Save respawn loadout</Original>
                         <French>Equipement de respawn</French>
@@ -1281,6 +1304,51 @@
                         <French>Lieu de déploiement :</French>
                         <German>Einsatzposition:</German>
                 </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM">
+                        <Original>CSAT aggresivity</Original>
+                        <French>Aggressivité du CSAT</French>
+                </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM0">
+                        <Original>Anemic</Original>
+                        <French>Anémique</French>
+                </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM1">
+                        <Original>Weak</Original>
+                        <French>Faible</French>
+                </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM2">
+                        <Original>Normal</Original>
+                        <French>Normale</French>
+                </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM3">
+                        <Original>Strong</Original>
+                        <French>Forte</French>
+                </Key>
+                <Key ID="STR_AGGRESSIVITY_PARAM4">
+                        <Original>Extreme</Original>
+                        <French>Extreme</French>
+                </Key>
+                <Key ID="STR_WEATHER_PARAM">
+                        <Original>Weather</Original>
+                        <French>Meteo</French>
+                </Key>
+                <Key ID="STR_WEATHER_PARAM1">
+                        <Original>Always sunny</Original>
+                        <French>Soleil permanent</French>
+                </Key>
+                <Key ID="STR_WEATHER_PARAM2">
+                        <Original>Random without rain</Original>
+                        <French>Aléatoire sans pluie</French>
+                </Key>
+                <Key ID="STR_WEATHER_PARAM3">
+                        <Original>Random</Original>
+                        <French>Aléatoire</French>
+                </Key>
+                <Key ID="STR_SHORTER_NIGHTS_PARAM">
+                        <Original>Shorter nights</Original>
+                        <French>Nuits plus courtes</French>
+                </Key>
+
 
 
 

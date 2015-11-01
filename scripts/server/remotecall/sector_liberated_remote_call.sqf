@@ -26,7 +26,7 @@ if (isServer) then {
 	};
 
 	combat_readiness = combat_readiness + _combat_readiness_increase;
-	if ( combat_readiness > 100.0 && GRLIB_difficulty_modifier < 2 ) then { combat_readiness = 100.0 };
+	if ( combat_readiness > 100.0 && GRLIB_difficulty_modifier <= 2.0 ) then { combat_readiness = 100.0 };
 	stats_readiness_earned = stats_readiness_earned + _combat_readiness_increase;
 	[ [ _liberated_sector, 0 ] , "remote_call_sector" ] call BIS_fnc_MP;
 
@@ -45,7 +45,7 @@ if (isServer) then {
 	sleep 45;
 
 	if ( GRLIB_endgame == 0 ) then {
-		if ( (!( _liberated_sector in sectors_tower )) && (((random (160.0 / GRLIB_difficulty_modifier)) < (combat_readiness - 20)) || ( _liberated_sector in sectors_bigtown )) && ([] call F_opforCap < GRLIB_battlegroup_cap) ) then {
+		if ( (!( _liberated_sector in sectors_tower )) && (((random (160.0 / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity) )) < (combat_readiness - 20)) || ( _liberated_sector in sectors_bigtown )) && ([] call F_opforCap < GRLIB_battlegroup_cap) ) then {
 			[ _liberated_sector ] spawn spawn_battlegroup;
 		};
 	};

@@ -125,6 +125,7 @@ static_vehicles = [
 buildings = [
 ["Land_CncBarrierMedium4_F",0,0,0],
 ["Land_CncWall4_F",0,0,0],
+["Land_CncShelter_F",0,0,0],
 ["Land_HBarrier_5_F",0,0,0],
 ["Land_HBarrierBig_F",0,0,0],
 ["Land_HBarrierWall6_F",0,0,0],
@@ -139,7 +140,26 @@ buildings = [
 ["Land_Cargo_House_V1_F",0,0,0],
 ["Land_Cargo_Patrol_V1_F",0,0,0],
 ["Flag_NATO_F",0,0,0],
-["Land_HelipadSquare_F",0,0,0]
+["Land_HelipadSquare_F",0,0,0],
+["Land_Razorwire_F",0,0,0],
+["Land_BagFence_Round_F",0,0,0],
+["Land_ToolTrolley_02_F",0,0,0],
+["Land_WeldingTrolley_01_F",0,0,0],
+["Land_GasTank_02_F",0,0,0],
+["Land_Workbench_01_F",0,0,0],
+["Land_WaterTank_F",0,0,0],
+["Land_WaterBarrel_F",0,0,0],
+["Land_MetalCase_01_large_F",0,0,0],
+["CargoNet_01_box_F",0,0,0],
+["Land_CampingChair_V1_F",0,0,0],
+["Land_CampingChair_V2_F",0,0,0],
+["Land_CampingTable_F",0,0,0],
+["MapBoard_altis_F",0,0,0],
+["Land_Metal_rack_Tall_F",0,0,0],
+["PortableHelipadLight_01_blue_F",0,0,0],
+["Land_DieselGroundPowerUnit_01_F",0,0,0],
+["Land_Pallet_MilBoxes_F",0,0,0],
+["Land_PaperBox_open_full_F",0,0,0]
 ];
 
 support_vehicles = [

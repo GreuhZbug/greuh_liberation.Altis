@@ -28,9 +28,9 @@ while { true } do {
 		GRLIB_removefobboxes = true;
 		_classname = FOB_typename;
 	} else {
-		_classname = (((build_lists select buildtype) select buildindex) select 0);
-		_built_object_remote = [buildtype,buildindex,player];
-		[ [_built_object_remote] , "build_remote_call" ] call BIS_fnc_MP;
+		_classname = ((build_lists select buildtype) select buildindex) select 0;
+		_price = ((build_lists select buildtype) select buildindex) select 2;
+		[ [ _price, _classname, buildtype ] , "build_remote_call" ] call BIS_fnc_MP;
 	};
 
 	if(buildtype == 1) then {

@@ -44,6 +44,7 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\clean.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\cleanup_vehicles.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\fucking_set_fog.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\manage_time.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\manage_weather.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\periodic_save.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\playtime.sqf";

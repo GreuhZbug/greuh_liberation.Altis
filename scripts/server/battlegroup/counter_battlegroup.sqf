@@ -6,9 +6,9 @@ if ( isNil "air_weight" ) then { air_weight = 33 };
 
 sleep 1800;
 
-while { GRLIB_endgame == 0 } do {
+while { GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0 } do {
 
-	_sleeptime = 2700 / ([] call  F_adaptiveOpforFactor);
+	_sleeptime = 2700 / (([] call  F_adaptiveOpforFactor) * GRLIB_csat_aggressivity);
 
 	if ( combat_readiness >= 80 ) then { _sleeptime = _sleeptime * 0.75 };
 	if ( combat_readiness >= 90 ) then { _sleeptime = _sleeptime * 0.75 };
