@@ -1,5 +1,4 @@
 enableSaving [ false, false ];
-enableSentences false;
 
 [] call compileFinal preprocessFileLineNumbers "scripts\shared\atlas_manager.sqf";
 [] call compileFinal preprocessFileLineNUmbers "scripts\shared\liberation_functions.sqf";

@@ -132,7 +132,8 @@ buildings = [
 ["PortableHelipadLight_01_blue_F",0,0,0],
 ["Land_DieselGroundPowerUnit_01_F",0,0,0],
 ["Land_Pallet_MilBoxes_F",0,0,0],
-["Land_PaperBox_open_full_F",0,0,0]
+["Land_PaperBox_open_full_F",0,0,0],
+["Land_ClutterCutter_large_F",0,0,0]
 ];
 
 support_vehicles = [

@@ -1,4 +1,4 @@
-private [ "_dialog", "_fob" ];
+private [ "_dialog", "_fob", "_fobbox" ];
 
 dorepackage = 0;
 
@@ -31,7 +31,8 @@ if ( dorepackage > 0 ) then {
 	};
 
 	if ( dorepackage == 1 ) then {
-		FOB_box_typename createVehicle _spawnpos;
+		_fobbox = FOB_box_typename createVehicle _spawnpos;
+		[ [_fobbox, 3000 ] , "F_setMass" ] call BIS_fnc_MP;
 	};
 
 	if ( dorepackage == 2 ) then {
