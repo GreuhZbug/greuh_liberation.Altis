@@ -16,7 +16,7 @@ while { true } do {
 	{
 		private [ "_nextgroup" ];
 		_nextgroup = _x;
-		if ( ((side _nextgroup == EAST) || (side _nextgroup == RESISTANCE)) && (({ !captive _x } count ( units _nextgroup ) ) > 0)) then {
+		if ( (side _nextgroup == EAST) && (({ !captive _x } count ( units _nextgroup ) ) > 0)) then {
 			if ( [(getpos leader _nextgroup), WEST, GRLIB_radiotower_size] call F_getNearestTower != "" ) then {
 
 				_hostile_groups pushback _nextgroup;

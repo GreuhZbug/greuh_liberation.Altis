@@ -1,4 +1,4 @@
-private [ "_sleeptime" ];
+private [ "_sleeptime", "_countplayers" ];
 
 sleep ( 900 / GRLIB_csat_aggressivity );
 
@@ -16,9 +16,8 @@ while { GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0 } do {
 		waitUntil { sleep 5; time > ( GRLIB_last_battlegroup_time + ( 1200 / GRLIB_csat_aggressivity ) ) };
 	};
 
-	waitUntil { sleep 5; count allPlayers >= 12 };
 
-	if ( combat_readiness > 60 ) then {
+	if ( (count allPlayers >= 10) && ([] call F_opforCap < GRLIB_battlegroup_cap) && (combat_readiness > (100 - round ((count allPlayers) * 2.5))) ) then {
 		[] spawn spawn_battlegroup;
 	};
 };

@@ -7,7 +7,7 @@ _cap_min_ratio = 0.51;
 
 _sectorside = RESISTANCE;
 _countwest_ownership = [_thatpos, _localsize, WEST ] call F_getUnitsCount;
-_counteast_ownership = ( [_thatpos, _localsize, EAST ] call F_getUnitsCount) + ([_thatpos, _localsize, RESISTANCE ] call F_getUnitsCount);
+_counteast_ownership = [_thatpos, _localsize, EAST ] call F_getUnitsCount;
 
 _blufor_ratio = 0;
 if ( _countwest_ownership + _counteast_ownership != 0 ) then {

@@ -54,7 +54,7 @@ if ( isServer ) then {
 		};
 
 		if ( side _killer == WEST ) then {
-			if ( side (group _unit) == EAST || side (group _unit) == RESISTANCE ) then {
+			if ( side (group _unit) == EAST ) then {
 				stats_opfor_soldiers_killed = stats_opfor_soldiers_killed + 1;
 				if ( isplayer _killer ) then {
 					stats_opfor_killed_by_players = stats_opfor_killed_by_players + 1;

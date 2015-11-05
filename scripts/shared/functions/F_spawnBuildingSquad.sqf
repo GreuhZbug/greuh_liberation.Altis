@@ -1,6 +1,6 @@
 diag_log format [ "Spawning building squad at %1", time ];
 
-params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos", "_sidespawn" ];
+params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos" ];
 private [ "_squadtospawnnn", "_infsquad_classnames", "_usedposits", "_nextposit", "_remainingposits", "_grp", "_everythingspawned", "_nextunit", "_position_indexes", "_position_count", "_idxposit", "_groupunitscount" ];
 
 _everythingspawned = [];
@@ -31,7 +31,7 @@ while { count _position_indexes < count _squadtospawnnn } do {
 
 diag_log format [ "Spawning building squad Checkpoint C at %1", time ];
 
-_grp = createGroup _sidespawn;
+_grp = createGroup EAST;
 _idxposit = 0;
 {
 	_x createUnit [ _sectorpos, _grp ];
@@ -50,7 +50,7 @@ _idxposit = 0;
 
 	if ( count units _grp > 10 ) then {
 		_everythingspawned = _everythingspawned + (units _grp);
-		_grp = createGroup _sidespawn;
+		_grp = createGroup EAST;
 	};
 } foreach _squadtospawnnn;
 
