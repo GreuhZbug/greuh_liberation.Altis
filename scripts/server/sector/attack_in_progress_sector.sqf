@@ -41,7 +41,7 @@ if ( GRLIB_endgame == 0 ) then {
 		stats_sectors_lost = stats_sectors_lost + 1;
 	} else {
 		[ [ _sector, 3 ] , "remote_call_sector" ] call BIS_fnc_MP;
-		{ [_x] spawn prisonner_ai } foreach ( [ (markerpos _sector) nearEntities [ "Man", 300], { side group _x == EAST || side group _x == RESISTANCE } ] call BIS_fnc_conditionalSelect );
+		{ [_x] spawn prisonner_ai } foreach ( [ (markerpos _sector) nearEntities [ "Man", 300], { side group _x == EAST } ] call BIS_fnc_conditionalSelect );
 	};
 };
 

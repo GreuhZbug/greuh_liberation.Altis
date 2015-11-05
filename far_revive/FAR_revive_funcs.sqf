@@ -45,7 +45,7 @@ FAR_HandleDamage_EH =
 		_vestobject = vest _unit;
 
 		if ( _vestobject != ""  ) then {
-			_vestarmor = ( (configFile >> "CfgWeapons" >> _vestobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) / 75.0;
+			_vestarmor = ( (configFile >> "CfgWeapons" >> _vestobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) / 66.0;
 			_vest_passthrough = ( (configFile >> "CfgWeapons" >> _vestobject >> "ItemInfo" >> "passThrough" ) call BIS_fnc_GetCfgData );
 			if ( _vest_passthrough < 0.6 ) then { _vestarmor = _vestarmor * _vest_passthrough * 1.6666666 };
 			if ( _vestarmor > 0.75 ) then { _vestarmor = 0.75; };
@@ -57,10 +57,10 @@ FAR_HandleDamage_EH =
 		_helmetobject = headgear _unit;
 
 		if ( _helmetobject != ""  ) then {
-			_helmetarmor = ( (configFile >> "CfgWeapons" >> _helmetobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) * 0.12;
+			_helmetarmor = ( (configFile >> "CfgWeapons" >> _helmetobject >> "ItemInfo" >> "armor" ) call BIS_fnc_GetCfgData ) * 0.14;
 			_helmet_passthrough = ( (configFile >> "CfgWeapons" >> _helmetobject >> "ItemInfo" >> "passThrough" ) call BIS_fnc_GetCfgData );
 			if ( _helmet_passthrough < 0.6 ) then { _helmetarmor = _helmetarmor * _helmet_passthrough * 1.6666666 };
-			if ( _helmetarmor > 0.6 ) then { _helmetarmor = 0.6; };
+			if ( _helmetarmor > 0.75 ) then { _helmetarmor = 0.75; };
 		};
 	};
 

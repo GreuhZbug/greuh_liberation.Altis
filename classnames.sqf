@@ -8,15 +8,16 @@
 // *** SUPPORT STUFF ***
 
 // Each of these should be unique, the same classnames for different purposes may cause various unpredictable issues with player actions. Or not. Just don't try.
-FOB_typename = "Land_Cargo_HQ_V1_F";
-FOB_box_typename = "B_Slingload_01_Cargo_F";
-FOB_truck_typename = "B_Truck_01_box_F";
-Arsenal_typename = "B_supplyCrate_F";
-Respawn_truck_typename = "B_Truck_01_medical_F";
-huron_typename = "B_Heli_Transport_03_unarmed_F";
-ammobox_b_typename = "Box_NATO_AmmoVeh_F";
-ammobox_o_typename = "Box_East_AmmoVeh_F";
-opfor_ammobox_transport = "O_Truck_03_transport_F";
+if ( isNil "FOB_typename" ) then { FOB_typename = "Land_Cargo_HQ_V1_F"; };
+if ( isNil "FOB_box_typename" ) then { FOB_box_typename = "B_Slingload_01_Cargo_F"; };
+if ( isNil "FOB_truck_typename" ) then { FOB_truck_typename = "B_Truck_01_box_F"; };
+if ( isNil "Arsenal_typename" ) then { Arsenal_typename = "B_supplyCrate_F"; };
+if ( isNil "Respawn_truck_typename" ) then { Respawn_truck_typename = "B_Truck_01_medical_F"; };
+if ( isNil "huron_typename" ) then { huron_typename = "B_Heli_Transport_03_unarmed_F"; };
+if ( isNil "ammobox_b_typename" ) then { ammobox_b_typename = "Box_NATO_AmmoVeh_F"; };
+if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_F"; };
+if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck_03_transport_F"; };
+
 
 
 
@@ -54,12 +55,6 @@ light_vehicles = [
 ["B_MRAP_01_F",0,0,2],
 ["B_MRAP_01_hmg_F",0,10,2],
 ["B_MRAP_01_gmg_F",0,20,2],
-["rhsusf_m998_w_4dr",0,0,2],
-["fsf_fnk_norm_ce",0,0,3],
-["greuh_fnk_norm_ce",0,0,3],
-["fsf_fnk_hmg_ce",0,10,3],
-["greuh_fnk_hmg_ce",0,10,3],
-["greuh_fnk_hmg_dsrt",0,10,3],
 ["B_Truck_01_transport_F",0,0,5],
 ["B_Truck_01_covered_F",0,0,5],
 ["B_UGV_01_F",0,0,5],
@@ -70,16 +65,10 @@ light_vehicles = [
 
 heavy_vehicles = [
 ["B_APC_Wheeled_01_cannon_F",0,30,8],
-["greuh_pandur_wdld",0,50,10],
-["greuh_fv510_wdld",0,40,15],
-["greuh_fv510_dsrt",0,40,15],
 ["B_APC_Tracked_01_rcws_F",0,30,15],
 ["B_APC_Tracked_01_AA_F",0,40,15],
-["RHS_M2A3_BUSKIII_wd",0,55,15],
 ["B_MBT_01_cannon_F",0,75,20],
-["Steve_MBT_Kuma",0,100,25],
 ["B_MBT_01_TUSK_F",0,100,25],
-["Burnes_FV4034_01",0,250,40],
 ["B_MBT_01_arty_F",0,750,30],
 ["B_MBT_01_mlrs_F",0,2500,100]
 ];
@@ -87,29 +76,13 @@ heavy_vehicles = [
 air_vehicles = [
 ["B_Heli_Light_01_F",0,0,10],
 ["B_Heli_Light_01_armed_F",0,30,10],
-["greuh_aw159_t",0,0,12],
-["greuh_aw159_a",0,50,12],
 ["B_Heli_Transport_01_F",0,20,12],
 ["B_Heli_Transport_03_F",0,20,15],
-["JNS_Skycrane_BLU_Black",0,0,18],
-["RHS_CH_47F",0,20,20],
-["greuh_eh101_gr",0,0,25],
-["MV22",0,0,25],
 ["B_Heli_Attack_01_F",0,150,30],
-["RHS_AH1Z_wd_GS",0,175,30],
-["H_RAH66",0,200,30],
-["RHS_AH64D_wd",0,400,50],
 ["B_Plane_CAS_01_F",0,500,50],
-["FIR_F16C",0,100,20],
-["JS_JC_FA18E",0,350,40],
-["JS_JC_FA18F",0,350,40],
-["sab_C130_CSP",0,0,30],
-["sab_C130_J",0,0,30],
 ["B_UAV_01_F",0,0,5],
 ["B_UAV_02_F",0,250,20],
-["B_UAV_02_CAS_F",0,250,20],
-["usaf_f22",0,500,75],
-["USAF_F35A",0,600,75]
+["B_UAV_02_CAS_F",0,250,20]
 ];
 
 static_vehicles = [
@@ -159,7 +132,8 @@ buildings = [
 ["PortableHelipadLight_01_blue_F",0,0,0],
 ["Land_DieselGroundPowerUnit_01_F",0,0,0],
 ["Land_Pallet_MilBoxes_F",0,0,0],
-["Land_PaperBox_open_full_F",0,0,0]
+["Land_PaperBox_open_full_F",0,0,0],
+["Land_ClutterCutter_large_F",0,0,0]
 ];
 
 support_vehicles = [
@@ -175,11 +149,6 @@ support_vehicles = [
 ["B_Slingload_01_Repair_F",5,0,0],
 ["B_Slingload_01_Fuel_F",5,0,0],
 ["B_Slingload_01_Ammo_F",5,0,0],
-["JNS_Skycrane_Pod_Bench_BLU_Black",5,0,0],
-["JNS_Skycrane_Pod_Ammo_BLU_Black",5,0,0],
-["JNS_Skycrane_Pod_Medical_BLU_Black",5,0,0],
-["JNS_Skycrane_Pod_Repair_BLU_Black",5,0,0],
-["JNS_Skycrane_Pod_Transport_BLU_Black",5,0,0],
 ["Box_NATO_AmmoVeh_F",0,154,0],
 ["Box_East_AmmoVeh_F",0,115,0]
 ];
@@ -337,6 +306,14 @@ GRLIB_blacklisted_from_arsenal = [
 
 
 
+
+infantry_units = infantry_units + infantry_units_extension;
+light_vehicles = light_vehicles + light_vehicles_extension;
+heavy_vehicles = heavy_vehicles + heavy_vehicles_extension;
+air_vehicles = air_vehicles + air_vehicles_extension;
+static_vehicles = static_vehicles + static_vehicles_extension;
+buildings = buildings + buildings_extension;
+support_vehicles = support_vehicles + support_vehicles_extension;
 infantry_units = [ infantry_units ] call F_filterMods;
 light_vehicles = [ light_vehicles ] call F_filterMods;
 heavy_vehicles = [ heavy_vehicles ] call F_filterMods;
@@ -364,10 +341,10 @@ civilian_vehicles = [ civilian_vehicles , { [ _x ] call F_checkClass } ]  call B
 military_alphabet = ["Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","India","Juliet","Kilo","Lima","Mike","November","Oscar","Papa","Quebec","Romeo","Sierra","Tango","Uniform","Victor","Whiskey","X-Ray","Yankee","Zulu", "Alpha-2", "Bravo-2", "Charlie-2", "Delta-2", "Echo-2", "Foxtrot-2", "Golf-2","Hotel-2","India-2","Juliet-2","Kilo-2","Lima-2","Mike-2","November-2","Oscar-2","Papa-2","Quebec-2","Romeo-2","Sierra-2","Tango-2","Uniform-2","Victor-2","Whiskey-2","X-Ray-2","Yankee-2","Zulu-2","You should really reconsider a few life choices if you build more than 52 FOBs."];
 land_vehicles_classnames = (opfor_vehicles + militia_vehicles);
 all_ofpor_troops = opfor_squad_low_intensity + opfor_squad_8_standard + opfor_squad_8_infkillers + opfor_squad_8_tankkillers + opfor_squad_8_airkillers + [opfor_sentry, opfor_lookout_1, opfor_lookout_2 ];
-all_resistance_troops = militia_squad;
+all_resistance_troops = [] + militia_squad;
 all_hostile_classnames = (land_vehicles_classnames + opfor_air + opfor_choppers + opfor_troup_transports + opfor_vehicles_low_intensity);
 { land_vehicles_classnames pushback (_x select 0); } foreach (heavy_vehicles + light_vehicles);
-air_vehicles_classnames = opfor_choppers;
+air_vehicles_classnames = [] + opfor_choppers;
 { air_vehicles_classnames pushback (_x select 0); } foreach air_vehicles;
 markers_reset = [99999,99999,0];
 squads_names = [ localize "STR_LIGHT_RIFLE_SQUAD", localize "STR_RIFLE_SQUAD", localize "STR_AT_SQUAD", localize "STR_AA_SQUAD",  localize "STR_RECON_SQUAD", localize "STR_PARA_SQUAD" ];
@@ -378,7 +355,8 @@ box_transport_config = [
 	[ "O_Truck_03_transport_F", -6.5, [0,	-0.8,	0.4], [0,	-2.4,	0.4], [0,	-4.0,	0.4] ],
 	[ "B_Heli_Transport_03_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],
 	[ "B_Heli_Transport_03_unarmed_F", -7.5, [0,	2.2,	-1], [0,	0.8,	-1], [0,	-1.0, -1] ],
-	[ "greuh_eh101_gr", -6.5, [0,	4.2,	-1.45], [0,	2.5,	-1.45], [0,	0.8, -1.45], [0,	-0.9, -1.45] ]
+	[ "greuh_eh101_gr", -6.5, [0,	4.2,	-1.45], [0,	2.5,	-1.45], [0,	0.8, -1.45], [0,	-0.9, -1.45] ],
+	[ "I_Heli_Transport_02_F", -6.5, [0,	4.2,	-1.45], [0,	2.5,	-1.45], [0,	0.8, -1.45], [0,	-0.9, -1.45] ]
 ];
 ammobox_transports_typenames = [];
 { ammobox_transports_typenames pushback (_x select 0) } foreach box_transport_config;

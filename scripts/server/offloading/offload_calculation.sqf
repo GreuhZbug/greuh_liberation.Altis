@@ -22,7 +22,7 @@ while { true } do {
 			if ( side _currentgroup == WEST ) then {
 				group_owners set [_idx_group_owner, [_group_owner select 0, _group_owner select 1,_group_owner select 2, (_group_owner select 3) + (count units _currentgroup), (_group_owner select 4), (_group_owner select 5)]];
 			};
-			if ( side _currentgroup == EAST || side _currentgroup == RESISTANCE ) then {
+			if ( side _currentgroup == EAST ) then {
 				group_owners set [_idx_group_owner, [_group_owner select 0, _group_owner select 1,_group_owner select 2, (_group_owner select 3), (_group_owner select 4)  + (count units _currentgroup), (_group_owner select 5)]];
 			};
 			if ( side _currentgroup == CIVILIAN ) then {

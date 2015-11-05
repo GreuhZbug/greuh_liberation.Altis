@@ -1,13 +1,13 @@
 diag_log format [ "Spawning cargopost squad at %1", time ];
 
-params [ "_squadpos", "_squadside" ];
+params [ "_squadpos" ];
 private [ "_spawned_units_local", "_allposts", "_grp2", "_building_positions", "_unitclasspost", "_totalx2", "_totaly2", "_avgx2", "_avgy2", "_vd2", "_newdir2" ];
 
 _spawned_units_local = [];
 
 _allposts = [ nearestObjects [ _squadpos, [ 'Land_Cargo_Patrol_V1_F','Land_Cargo_Patrol_V2_F','Land_Cargo_Patrol_V3_F' ], GRLIB_capture_size ] , { alive _x } ] call BIS_fnc_conditionalSelect;
 if ( count _allposts > 0 ) then {
-	_grp2 = createGroup _squadside;
+	_grp2 = createGroup EAST;
 
 	{
 		_building_positions = 	[_x] call BIS_fnc_buildingPositions;

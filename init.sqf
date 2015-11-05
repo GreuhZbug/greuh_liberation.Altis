@@ -5,6 +5,7 @@ enableSaving [ false, false ];
 [] call compileFinal preprocessFileLineNUmbers "scripts\shared\init_sectors.sqf";
 [] call compileFinal preprocessFileLineNUmbers "scripts\shared\fetch_params.sqf";
 [] call compileFinal preprocessFileLineNUmbers "gameplay_constants.sqf";
+[] call compileFinal preprocessFileLineNUmbers "classnames_extension.sqf";
 [] call compileFinal preprocessFileLineNUmbers "classnames.sqf";
 
 if ( GRLIB_revive > 0 ) then {

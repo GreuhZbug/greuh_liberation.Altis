@@ -1,5 +1,5 @@
 params [ "_unit" ];
-private [ "_yield" ];
+private [ "_yield", "_resistance_prisonner_ammo_yield", "_csat_prisonner_ammo_yield" ];
 
 _resistance_prisonner_ammo_yield = 5;
 _csat_prisonner_ammo_yield = 10;

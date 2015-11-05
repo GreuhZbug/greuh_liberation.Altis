@@ -1,6 +1,6 @@
 params [ "_unit" ];
 
-if ( (_unit isKindOf "Man") && ( alive _unit ) && ((side _unit == EAST) || (side _unit == RESISTANCE)) ) then {
+if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) then {
 
 	if ( vehicle _unit != _unit ) then { deleteVehicle _unit };
 

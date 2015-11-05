@@ -1,6 +1,6 @@
 diag_log format [ "Spawning regular squad at %1", time ];
 
-params [ "_sector", "_sidespawn", "_squadies_to_spawn" ];
+params [ "_sector", "_squadies_to_spawn" ];
 private [ "_sectorpos", "_spawnpos", "_grp", "_unitidx", "_corrected_amount" ];
 
 _sectorpos = [ getMarkerPos _sector, random 100, random 360 ] call BIS_fnc_relPos;
@@ -11,7 +11,7 @@ while { surfaceIsWater _spawnpos } do {
 };
 
 _corrected_amount = round ( (count _squadies_to_spawn) * ([] call F_adaptiveOpforFactor) );
-_grp = createGroup _sidespawn;
+_grp = createGroup EAST;
 {
 	if ( ( count units _grp ) < _corrected_amount) then {
 		_x createUnit [_spawnpos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];
