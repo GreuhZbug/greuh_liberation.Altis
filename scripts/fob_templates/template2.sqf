@@ -57,8 +57,7 @@ _objects_to_build = [
 
 _objectives_to_build = [
 [ "Land_Pod_Heli_Transport_04_ammo_F", [-3.32, 3.11, 0], 270.02 ],
-[ "Land_Pod_Heli_Transport_04_ammo_F", [6.28, 5.5, 0], 270.25 ],
-[ "Land_Pod_Heli_Transport_04_ammo_F", [6.23, 10, 0], 270.25 ]
+[ "Land_Pod_Heli_Transport_04_ammo_F", [6.28, 8, 0], 270.25 ]
 ];
 
 _defenders_to_build = [
