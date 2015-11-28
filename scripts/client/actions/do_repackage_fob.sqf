@@ -24,10 +24,10 @@ if ( dorepackage > 0 ) then {
 
 	sleep 0.5;
 
-	_spawnpos = [0,0,0];
-	while { surfaceIsWater _spawnpos } do {
+	_spawnpos = zeropos;
+	while { _spawnpos distance zeropos < 1000 } do {
 		_spawnpos = ( getpos player ) findEmptyPosition [10, 250, 'B_Heli_Transport_01_F'];
-		if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+		if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 	};
 
 	if ( dorepackage == 1 ) then {

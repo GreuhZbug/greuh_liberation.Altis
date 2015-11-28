@@ -35,10 +35,10 @@ while { GRLIB_endgame == 0 } do {
 				if ( ( { typeof _x == ammobox_b_typename } count vehicles ) <= ( ceil ( ( count _blufor_mil_sectors ) * 1.5 ) ) ) then {
 
 					_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
-					_spawnpos = [0,0,0];
-					while { surfaceIsWater _spawnpos } do {
-						_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'Land_PaperBox_open_empty_F'];
-						if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+					_spawnpos = zeropos;
+					while { _spawnpos distance zeropos < 1000 } do {
+						_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [ 0, 100, 'B_Heli_Transport_01_F' ];
+						if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 					};
 
 					_newbox = ammobox_b_typename createVehicle _spawnpos;

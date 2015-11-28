@@ -129,7 +129,7 @@ while { GRLIB_endgame == 0 } do {
 
 	waitUntil {
 		sleep 5;
-		 ( { alive _x } count _base_objectives ) <= 2
+		 ( { alive _x } count _base_objectives ) <= 1
 	};
 	combat_readiness = round (combat_readiness * GRLIB_secondary_objective_impact);
 	trigger_server_save = true;

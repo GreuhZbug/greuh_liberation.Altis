@@ -17,10 +17,10 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 			_spawnclass = opfor_ammobox_transport;
 		};
 
-		_spawnpos = [0,0,0];
-		while { surfaceIsWater _spawnpos } do {
-			_spawnpos =  ( [ ( markerpos _sector), random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [5, 100, 'B_Heli_Transport_01_F'];
-			if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+		_spawnpos = zeropos;
+		while { _spawnpos distance zeropos < 1000 } do {
+			_spawnpos =  ( [ ( markerpos _sector), random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'B_Heli_Transport_01_F'];
+			if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 		};
 
 		_newbox = _spawnclass createVehicle _spawnpos;
