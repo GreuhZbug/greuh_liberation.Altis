@@ -46,6 +46,8 @@ armor_weight = 33;
 air_weight = 33;
 GRLIB_vehicle_to_military_base_links = [];
 GRLIB_permissions = [];
+ai_groups = [];
+saved_intel_res = 0;
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
@@ -128,6 +130,16 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		GRLIB_permissions = greuh_liberation_savegame select 12;
 	};
 
+	if ( count greuh_liberation_savegame > 13 ) then {
+		ai_groups = greuh_liberation_savegame select 13;
+	};
+
+	if ( count greuh_liberation_savegame > 14 ) then {
+		saved_intel_res = greuh_liberation_savegame select 14;
+	};
+
+	setDate [date_year, date_month, date_day, time_of_day, date select 4];
+
 	_correct_fobs = [];
 	{
 		_next_fob = _x;
@@ -174,7 +186,24 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 	} foreach buildings_to_save;
 
-	setDate [date_year, date_month, date_day, time_of_day, date select 4];
+	sleep 0.1;
+
+	{
+		private [ "_nextgroup", "_grp" ];
+		_nextgroup = _x;
+		_grp = createGroup WEST;
+
+		{
+			private [ "_nextunit", "_nextpos", "_nextdir", "_nextobj"];
+			_nextunit = _x;
+			_nextpos = [(_nextunit select 1) select 0, (_nextunit select 1) select 1, ((_nextunit select 1) select 2) + 0.2];
+			_nextdir = _nextunit select 2;
+			(_nextunit select 0) createUnit [ _nextpos, _grp, 'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}] '];
+			_nextobj = ((units _grp) select ((count (units _grp)) - 1));
+			_nextobj setPosATL _nextpos;
+			_nextobj setDir _nextdir;
+		} foreach _nextgroup;
+	} foreach ai_groups;
 };
 
 publicVariable "blufor_sectors";
@@ -221,6 +250,7 @@ while { true } do {
 
 		trigger_server_save = false;
 		buildings_to_save = [];
+		ai_groups = [];
 
 		_all_buildings = [];
 		{
@@ -234,6 +264,25 @@ while { true } do {
  				} ] call BIS_fnc_conditionalSelect;
 
 			_all_buildings = _all_buildings + _nextbuildings;
+
+			{
+				_nextgroup = _x;
+				if (  side _nextgroup == WEST ) then {
+					if ( { isPlayer _x } count ( units _nextgroup ) == 0 ) then {
+						if ( { alive _x } count ( units _nextgroup ) > 0  ) then {
+							if ( _fobpos distance (leader _nextgroup) < GRLIB_fob_range * 2 ) then {
+								private [ "_grouparray" ];
+								_grouparray = [];
+								{
+									_grouparray pushback [ typeof _x, getPosATL _x, getDir _x ];
+								} foreach (units _nextgroup);
+
+								ai_groups pushback _grouparray;
+							};
+						};
+					};
+				};
+			} foreach allGroups;
 		} foreach GRLIB_all_fobs;
 
 		{
@@ -286,7 +335,7 @@ while { true } do {
 			_stats pushback stats_readiness_earned;
 
 			greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day, round combat_readiness, date select 0, date select 1, date select 2, round resources_ammo, _stats,
-			[ round infantry_weight, round armor_weight, round air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions ];
+			[ round infantry_weight, round armor_weight, round air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions, ai_groups, resources_intel ];
 
 			profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
 			saveProfileNamespace;

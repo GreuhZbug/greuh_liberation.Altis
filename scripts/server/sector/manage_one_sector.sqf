@@ -139,9 +139,11 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , GRLIB_secto
 	if ( _building_ai_max > 0 ) then {
 		_allbuildings = [ nearestObjects [_sectorpos, ["House"], _building_range ], { alive _x } ] call BIS_fnc_conditionalSelect;
 		_buildingpositions = [];
-		{ _buildingpositions = _buildingpositions + ( [_x] call BIS_fnc_buildingPositions ); } foreach _allbuildings;
+		{
+			_buildingpositions = _buildingpositions + ( [_x] call BIS_fnc_buildingPositions );
+		} foreach _allbuildings;
 		if ( count _buildingpositions > _minimum_building_positions ) then {
-			_managed_units = _managed_units + ( [ _infsquad, _building_ai_max, _buildingpositions, _sectorpos ] call F_spawnBuildingSquad );
+			_managed_units = _managed_units + ( [ _infsquad, _building_ai_max, _buildingpositions, _sectorpos, _sector ] call F_spawnBuildingSquad );
 		};
 	};
 
@@ -209,7 +211,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , GRLIB_secto
 
 			_stopit = true;
 
-			{ [_x] spawn prisonner_ai; } foreach ( (getmarkerpos _sector) nearEntities [["Man"], _local_capture_size] );
+			{ [_x] spawn prisonner_ai; } foreach ( (getmarkerpos _sector) nearEntities [ [ "Man" ], _local_capture_size * 1.2 ] );
 
 			sleep 60;
 

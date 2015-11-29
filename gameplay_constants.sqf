@@ -10,13 +10,14 @@ GRLIB_defended_buildingpos_part = 0.4;
 GRLIB_sector_military_value = 3;
 GRLIB_secondary_objective_impact = 0.6;
 GRLIB_blufor_cap = 80								* GRLIB_unitcap;
-GRLIB_sector_cap = 160								* GRLIB_unitcap;
-GRLIB_battlegroup_cap = 140							* GRLIB_unitcap;
-GRLIB_patrol_cap = 120								* GRLIB_unitcap;
-GRLIB_battlegroup_size = 8							* GRLIB_unitcap;
-GRLIB_civilians_amount = 10 						* GRLIB_civilian_activity;
+GRLIB_sector_cap = 175								* GRLIB_unitcap;
+GRLIB_battlegroup_cap = 175							* GRLIB_unitcap;
+GRLIB_patrol_cap = 175								* GRLIB_unitcap;
+GRLIB_battlegroup_size = 6							* GRLIB_unitcap * (sqrt GRLIB_csat_aggressivity);
+GRLIB_civilians_amount = 8 						* GRLIB_civilian_activity;
 GRLIB_fob_range = 125;
 GRLIB_cleanup_delay = 1200;
+GRLIB_surrender_chance = 66;
 
 if ( GRLIB_blufor_cap > 100 ) then { GRLIB_blufor_cap = 100 }; // Don't forget that the human commander manages those, not the server
 

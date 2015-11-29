@@ -1,3 +1,5 @@
+ if ( ( random 100 ) > GRLIB_surrender_chance ) exitWith {};
+
 params [ "_unit" ];
 
 if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) then {

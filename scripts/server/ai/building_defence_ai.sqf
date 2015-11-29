@@ -1,18 +1,30 @@
-params [ "_unit" ];
-private [ "_move_is_disabled", "_hostilecount", "_targett" ];
+params [ "_unit", [ "_sector", "" ] ];
+private [ "_move_is_disabled", "_hostilecount", "_targett", "_resume_movement" ];
 _unit setUnitPos "UP";
 _unit disableAI "MOVE";
 _move_is_disabled = true;
+_resume_movement = false;
 
 while { _move_is_disabled && local _unit && alive _unit && !(captive _unit) } do {
 	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man"], 20 ] );
 
+
 	if ( _hostilecount > 0 || ( damage _unit > 0.25 ) ) then {
+		_resume_movement = true;
+	};
+
+	if ( _sector != "" ) then {
+		if ( _sector in blufor_sectors ) then {
+			_resume_movement = true;
+		};
+	};
+
+	if ( _resume_movement ) then {
 		if ( _move_is_disabled ) then {
 			_move_is_disabled = false;
 			_unit enableAI "MOVE";
 			_unit setUnitPos "AUTO";
-		}
+		};
 	};
 
 	if ( _move_is_disabled ) then {

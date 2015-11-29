@@ -1,6 +1,6 @@
 diag_log format [ "Spawning building squad at %1", time ];
 
-params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos" ];
+params [ "_infsquad", "_building_ai_max", "_buildingpositions", "_sectorpos", [ "_sector", "" ] ];
 private [ "_squadtospawnnn", "_infsquad_classnames", "_usedposits", "_nextposit", "_remainingposits", "_grp", "_everythingspawned", "_nextunit", "_position_indexes", "_position_count", "_idxposit", "_groupunitscount" ];
 
 _everythingspawned = [];
@@ -39,7 +39,7 @@ _idxposit = 0;
 	_nextunit addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 	_nextunit setpos (_buildingpositions select (_position_indexes select _idxposit));
 	_nextunit setdir (random 360);
-	[ _nextunit ] spawn building_defence_ai;
+	[ _nextunit, _sector ] spawn building_defence_ai;
 	if ( _infsquad == "militia" ) then {
 		if ( (typeof _nextunit) in original_resistance ) then {
 			[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );

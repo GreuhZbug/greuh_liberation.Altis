@@ -5,10 +5,10 @@ diag_log format [ "Spawning vehicle %1 at %2", _classname , time ];
 
 _newvehicle = objNull;
 
-_spawnpos = [0,0,0];
-while { surfaceIsWater _spawnpos } do {
+_spawnpos = zeropos;
+while { _spawnpos distance zeropos < 1000 } do {
 	_spawnpos = ( [ _sectorpos, random 150, random 360 ] call bis_fnc_relpos ) findEmptyPosition [10, 100, 'B_Heli_Transport_01_F'];
-	if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+	if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 };
 
 _newvehicle = objNull;

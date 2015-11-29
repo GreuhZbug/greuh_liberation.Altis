@@ -2,7 +2,6 @@ _objects_to_build = [
 [ "Land_Cargo_Tower_V3_F", [-5.7, 3.42, 0], 0 ],
 [ "Land_HBarrierBig_F", [-0.8, -6.62, 0], 0.11 ],
 [ "Land_PaperBox_open_empty_F", [5.84, -3.25, 0], 332.09 ],
-[ "CamoNet_OPFOR_open_F", [8.62, -0.15, 0], 0 ],
 [ "Land_HBarrierBig_F", [7.84, -6.52, 0], 359.62 ],
 [ "Land_PaperBox_closed_F", [10.77, -2.11, 0], 90.97 ],
 [ "Flag_CSAT_F", [2.46, 10.93, 0], 90 ],
@@ -58,8 +57,7 @@ _objects_to_build = [
 
 _objectives_to_build = [
 [ "Land_Pod_Heli_Transport_04_ammo_F", [-3.32, 3.11, 0], 270.02 ],
-[ "Land_Pod_Heli_Transport_04_ammo_F", [6.28, 6, 0], 270.25 ],
-[ "Land_Pod_Heli_Transport_04_ammo_F", [6.23, 10, 0], 270.25 ]
+[ "Land_Pod_Heli_Transport_04_ammo_F", [6.28, 8, 0], 270.25 ]
 ];
 
 _defenders_to_build = [

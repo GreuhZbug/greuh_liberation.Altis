@@ -40,3 +40,5 @@ F_isAdmin = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_i
 F_cleanOpforVehicle = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_cleanOpforVehicle.sqf";
 F_getLoadout = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_getLoadout.sqf";
 F_setLoadout = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_setLoadout.sqf";
+F_rearmVehicle = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_rearmVehicle.sqf";
+F_setFuel = compileFinal preprocessFileLineNumbers "scripts\shared\functions\F_setFuel.sqf";

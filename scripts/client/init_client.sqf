@@ -7,7 +7,7 @@ cinematic_camera = compileFinal preprocessFileLineNumbers "scripts\client\ui\cin
 write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\write_credit_line.sqf";
 
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\action_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\pow_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\intel_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\recycle_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\actions\unflip_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\ammobox_action_manager.sqf";
@@ -27,6 +27,7 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\init_arsenal.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\offload_diag.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\permissions_warning.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\resupply_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stay_leader.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stop_renegade.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\synchronise_vars.sqf";
@@ -35,7 +36,7 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\ui_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\ui\tutorial_manager.sqf";
 
-if ( typeof player == "B_officer_F" ) then {
+if ( typeof player == commander_classname ) then {
 	[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\delete_groups.sqf";
 };
 
