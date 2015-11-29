@@ -142,20 +142,21 @@ class RscTitles
 	  onLoad = "uiNamespace setVariable ['GUI_OVERLAY', _this select 0];";
       controls[]= { BGPicture,LabelManpower,LabelAmmo,LabelFuel,LabelCap,PictureManpowerShadow,PictureAmmoShadow, BGPictureActiveSectors,
 	  PictureFuelShadow,PictureCapShadow,PictureManpower,PictureAmmo,PictureFuel,PictureCap,PictureCombatReadinessShadow,PictureCombatReadiness,
+	  PictureIntelShadow, PictureIntel, LabelIntel,
 	  BGPictureSector,CaptureFrame_OPFOR, CaptureFrame_BLUFOR, CaptureFrame, LabelPoint, LabelCombatReadiness, CentralShadow, CentralLabel, ActiveSectors,
 	  AlertBGPicture, AlertLabel, AlertTimer };
 	  class BGPicture {
 	  	idc = -1;
 		type =  CT_STATIC;
 		style = ST_PICTURE;
-		colorText[] = {0.8,0.8,0.8,0.8};
+		colorText[] = {0.8,0.8,0.8,0.9};
 		colorBackground[] = COLOR_NOALPHA;
 		font = FontM;
 		sizeEx = 0.5;
 		x = 0.95 * safezoneW + safezoneX;
 		w = 0.075 * safezoneW;
-		y = 0.39 * safezoneH + safezoneY;
-		h = 0.14 * safezoneH;
+		y = 0.395 * safezoneH + safezoneY;
+		h = 0.153 * safezoneH;
 		text = "res\gradient.paa";
 	  };
 	  class BGPictureSector : BGPicture {
@@ -228,6 +229,11 @@ class RscTitles
 		y = (0.4 + ( ICONE_SPACY * 4 ) ) * safezoneH + safezoneY;
 		text = "\A3\ui_f\data\map\markers\handdrawn\warning_CA.paa";
 	  };
+	  class PictureIntel : GenericPicture69 {
+	  	colorText[] = {0,0.45,0.95,1};
+		y = (0.4 + ( ICONE_SPACY * 5 ) - 0.0025) * safezoneH + safezoneY;
+		text = "\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa";
+	  };
 	  class PictureManpowerShadow : PictureManpower {
 		y = (0.4 + SHADOW_Y + ( ICONE_SPACY * 0 ) ) * safezoneH + safezoneY;
 		x = (0.985 + SHADOW_X) * safezoneW + safezoneX;
@@ -248,9 +254,14 @@ class RscTitles
 		x = (0.985 + SHADOW_X) * safezoneW + safezoneX;
 		colorText[] = {0,0,0,0.7};
 	  };
-	  	class PictureCombatReadinessShadow : PictureCombatReadiness {
-		idc = -1;
+	  class PictureCombatReadinessShadow : PictureCombatReadiness {
+	  	idc = -1;
 		y = (0.4 + SHADOW_Y + ( ICONE_SPACY * 4 ) ) * safezoneH + safezoneY;
+		x = (0.985 + SHADOW_X) * safezoneW + safezoneX;
+		colorText[] = {0,0,0,0.7};
+	  };
+	  class PictureIntelShadow : PictureIntel {
+		y = (0.4 + SHADOW_Y + ( ICONE_SPACY * 5 ) - 0.0025 ) * safezoneH + safezoneY;
 		x = (0.985 + SHADOW_X) * safezoneW + safezoneX;
 		colorText[] = {0,0,0,0.7};
 	  };
@@ -283,6 +294,12 @@ class RscTitles
 		text = "";
 		y = (0.39 + ( ICONE_SPACY * 4 ) ) * safezoneH + safezoneY;
 		colorText[] = {0.8, 0.8, 0.8, 1};
+	  };
+	  class LabelIntel : GenericLabel69 {
+	  	idc = 106;
+		text = "";
+		y = (0.39 + ( ICONE_SPACY * 5 ) - 0.0015 ) * safezoneH + safezoneY;
+		colorText[] = {0, 0.45, 0.95, 1};
 	  };
 	  class CaptureFrameStandard {
 		type =  CT_STATIC;

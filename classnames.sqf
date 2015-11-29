@@ -187,6 +187,14 @@ vehicle_repair_sources = [ "B_APC_Tracked_01_CRV_F", "C_Offroad_01_repair_F", "B
 vehicle_rearm_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "B_Slingload_01_Ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
 vehicle_refuel_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_fuel_F", "B_Slingload_01_Fuel_F" ];
 
+// Commander
+commander_classname = "B_officer_F";
+
+
+
+
+
+
 
 // *** BADDIES ***
 
@@ -366,3 +374,7 @@ ammobox_transports_typenames = [];
 ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 original_resistance = [ "B_G_Soldier_SL_F","B_G_Soldier_A_F","B_G_Soldier_AR_F","B_G_medic_F","B_G_engineer_F","B_G_Soldier_exp_F","B_G_Soldier_GL_F","B_G_Soldier_M_F","B_G_Soldier_F","B_G_Soldier_LAT_F","B_G_Soldier_lite_F","b_g_soldier_unarmed_f","B_G_Sharpshooter_F","b_g_survivor_F","B_G_Soldier_TL_F"];
+GRLIB_intel_table = "Land_CampingTable_small_F";
+GRLIB_intel_chair = "Land_CampingChair_V2_F";
+GRLIB_intel_file = "Land_File1_F";
+GRLIB_intel_laptop = "Land_Laptop_device_F";
