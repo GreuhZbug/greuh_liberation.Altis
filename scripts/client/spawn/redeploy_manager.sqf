@@ -37,7 +37,7 @@ while { true } do {
 
 	player setFatigue 0;
 	if ( GRLIB_fatigue == 0 ) then {
-		player enableFatigue false;
+		player enableStamina false;
 	};
 
 	_dialog = createDialog "liberation_deploy";
