@@ -262,6 +262,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , GRLIB_secto
 		sleep 5;
 	};
 } else {
+	sleep 40;
 	active_sectors = active_sectors - [ _sector ]; publicVariable "active_sectors";
 	diag_log format [ "Sector %2 checkpoint S at %1", time, _sector ];
 };
