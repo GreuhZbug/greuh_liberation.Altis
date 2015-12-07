@@ -26,7 +26,7 @@ FAR_HandleDamage_EH =
 
 	_isUnconscious = _unit getVariable "FAR_isUnconscious";
 
-	if (alive _unit && _amountOfDamage >= 0.99 && _isUnconscious == 0 && !(_selectionName in [ "hands", "legs", "spine1", "spine2", "pelvis", "neck" ])) then
+	if (alive _unit && _amountOfDamage >= 1.0 && _isUnconscious == 0 && (_selectionName in ["","head","face_hub","neck","spine1","spine2","spine3","pelvis","body"] )) then
 	{
 		_unit setDamage 0.6;
 		_unit allowDamage false;

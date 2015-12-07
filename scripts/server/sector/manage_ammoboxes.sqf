@@ -108,6 +108,7 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 				_intelobject allowDamage false;
 				_intelobject setVectorUp [0,0,1];
 				_intelobject setdir _inteldir;
+
 				if ( _intelclassname == GRLIB_intel_file ) then {
 					_intelobject attachTo [ _tableobject, [0, 0, 0.42] ];
 				};
@@ -115,6 +116,12 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 				if ( _intelclassname == GRLIB_intel_laptop ) then {
 					_intelobject attachTo [ _tableobject, [0, 0, 0.56] ];
 				};
+
+
+				sleep 0.1;
+
+				_chairobject setPosATL (getPosATL _chairobject);
+				_intelobject setPosATL (getPosATL _intelobject);
 
 				_nbintel = _nbintel - 1;
 			};
