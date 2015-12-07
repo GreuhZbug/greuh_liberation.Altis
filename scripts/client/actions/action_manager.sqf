@@ -10,6 +10,7 @@ _idact_squad = -1;
 _idact_commander = -1;
 _idact_repackage = -1;
 _idact_halo = -1;
+_idact_secondary = -1;
 _distfob = 100;
 _distarsenal = 5;
 _distbuildfob = 10;
@@ -144,6 +145,17 @@ while { true } do {
 		if ( _idact_repackage != -1 ) then {
 			player removeAction _idact_repackage;
 			_idact_repackage = -1;
+		};
+	};
+
+	if (  _fobdistance < _distredeploy && alive player && vehicle player == player && ( ( [ player, 5 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
+		if ( _idact_secondary == -1 ) then {
+			_idact_secondary = player addAction ["<t color='#FFFF00'>" + localize "STR_SECONDARY_OBJECTIVES" + "</t>","scripts\client\ui\secondary_ui.sqf","",-993,false,true,"","build_confirmed == 0"];
+		};
+	} else {
+		if ( _idact_secondary != -1 ) then {
+			player removeAction _idact_secondary;
+			_idact_secondary = -1;
 		};
 	};
 

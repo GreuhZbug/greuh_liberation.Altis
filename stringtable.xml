@@ -1364,6 +1364,10 @@
                         <Original>-- TAKE INTEL</Original>
                         <French>-- PRENDRE INTEL</French>
                 </Key>
+                <Key ID="STR_SECONDARY_OBJECTIVES">
+                        <Original>-- SECONDARY OBJECTIVES</Original>
+                        <French>-- OBJECTIFS SECONDAIRES</French>
+                </Key>
 
 
 
