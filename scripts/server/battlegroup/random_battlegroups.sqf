@@ -17,7 +17,7 @@ while { GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0 } do {
 	};
 
 
-	if ( (count allPlayers >= 10) && ([] call F_opforCap < GRLIB_battlegroup_cap) && (combat_readiness > (100 - round ((count allPlayers) * 2.5))) ) then {
+	if ( (count allPlayers >= 20) && ([] call F_opforCap < GRLIB_battlegroup_cap) && (combat_readiness > (100 - (round ((count allPlayers) * 1.5)))) )  then {
 		[] spawn spawn_battlegroup;
 	};
 };

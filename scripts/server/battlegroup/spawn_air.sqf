@@ -1,7 +1,6 @@
 _planes_number = 0;
 _first_objective = _this select 0;
-if ( combat_readiness >= 50 ) then { _planes_number = (floor (random 2)) };
-if ( combat_readiness >= 75 ) then { _planes_number = (floor (random 3)) };
+if ( combat_readiness >= 75 ) then { _planes_number = (floor (random 2)) };
 
 _plane_type = opfor_air call BIS_fnc_selectRandom;
 _air_spawnpoint = ( [ [ "opfor_airspawn1","opfor_airspawn2","opfor_airspawn3","opfor_airspawn4","opfor_airspawn5","opfor_airspawn6","opfor_airspawn7" ]

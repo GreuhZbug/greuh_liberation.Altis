@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.916</Original>
+        		<Original>Liberation 0.917</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.916</Original>
+                        <Original>v0.917</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -693,9 +693,9 @@
                         <German>Ressourcenmultiplikator</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE">
-                        <Original>Fatigue effects</Original>
-                        <French>Effets de fatigue</French>
-                        <German>Erschöpfungseffekte</German>
+                        <Original>Stamina</Original>
+                        <French>Stamina</French>
+                        <German>Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE1">
                         <Original>Reduced - 4 times more stamina</Original>
@@ -1363,6 +1363,14 @@
                 <Key ID="STR_INTEL">
                         <Original>-- TAKE INTEL</Original>
                         <French>-- PRENDRE INTEL</French>
+                </Key>
+                <Key ID="STR_AMMO_BOUNTIES">
+                        <Original>Ammunition bounties</Original>
+                        <French>Primes de munitions</French>
+                </Key>
+                <Key ID="STR_BOUNTY_MESSAGE">
+                        <Original>Bounty of %1 for a %2 destroyed by %3</Original>
+                        <French>Prime de %1 pour un %2 détruit par %3</French>
                 </Key>
 
 

@@ -254,7 +254,8 @@ while { true } do {
 				( alive _x) &&
 				( speed _x < 5 ) &&
 				( isNull  attachedTo _x ) &&
-				(((getpos _x) select 2) < 10 )
+				(((getpos _x) select 2) < 10 ) &&
+				( getObjectType _x >= 8 )
  				} ] call BIS_fnc_conditionalSelect;
 
 			_all_buildings = _all_buildings + _nextbuildings;

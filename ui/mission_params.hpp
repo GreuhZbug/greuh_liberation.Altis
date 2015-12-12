@@ -62,8 +62,8 @@ class Params
 	};
 	class Fatigue {
 		title = $STR_PARAMS_FATIGUE;
-		values[] = { 0, 0.5, 0.66, 1, 1.5, 2 };
-		texts[] = { $STR_PARAMS_DISABLED, $STR_PARAMS_FATIGUE1, $STR_PARAMS_FATIGUE2, $STR_PARAMS_FATIGUE3, $STR_PARAMS_FATIGUE4, $STR_PARAMS_ENABLED };
+		values[] = { 0, 1 };
+		texts[] = { $STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED };
 		default = 1;
 	};
 	class Revive {
@@ -89,6 +89,12 @@ class Params
 		values[] = {1,0};
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
 		default = 0;
+	};
+	class AmmoBounties{
+		title = $STR_AMMO_BOUNTIES;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
 	};
 	class HaloJump{
 		title = $STR_HALO_PARAM;
