@@ -73,9 +73,6 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 	buildings_to_save = greuh_liberation_savegame select 2;
 	time_of_day = greuh_liberation_savegame select 3;
 	combat_readiness = greuh_liberation_savegame select 4;
-	date_year = greuh_liberation_savegame select 5;
-	date_month = greuh_liberation_savegame select 6;
-	date_day = greuh_liberation_savegame select 7;
 	saved_ammo_res = greuh_liberation_savegame select 8;
 
 	if ( "capture_13_1_2_26_25" in blufor_sectors ) then { // Patching Molos Airfield which was a town instead of a factory
@@ -138,7 +135,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		saved_intel_res = greuh_liberation_savegame select 14;
 	};
 
-	setDate [date_year, date_month, date_day, time_of_day, date select 4];
+	setDate [ 2045, 6, 6, time_of_day, 0];
 
 	_correct_fobs = [];
 	{
@@ -165,10 +162,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			};
 			_nextbuilding = _nextclass createVehicle _nextpos;
 			_nextbuilding setVectorUp [0,0,1];
-			_nextbuilding setpos _nextpos;
-			_nextbuilding setdir _nextdir;
-			_nextbuilding setVectorUp [0,0,1];
-			_nextbuilding setpos _nextpos;
+			_nextbuilding setPosATL _nextpos;
 			_nextbuilding setdir _nextdir;
 			_nextbuilding setdamage 0;
 			if ( _hascrew ) then {
@@ -274,7 +268,9 @@ while { true } do {
 								private [ "_grouparray" ];
 								_grouparray = [];
 								{
-									_grouparray pushback [ typeof _x, getPosATL _x, getDir _x ];
+									if ( alive _x && (vehicle _x == _x ) ) then {
+										_grouparray pushback [ typeof _x, getPosATL _x, getDir _x ];
+									};
 								} foreach (units _nextgroup);
 
 								ai_groups pushback _grouparray;
@@ -287,7 +283,7 @@ while { true } do {
 
 		{
 			_nextclass = typeof _x;
-			_nextpos = [(getpos _x) select 0, (getpos _x) select 1, 0];
+			_nextpos = getposATL _x;
 			_nextdir = getdir _x;
 			_hascrew = false;
 			if ( _nextclass in _classnames_to_save_blu ) then {
@@ -334,7 +330,7 @@ while { true } do {
 			_stats pushback stats_fobs_lost;
 			_stats pushback stats_readiness_earned;
 
-			greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day, round combat_readiness, date select 0, date select 1, date select 2, round resources_ammo, _stats,
+			greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day, round combat_readiness,0,0,0, round resources_ammo, _stats,
 			[ round infantry_weight, round armor_weight, round air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions, ai_groups, resources_intel ];
 
 			profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
