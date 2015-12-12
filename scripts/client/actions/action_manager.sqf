@@ -37,7 +37,7 @@ while { true } do {
 		_fobdistance = player distance _nearfob;
 	};
 
-	_neararsenal = ( (getpos player) nearobjects [ Arsenal_typename, _distarsenal ]);
+	_neararsenal = [ ( (getpos player) nearobjects [ Arsenal_typename, _distarsenal ]), { getObjectType _x >= 8 } ] call BIS_fnc_conditionalSelect;
 	_nearfobbox = ( (getpos player) nearEntities [ [ FOB_box_typename, FOB_truck_typename ] , _distbuildfob ] );
 	_nearspawn = ( (getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] , _distspawn ] );
 	_nearsquad = ( (getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] , _distredeploy ] );

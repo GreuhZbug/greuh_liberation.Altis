@@ -20,7 +20,7 @@ if ( dorepackage > 0 ) then {
 		publicVariable "GRLIB_all_fobs";
 	};
 
-	{ deleteVehicle _x }  foreach ( (getpos player) nearobjects [ FOB_typename, 250 ]);
+	{ deleteVehicle _x }  foreach ( [ ( (getpos player) nearobjects [ FOB_typename, 250 ] ) , { getObjectType _x >= 8 } ] call BIS_fnc_conditionalSelect );
 
 	sleep 0.5;
 

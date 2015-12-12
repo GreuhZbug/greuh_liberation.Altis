@@ -21,6 +21,7 @@ if ( isMultiplayer ) then {
 	GRLIB_csat_aggressivity = ["Aggressivity",1] call bis_fnc_getParamValue;
 	GRLIB_weather_param = ["Weather",3] call bis_fnc_getParamValue;
 	GRLIB_shorter_nights = ["ShorterNights",0] call bis_fnc_getParamValue;
+	GRLIB_ammo_bounties = [ "AmmoBounties",0] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -44,10 +45,10 @@ if ( isMultiplayer ) then {
 	GRLIB_csat_aggressivity = 1;
 	GRLIB_weather_param = 3;
 	GRLIB_shorter_nights = 0;
+	GRLIB_ammo_bounties = 1;
 };
 
-GRLIB_fatigue = GRLIB_fatigue / 2.0; // This is stupid but you can't use a decimal value as the default setting
-
+if ( GRLIB_fatigue < 0.1 ) then { GRLIB_fatigue = false } else { GRLIB_fatigue = true };
 if ( GRLIB_introduction == 1 ) then { GRLIB_introduction = true } else { GRLIB_introduction = false };
 if ( GRLIB_deployment_cinematic == 1 ) then { GRLIB_deployment_cinematic = true } else { GRLIB_deployment_cinematic = false };
 if ( GRLIB_build_first_fob == 1 ) then { GRLIB_build_first_fob = true } else { GRLIB_build_first_fob = false };
@@ -57,3 +58,4 @@ if ( GRLIB_passive_income == 1 ) then { GRLIB_passive_income = true } else { GRL
 if ( GRLIB_permissions_param == 1 ) then { GRLIB_permissions_param = true } else { GRLIB_permissions_param = false };
 if ( GRLIB_use_whitelist == 1 ) then { GRLIB_use_whitelist = true } else { GRLIB_use_whitelist = false };
 if ( GRLIB_shorter_nights == 1 ) then { GRLIB_shorter_nights = true } else { GRLIB_shorter_nights = false };
+if ( GRLIB_ammo_bounties == 1 ) then { GRLIB_ammo_bounties = true } else { GRLIB_ammo_bounties = false };
