@@ -25,7 +25,6 @@ class Mission
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Modules_F",
 		"3DEN",
-		"kh_lowgrass",
 		"A3_Data_F_Exp_A_Virtual"
 	};
 	addOnsAuto[]=
@@ -51,8 +50,7 @@ class Mission
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Heli_Ind_Machines",
 		"A3_Structures_F_Heli_Items_Airport",
-		"A3_Air_F_Beta_Heli_Transport_01",
-		"kh_lowgrass"
+		"A3_Air_F_Beta_Heli_Transport_01"
 	};
 	randomSeed=7571389;
 	class Intel
@@ -4722,12 +4720,11 @@ class Intro
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+	
 	};
 	randomSeed=12610520;
 	class Intel
@@ -4753,12 +4750,11 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+
 	};
 	randomSeed=11161141;
 	class Intel
@@ -4784,12 +4780,11 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"a3_map_altis",
-		"kh_lowgrass"
+		"a3_map_altis"
 	};
 	addOnsAuto[]=
 	{
-		"kh_lowgrass"
+
 	};
 	randomSeed=7391389;
 	class Intel
