@@ -18,8 +18,8 @@ while { GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0 } do {
 
 	waitUntil {
 		sleep 5;
-	 	combat_readiness >= 80 &&
-	 	(armor_weight >= 80 || air_weight >= 80);
+	 	combat_readiness >= 70 &&
+	 	(armor_weight >= 70 || air_weight >= 70);
 
 	 };
 
@@ -27,11 +27,11 @@ while { GRLIB_csat_aggressivity >= 0.9 && GRLIB_endgame == 0 } do {
 	 {
 	 	if (!(isNull _target_player)) exitWith {};
 
-	 	if (( armor_weight >= 75 ) && ((vehicle _x) isKindOf "Tank")) then {
+	 	if (( armor_weight >= 70 ) && ((vehicle _x) isKindOf "Tank")) then {
 	 		_target_player = _x;
 	 	};
 
-	 	if (( air_weight >= 75 ) && ((vehicle _x) isKindOf "Air")) then {
+	 	if (( air_weight >= 70 ) && ((vehicle _x) isKindOf "Air")) then {
 	 		_target_player = _x;
 	 	};
 

@@ -2,10 +2,10 @@
         <Project name="Liberation">
                 <Package name="Liberation">
         	<Key ID="STR_MISSION_TITLE">
-        		<Original>Liberation 0.916</Original>
+        		<Original>Liberation 0.917</Original>
         	</Key>
                 <Key ID="STR_MISSION_VERSION">
-                        <Original>v0.916</Original>
+                        <Original>v0.917</Original>
                 </Key>
                 <Key ID="STR_MISSION_DESCRIPTION">
                         <Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -422,10 +422,18 @@
                         <French>NOUVEAUX RENSEIGNEMENTS</French>
                         <German>NEUE INFORMATIONEN</German>
                 </Key>
-                <Key ID="STR_NOTIFICATION_INTEL_TEXT">
+                <Key ID="STR_NOTIFICATION_FOB_TEXT">
                         <Original>Hostile FOB near %1.</Original>
                         <French>FOB hostile près de %1.</French>
                         <German>Gegnerische FOB nahe %1.</German>
+                </Key>
+                <Key ID="STR_NOTIFICATION_PRISONER_TEXT">
+                        <Original>We have interrogated a prisoner.</Original>
+                        <French>Nous avons interroger un prisonnier.</French>
+                </Key>
+                <Key ID="STR_NOTIFICATION_DOCUMENT_TEXT">
+                        <Original>We have found secret documents.</Original>
+                        <French>Nous avons trouvé des documents secrets</French>
                 </Key>
                 <Key ID="STR_NOTIFICATION_SECONDARY_TITLE">
                         <Original>SECONDARY OBJECTIVE</Original>
@@ -693,9 +701,9 @@
                         <German>Ressourcenmultiplikator</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE">
-                        <Original>Fatigue effects</Original>
-                        <French>Effets de fatigue</French>
-                        <German>Erschöpfungseffekte</German>
+                        <Original>Stamina</Original>
+                        <French>Stamina</French>
+                        <German>Ausdauer</German>
                 </Key>
                 <Key ID="STR_PARAMS_FATIGUE1">
                         <Original>Reduced - 4 times more stamina</Original>
@@ -1364,12 +1372,38 @@
                         <Original>-- TAKE INTEL</Original>
                         <French>-- PRENDRE INTEL</French>
                 </Key>
-
-
-
-
-
-
+                <Key ID="STR_SECONDARY_OBJECTIVES">
+                        <Original>-- SECONDARY OBJECTIVES</Original>
+                        <French>-- OBJECTIFS SECONDAIRES</French>
+                </Key>
+                <Key ID="STR_AMMO_BOUNTIES">
+                        <Original>Ammunition bounties</Original>
+                        <French>Primes de munitions</French>
+                </Key>
+                <Key ID="STR_BOUNTY_MESSAGE">
+                        <Original>Bounty of %1 for a %2 destroyed by %3</Original>
+                        <French>Prime de %1 pour un %2 détruit par %3</French>
+                </Key>
+                <Key ID="STR_SECONDARY_OBJECTIVES_TITLE">
+                        <Original>SECONDARY OBJECTIVES</Original>
+                        <French>OBJECTIFS SECONDAIRES</French>
+                </Key>
+                <Key ID="STR_SECONDARY_OBJECTIVES_START">
+                        <Original>Start</Original>
+                        <French>Commencer</French>
+                </Key>
+                <Key ID="STR_SECONDARY_INTEL">
+                        <Original>Current intel: %1</Original>
+                        <French>Intel actuelle : %1</French>
+                </Key>
+                <Key ID="STR_SECONDARY_NOT_ENOUGH_INTEL">
+                        <Original>Insufficient intel points</Original>
+                        <French>Points d'intel insuffisants</French>
+                </Key>
+                <Key ID="STR_SECONDARY_IN_PROGRESS">
+                        <Original>Secondary mission already in progress</Original>
+                        <French>Mission secondaire déjà en cours</French>
+                </Key>
 
 
 
@@ -1589,5 +1623,59 @@ Le commandant dispose par ailleurs d'options de construction supplémentaires po
 Ce rôle n'est pas obligatoire, mais fortement recommandé pour les petits groupes de joueurs.&lt;br/&gt; &lt;br/&gt;
                         </French>
                 </Key>
+
+
+
+
+
+
+
+
+                <Key ID="STR_SECONDARY_MISSION0">
+                        <Original>FOB Hunting</Original>
+                        <French>Chasse à la FOB</French>
+                </Key>
+
+                <Key ID="STR_SECONDARY_BRIEFING0">
+
+
+<Original>
+&lt;t size='1.3' color='#ffa000'&gt;FOB HUNTING&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1'&gt;
+CSAT forces use an array of small logistic bases situated behind the front lines. Destroying those assets would greatly disrupt the CSAT supply lines and impair their capacity to react to our actions.&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1'&gt;
+Your mission is to destroy all supply assets (trucks, containers) at the objective by any means at your disposal. Unfortunately our intelligence is not able to provide you with a precise position for the base, you will have to locate the objective in the red zone on your map.&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+&lt;br/&gt;
+&lt;t size='1.15' color='#ffa000'&gt;Reward: CSAT alert level reduced by 40%&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+</Original>
+
+<French>
+&lt;t size='1.3' color='#ffa000'&gt;CHASSE A LA FOB&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1'&gt;
+Les forces du CSAT utilisent des bases logistiques situées derrière la ligne de front. Détruire ces objectifs pertubera les lignes d'approvisionnement du CSAT et les empêchera de réagir efficacement à nos actions.&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1'&gt;
+Votre mission est de détruire tous les équipements logistiques (camions, containers) présents sur l'objectif. Malheureusement nos renseignements ne permettent pas de vous donner la position précise de la base, vous devrez la chercher dans la zone rouge visible sur votre carte.&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='1.15' color='#00a0ff'&gt;Coût: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+&lt;br/&gt;
+&lt;t size='1.15' color='#ffa000'&gt;Récompense: niveau d'alerte du CSAT réduit de 40%&lt;/t&gt;
+&lt;br/&gt;&lt;br/&gt;
+&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+</French>
+
+
+
+
+</Key>
+
+
         </Package>
 </Project>

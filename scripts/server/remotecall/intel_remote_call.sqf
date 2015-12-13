@@ -8,4 +8,4 @@ _intel_yield = 5;
 deleteVehicle _intel_object;
 resources_intel = resources_intel + (floor (_intel_yield + (random _intel_yield)));
 
-intel_obtained = true; publicVariable "intel_obtained";
+[ [ 1 ] , "remote_call_intel" ] call BIS_fnc_MP;
