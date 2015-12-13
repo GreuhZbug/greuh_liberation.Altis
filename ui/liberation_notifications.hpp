@@ -84,12 +84,23 @@ class CfgNotifications
 	class lib_intel : lib_default_notification
     {
 		title = $STR_NOTIFICATION_INTEL_TITLE;
-		description = $STR_NOTIFICATION_INTEL_TEXT;
         iconPicture = "res\notif\ui_notif_int.paa";
 		color[] = {0,0.35,1,1};
 		sound = "taskUpdated";
     };
-	class lib_secondary : lib_default_notification
+	class lib_intel_prisoner : lib_intel
+	{
+		description = $STR_NOTIFICATION_PRISONER_TEXT;
+	};
+    class lib_intel_document : lib_intel
+    {
+		description = $STR_NOTIFICATION_DOCUMENT_TEXT;
+    };
+    class lib_intel_fob : lib_intel
+    {
+		description = $STR_NOTIFICATION_FOB_TEXT;
+    };
+	class lib_secondary_fob_destroyed : lib_default_notification
     {
 		title = $STR_NOTIFICATION_SECONDARY_TITLE;
 		description = $STR_NOTIFICATION_SECONDARY_TEXT;

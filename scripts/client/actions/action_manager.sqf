@@ -40,7 +40,6 @@ while { true } do {
 	_neararsenal = [ ( (getpos player) nearobjects [ Arsenal_typename, _distarsenal ]), { getObjectType _x >= 8 } ] call BIS_fnc_conditionalSelect;
 	_nearfobbox = ( (getpos player) nearEntities [ [ FOB_box_typename, FOB_truck_typename ] , _distbuildfob ] );
 	_nearspawn = ( (getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] , _distspawn ] );
-	_nearsquad = ( (getpos player) nearEntities [ [ Respawn_truck_typename, huron_typename ] , _distredeploy ] );
 
 	if ( GRLIB_removefobboxes ) then {
 		GRLIB_removefobboxes = false;
@@ -60,7 +59,7 @@ while { true } do {
 		};
 	};
 
-	if ( (_fobdistance < _distredeploy || count _nearspawn != 0 || (player distance lhd) < 200) && alive player && vehicle player == player && GRLIB_halo_param > 0 ) then {
+	if ( (_fobdistance < _distredeploy || (player distance lhd) < 200) && alive player && vehicle player == player && GRLIB_halo_param > 0 ) then {
 		if ( _idact_halo == -1 ) then {
 			_idact_halo = player addAction ["<t color='#80FF80'>" + localize "STR_HALO_ACTION" + "</t> <img size='2' image='res\ui_redeploy.paa'/>","scripts\client\spawn\do_halo.sqf","",-749,false,true,"","build_confirmed == 0"];
 		};
@@ -115,7 +114,7 @@ while { true } do {
 		};
 	};
 
-	if (( _fobdistance < _distredeploy || count _nearsquad != 0 ) && alive player && vehicle player == player && ((player distance lhd) > 1000) && { !(isPlayer _x) } count (units group player) > 0 &&  ( [ player, 5 ] call F_fetchPermission ) ) then {
+	if ( (leader group player == player) && (count units group player > 1) && alive player && vehicle player == player) then {
 		if ( _idact_squad == -1 ) then {
 			_idact_squad = player addAction ["<t color='#80FF80'>" + localize "STR_SQUAD_MANAGEMENT_ACTION" + "</t> <img size='2' image='\a3\Ui_F_Curator\Data\Displays\RscDisplayCurator\modeGroups_ca.paa'/>","scripts\client\ui\squad_management.sqf","",-760,false,true,"","build_confirmed == 0"];
 		};
@@ -148,7 +147,7 @@ while { true } do {
 		};
 	};
 
-	if (  _fobdistance < _distredeploy && alive player && vehicle player == player && ( ( [ player, 5 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
+	if ( ( count GRLIB_all_fobs > 0 ) && ( GRLIB_endgame == 0 ) && (_fobdistance < _distredeploy || (player distance lhd) < 200) && alive player && vehicle player == player && ( ( [ player, 5 ] call F_fetchPermission ) || ( player == ( [] call F_getCommander ) || [] call F_isAdmin ) ) ) then {
 		if ( _idact_secondary == -1 ) then {
 			_idact_secondary = player addAction ["<t color='#FFFF00'>" + localize "STR_SECONDARY_OBJECTIVES" + "</t>","scripts\client\ui\secondary_ui.sqf","",-993,false,true,"","build_confirmed == 0"];
 		};

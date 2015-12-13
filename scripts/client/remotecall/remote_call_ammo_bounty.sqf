@@ -1,3 +1,5 @@
+if ( isDedicated ) exitWith {};
+
 params [ "_classname", "_bounty", "_killer" ];
 private [ "_vehiclename", "_playername" ];
 

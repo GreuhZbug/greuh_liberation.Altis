@@ -75,19 +75,22 @@ if ( isServer ) then {
 			if ( isplayer _killer ) then {
 				stats_opfor_vehicles_killed_by_players = stats_opfor_vehicles_killed_by_players + 1;
 
-				private [ "_bounty" ];
+				if ( GRLIB_ammo_bounties ) then {
+					private [ "_bounty" ];
 
-				_bounty = 10;
-				if ( _unit isKindOf "Air" ) then {
-					_bounty = 40;
+					_bounty = 10;
+					if ( _unit isKindOf "Air" ) then {
+						_bounty = 40;
+					};
+
+					if ( _unit isKindOf "Tank" ) then {
+						_bounty = 20;
+					};
+
+					resources_ammo = resources_ammo + _bounty;
+					[ [ typeOf _unit, _bounty, _killer ] , "remote_call_ammo_bounty" ] call BIS_fnc_MP;
 				};
 
-				if ( _unit isKindOf "Tank" ) then {
-					_bounty = 20;
-				};
-
-				resources_ammo = resources_ammo + _bounty;
-				[ [ typeOf _unit, _bounty, _killer ] , "remote_call_ammo_bounty" ] call BIS_fnc_MP;
 			};
 		} else {
 			stats_blufor_vehicles_killed = stats_blufor_vehicles_killed + 1;

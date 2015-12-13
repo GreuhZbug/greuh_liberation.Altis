@@ -1,95 +1,120 @@
 class liberation_secondary {
-	idd = 5127;
+	idd = 6842;
 	movingEnable = false;
-	controlsBackground[] = {};
+	controlsBackground[] = {
+		"CamoBG",
+		"OuterBG",
+		"OuterBG_F",
+		"InnerBG",
+		"InnerBG_F",
+		"MissionBriefingFrame"
+	};
 
-	controls[] = { "OuterBG2", "OuterBG_F2", "OuterBG1", "OuterBG_F1", "InnerBG1", "InnerBG_F1", "InnerBG2", "InnerBG_F2",
-	  "Header","HeaderTuto",  "TutorialList", "CloseButton", "TutoControlGroup"};
+	controls[] = {
+	  "Header",
+	  "MissionsList",
+	  "MissionImage",
+	  "ButtonClose",
+	  "MissionBriefing",
+	  "StartButton",
+	  "CancelButton",
+	  "LabelIntel"
+	};
 
 	objects[] = {};
 
-	class OuterBG1 : StdBG{
+	class CamoBG : BgPicture {
+		x = (0.2 * safezoneW + safezoneX) - ( 2 * BORDERSIZE);
+		y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
+		w = (0.6 * safezoneW) + (4 * BORDERSIZE);
+		h = (0.6 * safezoneH) + (6 * BORDERSIZE);
+
+	};
+	class OuterBG : StdBG{
 		colorBackground[] = COLOR_BROWN;
 		x = (0.2 * safezoneW + safezoneX) - (2 * BORDERSIZE);
 		y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-		w = (0.15 * safezoneW) + (4 * BORDERSIZE);
+		w = (0.6 * safezoneW) + (4 * BORDERSIZE);
 		h = (0.6 * safezoneH) + (6 * BORDERSIZE);
 	};
-	class OuterBG_F1 : OuterBG1 {
+	class OuterBG_F : OuterBG {
 		style = ST_FRAME;
 	};
-	class OuterBG2 : StdBG{
-		colorBackground[] = COLOR_BROWN;
-		x = (0.35 * safezoneW + safezoneX) + (3 * BORDERSIZE);
-		y = (0.2 * safezoneH + safezoneY) - (3 * BORDERSIZE);
-		w = (0.45 * safezoneW);
-		h = (0.6 * safezoneH) + (6 * BORDERSIZE);
-	};
-	class OuterBG_F2 : OuterBG2 {
-		style = ST_FRAME;
-	};
-	class InnerBG1 : OuterBG1 {
+	class InnerBG : OuterBG {
 		colorBackground[] = COLOR_GREEN;
 		x = (0.2 * safezoneW + safezoneX)  - ( BORDERSIZE);
 		y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-		w = (0.15 * safezoneW) +  (2 * BORDERSIZE);
+		w = (0.6 * safezoneW) +  (2 * BORDERSIZE);
 		h = 0.55 * safezoneH  + (3 * BORDERSIZE);
 	};
-	class InnerBG_F1 : InnerBG1 {
+	class InnerBG_F : InnerBG {
 		style = ST_FRAME;
 	};
-	class InnerBG2 : OuterBG2 {
-		colorBackground[] = COLOR_GREEN_ALPHA;
-		x = (0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE);
-		y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-		w = (0.45 * safezoneW) - (2 * BORDERSIZE ) ;
-		h = 0.55 * safezoneH  + (3 * BORDERSIZE);
-	};
-	class InnerBG_F2 : InnerBG2 {
+	class MissionBriefingFrame : StdBG{
 		style = ST_FRAME;
+		colorBackground[] = COLOR_GREEN;
+		x = (0.35 * safezoneW + safezoneX) + BORDERSIZE;
+		y = 0.25 * safezoneH + safezoneY;
+		w = (0.45 * safezoneW) - BORDERSIZE;
+		h = (0.5 * safezoneH) - BORDERSIZE;
+	};
+
+	class MissionImage : BgPicture {
+		idc = 106;
+		x = (0.2 * safezoneW + safezoneX);
+		y = (0.25 * safezoneH + safezoneY);
+		w = (0.15 * safezoneW);
+		h = (0.2 * safezoneH);
+		colorText[] = {1.0, 1.0, 1.0, 1.0};
+		text = "res\secondary\fob_hunting.paa";
 	};
 	class Header : StdHeader{
 		x = 0.2 * safezoneW + safezoneX - (BORDERSIZE);
 		y = 0.19 * safezoneH + safezoneY;
-		w = 0.15 * safezoneW + ( 2 * BORDERSIZE);
+		w = 0.6 * safezoneW + ( 2 * BORDERSIZE);
 		h = 0.05 * safezoneH - (BORDERSIZE);
-		text = $STR_TUTO_TITLE;
+		text = $STR_SECONDARY_OBJECTIVES_TITLE;
 	};
-	class HeaderTuto : Header{
-		idc = 514;
-		x = (0.35 * safezoneW + safezoneX) + ( 4 * BORDERSIZE);
-		w = (0.45 * safezoneW) - (2 * BORDERSIZE);
-		text = "1. Introduction";
-	};
-	class TutorialList : StdListBox {
-		idc = 513;
+	class MissionsList : StdListBox {
+		idc = 101;
 		x = 0.2 * safezoneW + safezoneX;
 		w = 0.15 * safezoneW;
-		y = 0.25 * safezoneH + safezoneY;
-		h = (0.5 * safezoneH) - (1.5 * BORDERSIZE);
+		y = 0.45 * safezoneH + safezoneY + BORDERSIZE;
+		h = (0.3 * safezoneH) - BORDERSIZE;
 		shadow = 2;
 		onLBSelChanged="";
 	};
-	class CloseButton : StdButton{
-		idc = 512;
-		x = (0.2 * safezoneW + safezoneX);
-		y = (0.75 * safezoneH + safezoneY);
-		w = (0.15 * safezoneW);
-		h = (0.05 * safezoneH);
-		sizeEx = 0.05 * safezoneH;
-		text = $STR_TUTO_GOTIT;
-		action = "howtoplay = 0";
+
+	class ButtonClose : StdButton{
+		idc = 105;
+		x = 0.785 * safezoneW + safezoneX;
+		w = 0.015 * safezoneW;
+		h = 0.02 * safezoneH;
+		y = 0.197 * safezoneH + safezoneY;
+		text = "X";
+		action = "closeDialog 0";
 	};
 
-	class TutoControlGroup  {
+	class LabelIntel : StdText{
+		idc = 107;
+		x = (0.2 * safezoneW + safezoneX);
+		w = (0.15 * safezoneW);
+		h = (0.04 * safezoneH);
+		y = (0.755 * safezoneH + safezoneY);
+		colorText[] = {0, 0.7, 1.0, 1.0};
+		sizeEx = 0.03 * safezoneH;
+		style = ST_CENTER;
+	};
+
+	class MissionBriefing  {
 
 	 	type = 15;
 	 	idc = -1;
 	 	style = 0;
-		x = (0.35 * safezoneW + safezoneX) + (4 * BORDERSIZE);
-		y = 0.25 * safezoneH + safezoneY - (1.5 * BORDERSIZE);
-		w = (0.45 * safezoneW) - (2 * BORDERSIZE ) ;
-		h = 0.55 * safezoneH  + (3 * BORDERSIZE);
+		x = (0.35 * safezoneW + safezoneX) + BORDERSIZE;
+		y = 0.25 * safezoneH + safezoneY;
+		w = (0.45 * safezoneW) - BORDERSIZE;
+		h = (0.5 * safezoneH) - BORDERSIZE;
 		colorScrollbar[] = COLOR_WHITE;
 
 	 	class VScrollbar
@@ -120,16 +145,16 @@ class liberation_secondary {
 
 	 	class Controls
 	 	{
-	 		class TutoStructuredText
+	 		class MissionBriefingText
 	 		{
-	 			idc = 515;
+	 			idc = 102;
 	 			type = CT_STRUCTURED_TEXT;
 	 			colorBackground[] = COLOR_NOALPHA;
 	 			style = ST_LEFT;
 	 			x = 0;
 	 			y = 0;
 	 			w = (0.45 * safezoneW) - (2 * BORDERSIZE);
-	 			h = 0.5 * safezoneH;
+	 			h = (0.5 * safezoneH) - BORDERSIZE ;
 	 			text= "AAA";
 	 			size = 0.02 * safezoneH;
 	 			sizeEx = 0.02 * safezoneH;
@@ -141,4 +166,25 @@ class liberation_secondary {
 	 		};
 	 	};
 	 };
+
+	 class StartButton : StdButton{
+		idc = 103;
+		x = (0.46 * safezoneW + safezoneX);
+		y = (0.75 * safezoneH + safezoneY);
+		w = (0.1 * safezoneW);
+		h = (0.05 * safezoneH);
+		sizeEx = 0.025 * safezoneH;
+		text = $STR_SECONDARY_OBJECTIVES_START;
+		action = "dostartsecondary = 1;";
+	};
+	class CancelButton : StdButton{
+		idc = 104;
+		x = (0.565 * safezoneW + safezoneX);
+		y = (0.75 * safezoneH + safezoneY);
+		w = (0.1 * safezoneW);
+		h = (0.05 * safezoneH);
+		sizeEx = 0.025 * safezoneH;
+		text = $STR_RECYCLING_CANCEL;
+		action = "closeDialog 0;";
+	};
 };
