@@ -2,7 +2,7 @@ params [ "_sector" ];
 private [ "_crates_amount", "_spawnpos", "_i", "_spawnclass", "_nearbuildings", "_intel_range", "_building_positions", "_used_positions", "_buildingposition" ];
 
 _intel_range = 100;
-_nbintel = (floor (random 4));
+_nbintel = 1 + (floor (random 3));
 _compatible_classnames = [
 "Land_Cargo_House_V1_F",
 "Land_Cargo_House_V2_F",
