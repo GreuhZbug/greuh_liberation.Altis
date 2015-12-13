@@ -50,7 +50,8 @@ class Mission
 		"A3_Weapons_F_Ammoboxes",
 		"A3_Structures_F_Heli_Ind_Machines",
 		"A3_Structures_F_Heli_Items_Airport",
-		"A3_Air_F_Beta_Heli_Transport_01"
+		"A3_Air_F_Beta_Heli_Transport_01",
+		"a3_map_altis"
 	};
 	randomSeed=7571389;
 	class Intel
@@ -4724,7 +4725,7 @@ class Intro
 	};
 	addOnsAuto[]=
 	{
-	
+		"a3_map_altis"
 	};
 	randomSeed=12610520;
 	class Intel
@@ -4754,7 +4755,7 @@ class OutroWin
 	};
 	addOnsAuto[]=
 	{
-
+		"a3_map_altis"
 	};
 	randomSeed=11161141;
 	class Intel
@@ -4784,7 +4785,7 @@ class OutroLoose
 	};
 	addOnsAuto[]=
 	{
-
+		"a3_map_altis"
 	};
 	randomSeed=7391389;
 	class Intel
