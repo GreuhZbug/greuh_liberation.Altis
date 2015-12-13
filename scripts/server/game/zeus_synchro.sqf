@@ -40,11 +40,11 @@ while { true } do {
 		_zgm addCuratorEditableObjects [_zeusunits,true];
 		_zgm removeCuratorEditableObjects [_units_to_remove,true];
 
-		//_zgm  setCuratorCoef ["edit", -1e8];
-		//_zgm  setCuratorCoef ["place", -1e8];
+		_zgm  setCuratorCoef ["edit", -1e8];
+		_zgm  setCuratorCoef ["place", -1e8];
 		_zgm  setCuratorCoef ["synchronize", -1e8];
-		//_zgm  setCuratorCoef ["delete", -1e8];
-		//_zgm  setCuratorCoef ["destroy", -1e8];
+		_zgm  setCuratorCoef ["delete", -1e8];
+		_zgm  setCuratorCoef ["destroy", -1e8];
 
 	} foreach allCurators;
 
