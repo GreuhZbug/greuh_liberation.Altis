@@ -166,7 +166,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			_nextbuilding setdir _nextdir;
 			_nextbuilding setdamage 0;
 			if ( _hascrew ) then {
-				createVehicleCrew _nextbuilding;
+				[ _nextbuilding ] call F_forceBluforCrew;
 			};
 
 			if ( !(_nextclass in no_kill_handler_classnames ) ) then {

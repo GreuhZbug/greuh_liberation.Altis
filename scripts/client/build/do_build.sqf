@@ -226,7 +226,7 @@ while { true } do {
 					_vehicle setVectorUp surfaceNormal position _vehicle;
 				};
 				if ( (_classname in uavs) || manned ) then {
-					createVehicleCrew _vehicle;
+					[ _vehicle ] call F_forceBluforCrew;
 				};
 
 				if ( _classname == FOB_box_typename ) then {

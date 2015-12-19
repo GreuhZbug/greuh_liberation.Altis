@@ -190,6 +190,9 @@ vehicle_refuel_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_fuel_F", "B_Sli
 // Commander
 commander_classname = "B_officer_F";
 
+// Standard crewman to use when default crew won't work (saved AAF vehicles for example)
+crewman_classname = "B_crew_F";
+
 
 
 
