@@ -31,7 +31,7 @@ while { count (units _grp) > 0 } do {
 		_sectors_patrol = [];
 		_patrol_startpos = getpos (leader _grp);
 		{
-			if ( _patrol_startpos distance (markerpos _x) < 2000) then {
+			if ( _patrol_startpos distance (markerpos _x) < 3000) then {
 				_sectors_patrol pushBack _x;
 			};
 		} foreach (sectors_allSectors - blufor_sectors);

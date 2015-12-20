@@ -1,8 +1,8 @@
 params [ "_unit" ];
 private [ "_yield", "_resistance_prisonner_ammo_yield", "_csat_prisonner_ammo_yield" ];
 
-_resistance_prisonner_intel_yield = 2;
-_csat_prisonner_intel_yield = 5;
+_resistance_prisonner_intel_yield = 3;
+_csat_prisonner_intel_yield = 6;
 
 if ( isServer ) then {
 	_yield = _csat_prisonner_intel_yield;

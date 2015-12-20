@@ -22,6 +22,7 @@ if ( isMultiplayer ) then {
 	GRLIB_weather_param = ["Weather",3] call bis_fnc_getParamValue;
 	GRLIB_shorter_nights = ["ShorterNights",0] call bis_fnc_getParamValue;
 	GRLIB_ammo_bounties = [ "AmmoBounties",0] call bis_fnc_getParamValue;
+	GRLIB_remote_sensors = [ "DisableRemoteSensors",0] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -46,6 +47,13 @@ if ( isMultiplayer ) then {
 	GRLIB_weather_param = 3;
 	GRLIB_shorter_nights = 0;
 	GRLIB_ammo_bounties = 1;
+	GRLIB_remote_sensors = 0;
+
+	{
+		if ( (_x != player) && (_x distance (getmarkerpos "respawn_west") < 200 ) ) then {
+			deleteVehicle _x;
+		};
+	} foreach allUnits;
 };
 
 if ( GRLIB_fatigue < 0.1 ) then { GRLIB_fatigue = false } else { GRLIB_fatigue = true };

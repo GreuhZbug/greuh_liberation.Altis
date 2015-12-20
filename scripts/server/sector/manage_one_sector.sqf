@@ -1,7 +1,7 @@
 
 
 params [ "_sector" ];
-private [ "_sectorpos", "_stopit", "_spawncivs", "_building_ai_max", "_infsquad", "_building_range", "_local_capture_size", "_iedcount","_combat_readiness_increase","_vehtospawn","_managed_units","_squad1", "_squad2", "_squad3", "_squad4", "_minimum_building_positions", "_popfactor", "_sector_despawn_tickets" ];
+private [ "_sectorpos", "_stopit", "_spawncivs", "_building_ai_max", "_infsquad", "_building_range", "_local_capture_size", "_iedcount","_combat_readiness_increase","_vehtospawn","_managed_units","_squad1", "_squad2", "_squad3", "_squad4", "_minimum_building_positions", "_popfactor", "_sector_despawn_tickets", "_opforcount" ];
 
 waitUntil { !isNil "combat_readiness" };
 
@@ -34,11 +34,12 @@ active_sectors pushback _sector; publicVariable "active_sectors";
 
 diag_log format [ "Sector %2 checkpoint B at %1", time, _sector ];
 
-[ _sector ] call wait_to_spawn_sector;
+_opforcount = [] call F_opforCap;
+[ _sector, _opforcount ] call wait_to_spawn_sector;
 
 diag_log format [ "Sector %2 checkpoint C at %1", time, _sector ];
 
-if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , GRLIB_sector_size , WEST ] call F_getUnitsCount ) > 0 ) ) then {
+if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcount ] call F_getCorrectedSectorRange , WEST ] call F_getUnitsCount ) > 0 ) ) then {
 
 	diag_log format [ "Sector %2 checkpoint D at %1", time, _sector ];
 
@@ -237,7 +238,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , GRLIB_secto
 
 			diag_log format [ "Sector %2 checkpoint Q at %1", time, _sector ];
 
-			if ( ( [_sectorpos, (GRLIB_sector_size + 250), WEST ] call F_getUnitsCount ) == 0 ) then {
+			if ( ( [_sectorpos, ( ( [ _opforcount ] call F_getCorrectedSectorRange ) + 300 ), WEST ] call F_getUnitsCount ) == 0 ) then {
 				_sector_despawn_tickets = _sector_despawn_tickets - 1;
 			} else {
 				_sector_despawn_tickets = 12;
