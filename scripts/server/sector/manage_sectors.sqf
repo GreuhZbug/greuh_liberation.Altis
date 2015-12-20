@@ -6,11 +6,17 @@ waitUntil { !isNil "sectors_allSectors" };
 while { GRLIB_endgame == 0 } do {
 
 	{
-		private [ "_nextsector"];
+		private [ "_nextsector", "_corrected_sector_size", "_opforcount" ];
+
 		_nextsector = _x;
-		if (  [] call F_opforCap < GRLIB_sector_cap ) then {
-			if ( ( [ getmarkerpos _nextsector , GRLIB_sector_size , WEST ] call F_getUnitsCount > 0 ) && !( _nextsector in active_sectors ) ) then {
+		_opforcount =  [] call F_opforCap;
+
+		if ( _opforcount < GRLIB_sector_cap ) then {
+
+			if ( ( [ getmarkerpos _nextsector , [ _opforcount ] call F_getCorrectedSectorRange , WEST ] call F_getUnitsCount > 0 ) && !( _nextsector in active_sectors ) ) then {
+
 				_hc = [] call F_lessLoadedHC;
+
 				if ( isNull _hc ) then {
 					[ _nextsector ] spawn manage_one_sector;
 				} else {

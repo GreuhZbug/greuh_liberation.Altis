@@ -162,4 +162,10 @@ class Params
 		texts[] = {$STR_WIPE_NO,$STR_WIPE_YES};
 		default = 0;
 	};
+	class DisableRemoteSensors{
+		title = "Disable Remote Sensors (experimental!)";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled only for clients with no local AIs","Enabled for all clients"};
+		default = 0;
+	};
 };
