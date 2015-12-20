@@ -165,7 +165,7 @@ class Params
 	class DisableRemoteSensors{
 		title = "Disable Remote Sensors (experimental!)";
 		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled only for clients with no local AIs","Enabled for all clients"};
+		texts[] = {"No","Disable for clients without local AIs","Disable for all clients"};
 		default = 0;
 	};
 };
