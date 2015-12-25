@@ -34,6 +34,7 @@ infantry_units_extension = [
 
 light_vehicles_extension = [
 ["rhsusf_m998_w_4dr",0,0,2],
+["rhsusf_rg33_m2_d",0,10,3],
 ["fsf_fnk_norm_ce",0,0,3],
 ["greuh_fnk_norm_ce",0,0,3],
 ["I_MRAP_03_F",0,0,3],
@@ -53,6 +54,7 @@ heavy_vehicles_extension = [
 ["RHS_M2A3_BUSKIII_wd",0,55,15],
 ["Steve_MBT_Kuma",0,100,25],
 ["I_MBT_03_cannon_F",0,100,25],
+["rhsusf_m1a2sep1tuskiid_usarmy",0,100,25],
 ["Burnes_FV4034_01",0,250,40]
 ];
 
