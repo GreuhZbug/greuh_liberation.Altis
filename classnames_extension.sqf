@@ -97,3 +97,18 @@ support_vehicles_extension = [
 ["JNS_Skycrane_Pod_Repair_BLU_Black",5,0,0],
 ["JNS_Skycrane_Pod_Transport_BLU_Black",5,0,0]
 ];
+
+elite_vehicles_extension = [
+"Steve_MBT_Kuma",
+"Burnes_FV4034_01",
+"RHS_AH1Z_wd_GS",
+"H_RAH66",
+"RHS_AH64D_wd",
+"JS_JC_FA18E",
+"JS_JC_FA18F",
+"greuh_pandur_wdld",
+"RHS_M2A3_BUSKIII_wd",
+"usaf_f22",
+"USAF_F35A",
+"rhsusf_m1a2sep1tuskiid_usarmy"
+];
