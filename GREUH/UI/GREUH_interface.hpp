@@ -256,7 +256,7 @@ class GREUH_Menu {
 	y = 0.11 * safezoneH + safezoneY;
 	w = 0.2 * safezoneW + ( 2 * BORDERSIZE);
 	h = 0.05 * safezoneH - (BORDERSIZE);
-	text = "GREUH Extended Options";
+	text = "Extended Options";
 	colorBackground[] = COLOR_LIGHTGRAY;
   };
   class GREUH_ButtonGeneric {

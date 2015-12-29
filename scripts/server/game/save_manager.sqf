@@ -48,6 +48,7 @@ GRLIB_vehicle_to_military_base_links = [];
 GRLIB_permissions = [];
 ai_groups = [];
 saved_intel_res = 0;
+GRLIB_player_scores = [];
 
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
@@ -133,6 +134,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 	if ( count greuh_liberation_savegame > 14 ) then {
 		saved_intel_res = greuh_liberation_savegame select 14;
+	};
+
+	if ( count greuh_liberation_savegame > 15 ) then {
+		GRLIB_player_scores = greuh_liberation_savegame select 15;
 	};
 
 	setDate [ 2045, 6, 6, time_of_day, 0];
@@ -299,43 +304,60 @@ while { true } do {
 
 		stats_saves_performed = stats_saves_performed + 1;
 
-		if ( count GRLIB_all_fobs <= 26 ) then {
+		private [ "_newscores", "_knownplayers", "_playerindex", "_nextplayer" ];
+		_knownplayers = [];
+		_newscores = [] + GRLIB_player_scores;
+		{ _knownplayers pushback (_x select 0) } foreach GRLIB_player_scores;
 
-			_stats = [];
-			_stats pushback stats_opfor_soldiers_killed;
-			_stats pushback stats_opfor_killed_by_players;
-			_stats pushback stats_blufor_soldiers_killed;
-			_stats pushback stats_player_deaths;
-			_stats pushback stats_opfor_vehicles_killed;
-			_stats pushback stats_opfor_vehicles_killed_by_players;
-			_stats pushback stats_blufor_vehicles_killed;
-			_stats pushback stats_blufor_soldiers_recruited;
-			_stats pushback stats_blufor_vehicles_built;
-			_stats pushback stats_civilians_killed;
-			_stats pushback stats_civilians_killed_by_players;
-			_stats pushback stats_sectors_liberated;
-			_stats pushback stats_playtime;
-			_stats pushback stats_spartan_respawns;
-			_stats pushback stats_secondary_objectives;
-			_stats pushback stats_hostile_battlegroups;
-			_stats pushback stats_ieds_detonated;
-			_stats pushback stats_saves_performed;
-			_stats pushback stats_saves_loaded;
-			_stats pushback stats_reinforcements_called;
-			_stats pushback stats_prisonners_captured;
-			_stats pushback stats_blufor_teamkills;
-			_stats pushback stats_vehicles_recycled;
-			_stats pushback stats_ammo_spent;
-			_stats pushback stats_sectors_lost;
-			_stats pushback stats_fobs_built;
-			_stats pushback stats_fobs_lost;
-			_stats pushback stats_readiness_earned;
+		{
+			_nextplayer = _x;
 
-			greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day, round combat_readiness,0,0,0, round resources_ammo, _stats,
-			[ round infantry_weight, round armor_weight, round air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions, ai_groups, resources_intel ];
+			if ( score _nextplayer >= 20 ) then {
+				_playerindex = _knownplayers find (getPlayerUID _nextplayer);
+				if ( _playerindex >= 0 ) then {
+					_newscores set [ _playerindex, [ getPlayerUID _x, score _x] ];
+				} else {
+					_newscores pushback [ getPlayerUID _x, score _x ];
+				};
+			};
+		} foreach allPlayers;
+		GRLIB_player_scores = _newscores;
 
-			profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
-			saveProfileNamespace;
-		};
+		_stats = [];
+		_stats pushback stats_opfor_soldiers_killed;
+		_stats pushback stats_opfor_killed_by_players;
+		_stats pushback stats_blufor_soldiers_killed;
+		_stats pushback stats_player_deaths;
+		_stats pushback stats_opfor_vehicles_killed;
+		_stats pushback stats_opfor_vehicles_killed_by_players;
+		_stats pushback stats_blufor_vehicles_killed;
+		_stats pushback stats_blufor_soldiers_recruited;
+		_stats pushback stats_blufor_vehicles_built;
+		_stats pushback stats_civilians_killed;
+		_stats pushback stats_civilians_killed_by_players;
+		_stats pushback stats_sectors_liberated;
+		_stats pushback stats_playtime;
+		_stats pushback stats_spartan_respawns;
+		_stats pushback stats_secondary_objectives;
+		_stats pushback stats_hostile_battlegroups;
+		_stats pushback stats_ieds_detonated;
+		_stats pushback stats_saves_performed;
+		_stats pushback stats_saves_loaded;
+		_stats pushback stats_reinforcements_called;
+		_stats pushback stats_prisonners_captured;
+		_stats pushback stats_blufor_teamkills;
+		_stats pushback stats_vehicles_recycled;
+		_stats pushback stats_ammo_spent;
+		_stats pushback stats_sectors_lost;
+		_stats pushback stats_fobs_built;
+		_stats pushback stats_fobs_lost;
+		_stats pushback stats_readiness_earned;
+
+		greuh_liberation_savegame = [ blufor_sectors, GRLIB_all_fobs, buildings_to_save, time_of_day, round combat_readiness,0,0,0, round resources_ammo, _stats,
+		[ round infantry_weight, round armor_weight, round air_weight ], GRLIB_vehicle_to_military_base_links, GRLIB_permissions, ai_groups, resources_intel, GRLIB_player_scores ];
+
+		profileNamespace setVariable [ GRLIB_save_key, greuh_liberation_savegame ];
+		saveProfileNamespace;
+
 	};
 };

@@ -3,6 +3,7 @@ if ( !GRLIB_permissions_param ) exitWith {};
 private [ "_default_permissions", "_all_players_uids", "_old_count" ];
 
 waitUntil { !(isNil "GRLIB_permissions") };
+waitUntil { !isNil "save_is_loaded" };
 
 while { true } do {
 
