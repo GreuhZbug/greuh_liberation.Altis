@@ -1,8 +1,8 @@
 params [ "_sector" ];
-private [ "_crates_amount", "_spawnpos", "_i", "_spawnclass", "_nearbuildings", "_intel_range", "_building_positions", "_used_positions", "_buildingposition" ];
+private [ "_crates_amount", "_spawnpos", "_i", "_spawnclass", "_nearbuildings", "_intel_range", "_building_positions", "_used_positions", "_buildingposition", "_nbintel", "_compatible_classnames" ];
 
-_intel_range = 100;
-_nbintel = 1 + (floor (random 3));
+_intel_range = 150;
+_nbintel = 2 + (floor (random 3));
 _compatible_classnames = [
 "Land_Cargo_House_V1_F",
 "Land_Cargo_House_V2_F",
@@ -66,7 +66,7 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 
 		_building_positions = [ _building_positions, { _x select 2 < 2 } ] call BIS_fnc_conditionalSelect;
 
-		if ( count _building_positions >= _nbintel ) then {
+		if ( count _building_positions >= (_nbintel * 4) ) then {
 
 			_used_positions = [];
 

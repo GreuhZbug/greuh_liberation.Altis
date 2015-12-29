@@ -25,12 +25,6 @@ waitUntil { one_synchro_done };
 
 while { true } do {
 
-	if (!alive player) then {
-		removeAllWeapons player;
-	};
-
-	waitUntil { alive player };
-
 	_nearfob = [] call F_getNearestFob;
 	_fobdistance = 9999;
 	if ( count _nearfob == 3 ) then {

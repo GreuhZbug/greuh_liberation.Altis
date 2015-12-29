@@ -42,7 +42,10 @@ _idxposit = 0;
 	[ _nextunit, _sector ] spawn building_defence_ai;
 	if ( _infsquad == "militia" ) then {
 		if ( (typeof _nextunit) in original_resistance ) then {
-			[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );
+			[ _nextunit ] call ( militia_standard_squad call BIS_fnc_selectRandom );
+			if ( random 100 < 40 ) then {
+				_nextunit addPrimaryWeaponItem "acc_flashlight";
+			};
 		};
 	};
 

@@ -34,10 +34,12 @@ write_credit_line = compileFinal preprocessFileLineNumbers "scripts\client\ui\wr
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\broadcast_squad_colors.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\disable_remote_sensors.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\init_arsenal.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\offload_diag.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\permissions_warning.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\resupply_manager.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\secondary_jip.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stay_leader.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\stop_renegade.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\synchronise_vars.sqf";

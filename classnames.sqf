@@ -177,7 +177,7 @@ squads = [
 uavs = [ "B_UAV_01_F","B_UAV_02_F","B_UAV_02_CAS_F","B_UGV_01_F","B_UGV_01_rcws_F" ];
 
 // Vehicles unlocked through military base control. The game will pick which base unlocks which at the start of each new campaign.
-elite_vehicles = ["B_UGV_01_rcws_F","Steve_MBT_Kuma","B_MBT_01_TUSK_F","Burnes_FV4034_01","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","RHS_AH1Z_wd_GS","H_RAH66","RHS_AH64D_wd","B_Plane_CAS_01_F","JS_JC_FA18E","JS_JC_FA18F","B_UAV_02_F","B_UAV_02_CAS_F","greuh_pandur_wdld","RHS_M2A3_BUSKIII_wd","usaf_f22","USAF_F35A"];
+elite_vehicles = ["B_UGV_01_rcws_F","B_MBT_01_TUSK_F","B_MBT_01_arty_F","B_MBT_01_mlrs_F","B_Heli_Attack_01_F","B_Plane_CAS_01_F","B_UAV_02_F","B_UAV_02_CAS_F"];
 
 // Everything the AI troups should be able to resupply from
 ai_resupply_sources = [ Respawn_truck_typename, huron_typename, Arsenal_typename, "B_Slingload_01_Ammo_F", "B_APC_Tracked_01_CRV_F", "B_Truck_01_ammo_F", "JNS_Skycrane_Pod_Ammo_BLU_Black" ];
@@ -189,6 +189,9 @@ vehicle_refuel_sources = [ "B_APC_Tracked_01_CRV_F", "B_Truck_01_fuel_F", "B_Sli
 
 // Commander
 commander_classname = "B_officer_F";
+
+// Standard crewman to use when default crew won't work (saved AAF vehicles for example)
+crewman_classname = "B_crew_F";
 
 
 
@@ -244,7 +247,7 @@ opfor_air = ["O_Plane_CAS_02_F"];
 
 // Civilians to randomly choose from
 civilians = ["C_man_1","C_man_polo_6_F","C_man_polo_3_F","C_man_polo_2_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_1_F","C_man_p_beggar_F","C_man_1_2_F","C_man_p_fugitive_F","C_man_hunter_1_F","C_journalist_F","C_man_shorts_2_F","C_man_w_worker_F"];
-civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F" ];
+civilian_vehicles = [ "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_01_F", "C_SUV_01_F", "C_Van_01_transport_F", "C_Van_01_box_F", "C_Van_01_fuel_F", "C_Heli_Light_01_civil_F" ];
 
 // Blacklisted arsenal items such as deployable weapons  that should be bought instead
 GRLIB_blacklisted_from_arsenal = [
@@ -283,13 +286,6 @@ GRLIB_blacklisted_from_arsenal = [
 "B_HMG_01_support_high_F",
 "O_HMG_01_support_high_F",
 "I_HMG_01_support_high_F",
-"RHS_M2_Gun_Bag",
-"RHS_M2_Tripod_Bag",
-"RHS_M2_MiniTripod_Bag",
-"RHS_Mk19_Gun_Bag",
-"RHS_Mk19_Tripod_Bag",
-"RHS_NSV_Gun_Bag",
-"RHS_NSV_Tripod_Bag",
 "B_AA_01_weapon_F",
 "O_AA_01_weapon_F",
 "I_AA_01_weapon_F",
@@ -298,7 +294,31 @@ GRLIB_blacklisted_from_arsenal = [
 "I_AT_01_weapon_F",
 "I_UAV_01_backpack_F",
 "B_UAV_01_backpack_F",
-"O_UAV_01_backpack_F"
+"O_UAV_01_backpack_F",
+"RHS_Podnos_Bipod_Bag",
+"RHS_Podnos_Gun_Bag",
+"RHS_Metis_Gun_Bag",
+"RHS_Metis_Tripod_Bag",
+"RHS_AGS30_Tripod_Bag",
+"RHS_AGS30_Gun_Bag",
+"RHS_DShkM_Gun_Bag",
+"RHS_DShkM_TripodHigh_Bag",
+"RHS_DShkM_TripodLow_Bag",
+"RHS_Kord_Tripod_Bag",
+"RHS_Kord_Gun_Bag",
+"RHS_M2_Gun_Bag",
+"RHS_M2_Tripod_Bag",
+"rhs_M252_Gun_Bag",
+"rhs_M252_Bipod_Bag",
+"RHS_M2_MiniTripod_Bag",
+"RHS_Mk19_Gun_Bag",
+"RHS_Mk19_Tripod_Bag",
+"RHS_NSV_Tripod_Bag",
+"RHS_NSV_Gun_Bag",
+"RHS_SPG9_Gun_Bag",
+"RHS_SPG9_Tripod_Bag",
+"rhs_Tow_Gun_Bag",
+"rhs_TOW_Tripod_Bag"
 ];
 
 
@@ -316,7 +336,7 @@ GRLIB_blacklisted_from_arsenal = [
 
 
 
-
+elite_vehicles = elite_vehicles + elite_vehicles_extension;
 infantry_units = infantry_units + infantry_units_extension;
 light_vehicles = light_vehicles + light_vehicles_extension;
 heavy_vehicles = heavy_vehicles + heavy_vehicles_extension;
