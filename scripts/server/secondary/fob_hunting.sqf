@@ -2,11 +2,11 @@
 _defenders_amount = 15 * ( sqrt ( GRLIB_unitcap ) );
 if ( _defenders_amount > 15 ) then { _defenders_amount = 15 };
 _fob_templates = [
-"scripts\fob_templates\template1.sqf",
-"scripts\fob_templates\template2.sqf",
-"scripts\fob_templates\template3.sqf",
+"scripts\fob_templates\template5.sqf",
 "scripts\fob_templates\template4.sqf",
-"scripts\fob_templates\template5.sqf"
+"scripts\fob_templates\template3.sqf",
+"scripts\fob_templates\template2.sqf",
+"scripts\fob_templates\template1.sqf"
 ];
 
 _spawn_marker = [2000,999999,false] call F_findOpforSpawnPoint;

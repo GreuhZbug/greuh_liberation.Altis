@@ -40,7 +40,7 @@ while { GRLIB_endgame == 0 } do {
 					_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
 					_spawnpos = zeropos;
 					while { _spawnpos distance zeropos < 1000 } do {
-						_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [ 0, 100, 'B_Heli_Transport_01_F' ];
+						_spawnpos =  ( [ ( markerpos _spawnsector), random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [ 10, 100, 'B_Heli_Transport_01_F' ];
 						if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 					};
 

@@ -15,6 +15,9 @@ if ( combat_readiness > 15 ) then {
 
 		if ( _nearestower != "" ) then {
 			_reinforcements_time = (((((markerpos _nearestower) distance (markerpos _targetsector)) / 1000) ^ 1.66 ) * 120) / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity);
+			if (_targetsector in sectors_bigtown) then {
+				_reinforcements_time = _reinforcements_time * 0.35;
+			};
 			_current_timer = time;
 
 			waitUntil { sleep 0.3; (_current_timer + _reinforcements_time < time) || (_targetsector in blufor_sectors) || (_nearestower in blufor_sectors) };

@@ -1404,7 +1404,10 @@
                         <Original>Secondary mission already in progress</Original>
                         <French>Mission secondaire déjà en cours</French>
                 </Key>
-
+                <Key ID="STR_NOTIFICATION_INCOMING_TEXT">
+                        <Original>Hostile forces are heading towards %1</Original>
+                        <French>Les forces hostiles se dirigent vers %1</French>
+                </Key>
 
 
 

@@ -32,9 +32,12 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 						_totalz = _totalz + (getpos _x select 2);
 					};
 				} foreach units _x;
-				_totalx = _totalx / (count _unitstocount);
-				_totaly = _totaly / (count _unitstocount);
-				_totalz = _totalz / (count _unitstocount);
+
+				if ( count _unitstocount > 0 ) then {
+					_totalx = _totalx / (count _unitstocount);
+					_totaly = _totaly / (count _unitstocount);
+					_totalz = _totalz / (count _unitstocount);
+				};
 
 				if ( _totalz > 2.1 ) then {
 					_grouppos = [_totalx, _totaly, _totalz + 10];
