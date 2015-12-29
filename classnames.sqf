@@ -398,3 +398,13 @@ GRLIB_intel_table = "Land_CampingTable_small_F";
 GRLIB_intel_chair = "Land_CampingChair_V2_F";
 GRLIB_intel_file = "Land_File1_F";
 GRLIB_intel_laptop = "Land_Laptop_device_F";
+GRLIB_ignore_colisions_when_building = [
+	"Land_Flush_Light_Red_F",
+	"Animal",
+	"land_runway_edgelight",
+	"land_runway_edgelight_blue_f",
+	"Land_HelipadSquare_F",
+	"Sign_Sphere100cm_F",
+	"TMR_Autorest_Georef",
+	"Land_ClutterCutter_large_F"
+];
