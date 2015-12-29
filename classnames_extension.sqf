@@ -112,6 +112,6 @@ elite_vehicles_extension = [
 "usaf_f22",
 "USAF_F35A",
 "rhsusf_m1a2sep1tuskiid_usarmy",
-"FIR_F16",
+"FIR_F16C",
 "FIR_F15E"
 ];
