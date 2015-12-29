@@ -72,6 +72,7 @@ air_vehicles_extension = [
 ["H_RAH66",0,200,30],
 ["RHS_AH64D_wd",0,400,50],
 ["FIR_F16C",0,100,30],
+["FIR_F15E",0,200,50],
 ["JS_JC_FA18E",0,350,40],
 ["JS_JC_FA18F",0,350,40],
 ["sab_C130_CSP",0,0,30],
@@ -110,5 +111,7 @@ elite_vehicles_extension = [
 "RHS_M2A3_BUSKIII_wd",
 "usaf_f22",
 "USAF_F35A",
-"rhsusf_m1a2sep1tuskiid_usarmy"
+"rhsusf_m1a2sep1tuskiid_usarmy",
+"FIR_F16C",
+"FIR_F15E"
 ];
