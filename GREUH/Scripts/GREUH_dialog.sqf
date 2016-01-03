@@ -37,6 +37,7 @@ if ( GREUH_allow_viewdistance ) then {
 	sliderSetRange [732, 30, 100];
 	sliderSetPosition [732, desiredviewdistance_obj];
 	sliderSetSpeed [732, 5, 5];
+	ctrlSetText [ 960, format ["%1",desired_fps] ];
 } else {
 	ctrlShow [701, true];
 	{ ctrlShow [_x, false] } foreach _viewcontrols;
@@ -102,11 +103,13 @@ while { dialog && alive player } do {
 
 	ctrlSetText [ 1103, format [ "%1%2", round (desired_vehvolume), "%" ] ];
 
+	desired_fps = parseNumber (ctrlText 960);
+
 	uiSleep 0.2;
 };
 
 if (!alive player) then { closeDialog 0 };
 
-greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj, show_teammates, show_platoon, desired_vehvolume, show_nametags ];
+greuh_options_profile = [ desiredviewdistance_inf, desiredviewdistance_veh, desiredviewdistance_obj, show_teammates, show_platoon, desired_vehvolume, show_nametags, desired_fps ];
 profileNamespace setVariable [ "GREUH_OPTIONS_PROFILE",greuh_options_profile ];
 saveProfileNamespace;
