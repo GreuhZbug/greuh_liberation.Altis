@@ -7,7 +7,7 @@ _sectorpos = [ getMarkerPos _sector, random 100, random 360 ] call BIS_fnc_relPo
 
 _spawnpos = zeropos;
 while { _spawnpos distance zeropos < 1000 } do {
-	_spawnpos = ( [ _sectorpos, random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, "B_Heli_Light_01_F"];
+	_spawnpos = ( [ _sectorpos, random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [5, 100, "B_Heli_Light_01_F"];
 	if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 };
 

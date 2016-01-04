@@ -16,6 +16,8 @@ while { ( count units _grp != 0 ) && ( GRLIB_endgame == 0 ) } do {
 
 	_objectivepos = ([getpos (leader _grp)] call F_getNearestBluforObjective) select 0;
 
+	[ [ _objectivepos ] , "remote_call_incoming" ] call BIS_fnc_MP;
+
 	while { ((getpos (leader _grp)) distance _startpos) < 50 } do {
 
 		while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};

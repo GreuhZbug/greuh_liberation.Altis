@@ -1,7 +1,10 @@
 params [ "_unit" ];
 private [ "_nearestfob", "_is_near_fob", "_is_near_blufor", "_grp", "_waypoint", "_nearblufor" ];
 
-waitUntil { local _unit };
+waitUntil {
+	sleep 0.5;
+	local _unit
+};
 
 _is_near_fob = false;
 _is_near_blufor = true;
@@ -25,8 +28,7 @@ waitUntil { sleep 5;
 
 	_is_near_blufor = false;
 	{
-		if ( _is_near_blufor ) exitWith {};
-		if ( _x distance _unit < 150 && _x != _unit ) then { _is_near_blufor = true };
+		if ( (_x distance _unit < 150) && (vehicle _unit == _unit) && (_x != _unit) ) exitWith { _is_near_blufor = true };
 	} foreach (  [ allUnits, { side group _x == WEST } ] call BIS_fnc_conditionalSelect );
 
 	!alive _unit || !(_is_near_blufor) || (_is_near_fob && (vehicle _unit == _unit))

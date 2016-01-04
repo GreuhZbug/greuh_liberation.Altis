@@ -11,7 +11,8 @@ lbAdd [ 101, localize "STR_SECONDARY_MISSION0" ];
 private [ "_oldchoice", "_images", "_briefings", "_missioncost" ];
 
 _images = [
-	"res\secondary\fob_hunting.paa"
+	"res\secondary\fob_hunting.paa",
+	"res\secondary\convoy_hijack.paa"
 ];
 
 _briefings = [

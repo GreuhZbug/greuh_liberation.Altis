@@ -42,12 +42,7 @@ while { true } do {
 		if ((getmarkerpos "opfor_capture_marker") distance markers_reset > 100 ) then {
 
 			private [ "_attacked_string" ];
-			_attacked_string = [ markerpos "opfor_capture_marker" ] call F_getFobName;
-			if ( _attacked_string == "" ) then {
-				_attacked_string = markerText  ( [50, markerpos "opfor_capture_marker" ] call F_getNearestSector );
-			} else {
-				_attacked_string = format [ "FOB %1", _attacked_string ];
-			};
+			_attacked_string = [ markerpos "opfor_capture_marker" ] call F_getLocationName;
 
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (401)) ctrlShow true;
 			((uiNamespace getVariable 'GUI_OVERLAY') displayCtrl (402)) ctrlSetText _attacked_string;

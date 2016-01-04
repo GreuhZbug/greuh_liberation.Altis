@@ -1,8 +1,9 @@
-private [ "_maxdist", "_truepos", "_built_object_remote", "_pos", "_grp", "_classname", "_idx", "_unitrank", "_posfob", "_ghost_spot", "_vehicle", "_dist", "_actualdir", "_near_objects", "_near_objects_25" ];
+private [ "_maxdist", "_truepos", "_built_object_remote", "_pos", "_grp", "_classname", "_idx", "_unitrank", "_posfob", "_ghost_spot", "_vehicle", "_dist", "_actualdir", "_near_objects", "_near_objects_25", "_debug_colisions" ];
 
 build_confirmed = 0;
 _maxdist = GRLIB_fob_range;
 _truepos = [];
+_debug_colisions = false;
 
 GRLIB_preview_spheres = [];
 while { count GRLIB_preview_spheres < 36 } do {
@@ -126,21 +127,31 @@ while { true } do {
 				_near_objects = _near_objects + (_truepos nearobjects [FOB_box_typename, _dist]);
 				_near_objects = _near_objects + (_truepos nearobjects [Arsenal_typename, _dist]);
 
-				_near_objects_25 = (_truepos nearobjects ["AllVehicles", 30]) ;
-				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [FOB_box_typename, 30]);
-				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [Arsenal_typename, 30]);
+				_near_objects_25 = (_truepos nearobjects ["AllVehicles", 50]) ;
+				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [FOB_box_typename, 50]);
+				_near_objects_25 = _near_objects_25 + (_truepos nearobjects [Arsenal_typename, 50]);
 
 				if(	buildtype != 6 ) then {
 					_near_objects = _near_objects + (_truepos nearobjects ["Static", _dist]);
-					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 30]);
+					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 50]);
 				};
 
-				_remove_objects = (_truepos nearobjects ["Animal", 30]) + (_truepos nearobjects ["land_runway_edgelight", 30]) +
-								(_truepos nearobjects ["land_runway_edgelight_blue_f", 30]) + (_truepos nearobjects ["Land_HelipadSquare_F", 30]) +  [player, _vehicle]
-								+ (_truepos nearobjects ["Sign_Sphere100cm_F", 30]) + (_truepos nearobjects ["TMR_Autorest_Georef", 30]);
+				private _remove_objects = [];
+				{
+					if ( _x isKindOf "Animal" || typeof _x in GRLIB_ignore_colisions_when_building || _x == player || _x == _vehicle ) then {
+						_remove_objects pushback _x;
+					};
+				} foreach _near_objects;
+
+				private _remove_objects_25 = [];
+				{
+					if ( _x isKindOf "Animal" || typeof _x in GRLIB_ignore_colisions_when_building || _x == player || _x == _vehicle ) then {
+						_remove_objects_25 pushback _x;
+					};
+				} foreach _near_objects_25;
 
 				_near_objects = _near_objects - _remove_objects;
-				_near_objects_25 = _near_objects_25 - _remove_objects;
+				_near_objects_25 = _near_objects_25 - _remove_objects_25;
 
 				if ( count _near_objects == 0 ) then {
 					{
@@ -150,8 +161,6 @@ while { true } do {
 							_near_objects pushback _x;
 						};
 					} foreach _near_objects_25;
-
-
 				};
 
 				if ( count _near_objects != 0 ) then {
@@ -186,6 +195,13 @@ while { true } do {
 					build_invalid = 1;
 					if(count _near_objects > 0) then {
 						GRLIB_ui_notif = format [localize "STR_PLACEMENT_IMPOSSIBLE",count _near_objects, round _dist];
+
+						if (_debug_colisions) then {
+							private [ "_objs_classnames" ];
+							_objs_classnames = [];
+							{ _objs_classnames pushback (typeof _x) } foreach _near_objects;
+							hint format [ "Colisions : %1", _objs_classnames ];
+						};
 					};
 					if( ((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(_classname in boats_names)) then {
 						GRLIB_ui_notif = localize "STR_BUILD_ERROR_WATER";

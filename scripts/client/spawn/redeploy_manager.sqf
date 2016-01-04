@@ -7,8 +7,8 @@ _frame_pos = [];
 GRLIB_force_redeploy = false;
 
 waitUntil { !isNil "GRLIB_all_fobs" };
-waitUntil { !isNil "save_is_loaded" };
 waitUntil { !isNil "blufor_sectors" };
+waitUntil { !isNil "save_is_loaded" };
 
 _spawn_str = "";
 
