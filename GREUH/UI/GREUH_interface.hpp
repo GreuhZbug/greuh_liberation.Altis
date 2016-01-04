@@ -376,7 +376,7 @@ class GREUH_Menu {
 		idc = 522;
 		colorBackground[] = COLOR_GREEN;
 		x = (0.37 * safezoneW + safezoneX);
-		y = ((BASE_Y + 0.28) * safezoneH) + safezoneY;
+		y = ((BASE_Y + 0.18) * safezoneH) + safezoneY;
 		w = 0.2 * safezoneW;
 		h = 0.05 * safezoneH;
 	};
