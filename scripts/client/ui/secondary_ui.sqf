@@ -7,6 +7,7 @@ dostartsecondary = 0;
 waitUntil { dialog };
 
 lbAdd [ 101, localize "STR_SECONDARY_MISSION0" ];
+lbAdd [ 101, localize "STR_SECONDARY_MISSION1" ];
 
 private [ "_oldchoice", "_images", "_briefings", "_missioncost" ];
 
@@ -16,7 +17,8 @@ _images = [
 ];
 
 _briefings = [
-	"STR_SECONDARY_BRIEFING0"
+	"STR_SECONDARY_BRIEFING0",
+	"STR_SECONDARY_BRIEFING1"
 ];
 
 _oldchoice = -1;
@@ -47,6 +49,9 @@ while { dialog && alive player && dostartsecondary == 0 } do {
 
 	if ( GRLIB_secondary_in_progress >= 0 ) then {
 		lbSetCurSel [ 101, GRLIB_secondary_in_progress ];
+		ctrlEnable [ 101, false ];
+	} else {
+		ctrlEnable [ 101, true ];
 	};
 
 	ctrlSetText [ 107, format [ localize "STR_SECONDARY_INTEL", resources_intel ] ];

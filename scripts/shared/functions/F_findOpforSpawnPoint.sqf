@@ -35,15 +35,17 @@ _filtered_possible_sectors = [];
 		};
 	} foreach GRLIB_all_fobs;
 
-	{
-		if ( (( markerpos _current_sector ) distance (markerpos _x)) < _mindist ) then {
-			_accept_current_sector = false;
-		} else {
-			if ( (( markerpos _current_sector ) distance (markerpos _x)) < _current_sector_distance ) then {
-				_current_sector_distance = (( markerpos _current_sector ) distance (markerpos _x));
+	if ( _accept_current_sector ) then {
+		{
+			if ( (( markerpos _current_sector ) distance (markerpos _x)) < _mindist ) then {
+				_accept_current_sector = false;
+			} else {
+				if ( (( markerpos _current_sector ) distance (markerpos _x)) < _current_sector_distance ) then {
+					_current_sector_distance = (( markerpos _current_sector ) distance (markerpos _x));
+				};
 			};
-		};
-	} foreach blufor_sectors;
+		} foreach blufor_sectors;
+	};
 
 	if ( _accept_current_sector ) then {
 		_one_opfor_sector_in_range = false;
@@ -55,8 +57,10 @@ _filtered_possible_sectors = [];
 		_accept_current_sector = _one_opfor_sector_in_range;
 	};
 
-	if ( ( [markerpos _current_sector, _mindist, WEST ] call F_getUnitsCount ) != 0 ) then {
-		_accept_current_sector = false;
+	if ( _accept_current_sector ) then {
+		if ( ( [markerpos _current_sector, _mindist, WEST ] call F_getUnitsCount ) != 0 ) then {
+			_accept_current_sector = false;
+		};
 	};
 
 	if (_accept_current_sector) then {
