@@ -99,8 +99,13 @@ if ( isServer ) then {
 };
 
 if( isServer && !isplayer _unit) then {
-	sleep GRLIB_cleanup_delay;
-	hidebody _unit;
-	sleep 10;
-	deleteVehicle _unit;
+	if ( ((typeof _unit) in [ammobox_o_typename, ammobox_b_typename]) && ((getPosATL _unit) select 2 < 10) ) then {
+		( "R_80mm_HE" createVehicle (getPosATL _unit) ) setVelocity [0, 0, -200];
+		deleteVehicle _unit;
+	} else {
+		sleep GRLIB_cleanup_delay;
+		hidebody _unit;
+		sleep 10;
+		deleteVehicle _unit;
+	};
 };

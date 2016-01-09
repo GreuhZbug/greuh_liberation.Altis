@@ -56,6 +56,8 @@ while { true } do {
 				_idx = _idx + 1;
 
 			} foreach _classname;
+			_grp setCombatMode "GREEN";
+			_grp setBehaviour "AWARE";
 			build_confirmed = 0;
 		} else {
 			_posfob = getpos player;
@@ -136,18 +138,22 @@ while { true } do {
 					_near_objects_25 = _near_objects_25 + (_truepos nearobjects ["Static", 50]);
 				};
 
-				_remove_objects = [ _truepos nearobjects 50, {
-					private [ "_nextobject", "_isIgnored" ];
-					_isIgnored = false;
-					_nextobject = _x;
-					{
-						if ( _nextobject isKindOf _x || _nextobject == player || _nextobject == _vehicle ) exitWith { _isIgnored = true };
-					} foreach GRLIB_ignore_colisions_when_building;
-					_isIgnored
-					} ] call BIS_fnc_conditionalSelect;
+				private _remove_objects = [];
+				{
+					if ((_x isKindOf "Animal") || ((typeof _x) in GRLIB_ignore_colisions_when_building) || (_x == player) || (_x == _vehicle )) then {
+						_remove_objects pushback _x;
+					};
+				} foreach _near_objects;
+
+				private _remove_objects_25 = [];
+				{
+					if ((_x isKindOf "Animal") || ((typeof _x) in GRLIB_ignore_colisions_when_building) || (_x == player) || (_x == _vehicle ))  then {
+						_remove_objects_25 pushback _x;
+					};
+				} foreach _near_objects_25;
 
 				_near_objects = _near_objects - _remove_objects;
-				_near_objects_25 = _near_objects_25 - _remove_objects;
+				_near_objects_25 = _near_objects_25 - _remove_objects_25;
 
 				if ( count _near_objects == 0 ) then {
 					{

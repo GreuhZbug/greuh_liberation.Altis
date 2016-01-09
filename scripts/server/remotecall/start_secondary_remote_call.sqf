@@ -12,4 +12,10 @@ if ( _mission_index == 0 ) then {
 	[] call fob_hunting;
 };
 
+// Convoy Hijack
+if ( _mission_index == 1 ) then {
+	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
+	[] call convoy_hijack;
+};
+
 GRLIB_secondary_starting = false; publicVariable "GRLIB_secondary_starting";
