@@ -1691,6 +1691,10 @@
                         <French>Mission secondaire déjà en cours</French>
 			<Spanish>Misión secundaria ya en curso</Spanish>
                 </Key>
+                <Key ID="STR_NOTIFICATION_INCOMING_TEXT">
+                        <Original>Hostile forces are heading towards %1.</Original>
+                        <French>Les forces hostiles se dirigent vers %1.</French>
+                </Key>
                 <Key ID="STR_SECONDARY_CSAT_CONVOY">
                         <Original>CSAT Convoy</Original>
                         <French>Convoi CSAT</French>
