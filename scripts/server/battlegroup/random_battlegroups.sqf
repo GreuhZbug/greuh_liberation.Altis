@@ -13,11 +13,10 @@ while { GRLIB_csat_aggressivity > 0.9 && GRLIB_endgame == 0 } do {
 	sleep _sleeptime;
 
 	if ( !isNil "GRLIB_last_battlegroup_time" ) then {
-		waitUntil { sleep 5; time > ( GRLIB_last_battlegroup_time + ( 1200 / GRLIB_csat_aggressivity ) ) };
+		waitUntil { sleep 5; time > ( GRLIB_last_battlegroup_time + ( 2400 / GRLIB_csat_aggressivity ) ) };
 	};
 
-
-	if ( (count allPlayers >= 20) && ([] call F_opforCap < GRLIB_battlegroup_cap) && (combat_readiness > (100 - (round ((count allPlayers) * 1.5)))) )  then {
+	if ( (count allPlayers >= 20) && ([] call F_opforCap < GRLIB_battlegroup_cap) && (combat_readiness > (100 - (round ((count allPlayers) * 1.5)))) && (diag_fps > 20.0))  then {
 		[] spawn spawn_battlegroup;
 	};
 };
