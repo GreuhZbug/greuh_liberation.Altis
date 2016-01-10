@@ -53,9 +53,11 @@ GRLIB_player_scores = [];
 no_kill_handler_classnames = [FOB_typename, huron_typename];
 _classnames_to_save = [FOB_typename, huron_typename];
 _classnames_to_save_blu = [];
+_building_classnames = [FOB_typename];
 {
 	no_kill_handler_classnames pushback (_x select 0);
 	_classnames_to_save pushback (_x select 0);
+	_building_classnames pushback (_x select 0);
 } foreach buildings;
 
 {
@@ -159,6 +161,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 		_nextclass = _x select 0;
 
 		if ( _nextclass in _classnames_to_save ) then {
+
 			_nextpos = _x select 1;
 			_nextdir = _x select 2;
 			_hascrew = false;
@@ -170,6 +173,11 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			_nextbuilding setPosATL _nextpos;
 			_nextbuilding setdir _nextdir;
 			_nextbuilding setdamage 0;
+
+			if ( _nextclass in _building_classnames ) then {
+				_nextbuilding setVariable [ "GRLIB_saved_pos", _nextpos, false ];
+			};
+
 			if ( _hascrew ) then {
 				[ _nextbuilding ] call F_forceBluforCrew;
 			};
@@ -288,16 +296,27 @@ while { true } do {
 		} foreach GRLIB_all_fobs;
 
 		{
-			_nextclass = typeof _x;
-			_nextpos = getposATL _x;
-			_nextdir = getdir _x;
-			_hascrew = false;
+			private _savedpos = [];
+
+			if ( (typeof _x) in _building_classnames ) then {
+				_savedpos = _x getVariable [ "GRLIB_saved_pos", [] ];
+				if ( count _savedpos == 0 ) then {
+					_x setVariable [ "GRLIB_saved_pos", getposATL _x, false ];
+					_savedpos = getposATL _x;
+				};
+			} else {
+				_savedpos = getposATL _x;
+			};
+
+			private _nextclass = typeof _x;
+			private _nextdir = getdir _x;
+			private _hascrew = false;
 			if ( _nextclass in _classnames_to_save_blu ) then {
 				if ( ( { !isPlayer _x } count (crew _x) ) > 0 ) then {
 					_hascrew = true;
 				};
 			};
-			buildings_to_save pushback [ _nextclass,_nextpos,_nextdir,_hascrew ];
+			buildings_to_save pushback [ _nextclass,_savedpos,_nextdir,_hascrew ];
 		} foreach _all_buildings;
 
 		time_of_day = date select 3;

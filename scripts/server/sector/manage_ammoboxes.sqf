@@ -51,6 +51,7 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 		clearMagazineCargoGlobal _newbox;
 		clearItemCargoGlobal _newbox;
 		clearBackpackCargoGlobal _newbox;
+		_newbox addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
 
 		if ( _i != 0 ) then {
 			[ [_newbox, 500 ] , "F_setMass" ] call BIS_fnc_MP;
