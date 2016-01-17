@@ -69,6 +69,8 @@ if ( load_loadout > 0 ) then {
 
 	[player, [profileNamespace, _loadouts_data select (lbCurSel 201) ]] call bis_fnc_loadInventory;
 	closeDialog 0;
+	sleep 1;
+	[ player ] call F_correctLaserBatteries;
 };
 
 if ( edit_loadout > 0 ) then {

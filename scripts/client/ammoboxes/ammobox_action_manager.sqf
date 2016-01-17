@@ -49,7 +49,7 @@ while { true } do {
 		{
 			_next_box = _x;
 			if ( !(_next_box in _managed_boxes) && ( isNull  attachedTo _next_box )) then {
-				_action_id = _next_box addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_LOAD_BOX" + "</t>","scripts\client\ammoboxes\do_load_box.sqf","",-501,true,true,"","build_confirmed == 0 && (_this distance _target < 5) && (vehicle player == player)"];
+				_action_id = _next_box addAction ["<t color='#FFFF00'>" + localize "STR_ACTION_LOAD_BOX" + "</t>","scripts\client\ammoboxes\do_load_box_action.sqf","",-501,true,true,"","build_confirmed == 0 && (_this distance _target < 5) && (vehicle player == player)"];
 				_next_box setVariable [ "GRLIB_ammo_box_action", _action_id, false ];
 				_managed_boxes pushback _next_box;
 			};
