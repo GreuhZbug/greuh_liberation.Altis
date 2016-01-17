@@ -2,7 +2,7 @@
 
 # Liberation for Arma 3
 
-## Current version : 0.920
+## Current version : 0.921
 
 ## Overview
 

@@ -3846,13 +3846,13 @@ class Mission
 		};
 		class Item185
 		{
-			position[]={8829.5674,19.420395,10065.898};
+			position[]={8811.0215,18.841827,10085.489};
 			name="opfor_point_30_71";
 			type="Empty";
 		};
 		class Item186
 		{
-			position[]={8862.7285,28.077164,10712.265};
+			position[]={8882.8594,28.188759,10705.051};
 			name="opfor_point_30_72";
 			type="Empty";
 		};
@@ -4116,7 +4116,7 @@ class Mission
 		};
 		class Item230
 		{
-			position[]={7950.4829,61.641109,9667.9639};
+			position[]={7951.438,61.50901,9667.8857};
 			name="opfor_point_17_48";
 			type="Empty";
 		};
