@@ -19,14 +19,14 @@
 						<French>Déploiement</French>
 						<German>Bereitstellen</German>
 						<Spanish>Despliegue</Spanish>
-						<Russian>Развертывание</Russian>
+						<Russian>Развёртывание</Russian>
 				</Key>
 				<Key ID="STR_Deploy_InProgress">
 						<Original>Deployment in progress ...</Original>
 						<French>Déploiement en cours ...</French>
 						<German>Bereitstellung in Arbeit</German>
 						<Spanish>Despliegue en curso ...</Spanish>
-						<Russian>Развертывание в процессе ...</Russian>
+						<Russian>Развёртывание в процессе ...</Russian>
 				</Key>
 				<Key ID="STR_CLOSE">
 						<Original>Close</Original>
@@ -321,7 +321,7 @@
 						<French>Escouade Fusiliers Lourde</French>
 						<German>Schwerer Waffentrupp</German>
 						<Spanish>Escuadra de fusileros pesados</Spanish>
-						<Russian>Тяженлый Стрелковый Отряд</Russian>
+						<Russian>Тяжёлый Стрелковый Отряд</Russian>
 				</Key>
 				<Key ID="STR_AT_SQUAD">
 						<Original>AT Squad</Original>
@@ -840,7 +840,7 @@
 						<French>Explosions d'IED :</French>
 						<German>IEDs zur Explosion gebracht:</German>
 						<Spanish>IEDs detonados:</Spanish>
-						<Russian>Фугасов взорвалось:</Russian>
+						<Russian>Фугасов взорвано:</Russian>
 				</Key>
 				<Key ID="STR_STATS_23">
 						<Original>Number of Spartan 01 losses:</Original>
@@ -882,7 +882,7 @@
 						<French>Nous espérons que vous avez pris autant de plaisir à y jouer, que nous à la créer.</French>
 						<German>Wir hoffen du hast es genossen zu spielen, wie wir genossen haben zu entwickeln.</German>
 						<Spanish>Esperamos que hayas disfrutado tanto jugándola, como nosotros creándola.</Spanish>
-						<Russian>Мы надеемся, что вы наслаждались игрой в эту миссию так же, как и мы создавая её.</Russian>
+						<Russian>Мы надеемся, что вы насладились игрой в эту миссию так же, как и мы, когда создавали её.</Russian>
 				</Key>
 				<Key ID="STR_STATS_29">
 						<Original>(Press ESC to exit)</Original>
@@ -973,7 +973,7 @@
 						<French>Oh mon dieu on va tous mourir</French>
 						<German>Mein Gott, wir werden alle sterben!</German>
 						<Spanish>Oh dios mío, vamos a morir!</Spanish>
-						<Russian>Боже мой мы все умрем!</Russian>
+						<Russian>Боже мой мы все умрём!</Russian>
 				</Key>
 				<Key ID="STR_PARAMS_RESOURCESMULTIPLIER">
 						<Original>Resources multiplier</Original>
@@ -1315,7 +1315,7 @@
 						<French>Vous allez vous déployer à la place du member d'escouade selectionné tout en conservant votre équipement actuel.</French>
 						<German>Du wirst das ausgewählte Gruppenmitglied ersetzen, während du deine Ausrüstung behältst.</German>
 						<Spanish>Reaparecerás en el miembro de la escuadra seleccionado, manteniendo tu equipación actual</Spanish>
-						<Russian>Вы будете развернуты на выбранного члена группы, и замените его, сохранив текущее снаряжение.</Russian>
+						<Russian>Вы будете развёрнуты на выбранном AI-солдате группы, и замените его, сохранив текущее снаряжение.</Russian>
 				</Key>
 				<Key ID="STR_REMOVE_MEMBER">
 						<Original>Remove</Original>
@@ -1455,7 +1455,7 @@
 						<French>Véhicules légers</French>
 						<German>Leichte Fahrzeuge</German>
 						<Spanish>Vehículos ligeros</Spanish>
-						<Russian>Легкая техника</Russian>
+						<Russian>Лёгкая техника</Russian>
 				</Key>
 				<Key ID="STR_PERMISSIONS_ARMORED">
 						<Original>Armored vehicles</Original>
@@ -1511,7 +1511,7 @@
 						<French>Autorise le joueur à utiliser les véhicules légers en tant que conducteur ou tireur.</French>
 						<German>Erlaubt es dem Spieler leichte Fahrzeuge als Fahrer und Schütze zu bedienen.</German>
 						<Spanish>Permite al jugador utilizar vehículos ligeros como conductor y artillero</Spanish>
-						<Russian>Позволить игроку быть водителем и стрелком легкой техники.</Russian>
+						<Russian>Позволить игроку быть водителем и стрелком лёгкой техники.</Russian>
 				</Key>
 				<Key ID="STR_PERMISSIONS_TOOLTIP_ARMORED">
 						<Original>Allows the player to operate armored vehicles as driver, gunner and commander.</Original>
@@ -1609,7 +1609,7 @@
 						<French>Aucune permission n'a été définie. Le commandant doit configurer les permissions pour permettre aux joueurs d'effectuer des actions et d'utiliser les véhicules. Sinon, le système de permissions peut être désactivé dans les options de mission.</French>
 						<German>Keine Rechte wurden vergeben. Der Kommandant muss die Rechte verwalten um Spielern Aktionen und die Nutzung von Fahrzeugen zu erlaubne. Alternativ kann das Rechtesystem in den Missionsoptionen deaktiviert werden.</German>
 						<Spanish>No hay permisos definidos. El comandante debe asignar los permisos para permitir a los jugadores el uso de los vehículos y acciones. Alternativamente, puede desactivarse el sistema de permisos desde las opciones de misión</Spanish>
-						<Russian>Разрешения не были даны. Командир должен настроить разрешения, чтобы позволить игроку действия и использование техники. Кроме того, система разрешение может быть отключена в настройках миссии.</Russian>
+						<Russian>Разрешения не были даны. Командир должен настроить разрешения, чтобы позволить игроку действия и использование техники. Кроме того, система разрешений может быть отключена в настройках миссии.</Russian>
 				</Key>
 				<Key ID="STR_ARSENAL_TITLE">
 						<Original>ARSENAL</Original>
@@ -1721,14 +1721,14 @@
 						<French>-- SAUT HALO</French>
 						<German>-- HALO-SPRUNG</German>
 						<Spanish>-- SALTO HALO</Spanish>
-						<Russian>-- HALO</Russian>
+						<Russian>-- HALO прыжок</Russian>
 				</Key>
 				<Key ID="STR_HALO_TITLE">
 						<Original>HALO JUMP</Original>
 						<French>SAUT HALO</French>
 						<German>HALO-SPRUNG</German>
 						<Spanish>SALTO HALO</Spanish>
-						<Russian>HALO</Russian>
+						<Russian>HALO ПРЫЖОК</Russian>
 				</Key>
 				<Key ID="STR_DEPLOY_IN_PROGRESS">
 						<Original>Deployment in progress...</Original>
@@ -1935,7 +1935,7 @@
 						<Original>-- SECONDARY OBJECTIVES</Original>
 						<French>-- OBJECTIFS SECONDAIRES</French>
 						<Spanish>-- OBJETIVOS SECUNDARIOS</Spanish>
-						<Russian>-- ВТОРИЧНЫЕ ЗАДАЧИ</Russian>
+						<Russian>-- ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ</Russian>
 				</Key>
 				<Key ID="STR_AMMO_BOUNTIES">
 						<Original>Ammunition bounties</Original>
@@ -1953,7 +1953,7 @@
 						<Original>SECONDARY OBJECTIVES</Original>
 						<French>OBJECTIFS SECONDAIRES</French>
 						<Spanish>OBJETIVOS SECUNDARIOS</Spanish>
-						<Russian>ВТОРИЧНЫЕ ЗАДАЧИ</Russian>
+						<Russian>ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_OBJECTIVES_START">
 						<Original>Start</Original>
@@ -1965,7 +1965,7 @@
 						<Original>Current intel: %1</Original>
 						<French>Intel actuelle : %1</French>
 						<Spanish>Inteligencia actual: %1</Spanish>
-						<Russian>Развединформация: %1</Russian>
+						<Russian>Разведданные: %1</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_NOT_ENOUGH_INTEL">
 						<Original>Insufficient intel points</Original>
@@ -1977,7 +1977,7 @@
 						<Original>Secondary mission already in progress</Original>
 						<French>Mission secondaire déjà en cours</French>
 						<Spanish>Misión secundaria ya en curso</Spanish>
-						<Russian>Вторичная задача уже есть</Russian>
+						<Russian>ДОополнительная задача уже есть</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_INCOMING_TEXT">
 						<Original>Hostile forces are heading towards %1.</Original>
@@ -2014,13 +2014,13 @@
 						<Original>-- TUTORIAL</Original>
 						<French>-- TUTORIAL</French>
 						<Spanish>-- TUTORIAL</Spanish>
-						<Russian>-- АЗБУКА</Russian>
+						<Russian>-- РУКОВОДСТВО</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE">
 						<Original>TUTORIAL</Original>
 						<French>TUTORIAL</French>
 						<Spanish>TUTORIAL</Spanish>
-						<Russian>АЗБУКА</Russian>
+						<Russian>РУКОВОДСТВО</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE1">
 						<Original>1. Introduction</Original>
@@ -2065,7 +2065,7 @@
 						Силы CSAT внезапно напали на остров и жестоко подавили все очаги сопротивления. Они теперь контролируют весь остров, но благодаря вашим усилиям, это продлится недолго. &lt;br/&gt; &lt;br/&gt;
 						Ваша задача проста: освободить Altis. &lt;br/&gt; &lt;br/&gt;
 						Путь к победе будет долгим и опасным. Вы должны будете захватить множество секторов и приобрести необходимые ресурсы для улучшения количества и качества сил BLUFOR, участвующих в этой кампании. &lt;br/&gt; &lt;br/&gt;
-						Кроме того, силы CSAT наверняка будут быстро реагировать на ваше продвижение. Вам придется заниматься диверсионной деятельностью, чтобы ослабить врага, который превосходит нас в численности и лучше вооружен. &lt;br/&gt; &lt;br/&gt;
+						Кроме того, силы CSAT наверняка будут быстро реагировать на ваше продвижение. Вам придется заниматься диверсионной деятельностью, чтобы ослабить врага, который превосходит нас в численности и лучше вооружён. &lt;br/&gt; &lt;br/&gt;
 						Вы будете нуждаться в поддержке местного населения, поэтому всегда убеждайтесь, и дважды проверяйте, в кого собираетесь стрелять. &lt;br/&gt; &lt;br/&gt;
 						Вопросы есть? &lt;br/&gt; &lt;br/&gt;
 						</Russian>
@@ -2101,9 +2101,9 @@
 						<Russian>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						Вы начинаете кампанию в безопасной зоне BASE CHIMERA, её CSAT не решатся атаковать. Ваш первая задача: выбрать место развёртывания. В начале вы можете развернуть свои войска только в начальной базе, но, по мере продвижения, вам будут доступны больше вариантов, такие как базы передового развёртывания (FOB) и мобильные КШМ.&lt;br/&gt; &lt;br/&gt;
-						В месте развёртывания вы можете выбрать снаряжение в Арсенале. Там же вы найдете вашу первую FOB, упакованную внутри контейнера, Spartan-01 Huron и несколько других транспортных вертолетов.&lt;br/&gt; &lt;br/&gt;
-						Вы должны будете переправить этот контейнер при помощи Huron или Ghosthawk (если вы не выбрали в параметрах, что первая FOB уже развёрнута). Вы можете развернуть эту первую FOB там, где пожелаете, так что от вас зависит выбор правильного места, чтобы начать свою кампанию.&lt;br/&gt; &lt;br/&gt;
+						Вы начинаете кампанию в безопасной зоне BASE CHIMERA, её CSAT не решатся атаковать. Ваш первая задача: выбрать место развёртывания. В начале вы можете развёртывать свои войска только в начальной базе, но, по мере продвижения, вам будут доступны больше вариантов, таких как передовые оперативные базы (FOB) и мобильные КШМ.&lt;br/&gt; &lt;br/&gt;
+						В месте развёртывания вы можете выбрать снаряжение в Арсенале. Там же вы найдете вашу первую FOB, упакованную внутри контейнера, Spartan-01 Huron и несколько других транспортных вертолётов.&lt;br/&gt; &lt;br/&gt;
+						Вы должны будете переправить этот контейнер при помощи Huron или Ghosthawk (если вы не выбрали в параметрах, что первая FOB уже развёрнута). Вы можете развернуть эту первую FOB там, где пожелаете, так что от вас зависит выбор правильного места, для началя своей кампании.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE3">
@@ -2128,9 +2128,9 @@
 						Para lograrlo, deberas capturar un gran numero de sectores diferentes, cada uno con sus propios usos.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						Основная задача, выгнать силы CSAT из острова Альтис. Чтобы добиться этого, вам придется освободить 7 крупных городов на острове: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Это единственное условие для победы в кампании.&lt;br/&gt; &lt;br/&gt;
-						Но эти города будут крепкими орешками для вас, их получится раскусить только ограничив поступление в них подкреплений, силы CSAT в них очень хорошо организованы.&lt;br/&gt; &lt;br/&gt;
-						Чтобы добиться успеха, вам придется захватить большое количество различных зон, каждая принесёт свой определённый бонус.&lt;br/&gt; &lt;br/&gt;
+						Основная задача, выбить CSAT из Альтиса. Чтобы добиться этого, вам придется освободить семь самых больших населённых пунктов на острове: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Это единственное условие для победы в кампании.&lt;br/&gt; &lt;br/&gt;
+						Но эти города будут для вас крепкими орешками, их получится раскусить только ограничив поступление в них подкреплений, силы CSAT в них очень хорошо организованы.&lt;br/&gt; &lt;br/&gt;
+						Чтобы добиться успеха, вам придется захватить большое количество различных зон, каждая из которых принесёт свой определённый бонус.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE4">
@@ -2166,11 +2166,11 @@
 						</Spanish>
 						<Russian>&lt;br/&gt;
 						Зоны поделены на 5 различных типов:&lt;br/&gt; &lt;br/&gt;
-						- Точки интереса: в общем это маленькие и средние посёлки, каждая точка интереса контролируемая вами увеличивает ваши возможности набора войск.&lt;br/&gt; &lt;br/&gt;
-						- Военные базы: полные персоналом CSAT, базы будут приносить большое количество боеприпасов которые будут полезны для обновления огневой мощи. Однако эти сооружения в значительной степени защищены и потребуют больших и хорошо скоординированных усилий.&lt;br/&gt; &lt;br/&gt;
+						- Точки интереса: в общем это маленькие и средние населённые пункты, каждая точка интереса, контролируемая вами, увеличивает ваши возможности набора войск.&lt;br/&gt; &lt;br/&gt;
+						- Военные базы: полные персонала CSAT, базы будут приносить большое количество боеприпасов которые будут полезны для обновления огневой мощи. Однако эти сооружения в значительной степени защищены и потребуют больших и хорошо скоординированных усилий.&lt;br/&gt; &lt;br/&gt;
 						- Заводы: заводы дадут вам ресурсы, необходимые чтобы производить больше техники.&lt;br/&gt; &lt;br/&gt;
-						- Радиовышки: когда они под контролем CSAT, они используются для вызова подкрепления, когда атакован ближайший сектор. Время подхода подкрепления зависит от дистанции между вышкой и зоной. Когда радиовышки под контролем NATO, они дают вам полезную информацию, если в непосредственной близости от вышек враждебные силы используют радиосвязь для радиопереговоров.&lt;br/&gt; &lt;br/&gt;
-						- Главные города: всего их семь: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Когда все эти города будут под контролем NATO, вы выиграете.&lt;br/&gt; &lt;br/&gt;
+						- Радиовышки: под контролем CSAT они используются для вызова подкрепления в ближайший атакованный сектор. Время подхода подкрепления зависит от дистанции между вышкой и зоной. Когда радиовышки под контролем НАТО, они дают вам полезную информацию, если в непосредственной близости от вышек враг использует для радиопереговоров радиосвязь.&lt;br/&gt; &lt;br/&gt;
+						- Главные населённые пункты: всего их семь: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Когда все эти населённые пункты будут под контролем НАТО, вы выиграете.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE5">
@@ -2218,7 +2218,7 @@
 						В этой кампании вы должны управлять тремя типами ресурсов:&lt;br/&gt;&lt;br/&gt;
 						- &lt;t color='#00ff00'&gt;ПЕРСОНАЛ:&lt;/t&gt; связан с количеством точек интереса, которые вы контролируете. Больше ресурса позволяет повысить качество и количество ваших наземных войск. &lt;br/&gt;&lt;br/&gt;
 						- &lt;t color='#ff0000'&gt;ВООРУЖЕНИЕ:&lt;/t&gt; используется для развертывания вооруженных транспортных средств, танков и элитных солдат. Ресурс содержится в ящиках, которые могут быть найдены на военных базах. Эти ящики должны быть перемещены в FOB NATO при помощи наземной и аввиатехники, потом их надо утилизировать, чтобы ваш ресурс пополнился.&lt;br/&gt;&lt;br/&gt;
-						- &lt;t color='#ffff00'&gt;ТОПЛИВО:&lt;/t&gt; используется при создании всех транспортных средств, причем некоторые из них требуют больше ресурса, чем другие. Уровень ресурса зависит от того, сколько заводов контролируются силами НАТО.&lt;br/&gt; &lt;br/&gt;</Russian>
+						- &lt;t color='#ffff00'&gt;ТОПЛИВО:&lt;/t&gt; используется при создании всех транспортных средств, причём некоторые из них требуют больше ресурса, чем другие. Уровень ресурса зависит от того, сколько заводов контролируются силами НАТО.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE6">
 						<Original>6. Alert level</Original>
@@ -2240,8 +2240,8 @@
 						Para limitar la capacidad operativa del CSAT, tendrás que completar objetivos secundarios, los cuales consisten en destruir sus bases logísticas, y otra serie de objetivos auxiliares. Esto no es un requerimiento para ganar la campaña, pero ignorar el nivel de alerta por mucho tiempo, supondrá un aumento significativo en la cantidad de efectivos enemigos desplegados.	&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						CSAT не будут сидеть сложа руки, пока вы будете освобождать все зоны, они будут реагировать на ваши действия. Когда вы начинаете кампанию, враждебные силы будут состоять только из гарнизонов внутри военных баз. Однако, как только вы станете более опасными овободив больше и больше зон, то CSAT начнет вызывать больше подкрепления, отряды и технику для борьбы с вами.&lt;br/&gt; &lt;br/&gt;
-						Чтобы ограничить оперативные возможности CSAT, вы должны будете выполнять вторичные задачи, которые будут состоять в уничтожении их баз снабжения. Это не обязательно, для того, чтобы выиграть кампанию, но если вы будете игнорировать уровень тревоги слишком долго, у вас могут быть большие неприятности.&lt;br/&gt; &lt;br/&gt;</Russian>
+						CSAT не будут сидеть сложа руки, пока вы будете освобождать все зоны, они будут реагировать на ваши действия. Когда вы начнёте кампанию, враждебные силы будут состоять только из гарнизонов внутри военных баз. Однако, как только вы начнёте овобождать больше и больше зон, CSAT начнёт вызывать больше подкреплений, отряды и технику для борьбы с вами.&lt;br/&gt; &lt;br/&gt;
+						Чтобы ограничить оперативные возможности CSAT, вы должны будете выполнять дополнительные задачи, которые будут состоять в уничтожении баз снабжения врага. Это не обязательно, для того, чтобы выиграть кампанию, но если вы будете игнорировать уровень тревоги слишком долго, у вас могут быть большие неприятности.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE7">
 						<Original>7. Construction</Original>
@@ -2293,7 +2293,7 @@
 						<Original>9. Secondary objectives</Original>
 						<French>9. Missions secondaires</French>
 						<Spanish>9. Objetivos secundarios</Spanish>
-						<Russian>9. Вторичные задания</Russian>
+						<Russian>9. Дополнительные задания</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TEXT9">
 						<Original>&lt;br/&gt;
@@ -2312,15 +2312,15 @@
 						Deberás encontrar por la zona la posición exacta de dicho objetivo, y usar cualquier medio a tu disposición para destruir cualquier vehículo o container que pudiera abastecer a las fuerzas del CSAT. El exito de esta tarea supondrá reducir el nivel de alerta enemigo, y con ello, la eficiencia de las fuerzas hostiles.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						Когда вы захватите вражескую зону, иногда несколько вражеских солдат сдадутся. Вы можете захватить пленных, которые должны быть переправлены в любую из FOB на допрос.&lt;br/&gt; &lt;br/&gt;
+						Когда вы захватите вражескую зону, иногда несколько вражеских солдат могут сдаться в плен. Вы можете захватить пленных, они должны быть переправлены в любую из FOB на допрос.&lt;br/&gt; &lt;br/&gt;
 						Этот допрос, выполненный в соответствии с Женевской конвенцией, позволит вам получить более или менее точную информацию о положении баз снабжения CSAT.&lt;br/&gt; &lt;br/&gt;
-						Добравшись туда, вы должны будете найти точное положение цели, а затем использовать любые средства в вашем распоряжении, чтобы уничтожить каждое транспортное средство или контейнер, который может быть полезен, чтобы пополнить силы CSAT. Успех в решении этой задачи позволит снизить уровень опасности, следовательно и эффективность всех враждебных сил.&lt;br/&gt; &lt;br/&gt;</Russian>
+						Добравшись туда, вы должны будете отискать их точное положение, а затем использовать любые средства в вашем распоряжении, чтобы уничтожить каждое транспортное средство или контейнер, который может быть полезен, чтобы пополнить силы врага. Успех в решении этой задачи позволит снизить уровень тревоги CSAT, следовательно и эффективность всех враждебных сил.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE10">
 						<Original>10. Commanding</Original>
 						<French>10. Commandement</French>
 						<Spanish>10. Comandancia</Spanish>
-						<Russian>10. Командывание</Russian>
+						<Russian>10. Командование</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TEXT10">
 						<Original>&lt;br/&gt;
@@ -2342,9 +2342,9 @@
 						Este rol no es obligatorio, pero si muy recomendado en el caso de grupos reducidos de jugadores.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						Когда игрок займёт слот командира (последний слот списка), он получит доступ к интерфейсу Зевса, нажав соответствующую клавишу (U по умолчанию).&lt;br/&gt; &lt;br/&gt;
+						Когда игрок займёт слот командира (последний слот списка), он получит доступ к интерфейсу Зевса, нажав соответствующую клавишу (Y по умолчанию).&lt;br/&gt; &lt;br/&gt;
 						Этот интерфейс позволяет командовать силами НАТО в 3d и при помощи карты.&lt;br/&gt; &lt;br/&gt;
-						Кроме того, командир получает дополнительные опции строительства, что позволит ему мобилизовать транспортные средства с экипажем или целые готовые отряды.&lt;br/&gt; &lt;br/&gt;
+						Кроме того, командир получает дополнительные опции строительства, что позволит ему мобилизовывать транспортные средства с экипажем или целые готовые отряды.&lt;br/&gt; &lt;br/&gt;
 						Эта роль не является обязательной, но настоятельно рекомендуется если вы играете небольшой группой игроков.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_MISSION0">
