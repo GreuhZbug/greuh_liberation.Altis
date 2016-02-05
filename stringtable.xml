@@ -614,7 +614,7 @@
 						<French>OBJECTIF SECONDAIRE</French>
 						<German>SEKUNDAERZIEL</German>
 						<Spanish>OBJETIVO SECUNDARIO</Spanish>
-						<Russian>ВТОРИЧНАЯ ЗАДАЧА</Russian>
+						<Russian>ДОПОЛНИТЕЛЬНАЯ ЗАДАЧА</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_SECONDARY_TEXT">
 						<Original>Hostile FOB destroyed</Original>
@@ -973,7 +973,7 @@
 						<French>Oh mon dieu on va tous mourir</French>
 						<German>Mein Gott, wir werden alle sterben!</German>
 						<Spanish>Oh dios mío, vamos a morir!</Spanish>
-						<Russian>Боже мой мы все умрём!</Russian>
+						<Russian>Боже мой, мы все умрём!</Russian>
 				</Key>
 				<Key ID="STR_PARAMS_RESOURCESMULTIPLIER">
 						<Original>Resources multiplier</Original>
@@ -1672,7 +1672,7 @@
 						<French>Saut HALO</French>
 						<German>HALO-Sprung</German>
 						<Spanish>Salto HALO</Spanish>
-						<Russian>HALO</Russian>
+						<Russian>HALO прыжок</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM1">
 						<Original>Enabled - No cooldown</Original>
@@ -1977,7 +1977,7 @@
 						<Original>Secondary mission already in progress</Original>
 						<French>Mission secondaire déjà en cours</French>
 						<Spanish>Misión secundaria ya en curso</Spanish>
-						<Russian>ДОополнительная задача уже есть</Russian>
+						<Russian>Дополнительная задача уже есть</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_INCOMING_TEXT">
 						<Original>Hostile forces are heading towards %1.</Original>
