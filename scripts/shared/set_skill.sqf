@@ -8,6 +8,10 @@ if ( damage _unit > 0.25 ) then { _wounded = true; };
 
 _skillmodifier = sqrt GRLIB_difficulty_modifier;
 
+if ( _side == WEST ) then {
+	_unit disableAI "AUTOCOMBAT";
+};
+
 if ( _wounded ) then {
 	_unit setSkill ["aimingspeed", [ 0.15 * _skillmodifier ] call F_limitSkill ];
 	_unit setSkill ["aimingaccuracy", [ 0.03 * _skillmodifier ] call F_limitSkill ];
