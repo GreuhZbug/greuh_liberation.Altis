@@ -2485,5 +2485,9 @@
 						<Original>You are not allowed to deploy more than %1 FOBs at the same time.</Original>
 						<French>Vous n'êtes pas autorisé à déployer plus de %1 FOBs en même temps.</French>
 				</Key>
+				<Key ID="STR_HINT_LOADOUT_LOADED">
+						<Original>%1 loadout successfully loaded.</Original>
+						<French>Equipement %1 chargé avec succès.</French>
+				</Key>
 		</Package>
 </Project>
