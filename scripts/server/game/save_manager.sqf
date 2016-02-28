@@ -197,8 +197,6 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 
 	} foreach buildings_to_save;
 
-	sleep 0.1;
-
 	{
 		private [ "_nextgroup", "_grp" ];
 		_nextgroup = _x;
@@ -241,10 +239,7 @@ if ( count GRLIB_vehicle_to_military_base_links == 0 ) then {
 	} foreach _classnames_to_check;
 };
 publicVariable "GRLIB_vehicle_to_military_base_links";
-
 publicVariable "GRLIB_permissions";
-
-uiSleep 1;
 save_is_loaded = true; publicVariable "save_is_loaded";
 
 while { true } do {
