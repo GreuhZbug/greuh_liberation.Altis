@@ -114,6 +114,12 @@ class Params
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
 		default = 0;
 	};
+	class MaximumFobs{
+		title = $STR_PARAM_FOBS_COUNT;
+		values[] = {3,5,7,10,15,20,26};
+		texts[] = {3,5,7,10,15,20,26};
+		default = 26;
+	};
 	class Space2 {
 		title = "";
 		values[] = { "" };

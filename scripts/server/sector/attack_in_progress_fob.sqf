@@ -11,6 +11,11 @@ if ( GRLIB_blufor_defenders ) then {
 	{ _x createUnit [ _thispos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach blufor_squad_inf;
 };
 
+sleep 3;
+
+_grp setCombatMode "GREEN";
+_grp setBehaviour "COMBAT";
+
 sleep 60;
 
 _ownership = [ _thispos ] call F_sectorOwnership;

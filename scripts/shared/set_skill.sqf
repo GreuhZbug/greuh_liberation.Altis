@@ -8,7 +8,7 @@ if ( damage _unit > 0.25 ) then { _wounded = true; };
 
 _skillmodifier = sqrt GRLIB_difficulty_modifier;
 
-if ( _side == WEST ) then {
+if ( !(GRLIB_autodanger) && (_side == WEST)) then {
 	_unit disableAI "AUTOCOMBAT";
 };
 

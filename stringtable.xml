@@ -2477,5 +2477,13 @@
 						<Original>Auto-danger behaviour on BLUFOR forces</Original>
 						<French>Comportement 'danger' automatique sur les forces BLUFOR</French>
 				</Key>
+				<Key ID="STR_PARAM_FOBS_COUNT">
+						<Original>Maximum number of FOBs allowed</Original>
+						<French>Nombre maximal de FOBs autorisé</French>
+				</Key>
+				<Key ID="STR_HINT_FOBS_EXCEEDED">
+						<Original>You are not allowed to deploy more than %1 FOBs at the same time.</Original>
+						<French>Vous n'êtes pas autorisé à déployer plus de %1 FOBs en même temps.</French>
+				</Key>
 		</Package>
 </Project>
