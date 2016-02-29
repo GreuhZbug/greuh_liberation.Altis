@@ -46,7 +46,8 @@ while { GRLIB_endgame == 0 } do {
 			_civveh addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != WEST ) && ( side (_this select 3) != EAST )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
 			((units _grp) select 0) moveInDriver _civveh;
 			((units _grp) select 0) disableAI "FSM";
-			_grpspeed = "LIMITED"; // Until BIS does something to prevent civilians drivers from killing themselves all the time
+			((units _grp) select 0) disableAI "AUTOCOMBAT";
+			_grpspeed = "LIMITED";
 
 		};
 

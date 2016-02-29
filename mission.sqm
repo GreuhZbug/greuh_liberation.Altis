@@ -33,8 +33,7 @@ class Mission
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
-		"3DEN",
-		"a3_modules_f_curator_curator",
+		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"A3_Data_F_Exp_A_Virtual",
 		"A3_Air_F_Heli_Light_01",
