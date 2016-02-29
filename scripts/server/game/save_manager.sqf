@@ -189,6 +189,10 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 			if ( _nextclass in all_hostile_classnames ) then {
 				_nextbuilding setVariable [ "GRLIB_captured", 1, true ];
 			};
+
+			if ( _nextclass == FOB_typename ) then {
+				_nextbuilding addEventHandler ["HandleDamage", { 0 }];
+			};
 		};
 
 	} foreach buildings_to_save;
