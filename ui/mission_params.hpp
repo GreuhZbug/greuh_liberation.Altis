@@ -102,6 +102,24 @@ class Params
 		texts[] = { $STR_HALO_PARAM1, $STR_HALO_PARAM2, $STR_HALO_PARAM3, $STR_HALO_PARAM4, $STR_HALO_PARAM5, $STR_HALO_PARAM6, $STR_PARAMS_DISABLED };
 		default = 1;
 	};
+	class BluforDefenders{
+		title = $STR_PARAM_BLUFOR_DEFENDERS;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
+	};
+	class Autodanger{
+		title = $STR_PARAM_AUTODANGER;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 0;
+	};
+	class MaximumFobs{
+		title = $STR_PARAM_FOBS_COUNT;
+		values[] = {3,5,7,10,15,20,26};
+		texts[] = {3,5,7,10,15,20,26};
+		default = 26;
+	};
 	class Space2 {
 		title = "";
 		values[] = { "" };

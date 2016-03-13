@@ -2,10 +2,10 @@
 <Project name="Liberation">
 		<Package name="Liberation">
 				<Key ID="STR_MISSION_TITLE">
-						<Original>Liberation 0.921</Original>
+						<Original>Liberation 0.922</Original>
 				</Key>
 				<Key ID="STR_MISSION_VERSION">
-						<Original>v0.921</Original>
+						<Original>v0.922</Original>
 				</Key>
 				<Key ID="STR_MISSION_DESCRIPTION">
 						<Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
@@ -33,56 +33,56 @@
 						<French>Fermer</French>
 						<German>Schliessen</German>
 						<Spanish>Cerca</Spanish>
-						<Russian>Закрыть</Russian>			
+						<Russian>Закрыть</Russian>
 				</Key>
 				<Key ID="STR_FAR_Need_Medic1">
 						<Original>I need a medic!</Original>
 						<French>J'ai besoin d'un medic!</French>
 						<German>Ich brauche einen Sanitäter!</German>
 						<Spanish>¡Necesito un médico!</Spanish>
-						<Russian>Мне нужен медик!</Russian>			
+						<Russian>Мне нужен медик!</Russian>
 				</Key>
 				<Key ID="STR_FAR_Need_Medic2">
 						<Original>I'm hit! Medic!</Original>
 						<French>Je suis touché! Medic!</French>
 						<German>Wurde getroffen! Sanitäter!</German>
 						<Spanish>Herido! Médico!</Spanish>
-						<Russian>Меня подстрелили! Медик!</Russian>			
+						<Russian>Меня подстрелили! Медик!</Russian>
 				</Key>
 				<Key ID="STR_FAR_Need_Medic3">
 						<Original>I'm down! Medic!</Original>
 						<French>Je suis à terre! Medic!</French>
 						<German>Ich bin gefallen! Sanitäter!</German>
 						<Spanish>Estoy abatido! Médico!</Spanish>
-						<Russian>Я ранен! Медик!</Russian>			
+						<Russian>Я ранен! Медик!</Russian>
 				</Key>
 				<Key ID="STR_REVIVE_LABEL">
 						<Original>YOU ARE WOUNDED</Original>
 						<French>VOUS ETES BLESSE</French>
 						<German>DU BIST VERWUNDET</German>
 						<Spanish>ESTAS HERIDO</Spanish>
-						<Russian>ВЫ БЕЗ СОЗНАНИЯ</Russian>			
+						<Russian>ВЫ БЕЗ СОЗНАНИЯ</Russian>
 				</Key>
 				<Key ID="STR_BUILD_ACTION">
 						<Original>-- BUILD --</Original>
 						<French>-- CONSTRUIRE --</French>
 						<German>-- BAUEN --</German>
 						<Spanish>-- CONSTRUIR --</Spanish>
-						<Russian>-- ОБЕСПЕЧЕНИЕ --</Russian>			
+						<Russian>-- ОБЕСПЕЧЕНИЕ --</Russian>
 				</Key>
 				<Key ID="STR_BUILD_TITLE">
 						<Original>BUILD MENU</Original>
 						<French>CONSTRUCTION</French>
 						<German>BAUMENUE</German>
 						<Spanish>MENU DE CONSTRUCCIÓN</Spanish>
-						<Russian>ОБЕСПЕЧЕНИЕ</Russian>			
+						<Russian>ОБЕСПЕЧЕНИЕ</Russian>
 				</Key>
 				<Key ID="STR_BUILD_BUTTON">
 						<Original>Build</Original>
 						<French>Construire</French>
 						<German>Bauen</German>
 						<Spanish>Construir</Spanish>
-						<Russian>Построить</Russian>			
+						<Russian>Построить</Russian>
 				</Key>
 				<Key ID="STR_MANPOWER">
 						<Original>Manpower</Original>
@@ -96,21 +96,21 @@
 						<French>Munitions</French>
 						<German>Munition</German>
 						<Spanish>Munición</Spanish>
-						<Russian>Вооружение</Russian>			
+						<Russian>Вооружение</Russian>
 				</Key>
 				<Key ID="STR_FUEL">
 						<Original>Fuel</Original>
 						<French>Carburant</French>
 						<German>Treibstoff</German>
 						<Spanish>Combustible</Spanish>
-						<Russian>Топливо</Russian>			
+						<Russian>Топливо</Russian>
 				</Key>
 				<Key ID="STR_BLEEDOUT_MESSAGE">
 						<Original>Bleedout in %1 seconds</Original>
 						<French>Mort dans %1 secondes</French>
 						<German>Ausbluten in %1 Sekunden</German>
 						<Spanish>Desangrado en %1 segundos</Spanish>
-						<Russian>Вы умрёте через %1 секунд</Russian>			
+						<Russian>Вы умрёте через %1 секунд</Russian>
 				</Key>
 				<Key ID="STR_BLEEDOUT_STABILIZED">
 						<Original>Stabilized</Original>
@@ -124,7 +124,7 @@
 						<French>-- Rotation</French>
 						<German>-- Rotieren</German>
 						<Spanish>-- Rotación</Spanish>
-						<Russian>-- Вращать</Russian>						
+						<Russian>-- Вращать</Russian>
 				</Key>
 				<Key ID="STR_PLACEMENT">
 						<Original>-- Build</Original>
@@ -138,7 +138,7 @@
 						<French>-- Construire et Répéter</French>
 						<German>-- Bauen und Wiederholen</German>
 						<Spanish>-- Construir y repetir</Spanish>
-						<Russian>-- Поставить и повторить</Russian>						
+						<Russian>-- Поставить и повторить</Russian>
 				</Key>
 				<Key ID="STR_CANCEL">
 						<Original>-- Cancel</Original>
@@ -448,7 +448,7 @@
 						<German>Wiederverwerten</German>
 						<Spanish>Reciclar</Spanish>
 						<Russian>Утилизировать</Russian>
-						
+
 				</Key>
 				<Key ID="STR_RECYCLING_CANCEL">
 						<Original>Cancel</Original>
@@ -532,14 +532,14 @@
 						<French>FOB SECURISEE</French>
 						<German>FOB SICHER</German>
 						<Spanish>FOB SEGURA</Spanish>
-						<Russian>FOB В БЕЗОПАСНОСТИ</Russian>						
+						<Russian>FOB В БЕЗОПАСНОСТИ</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_FOBSAFE_TEXT">
 						<Original>FOB %1 is no longer under threat.</Original>
 						<French>La FOB %1 n'est plus menacée.</French>
 						<German>FOB %1 ist ausser Gefahr.</German>
 						<Spanish>FOB %1 ya no está bajo amenaza</Spanish>
-						<Russian>FOB %1 больше не находится под угрозой.</Russian>						
+						<Russian>FOB %1 больше не находится под угрозой.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_FOBATTACKED_TITLE">
 						<Original>FOB ATTACKED</Original>
@@ -581,7 +581,7 @@
 						<French>Forces hostiles repérées près de %1.</French>
 						<German>Gegnerische Truppen nahe %1 gesichtet.</German>
 						<Spanish>Fuerzas hosstiles avistadas cerca de %1</Spanish>
-						<Russian>Вражеские силы замечены рядом с %1.</Russian>						
+						<Russian>Вражеские силы замечены рядом с %1.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_INTEL_TITLE">
 						<Original>NEW INTELLIGENCE</Original>
@@ -595,7 +595,7 @@
 						<French>FOB hostile près de %1.</French>
 						<German>Gegnerische FOB nahe %1.</German>
 						<Spanish>FOB hostil cerca de %1</Spanish>
-						<Russian>Вражеская FOB рядом %1.</Russian>						
+						<Russian>Вражеская FOB рядом %1.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_PRISONER_TEXT">
 						<Original>We have interrogated a prisoner.</Original>
@@ -642,7 +642,7 @@
 						<French>VICTOIRE BLUFOR</French>
 						<German>BLUFOR SIEGREICH</German>
 						<Spanish>VICTORIA DE BLUFOR</Spanish>
-						<Russian>СИНИЕ ПОБЕДИЛИ</Russian>						
+						<Russian>СИНИЕ ПОБЕДИЛИ</Russian>
 				</Key>
 				<Key ID="STR_VICTORY_TEXT">
 						<Original>You have liberated Altis from the CSAT oppression.</Original>
@@ -783,7 +783,7 @@
 						<German>Sektoren verloren:</German>
 						<Spanish>Sectores perdidos:</Spanish>
 						<Russian>Зон потеряно:</Russian>
-						
+
 				</Key>
 				<Key ID="STR_STATS_15">
 						<Original>FOBs built:</Original>
@@ -819,7 +819,7 @@
 						<German>Gegnerische Truppen gerufen:</German>
 						<Spanish>Grupos hostiles de combate llamados:</Spanish>
 						<Russian>Вражеских боевых групп вызвано:</Russian>
-						
+
 				</Key>
 				<Key ID="STR_STATS_20">
 						<Original>Hostile reinforcements called:</Original>
@@ -847,7 +847,7 @@
 						<French>Pertes de Spartan 01 :</French>
 						<German>Hoehe der Spartan 01 Verluste:</German>
 						<Spanish>Número de pérdidas de Spartan 01:</Spanish>
-						<Russian>Количество потерянных Spartan 01:</Russian>						
+						<Russian>Количество потерянных Spartan 01:</Russian>
 				</Key>
 				<Key ID="STR_STATS_24">
 						<Original>Player deaths:</Original>
@@ -1392,7 +1392,7 @@
 						<French>Conducteur</French>
 						<German>Fahrer</German>
 						<Spanish>Conductor</Spanish>
-						<Russian>Водитель</Russian>						
+						<Russian>Водитель</Russian>
 				</Key>
 				<Key ID="STR_GUNNER">
 						<Original>Gunner</Original>
@@ -1839,7 +1839,7 @@
 						<French>Lieu de déploiement :</French>
 						<German>Einsatzposition:</German>
 						<Spanish>Lugar para el despliegue:</Spanish>
-						<Original>Позиция размешения:</Original>
+						<Russian>Позиция размешения:</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM">
 						<Original>CSAT aggresivity</Original>
@@ -2061,7 +2061,7 @@
 						</Spanish>
 						<Russian>
 						&lt;br/&gt;
-						Приветствую вас господа, и добро пожаловать на остров Altis. &lt;br/&gt; &lt;br/&gt; 
+						Приветствую вас господа, и добро пожаловать на остров Altis. &lt;br/&gt; &lt;br/&gt;
 						Силы CSAT внезапно напали на остров и жестоко подавили все очаги сопротивления. Они теперь контролируют весь остров, но благодаря вашим усилиям, это продлится недолго. &lt;br/&gt; &lt;br/&gt;
 						Ваша задача проста: освободить Altis. &lt;br/&gt; &lt;br/&gt;
 						Путь к победе будет долгим и опасным. Вы должны будете захватить множество секторов и приобрести необходимые ресурсы для улучшения количества и качества сил BLUFOR, участвующих в этой кампании. &lt;br/&gt; &lt;br/&gt;
@@ -2465,6 +2465,34 @@
 						&lt;t size='1.15' color='#ffa000'&gt;Вторичная награда: Всё вооружение, которое можно получить за утилизацию груза конвоя.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\convoy_obj.jpg'/&gt;&lt;/t&gt;</Russian>
+				</Key>
+
+
+				<!-- Added in v0.922 -->
+				<Key ID="STR_PARAM_BLUFOR_DEFENDERS">
+						<Original>BLUFOR defenders in owned sectors</Original>
+						<French>Défenseurs BLUFOR dans les secteurs capturés</French>
+						<Russian>BLUFOR защитники в захваченных зонах</Russian>
+				</Key>
+				<Key ID="STR_PARAM_AUTODANGER">
+						<Original>Auto-danger behaviour on BLUFOR forces</Original>
+						<French>Comportement 'danger' automatique sur les forces BLUFOR</French>
+						<Russian>Авто-опасность для сил BLUFOR</Russian>
+				</Key>
+				<Key ID="STR_PARAM_FOBS_COUNT">
+						<Original>Maximum number of FOBs allowed</Original>
+						<French>Nombre maximal de FOBs autorisé</French>
+						<Russian>Максимальное количество FOB</Russian>
+				</Key>
+				<Key ID="STR_HINT_FOBS_EXCEEDED">
+						<Original>You are not allowed to deploy more than %1 FOBs at the same time.</Original>
+						<French>Vous n'êtes pas autorisé à déployer plus de %1 FOBs en même temps.</French>
+						<Russian>Вам не разрешено развертывать более %1 FOB одновременно.</Russian>
+				</Key>
+				<Key ID="STR_HINT_LOADOUT_LOADED">
+						<Original>%1 loadout successfully loaded.</Original>
+						<French>Equipement %1 chargé avec succès.</French>
+						<Russian>Снаряжение %1 успешно загружено.</Russian>
 				</Key>
 		</Package>
 </Project>

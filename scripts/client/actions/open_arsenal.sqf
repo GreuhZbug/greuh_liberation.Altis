@@ -4,6 +4,7 @@ load_loadout = 0;
 edit_loadout = 0;
 respawn_loadout = 0;
 load_from_player = -1;
+exit_on_load = 0;
 createDialog "liberation_arsenal";
 
 _saved_loadouts = profileNamespace getVariable "bis_fnc_saveInventory_data";
@@ -61,16 +62,37 @@ if ( count _loadplayers > 0 ) then {
 	ctrlEnable [ 204, false ];
 };
 
-((findDisplay 5251) displayCtrl 201) ctrlAddEventHandler [ "mouseButtonDblClick" , { load_loadout = 1; } ];
+((findDisplay 5251) displayCtrl 201) ctrlAddEventHandler [ "mouseButtonDblClick" , { exit_on_load = 1; load_loadout = 1; } ];
 
-waitUntil { !dialog || !(alive player) || load_loadout > 0 || edit_loadout > 0 || respawn_loadout > 0 || load_from_player >= 0 };
+while { dialog && (alive player) && edit_loadout == 0 } do {
 
-if ( load_loadout > 0 ) then {
+	if ( load_loadout > 0 ) then {
+		private _loaded_loadout = _loadouts_data select (lbCurSel 201);
+		[player, [profileNamespace, _loaded_loadout]] call bis_fnc_loadInventory;
+		[ player ] call F_correctLaserBatteries;
+		hint format [ localize "STR_HINT_LOADOUT_LOADED", _loaded_loadout];
+		if ( exit_on_load == 1 ) then {
+			closeDialog 0;
+		};
+		load_loadout = 0;
+	};
 
-	[player, [profileNamespace, _loadouts_data select (lbCurSel 201) ]] call bis_fnc_loadInventory;
-	closeDialog 0;
-	sleep 1;
-	[ player ] call F_correctLaserBatteries;
+	if ( respawn_loadout > 0 ) then {
+		GRLIB_respawn_loadout = [ player, ["repetitive"] ] call F_getLoadout;
+		hint localize "STR_MAKE_RESPAWN_LOADOUT_HINT";
+		respawn_loadout = 0;
+	};
+
+	if ( load_from_player >= 0 ) then {
+		_playerselected = ( _loadplayers select load_from_player ) select 1;
+		if ( alive _playerselected ) then {
+			[ player,  [ _playerselected, ["repetitive"] ] call F_getLoadout ] call F_setLoadout;
+			hint format [ localize "STR_LOAD_PLAYER_LOADOUT_HINT", name _playerselected ];
+		};
+		load_from_player = 0;
+	};
+
+	sleep 0.1;
 };
 
 if ( edit_loadout > 0 ) then {
@@ -79,17 +101,7 @@ if ( edit_loadout > 0 ) then {
 	[ "Open", false ] spawn BIS_fnc_arsenal;
 };
 
-if ( respawn_loadout > 0 ) then {
-	closeDialog 0;
-	GRLIB_respawn_loadout = [ player, ["repetitive"] ] call F_getLoadout;
-	hint localize "STR_MAKE_RESPAWN_LOADOUT_HINT";
-};
 
-if ( load_from_player >= 0 ) then {
-	_playerselected = ( _loadplayers select load_from_player ) select 1;
-	if ( alive _playerselected ) then {
-		[ player,  [ _playerselected, ["repetitive"] ] call F_getLoadout ] call F_setLoadout;
-		hint format [ localize "STR_LOAD_PLAYER_LOADOUT_HINT", name _playerselected ];
-	};
-	closeDialog 0;
-};
+
+
+
