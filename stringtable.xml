@@ -2472,22 +2472,27 @@
 				<Key ID="STR_PARAM_BLUFOR_DEFENDERS">
 						<Original>BLUFOR defenders in owned sectors</Original>
 						<French>Défenseurs BLUFOR dans les secteurs capturés</French>
+						<Russian>BLUFOR защитники в захваченных зонах</Russian>
 				</Key>
 				<Key ID="STR_PARAM_AUTODANGER">
 						<Original>Auto-danger behaviour on BLUFOR forces</Original>
 						<French>Comportement 'danger' automatique sur les forces BLUFOR</French>
+						<Russian>Авто-опасность для сил BLUFOR</Russian>
 				</Key>
 				<Key ID="STR_PARAM_FOBS_COUNT">
 						<Original>Maximum number of FOBs allowed</Original>
 						<French>Nombre maximal de FOBs autorisé</French>
+						<Russian>Максимальное количество FOB</Russian>
 				</Key>
 				<Key ID="STR_HINT_FOBS_EXCEEDED">
 						<Original>You are not allowed to deploy more than %1 FOBs at the same time.</Original>
 						<French>Vous n'êtes pas autorisé à déployer plus de %1 FOBs en même temps.</French>
+						<Russian>Вам не разрешено развертывать более %1 FOB одновременно.</Russian>
 				</Key>
 				<Key ID="STR_HINT_LOADOUT_LOADED">
 						<Original>%1 loadout successfully loaded.</Original>
 						<French>Equipement %1 chargé avec succès.</French>
+						<Russian>Снаряжение %1 успешно загружено.</Russian>
 				</Key>
 		</Package>
 </Project>
