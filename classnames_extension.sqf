@@ -18,6 +18,7 @@ ammobox_o_typename = nil;				// Default "Box_East_AmmoVeh_F";
 opfor_ammobox_transport = nil;			// Default "O_Truck_03_transport_F";    // Make sure this thing can transport ammo boxes (see box_transport_config down below) otherwise things will break
 commander_classname = nil;				// Default "B_officer_F"
 crewman_classname = nil;				// Default "B_crew_F";
+pilot_classname = nil;					// Default "B_Helipilot_F";
 
 
 
