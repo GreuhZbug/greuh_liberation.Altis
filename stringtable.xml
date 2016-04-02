@@ -2489,5 +2489,45 @@
 						<Original>%1 loadout successfully loaded.</Original>
 						<French>Equipement %1 chargé avec succès.</French>
 				</Key>
+				<Key ID="STR_SECONDARY_MISSION2">
+						<Original>Search and Rescue</Original>
+						<French>Recherche et Sauvetage</French>
+				</Key>
+				<Key ID="STR_SECONDARY_BRIEFING2">
+						<Original>
+						&lt;t size='1.3' color='#ffa000'&gt;SEARCH AND RESCUE&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						We have lost contact with a recon helicopter on mission behind the enemy lines. We believe the chopper was shot down by hostile forces.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						The helicopter may have crashlanded anywhere in a large zone around its last known position. Your mission is to retrieve the chopper crew and their precious intel. Hostile forces may have found them first, so you must be quick, careful, and ready to engage.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+						</Original>
+						<French>
+						&lt;t size='1.3' color='#ffa000'&gt;RECHERCHE ET SAUVETAGE&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Nous avons perdu le contact avec un helicoptère de reconnaissance en mission derrière les lignes ennemies. Il a probablement été abattu par les forces hostiles.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						L'hélicopter a pu finir sa course dans une large zone autour de sa dernière position connue. Votre mission est de retrouver l'équipage et sa précieuse intel. Les forces hostiles les auront peut-être déjà retrouvés, votre action doit donc être rapide et décisive.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+						</French>
+				</Key>
 		</Package>
 </Project>

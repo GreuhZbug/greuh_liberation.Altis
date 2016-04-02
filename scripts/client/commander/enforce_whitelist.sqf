@@ -7,7 +7,7 @@ sleep 1;
 
 _commanderobj = [] call F_getCommander;
 if ( !isNull _commanderobj ) then {
-	if ( player == _commanderobj ) then {
+	if ( player == _commanderobj && !([] call F_isAdmin)) then {
 
 		[] call compileFinal preprocessFileLineNumbers "whitelist.sqf";
 

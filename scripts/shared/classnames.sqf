@@ -17,6 +17,7 @@ if ( isNil "ammobox_o_typename" ) then { ammobox_o_typename = "Box_East_AmmoVeh_
 if ( isNil "opfor_ammobox_transport" ) then { opfor_ammobox_transport = "O_Truck_03_transport_F"; };
 if ( isNil "commander_classname" ) then { commander_classname = "B_officer_F"; };
 if ( isNil "crewman_classname" ) then { crewman_classname = "B_crew_F" };
+if ( isNil "pilot_classname" ) then { crewman_classname = "B_Helipilot_F" };
 
 infantry_units = [
 	["B_soldier_F",2,0,0],
@@ -490,3 +491,5 @@ GRLIB_ignore_colisions_when_building = [
 	"TMR_Autorest_Georef",
 	"Land_ClutterCutter_large_F"
 ];
+GRLIB_sar_wreck = "Land_Wreck_Heli_Attack_01_F";
+GRLIB_sar_fire = "test_EmptyObjectForFireBig";
