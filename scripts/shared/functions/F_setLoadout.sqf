@@ -347,6 +347,4 @@ if(vehicle _target == _target) then {
 	_target setPosATL (getPosATL _target);
 };
 
-hint "aa";
-
 [ _target ] call F_correctLaserBatteries;

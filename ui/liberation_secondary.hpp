@@ -66,7 +66,7 @@ class liberation_secondary {
 		w = (0.15 * safezoneW);
 		h = (0.2 * safezoneH);
 		colorText[] = {1.0, 1.0, 1.0, 1.0};
-		text = "res\secondary\fob_hunting.paa";
+		text = "";
 	};
 	class Header : StdHeader{
 		x = 0.2 * safezoneW + safezoneX - (BORDERSIZE);

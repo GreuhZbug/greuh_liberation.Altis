@@ -11,16 +11,25 @@ if ( _sector in sectors_military ) then {
 	_squad_type = blufor_squad_inf;
 };
 
-_grp = creategroup WEST;
-{ _x createUnit [ markerpos _sector, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach _squad_type;
+if ( GRLIB_blufor_defenders ) then {
+	_grp = creategroup WEST;
+	{ _x createUnit [ markerpos _sector, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach _squad_type;
+};
+
+sleep 3;
+
+_grp setCombatMode "GREEN";
+_grp setBehaviour "COMBAT";
 
 sleep 60;
 
 _ownership = [ markerpos _sector ] call F_sectorOwnership;
 if ( _ownership == WEST ) exitWith {
-	{
-		if ( alive _x ) then { deleteVehicle _x };
-	} foreach units _grp;
+	if ( GRLIB_blufor_defenders ) then {
+		{
+			if ( alive _x ) then { deleteVehicle _x };
+		} foreach units _grp;
+	};
 };
 
 [ [ _sector, 1 ] , "remote_call_sector" ] call BIS_fnc_MP;
@@ -54,6 +63,8 @@ if ( GRLIB_endgame == 0 ) then {
 
 sleep 60;
 
-{
-	if ( alive _x ) then { deleteVehicle _x };
-} foreach units _grp;
+if ( GRLIB_blufor_defenders ) then {
+	{
+		if ( alive _x ) then { deleteVehicle _x };
+	} foreach units _grp;
+};

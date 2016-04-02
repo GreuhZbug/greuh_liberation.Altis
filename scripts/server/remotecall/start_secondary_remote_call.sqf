@@ -6,16 +6,10 @@ if ( isNil "used_positions" ) then { used_positions = []; };
 GRLIB_secondary_starting = true; publicVariable "GRLIB_secondary_starting";
 params [ "_mission_index" ];
 
-// FOB Hunting
-if ( _mission_index == 0 ) then {
-	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
-	[] call fob_hunting;
-};
+resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
 
-// Convoy Hijack
-if ( _mission_index == 1 ) then {
-	resources_intel = resources_intel - ( GRLIB_secondary_missions_costs select _mission_index );
-	[] call convoy_hijack;
-};
+if ( _mission_index == 0 ) then { [] call fob_hunting; };
+if ( _mission_index == 1 ) then { [] call convoy_hijack; };
+if ( _mission_index == 2 ) then { [] call search_and_rescue; };
 
 GRLIB_secondary_starting = false; publicVariable "GRLIB_secondary_starting";

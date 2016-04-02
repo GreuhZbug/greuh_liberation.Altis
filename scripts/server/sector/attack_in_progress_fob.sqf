@@ -6,16 +6,25 @@ sleep 5;
 _ownership = [ _thispos ] call F_sectorOwnership;
 if ( _ownership != EAST ) exitWith {};
 
-_grp = creategroup WEST;
-{ _x createUnit [ _thispos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach blufor_squad_inf;
+if ( GRLIB_blufor_defenders ) then {
+	_grp = creategroup WEST;
+	{ _x createUnit [ _thispos, _grp,'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]']; } foreach blufor_squad_inf;
+};
+
+sleep 3;
+
+_grp setCombatMode "GREEN";
+_grp setBehaviour "COMBAT";
 
 sleep 60;
 
 _ownership = [ _thispos ] call F_sectorOwnership;
 if ( _ownership == WEST ) exitWith {
-	{
-		if ( alive _x ) then { deleteVehicle _x };
-	} foreach units _grp;
+	if ( GRLIB_blufor_defenders ) then {
+		{
+			if ( alive _x ) then { deleteVehicle _x };
+		} foreach units _grp;
+	};
 };
 
 [ [ _thispos , 1 ] , "remote_call_fob" ] call BIS_fnc_MP;
@@ -51,6 +60,8 @@ if ( GRLIB_endgame == 0 ) then {
 
 sleep 60;
 
-{
-	if ( alive _x ) then { deleteVehicle _x };
-} foreach units _grp;
+if ( GRLIB_blufor_defenders ) then {
+	{
+		if ( alive _x ) then { deleteVehicle _x };
+	} foreach units _grp;
+};

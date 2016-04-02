@@ -23,6 +23,9 @@ if ( isMultiplayer ) then {
 	GRLIB_shorter_nights = ["ShorterNights",0] call bis_fnc_getParamValue;
 	GRLIB_ammo_bounties = [ "AmmoBounties",0] call bis_fnc_getParamValue;
 	GRLIB_remote_sensors = [ "DisableRemoteSensors",0] call bis_fnc_getParamValue;
+	GRLIB_blufor_defenders = [ "BluforDefenders",1] call bis_fnc_getParamValue;
+	GRLIB_autodanger = [ "Autodanger",0] call bis_fnc_getParamValue;
+	GRLIB_maximum_fobs = [ "MaximumFobs",26] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -48,6 +51,9 @@ if ( isMultiplayer ) then {
 	GRLIB_shorter_nights = 0;
 	GRLIB_ammo_bounties = 1;
 	GRLIB_remote_sensors = 0;
+	GRLIB_blufor_defenders = 1;
+	GRLIB_autodanger = 0;
+	GRLIB_maximum_fobs = 26;
 
 	{
 		if ( (_x != player) && (_x distance (getmarkerpos "respawn_west") < 200 ) ) then {
@@ -67,3 +73,5 @@ if ( GRLIB_permissions_param == 1 ) then { GRLIB_permissions_param = true } else
 if ( GRLIB_use_whitelist == 1 ) then { GRLIB_use_whitelist = true } else { GRLIB_use_whitelist = false };
 if ( GRLIB_shorter_nights == 1 ) then { GRLIB_shorter_nights = true } else { GRLIB_shorter_nights = false };
 if ( GRLIB_ammo_bounties == 1 ) then { GRLIB_ammo_bounties = true } else { GRLIB_ammo_bounties = false };
+if ( GRLIB_blufor_defenders == 1 ) then { GRLIB_blufor_defenders = true } else { GRLIB_blufor_defenders = false };
+if ( GRLIB_autodanger == 1 ) then { GRLIB_autodanger = true } else { GRLIB_autodanger = false };

@@ -6,19 +6,26 @@ dostartsecondary = 0;
 
 waitUntil { dialog };
 
-lbAdd [ 101, localize "STR_SECONDARY_MISSION0" ];
-lbAdd [ 101, localize "STR_SECONDARY_MISSION1" ];
+{
+	lbAdd [ 101, localize _x ];
+} foreach [
+	"STR_SECONDARY_MISSION0",
+	"STR_SECONDARY_MISSION1"
+	//,"STR_SECONDARY_MISSION2"
+];
 
 private [ "_oldchoice", "_images", "_briefings", "_missioncost" ];
 
 _images = [
-	"res\secondary\fob_hunting.paa",
-	"res\secondary\convoy_hijack.paa"
+	"res\secondary\fob_hunting.jpg",
+	"res\secondary\convoy_hijack.jpg",
+	"res\secondary\sar.jpg"
 ];
 
 _briefings = [
 	"STR_SECONDARY_BRIEFING0",
-	"STR_SECONDARY_BRIEFING1"
+	"STR_SECONDARY_BRIEFING1",
+	"STR_SECONDARY_BRIEFING2"
 ];
 
 _oldchoice = -1;
