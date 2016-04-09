@@ -3,8 +3,7 @@ _first_objective = _this select 0;
 if ( combat_readiness >= 75 ) then { _planes_number = (floor (random 2)) };
 
 _plane_type = opfor_air call BIS_fnc_selectRandom;
-_air_spawnpoint = ( [ [ "opfor_airspawn1","opfor_airspawn2","opfor_airspawn3","opfor_airspawn4","opfor_airspawn5","opfor_airspawn6","opfor_airspawn7" ]
-				, [ _first_objective ] , { (markerpos _x) distance _input0 }, "ASCEND"] call BIS_fnc_sortBy ) select 0;
+_air_spawnpoint = ( [ sectors_airspawn , [ _first_objective ] , { (markerpos _x) distance _input0 }, "ASCEND"] call BIS_fnc_sortBy ) select 0;
 _air_grp = createGroup EAST;
 
 for [ {_idx=0},{_idx < _planes_number},{_idx=_idx+1}] do {

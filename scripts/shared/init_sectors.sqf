@@ -5,12 +5,18 @@ sectors_factory = [];
 sectors_military = [];
 sectors_tower = [];
 sectors_opfor = [];
+sectors_airspawn = [];
 
 {
 	_ismissionsector = false;
 	_tempmarker = toArray _x; _tempmarker resize 11;
 	if ( toString _tempmarker == "opfor_point" ) then {
 		sectors_opfor pushback _x;
+		_ismissionsector = false;
+	};
+	_tempmarker = toArray _x; _tempmarker resize 14;
+	if ( toString _tempmarker == "opfor_airspawn" ) then {
+		sectors_airspawn pushback _x;
 		_ismissionsector = false;
 	};
 	_tempmarker = toArray _x; _tempmarker resize 7;

@@ -26,7 +26,6 @@ _sector_despawn_tickets = 12;
 
 _popfactor = 1;
 if ( GRLIB_unitcap < 1 ) then { _popfactor = GRLIB_unitcap; };
-if ( GRLIB_unitcap > 1 ) then { _popfactor = sqrt ( GRLIB_unitcap ) };
 
 if ( isNil "active_sectors" ) then { active_sectors = [] };
 if ( _sector in active_sectors ) exitWith {};
