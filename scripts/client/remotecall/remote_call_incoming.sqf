@@ -13,8 +13,6 @@ if ( time > GRLIB_last_incoming_notif_time + 60 ) then {
 
 	[ "lib_incoming", [ _attack_location_name ] ] call BIS_fnc_showNotification;
 
-	hint format ["%1 %2", _attack_location_name, _attack_destination];
-
 	private [ "_mrk" ];
 	_mrk = createMarkerLocal [ "opfor_incoming_marker", _attack_destination];
 	"opfor_incoming_marker" setMarkerTypeLocal "selector_selectedMission";
