@@ -2,7 +2,7 @@
 <Project name="Liberation">
 		<Package name="Liberation">
 				<Key ID="STR_MISSION_TITLE">
-						<Original>Liberation 0.923 KP Edit</Original>
+						<Original>Liberation 0.923</Original>
 				</Key>
 				<Key ID="STR_MISSION_VERSION">
 						<Original>v0.923</Original>
