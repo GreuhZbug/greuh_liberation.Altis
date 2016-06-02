@@ -34,7 +34,7 @@ class Params
 		title = $STR_PARAMS_DAYDURATION;
 		values[] = { 48, 24, 16, 12, 9.6, 8, 6.8, 6, 4.8, 4, 3, 2.4, 2, 1.6, 1, 0.66, 0.5, 0.375, 0.25, 0.1875, 0.125, 0.11 };
 		texts[] = { "0.5", "1", "1.5", "2", "2.5", "3","3.5","4","5","6","8","10","12","15","24","36","48","64","96","128","192","240" };
-		default = 12;
+		default = 8;
 	};
 	class ShorterNights {
 		title = $STR_SHORTER_NIGHTS_PARAM;
@@ -70,7 +70,7 @@ class Params
 		title = $STR_PARAMS_REVIVE;
 		values[] = { 3, 2, 1, 0 };
 		texts[] = { $STR_PARAMS_REVIVE3, $STR_PARAMS_REVIVE2, $STR_PARAMS_REVIVE1, $STR_PARAMS_DISABLED };
-		default = 3;
+		default = 0;
 	};
 	class Civilians{
 		title = $STR_PARAMS_CIVILIANS;
@@ -96,11 +96,17 @@ class Params
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
 		default = 1;
 	};
+	class CivPenalties{
+		title = $STR_CIV_PENALTIES;
+		values[] = {1,0};
+		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
+		default = 1;
+	};
 	class HaloJump{
 		title = $STR_HALO_PARAM;
 		values[] = {1,5,10,15,20,30,0};
 		texts[] = { $STR_HALO_PARAM1, $STR_HALO_PARAM2, $STR_HALO_PARAM3, $STR_HALO_PARAM4, $STR_HALO_PARAM5, $STR_HALO_PARAM6, $STR_PARAMS_DISABLED };
-		default = 1;
+		default = 0;
 	};
 	class BluforDefenders{
 		title = $STR_PARAM_BLUFOR_DEFENDERS;
@@ -148,13 +154,13 @@ class Params
 		title = $STR_PARAMS_INTRO;
 		values[] = { 1, 0 };
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 1;
+		default = 0;
 	};
 	class DeploymentCinematic {
 		title = $STR_PARAMS_DEPLOYMENTCAMERA;
 		values[] = { 1, 0 };
 		texts[] = { $STR_PARAMS_ENABLED, $STR_PARAMS_DISABLED };
-		default = 1;
+		default = 0;
 	};
 	class FirstFob {
 		title = $STR_PARAMS_FIRSTFOB;
@@ -166,7 +172,7 @@ class Params
 		title = $STR_WHITELIST_PARAM;
 		values[] = { 1, 0 };
 		texts[] = { $STR_WHITELIST_ENABLED, $STR_PARAMS_DISABLED };
-		default = 0;
+		default = 1;
 	};
 	class WipeSave1{
 		title = $STR_WIPE_TITLE;

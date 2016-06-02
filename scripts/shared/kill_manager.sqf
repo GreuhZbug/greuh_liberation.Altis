@@ -50,6 +50,14 @@ if ( isServer ) then {
 			stats_civilians_killed = stats_civilians_killed + 1;
 			if ( isPlayer _killer ) then {
 				stats_civilians_killed_by_players = stats_civilians_killed_by_players + 1;
+				
+				if ( GRLIB_civ_penalties ) then {
+					private [ "_civ_penalty" ];
+
+					_civ_penalty = 25;
+					resources_ammo = resources_ammo - _civ_penalty;
+					[ [ name _unit, _civ_penalty, _killer ] , "remote_call_civ_penalty" ] call BIS_fnc_MP;
+				};
 			};
 		};
 

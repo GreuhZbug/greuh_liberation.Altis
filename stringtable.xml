@@ -1965,9 +1965,13 @@
 				<Key ID="STR_AMMO_BOUNTIES">
 						<Original>Ammunition bounties</Original>
 						<French>Primes de munitions</French>
-						<German>Munitions Kopfgelder</German>
+						<German>Munition als Kopfgelder</German>
 						<Spanish>Recompensas de munición</Spanish>
 						<Russian>Вознаграждение за уничтожение техники ВООРУЖЕНИЕ</Russian>
+				</Key>
+				<Key ID="STR_CIV_PENALTIES">
+						<Original>Penalty for killing civilians</Original>
+						<German>Strafe für zivile Verluste</German>
 				</Key>
 				<Key ID="STR_BOUNTY_MESSAGE">
 						<Original>Bounty of %1 for a %2 destroyed by %3</Original>
