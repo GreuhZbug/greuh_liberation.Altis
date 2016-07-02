@@ -600,12 +600,14 @@
 				<Key ID="STR_NOTIFICATION_PRISONER_TEXT">
 						<Original>We have interrogated a prisoner.</Original>
 						<French>Nous avons interroger un prisonnier.</French>
+						<German>Wir haben einen Gefangenen verhört.</German>
 						<Spanish>Hemos interrogado a un prisionero.</Spanish>
 						<Russian>Мы можем допросить пленного.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_DOCUMENT_TEXT">
 						<Original>We have found secret documents.</Original>
 						<French>Nous avons trouvé des documents secrets</French>
+						<German>Wir haben geheime Dokumente gefunden.</German>
 						<Spanish>Hemos encontrado documentos secretos</Spanish>
 						<Russian>Мы нашли секретные документы.</Russian>
 				</Key>
@@ -1677,42 +1679,49 @@
 				<Key ID="STR_HALO_PARAM1">
 						<Original>Enabled - No cooldown</Original>
 						<French>Activé - Pas de cooldown</French>
+						<German>Aktiviert - Keine Abklingzeit</German>
 						<Spanish>Activado - Sin tiempo de espera</Spanish>
 						<Russian>Вкл - без перерыва</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM2">
 						<Original>Enabled - 5 minutes cooldown</Original>
 						<French>Activé - Cooldown de 5 minutes</French>
+						<German>Aktiviert - 5 Minuten Abklingzeit</German>
 						<Spanish>Activado - 5 minutos de espera</Spanish>
 						<Russian>Вкл - 5 минут перерыв</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM3">
 						<Original>Enabled - 10 minutes cooldown</Original>
 						<French>Activé - Cooldown de 10 minutes</French>
+						<German>Aktiviert - 10 Minuten Abklingzeit</German>
 						<Spanish>Activado - 10 minutos de espera</Spanish>
 						<Russian>Вкл - 10 минут перерыв</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM4">
 						<Original>Enabled - 15 minutes cooldown</Original>
 						<French>Activé - Cooldown de 15 minutes</French>
+						<German>Aktiviert - 15 Minuten Abklingzeit</German>
 						<Spanish>Activado - 15 minutos de espera</Spanish>
 						<Russian>Вкл - 15 минут перерыв</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM5">
 						<Original>Enabled - 20 minutes cooldown</Original>
 						<French>Activé - Cooldown de 20 minutes</French>
+						<German>Aktiviert - 20 Minuten Abklingzeit</German>
 						<Spanish>Activado - 20 minutos de espera</Spanish>
 						<Russian>Вкл - 20 минут перерыв</Russian>
 				</Key>
 				<Key ID="STR_HALO_PARAM6">
 						<Original>Enabled - 30 minutes cooldown</Original>
 						<French>Activé - Cooldown de 30 minutes</French>
+						<German>Aktiviert - 30 Minuten Abklingzeut</German>
 						<Spanish>Activado - 30 minutos de espera</Spanish>
 						<Russian>Вкл - 30 минут перерыв</Russian>
 				</Key>
 				<Key ID="STR_HALO_DENIED_COOLDOWN">
 						<Original>Can't perform HALO jump, you are on cooldown for %1 more minute(s).</Original>
 						<French>Impossible d'effectuer un suat HALO, vous êtes en cooldown pour encore %1 minute(s).</French>
+						<German>HALO Sprung noch nicht möglich. Verbleibende Abklingzeit von %1 Minuten.</German>
 						<Spanish>No puedes saltar en HALO, te quedan %1 minuto(s) de espera.</Spanish>
 						<Russian>HALO прыжок недоступен, подождите %1 минут</Russian>
 				</Key>
@@ -1844,187 +1853,227 @@
 				<Key ID="STR_AGGRESSIVITY_PARAM">
 						<Original>CSAT aggresivity</Original>
 						<French>Aggressivité du CSAT</French>
+						<German>CSAT Aggressivität</German>
 						<Spanish>Agresividad del CSAT</Spanish>
 						<Russian>Уровень обеспокоенности CSAT</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM0">
 						<Original>Anemic</Original>
 						<French>Anémique</French>
+						<German>Mutlos</German>
 						<Spanish>Anémica</Spanish>
 						<Russian>Вяло</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM1">
 						<Original>Weak</Original>
 						<French>Faible</French>
+						<German>Schwacht</German>
 						<Spanish>Floja</Spanish>
 						<Russian>Слабо</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM2">
 						<Original>Normal</Original>
 						<French>Normale</French>
+						<German>Normal</German>
 						<Spanish>Normal</Spanish>
 						<Russian>Нормально</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM3">
 						<Original>Strong</Original>
 						<French>Forte</French>
+						<German>Stark</German>
 						<Spanish>Fuerte</Spanish>
 						<Russian>Сильно</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM4">
 						<Original>Extreme</Original>
 						<French>Extreme</French>
+						<German>Extrem</German>
 						<Spanish>Extrema</Spanish>
 						<Russian>Очень сильно</Russian>
 				</Key>
 				<Key ID="STR_WEATHER_PARAM">
 						<Original>Weather</Original>
 						<French>Meteo</French>
+						<German>Wetter</German>
 						<Spanish>Clima</Spanish>
 						<Russian>Погода</Russian>
 				</Key>
 				<Key ID="STR_WEATHER_PARAM1">
 						<Original>Always sunny</Original>
 						<French>Soleil permanent</French>
+						<German>Immer sonnig</German>
 						<Spanish>Siempre soleado</Spanish>
 						<Russian>Всегда солнечно</Russian>
 				</Key>
 				<Key ID="STR_WEATHER_PARAM2">
 						<Original>Random without rain</Original>
 						<French>Aléatoire sans pluie</French>
+						<German>Zufällig ohne Regen</German>
 						<Spanish>Aleatorio sin lluvia</Spanish>
 						<Russian>Случайно, без дождя</Russian>
 				</Key>
 				<Key ID="STR_WEATHER_PARAM3">
 						<Original>Random</Original>
 						<French>Aléatoire</French>
+						<German>Zufällig</German>
 						<Spanish>Aleatorio</Spanish>
 						<Russian>Случайно</Russian>
 				</Key>
 				<Key ID="STR_SHORTER_NIGHTS_PARAM">
 						<Original>Shorter nights</Original>
 						<French>Nuits plus courtes</French>
+						<German>Kürzere Nächte</German>
 						<Spanish>Noches más cortas</Spanish>
 						<Russian>Короткие ночи</Russian>
 				</Key>
 				<Key ID="STR_REPAIRING">
 						<Original>Repairing</Original>
 						<French>Réparation</French>
+						<German>Repariert</German>
 						<Spanish>Reparando</Spanish>
 						<Russian>Ремонт</Russian>
 				</Key>
 				<Key ID="STR_REARMING">
 						<Original>Rearming in %1s</Original>
 						<French>Réarmement dans %1s</French>
+						<German>Aufmunitioniert in %1s</German>
 						<Spanish>Rearmando en %1s</Spanish>
 						<Russian>Перезарядка за %1с</Russian>
 				</Key>
 				<Key ID="STR_REFUELING">
 						<Original>Refueling</Original>
 						<French>Ravitaillement</French>
+						<German>Auftanken</German>
 						<Spanish>Repostando</Spanish>
 						<Russian>Заправка</Russian>
 				</Key>
 				<Key ID="STR_INTEL">
 						<Original>-- TAKE INTEL</Original>
 						<French>-- PRENDRE INTEL</French>
+						<German>-- GEHEIMDIENSTINFORMATIONEN AUFNEHMEN</German>
 						<Spanish>-- COGER INTELIGENCIA</Spanish>
 						<Russian>-- ПОЛУЧИТЬ РАЗВЕДДАННЫЕ</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_OBJECTIVES">
 						<Original>-- SECONDARY OBJECTIVES</Original>
 						<French>-- OBJECTIFS SECONDAIRES</French>
+						<German>-- SEKUNDÄRE ZIELE</German>
 						<Spanish>-- OBJETIVOS SECUNDARIOS</Spanish>
 						<Russian>-- ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ</Russian>
 				</Key>
 				<Key ID="STR_AMMO_BOUNTIES">
 						<Original>Ammunition bounties</Original>
 						<French>Primes de munitions</French>
+						<German>Munition als Kopfgelder</German>
 						<Spanish>Recompensas de munición</Spanish>
 						<Russian>Вознаграждение за уничтожение техники ВООРУЖЕНИЕ</Russian>
+				</Key>
+				<Key ID="STR_CIV_PENALTIES">
+						<Original>Penalty for killing civilians</Original>
+						<German>Strafe für zivile Verluste</German>
 				</Key>
 				<Key ID="STR_BOUNTY_MESSAGE">
 						<Original>Bounty of %1 for a %2 destroyed by %3</Original>
 						<French>Prime de %1 pour un %2 détruit par %3</French>
+						<German>Kopfgeld von %1 für die Zerstörung von %2 durch %3</German>
 						<Spanish>Premio de %1 por un %2 destruido por %3</Spanish>
 						<Russian>+%1 едениц ВООРУЖЕНИЯ за %2 уничтоженный игроком %3</Russian>
+				</Key>
+				<Key ID="STR_CIV_PENALTY_MESSAGE">
+						<Original>Penalty of %1 for killing of civilian named %2 by %3</Original>
+						<German>Strafe von %1 für die Ermordung des Zivilisten %2 durch %3</German>
 				</Key>
 				<Key ID="STR_SECONDARY_OBJECTIVES_TITLE">
 						<Original>SECONDARY OBJECTIVES</Original>
 						<French>OBJECTIFS SECONDAIRES</French>
+						<German>SEKUNDÄRE ZIELE</German>
 						<Spanish>OBJETIVOS SECUNDARIOS</Spanish>
 						<Russian>ДОПОЛНИТЕЛЬНЫЕ ЗАДАЧИ</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_OBJECTIVES_START">
 						<Original>Start</Original>
 						<French>Commencer</French>
+						<German>Beginnen</German>
 						<Spanish>Empezar</Spanish>
 						<Russian>Старт</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_INTEL">
 						<Original>Current intel: %1</Original>
 						<French>Intel actuelle : %1</French>
+						<German>Aktuelle Geheimdienstinformationen: %1</German>
 						<Spanish>Inteligencia actual: %1</Spanish>
 						<Russian>Разведданные: %1</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_NOT_ENOUGH_INTEL">
 						<Original>Insufficient intel points</Original>
 						<French>Points d'intel insuffisants</French>
+						<German>Zu wenig Geheimdienstinformationen</German>
 						<Spanish>Puntos de inteligencia insuficientes</Spanish>
 						<Russian>Недостаточно информации</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_IN_PROGRESS">
 						<Original>Secondary mission already in progress</Original>
 						<French>Mission secondaire déjà en cours</French>
+						<German>Sekundäre Mission läuft bereits</German>
 						<Spanish>Misión secundaria ya en curso</Spanish>
 						<Russian>Дополнительная задача уже есть</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_INCOMING_TEXT">
 						<Original>Hostile forces are heading towards %1.</Original>
 						<French>Les forces hostiles se dirigent vers %1.</French>
+						<German>Feindliche Streitkräfte bewegen sich auf %1 zu.</German>
 						<Russian>Замечена вражеская группа рядом с %1</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_CSAT_CONVOY">
 						<Original>CSAT Convoy</Original>
 						<French>Convoi CSAT</French>
+						<German>CSAT Konvoi</German>
 						<Russian>Конвой CSAT</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_CSAT_CONVOY_WP">
 						<Original>Waypoint</Original>
 						<French>Point de passage</French>
+						<German>Wegpunkt</German>
 						<Russian>Путевая точка</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_CONVOY_DESTROYED_TEXT">
 						<Original>CSAT Convoy neutralized.</Original>
 						<French>Convoi CSAT neutralisé.</French>
+						<German>CSAT Konvoi neutralisiert.</German>
 						<Russian>Конвой CSAT нейтрализован.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_CONVOY_SPOTTED_TEXT">
 						<Original>CSAT Convoy near %1.</Original>
 						<French>Convoi CSAT près de %1.</French>
+						<German>CSAT Konvoi nahe %1.</German>
 						<Russian>Конвой CSAT рядом с %1.</Russian>
 				</Key>
 				<Key ID="STR_TUTO_GOTIT">
 						<Original>Got it!</Original>
 						<French>J'ai pigé !</French>
+						<German>Verstanden</German>
 						<Spanish>Lo tengo!</Spanish>
 						<Russian>Вас понял!</Russian>
 				</Key>
 				<Key ID="STR_TUTO_ACTION">
 						<Original>-- TUTORIAL</Original>
 						<French>-- TUTORIAL</French>
+						<German>-- TUTORIAL</German>
 						<Spanish>-- TUTORIAL</Spanish>
 						<Russian>-- РУКОВОДСТВО</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE">
 						<Original>TUTORIAL</Original>
 						<French>TUTORIAL</French>
+						<German>TUTORIAL</German>
 						<Spanish>TUTORIAL</Spanish>
 						<Russian>РУКОВОДСТВО</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE1">
 						<Original>1. Introduction</Original>
 						<French>1. Introduction</French>
+						<German>1. Einführung</German>
 						<Spanish>1. Introducción</Spanish>
 						<Russian>1. Введение</Russian>
 				</Key>
@@ -2049,6 +2098,16 @@
 						Dans vos efforts, le soutien de la population locale sera primordial, alors soyez toujours sûrs de toujours savoir sur quoi vous tirez.&lt;br/&gt; &lt;br/&gt;
 						Des questions ?&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>
+						&lt;br/&gt;
+						Guten Tag meine Herren und willkommen im Operationsgebiet.&lt;br/&gt;
+						Die CSAT Streitkräfte haben uns mit einer brutalen und überwältigenden Offensive überrascht. Sie kontrollieren nun das gesamte Gebiet. Aber Dank Ihrer kommenden Bemühungen wird dies nicht lange anhalten.&lt;br/&gt;
+						Ihre Aufgabe ist einfach: Erobern Sie das Operationsgebiet zurück.&lt;br/&gt; &lt;br/&gt;
+						Der Weg zum Sieg wird lang und gefährlich. Sie werden verschiedene Sektoren erobern und alle nötigen Ressourcen zusammentragen müssen, um die Quantität und Qualität der BLUFOR Streitkräfte in dieser Operation zu verbessern.&lt;br/&gt; &lt;br/&gt;
+						Zusätzlich werden die CSAT Streitkräfte definitiv auf Ihre Vorstöße reagieren. Sie werden sekundäre Ziele erfüllen müssen, um den besser ausgerüsteten und in der Überzahl befindlichen Feind zu schwächen.&lt;br/&gt; &lt;br/&gt;
+						Bei Ihren Anstrengungen werden Sie die Hilfe der lokalen Bevölkerung benötigen. Vergewissern Sie sich also immer worauf Sie schießen.&lt;br/&gt; &lt;br/&gt;
+						Fragen?&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>
 						&lt;br/&gt;
 						Buenos días señores, y bienvenidos a Altis:
@@ -2073,6 +2132,7 @@
 				<Key ID="STR_TUTO_TITLE2">
 						<Original>2. Starting the campaign</Original>
 						<French>2. Débuter la campagne</French>
+						<German>2. Starten der Kampagne</German>
 						<Spanish>2. Comenzando la campaña</Spanish>
 						<Russian>2. С чего начать</Russian>
 				</Key>
@@ -2091,6 +2151,13 @@
 						A votre point de départ vous avez la possibilité de choisir vos armes avec un Arsenal complet. Vous trouverez également à proximité une FOB empaquetée, le Huron SPARTAN-01 quelques hélicoptères de transport.&lt;br/&gt; &lt;br/&gt;
 						Vous devrez emmener le container en utilisant le Huron ou le Ghosthawk à votre disposition (sauf si vous avez fait le choix de démarrer avec une première FOB). Vous pouvez déployer cette première FOB où bon vous semble, alors à vous de choisir le bon endroit pour débuter la campagne.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						Sie beginnen ihre Kampagne in einer sicheren Zone, welche sich CSAT nicht wagen würde anzugreifen. Ihre erste Entscheidung ist die Wahl des Ortes von dem aus Sie ihre Operation starten. Am Anfang können Sie lediglich an der Startbasis eingesetzt werden. Doch umso weiter Sie in der Operation voranschreiten, umso mehr Möglichkeiten, wie vorgeschobene Operationsbasen (FOBs) und mobile Respawns, werden Sie besitzen.&lt;br/&gt; &lt;br/&gt;
+						An Ihrer Startposition können Sie Ihre Ausrüstung aus einem kompletten Arsenal wählen. Sie werden außerdem ihre erste FOB in einen Container verpackt vorfinden. Weiterhin stehen Ihnen der Spartan-01 Huron und einige weitere Transporthelikopter zur verfügung.&lt;br/&gt; &lt;br/&gt;
+						Sie werden den FOB Container mit einem Huron oder Ghosthawk in das Operationsgebiet bringen müssen (außer Sie haben ausgewählt dass die erste FOB bereits gebaut sein soll). Sie können Ihre erste FOB bauen wo immer Sie möchten. Also liegt es an Ihnen einen geeigneten Ort zu finden von dem aus Sie die Operation starten wollen.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2109,6 +2176,7 @@
 				<Key ID="STR_TUTO_TITLE3">
 						<Original>3. Objective</Original>
 						<French>3. Objectif</French>
+						<German>3. Ziele</German>
 						<Spanish>3. Objetivo</Spanish>
 						<Russian>3. Цели и задачи</Russian>
 				</Key>
@@ -2122,6 +2190,11 @@
 						L’objectif premier de la campagne est de bouter le CSAT hors d'Altis. Pour cela, vous devez libérer les 7 villes principales : Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros et Molos. C’est l’unique condition de victoire de cette campagne.&lt;br/&gt; &lt;br/&gt;
 						Mais ces villes sont bien difficile à attaquer avec des ressources limitées et un CSAT bien établi. Pour arriver à vos fins, vous devrez donc capturer un grand nombre de secteurs, avec chacun leur propre utilité.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Das Primärziel der Operation ist es die CSAT Streitkräfte aus dem Gebiet zu vertreiben. Um dies zu erreichen werden Sie die folgenden 7 Hauptstädte erobern müssen: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros und Molos. Dies ist die einzige Bedingung für unseren Sieg in dieser Operation.&lt;br/&gt; &lt;br/&gt;
+						Allerdings sind diese Städte eine wirklich harte Nuss, da es Ihnen an Ressourcen mangeln wird und die CSAT Streitkräfte genug Zeit hatten sich dort einzugraben.&lt;br/&gt; &lt;br/&gt;
+						Um Erfolg zu haben, werden Sie eine große Anzahl weiterer Sektoren erobern müssen. Alle mit ihrer eigenen Nützlichkeit.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;
 						El objetivo principal de la campaña es expulsar al CSAT de Altis. Para cconseguirlo, deberás liberar las 7 poblaciones principales de la isla: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros y Molos. Esta es la única condición de victoria para completar la campaña.&lt;br/&gt; &lt;br/&gt;
 						Pero estas ciudades serás bastante dificiles de atacar con los recursos limitados que disponemos y el CSAT esta fuertemente afianzado en la zona.&lt;br/&gt; &lt;br/&gt;
@@ -2136,6 +2209,7 @@
 				<Key ID="STR_TUTO_TITLE4">
 						<Original>4. Sectors</Original>
 						<French>4. Secteurs</French>
+						<German>4. Sektoren</German>
 						<Spanish>4. Sectores</Spanish>
 						<Russian>4. Зоны</Russian>
 				</Key>
@@ -2156,6 +2230,14 @@
 						- Les tours radio : contrôlées par le CSAT, les tours radio permettent de donner  l'alerte et d'appeler des renforts si un secteur a proximité est attaqué. La vitesse de réaction des renforts dépendra de la distance entre la tour de radio et le secteur en question. Contrôlées par l'OTAN, les tours de radio permettront d'avoir des informations sur les mouvements hostiles à proximité en utilisant leurs communications radio.&lt;br/&gt; &lt;br/&gt;
 						- Les villes majeures : il y en a 7 à capturer, Kevala, Athira, Pyrgos, Agios Dionysios,  Zaros, Paros et Molos. Une fois toutes ces villes sous le contrôle de l'OTAN, vous gagnez la partie.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Die Sektoren sind in 5 verschiedene Arten unterteilt:&lt;br/&gt; &lt;br/&gt;
+						- Interessante Orte: Normalerweise kleine oder mittlere Dörfer. Jeder dieser Orte wird bei einer Eroberung Ihre Kapazitäten für die Truppenrekrutierung erhöhen.&lt;br/&gt; &lt;br/&gt;
+						- Militärbasen: Beherbergt eine große Anzahl von CSAT Truppen. Allerdings auch eine Menge an Munition, welche nützlich dafür wären Ihre Feuerkraft zu erhöhen. Jedenfalls werden diese Orte stark verteidigt und benötigen eine große und gut koordinierte Offensive.&lt;br/&gt; &lt;br/&gt;
+						- Fabriken: Fabriken versorgen Sie mit dem nötigen Kraftstoff, welchen Sie brauchen um mehr Fahrzeuge bereitzustellen.&lt;br/&gt; &lt;br/&gt;
+						- Funktürme: Sind diese unter CSAT Kontrolle, werden Funktürme genutzt um Verstärkung zu rufen sobald ein Sektor in der Nähe angegriffen wird. Die Reaktionszeit hängt von der Distanz zwischen Funkturm und Sektor ab. Ist der Funkturm unter NATO Kontrolle, erhalten Sie hilfreiche Informationen über feindliche Truppenbewegungen im Umkreis des Funkturms.&lt;br/&gt; &lt;br/&gt;
+						- Hauptstädte: Es gibt sieben Hauptstädte: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros und Molos. Wenn alle diese Hauptstädte unter NATO Kontrolle gebracht wurden, haben Sie gewonnen.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;
 						Los sectores se encuentran repartidos en 5 tipos diferentes:&lt;br/&gt; &lt;br/&gt;
 						-Puntos de interés: Generalmente pueblos pequeños y medianos, cada punto que controles aumenta tu capacidad de reclutamiento de tropas.&lt;br/&gt; &lt;br/&gt;
@@ -2176,6 +2258,7 @@
 				<Key ID="STR_TUTO_TITLE5">
 						<Original>5. Resources</Original>
 						<French>5. Ressources</French>
+						<German>5. Ressourcen</German>
 						<Spanish>5. Recursos</Spanish>
 						<Russian>5. Ресурсы</Russian>
 				</Key>
@@ -2196,6 +2279,14 @@
 						- &lt;t color='#ff0000'&gt;AMMO&lt;/t&gt; : Les munitions servent à armer véhicules, tanks et soldats d'élite. Elle peut être stockée sans limite et consommée quand c'est nécessaire. Les munitions sont contenues dans des caisses qui peuvent être -récupérées dans l'enceinte des bases militaires. Ces caisses doivent être amenées à une FOB par la voie terrestre ou aérienne pour augmenter votre stock de munitions. &lt;br/&gt; &lt;br/&gt;
 						- &lt;t color='#ffff00'&gt;FUEL&lt;/t&gt; : Le carburant sert à motoriser tous les véhicules, certains étant plus gourmands que d'autre. Le niveau de carburant dépend du nombre d'usines sous le contrôle de l'OTAN. &lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\tuto\ress.jpg'/&gt;&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						Während dieser Operation haben Sie mit drei Arten von Ressourcne zu haushalten:&lt;br/&gt; &lt;br/&gt;
+						- &lt;t color='#00ff00'&gt;MANNSTÄRKE:&lt;/t&gt; Die Höhe der Mannstärke ist abhängig von den von Ihnen kontrollierten Dörfern. Eine größere Mannstärke ermöglicht es Ihnen die Quantität und Qualität Ihrer Bodentruppen zu erhöhen. &lt;br/&gt; &lt;br/&gt;
+						- &lt;t color='#ff0000'&gt;MUNITION:&lt;/t&gt; Munition ist notwendig um bewaffnete Fahrzeuge, Panzer und Elitesoldaten anzufordern. Sie kann für immer gelagert werden und wird nur dann genutzt wenn notwendig. Munition ist in Kisten verstaut, welche von Militärbasen bereitgestellt werden. Diese Kisten müssen zu Ihrer FOB, per Truck oder Helikopter, gebracht werden. Dort müssen sie Wiederverwertet werden, um Ihren Munitionsvorrat aufzufüllen.&lt;br/&gt; &lt;br/&gt;
+						- &lt;t color='#ffff00'&gt;KRAFTSTOFF:&lt;/t&gt; Kraftstoff wird von jedem Fahrzeug benötigt, wobei einige mehr und andere weniger verbrauchen. Die Höhe Ihres Kraftstoffvorrats bemisst sich an der Anzahl der von der NATO kontrollierten Fabriken.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\ress.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2223,6 +2314,7 @@
 				<Key ID="STR_TUTO_TITLE6">
 						<Original>6. Alert level</Original>
 						<French>6. Niveau d'alerte</French>
+						<German>6. Alarmstatus</German>
 						<Spanish>6. Nivel de alerta</Spanish>
 						<Russian>6. Уровень тревоги</Russian>
 				</Key>
@@ -2235,6 +2327,10 @@
 						Le CSAT ne vous laissera pas reprendre son tout nouveau territoire sans réagir. En début de campagne les forces hostiles se limiteront aux garnisons des différentes bases militaires, mais plus vous deviendrez menaçants en libérant de nouveaux secteurs, et plus le CSAT fera venir de renforts en hommes et en matériel pour vous contrer. &lt;br/&gt; &lt;br/&gt;
 						Pour limiter la capacité de réaction du CSAT, vous devrez veiller à effectuer des opérations annexes qui constitueront par exemple à détruire leurs bases de ravitaillement. Ce n'est pas une obligation pour réussir cette campagne, mais si vous ignorez le niveau d'alerte trop longtemps, attendez vous à des ennuis. &lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						CSAT wird es Ihnen nicht gestatten das gesamte Gebiet zu erobern, ohne dabei zu reagieren. Wenn Sie Ihre Operation beginnen, werden die feindlichen Streitkräfte in erster Linie innerhalb der Militärbasen versammelt sein. Wenn Sie allerdings, durch die Einnahme von Sektoren, zu einer größeren Gefahr werden, werden die CSAT Streitkräfte anfangen mehr Verstärkung, Männer und Ausrüstung in Bewegung setzen um Ihnen gegenüberzutreten.&lt;br/&gt; &lt;br/&gt;
+						Um die Operationsmöglichkeiten der CSAT Streitkräfte zu verringern, müssen Sie sekundäre Ziele erfüllen wie z.B. die Zerstörung ihrer logistischen Standorte. Dies ist nicht zwingend notwendig um die Operation erfolgreich zu beenden, doch wenn Sie den Alarmstatus zu lange ignorieren werden Sie in große Schwierigkeiten geraten.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;
 						El CSAT no permitirá ser expulsado de los terriotrios sin ofrecer resistencia. Al comienzo de la campaña, las fuerzas hostiles sólo están compuestas por tropas aguarnicionadas en bases militares. Según vayas creciendo como amenaza y liberando sectores, el CSAT irá solicitando más refuerzos en forma de hombres y recursos para contrarrestar.	&lt;br/&gt; &lt;br/&gt;
 						Para limitar la capacidad operativa del CSAT, tendrás que completar objetivos secundarios, los cuales consisten en destruir sus bases logísticas, y otra serie de objetivos auxiliares. Esto no es un requerimiento para ganar la campaña, pero ignorar el nivel de alerta por mucho tiempo, supondrá un aumento significativo en la cantidad de efectivos enemigos desplegados.	&lt;br/&gt; &lt;br/&gt;
@@ -2246,6 +2342,7 @@
 				<Key ID="STR_TUTO_TITLE7">
 						<Original>7. Construction</Original>
 						<French>7. Construction</French>
+						<German>7. Konstruktion</German>
 						<Spanish>7. Construcción</Spanish>
 						<Russian>7. Строительство</Russian>
 				</Key>
@@ -2258,6 +2355,10 @@
 						Pour mener à bien vos objectifs vous disposez d'une capacité de construction qui vous permet de déployer des unités, des véhicules, des défenses pour vos FOB, des fortifications et autres. En fonction de vos ressources, bien sur. &lt;br/&gt; &lt;br/&gt;
 						Pour utilisez le système de construction de la mission, vous devez vous trouver dans les 100 mètres du QG d'une FOB. Une option de construction apparaîtra alors. &lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Um Ihre Bemühungen zu unterstützen haben Sie die Baumöglichkeiten die Ihnen erlauben Einheiten, Fahrzeuge, Verteidigungen, Befestigungen und weiteres zu platzieren. Dies ist natürlich abhängig von Ihren Ressourcen.&lt;br/&gt; &lt;br/&gt;
+						Das Konstruktionssystem ist verfübar, wenn Sie sich innerhalb von 100 Metern um Ihre FOB befinden. Eine Mausradmenü Option wird in dem Fall erscheinen.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>
 						Para ayudarte a conseguir los objetivos, se dispone de la capacidad de construcción que permite desplegar unidades, vehiculos, defensas, fortificaciones... dependiendo de los recursos disponibles que tengas, claro. &lt;br/&gt; &lt;br/&gt;
 						El sistema de construcción está disponible siempre que te sitúes a menos de 100 metros de una FOB. Aparece en forma de opción en el menú contextual.&lt;br/&gt; &lt;br/&gt;
@@ -2269,6 +2370,7 @@
 				<Key ID="STR_TUTO_TITLE8">
 						<Original>8. Deploying another FOB</Original>
 						<French>8. Déployer une autre FOB</French>
+						<German>8. Errichtung einer weiteren FOB</German>
 						<Spanish>8. Desplegar otra FOB</Spanish>
 						<Russian>8. Развёртывание новой FOB</Russian>
 				</Key>
@@ -2281,6 +2383,10 @@
 						Pour déployer une nouvelle FOB, rendez vous dans le menu de construction, onglet logistique, et choisissez de construire un container de FOB ou un camion FOB (la même chose, avec des roues).&lt;br/&gt; &lt;br/&gt;
 						Vous pourrez ensuite déplacer le container où vous voudrez déployer la nouvelle FOB. Attention, vous ne pourrez pas construire votre FOB à l'intérieur d'un secteur contrôlable, ou à moins de 2 kilomètres d'une autre FOB.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Um eine brandneue FOB zu bauen, gehen Sie in das Konstruktionsmenü und baue im Logistikreiter einen FOB Container oder FOB Truck (Gleichgestellt, nur eben auf Rädern).&lt;br/&gt; &lt;br/&gt;
+						Im Anschluss können Sie den FOB Container dorthin bringen wohin Sie möchten und Ihre neue FOB errichten. Bedenken Sie allerdings, dass sie eine FOB nicht innerhalb eines Sektors oder innerhalb von 2km um eine andere FOB herum bauen können.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;
 						Para construir una nueva FOB, es necesario ir al menú de construcción, pestaña de logística, y construir un contenedor FOB o un camión FOB (lo mismo, pero con ruedas).&lt;br/&gt; &lt;br/&gt;
 						Entonces podrás mover el contenedor donde quieras y desplegar tu nueva FOB. Hay que tener en cuenta que no es posible construir una FOB dentro de un sector de control, o a menos de 2km de otra FOB.&lt;br/&gt; &lt;br/&gt;
@@ -2292,6 +2398,7 @@
 				<Key ID="STR_TUTO_TITLE9">
 						<Original>9. Secondary objectives</Original>
 						<French>9. Missions secondaires</French>
+						<German>9. Sekundäre Ziele</German>
 						<Spanish>9. Objetivos secundarios</Spanish>
 						<Russian>9. Дополнительные задания</Russian>
 				</Key>
@@ -2306,6 +2413,11 @@
 						Cet interrogatoire mené dans le plus grand respect des conventions de Geneviève vous permettra d'obtenir des informations plus ou moins précises sur l'emplacement d'une base de ravitaillement du CSAT.&lt;br/&gt; &lt;br/&gt;
 						En vous rendant sur place vous devrez trouver l'emplacement exact de votre cible et y détruire tout véhicule ou container utile au ravitaillement des forces CSAT. Remplir cet objectif provoquera une réduction importante du niveau d'alerte, et donc de l'efficacité des forces hostiles.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Wenn Sie Sektoren erobern, könnte es passieren dass sich feindliche Kräfte ergeben. Sie können dann Gefangene nehmen und müssen diese zu einer FOB bringen, damit diese dort verhört werden können.&lt;br/&gt; &lt;br/&gt;
+						Dieses Verhör, natürlich mit großen Respekt gegenüber den Genver Konventionen, wird Ihnen eine gewisse Menge an Geheimdienstinformationen über die Position von logistischen Standorten der CSAT Streitkräfte einbringen.&lt;br/&gt; &lt;br/&gt;
+						Wenn Sie in das Gebiet eines solchen Standortes eindringen, werden Sie die genaue Position ausmachen müssen. Im Anschluss ist es erforderlich alle Fahrzeuge und Container vor Ort, welche den CSAT Streitkräften im Bezug auf Nachschub nützlich sein könnten, mit Sprengstoff oder anderweitig zu zerstören. Ein erfolgreicher Abschluss dieser Aufgabe wird den Alarmstatus der CSAT Streitkräfte und damit einhergehend ihre Effizienz verringern.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>
 						Cuando capturas sectores, en ocasiones algunos enemigos se rendirán. Esto te permitira capturar prisioneros y llevarlos a una FOB cercana para ser interrogados.&lt;br/&gt; &lt;br/&gt;
 						Dicho interrogatorio, efectuado bajo el máximo respeto a las reglas de las convenciones de Ginebra, te permitirá obtener información mas o menos precisa sobre la posición de una base logística del CSAT.&lt;br/&gt; &lt;br/&gt;
@@ -2319,6 +2431,7 @@
 				<Key ID="STR_TUTO_TITLE10">
 						<Original>10. Commanding</Original>
 						<French>10. Commandement</French>
+						<German>10. Oberkommando</German>
 						<Spanish>10. Comandancia</Spanish>
 						<Russian>10. Командование</Russian>
 				</Key>
@@ -2335,6 +2448,12 @@
 						Le commandant dispose par ailleurs d'options de construction supplémentaires pour obtenir des véhicules avec équipage ou des escouades entières pré-définies.&lt;br/&gt; &lt;br/&gt;
 						Ce rôle n'est pas obligatoire, mais fortement recommandé pour les petits groupes de joueurs.&lt;br/&gt; &lt;br/&gt;
 						</French>
+						<German>&lt;br/&gt;
+						Wenn ein Spieler den Commander Slot (der letzte Slot in der Lobby) besetzt, dann bekommt dieser Zugang zur Zeus Oberfläche durch drücken der entsprechenden Taste (normalerweise Z).&lt;br/&gt; &lt;br/&gt;
+						Diese Oberfläche erlaubt es die NATO Truppen auf einer 3D Ansicht oder der Karte zu kommandieren.&lt;br/&gt; &lt;br/&gt;
+						Zusätzlich erhält der Commander weitere Bauoptionen, welche es ihm erlauben bemannte Fahrzeuge oder komplette Infanteriegruppen anzufordern.&lt;br/&gt; &lt;br/&gt;
+						Dieser Posten ist nicht zwingend notwendig, allerdings ist es sehr empfohlen ihn zu besetzen.&lt;br/&gt; &lt;br/&gt;
+						</German>
 						<Spanish>&lt;br/&gt;
 						Cuando un jugador usa el slot de Comandante (el último de la lista), se tiene acceso a una interfaz Zeus pulsando la tecla correspondiente (tecla U por defecto).&lt;br/&gt; &lt;br/&gt;
 						Esta interfaz te permite comandar a las fuerzas de la OTAN desde un punto de vista en 3D o desde el mapa.&lt;br/&gt; &lt;br/&gt;
@@ -2350,6 +2469,7 @@
 				<Key ID="STR_SECONDARY_MISSION0">
 						<Original>FOB Hunting</Original>
 						<French>Chasse à la FOB</French>
+						<German>FOB Jagd</German>
 						<Spanish>Caza de FOB</Spanish>
 						<Russian>Охота за вражескими FOB</Russian>
 				</Key>
@@ -2384,6 +2504,21 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
+						<German>
+						&lt;t size='1.3' color='#ffa000'&gt;FOB JAGD&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Die CSAT Streitkräfte benutzen ein Netzwerk von kleineren Nachschubbasen hinter den Frontlinien. Diese zu zerstören würden die CSAT Nachschublinien und ihre Reaktionsmöglichkeiten stark einschränken.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Ihr Auftrag ist es alle Nachschubkapazitäten (Container und Trucks) zu zerstören. Leider ist unser Geheimdienst nicht in der Lage Ihnen die genaue Position des Ortes mitzuteilen. Sie werden das Ziel innerhalb der makierten roten Zone auf der Karte suchen müssen.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Kosten: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: CSAT Alarmstatus wird um 40% reduziert&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+						</German>
 						<Spanish>
 						&lt;t size='1.3' color='#ffa000'&gt;CAZA DE FOB&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2413,6 +2548,7 @@
 				<Key ID="STR_SECONDARY_MISSION1">
 						<Original>Convoy Hijack</Original>
 						<French>Interception de convoi</French>
+						<German>Konvoi Hinterhalt</German>
 						<Russian>Налёт на конвой врага</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_BRIEFING1">
@@ -2450,6 +2586,23 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\convoy_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
+						<German>
+						&lt;t size='1.3' color='#ffa000'&gt;KONVOI HINTERHALT&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Die CSAT Streitkräfte benutzen Straßenkonvois um ihre Verteidigungspositionen zu versorgen. Diese Konvois abzufangen würden ihre Nachschublinien effektiv unterbrechen und außerdem könnten wir die Möglichkeit nutzen um selbst eine große Menge an Munition zu erbeuten.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Ihr Auftrag ist es den CSAT Konvoi auf jede erdenkliche Weise zu stoppen. Sie können ihn zerstören oder übernehmen, um soviel Munition wie möglich zu erbeuten. Das Ziel wird auf Ihrer Karte aufgeklärt.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Kosten: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: CSAT Alarmstatus wird um 15% reduziert&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Seiten Belohnung: Soviel Munition wie Sie erbeuten können.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\secondary\convoy_obj.jpg'/&gt;&lt;/t&gt;
+						</German>
 						<Russian>&lt;t size='1.3' color='#ffa000'&gt;НАЛЁТ НА КОНВОЙ&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
@@ -2472,31 +2625,37 @@
 				<Key ID="STR_PARAM_BLUFOR_DEFENDERS">
 						<Original>BLUFOR defenders in owned sectors</Original>
 						<French>Défenseurs BLUFOR dans les secteurs capturés</French>
+						<German>BLUFOR Verteidiger in besetzten Sektoren</German>
 						<Russian>BLUFOR защитники в захваченных зонах</Russian>
 				</Key>
 				<Key ID="STR_PARAM_AUTODANGER">
 						<Original>Auto-danger behaviour on BLUFOR forces</Original>
 						<French>Comportement 'danger' automatique sur les forces BLUFOR</French>
+						<German>Auto-Gefahr Verhalten bei BLUFOR Kräften</German>
 						<Russian>Авто-опасность для сил BLUFOR</Russian>
 				</Key>
 				<Key ID="STR_PARAM_FOBS_COUNT">
 						<Original>Maximum number of FOBs allowed</Original>
 						<French>Nombre maximal de FOBs autorisé</French>
+						<German>Maximale Anzahl an erlaubten FOBs</German>
 						<Russian>Максимальное количество FOB</Russian>
 				</Key>
 				<Key ID="STR_HINT_FOBS_EXCEEDED">
 						<Original>You are not allowed to deploy more than %1 FOBs at the same time.</Original>
 						<French>Vous n'êtes pas autorisé à déployer plus de %1 FOBs en même temps.</French>
+						<German>Sie haben nicht die Erlaubnis mehr als %1 FOBs zur selben Zeit zu errichten.</German>
 						<Russian>Вам не разрешено развертывать более %1 FOB одновременно.</Russian>
 				</Key>
 				<Key ID="STR_HINT_LOADOUT_LOADED">
 						<Original>%1 loadout successfully loaded.</Original>
 						<French>Equipement %1 chargé avec succès.</French>
+						<German>Ausrüstungsset %1 erfolgreich geladen.</German>
 						<Russian>Снаряжение %1 успешно загружено.</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_MISSION2">
 						<Original>Search and Rescue</Original>
 						<French>Recherche et Sauvetage</French>
+						<German>Suchen und Zerstören</German>
 				</Key>
 				<Key ID="STR_SECONDARY_BRIEFING2">
 						<Original>
@@ -2533,6 +2692,23 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
+						<German>
+						&lt;t size='1.3' color='#ffa000'&gt;SUCHEN UND ZERSTÖREN&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Wir haben den Kontakt mit einem Aufklärungshelikopter, der auf einer Mission hinter feindlichen Linien war, verloren. Wir vermuten, dass der Helikotper von feindlichen Kräften abgeschossen wurde.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1'&gt;
+						Der Helikopter muss irgendwo in einem größeren Bereich um seine letzte bekannte Position notgelandet sein. Ihr Auftrag ist es die Besatzung zu finden und deren Aufklärungsbericht zu beschaffen. Feindliche Kräfte könnten sie bereits gefunden haben, also müssen sie schnell, vorsichtig und auf alles vorbereitet sein.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
+						&lt;br/&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
+						&lt;br/&gt;&lt;br/&gt;
+						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
+						</German>
 				</Key>
 		</Package>
 </Project>
