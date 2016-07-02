@@ -38,7 +38,8 @@ while { true } do {
 	if ( !GRLIB_fatigue ) then {
 		player enableStamina false;
 	};
-	player setCustomAimCoef 0.25;
+	player setCustomAimCoef 0.35;
+	player setUnitRecoilCoefficient 0.6;
 
 	_dialog = createDialog "liberation_deploy";
 	deploy = 0;
