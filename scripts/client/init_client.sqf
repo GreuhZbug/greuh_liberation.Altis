@@ -60,4 +60,4 @@ player addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 
 [] execVM "onPlayerRespawn.sqf";
 
-[ player ] joinSilent (createGroup WEST);
+[ player ] joinSilent (createGroup GRLIB_side_friendly);

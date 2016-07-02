@@ -1,5 +1,14 @@
 GRLIB_save_key = "GREUH_LIBERATION_SAVEGAME";	// change this value if you want different savegames on different map
 
+GRLIB_side_friendly = WEST;
+GRLIB_side_enemy = EAST;
+GRLIB_side_resistance = RESISTANCE;
+GRLIB_side_civilian = CIVILIAN;
+GRLIB_respawn_marker = "respawn_west";
+GRLIB_color_friendly = "ColorBLUFOR";
+GRLIB_color_enemy = "ColorOPFOR";
+GRLIB_color_enemy_bright = "ColorRED";
+
 GRLIB_sector_size = 1000;
 GRLIB_capture_size = 175;
 GRLIB_radiotower_size = 2500;

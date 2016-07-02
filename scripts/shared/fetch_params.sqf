@@ -8,7 +8,7 @@ if ( isMultiplayer ) then {
 	GRLIB_deployment_cinematic = ["DeploymentCinematic",1] call bis_fnc_getParamValue;
 	GRLIB_unitcap = ["Unitcap",1] call bis_fnc_getParamValue;
 	GRLIB_adaptive_opfor = ["AdaptToPlayercount",1] call bis_fnc_getParamValue;
-	GRLIB_civilian_activity = ["Civilians",1] call bis_fnc_getParamValue;
+	GRLIB_civilian_activity = ["civilians",1] call bis_fnc_getParamValue;
 	GRLIB_teamkill_penalty = ["TeamkillPenalty",0] call bis_fnc_getParamValue;
 	GRLIB_build_first_fob = ["FirstFob",0] call bis_fnc_getParamValue;
 	GRLIB_param_wipe_savegame_1 = ["WipeSave1",0] call bis_fnc_getParamValue;
@@ -27,6 +27,7 @@ if ( isMultiplayer ) then {
 	GRLIB_blufor_defenders = [ "BluforDefenders",1] call bis_fnc_getParamValue;
 	GRLIB_autodanger = [ "Autodanger",0] call bis_fnc_getParamValue;
 	GRLIB_maximum_fobs = [ "MaximumFobs",26] call bis_fnc_getParamValue;
+	GRLIB_max_squad_size = ["MaxSquadSize",10] call bis_fnc_getParamValue;
 } else {
 	GRLIB_difficulty_modifier = 1;
 	GRLIB_time_factor = 12;
@@ -56,12 +57,7 @@ if ( isMultiplayer ) then {
 	GRLIB_blufor_defenders = 1;
 	GRLIB_autodanger = 0;
 	GRLIB_maximum_fobs = 26;
-
-	{
-		if ( (_x != player) && (_x distance (getmarkerpos "respawn_west") < 200 ) ) then {
-			deleteVehicle _x;
-		};
-	} foreach allUnits;
+	GRLIB_max_squad_size = 0;
 };
 
 if ( GRLIB_fatigue < 0.1 ) then { GRLIB_fatigue = false } else { GRLIB_fatigue = true };

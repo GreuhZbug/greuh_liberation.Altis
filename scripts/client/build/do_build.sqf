@@ -38,14 +38,14 @@ while { true } do {
 		_pos = [(getpos player select 0) + 1,(getpos player select 1) + 1, 0];
 		_grp = group player;
 		if ( manned ) then {
-			_grp = createGroup WEST;
+			_grp = createGroup GRLIB_side_friendly;
 		};
 		_classname createUnit [_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
 		build_confirmed = 0;
 	} else {
 		if ( buildtype == 8 ) then {
 			_pos = [(getpos player select 0) + 1,(getpos player select 1) + 1, 0];
-			_grp = createGroup WEST;
+			_grp = createGroup GRLIB_side_friendly;
 			_grp setGroupId [format ["%1 %2",squads_names select buildindex, groupId _grp]];
 			_idx = 0;
 			{

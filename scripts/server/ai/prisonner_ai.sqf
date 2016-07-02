@@ -2,7 +2,7 @@
 
 params [ "_unit" ];
 
-if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) then {
+if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == GRLIB_side_enemy) ) then {
 
 	if ( vehicle _unit != _unit ) then { deleteVehicle _unit };
 
@@ -27,7 +27,7 @@ if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) t
 		_unit setCaptive true;
 
 		waitUntil { sleep 1;
-			!alive _unit || side group _unit == WEST
+			!alive _unit || side group _unit == GRLIB_side_friendly
 		};
 
 		if ( alive _unit ) then {

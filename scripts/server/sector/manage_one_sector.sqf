@@ -38,7 +38,7 @@ _opforcount = [] call F_opforCap;
 
 diag_log format [ "Sector %2 checkpoint C at %1", time, _sector ];
 
-if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcount ] call F_getCorrectedSectorRange , WEST ] call F_getUnitsCount ) > 0 ) ) then {
+if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcount ] call F_getCorrectedSectorRange , GRLIB_side_friendly ] call F_getUnitsCount ) > 0 ) ) then {
 
 	diag_log format [ "Sector %2 checkpoint D at %1", time, _sector ];
 
@@ -203,7 +203,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 
 	while { !_stopit } do {
 
-		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == WEST ) && ( GRLIB_endgame == 0 ) ) then {
+		if ( ( [_sectorpos, _local_capture_size] call F_sectorOwnership == GRLIB_side_friendly ) && ( GRLIB_endgame == 0 ) ) then {
 
 			diag_log format [ "Sector %2 checkpoint N at %1", time, _sector ];
 
@@ -229,7 +229,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 
 			{
 				if (_x isKindOf "Man") then {
-					if ( side group _x != WEST ) then {
+					if ( side group _x != GRLIB_side_friendly ) then {
 						deleteVehicle _x;
 					};
 				} else {
@@ -241,7 +241,7 @@ if ( (!(_sector in blufor_sectors)) &&  ( ( [ getmarkerpos _sector , [ _opforcou
 
 			diag_log format [ "Sector %2 checkpoint Q at %1", time, _sector ];
 
-			if ( ( [_sectorpos, ( ( [ _opforcount ] call F_getCorrectedSectorRange ) + 300 ), WEST ] call F_getUnitsCount ) == 0 ) then {
+			if ( ( [_sectorpos, ( ( [ _opforcount ] call F_getCorrectedSectorRange ) + 300 ), GRLIB_side_friendly ] call F_getUnitsCount ) == 0 ) then {
 				_sector_despawn_tickets = _sector_despawn_tickets - 1;
 			} else {
 				_sector_despawn_tickets = 12;

@@ -1,6 +1,6 @@
 private [ "_oldbuildtype", "_cfg", "_initindex", "_dialog", "_iscommandant", "_squadname", "_buildpages", "_build_list", "_classnamevar", "_entrytext", "_icon", "_affordable", "_affordable_crew", "_selected_item", "_linked", "_linked_unlocked", "_base_link", "_link_color", "_link_str" ];
 
-if ( ( [ getpos player , 500 , EAST ] call F_getUnitsCount ) > 4 ) exitWith { hint localize "STR_BUILD_ENEMIES_NEARBY"; };
+if ( ( [ getpos player , 500 , GRLIB_side_enemy ] call F_getUnitsCount ) > 4 ) exitWith { hint localize "STR_BUILD_ENEMIES_NEARBY"; };
 
 if ( isNil "buildtype" ) then { buildtype = 1 };
 if ( isNil "buildindex" ) then { buildindex = -1 };
@@ -113,7 +113,7 @@ while { dialog && alive player && (dobuild == 0 || buildtype == 1)} do {
 	_selected_item = lbCurSel 110;
 	_affordable = false;
 	_squad_full = false;
-	if ((buildtype == 1) && (count (units group player) >= 10)) then {
+	if ((buildtype == 1) && (count (units group player) >= GRLIB_max_squad_size)) then {
 		_squad_full = true;
 	};
 	_linked = false;

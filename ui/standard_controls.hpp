@@ -279,17 +279,17 @@ class kndr_MapControl
 	};
 	class LineMarker {
 		icon = "";
-		color[] = {0.00, 0.35, 0.70, 1.00};
-		size = 20;
+		color[] = {0,0,0,0};
+		size = 0;
 		importance = "2 * 16 * 0.05";
-		coefMin = 0.90;
-		coefMax = 4.00;
-		lineWidthThin = 1;
-		lineWidthThick = 2;
-		lineDistanceMin = 1;
-		lineDistanceMax = 2;
-		lineLengthMin = 1;
-		linelengthMax = 2;
+		coefMin = 0;
+		coefMax = 0;
+		lineWidthThin = 0;
+		lineWidthThick = 0;
+		lineDistanceMin = 0;
+		lineDistanceMax = 0;
+		lineLengthMin = 0;
+		linelengthMax = 0;
 	};
 	class PowerWind {
 		icon = "";

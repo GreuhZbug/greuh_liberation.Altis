@@ -13,8 +13,8 @@ while { true } do {
 		_new_fuel_used = 0;
 
 		{
-			if ( ( side group _x == WEST ) && ( !isPlayer _x ) ) then {
-				if ( ( _x distance lhd > 250 ) && ( _x distance ( getmarkerpos "respawn_west") > 100 ) && ( alive _x ) ) then {
+			if ( ( side group _x == GRLIB_side_friendly ) && ( !isPlayer _x ) ) then {
+				if ( ( _x distance lhd > 250 ) && ( _x distance ( getmarkerpos GRLIB_respawn_marker) > 100 ) && ( alive _x ) ) then {
 					_unit = _x;
 					{
 						if ( ( _x select 0 ) == typeof _unit ) then {

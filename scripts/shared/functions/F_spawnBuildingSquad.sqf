@@ -31,7 +31,7 @@ while { count _position_indexes < count _squadtospawnnn } do {
 
 diag_log format [ "Spawning building squad Checkpoint C at %1", time ];
 
-_grp = createGroup EAST;
+_grp = createGroup GRLIB_side_enemy;
 _idxposit = 0;
 {
 	_x createUnit [ _sectorpos, _grp ];
@@ -42,7 +42,7 @@ _idxposit = 0;
 	[ _nextunit, _sector ] spawn building_defence_ai;
 	if ( _infsquad == "militia" ) then {
 		if ( (typeof _nextunit) in original_resistance ) then {
-			[ _nextunit ] call ( militia_standard_squad call BIS_fnc_selectRandom );
+			[ _nextunit ] spawn ( militia_standard_squad call BIS_fnc_selectRandom );
 			if ( random 100 < 40 ) then {
 				_nextunit addPrimaryWeaponItem "acc_flashlight";
 			};
@@ -53,7 +53,7 @@ _idxposit = 0;
 
 	if ( count units _grp > 10 ) then {
 		_everythingspawned = _everythingspawned + (units _grp);
-		_grp = createGroup EAST;
+		_grp = createGroup GRLIB_side_enemy;
 	};
 } foreach _squadtospawnnn;
 

@@ -13,7 +13,7 @@ while { GRLIB_endgame == 0 } do {
 	_spawnsector = "";
 	_usable_sectors = [];
 	{
-		if ( ( ( [ getmarkerpos _x , 1000 , WEST ] call F_getUnitsCount ) == 0 ) && ( count ( [ getmarkerpos _x , 3500 ] call F_getNearbyPlayers ) > 0 ) ) then {
+		if ( ( ( [ getmarkerpos _x , 1000 , GRLIB_side_friendly ] call F_getUnitsCount ) == 0 ) && ( count ( [ getmarkerpos _x , 3500 ] call F_getNearbyPlayers ) > 0 ) ) then {
 			_usable_sectors pushback _x;
 		}
 
@@ -22,7 +22,7 @@ while { GRLIB_endgame == 0 } do {
 	if ( count _usable_sectors > 0 ) then {
 		_spawnsector = _usable_sectors call BIS_fnc_selectRandom;
 
-		_grp = createGroup CIVILIAN;
+		_grp = createGroup GRLIB_side_civilian;
 		if ( random 100 < 33) then {
 			_civnumber = 1 + (floor (random 2));
 			while { count units _grp < _civnumber } do {
@@ -43,7 +43,7 @@ while { GRLIB_endgame == 0 } do {
 			_civveh = ( civilian_vehicles call BIS_fnc_selectRandom ) createVehicle _spawnpos;
 			_civveh setpos _spawnpos;
 			_civveh addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
-			_civveh addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != WEST ) && ( side (_this select 3) != EAST )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
+			_civveh addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_friendly ) && ( side (_this select 3) != GRLIB_side_enemy )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
 			((units _grp) select 0) moveInDriver _civveh;
 			((units _grp) select 0) disableAI "FSM";
 			((units _grp) select 0) disableAI "AUTOCOMBAT";
@@ -51,7 +51,7 @@ while { GRLIB_endgame == 0 } do {
 
 		};
 
-		{ _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != WEST ) && ( side (_this select 3) != EAST )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ]; } foreach units _grp;
+		{ _x addEventHandler ["HandleDamage", { private [ "_damage" ]; if (( side (_this select 3) != GRLIB_side_friendly ) && ( side (_this select 3) != GRLIB_side_enemy )) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ]; } foreach units _grp;
 
 		_sectors_patrol = [];
 		_patrol_startpos = getpos (leader _grp);
@@ -106,7 +106,7 @@ while { GRLIB_endgame == 0 } do {
 			if ( count ( [ getpos leader _grp , 4000 ] call F_getNearbyPlayers ) == 0 ) then {
 
 				if ( !(isNull _civveh) ) then {
-					 if ( { ( alive _x ) && (side group _x == WEST ) } count (crew _civveh) == 0 ) then {
+					 if ( { ( alive _x ) && (side group _x == GRLIB_side_friendly ) } count (crew _civveh) == 0 ) then {
 						deleteVehicle _civveh
 					};
 				};

@@ -126,6 +126,12 @@ class Params
 		texts[] = {3,5,7,10,15,20,26};
 		default = 26;
 	};
+	class MaxSquadSize{
+		title = $STR_PARAM_SQUAD_SIZE;
+		values[] = {0,1,2,4,6,8,10,12,16,20,24,30,36};
+		texts[] = {0,1,2,4,6,8,10,12,16,20,24,30,36};
+		default = 10;
+	};
 	class Space2 {
 		title = "";
 		values[] = { "" };

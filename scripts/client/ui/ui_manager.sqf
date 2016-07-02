@@ -106,9 +106,9 @@ while { true } do {
 
 				"zone_capture" setmarkerposlocal (markerpos _nearest_active_sector);
 				_colorzone = "ColorGrey";
-				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == WEST ) then { _colorzone = "ColorBLUFOR" };
-				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == EAST ) then { _colorzone = "ColorOPFOR" };
-				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == RESISTANCE ) then { _colorzone = "ColorCivilian" };
+				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == GRLIB_side_friendly ) then { _colorzone = GRLIB_color_friendly };
+				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == GRLIB_side_enemy ) then { _colorzone = GRLIB_color_enemy };
+				if ( [ markerpos _nearest_active_sector, _zone_size ] call F_sectorOwnership == GRLIB_side_resistance ) then { _colorzone = "ColorCivilian" };
 				"zone_capture" setmarkercolorlocal _colorzone;
 
 				_ratio = [_nearest_active_sector] call F_getForceRatio;
