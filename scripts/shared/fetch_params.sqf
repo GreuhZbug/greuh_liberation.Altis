@@ -57,7 +57,7 @@ if ( isMultiplayer ) then {
 	GRLIB_blufor_defenders = 1;
 	GRLIB_autodanger = 0;
 	GRLIB_maximum_fobs = 26;
-	GRLIB_max_squad_size = 0;
+	GRLIB_max_squad_size = 10;
 };
 
 if ( GRLIB_fatigue < 0.1 ) then { GRLIB_fatigue = false } else { GRLIB_fatigue = true };

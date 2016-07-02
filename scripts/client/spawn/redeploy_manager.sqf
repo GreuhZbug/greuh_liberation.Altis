@@ -123,8 +123,12 @@ while { true } do {
 
 			"spawn_marker" setMarkerPosLocal (getpos respawn_object);
 			ctrlMapAnimClear ((findDisplay 5201) displayCtrl 251);
-			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [1.33, 1.2, getpos respawn_object];
-			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [1.33, 0.25, getpos respawn_object];
+			private _transition_map_pos = getpos respawn_object;
+			private _fullscreen_map_offset = 4000;
+			if(fullmap % 2 == 1) then {
+				_transition_map_pos = [(_transition_map_pos select 0) - _fullscreen_map_offset,  (_transition_map_pos select 1) + (_fullscreen_map_offset * 0.75), 0];
+			};
+			((findDisplay 5201) displayCtrl 251) ctrlMapAnimAdd [0, 0.3,_transition_map_pos];
 			ctrlMapAnimCommit ((findDisplay 5201) displayCtrl 251);
 
 			respawn_camera camSetPos [(getpos respawn_object select 0) - 70, (getpos respawn_object select 1) + _startdist, (getpos respawn_object select 2) + _alti];
@@ -141,7 +145,7 @@ while { true } do {
 				((findDisplay 5201) displayCtrl 251) ctrlSetPosition _standard_map_pos;
 			};
 			((findDisplay 5201) displayCtrl 251) ctrlCommit 0.2;
-
+			_oldsel = -1;
 		};
 
 		uiSleep 0.1;

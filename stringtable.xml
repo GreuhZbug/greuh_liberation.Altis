@@ -2662,8 +2662,6 @@
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
-						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</Original>
@@ -2676,11 +2674,9 @@
 						&lt;t size='1'&gt;
 						L'hélicopter a pu finir sa course dans une large zone autour de sa dernière position connue. Votre mission est de retrouver l'équipage et sa précieuse intel. Les forces hostiles les auront peut-être déjà retrouvés, votre action doit donc être rapide et décisive.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
+						&lt;t size='1.15' color='#00a0ff'&gt;Cout: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
-						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Récompense: 20 points d'intel.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
@@ -2696,8 +2692,6 @@
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
-						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</German>
