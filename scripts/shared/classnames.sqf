@@ -319,7 +319,7 @@ opfor_troup_transports = [
 ];
 if ( isNil "opfor_troup_transports_extension" ) then { opfor_troup_transports_extension = [] };
 if ( isNil "opfor_troup_transports_overwrite" ) then { opfor_troup_transports_overwrite = false };
-if ( opfor_troup_transports_overwrite ) then { buildinopfor_troup_transportsgs = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
+if ( opfor_troup_transports_overwrite ) then { opfor_troup_transports = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
 
 opfor_choppers = [
 	"O_Heli_Attack_02_F",

@@ -2,7 +2,7 @@ if ( isNil "group_owners" ) then { group_owners = []; };
 
 while { true } do {
 
-	group_owners = [[lhdofficer, "Server", owner lhdofficer, 0, 0, 0]];
+	group_owners = [[gamelogic, "Server", owner gamelogic, 0, 0, 0]];
 
 	{ _owner_name = group_owners pushback [_x, name _x, owner _x, 0, 0, 0]; } foreach allPlayers;
 
