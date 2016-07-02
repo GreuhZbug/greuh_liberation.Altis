@@ -1969,20 +1969,12 @@
 						<Spanish>Recompensas de munición</Spanish>
 						<Russian>Вознаграждение за уничтожение техники ВООРУЖЕНИЕ</Russian>
 				</Key>
-				<Key ID="STR_CIV_PENALTIES">
-						<Original>Penalty for killing civilians</Original>
-						<German>Strafe für zivile Verluste</German>
-				</Key>
 				<Key ID="STR_BOUNTY_MESSAGE">
 						<Original>Bounty of %1 for a %2 destroyed by %3</Original>
 						<French>Prime de %1 pour un %2 détruit par %3</French>
 						<German>Kopfgeld von %1 für die Zerstörung von %2 durch %3</German>
 						<Spanish>Premio de %1 por un %2 destruido por %3</Spanish>
 						<Russian>+%1 едениц ВООРУЖЕНИЯ за %2 уничтоженный игроком %3</Russian>
-				</Key>
-				<Key ID="STR_CIV_PENALTY_MESSAGE">
-						<Original>Penalty of %1 for killing of civilian named %2 by %3</Original>
-						<German>Strafe von %1 für die Ermordung des Zivilisten %2 durch %3</German>
 				</Key>
 				<Key ID="STR_SECONDARY_OBJECTIVES_TITLE">
 						<Original>SECONDARY OBJECTIVES</Original>
@@ -2709,6 +2701,18 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</German>
+				</Key>
+
+				<!-- Added in v0.924 -->
+				<Key ID="STR_CIV_PENALTIES">
+						<Original>Penalty for killing civilians</Original>
+						<French>Pénalité pour les pertes civiles</French>
+						<German>Strafe für zivile Verluste</German>
+				</Key>
+				<Key ID="STR_CIV_PENALTY_MESSAGE">
+						<Original>Penalty of %1 for killing of civilian named %2 by %3</Original>
+						<French>Penalty de %1 pour avoir tué le civil %2 par %3</French>
+						<German>Strafe von %1 für die Ermordung des Zivilisten %2 durch %3</German>
 				</Key>
 		</Package>
 </Project>
