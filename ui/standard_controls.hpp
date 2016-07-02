@@ -277,6 +277,20 @@ class kndr_MapControl
 		coefMin = 0.90;
 		coefMax = 4.00;
 	};
+	class LineMarker {
+		icon = "";
+		color[] = {0.00, 0.35, 0.70, 1.00};
+		size = 20;
+		importance = "2 * 16 * 0.05";
+		coefMin = 0.90;
+		coefMax = 4.00;
+		lineWidthThin = 1;
+		lineWidthThick = 2;
+		lineDistanceMin = 1;
+		lineDistanceMax = 2;
+		lineLengthMin = 1;
+		linelengthMax = 2;
+	};
 	class PowerWind {
 		icon = "";
 		color[] = {0.00, 0.35, 0.70, 1.00};
