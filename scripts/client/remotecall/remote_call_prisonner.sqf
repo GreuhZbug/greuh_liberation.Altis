@@ -43,7 +43,7 @@ if (alive _unit) then {
 	if ( _is_near_fob ) then {
 
 		sleep 5;
-		_grp = createGroup WEST;
+		_grp = createGroup GRLIB_side_friendly;
 		[_unit] joinSilent _grp;
 		_unit playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
 		_unit disableAI "ANIM";
@@ -56,7 +56,7 @@ if (alive _unit) then {
 
 	} else {
 
-		_grp = createGroup EAST;
+		_grp = createGroup GRLIB_side_enemy;
 		[_unit] joinSilent _grp;
 		_unit setUnitPos "AUTO";
 		_unit setCaptive false;

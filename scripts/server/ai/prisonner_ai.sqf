@@ -1,8 +1,8 @@
- if ( ( random 100 ) > GRLIB_surrender_chance ) exitWith {};
+params [ "_unit", ["_force_surrender", false] ];
 
-params [ "_unit" ];
+if ( (!_force_surrender) && (( random 100 ) > GRLIB_surrender_chance) ) exitWith {};
 
-if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) then {
+if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == GRLIB_side_enemy) ) then {
 
 	if ( vehicle _unit != _unit ) then { deleteVehicle _unit };
 
@@ -11,7 +11,9 @@ if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) t
 	if ( alive _unit ) then {
 
 		removeAllWeapons _unit;
-		removeHeadgear _unit;
+		if(typeof _unit != pilot_classname) then {
+			removeHeadgear _unit;
+		};
 		removeBackpack _unit;
 		removeVest _unit;
 		_unit unassignItem "NVGoggles_OPFOR";
@@ -27,7 +29,7 @@ if ( (_unit isKindOf "Man") && ( alive _unit ) && (side group _unit == EAST) ) t
 		_unit setCaptive true;
 
 		waitUntil { sleep 1;
-			!alive _unit || side group _unit == WEST
+			!alive _unit || side group _unit == GRLIB_side_friendly
 		};
 
 		if ( alive _unit ) then {

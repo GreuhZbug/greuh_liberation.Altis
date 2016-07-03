@@ -89,7 +89,7 @@ while { dialog && (alive player) && edit_loadout == 0 } do {
 			[ player,  [ _playerselected, ["repetitive"] ] call F_getLoadout ] call F_setLoadout;
 			hint format [ localize "STR_LOAD_PLAYER_LOADOUT_HINT", name _playerselected ];
 		};
-		load_from_player = 0;
+		load_from_player = -1;
 	};
 
 	sleep 0.1;

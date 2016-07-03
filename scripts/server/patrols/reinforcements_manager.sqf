@@ -1,17 +1,17 @@
 if ( combat_readiness > 15 ) then {
 
 	params [ "_targetsector" ];
-	_init_units_count = ( ([ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount) );
+	_init_units_count = ( ([ getmarkerpos _targetsector , GRLIB_capture_size , GRLIB_side_enemy ] call F_getUnitsCount) );
 
 	if ( !(_targetsector in sectors_bigtown)) then {
-		while { (_init_units_count * 0.75) <=  ( [ getmarkerpos _targetsector , GRLIB_capture_size , EAST ] call F_getUnitsCount ) } do {
+		while { (_init_units_count * 0.75) <=  ( [ getmarkerpos _targetsector , GRLIB_capture_size , GRLIB_side_enemy ] call F_getUnitsCount ) } do {
 			sleep 5;
 		};
 	};
 
 	if ( _targetsector in active_sectors ) then {
 
-		_nearestower = [markerpos _targetsector, EAST, GRLIB_radiotower_size * 1.4] call F_getNearestTower;
+		_nearestower = [markerpos _targetsector, GRLIB_side_enemy, GRLIB_radiotower_size * 1.4] call F_getNearestTower;
 
 		if ( _nearestower != "" ) then {
 			_reinforcements_time = (((((markerpos _nearestower) distance (markerpos _targetsector)) / 1000) ^ 1.66 ) * 120) / (GRLIB_difficulty_modifier * GRLIB_csat_aggressivity);

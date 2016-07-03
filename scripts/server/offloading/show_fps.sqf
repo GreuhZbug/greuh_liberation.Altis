@@ -45,7 +45,7 @@ while { true } do {
 	_myfpsmarker setMarkerColor "ColorGREEN";
 	if ( _myfps < 30 ) then { _myfpsmarker setMarkerColor "ColorYELLOW"; };
 	if ( _myfps < 20 ) then { _myfpsmarker setMarkerColor "ColorORANGE"; };
-	if ( _myfps < 10 ) then { _myfpsmarker setMarkerColor "ColorRED"; };
+	if ( _myfps < 10 ) then { _myfpsmarker setMarkerColor GRLIB_color_enemy_bright; };
 
 	_myfpsmarker setMarkerText format [ "%1: %2 fps, %3 units, %4 vehicles", _sourcestr, ( round ( _myfps * 100.0 ) ) / 100.0 , _localunits, _localvehicles ];
 

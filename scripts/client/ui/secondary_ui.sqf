@@ -10,8 +10,8 @@ waitUntil { dialog };
 	lbAdd [ 101, localize _x ];
 } foreach [
 	"STR_SECONDARY_MISSION0",
-	"STR_SECONDARY_MISSION1"
-	//,"STR_SECONDARY_MISSION2"
+	"STR_SECONDARY_MISSION1",
+	"STR_SECONDARY_MISSION2"
 ];
 
 private [ "_oldchoice", "_images", "_briefings", "_missioncost" ];

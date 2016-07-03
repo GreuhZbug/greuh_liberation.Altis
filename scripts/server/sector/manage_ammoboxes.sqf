@@ -118,7 +118,7 @@ if ( !( _sector in GRLIB_military_sectors_already_activated )) then {
 
 				if ( _debug ) then {
 					_marker = createMarkerLocal [ format [ "markedveh%1" ,(getpos _intelobject) select 0 ], getpos _intelobject ];
-					_marker setMarkerColorLocal "ColorRED";
+					_marker setMarkerColorLocal GRLIB_color_enemy_bright;
 					_marker setMarkerTypeLocal "mil_dot";
 				};
 

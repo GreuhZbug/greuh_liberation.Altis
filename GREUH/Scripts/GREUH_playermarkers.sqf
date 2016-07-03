@@ -6,10 +6,10 @@ private _color = "";
 private _ticks = 0;
 private _cfg = configFile >> "cfgVehicles";
 
-if ( side player == WEST ) then {
-	_color = "ColorBLUFOR";
+if ( side player == GRLIB_side_friendly ) then {
+	_color = GRLIB_color_friendly;
 } else {
-	_color = "ColorOPFOR";
+	_color = GRLIB_color_enemy;
 };
 
 while { true } do {

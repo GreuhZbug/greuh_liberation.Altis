@@ -58,7 +58,7 @@ _filtered_possible_sectors = [];
 	};
 
 	if ( _accept_current_sector ) then {
-		if ( ( [markerpos _current_sector, _mindist, WEST ] call F_getUnitsCount ) != 0 ) then {
+		if ( ( [markerpos _current_sector, _mindist, GRLIB_side_friendly ] call F_getUnitsCount ) != 0 ) then {
 			_accept_current_sector = false;
 		};
 	};

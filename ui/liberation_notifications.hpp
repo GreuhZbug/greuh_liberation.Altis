@@ -128,4 +128,18 @@ class CfgNotifications
 		color[] = {1,1,0,1};
 		sound = "taskCanceled";
     };
+    class lib_intel_sar : lib_intel
+    {
+    	description = $STR_NOTIFICATION_SAR_STARTED;
+    };
+    class lib_intel_sar_failed : lib_secondary_fob_destroyed
+    {
+    	description = $STR_NOTIFICATION_SAR_FAILED;
+    	color[] = {1,0,0,1};
+		sound = "taskFailed";
+    };
+    class lib_intel_sar_succeeded : lib_secondary_fob_destroyed
+    {
+    	description = $STR_NOTIFICATION_SAR_SUCCESS;
+    };
 };

@@ -15,7 +15,7 @@ while { true } do {
 	time,
 	diag_fps,
 	count allUnits,
-	{ side group _x == EAST } count allUnits,
+	{ side group _x == GRLIB_side_enemy } count allUnits,
 	{ local _x } count allUnits,
 	count vehicles,
 	GRLIB_sector_cap ];

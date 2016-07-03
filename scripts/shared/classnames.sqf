@@ -237,9 +237,7 @@ militia_squad = [
 	"O_G_Soldier_F",
 	"O_G_Soldier_LAT_F",
 	"O_G_Soldier_lite_F",
-	"O_g_soldier_unarmed_f",
 	"O_G_Sharpshooter_F",
-	"O_g_survivor_F",
 	"O_G_Soldier_TL_F"
 ];
 if ( isNil "militia_squad_extension" ) then { militia_squad_extension = [] };
@@ -321,7 +319,7 @@ opfor_troup_transports = [
 ];
 if ( isNil "opfor_troup_transports_extension" ) then { opfor_troup_transports_extension = [] };
 if ( isNil "opfor_troup_transports_overwrite" ) then { opfor_troup_transports_overwrite = false };
-if ( opfor_troup_transports_overwrite ) then { buildinopfor_troup_transportsgs = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
+if ( opfor_troup_transports_overwrite ) then { opfor_troup_transports = opfor_troup_transports_extension; } else { opfor_troup_transports = opfor_troup_transports + opfor_troup_transports_extension; };
 
 opfor_choppers = [
 	"O_Heli_Attack_02_F",
@@ -474,7 +472,7 @@ ammobox_transports_typenames = [];
 { ammobox_transports_typenames pushback (_x select 0) } foreach box_transport_config;
 ammobox_transports_typenames = [ ammobox_transports_typenames , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
 elite_vehicles = [ elite_vehicles , { [ _x ] call F_checkClass } ]  call BIS_fnc_conditionalSelect;
-original_resistance = [ "O_G_Soldier_SL_F","O_G_Soldier_A_F","O_G_Soldier_AR_F","O_G_medic_F","O_G_engineer_F","O_G_Soldier_exp_F","O_G_Soldier_GL_F","O_G_Soldier_M_F","O_G_Soldier_F","O_G_Soldier_LAT_F","O_G_Soldier_lite_F","O_g_soldier_unarmed_f","O_G_Sharpshooter_F","O_g_survivor_F","O_G_Soldier_TL_F"];
+original_resistance = [ "O_G_Soldier_SL_F","O_G_Soldier_A_F","O_G_Soldier_AR_F","O_G_medic_F","O_G_engineer_F","O_G_Soldier_exp_F","O_G_Soldier_GL_F","O_G_Soldier_M_F","O_G_Soldier_F","O_G_Soldier_LAT_F","O_G_Soldier_lite_F","O_G_Sharpshooter_F","O_G_Soldier_TL_F"];
 opfor_infantry = [opfor_sentry,opfor_rifleman,opfor_grenadier,opfor_squad_leader,opfor_team_leader,opfor_marksman,opfor_machinegunner,opfor_heavygunner,opfor_medic,opfor_rpg,opfor_at,opfor_aa,opfor_officer,opfor_sharpshooter,opfor_sniper,opfor_engineer];
 GRLIB_intel_table = "Land_CampingTable_small_F";
 GRLIB_intel_chair = "Land_CampingChair_V2_F";

@@ -27,15 +27,17 @@ class Mission
 		"3DEN",
 		"A3_Data_F_Exp_A_Virtual",
 		"A3_Air_F_Heli_Heli_Light_01",
-		"A3_Soft_F_Truck"
+		"A3_Soft_F_Truck",
+		"cba_xeh",
+		"A3_Soft_F_Gamma_Van_01"
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
+		"A3_Characters_F",
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"A3_Data_F_Exp_A_Virtual",
+		"cba_xeh",
 		"A3_Air_F_Heli_Light_01",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
@@ -52,8 +54,7 @@ class Mission
 		"A3_Structures_F_Heli_Ind_Machines",
 		"A3_Structures_F_Heli_Items_Airport",
 		"A3_Air_F_Beta_Heli_Transport_01",
-		"A3_Air_F_Heli_Heli_Light_01",
-		"A3_Soft_F_Truck",
+		"A3_Soft_F_Gamma_Van_01",
 		"a3_map_altis"
 	};
 	randomSeed=7571389;

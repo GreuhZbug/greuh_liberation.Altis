@@ -1,5 +1,5 @@
 params [ "_unit" ];
-private [ "_yield", "_resistance_prisonner_ammo_yield", "_csat_prisonner_ammo_yield" ];
+private [ "_yield", "_resistance_prisonner_intel_yield", "_csat_prisonner_ammo_yield" ];
 
 _resistance_prisonner_intel_yield = 3;
 _csat_prisonner_intel_yield = 6;

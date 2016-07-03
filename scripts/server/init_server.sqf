@@ -29,7 +29,7 @@ recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\resour
 // Secondary objectives
 fob_hunting = compileFinal preprocessFileLineNumbers "scripts\server\secondary\fob_hunting.sqf";
 convoy_hijack = compileFinal preprocessFileLineNumbers "scripts\server\secondary\convoy_hijack.sqf";
-// search_and_rescue = compileFinal preprocessFileLineNumbers "scripts\server\secondary\search_and_rescue.sqf";
+search_and_rescue = compileFinal preprocessFileLineNumbers "scripts\server\secondary\search_and_rescue.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -71,3 +71,9 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\unit_cap.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\lose_sectors.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_sectors.sqf";
+
+{
+	if ( (_x != player) && (_x distance (getmarkerpos GRLIB_respawn_marker) < 200 ) ) then {
+		deleteVehicle _x;
+	};
+} foreach allUnits;

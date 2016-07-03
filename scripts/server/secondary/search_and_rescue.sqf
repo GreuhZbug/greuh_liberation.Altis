@@ -1,194 +1,107 @@
 
-
-
-private _spawn_marker = [ 3000,999999,false] call F_findOpforSpawnPoint;
+private _spawn_marker = [ 3000, 999999, false ] call F_findOpforSpawnPoint;
 if ( _spawn_marker == "" ) exitWith { diag_log "Could not find position for search and rescue mission"; };
 used_positions pushbackUnique _spawn_marker;
 
-
-private _pilots_have_been_found = true;
-if ( random 100 > 60 ) then {
-	_pilots_have_been_found = false;
-};
-
 private _helopos = [ getmarkerpos _spawn_marker, random 200, random 360 ] call BIS_fnc_relPos;
-private _helofire = GRLIB_sar_fire createVehicle _helopos;
 private _helowreck = GRLIB_sar_wreck createVehicle _helopos;
 _helowreck allowDamage false;
 _helowreck setPos _helopos;
 _helowreck setPos _helopos;
-_helowreck (setDir random 360);
+private _helowreckDir = (random 360);
+_helowreck setDir _helowreckDir;
 
+private _helofire = GRLIB_sar_fire createVehicle (getpos _helowreck);
+_helofire setpos (getpos _helowreck);
+_helofire setpos (getpos _helowreck);
 
-private _pilotsGrp;
-private _pilot1;
-private _pilot2;
-if ( _pilots_have_been_found ) then {
-	_pilotsGrp = createGroup EAST;
-	_pilot1 = pilot_classname createUnit [ [ _helopos, 20, random 360 ] call BIS_fnc_relPos;, _pilotsGrp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
-	sleep 0.2;
-	_pilot2 = pilot_classname createUnit [ [ getpos _pilot1, 2, random 360 ] call BIS_fnc_relPos;, _pilotsGrp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
-	sleep 2;
-	[ _pilot1 ] spawn prisonner_ai;
-	[ _pilot2 ] spawn prisonner_ai;
-
-};
-
-
-
-
-
-
-
-
-private _spawnpos = _convoy_destinations select 0;
-[ [ 4, _spawnpos ] , "remote_call_intel" ] call BIS_fnc_MP;
-
-private _scout_vehicle = [ [ _spawnpos, 30, 0 ] call BIS_fnc_relPos, opfor_mrap, true, false, false ] call F_libSpawnVehicle;
-private _escort_vehicle = [ [ _spawnpos, 10, 0 ] call BIS_fnc_relPos, opfor_vehicles_low_intensity call BIS_fnc_selectRandom, true, false, false ] call F_libSpawnVehicle;
-private _transport_vehicle = [ [ _spawnpos, 10, 180 ] call BIS_fnc_relPos, opfor_ammobox_transport, true, true, false ] call F_libSpawnVehicle;
-
-private _boxes_amount = 0;
+private _pilotsGrp = createGroup GRLIB_side_enemy;
+private _pilotsPos = [ getpos _helowreck, 25, random 360 ] call BIS_fnc_relPos;
+pilot_classname createUnit [ _pilotsPos, _pilotsGrp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
+sleep 0.2;
+pilot_classname createUnit [ [ _pilotsPos, 1, random 360 ] call BIS_fnc_relPos, _pilotsGrp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
+sleep 2;
+private _pilotUnits = units _pilotsGrp;
 {
-	if ( _x select 0 == opfor_ammobox_transport ) exitWith { _boxes_amount = (count _x) - 2 };
-} foreach box_transport_config;
+	[ _x, true ] spawn prisonner_ai;
+	_x setDir (random 360);
+	sleep 0.5
+} foreach (_pilotUnits);
 
-if ( _boxes_amount == 0 ) exitWith { diag_log "Opfor ammobox truck classname doesn't allow for ammobox transport, correct your classnames.sqf"; };
+private _grppatrol = createGroup GRLIB_side_enemy;
+private _patrolcorners = [
+	[ (getpos _helowreck select 0) - 40, (getpos _helowreck select 1) - 40, 0 ],
+	[ (getpos _helowreck select 0) + 40, (getpos _helowreck select 1) - 40, 0 ],
+	[ (getpos _helowreck select 0) + 40, (getpos _helowreck select 1) + 40, 0 ],
+	[ (getpos _helowreck select 0) - 40, (getpos _helowreck select 1) + 40, 0 ]
+];
 
-GRLIB_secondary_in_progress = 1; publicVariable "GRLIB_secondary_in_progress";
+{ _x createUnit [ _patrolcorners select 0, _grppatrol,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach ([] call F_getAdaptiveSquadComp);
 
-private _boxes_loaded = 0;
-
-while { _boxes_loaded < _boxes_amount } do {
-	_boxes_loaded = _boxes_loaded + 1;
-	sleep 0.5;
-	private _next_box = ammobox_o_typename createVehicle ([ _spawnpos, 15, 135 ] call BIS_fnc_relPos);
-	sleep 0.5;
-	[ _next_box, 50 ] call _load_box_fnc;
-	_next_box addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
-};
-
-sleep 0.5;
-
-private _troop_vehicle = [ [ _spawnpos, 30, 180 ] call BIS_fnc_relPos, opfor_transport_truck, true, true, false ] call F_libSpawnVehicle;
-
-sleep 0.5;
-
-private _convoy_group = group driver _scout_vehicle;
-( crew _escort_vehicle + crew _transport_vehicle + crew _troop_vehicle ) joinSilent _convoy_group;
-
-sleep 0.5;
-
+while {(count (waypoints _grppatrol)) != 0} do {deleteWaypoint ((waypoints _grppatrol) select 0);};
 {
-	_x addEventHandler ["HandleDamage", { private [ "_damage" ]; if ( side (_this select 3) != WEST ) then { _damage = 0 } else { _damage = _this select 2 }; _damage } ];
-} foreach [ _scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle ];
+	private _nextcorner = _x;
+	_waypoint = _grppatrol addWaypoint [_nextcorner,0];
+	_waypoint setWaypointType "MOVE";
+	_waypoint setWaypointSpeed "LIMITED";
+	_waypoint setWaypointBehaviour "SAFE";
+	_waypoint setWaypointCompletionRadius 5;
+} foreach _patrolcorners;
 
-_convoy_group setFormation "FILE";
-_convoy_group setBehaviour "SAFE";
-_convoy_group setCombatMode "GREEN";
-_convoy_group setSpeedMode "LIMITED";
-
-while {(count (waypoints _convoy_group)) != 0} do {deleteWaypoint ((waypoints _convoy_group) select 0);};
-{_x doFollow leader _convoy_group} foreach units _convoy_group;
-
-_waypoint = _convoy_group addWaypoint [_convoy_destinations select 1, 0];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 50;
-
-_waypoint = _convoy_group addWaypoint [_convoy_destinations select 2, 0];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 50;
-
-_waypoint = _convoy_group addWaypoint [_convoy_destinations select 0, 0];
-_waypoint setWaypointType "MOVE";
-_waypoint setWaypointCompletionRadius 50;
-
-_waypoint = _convoy_group addWaypoint [_convoy_destinations select 0, 0];
+_waypoint = _grppatrol addWaypoint [(_patrolcorners select 0), 0];
 _waypoint setWaypointType "CYCLE";
-_waypoint setWaypointCompletionRadius 50;
+{_x doFollow (leader _grppatrol)} foreach units _grppatrol;
 
-private _troops_group = createGroup EAST;
-{ _x createUnit [_spawnpos, _troops_group,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"]; } foreach ([] call F_getAdaptiveSquadComp);
-{ _x moveInCargo _troop_vehicle } foreach (units _troops_group);
+private _grpsentry = createGroup GRLIB_side_enemy;
+private _nbsentry = 2 + (floor (random 3));
 
-private _convoy_marker = createMarkerLocal [ format [ "convoymarker%1", round time], getpos _transport_vehicle ];
-_convoy_marker setMarkerText (localize "STR_SECONDARY_CSAT_CONVOY");
-_convoy_marker setMarkerType "o_armor";
-_convoy_marker setMarkerColor "ColorRed";
-
-private _convoy_marker_wp1 = createMarkerLocal [ format [ "convoymarkerwp1%1", round time], _convoy_destinations select 0];
-private _convoy_marker_wp2 = createMarkerLocal [ format [ "convoymarkerwp2%1", round time], _convoy_destinations select 1];
-private _convoy_marker_wp3 = createMarkerLocal [ format [ "convoymarkerwp3%1", round time], _convoy_destinations select 2];
-
-{
-	_x setMarkerText (localize "STR_SECONDARY_CSAT_CONVOY_WP");
-	_x setMarkerType "o_armor";
-	_x setMarkerColor "ColorRed";
-	_x setMarkerSize [0.6, 0.6];
-} foreach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3];
-
-private _mission_in_progress = true;
-private _convoy_attacked = false;
-private _convoy_flee = false;
-private _disembark_troops = false;
-
-while { _mission_in_progress } do {
-
-	if ( !(alive _transport_vehicle) || !(alive driver _transport_vehicle) ) then {
-		_mission_in_progress = false;
-	};
-
-	_convoy_marker setMarkerPos (getpos _transport_vehicle);
-
-	if ( !_convoy_attacked ) then {
-		{
-			if ( !(alive _x) || (damage _x > 0.3) || !(alive driver _x)) exitWith { _convoy_attacked = true; };
-		} foreach [_scout_vehicle, _escort_vehicle, _transport_vehicle, _troop_vehicle];
-	};
-
-	if ( _convoy_attacked && !_disembark_troops) then {
-
-		_disembark_troops = true;
-
-		if (alive (driver _troop_vehicle)) then {
-			private _troop_driver_group = (createGroup EAST);
-			[ driver _troop_vehicle ] joinSilent _troop_driver_group;
-			sleep 1;
-			while {(count (waypoints _troop_driver_group)) != 0} do {deleteWaypoint ((waypoints _troop_driver_group) select 0);};
-			_waypoint = _troop_driver_group addWaypoint [getpos _troop_vehicle, 0];
-			_waypoint setWaypointType "MOVE";
-			sleep 3;
-		};
-
-		{
-			unAssignVehicle _x;
-			_x action ["eject", vehicle _x];
-			_x action ["getout", vehicle _x];
-			unAssignVehicle _x;
-			sleep 0.7;
-		} foreach (units _troops_group);
-
-		_troops_group setBehaviour "COMBAT";
-		_troops_group setCombatMode "RED";
-	};
-
-	if ( _convoy_attacked && !_convoy_flee) then {
-		_convoy_flee = true;
-		_convoy_group setBehaviour "COMBAT";
-		_convoy_group setSpeedMode "FULL";
-	};
-
-	sleep 5;
+for [ {_idx=0},{_idx < _nbsentry},{_idx=_idx+1} ] do {
+	opfor_sentry createUnit [ [ _pilotsPos, 1, random 360 ] call BIS_fnc_relPos, _grpsentry,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
 };
 
-sleep 20;
+(leader _grpsentry) setDir (random 360);
 
-deleteMarker _convoy_marker;
-{ deleteMarker _x } foreach [_convoy_marker_wp1, _convoy_marker_wp2, _convoy_marker_wp3 ];
+(opfor_transport_truck createVehicle ([ getpos _helowreck, 25, random 360 ] call BIS_fnc_relPos)) setDir random 360;
 
-combat_readiness = round (combat_readiness * 0.85);
+private _vehicle_pool = opfor_vehicles;
+if ( combat_readiness < 50 ) then {
+	_vehicle_pool = opfor_vehicles_low_intensity;
+};
+
+private _vehtospawn = [];
+private _spawnchances = [75,50,15];
+{ if (random 100 < _x ) then { _vehtospawn pushBack (_vehicle_pool call BIS_fnc_selectRandom); }; } foreach _spawnchances;
+{ ( [ [ getpos _helowreck, 30 + (random 30), random 360 ] call BIS_fnc_relPos , _x, true ] call F_libSpawnVehicle ) addMPEventHandler ['MPKilled', {_this spawn kill_manager}]; } foreach _vehtospawn;
+
+secondary_objective_position = getpos _helowreck;
+secondary_objective_position_marker = [ secondary_objective_position, 800, random 360 ] call BIS_fnc_relPos;
+publicVariable "secondary_objective_position_marker";
+sleep 1;
+GRLIB_secondary_in_progress = 2; publicVariable "GRLIB_secondary_in_progress";
+[ [ 6 ] , "remote_call_intel" ] call BIS_fnc_MP;
+
+waitUntil {
+	sleep 5;
+	{ ( alive _x ) && ( _x distance ( [ getpos _x ] call F_getNearestFob ) > 50 ) } count _pilotUnits == 0
+};
+
+sleep 5;
+
+private _alive_crew_count = { alive _x } count _pilotUnits;
+if ( _alive_crew_count == 0 ) then {
+	[ [ 7 ] , "remote_call_intel" ] call BIS_fnc_MP;
+} else {
+	[ [ 8 ] , "remote_call_intel" ] call BIS_fnc_MP;
+	private _grp = createGroup GRLIB_side_friendly;
+	{ [_x ] joinSilent _grp; } foreach _pilotUnits;
+	while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
+	{_x doFollow (leader _grp)} foreach units _grp;
+	{ [ _x ] spawn { sleep 600; deleteVehicle (_this select 0) } } foreach _pilotUnits;
+};
+
+resources_intel = resources_intel + (10 * _alive_crew_count);
 stats_secondary_objectives = stats_secondary_objectives + 1;
-[ [ 5 ] , "remote_call_intel" ] call BIS_fnc_MP;
+
 GRLIB_secondary_in_progress = -1; publicVariable "GRLIB_secondary_in_progress";
 sleep 1;
 trigger_server_save = true;

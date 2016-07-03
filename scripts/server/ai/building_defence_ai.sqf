@@ -6,7 +6,7 @@ _move_is_disabled = true;
 _resume_movement = false;
 
 while { _move_is_disabled && local _unit && alive _unit && !(captive _unit) } do {
-	_hostilecount = { alive _x && side _x == WEST } count ( (getpos _unit) nearEntities [ ["Man"], 20 ] );
+	_hostilecount = { alive _x && side _x == GRLIB_side_friendly } count ( (getpos _unit) nearEntities [ ["Man"], 20 ] );
 
 
 	if ( _hostilecount > 0 || ( damage _unit > 0.25 ) ) then {

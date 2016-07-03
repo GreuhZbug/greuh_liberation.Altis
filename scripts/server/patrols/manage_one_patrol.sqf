@@ -27,7 +27,7 @@ while { GRLIB_endgame == 0 } do {
 	_sector_spawn_pos = [(((markerpos _spawn_marker) select 0) - 500) + (random 1000),(((markerpos _spawn_marker) select 1) - 500) + (random 1000),0];
 
 	if (_is_infantry) then {
-		_grp = createGroup EAST;
+		_grp = createGroup GRLIB_side_enemy;
 		_squad = [] call F_getAdaptiveSquadComp;
 		{
 			_x createUnit [_sector_spawn_pos, _grp,"this addMPEventHandler [""MPKilled"", {_this spawn kill_manager}]", 0.5, "private"];
@@ -35,7 +35,7 @@ while { GRLIB_endgame == 0 } do {
 	} else {
 
 		private [ "_vehicle_object" ];
-		if ( (combat_readiness > 75) && ((random 100) > 90) ) then {
+		if ( (combat_readiness > 75) && ((random 100) > 85) ) then {
 			_vehicle_object = [ _sector_spawn_pos, opfor_choppers call BIS_fnc_selectRandom ] call F_libSpawnVehicle;
 		} else {
 			_vehicle_object = [ _sector_spawn_pos, [] call F_getAdaptiveVehicle ] call F_libSpawnVehicle;
@@ -63,7 +63,7 @@ while { GRLIB_endgame == 0 } do {
 			_patrol_continue = false;
 		} else {
 			if ( time - _started_time > 900 ) then {
-				if ( [ getpos (leader _grp) , 4000 , WEST ] call F_getUnitsCount == 0 ) then {
+				if ( [ getpos (leader _grp) , 4000 , GRLIB_side_friendly ] call F_getUnitsCount == 0 ) then {
 					_patrol_continue = false;
 					{
 						if ( vehicle _x != _x ) then {

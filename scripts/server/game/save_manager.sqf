@@ -200,7 +200,7 @@ if ( !isNil "greuh_liberation_savegame" ) then {
 	{
 		private [ "_nextgroup", "_grp" ];
 		_nextgroup = _x;
-		_grp = createGroup WEST;
+		_grp = createGroup GRLIB_side_friendly;
 
 		{
 			private [ "_nextunit", "_nextpos", "_nextdir", "_nextobj"];
@@ -274,7 +274,7 @@ while { true } do {
 
 			{
 				_nextgroup = _x;
-				if (  side _nextgroup == WEST ) then {
+				if (  side _nextgroup == GRLIB_side_friendly ) then {
 					if ( { isPlayer _x } count ( units _nextgroup ) == 0 ) then {
 						if ( { alive _x } count ( units _nextgroup ) > 0  ) then {
 							if ( _fobpos distance (leader _nextgroup) < GRLIB_fob_range * 2 ) then {

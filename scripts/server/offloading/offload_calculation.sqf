@@ -2,7 +2,7 @@ if ( isNil "group_owners" ) then { group_owners = []; };
 
 while { true } do {
 
-	group_owners = [[lhdofficer, "Server", owner lhdofficer, 0, 0, 0]];
+	group_owners = [[gamelogic, "Server", owner gamelogic, 0, 0, 0]];
 
 	{ _owner_name = group_owners pushback [_x, name _x, owner _x, 0, 0, 0]; } foreach allPlayers;
 
@@ -19,13 +19,13 @@ while { true } do {
 		} foreach group_owners;
 
 		if ( count _group_owner > 0 ) then {
-			if ( side _currentgroup == WEST ) then {
+			if ( side _currentgroup == GRLIB_side_friendly ) then {
 				group_owners set [_idx_group_owner, [_group_owner select 0, _group_owner select 1,_group_owner select 2, (_group_owner select 3) + (count units _currentgroup), (_group_owner select 4), (_group_owner select 5)]];
 			};
-			if ( side _currentgroup == EAST ) then {
+			if ( side _currentgroup == GRLIB_side_enemy ) then {
 				group_owners set [_idx_group_owner, [_group_owner select 0, _group_owner select 1,_group_owner select 2, (_group_owner select 3), (_group_owner select 4)  + (count units _currentgroup), (_group_owner select 5)]];
 			};
-			if ( side _currentgroup == CIVILIAN ) then {
+			if ( side _currentgroup == GRLIB_side_civilian ) then {
 				group_owners set [_idx_group_owner, [_group_owner select 0, _group_owner select 1,_group_owner select 2, (_group_owner select 3), (_group_owner select 4), (_group_owner select 5)  + (count units _currentgroup)]];
 			};
 		}

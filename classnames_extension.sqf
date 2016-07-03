@@ -254,13 +254,13 @@ opfor_air_extension = [
 
 // Other stuff
 
-// Civilians
+// civilians
 civilians_overwrite = false;
 civilians_extension = [
 
 ];
 
-// Civilian vehicles
+// civilian vehicles
 civilian_vehicles_overwrite = false;
 civilian_vehicles_extension = [
 

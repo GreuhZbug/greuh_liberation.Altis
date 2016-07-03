@@ -13,7 +13,7 @@ while { true } do {
 
 	_zeusunits = [];
 	{
-		if ( (side group _x == WEST ) && ( _x distance lhd > 1000 ) && alive _x ) then {
+		if ( (side group _x == GRLIB_side_friendly ) && ( _x distance lhd > 1000 ) && alive _x ) then {
 			_zeusunits pushback _x;
 		};
 	} foreach allUnits;
