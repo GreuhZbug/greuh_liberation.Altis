@@ -28,7 +28,6 @@ class Mission
 		"A3_Data_F_Exp_A_Virtual",
 		"A3_Air_F_Heli_Heli_Light_01",
 		"A3_Soft_F_Truck",
-		"cba_xeh",
 		"A3_Soft_F_Gamma_Van_01"
 	};
 	addOnsAuto[]=
@@ -37,7 +36,6 @@ class Mission
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"A3_Data_F_Exp_A_Virtual",
-		"cba_xeh",
 		"A3_Air_F_Heli_Light_01",
 		"A3_Structures_F_Civ_InfoBoards",
 		"A3_Structures_F_EPA_Mil_Scrapyard",
