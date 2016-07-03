@@ -2661,7 +2661,7 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points (10 for each crew alive).&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</Original>
@@ -2676,7 +2676,7 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cout: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Récompense: 20 points d'intel.&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Récompense: 20 points d'intel (10 pour chaque équipage vivant).&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
@@ -2691,7 +2691,7 @@
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points.&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: 20 intel points (10 for each crew alive).&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</German>
@@ -2711,6 +2711,18 @@
 				<Key ID="STR_PARAM_SQUAD_SIZE">
 						<Original>AI recruitment limit per squad</Original>
 						<French>Limite de recrutement d'IA par escouade</French>
+				</Key>
+				<Key ID="STR_NOTIFICATION_SAR_STARTED">
+						<Original>Crashed helicopter near %1.</Original>
+						<French>Helicopter crashé près de %1.</French>
+				</Key>
+				<Key ID="STR_NOTIFICATION_SAR_FAILED">
+						<Original>SAR mission failed, both crew are KIA.</Original>
+						<French>Mission SAR échouée, les deux équipages sont morts.</French>
+				</Key>
+				<Key ID="STR_NOTIFICATION_SAR_SUCCESS">
+						<Original>SAR mission succeeded.</Original>
+						<French>Mission SAR réussie.</French>
 				</Key>
 		</Package>
 </Project>
