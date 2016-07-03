@@ -8,11 +8,11 @@
 						<Original>v0.924</Original>
 				</Key>
 				<Key ID="STR_MISSION_DESCRIPTION">
-						<Original>With the power of Freedom and Democracy you shall liberate Altis from the CSAT oppression.</Original>
-						<French>Avec le pouvoir de la Liberté et de la Démocratie votre mission est de libérer Altis de l'oppression du CSAT.</French>
-						<German>Befreie Altis von der CSAT-Unterdrückung mit der Kraft von Freiheit und Demokratie</German>
-						<Spanish>Con el poder de la Libertad y la Democracia, debes liberar Altis de la opresión del CSAT</Spanish>
-						<Russian>С помощью сил "свободы" и "демократии" вы должны освободить Altis от угнетения CSAT.</Russian>
+						<Original>With the power of Freedom and Democracy you shall liberate Altis from the OPFOR oppression.</Original>
+						<French>Avec le pouvoir de la Liberté et de la Démocratie votre mission est de libérer Altis de l'oppression de l'OPFOR.</French>
+						<German>Befreie Altis von der OPFOR-Unterdrückung mit der Kraft von Freiheit und Demokratie</German>
+						<Spanish>Con el poder de la Libertad y la Democracia, debes liberar Altis de la opresión del OPFOR</Spanish>
+						<Russian>С помощью сил "свободы" и "демократии" вы должны освободить Altis от угнетения OPFOR.</Russian>
 				</Key>
 				<Key ID="STR_Deploy_OnPoint">
 						<Original>Deploy</Original>
@@ -647,11 +647,11 @@
 						<Russian>СИНИЕ ПОБЕДИЛИ</Russian>
 				</Key>
 				<Key ID="STR_VICTORY_TEXT">
-						<Original>You have liberated Altis from the CSAT oppression.</Original>
-						<French>Vous avez libéré Altis de l'oppression du CSAT.</French>
-						<German>Du hast Altis von der CSAT Besatzung befreit.</German>
-						<Spanish>Has liberado a Altis de la opresión del CSAT</Spanish>
-						<Russian>Вы освободили Алтис от оккупации CSAT.</Russian>
+						<Original>You have liberated Altis from the OPFOR oppression.</Original>
+						<French>Vous avez libéré Altis de l'oppression de l'OPFOR.</French>
+						<German>Du hast Altis von der OPFOR Besatzung befreit.</German>
+						<Spanish>Has liberado a Altis de la opresión del OPFOR</Spanish>
+						<Russian>Вы освободили Алтис от оккупации OPFOR.</Russian>
 				</Key>
 				<Key ID="STR_STATS_DAY">
 						<Original>days</Original>
@@ -1096,7 +1096,7 @@
 						<Russian>Нет</Russian>
 				</Key>
 				<Key ID="STR_PARAMS_UNITCAP">
-						<Original>Maximum amount AI units</Original>
+						<Original>Maximum amount of AI units</Original>
 						<French>Quantité maximum d'unités IA</French>
 						<German>Maximale Anzahl KI-Einheiten</German>
 						<Spanish>Cantidad máxima de unidades de IA</Spanish>
@@ -1851,11 +1851,11 @@
 						<Russian>Позиция размешения:</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM">
-						<Original>CSAT aggresivity</Original>
-						<French>Aggressivité du CSAT</French>
-						<German>CSAT Aggressivität</German>
-						<Spanish>Agresividad del CSAT</Spanish>
-						<Russian>Уровень обеспокоенности CSAT</Russian>
+						<Original>OPFOR aggressivity</Original>
+						<French>Aggressivité de l'OPFOR</French>
+						<German>OPFOR Aggressivität</German>
+						<Spanish>Agresividad del OPFOR</Spanish>
+						<Russian>Уровень обеспокоенности OPFOR</Russian>
 				</Key>
 				<Key ID="STR_AGGRESSIVITY_PARAM0">
 						<Original>Anemic</Original>
@@ -2018,10 +2018,10 @@
 						<Russian>Замечена вражеская группа рядом с %1</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_CSAT_CONVOY">
-						<Original>CSAT Convoy</Original>
-						<French>Convoi CSAT</French>
-						<German>CSAT Konvoi</German>
-						<Russian>Конвой CSAT</Russian>
+						<Original>OPFOR Convoy</Original>
+						<French>Convoi OPFOR</French>
+						<German>OPFOR Konvoi</German>
+						<Russian>Конвой OPFOR</Russian>
 				</Key>
 				<Key ID="STR_SECONDARY_CSAT_CONVOY_WP">
 						<Original>Waypoint</Original>
@@ -2030,16 +2030,16 @@
 						<Russian>Путевая точка</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_CONVOY_DESTROYED_TEXT">
-						<Original>CSAT Convoy neutralized.</Original>
-						<French>Convoi CSAT neutralisé.</French>
-						<German>CSAT Konvoi neutralisiert.</German>
-						<Russian>Конвой CSAT нейтрализован.</Russian>
+						<Original>OPFOR Convoy neutralized.</Original>
+						<French>Convoi OPFOR neutralisé.</French>
+						<German>OPFOR Konvoi neutralisiert.</German>
+						<Russian>Конвой OPFOR нейтрализован.</Russian>
 				</Key>
 				<Key ID="STR_NOTIFICATION_CONVOY_SPOTTED_TEXT">
-						<Original>CSAT Convoy near %1.</Original>
-						<French>Convoi CSAT près de %1.</French>
-						<German>CSAT Konvoi nahe %1.</German>
-						<Russian>Конвой CSAT рядом с %1.</Russian>
+						<Original>OPFOR Convoy near %1.</Original>
+						<French>Convoi OPFOR près de %1.</French>
+						<German>OPFOR Konvoi nahe %1.</German>
+						<Russian>Конвой OPFOR рядом с %1.</Russian>
 				</Key>
 				<Key ID="STR_TUTO_GOTIT">
 						<Original>Got it!</Original>
@@ -2073,50 +2073,50 @@
 						<Original>
 						&lt;br/&gt;
 						Hello gentlemen, and welcome to Altis.
-						The CSAT forces have surprised us with a brutal and overwhelming offensive. They now control the entire island, but thanks to your efforts, it won't last long.&lt;br/&gt; &lt;br/&gt;
+						The OPFOR forces have surprised us with a brutal and overwhelming offensive. They now control the entire island, but thanks to your efforts, it won't last long.&lt;br/&gt; &lt;br/&gt;
 						Our objective is simple: liberate Altis.&lt;br/&gt; &lt;br/&gt;
 						The road to victory will be long and dangerous. You will have to conquer multiple sectors and acquire the necessary resources to improve the quantity and quality of the BLUFOR forces engaged in this campaign.&lt;br/&gt; &lt;br/&gt;
-						Moreover, CSAT forces will most certainly react to our advance. You will have to engage into secondary operations to weaken a foe that fights with higher numbers and better equipment than you do.&lt;br/&gt; &lt;br/&gt;
+						Moreover, OPFOR forces will most certainly react to our advance. You will have to engage into secondary operations to weaken a foe that fights with higher numbers and better equipment than you do.&lt;br/&gt; &lt;br/&gt;
 						In your efforts you will need the support of the local population, so always make sure to double-check what you're shooting at.&lt;br/&gt; &lt;br/&gt;
 						Questions?&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>
 						&lt;br/&gt;
 						Bonjour messieurs, et bienvenue sur Altis.&lt;br/&gt; &lt;br/&gt;
-						Les forces du CSAT nous ont pris de court avec une offensive aussi brutale que surprenante. L’île est maintenant sous leur emprise, mais grâce à vous, cela ne va pas durer.&lt;br/gt; &lt;br/&gt;
+						Les forces de l'OPFOR nous ont pris de court avec une offensive aussi brutale que surprenante. L’île est maintenant sous leur emprise, mais grâce à vous, cela ne va pas durer.&lt;br/gt; &lt;br/&gt;
 						L’objectif est simple : libérer Altis.&lt;br/&gt; &lt;br/&gt;
 						La route vers la victoire sera longue et semée d’embûches. Il vous faudra conquérir de multiples secteurs pour acquérir les ressources nécessaires au développement en nombre et en qualité des forces de l’OTAN engagées dans cette opération.&lt;br/&gt; &lt;br/&gt;
-						De plus, les forces du CSAT ne manqueront pas de réagir à notre avancée. Il faudra veiller à effectuer des opérations annexes pour affaiblir un ennemi bien plus nombreux et mieux équipé que nous.&lt;br/&gt; &lt;br/&gt;
+						De plus, les forces de l'OPFOR ne manqueront pas de réagir à notre avancée. Il faudra veiller à effectuer des opérations annexes pour affaiblir un ennemi bien plus nombreux et mieux équipé que nous.&lt;br/&gt; &lt;br/&gt;
 						Dans vos efforts, le soutien de la population locale sera primordial, alors soyez toujours sûrs de toujours savoir sur quoi vous tirez.&lt;br/&gt; &lt;br/&gt;
 						Des questions ?&lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>
 						&lt;br/&gt;
 						Guten Tag meine Herren und willkommen im Operationsgebiet.&lt;br/&gt;
-						Die CSAT Streitkräfte haben uns mit einer brutalen und überwältigenden Offensive überrascht. Sie kontrollieren nun das gesamte Gebiet. Aber Dank Ihrer kommenden Bemühungen wird dies nicht lange anhalten.&lt;br/&gt;
+						Die OPFOR Streitkräfte haben uns mit einer brutalen und überwältigenden Offensive überrascht. Sie kontrollieren nun das gesamte Gebiet. Aber Dank Ihrer kommenden Bemühungen wird dies nicht lange anhalten.&lt;br/&gt;
 						Ihre Aufgabe ist einfach: Erobern Sie das Operationsgebiet zurück.&lt;br/&gt; &lt;br/&gt;
 						Der Weg zum Sieg wird lang und gefährlich. Sie werden verschiedene Sektoren erobern und alle nötigen Ressourcen zusammentragen müssen, um die Quantität und Qualität der BLUFOR Streitkräfte in dieser Operation zu verbessern.&lt;br/&gt; &lt;br/&gt;
-						Zusätzlich werden die CSAT Streitkräfte definitiv auf Ihre Vorstöße reagieren. Sie werden sekundäre Ziele erfüllen müssen, um den besser ausgerüsteten und in der Überzahl befindlichen Feind zu schwächen.&lt;br/&gt; &lt;br/&gt;
+						Zusätzlich werden die OPFOR Streitkräfte definitiv auf Ihre Vorstöße reagieren. Sie werden sekundäre Ziele erfüllen müssen, um den besser ausgerüsteten und in der Überzahl befindlichen Feind zu schwächen.&lt;br/&gt; &lt;br/&gt;
 						Bei Ihren Anstrengungen werden Sie die Hilfe der lokalen Bevölkerung benötigen. Vergewissern Sie sich also immer worauf Sie schießen.&lt;br/&gt; &lt;br/&gt;
 						Fragen?&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>
 						&lt;br/&gt;
 						Buenos días señores, y bienvenidos a Altis:
-						Las fuerzas del CSAT nos han sorprendido con una brutal y fuerte ofensiva. Actualmente controlan toda la isla, pero gracias a tus esfuerzos, eso no será así por mucho tiempo.&lt;br/&gt; &lt;br/&gt;
+						Las fuerzas del OPFOR nos han sorprendido con una brutal y fuerte ofensiva. Actualmente controlan toda la isla, pero gracias a tus esfuerzos, eso no será así por mucho tiempo.&lt;br/&gt; &lt;br/&gt;
 						Nuestro objetivo es sencillo: liberar Altis.&lt;br/&gt; &lt;br/&gt;
 						El camino hacia la victoria será largo y peligroso. Tendrás que conquistar múltiples sectores y obtener los recursos necesarios para mejorar la calidad y cantidad de las fuerzas BLUFOR involucradas en esta campaña.&lt;br/&gt; &lt;br/&gt;
-						Es más, las fuerzas del CSAT reaccionarán ante tu avance. Deberás involucrarte en operaciones secundarias para debilitar a un enemigo que lucha con mayores números y mejor equipamiento que tú.&lt;br/&gt; &lt;br/&gt;
+						Es más, las fuerzas del OPFOR reaccionarán ante tu avance. Deberás involucrarte en operaciones secundarias para debilitar a un enemigo que lucha con mayores números y mejor equipamiento que tú.&lt;br/&gt; &lt;br/&gt;
 						Durante tus esfuerzos necesitarás el apoyo de la población local, asegúrate de comprobar siempre a quien estás disparando. &lt;br/&gt; &lt;br/&gt;
 						¿Preguntas?&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>
 						&lt;br/&gt;
 						Приветствую вас господа, и добро пожаловать на остров Altis. &lt;br/&gt; &lt;br/&gt;
-						Силы CSAT внезапно напали на остров и жестоко подавили все очаги сопротивления. Они теперь контролируют весь остров, но благодаря вашим усилиям, это продлится недолго. &lt;br/&gt; &lt;br/&gt;
+						Силы OPFOR внезапно напали на остров и жестоко подавили все очаги сопротивления. Они теперь контролируют весь остров, но благодаря вашим усилиям, это продлится недолго. &lt;br/&gt; &lt;br/&gt;
 						Ваша задача проста: освободить Altis. &lt;br/&gt; &lt;br/&gt;
 						Путь к победе будет долгим и опасным. Вы должны будете захватить множество секторов и приобрести необходимые ресурсы для улучшения количества и качества сил BLUFOR, участвующих в этой кампании. &lt;br/&gt; &lt;br/&gt;
-						Кроме того, силы CSAT наверняка будут быстро реагировать на ваше продвижение. Вам придется заниматься диверсионной деятельностью, чтобы ослабить врага, который превосходит нас в численности и лучше вооружён. &lt;br/&gt; &lt;br/&gt;
+						Кроме того, силы OPFOR наверняка будут быстро реагировать на ваше продвижение. Вам придется заниматься диверсионной деятельностью, чтобы ослабить врага, который превосходит нас в численности и лучше вооружён. &lt;br/&gt; &lt;br/&gt;
 						Вы будете нуждаться в поддержке местного населения, поэтому всегда убеждайтесь, и дважды проверяйте, в кого собираетесь стрелять. &lt;br/&gt; &lt;br/&gt;
 						Вопросы есть? &lt;br/&gt; &lt;br/&gt;
 						</Russian>
@@ -2132,35 +2132,35 @@
 						<Original>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						You begin the campaign in a safe zone that CSAT won't dare to attack. Your first choice is to choose where you want to deploy. At the beginning you can only deploy at the starting base, but as you progress, more options will become available such as forward operation bases (FOBs) and mobile respawns.&lt;br/&gt; &lt;br/&gt;
+						You begin the campaign in a safe zone that OPFOR won't dare to attack. Your first choice is to choose where you want to deploy. At the beginning you can only deploy at the starting base, but as you progress, more options will become available such as forward operation bases (FOBs) and mobile respawns.&lt;br/&gt; &lt;br/&gt;
 						At your starting location you can choose your equipment from a complete Arsenal. You will also find your first FOB packaged inside a container, the Spartan-01 Huron and a few other transport choppers.&lt;br/&gt; &lt;br/&gt;
 						You will have to ferry that container with either the Huron or Ghosthawk (unless you have chosen to start with the first FOB already built). You can deploy this first FOB wherever you want, so it's up to you to choose the right place to start your campaign.&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						Vous démarrez cette campagne dans un lieu sûr que le CSAT n’osera pas attaquer. Votre premier choix sera de savoir où vous voulez vous déployer. Au premier lancement, vous n’aurez que la base de départ. A mesure que vous progresserez, davantage d’options seront disponibles : bases avancées, respawn mobile, etc.&lt;br/&gt; &lt;br/&gt;
+						Vous démarrez cette campagne dans un lieu sûr que l'OPFOR n’osera pas attaquer. Votre premier choix sera de savoir où vous voulez vous déployer. Au premier lancement, vous n’aurez que la base de départ. A mesure que vous progresserez, davantage d’options seront disponibles : bases avancées, respawn mobile, etc.&lt;br/&gt; &lt;br/&gt;
 						A votre point de départ vous avez la possibilité de choisir vos armes avec un Arsenal complet. Vous trouverez également à proximité une FOB empaquetée, le Huron SPARTAN-01 quelques hélicoptères de transport.&lt;br/&gt; &lt;br/&gt;
 						Vous devrez emmener le container en utilisant le Huron ou le Ghosthawk à votre disposition (sauf si vous avez fait le choix de démarrer avec une première FOB). Vous pouvez déployer cette première FOB où bon vous semble, alors à vous de choisir le bon endroit pour débuter la campagne.&lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						Sie beginnen ihre Kampagne in einer sicheren Zone, welche sich CSAT nicht wagen würde anzugreifen. Ihre erste Entscheidung ist die Wahl des Ortes von dem aus Sie ihre Operation starten. Am Anfang können Sie lediglich an der Startbasis eingesetzt werden. Doch umso weiter Sie in der Operation voranschreiten, umso mehr Möglichkeiten, wie vorgeschobene Operationsbasen (FOBs) und mobile Respawns, werden Sie besitzen.&lt;br/&gt; &lt;br/&gt;
+						Sie beginnen ihre Kampagne in einer sicheren Zone, welche sich OPFOR nicht wagen würde anzugreifen. Ihre erste Entscheidung ist die Wahl des Ortes von dem aus Sie ihre Operation starten. Am Anfang können Sie lediglich an der Startbasis eingesetzt werden. Doch umso weiter Sie in der Operation voranschreiten, umso mehr Möglichkeiten, wie vorgeschobene Operationsbasen (FOBs) und mobile Respawns, werden Sie besitzen.&lt;br/&gt; &lt;br/&gt;
 						An Ihrer Startposition können Sie Ihre Ausrüstung aus einem kompletten Arsenal wählen. Sie werden außerdem ihre erste FOB in einen Container verpackt vorfinden. Weiterhin stehen Ihnen der Spartan-01 Huron und einige weitere Transporthelikopter zur verfügung.&lt;br/&gt; &lt;br/&gt;
 						Sie werden den FOB Container mit einem Huron oder Ghosthawk in das Operationsgebiet bringen müssen (außer Sie haben ausgewählt dass die erste FOB bereits gebaut sein soll). Sie können Ihre erste FOB bauen wo immer Sie möchten. Also liegt es an Ihnen einen geeigneten Ort zu finden von dem aus Sie die Operation starten wollen.&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						La campaña comienza en una zona segura que el CSAT no se atreverá a atacar. Tu primera elección es donde desplegar la primera base. Al principio solo puedes reaparecer en la primera base, pero según progreses más opciones tendrás, como bases de operaciones avanzadas (FOBs) y respawns móviles.&lt;br/&gt; &lt;br/&gt;
+						La campaña comienza en una zona segura que el OPFOR no se atreverá a atacar. Tu primera elección es donde desplegar la primera base. Al principio solo puedes reaparecer en la primera base, pero según progreses más opciones tendrás, como bases de operaciones avanzadas (FOBs) y respawns móviles.&lt;br/&gt; &lt;br/&gt;
 						Al comenzar, podrás equiparte con un Arsenal completo. Encontrarás la primera FOB empaquetada en un contenedor, el Huron Spartan-01 y algunos helicópteros más de transporte.&lt;br/&gt; &lt;br/&gt;
 						Deberás transportar el contenedor con el Huron o el Ghosthawk (salvo que hayas elegido empezar con la primera FOB ya desplegada). Puedes desplegar esta primera FOB donde quieras, así que es tarea tuya elegir donde quieres comenzar la campaña.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\tuto\fob.jpg'/&gt;&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
-						Вы начинаете кампанию в безопасной зоне BASE CHIMERA, её CSAT не решатся атаковать. Ваш первая задача: выбрать место развёртывания. В начале вы можете развёртывать свои войска только в начальной базе, но, по мере продвижения, вам будут доступны больше вариантов, таких как передовые оперативные базы (FOB) и мобильные КШМ.&lt;br/&gt; &lt;br/&gt;
+						Вы начинаете кампанию в безопасной зоне BASE CHIMERA, её OPFOR не решатся атаковать. Ваш первая задача: выбрать место развёртывания. В начале вы можете развёртывать свои войска только в начальной базе, но, по мере продвижения, вам будут доступны больше вариантов, таких как передовые оперативные базы (FOB) и мобильные КШМ.&lt;br/&gt; &lt;br/&gt;
 						В месте развёртывания вы можете выбрать снаряжение в Арсенале. Там же вы найдете вашу первую FOB, упакованную внутри контейнера, Spartan-01 Huron и несколько других транспортных вертолётов.&lt;br/&gt; &lt;br/&gt;
 						Вы должны будете переправить этот контейнер при помощи Huron или Ghosthawk (если вы не выбрали в параметрах, что первая FOB уже развёрнута). Вы можете развернуть эту первую FOB там, где пожелаете, так что от вас зависит выбор правильного места, для началя своей кампании.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
@@ -2174,27 +2174,27 @@
 				</Key>
 				<Key ID="STR_TUTO_TEXT3">
 						<Original>&lt;br/&gt;
-						The main objective of the campaign is to kick CSAT out of Altis. To achieve this, you will have to liberate the 7 major towns on the island: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros and Molos. This is the only victory condition for the campaign.&lt;br/&gt; &lt;br/&gt;
-						But those cities are tough nuts to crack with only limited resources and a well established CSAT. &lt;br/&gt; &lt;br/&gt;
+						The main objective of the campaign is to kick OPFOR out of Altis. To achieve this, you will have to liberate the 7 major towns on the island: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros and Molos. This is the only victory condition for the campaign.&lt;br/&gt; &lt;br/&gt;
+						But those cities are tough nuts to crack with only limited resources and a well established OPFOR. &lt;br/&gt; &lt;br/&gt;
 						To succeed, you will have to capture large number of different sectors, each with their own use.&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>&lt;br/&gt;
-						L’objectif premier de la campagne est de bouter le CSAT hors d'Altis. Pour cela, vous devez libérer les 7 villes principales : Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros et Molos. C’est l’unique condition de victoire de cette campagne.&lt;br/&gt; &lt;br/&gt;
-						Mais ces villes sont bien difficile à attaquer avec des ressources limitées et un CSAT bien établi. Pour arriver à vos fins, vous devrez donc capturer un grand nombre de secteurs, avec chacun leur propre utilité.&lt;br/&gt; &lt;br/&gt;
+						L’objectif premier de la campagne est de bouter l'OPFOR hors d'Altis. Pour cela, vous devez libérer les 7 villes principales : Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros et Molos. C’est l’unique condition de victoire de cette campagne.&lt;br/&gt; &lt;br/&gt;
+						Mais ces villes sont bien difficile à attaquer avec des ressources limitées et une OPFOR bien établie. Pour arriver à vos fins, vous devrez donc capturer un grand nombre de secteurs, avec chacun leur propre utilité.&lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>&lt;br/&gt;
-						Das Primärziel der Operation ist es die CSAT Streitkräfte aus dem Gebiet zu vertreiben. Um dies zu erreichen werden Sie die folgenden 7 Hauptstädte erobern müssen: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros und Molos. Dies ist die einzige Bedingung für unseren Sieg in dieser Operation.&lt;br/&gt; &lt;br/&gt;
-						Allerdings sind diese Städte eine wirklich harte Nuss, da es Ihnen an Ressourcen mangeln wird und die CSAT Streitkräfte genug Zeit hatten sich dort einzugraben.&lt;br/&gt; &lt;br/&gt;
+						Das Primärziel der Operation ist es die OPFOR Streitkräfte aus dem Gebiet zu vertreiben. Um dies zu erreichen werden Sie die folgenden 7 Hauptstädte erobern müssen: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros und Molos. Dies ist die einzige Bedingung für unseren Sieg in dieser Operation.&lt;br/&gt; &lt;br/&gt;
+						Allerdings sind diese Städte eine wirklich harte Nuss, da es Ihnen an Ressourcen mangeln wird und die OPFOR Streitkräfte genug Zeit hatten sich dort einzugraben.&lt;br/&gt; &lt;br/&gt;
 						Um Erfolg zu haben, werden Sie eine große Anzahl weiterer Sektoren erobern müssen. Alle mit ihrer eigenen Nützlichkeit.&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>&lt;br/&gt;
-						El objetivo principal de la campaña es expulsar al CSAT de Altis. Para cconseguirlo, deberás liberar las 7 poblaciones principales de la isla: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros y Molos. Esta es la única condición de victoria para completar la campaña.&lt;br/&gt; &lt;br/&gt;
-						Pero estas ciudades serás bastante dificiles de atacar con los recursos limitados que disponemos y el CSAT esta fuertemente afianzado en la zona.&lt;br/&gt; &lt;br/&gt;
+						El objetivo principal de la campaña es expulsar al OPFOR de Altis. Para cconseguirlo, deberás liberar las 7 poblaciones principales de la isla: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros y Molos. Esta es la única condición de victoria para completar la campaña.&lt;br/&gt; &lt;br/&gt;
+						Pero estas ciudades serás bastante dificiles de atacar con los recursos limitados que disponemos y el OPFOR esta fuertemente afianzado en la zona.&lt;br/&gt; &lt;br/&gt;
 						Para lograrlo, deberas capturar un gran numero de sectores diferentes, cada uno con sus propios usos.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						Основная задача, выбить CSAT из Альтиса. Чтобы добиться этого, вам придется освободить семь самых больших населённых пунктов на острове: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Это единственное условие для победы в кампании.&lt;br/&gt; &lt;br/&gt;
-						Но эти города будут для вас крепкими орешками, их получится раскусить только ограничив поступление в них подкреплений, силы CSAT в них очень хорошо организованы.&lt;br/&gt; &lt;br/&gt;
+						Основная задача, выбить OPFOR из Альтиса. Чтобы добиться этого, вам придется освободить семь самых больших населённых пунктов на острове: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Это единственное условие для победы в кампании.&lt;br/&gt; &lt;br/&gt;
+						Но эти города будут для вас крепкими орешками, их получится раскусить только ограничив поступление в них подкреплений, силы OPFOR в них очень хорошо организованы.&lt;br/&gt; &lt;br/&gt;
 						Чтобы добиться успеха, вам придется захватить большое количество различных зон, каждая из которых принесёт свой определённый бонус.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
 				</Key>
@@ -2209,41 +2209,41 @@
 						<Original>&lt;br/&gt;
 						Sectors are split into 5 different types:&lt;br/&gt; &lt;br/&gt;
 						- Points of interest: generally small to medium towns, each point of interest you control will raise your troop recruitment capacity.&lt;br/&gt; &lt;br/&gt;
-						- Military bases: full of CSAT personnel, the bases will also yield large quantities of ammunition that will be useful to upgrade your firepower. However these installations are heavily defended and will require large and well coordinated assaults.&lt;br/&gt; &lt;br/&gt;
+						- Military bases: full of OPFOR personnel, the bases will also yield large quantities of ammunition that will be useful to upgrade your firepower. However these installations are heavily defended and will require large and well coordinated assaults.&lt;br/&gt; &lt;br/&gt;
 						- Factories: factories will give you the fuel you need to deploy more vehicles.&lt;br/&gt; &lt;br/&gt;
-						- Radio towers: when under CSAT control, radio towers will be used to call in reinforcements when a nearby sector is attacked. The reaction time will depend on the distance between the tower and the sector. When under - NATO control, the towers will give useful information on hostile troop movements in the vicinity by using their radio communications.&lt;br/&gt; &lt;br/&gt;
+						- Radio towers: when under OPFOR control, radio towers will be used to call in reinforcements when a nearby sector is attacked. The reaction time will depend on the distance between the tower and the sector. When under - NATO control, the towers will give useful information on hostile troop movements in the vicinity by using their radio communications.&lt;br/&gt; &lt;br/&gt;
 						- Major cities: there is  seven of them: Kevala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros and Molos. When all of the cities are under NATO control, you win.&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>&lt;br/&gt;
 						Les secteurs se répartissent en 5 types différents :&lt;br/&gt; &lt;br/&gt;
 						- Les points d’interêts : généralement des villes de taille petite à moyenne, chaque point d'intérêt contrôlé augmentera votre capacité à recruter des troupes.&lt;br/&gt; &lt;br/&gt;
-						- Les bases militaires : habitées exclusivement par du personnel militaire du CSAT, les  bases sont riches en munitions qui vous permettront de déployer des véhicules puissants. Ces installations sont cependant lourdement  défendues et nécessiteront des offensives conséquences et bien  préparées.&lt;br/&gt; &lt;br/&gt;
+						- Les bases militaires : habitées exclusivement par du personnel militaire de l'OPFOR, les  bases sont riches en munitions qui vous permettront de déployer des véhicules puissants. Ces installations sont cependant lourdement  défendues et nécessiteront des offensives conséquences et bien  préparées.&lt;br/&gt; &lt;br/&gt;
 						- Les usines : les usines vous fourniront le carburant nécessaire pour déployer davantage de véhicules.&lt;br/&gt; &lt;br/&gt;
-						- Les tours radio : contrôlées par le CSAT, les tours radio permettent de donner  l'alerte et d'appeler des renforts si un secteur a proximité est attaqué. La vitesse de réaction des renforts dépendra de la distance entre la tour de radio et le secteur en question. Contrôlées par l'OTAN, les tours de radio permettront d'avoir des informations sur les mouvements hostiles à proximité en utilisant leurs communications radio.&lt;br/&gt; &lt;br/&gt;
+						- Les tours radio : contrôlées par l'e 'OPFOR, les tours radio permettent de donner  l'alerte et d'appeler des renforts si un secteur a proximité est attaqué. La vitesse de réaction des renforts dépendra de la distance entre la tour de radio et le secteur en question. Contrôlées par l'OTAN, les tours de radio permettront d'avoir des informations sur les mouvements hostiles à proximité en utilisant leurs communications radio.&lt;br/&gt; &lt;br/&gt;
 						- Les villes majeures : il y en a 7 à capturer, Kevala, Athira, Pyrgos, Agios Dionysios,  Zaros, Paros et Molos. Une fois toutes ces villes sous le contrôle de l'OTAN, vous gagnez la partie.&lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>&lt;br/&gt;
 						Die Sektoren sind in 5 verschiedene Arten unterteilt:&lt;br/&gt; &lt;br/&gt;
 						- Interessante Orte: Normalerweise kleine oder mittlere Dörfer. Jeder dieser Orte wird bei einer Eroberung Ihre Kapazitäten für die Truppenrekrutierung erhöhen.&lt;br/&gt; &lt;br/&gt;
-						- Militärbasen: Beherbergt eine große Anzahl von CSAT Truppen. Allerdings auch eine Menge an Munition, welche nützlich dafür wären Ihre Feuerkraft zu erhöhen. Jedenfalls werden diese Orte stark verteidigt und benötigen eine große und gut koordinierte Offensive.&lt;br/&gt; &lt;br/&gt;
+						- Militärbasen: Beherbergt eine große Anzahl von OPFOR Truppen. Allerdings auch eine Menge an Munition, welche nützlich dafür wären Ihre Feuerkraft zu erhöhen. Jedenfalls werden diese Orte stark verteidigt und benötigen eine große und gut koordinierte Offensive.&lt;br/&gt; &lt;br/&gt;
 						- Fabriken: Fabriken versorgen Sie mit dem nötigen Kraftstoff, welchen Sie brauchen um mehr Fahrzeuge bereitzustellen.&lt;br/&gt; &lt;br/&gt;
-						- Funktürme: Sind diese unter CSAT Kontrolle, werden Funktürme genutzt um Verstärkung zu rufen sobald ein Sektor in der Nähe angegriffen wird. Die Reaktionszeit hängt von der Distanz zwischen Funkturm und Sektor ab. Ist der Funkturm unter NATO Kontrolle, erhalten Sie hilfreiche Informationen über feindliche Truppenbewegungen im Umkreis des Funkturms.&lt;br/&gt; &lt;br/&gt;
+						- Funktürme: Sind diese unter OPFOR Kontrolle, werden Funktürme genutzt um Verstärkung zu rufen sobald ein Sektor in der Nähe angegriffen wird. Die Reaktionszeit hängt von der Distanz zwischen Funkturm und Sektor ab. Ist der Funkturm unter NATO Kontrolle, erhalten Sie hilfreiche Informationen über feindliche Truppenbewegungen im Umkreis des Funkturms.&lt;br/&gt; &lt;br/&gt;
 						- Hauptstädte: Es gibt sieben Hauptstädte: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros und Molos. Wenn alle diese Hauptstädte unter NATO Kontrolle gebracht wurden, haben Sie gewonnen.&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>&lt;br/&gt;
 						Los sectores se encuentran repartidos en 5 tipos diferentes:&lt;br/&gt; &lt;br/&gt;
 						-Puntos de interés: Generalmente pueblos pequeños y medianos, cada punto que controles aumenta tu capacidad de reclutamiento de tropas.&lt;br/&gt; &lt;br/&gt;
-						-Bases militares: Llenas de personal del CSAT, las bases proveen grandes cantidades de munición que te será útil para aumentar tu capacidad ofensiva. Pero estas instalaciones estarán fuertemente defendidas y requieren asaltos potentes y bien coordinados.&lt;br/&gt; &lt;br/&gt;
+						-Bases militares: Llenas de personal del OPFOR, las bases proveen grandes cantidades de munición que te será útil para aumentar tu capacidad ofensiva. Pero estas instalaciones estarán fuertemente defendidas y requieren asaltos potentes y bien coordinados.&lt;br/&gt; &lt;br/&gt;
 						-Fábricas: Las fábricas te darán el combustible que necesitas para poder desplegar más vehículos.&lt;br/&gt; &lt;br/&gt;
-						-Torres de radio: Cuando están bajo el control del CSAT, las utilizan para pedir refuerzos siempre que un sector cercano es atacado. El tiempo de reacción dependerá de la distancia entre la torre y el sector. Cuando están bajo el control de la OTAN, las torres entregan información relativa al movimiento de tropas hostiles en las proximidades. &lt;br/&gt; &lt;br/&gt;
+						-Torres de radio: Cuando están bajo el control del OPFOR, las utilizan para pedir refuerzos siempre que un sector cercano es atacado. El tiempo de reacción dependerá de la distancia entre la torre y el sector. Cuando están bajo el control de la OTAN, las torres entregan información relativa al movimiento de tropas hostiles en las proximidades. &lt;br/&gt; &lt;br/&gt;
 						-Ciudades grandes: Son siete ciudades: Kavala, Athira, Pyrgos, Agios Dionysios, Zaros, Paros y Molos. Cuando todas las ciudades esten bajo el control de la OTAN, habrás ganado.
 						</Spanish>
 						<Russian>&lt;br/&gt;
 						Зоны поделены на 5 различных типов:&lt;br/&gt; &lt;br/&gt;
 						- Точки интереса: в общем это маленькие и средние населённые пункты, каждая точка интереса, контролируемая вами, увеличивает ваши возможности набора войск.&lt;br/&gt; &lt;br/&gt;
-						- Военные базы: полные персонала CSAT, базы будут приносить большое количество боеприпасов которые будут полезны для обновления огневой мощи. Однако эти сооружения в значительной степени защищены и потребуют больших и хорошо скоординированных усилий.&lt;br/&gt; &lt;br/&gt;
+						- Военные базы: полные персонала OPFOR, базы будут приносить большое количество боеприпасов которые будут полезны для обновления огневой мощи. Однако эти сооружения в значительной степени защищены и потребуют больших и хорошо скоординированных усилий.&lt;br/&gt; &lt;br/&gt;
 						- Заводы: заводы дадут вам ресурсы, необходимые чтобы производить больше техники.&lt;br/&gt; &lt;br/&gt;
-						- Радиовышки: под контролем CSAT они используются для вызова подкрепления в ближайший атакованный сектор. Время подхода подкрепления зависит от дистанции между вышкой и зоной. Когда радиовышки под контролем НАТО, они дают вам полезную информацию, если в непосредственной близости от вышек враг использует для радиопереговоров радиосвязь.&lt;br/&gt; &lt;br/&gt;
+						- Радиовышки: под контролем OPFOR они используются для вызова подкрепления в ближайший атакованный сектор. Время подхода подкрепления зависит от дистанции между вышкой и зоной. Когда радиовышки под контролем НАТО, они дают вам полезную информацию, если в непосредственной близости от вышек враг использует для радиопереговоров радиосвязь.&lt;br/&gt; &lt;br/&gt;
 						- Главные населённые пункты: всего их семь: Кавала, Атира, Пиргос, Агиос Дионисиос, Зарос, Парос и Молос. Когда все эти населённые пункты будут под контролем НАТО, вы выиграете.&lt;br/&gt; &lt;br/&gt;
 						</Russian>
 				</Key>
@@ -2312,24 +2312,24 @@
 				</Key>
 				<Key ID="STR_TUTO_TEXT6">
 						<Original>&lt;br/&gt;
-						The CSAT won't let you liberate all of its brand new territory without reacting. When you begin the campaign, hostile forces will only be composed of the garrisons inside military bases. However as you become more threatening by liberating more and more sectors, the CSAT will start calling in more reinforcements, men and equipment to counter you.&lt;br/&gt; &lt;br/&gt;
-						To limit the CSAT's operational capabilities, you will have to fulfill secondary objectives that will consist of destroying their logistics bases. This is not required to win the campaign, but if you ignore the alert level for too long, you're in for quite a lot of trouble.&lt;br/&gt; &lt;br/&gt;
+						The OPFOR won't let you liberate all of its brand new territory without reacting. When you begin the campaign, hostile forces will only be composed of the garrisons inside military bases. However as you become more threatening by liberating more and more sectors, the OPFOR will start calling in more reinforcements, men and equipment to counter you.&lt;br/&gt; &lt;br/&gt;
+						To limit the OPFOR's operational capabilities, you will have to fulfill secondary objectives that will consist of destroying their logistics bases. This is not required to win the campaign, but if you ignore the alert level for too long, you're in for quite a lot of trouble.&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>&lt;br/&gt;
-						Le CSAT ne vous laissera pas reprendre son tout nouveau territoire sans réagir. En début de campagne les forces hostiles se limiteront aux garnisons des différentes bases militaires, mais plus vous deviendrez menaçants en libérant de nouveaux secteurs, et plus le CSAT fera venir de renforts en hommes et en matériel pour vous contrer. &lt;br/&gt; &lt;br/&gt;
-						Pour limiter la capacité de réaction du CSAT, vous devrez veiller à effectuer des opérations annexes qui constitueront par exemple à détruire leurs bases de ravitaillement. Ce n'est pas une obligation pour réussir cette campagne, mais si vous ignorez le niveau d'alerte trop longtemps, attendez vous à des ennuis. &lt;br/&gt; &lt;br/&gt;
+						L'OPFOR ne vous laissera pas reprendre son tout nouveau territoire sans réagir. En début de campagne les forces hostiles se limiteront aux garnisons des différentes bases militaires, mais plus vous deviendrez menaçants en libérant de nouveaux secteurs, et plus l' OPFOR fera venir de renforts en hommes et en matériel pour vous contrer. &lt;br/&gt; &lt;br/&gt;
+						Pour limiter la capacité de réaction du OPFOR, vous devrez veiller à effectuer des opérations annexes qui constitueront par exemple à détruire leurs bases de ravitaillement. Ce n'est pas une obligation pour réussir cette campagne, mais si vous ignorez le niveau d'alerte trop longtemps, attendez vous à des ennuis. &lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>&lt;br/&gt;
-						CSAT wird es Ihnen nicht gestatten das gesamte Gebiet zu erobern, ohne dabei zu reagieren. Wenn Sie Ihre Operation beginnen, werden die feindlichen Streitkräfte in erster Linie innerhalb der Militärbasen versammelt sein. Wenn Sie allerdings, durch die Einnahme von Sektoren, zu einer größeren Gefahr werden, werden die CSAT Streitkräfte anfangen mehr Verstärkung, Männer und Ausrüstung in Bewegung setzen um Ihnen gegenüberzutreten.&lt;br/&gt; &lt;br/&gt;
-						Um die Operationsmöglichkeiten der CSAT Streitkräfte zu verringern, müssen Sie sekundäre Ziele erfüllen wie z.B. die Zerstörung ihrer logistischen Standorte. Dies ist nicht zwingend notwendig um die Operation erfolgreich zu beenden, doch wenn Sie den Alarmstatus zu lange ignorieren werden Sie in große Schwierigkeiten geraten.&lt;br/&gt; &lt;br/&gt;
+						OPFOR wird es Ihnen nicht gestatten das gesamte Gebiet zu erobern, ohne dabei zu reagieren. Wenn Sie Ihre Operation beginnen, werden die feindlichen Streitkräfte in erster Linie innerhalb der Militärbasen versammelt sein. Wenn Sie allerdings, durch die Einnahme von Sektoren, zu einer größeren Gefahr werden, werden die OPFOR Streitkräfte anfangen mehr Verstärkung, Männer und Ausrüstung in Bewegung setzen um Ihnen gegenüberzutreten.&lt;br/&gt; &lt;br/&gt;
+						Um die Operationsmöglichkeiten der OPFOR Streitkräfte zu verringern, müssen Sie sekundäre Ziele erfüllen wie z.B. die Zerstörung ihrer logistischen Standorte. Dies ist nicht zwingend notwendig um die Operation erfolgreich zu beenden, doch wenn Sie den Alarmstatus zu lange ignorieren werden Sie in große Schwierigkeiten geraten.&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>&lt;br/&gt;
-						El CSAT no permitirá ser expulsado de los terriotrios sin ofrecer resistencia. Al comienzo de la campaña, las fuerzas hostiles sólo están compuestas por tropas aguarnicionadas en bases militares. Según vayas creciendo como amenaza y liberando sectores, el CSAT irá solicitando más refuerzos en forma de hombres y recursos para contrarrestar.	&lt;br/&gt; &lt;br/&gt;
-						Para limitar la capacidad operativa del CSAT, tendrás que completar objetivos secundarios, los cuales consisten en destruir sus bases logísticas, y otra serie de objetivos auxiliares. Esto no es un requerimiento para ganar la campaña, pero ignorar el nivel de alerta por mucho tiempo, supondrá un aumento significativo en la cantidad de efectivos enemigos desplegados.	&lt;br/&gt; &lt;br/&gt;
+						El OPFOR no permitirá ser expulsado de los terriotrios sin ofrecer resistencia. Al comienzo de la campaña, las fuerzas hostiles sólo están compuestas por tropas aguarnicionadas en bases militares. Según vayas creciendo como amenaza y liberando sectores, el OPFOR irá solicitando más refuerzos en forma de hombres y recursos para contrarrestar.	&lt;br/&gt; &lt;br/&gt;
+						Para limitar la capacidad operativa del OPFOR, tendrás que completar objetivos secundarios, los cuales consisten en destruir sus bases logísticas, y otra serie de objetivos auxiliares. Esto no es un requerimiento para ganar la campaña, pero ignorar el nivel de alerta por mucho tiempo, supondrá un aumento significativo en la cantidad de efectivos enemigos desplegados.	&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
-						CSAT не будут сидеть сложа руки, пока вы будете освобождать все зоны, они будут реагировать на ваши действия. Когда вы начнёте кампанию, враждебные силы будут состоять только из гарнизонов внутри военных баз. Однако, как только вы начнёте овобождать больше и больше зон, CSAT начнёт вызывать больше подкреплений, отряды и технику для борьбы с вами.&lt;br/&gt; &lt;br/&gt;
-						Чтобы ограничить оперативные возможности CSAT, вы должны будете выполнять дополнительные задачи, которые будут состоять в уничтожении баз снабжения врага. Это не обязательно, для того, чтобы выиграть кампанию, но если вы будете игнорировать уровень тревоги слишком долго, у вас могут быть большие неприятности.&lt;br/&gt; &lt;br/&gt;</Russian>
+						OPFOR не будут сидеть сложа руки, пока вы будете освобождать все зоны, они будут реагировать на ваши действия. Когда вы начнёте кампанию, враждебные силы будут состоять только из гарнизонов внутри военных баз. Однако, как только вы начнёте овобождать больше и больше зон, OPFOR начнёт вызывать больше подкреплений, отряды и технику для борьбы с вами.&lt;br/&gt; &lt;br/&gt;
+						Чтобы ограничить оперативные возможности OPFOR, вы должны будете выполнять дополнительные задачи, которые будут состоять в уничтожении баз снабжения врага. Это не обязательно, для того, чтобы выиграть кампанию, но если вы будете игнорировать уровень тревоги слишком долго, у вас могут быть большие неприятности.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE7">
 						<Original>7. Construction</Original>
@@ -2397,28 +2397,28 @@
 				<Key ID="STR_TUTO_TEXT9">
 						<Original>&lt;br/&gt;
 						When you capture sectors, sometimes the few hostiles forces left will surrender. You can then capture prisoners that have to be taken to a nearby FOB to be interrogated.&lt;br/&gt; &lt;br/&gt;
-						That interrogatory, executed in the utmost respect of the Geneva conventions, will allow you to obtain more or less precise information about the position of a CSAT logistics base.&lt;br/&gt; &lt;br/&gt;
-						After going there you will need to find the exact position of your target, then use any means at your disposal to destroy every vehicle or container that could be useful to refill CSAT forces. Succeeding at this task will reduce the alert level consequently, and with it the efficiency of all hostile forces.&lt;br/&gt; &lt;br/&gt;
+						That interrogatory, executed in the utmost respect of the Geneva conventions, will allow you to obtain more or less precise information about the position of an OPFOR logistics base.&lt;br/&gt; &lt;br/&gt;
+						After going there you will need to find the exact position of your target, then use any means at your disposal to destroy every vehicle or container that could be useful to refill OPFOR forces. Succeeding at this task will reduce the alert level consequently, and with it the efficiency of all hostile forces.&lt;br/&gt; &lt;br/&gt;
 						</Original>
 						<French>&lt;br/&gt;
 						Lors de la capture d'un secteur, les dernières forces hostile sur place se rendront. Vous pourrez alors capturer des prisonniers qui devront être emmenés à une FOB pour y être interrogés.&lt;br/&gt; &lt;br/&gt;
-						Cet interrogatoire mené dans le plus grand respect des conventions de Geneviève vous permettra d'obtenir des informations plus ou moins précises sur l'emplacement d'une base de ravitaillement du CSAT.&lt;br/&gt; &lt;br/&gt;
-						En vous rendant sur place vous devrez trouver l'emplacement exact de votre cible et y détruire tout véhicule ou container utile au ravitaillement des forces CSAT. Remplir cet objectif provoquera une réduction importante du niveau d'alerte, et donc de l'efficacité des forces hostiles.&lt;br/&gt; &lt;br/&gt;
+						Cet interrogatoire mené dans le plus grand respect des conventions de Geneviève vous permettra d'obtenir des informations plus ou moins précises sur l'emplacement d'une base de ravitaillement de l'OPFOR.&lt;br/&gt; &lt;br/&gt;
+						En vous rendant sur place vous devrez trouver l'emplacement exact de votre cible et y détruire tout véhicule ou container utile au ravitaillement des forces OPFOR. Remplir cet objectif provoquera une réduction importante du niveau d'alerte, et donc de l'efficacité des forces hostiles.&lt;br/&gt; &lt;br/&gt;
 						</French>
 						<German>&lt;br/&gt;
 						Wenn Sie Sektoren erobern, könnte es passieren dass sich feindliche Kräfte ergeben. Sie können dann Gefangene nehmen und müssen diese zu einer FOB bringen, damit diese dort verhört werden können.&lt;br/&gt; &lt;br/&gt;
-						Dieses Verhör, natürlich mit großen Respekt gegenüber den Genver Konventionen, wird Ihnen eine gewisse Menge an Geheimdienstinformationen über die Position von logistischen Standorten der CSAT Streitkräfte einbringen.&lt;br/&gt; &lt;br/&gt;
-						Wenn Sie in das Gebiet eines solchen Standortes eindringen, werden Sie die genaue Position ausmachen müssen. Im Anschluss ist es erforderlich alle Fahrzeuge und Container vor Ort, welche den CSAT Streitkräften im Bezug auf Nachschub nützlich sein könnten, mit Sprengstoff oder anderweitig zu zerstören. Ein erfolgreicher Abschluss dieser Aufgabe wird den Alarmstatus der CSAT Streitkräfte und damit einhergehend ihre Effizienz verringern.&lt;br/&gt; &lt;br/&gt;
+						Dieses Verhör, natürlich mit großen Respekt gegenüber den Genver Konventionen, wird Ihnen eine gewisse Menge an Geheimdienstinformationen über die Position von logistischen Standorten der OPFOR Streitkräfte einbringen.&lt;br/&gt; &lt;br/&gt;
+						Wenn Sie in das Gebiet eines solchen Standortes eindringen, werden Sie die genaue Position ausmachen müssen. Im Anschluss ist es erforderlich alle Fahrzeuge und Container vor Ort, welche den OPFOR Streitkräften im Bezug auf Nachschub nützlich sein könnten, mit Sprengstoff oder anderweitig zu zerstören. Ein erfolgreicher Abschluss dieser Aufgabe wird den Alarmstatus der OPFOR Streitkräfte und damit einhergehend ihre Effizienz verringern.&lt;br/&gt; &lt;br/&gt;
 						</German>
 						<Spanish>
 						Cuando capturas sectores, en ocasiones algunos enemigos se rendirán. Esto te permitira capturar prisioneros y llevarlos a una FOB cercana para ser interrogados.&lt;br/&gt; &lt;br/&gt;
-						Dicho interrogatorio, efectuado bajo el máximo respeto a las reglas de las convenciones de Ginebra, te permitirá obtener información mas o menos precisa sobre la posición de una base logística del CSAT.&lt;br/&gt; &lt;br/&gt;
-						Deberás encontrar por la zona la posición exacta de dicho objetivo, y usar cualquier medio a tu disposición para destruir cualquier vehículo o container que pudiera abastecer a las fuerzas del CSAT. El exito de esta tarea supondrá reducir el nivel de alerta enemigo, y con ello, la eficiencia de las fuerzas hostiles.&lt;br/&gt; &lt;br/&gt;
+						Dicho interrogatorio, efectuado bajo el máximo respeto a las reglas de las convenciones de Ginebra, te permitirá obtener información mas o menos precisa sobre la posición de una base logística del OPFOR.&lt;br/&gt; &lt;br/&gt;
+						Deberás encontrar por la zona la posición exacta de dicho objetivo, y usar cualquier medio a tu disposición para destruir cualquier vehículo o container que pudiera abastecer a las fuerzas del OPFOR. El exito de esta tarea supondrá reducir el nivel de alerta enemigo, y con ello, la eficiencia de las fuerzas hostiles.&lt;br/&gt; &lt;br/&gt;
 						</Spanish>
 						<Russian>&lt;br/&gt;
 						Когда вы захватите вражескую зону, иногда несколько вражеских солдат могут сдаться в плен. Вы можете захватить пленных, они должны быть переправлены в любую из FOB на допрос.&lt;br/&gt; &lt;br/&gt;
-						Этот допрос, выполненный в соответствии с Женевской конвенцией, позволит вам получить более или менее точную информацию о положении баз снабжения CSAT.&lt;br/&gt; &lt;br/&gt;
-						Добравшись туда, вы должны будете отискать их точное положение, а затем использовать любые средства в вашем распоряжении, чтобы уничтожить каждое транспортное средство или контейнер, который может быть полезен, чтобы пополнить силы врага. Успех в решении этой задачи позволит снизить уровень тревоги CSAT, следовательно и эффективность всех враждебных сил.&lt;br/&gt; &lt;br/&gt;</Russian>
+						Этот допрос, выполненный в соответствии с Женевской конвенцией, позволит вам получить более или менее точную информацию о положении баз снабжения OPFOR.&lt;br/&gt; &lt;br/&gt;
+						Добравшись туда, вы должны будете отискать их точное положение, а затем использовать любые средства в вашем распоряжении, чтобы уничтожить каждое транспортное средство или контейнер, который может быть полезен, чтобы пополнить силы врага. Успех в решении этой задачи позволит снизить уровень тревоги OPFOR, следовательно и эффективность всех враждебных сил.&lt;br/&gt; &lt;br/&gt;</Russian>
 				</Key>
 				<Key ID="STR_TUTO_TITLE10">
 						<Original>10. Commanding</Original>
@@ -2470,14 +2470,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;FOB HUNTING&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						CSAT forces use an array of small logistic bases situated behind the front lines. Destroying those assets would greatly disrupt the CSAT supply lines and impair their capacity to react to our actions.&lt;/t&gt;
+						OPFOR forces use an array of small logistic bases situated behind the front lines. Destroying those assets would greatly disrupt the OPFOR supply lines and impair their capacity to react to our actions.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
 						Your mission is to destroy all supply assets (trucks, containers) at the objective by any means at your disposal. Unfortunately our intelligence is not able to provide you with a precise position for the base, you will have to locate the objective in the red zone on your map.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Reward: CSAT alert level reduced by 40%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: OPFOR alert level reduced by 40%&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</Original>
@@ -2485,14 +2485,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;CHASSE A LA FOB&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Les forces du CSAT utilisent des bases logistiques situées derrière la ligne de front. Détruire ces objectifs pertubera les lignes d'approvisionnement du CSAT et les empêchera de réagir efficacement à nos actions.&lt;/t&gt;
+						Les forces de l'OPFOR utilisent des bases logistiques situées derrière la ligne de front. Détruire ces objectifs pertubera les lignes d'approvisionnement de l'OPFOR et les empêchera de réagir efficacement à nos actions.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
 						Votre mission est de détruire tous les équipements logistiques (camions, containers) présents sur l'objectif. Malheureusement nos renseignements ne permettent pas de vous donner la position précise de la base, vous devrez la chercher dans la zone rouge visible sur votre carte.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Coût: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Récompense: niveau d'alerte du CSAT réduit de 40%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Récompense: niveau d'alerte de l'OPFOR réduit de 40%&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</French>
@@ -2500,14 +2500,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;FOB JAGD&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Die CSAT Streitkräfte benutzen ein Netzwerk von kleineren Nachschubbasen hinter den Frontlinien. Diese zu zerstören würden die CSAT Nachschublinien und ihre Reaktionsmöglichkeiten stark einschränken.&lt;/t&gt;
+						Die OPFOR Streitkräfte benutzen ein Netzwerk von kleineren Nachschubbasen hinter den Frontlinien. Diese zu zerstören würden die OPFOR Nachschublinien und ihre Reaktionsmöglichkeiten stark einschränken.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
 						Ihr Auftrag ist es alle Nachschubkapazitäten (Container und Trucks) zu zerstören. Leider ist unser Geheimdienst nicht in der Lage Ihnen die genaue Position des Ortes mitzuteilen. Sie werden das Ziel innerhalb der makierten roten Zone auf der Karte suchen müssen.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Kosten: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: CSAT Alarmstatus wird um 40% reduziert&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: OPFOR Alarmstatus wird um 40% reduziert&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</German>
@@ -2515,25 +2515,25 @@
 						&lt;t size='1.3' color='#ffa000'&gt;CAZA DE FOB&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Las fuerzas del CSAT utilizan una red de bases logísticas situadas tras las líneas enemigas. Destruir estos recursos interrunpira las líneas de abastecimiento del enemigo y entorpecerán su capacidad para responder a tus acciones.&lt;/t&gt;
+						Las fuerzas del OPFOR utilizan una red de bases logísticas situadas tras las líneas enemigas. Destruir estos recursos interrunpira las líneas de abastecimiento del enemigo y entorpecerán su capacidad para responder a tus acciones.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
 						Tu misión consiste en destruir todos los recursos (camiones, containers) en el objetivo por cualquier medio que esté en tus manos. Desafortunadamente nuestra inteligencia no permite obtener una localización precisa de la base, deberás encontrarla dentro de la zona marcada en rojo en el mapa.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Recompensa: nivel de alerta del CSAT reducido en un 40%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Recompensa: nivel de alerta del OPFOR reducido en un 40%&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;
 						</Spanish>
 						<Russian>
 						&lt;t size='1.3' color='#ffa000'&gt;ОХОТА ЗА FOB&lt;/t&gt;
-						&lt;br/&gt;&lt;br/&gt;&lt;t size='1'&gt;Силы CSAT используют небольшие базы снабжения, расположенные за линией фронта. Уничтожение материальных средств этих баз значительно нарушит связи снабжения CSAT и ухудшит их способность реагировать на ваши действия.&lt;/t&gt;&lt;br/&gt;	&lt;t size='1'&gt;
+						&lt;br/&gt;&lt;br/&gt;&lt;t size='1'&gt;Силы OPFOR используют небольшие базы снабжения, расположенные за линией фронта. Уничтожение материальных средств этих баз значительно нарушит связи снабжения OPFOR и ухудшит их способность реагировать на ваши действия.&lt;/t&gt;&lt;br/&gt;	&lt;t size='1'&gt;
 						Ваша миссия состоит в том, чтобы уничтожить на базах все средства снабжения (грузовики, контейнеры) любыми средствами, находящимися в вашем распоряжении. К сожалению, наша разведка не в состоянии предоставить вам точное положение этих баз, вам придется найти их самостоятельно. Ищите базы снабжения в районе красной зоны, отмеченной на вашей карте.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Требуется: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Награда: уровень тревоги CSAT уменьшится на 40%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Награда: уровень тревоги OPFOR уменьшится на 40%&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='10'&gt;&lt;img image='res\secondary\fob_obj.jpg'/&gt;&lt;/t&gt;</Russian>
 				</Key>
@@ -2548,14 +2548,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;CONVOY HIJACK&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						CSAT forces use road convoys to resupply their defensive positions. Intercepting one of these convoys would effectively disrupt their supply lines, and we could use the occasion to retrieve an hefty amount of ammunition.&lt;/t&gt;
+						OPFOR forces use road convoys to resupply their defensive positions. Intercepting one of these convoys would effectively disrupt their supply lines, and we could use the occasion to retrieve an hefty amount of ammunition.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Your mission is to stop the CSAT convoy by any means necessary. You can destroy it, or hijack it to retrieve all the ammunition you can grab. The target will be spotted on your map.&lt;/t&gt;
+						Your mission is to stop the OPFOR convoy by any means necessary. You can destroy it, or hijack it to retrieve all the ammunition you can grab. The target will be spotted on your map.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Cost: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Reward: CSAT alert level reduced by 15%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Reward: OPFOR alert level reduced by 15%&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Side reward: All the ammunition you can retrieve.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2565,14 +2565,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;INTERCEPTION DE CONVOI&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Les forces du CSAT utilisent des convois routiers pour réaprovisionner leurs positions. Intercepter un de ces convois pertuberait leurs lignes d'approvisionnement, et nous pourrions utiliser l'occasion pour récupérer une grande quantité de munitions.&lt;/t&gt;
+						Les forces de l'OPFOR utilisent des convois routiers pour réaprovisionner leurs positions. Intercepter un de ces convois pertuberait leurs lignes d'approvisionnement, et nous pourrions utiliser l'occasion pour récupérer une grande quantité de munitions.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Votre mission est de stopper le convoi du CSAT par tous les moyens nécessaires. Vous pouvez le détruire, ou le stopper pour récupérer un maximum de munitions. La cible sera marquée sur votre carte.&lt;/t&gt;
+						Votre mission est de stopper le convoi de l'OPFOR par tous les moyens nécessaires. Vous pouvez le détruire, ou le stopper pour récupérer un maximum de munitions. La cible sera marquée sur votre carte.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Coût: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Récompense: niveau d'alerte du CSAT réduit de 15%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Récompense: niveau d'alerte de l'OPFOR réduit de 15%&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Récompense secondaire: toutes les munitions que vous pourrez récupérer.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2582,14 +2582,14 @@
 						&lt;t size='1.3' color='#ffa000'&gt;KONVOI HINTERHALT&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Die CSAT Streitkräfte benutzen Straßenkonvois um ihre Verteidigungspositionen zu versorgen. Diese Konvois abzufangen würden ihre Nachschublinien effektiv unterbrechen und außerdem könnten wir die Möglichkeit nutzen um selbst eine große Menge an Munition zu erbeuten.&lt;/t&gt;
+						Die OPFOR Streitkräfte benutzen Straßenkonvois um ihre Verteidigungspositionen zu versorgen. Diese Konvois abzufangen würden ihre Nachschublinien effektiv unterbrechen und außerdem könnten wir die Möglichkeit nutzen um selbst eine große Menge an Munition zu erbeuten.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Ihr Auftrag ist es den CSAT Konvoi auf jede erdenkliche Weise zu stoppen. Sie können ihn zerstören oder übernehmen, um soviel Munition wie möglich zu erbeuten. Das Ziel wird auf Ihrer Karte aufgeklärt.&lt;/t&gt;
+						Ihr Auftrag ist es den OPFOR Konvoi auf jede erdenkliche Weise zu stoppen. Sie können ihn zerstören oder übernehmen, um soviel Munition wie möglich zu erbeuten. Das Ziel wird auf Ihrer Karte aufgeklärt.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Kosten: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: CSAT Alarmstatus wird um 15% reduziert&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Belohnung: OPFOR Alarmstatus wird um 15% reduziert&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Seiten Belohnung: Soviel Munition wie Sie erbeuten können.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
@@ -2598,14 +2598,14 @@
 						<Russian>&lt;t size='1.3' color='#ffa000'&gt;НАЛЁТ НА КОНВОЙ&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Силы CSAT используют автоколонны для снабжения своих оборонительных позиций. Перехват одного из этих конвоев эффективно нарушил бы их связи снабжения, и мы могли бы использовать эту возможность для получения большого количество вооружения.&lt;/t&gt;
+						Силы OPFOR используют автоколонны для снабжения своих оборонительных позиций. Перехват одного из этих конвоев эффективно нарушил бы их связи снабжения, и мы могли бы использовать эту возможность для получения большого количество вооружения.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1'&gt;
-						Ваша задача состоит в том, чтобы остановить конвой CSAT любой ценой. Вы можете уничтожить его, или захватить его для получения ресурса вооружения. Цель будет отмечена на вашей карте.&lt;/t&gt;
+						Ваша задача состоит в том, чтобы остановить конвой OPFOR любой ценой. Вы можете уничтожить его, или захватить его для получения ресурса вооружения. Цель будет отмечена на вашей карте.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;
 						&lt;t size='1.15' color='#00a0ff'&gt;Стоимость: 10&lt;img image='\A3\Ui_f\data\GUI\Cfg\Ranks\general_gs.paa'/&gt;&lt;/t&gt;
 						&lt;br/&gt;
-						&lt;t size='1.15' color='#ffa000'&gt;Награда: уровень тревоги CSAT уменьшится на 15%&lt;/t&gt;
+						&lt;t size='1.15' color='#ffa000'&gt;Награда: уровень тревоги OPFOR уменьшится на 15%&lt;/t&gt;
 						&lt;br/&gt;
 						&lt;t size='1.15' color='#ffa000'&gt;Вторичная награда: Всё вооружение, которое можно получить за утилизацию груза конвоя.&lt;/t&gt;
 						&lt;br/&gt;&lt;br/&gt;

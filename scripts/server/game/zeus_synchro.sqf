@@ -44,7 +44,7 @@ while { true } do {
 		_zgm  setCuratorCoef ["place", -1e8];
 		_zgm  setCuratorCoef ["synchronize", 0];
 		_zgm  setCuratorCoef ["delete", 0];
-		_zgm  setCuratorCoef ["destroy", 0];
+		_zgm  setCuratorCoef ["destroy", -1e8];
 
 	} foreach allCurators;
 
