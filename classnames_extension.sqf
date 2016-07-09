@@ -302,6 +302,26 @@ elite_vehicles_extension = [
 
 // Blacklisted arsenal items such as deployable weapons  that should be bought instead
 // Useless if you're using a predefined arsenal in arsenal.sqf
+
+// Classnames of weapons which should not be available in the arsenal
+blacklisted_from_arsenal_weapons = [
+	"rhs_weap_M107",
+	"rhs_weap_M107_d",
+	"rhs_weap_M107_w"
+];
+
+// Classnames of items (optics, uniforms, vests, etc.) which should not be available in the arsenal
+blacklisted_from_arsenal_items = [
+	"optic_Nightstalker",
+	"optic_tws"
+];
+
+// Classnames of magazines or explosives which should not be available in the arsenal
+blacklisted_from_arsenal_magazines = [
+
+];
+
+// Classnames of backpacks which should not be available in the arsenal
 blacklisted_from_arsenal_extension = [
 	"RHS_Podnos_Bipod_Bag",
 	"RHS_Podnos_Gun_Bag",
