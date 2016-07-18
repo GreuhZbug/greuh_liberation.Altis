@@ -2728,5 +2728,10 @@
 						<French>Mission SAR réussie.</French>
 						<German>SAR Mission erfolgreich</German>
 				</Key>
+				
+				<Key ID="STR_PARAMS_MAPMARKERS">
+						<Original>Player mapmarkers activation through extended options</Original>
+						<German>Kartenmarkierungen von Spielern über Extended Options aktivierbar</German>
+				</Key>
 		</Package>
 </Project>

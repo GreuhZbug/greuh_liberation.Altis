@@ -2,7 +2,7 @@ _squadcontrols = [511,512,513,514,515,521,522,523,524,525,526,527];
 _platooncontrols = [611,612,613,614];
 _viewcontrols = [712,713,714,722,723,724,732,733,734];
 _worldcontrols = [812,813,814,815];
-_markerscontrols = [911,912,913,914];
+_markerscontrols = [911,912,913,914,961,962,963,964];
 _allbuttons = [6677,511,512,513,514,613,614,812,813,814,815,913,914,712,722,732];
 _rename_controls = [521,522,523,524,525,526,527];
 _leader_controls = [561,562,563,564,565,566,567];
@@ -83,8 +83,10 @@ while { dialog && alive player } do {
 	};
 
 	if ( GREUH_allow_platoonview ) then { ctrlShow [612, show_platoon]; };
-	if ( GREUH_allow_mapmarkers ) then { ctrlShow [912, show_teammates]; };
-	ctrlShow [ 962, show_nametags ];
+	if ( GREUH_allow_mapmarkers ) then {
+		ctrlShow [912, show_teammates];
+		ctrlShow [962, show_nametags ];
+	};
 
 	if ( GREUH_allow_customsquads ) then {
 		lbClear 515;

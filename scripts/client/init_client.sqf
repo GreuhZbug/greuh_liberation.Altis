@@ -30,7 +30,7 @@ do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\d
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\commander\enforce_whitelist.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\empty_vehicles_marker.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\fob_markers.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\group_icons.sqf";
+if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\group_icons.sqf"; };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\hostile_groups.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\huron_marker.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";

@@ -72,6 +72,12 @@ class Params
 		texts[] = { $STR_PARAMS_REVIVE3, $STR_PARAMS_REVIVE2, $STR_PARAMS_REVIVE1, $STR_PARAMS_DISABLED };
 		default = 3;
 	};
+	class MapMarkers {
+		title = $STR_PARAMS_MAPMARKERS;
+		values[] = { 0, 1 };
+		texts[] = { $STR_PARAMS_DISABLED, $STR_PARAMS_ENABLED };
+		default = 1;
+	};
 	class Civilians{
 		title = $STR_PARAMS_CIVILIANS;
 		values[] = {0,0.5,1,2};
