@@ -2711,22 +2711,18 @@
 				<Key ID="STR_PARAM_SQUAD_SIZE">
 						<Original>AI recruitment limit per squad</Original>
 						<French>Limite de recrutement d'IA par escouade</French>
-						<German>KI Rekrutierungslimit per Squad</German>
 				</Key>
 				<Key ID="STR_NOTIFICATION_SAR_STARTED">
 						<Original>Crashed helicopter near %1.</Original>
 						<French>Helicopter crashé près de %1.</French>
-						<German>Helikopterabsturz in der Nähe von %1</German>
 				</Key>
 				<Key ID="STR_NOTIFICATION_SAR_FAILED">
 						<Original>SAR mission failed, both crew are KIA.</Original>
 						<French>Mission SAR échouée, les deux équipages sont morts.</French>
-						<German>SAR Mission fehlgeschlagen. Beide Crewmitglieder gefallen.</German>
 				</Key>
 				<Key ID="STR_NOTIFICATION_SAR_SUCCESS">
 						<Original>SAR mission succeeded.</Original>
 						<French>Mission SAR réussie.</French>
-						<German>SAR Mission erfolgreich</German>
 				</Key>
 				
 				<Key ID="STR_PARAMS_MAPMARKERS">
