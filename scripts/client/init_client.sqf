@@ -28,11 +28,11 @@ do_load_box = compileFinal preprocessFileLineNumbers "scripts\client\ammoboxes\d
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\build_overlay.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\build\do_build.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\commander\enforce_whitelist.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\empty_vehicles_marker.sqf";
+if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\empty_vehicles_marker.sqf"; };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\fob_markers.sqf";
 if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\group_icons.sqf"; };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\hostile_groups.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\huron_marker.sqf";
+if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\huron_marker.sqf"; };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\broadcast_squad_colors.sqf";
