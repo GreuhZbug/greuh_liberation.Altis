@@ -33,6 +33,7 @@ if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumb
 if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\group_icons.sqf"; };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\hostile_groups.sqf";
 if ( GRLIB_mapmarkers == 1 ) then { [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\huron_marker.sqf"; };
+if ( GRLIB_mapmarkers == 0 ) then { deleteMarker "huronmarker" };
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\sector_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\markers\spot_timer.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\client\misc\broadcast_squad_colors.sqf";
