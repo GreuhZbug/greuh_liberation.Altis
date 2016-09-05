@@ -48,7 +48,15 @@ light_vehicles_extension = [
 	["I_MRAP_03_gmg_F",0,20,3],
 	["fsf_fnk_hmg_ce",0,10,3],
 	["greuh_fnk_hmg_ce",0,10,3],
-	["greuh_fnk_hmg_dsrt",0,10,3]
+	["greuh_fnk_hmg_dsrt",0,10,3],
+	["B_mas_cars_LR_Unarmed",0,0,2],
+	["B_mas_cars_LR_Med",0,0,2],
+	["B_mas_cars_LR_M2",0,10,3],
+	["B_mas_cars_LR_SPG9",0,10,3],
+	["B_mas_cars_LR_Mk19",0,20,3],
+	["B_mas_cars_LR_Stinger",0,20,3],
+	["B_mas_cars_LR_TOW",0,20,3]
+	
 ];
 
 heavy_vehicles_overwrite = false;
@@ -88,7 +96,13 @@ air_vehicles_extension = [
 	["usaf_f22",0,500,75],
 	["USAF_F35A",0,600,75],
 	["I_Plane_Fighter_03_AA_F",0,50,30],
-	["I_Plane_Fighter_03_CAS_F",0,100,30]
+	["I_Plane_Fighter_03_CAS_F",0,100,30],
+	["B_mas_UH1Y_MEV_F",0,0,12],
+	["B_mas_UH1Y_UNA_F",0,0,12],
+	["B_mas_UH1Y_F",0,40,15],
+	["B_mas_UH60M_MEV",0,0,12],
+	["B_mas_UH60M",0,20,15],
+	["B_mas_UH60M_SF",0,20,15]
 ];
 
 static_vehicles_overwrite = false;
