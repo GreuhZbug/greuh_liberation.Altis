@@ -1,7 +1,10 @@
-waitUntil { !isNil "blufor_sectors" };
 waitUntil { !isNil "save_is_loaded" };
+waitUntil { !isNil "blufor_sectors" };
+waitUntil { !isNil "saved_ammo_res" };
+waitUntil { !isNil "saved_intel_res" };
 
 resources_ammo = saved_ammo_res;
+resources_intel = saved_intel_res;
 
 while { GRLIB_endgame == 0 } do {
 
@@ -27,18 +30,18 @@ while { GRLIB_endgame == 0 } do {
 
 			if ( GRLIB_passive_income ) then {
 
-				_ammo_increase = round ( 35 + (random 35));
+				_ammo_increase = round ( 50 + (random 25));
 				resources_ammo = resources_ammo + _ammo_increase;
 
 			} else {
 
-				if ( ( { typeof _x == ammobox_b_typename } count vehicles ) <= ( ceil ( ( count _blufor_mil_sectors ) * 1.5 ) ) ) then {
+				if ( ( { typeof _x == ammobox_b_typename } count vehicles ) <= ( ceil ( ( count _blufor_mil_sectors ) * 1.3 ) ) ) then {
 
 					_spawnsector = ( _blufor_mil_sectors call BIS_fnc_selectRandom );
-					_spawnpos = [0,0,0];
-					while { surfaceIsWater _spawnpos } do {
-						_spawnpos =  ( [ ( markerpos _spawnsector), random 20, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [0, 100, 'Land_PaperBox_open_empty_F'];
-						if ( count _spawnpos == 0 ) then { _spawnpos = [0,0,0]; };
+					_spawnpos = zeropos;
+					while { _spawnpos distance zeropos < 1000 } do {
+						_spawnpos =  ( [ ( markerpos _spawnsector), random 50, random 360 ] call BIS_fnc_relPos ) findEmptyPosition [ 10, 100, 'B_Heli_Transport_01_F' ];
+						if ( count _spawnpos == 0 ) then { _spawnpos = zeropos; };
 					};
 
 					_newbox = ammobox_b_typename createVehicle _spawnpos;
@@ -48,6 +51,7 @@ while { GRLIB_endgame == 0 } do {
 					clearMagazineCargoGlobal _newbox;
 					clearItemCargoGlobal _newbox;
 					clearBackpackCargoGlobal _newbox;
+					_newbox addMPEventHandler ['MPKilled', {_this spawn kill_manager}];
 
 					[ [_newbox, 500 ] , "F_setMass" ] call BIS_fnc_MP;
 

@@ -32,9 +32,12 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 						_totalz = _totalz + (getpos _x select 2);
 					};
 				} foreach units _x;
-				_totalx = _totalx / (count _unitstocount);
-				_totaly = _totaly / (count _unitstocount);
-				_totalz = _totalz / (count _unitstocount);
+
+				if ( count _unitstocount > 0 ) then {
+					_totalx = _totalx / (count _unitstocount);
+					_totaly = _totaly / (count _unitstocount);
+					_totalz = _totalz / (count _unitstocount);
+				};
 
 				if ( _totalz > 2.1 ) then {
 					_grouppos = [_totalx, _totaly, _totalz + 10];
@@ -77,9 +80,13 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 		{
 			_nextunit = _x;
 
+			private _local_nametags_distance = nametags_distance;
+			if( _nextunit == leader group player ) then {
+				_local_nametags_distance = nametags_distance * 3;
+			};
 			_alpha = 1;
-			if ( _nextunit distance player > (nametags_distance / 2) ) then {
-				_alpha = 1 - ((((_nextunit distance player) - (nametags_distance / 2)) * 2) / nametags_distance);
+			if ( _nextunit distance player > (_local_nametags_distance / 2) ) then {
+				_alpha = 1 - ((((_nextunit distance player) - (_local_nametags_distance / 2)) * 2) / _local_nametags_distance);
 			};
 
 			_color = [];
@@ -120,7 +127,7 @@ waitUntil { !isNil "GRLIB_nametag_units" };
 			};
 			_displayname = _displayname + ( name _nextunit );
 
-			_height = 2 + ((player distance _nextunit) / (0.75 * nametags_distance));
+			_height = 2 + ((player distance _nextunit) / (0.75 * _local_nametags_distance));
 
 			_iconpos = [  getPosATL _nextunit select 0,  getPosATL _nextunit select 1,  (getPosATL _nextunit select 2) + _height ];
 

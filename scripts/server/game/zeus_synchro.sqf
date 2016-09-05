@@ -13,7 +13,7 @@ while { true } do {
 
 	_zeusunits = [];
 	{
-		if ( (side group _x == WEST ) && ( _x distance lhd > 1000 ) && alive _x ) then {
+		if ( (side group _x == GRLIB_side_friendly ) && ( _x distance lhd > 1000 ) && alive _x ) then {
 			_zeusunits pushback _x;
 		};
 	} foreach allUnits;
@@ -42,8 +42,8 @@ while { true } do {
 
 		_zgm  setCuratorCoef ["edit", -1e8];
 		_zgm  setCuratorCoef ["place", -1e8];
-		_zgm  setCuratorCoef ["synchronize", -1e8];
-		_zgm  setCuratorCoef ["delete", -1e8];
+		_zgm  setCuratorCoef ["synchronize", 0];
+		_zgm  setCuratorCoef ["delete", 0];
 		_zgm  setCuratorCoef ["destroy", -1e8];
 
 	} foreach allCurators;

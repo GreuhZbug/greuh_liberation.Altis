@@ -5,6 +5,7 @@ waitUntil { alive player };
 desiredviewdistance_inf = viewDistance;
 desiredviewdistance_veh = viewDistance;
 desiredviewdistance_obj = 75;
+desired_fps = 0;
 show_teammates = false;
 show_nametags = false;
 show_platoon = false;
@@ -29,6 +30,12 @@ if ( !isNil "greuh_options_profile" ) then {
 			show_nametags = false;
 		};
 	};
+	if ( count greuh_options_profile > 7) then {
+		desired_fps = greuh_options_profile select 7;
+		if ( isNil "desired_fps" ) then {
+			desired_fps = 0;
+		};
+	};
 };
 
 [] call compile preprocessFileLineNumbers "GREUH\GREUH_config.sqf";
@@ -41,3 +48,4 @@ if ( GREUH_allow_platoonview ) then { [] spawn compile preprocessFileLineNumbers
 if ( GREUH_allow_platoonview ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_cache_units.sqf"; };
 if ( GREUH_allow_customsquads ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_squadmanagement.sqf"; };
 if ( GREUH_allow_viewdistance ) then { [] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_view_distance_management.sqf"; };
+[] spawn compile preprocessFileLineNumbers "GREUH\scripts\GREUH_dynamic_view_distance.sqf";

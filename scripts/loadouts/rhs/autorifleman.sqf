@@ -7,7 +7,10 @@ removeVest _unit;
 removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
-_unit addVest "V_I_G_resistanceLeader_F";
+
+sleep 0.5;
+
+_unit addVest "V_I_G_ResistanceLeader_F";
 _unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {_unit addItemToVest "MiniGrenade";};
 _unit addItemToVest "SmokeShell";

@@ -1,7 +1,10 @@
 params [ "_unit" ];
 private [ "_nearestfob", "_is_near_fob", "_is_near_blufor", "_grp", "_waypoint", "_nearblufor" ];
 
-waitUntil { local _unit };
+waitUntil {
+	sleep 0.5;
+	local _unit
+};
 
 _is_near_fob = false;
 _is_near_blufor = true;
@@ -14,6 +17,8 @@ _unit enableAI "MOVE";
 sleep 2;
 [ [ _unit ], "remote_call_switchmove" ] call bis_fnc_mp;
 
+if ( typeof _unit == pilot_classname ) exitWith {};
+
 waitUntil { sleep 5;
 
 	_nearestfob = [ getpos _unit ] call F_getNearestFob;
@@ -24,10 +29,11 @@ waitUntil { sleep 5;
 	};
 
 	_is_near_blufor = false;
-	{
-		if ( _is_near_blufor ) exitWith {};
-		if ( _x distance _unit < 150 && _x != _unit ) then { _is_near_blufor = true };
-	} foreach (  [ allUnits, { side group _x == WEST } ] call BIS_fnc_conditionalSelect );
+	if ( !_is_near_blufor ) then {
+		{
+			if ((_x distance _unit) < 100) exitWith { _is_near_blufor = true };
+		} foreach (  [ allUnits, { !(((typeof _x) in opfor_infantry) || ((typeof _x) in militia_squad)) } ] call BIS_fnc_conditionalSelect );
+	};
 
 	!alive _unit || !(_is_near_blufor) || (_is_near_fob && (vehicle _unit == _unit))
 };
@@ -37,7 +43,7 @@ if (alive _unit) then {
 	if ( _is_near_fob ) then {
 
 		sleep 5;
-		_grp = createGroup WEST;
+		_grp = createGroup GRLIB_side_friendly;
 		[_unit] joinSilent _grp;
 		_unit playmove "AmovPercMstpSnonWnonDnon_AmovPsitMstpSnonWnonDnon_ground";
 		_unit disableAI "ANIM";
@@ -50,10 +56,17 @@ if (alive _unit) then {
 
 	} else {
 
-		_grp = createGroup EAST;
+		_grp = createGroup GRLIB_side_enemy;
 		[_unit] joinSilent _grp;
 		_unit setUnitPos "AUTO";
 		_unit setCaptive false;
+
+		if ((vehicle _unit != _unit) && !(_unit isEqualTo (driver vehicle _unit))) then {
+			unAssignVehicle _unit;
+			_unit action ["eject", vehicle _unit];
+			_unit action ["getout", vehicle _unit];
+			unAssignVehicle _unit;
+		};
 
 		while {(count (waypoints _grp)) != 0} do {deleteWaypoint ((waypoints _grp) select 0);};
 		{_x doFollow leader _grp} foreach units _grp;

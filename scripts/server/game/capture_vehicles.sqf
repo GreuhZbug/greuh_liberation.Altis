@@ -8,7 +8,7 @@ while { true } do {
 			if ( _nextveh getVariable [ "GRLIB_captured", 0 ] == 0 ) then {
 				{
 					if ( alive _x ) then {
-						if ( side group _x == WEST ) exitWith {
+						if ( side group _x == GRLIB_side_friendly ) exitWith {
 							_nextveh setVariable [ "GRLIB_captured", 1, true ];
 						};
 					};

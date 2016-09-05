@@ -346,3 +346,5 @@ if(vehicle _target == _target) then {
 	//_target switchMove (getArray(configFile>>"CfgMovesMaleSdr">>"States">>animationState player>>"ConnectTo") select 0);
 	_target setPosATL (getPosATL _target);
 };
+
+[ _target ] call F_correctLaserBatteries;

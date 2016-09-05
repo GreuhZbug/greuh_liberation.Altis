@@ -8,6 +8,8 @@ removeBackpack _unit;
 removeHeadgear _unit;
 removeGoggles _unit;
 
+sleep 0.5;
+
 _unit addVest "V_BandollierB_rgr";
 _unit addItemToVest "FirstAidKit";
 for "_i" from 1 to 2 do {_unit addItemToVest "MiniGrenade";};

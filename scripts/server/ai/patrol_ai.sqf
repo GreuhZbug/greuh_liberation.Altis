@@ -12,7 +12,7 @@ while { count (units _grp) > 0 } do {
 		_waypoint setWaypointType "MOVE";
 		_waypoint setWaypointSpeed "FULL";
 		_waypoint setWaypointBehaviour "AWARE";
-		_waypoint setWaypointCombatMode "YELLOW";
+		_waypoint setWaypointCombatMode "GREEN";
 		_waypoint setWaypointCompletionRadius 30;
 		_waypoint = _grp addWaypoint [markerpos reinforcements_sector_under_attack, 50];
 		_waypoint setWaypointSpeed "LIMITED";
@@ -31,7 +31,7 @@ while { count (units _grp) > 0 } do {
 		_sectors_patrol = [];
 		_patrol_startpos = getpos (leader _grp);
 		{
-			if ( _patrol_startpos distance (markerpos _x) < 2000) then {
+			if ( _patrol_startpos distance (markerpos _x) < 2500) then {
 				_sectors_patrol pushBack _x;
 			};
 		} foreach (sectors_allSectors - blufor_sectors);
@@ -44,7 +44,7 @@ while { count (units _grp) > 0 } do {
 			_waypoint setWaypointType "MOVE";
 			_waypoint setWaypointSpeed "NORMAL";
 			_waypoint setWaypointBehaviour "AWARE";
-			_waypoint setWaypointCombatMode "YELLOW";
+			_waypoint setWaypointCombatMode "GREEN";
 			_waypoint setWaypointCompletionRadius 30;
 		} foreach _sectors_patrol;
 

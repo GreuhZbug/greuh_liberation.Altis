@@ -21,9 +21,15 @@ check_victory_conditions = compileFinal preprocessFileLineNumbers "scripts\serve
 manage_one_civilian_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_civilian_patrol.sqf";
 manage_one_patrol = compileFinal preprocessFileLineNumbers "scripts\server\patrols\manage_one_patrol.sqf";
 reinforcements_manager = compileFinal preprocessFileLineNumbers "scripts\server\patrols\reinforcements_manager.sqf";
+send_paratroopers = compileFinal preprocessFileLineNumbers "scripts\server\patrols\send_paratroopers.sqf";
 
 // Resources
 recalculate_caps = compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_caps.sqf";
+
+// Secondary objectives
+fob_hunting = compileFinal preprocessFileLineNumbers "scripts\server\secondary\fob_hunting.sqf";
+convoy_hijack = compileFinal preprocessFileLineNumbers "scripts\server\secondary\convoy_hijack.sqf";
+search_and_rescue = compileFinal preprocessFileLineNumbers "scripts\server\secondary\search_and_rescue.sqf";
 
 // Sector
 attack_in_progress_fob = compileFinal preprocessFileLineNumbers "scripts\server\sector\attack_in_progress_fob.sqf";
@@ -40,6 +46,7 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\random_battlegroups.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\battlegroup\readiness_increase.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\apply_default_permissions.sqf";
+[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\apply_saved_scores.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\capture_vehicles.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\clean.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\cleanup_vehicles.sqf";
@@ -49,7 +56,6 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\periodic_save.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\playtime.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\save_manager.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\secondary_objectives_manager.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\spawn_radio_towers.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\synchronise_vars.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\game\zeus_synchro.sqf";
@@ -62,7 +68,12 @@ wait_to_spawn_sector = compileFinal preprocessFileLineNumbers "scripts\server\se
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\manage_resources.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_resources.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\recalculate_timer.sqf";
-[] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\resupply_vehicles.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\resources\unit_cap.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\lose_sectors.sqf";
 [] spawn compileFinal preprocessFileLineNumbers "scripts\server\sector\manage_sectors.sqf";
+
+{
+	if ( (_x != player) && (_x distance (getmarkerpos GRLIB_respawn_marker) < 200 ) ) then {
+		deleteVehicle _x;
+	};
+} foreach allUnits;

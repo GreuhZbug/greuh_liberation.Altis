@@ -32,7 +32,7 @@ if ( _spawn_marker != "" ) then {
 	[ [ _spawn_marker ] , "remote_call_battlegroup" ] call BIS_fnc_MP;
 
 	{
-		_nextgrp = createGroup EAST;
+		_nextgrp = createGroup GRLIB_side_enemy;
 		_vehicle = [markerpos _spawn_marker, _x] call F_libSpawnVehicle;
 		sleep 0.5;
 		(crew _vehicle) joinSilent _nextgrp;
