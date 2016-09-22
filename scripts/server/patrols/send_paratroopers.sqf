@@ -13,12 +13,12 @@ private _para_group = createGroup GRLIB_side_enemy;
 _newvehicle addMPEventHandler ["MPKilled", {_this spawn kill_manager}];
 { _x addMPEventHandler ["MPKilled", {_this spawn kill_manager}]; } foreach (crew _newvehicle);
 
-while { count units _para_group < 8 } do {
-_unit = 	opfor_paratrooper createUnit [ getmarkerpos _spawnsector, _para_group, 'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];
-	if(!(backpack player == "B_Parachute")) then {
-		_unit addBackpackGlobal "B_Parachute";
+{
+	_x createUnit [ getmarkerpos _spawnsector, _para_group, 'this addMPEventHandler ["MPKilled", {_this spawn kill_manager}]'];
+	if(!(backpack _x == "B_Parachute")) then {
+		_x addBackpackGlobal "B_Parachute";
 	};
-};
+} foreach opfor_squad_8_paratroop;
 
 { _x moveInCargo _newvehicle } foreach (units _para_group);
 

@@ -459,6 +459,7 @@ opfor_squad_8_standard = [opfor_squad_leader,opfor_team_leader,opfor_machinegunn
 opfor_squad_8_infkillers = [opfor_squad_leader,opfor_machinegunner,opfor_machinegunner,opfor_heavygunner,opfor_medic,opfor_marksman,opfor_sharpshooter,opfor_sniper];
 opfor_squad_8_tankkillers = [opfor_squad_leader,opfor_medic,opfor_machinegunner,opfor_rpg,opfor_rpg,opfor_at,opfor_at,opfor_at];
 opfor_squad_8_airkillers = [opfor_squad_leader,opfor_medic,opfor_machinegunner,opfor_rpg,opfor_rpg,opfor_aa,opfor_aa,opfor_aa];
+opfor_squad_8_paratroop = [opfor_squad_leader,opfor_paratrooper,opfor_machinegunner,opfor_paratrooper,opfor_medic,opfor_marksman,opfor_paratrooper,opfor_rpg];
 all_resistance_troops = [] + militia_squad;
 all_hostile_classnames = (land_vehicles_classnames + opfor_air + opfor_choppers + opfor_troup_transports + opfor_vehicles_low_intensity);
 { land_vehicles_classnames pushback (_x select 0); } foreach (heavy_vehicles + light_vehicles);
