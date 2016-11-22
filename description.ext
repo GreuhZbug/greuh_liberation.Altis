@@ -6,6 +6,7 @@ enableDebugConsole = 1;
 allowFunctionsLog = 0;
 
 loadScreen="res\liberation.jpg";
+overviewPicture = "res\liberation.jpg";
 onLoadMission = $STR_MISSION_TITLE;
 author = "[GREUH] Zbug, [GREUH] McKeewa";
 onLoadName = $STR_MISSION_TITLE;
